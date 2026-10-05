@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Note｜手書きで学ぶ</title>
+  <meta name="description" content="問題を読み、手書きノートで考える勉強アプリ。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d4ed8'/%3E%3Cpath d='M9 8h14v17H9zM12 13h8M12 17h8M12 21h5' stroke='white' fill='none' stroke-width='2'/%3E%3C/svg%3E">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f1f5fa;
+      color: #182439;
+      font: 16px/1.6 system-ui, -apple-system, sans-serif;
+    }
+
+    button, select, input { font: inherit; }
+
+    button, select {
+      min-height: 44px;
+      border: 1px solid #d7dfeb;
+      border-radius: 9px;
+      background: white;
+      color: #243650;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #edf3ff; }
+
+    button:focus-visible,
+    select:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #5da3ff;
+      outline-offset: 2px;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      color: #68758c;
+      background: #e9edf3;
+    }
+
+    .primary {
+      background: #2156d9;
+      color: white;
+      border-color: #2156d9;
+    }
+
+    .primary:hover { background: #1645bc; }
+
+    header {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      background: white;
+      border-bottom: 1px solid #dce3ee;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+    }
+
+    .brand span { color: #2156d9; }
+
+    .badge {
+      font-size: 14px;
+      color: #46607d;
+      background: #edf3ff;
+      border-radius: 20px;
+      padding: 5px 12px;
+    }
+
+    main {
+      max-width: 1500px;
+      margin: auto;
+      padding: 28px 32px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    h1 { font-size: 26px; margin: 0; }
+    h2 { font-size: 20px; margin: 0; }
+
+    .muted { color: #627188; font-size: 14px; }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid #dce3ee;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .problem { padding: 24px; }
+
+    .eyebrow {
+      font-size: 14px;
+      color: #2156d9;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .equation {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin: 30px 0;
+    }
+
+    .tip {
+      background: #f3f6fc;
+      border-left: 3px solid #7298ed;
+      padding: 14px;
+      font-size: 14px;
+      margin: 24px 0;
+    }
+
+    details {
+      border-top: 1px solid #e2e8f0;
+      padding: 18px 0;
+    }
+
+    summary { cursor: pointer; font-weight: 600; }
+    .answer { padding-top: 12px; }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .notebar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      border-bottom: 1px solid #e2e8f0;
+      gap: 12px;
+    }
+
+    .tools {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 12px 18px;
+      background: #fafcff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .tools .selected {
+      color: #174abc;
+      background: #e5edff;
+      border-color: #87a8f3;
+    }
+
+    .tools label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    input[type=range] { width: 80px; }
+
+    .paperwrap {
+      padding: 16px;
+      background: #edf2f8;
+      overflow: auto;
+    }
+
+    .paper {
+      width: 100%;
+      position: relative;
+      background: white;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px #15295212;
+      background-image: linear-gradient(#e2eaf4 1px, transparent 1px);
+      background-size: 100% 32px;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      touch-action: none;
+      cursor: crosshair;
+    }
+
+    .footer {
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .ai {
+      margin-top: 18px;
+      padding: 18px 22px;
+      border: 1px dashed #a8b9d2;
+      border-radius: 12px;
+      background: #f8faff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .ai p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #54647c;
+    }
+
+    .status {
+      font-size: 14px;
+      color: #526781;
+      min-height: 23px;
+    }
+
+    .info {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #627188;
+    }
+
+    dialog {
+      border: 0;
+      border-radius: 16px;
+      padding: 26px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 20px 60px #11224433;
+    }
+
+    dialog::backdrop { background: #10203d66; }
+    dialog p { margin-top: 0; }
+
+    .dialogbuttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    @media (max-width: 800px) {
+      header { padding: 0 16px; height: 64px; }
+      main { padding: 20px 14px; }
+      .workspace { grid-template-columns: 1fr; gap: 16px; }
+      .top { align-items: flex-start; }
+      h1 { font-size: 22px; }
+      .problem { padding: 20px; }
+      .equation { margin: 18px 0; }
+      .tip { margin: 16px 0; }
+      .notebar, .footer { padding: 14px; }
+      .footer, .ai { align-items: flex-start; flex-direction: column; }
+      .tools { padding: 10px; }
+      .paperwrap { padding: 8px; }
+      .brand { font-size: 20px; }
+      .badge { font-size: 12px; }
+      .paper { min-width: 0; }
+      .top select { max-width: 145px; }
+      button { padding: 8px 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand"><span>Study</span> Note</div>
+    <span class="badge">手書きノート・試作品</span>
+  </header>
+
+  <main>
+    <div class="top">
+      <div>
+        <h1>書いて、考えて、理解する。</h1>
+        <div class="muted">まずは紙と鉛筆の代わりに、このノートで。</div>
+      </div>
+      <label>
+        <span class="muted">単元 </span>
+        <select aria-label="単元">
+          <option>数学｜一次方程式</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="workspace">
+      <section class="panel problem">
+        <div class="eyebrow" id="number"></div>
+        <h2>次の方程式を解こう</h2>
+        <div class="equation" id="question"></div>
+        <p>途中式もノートに書き、最後に x の値を求めてください。</p>
+
+        <div class="tip">
+          等式の両辺に同じ操作をすることを意識しよう。
+        </div>
+
+        <details id="hint">
+          <summary>ヒントを見る</summary>
+          <div class="answer" id="hinttext"></div>
+        </details>
+
+        <details id="solution">
+          <summary>解答・解説を見る</summary>
+          <div class="answer" id="answer"></div>
+        </details>
+
+        <div class="nav">
+          <button id="prev">前の問題</button>
+          <button id="next" class="primary">次の問題</button>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel">
+          <div class="notebar">
+            <h2>考えるノート</h2>
+            <span class="muted">問題ごとに保存</span>
+          </div>
+
+          <div class="tools">
+            <button id="pen" class="selected" aria-pressed="true">ペン</button>
+            <button id="eraser" aria-pressed="false">消しゴム</button>
+
+            <label>
+              太さ
+              <input id="width" type="range" min="2" max="12" value="3"
+                     aria-label="ペンの太さ">
+            </label>
+
+            <label>
+              色
+              <select id="color" aria-label="ペンの色">
+                <option value="#1e3554">紺</option>
+                <option value="#d22b46">赤</option>
+                <option value="#2156d9">青</option>
+              </select>
+            </label>
+
+            <button id="undo">取り消し</button>
+            <button id="clear">すべて消す</button>
+          </div>
+
+          <div class="paperwrap">
+            <div class="paper">
+              <canvas id="canvas" width="1000" height="750"
+                      aria-label="手書きノート。マウス、指、ペンで書けます"></canvas>
+            </div>
+          </div>
+
+          <div class="footer">
+            <span class="status" id="status" role="status" aria-live="polite">
+              マウス・指・ペンで書けます
+            </span>
+            <button id="download">画像で保存</button>
+          </div>
+        </div>
+
+        <div class="ai">
+          <div>
+            <strong>AI採点は、これから接続します</strong>
+            <p>
+              現在は手書きノートと解答確認を試せます。
+              ノートをAIに送信する機能はまだありません。
+            </p>
+          </div>
+          <button disabled>AIで採点（準備中）</button>
+        </div>
+      </section>
+    </div>
+
+    <p class="info">
+      ノートはこのブラウザー内に保存されます。
+      別の端末には引き継がれません。
+      ブラウザーのデータを消すとノートも消えます。
+    </p>
+  </main>
+
+  <dialog id="confirm">
+    <p>この問題のノートをすべて消しますか？</p>
+    <div class="dialogbuttons">
+      <button id="cancel">戻る</button>
+      <button id="confirmclear" class="primary">消す</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
