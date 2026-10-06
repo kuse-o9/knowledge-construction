@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ホーム｜Study Note</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f1f5fa;
+      color: #182439;
+      font: 16px/1.7 system-ui, sans-serif;
+    }
+
+    header {
+      min-height: 76px;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: white;
+      border-bottom: 1px solid #dce3ee;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .brand span {
+      color: #2156d9;
+    }
+
+    .badge {
+      font-size: 14px;
+      padding: 5px 12px;
+      background: #edf3ff;
+      color: #46607d;
+      border-radius: 20px;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: auto;
+      padding: 40px 28px;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+    }
+
+    .label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #2156d9;
+      margin: 0 0 8px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.4;
+      margin: 0 0 8px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .muted {
+      color: #627188;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #dce3ee;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .course-heading {
+      background: #153574;
+      color: white;
+      padding: 26px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .course-heading .label {
+      color: #b7cfff;
+    }
+
+    .course-heading h2 {
+      font-size: 26px;
+      margin: 0;
+    }
+
+    .subject-icon {
+      font-size: 32px;
+      font-weight: 700;
+      width: 64px;
+      height: 64px;
+      background: #ffffff15;
+      display: grid;
+      place-items: center;
+      border: 1px solid #ffffff35;
+      border-radius: 14px;
+    }
+
+    .course-body {
+      padding: 28px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 14px;
+      background: #eef3fc;
+      color: #415f8e;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .description {
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin: 0 0 12px;
+    }
+
+    .topics {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 26px;
+    }
+
+    .topics li {
+      padding: 12px 0;
+      border-bottom: 1px solid #e8edf5;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .topics span {
+      font-size: 14px;
+      color: #627188;
+    }
+
+    .primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 10px 22px;
+      background: #2156d9;
+      border: 1px solid #2156d9;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: 700;
+    }
+
+    .primary:hover {
+      background: #1645bc;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #5da3ff;
+      outline-offset: 4px;
+    }
+
+    .start-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #627188;
+    }
+
+    aside {
+      padding: 24px;
+    }
+
+    aside h2 {
+      font-size: 18px;
+      margin: 0 0 18px;
+    }
+
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .step {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: #edf3ff;
+      border-radius: 50%;
+      color: #2156d9;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .steps strong {
+      display: block;
+    }
+
+    .steps p {
+      font-size: 14px;
+      color: #627188;
+      margin-top: 3px;
+    }
+
+    .ai-note {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 18px;
+      font-size: 14px;
+      color: #627188;
+    }
+
+    .ai-note strong {
+      display: block;
+      color: #41536c;
+      margin-bottom: 4px;
+    }
+
+    .save-note {
+      margin-top: 24px;
+      padding: 16px 20px;
+      border: 1px dashed #a8b9d2;
+      border-radius: 12px;
+      font-size: 14px;
+      color: #627188;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #627188;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        padding: 16px;
+      }
+
+      main {
+        padding: 26px 16px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .course-heading,
+      .course-body,
+      aside {
+        padding: 22px;
+      }
+
+      .brand {
+        font-size: 20px;
+      }
+
+      .badge {
+        font-size: 12px;
+      }
+
+      .primary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand"><span>Study</span> Note</div>
+    <span class="badge">手書きノート・試作品</span>
+  </header>
+
+  <main>
+    <div class="intro">
+      <p class="label">ホーム</p>
+      <h1>今日の勉強を始めよう。</h1>
+      <p class="muted">問題を読み、ノートに書いて考えてみよう。</p>
+    </div>
+
+    <div class="layout">
+      <section class="card">
+        <div class="course-heading">
+          <div>
+            <p class="label">数学</p>
+            <h2>一次方程式</h2>
+          </div>
+          <div class="subject-icon" aria-hidden="true">x</div>
+        </div>
+
+        <div class="course-body">
+          <div class="tags">
+            <span class="tag">中学１年</span>
+            <span class="tag">３問</span>
+            <span class="tag">手書きで解く</span>
+          </div>
+
+          <p class="description">
+            等式の性質を使って、x の値を求めよう。
+            途中式も書いて、計算の流れを確認します。
+          </p>
+
+          <h3>練習する内容</h3>
+
+          <ul class="topics">
+            <li><span>01</span>基本の方程式</li>
+            <li><span>02</span>両辺に x がある方程式</li>
+            <li><span>03</span>かっこを含む方程式</li>
+          </ul>
+
+          <div class="start-row">
+            <a class="primary" href="question.html">勉強を始める</a>
+            <span class="note">前に書いたノートも使えます</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>ノートの使い方</h2>
+
+        <ol class="steps">
+          <li>
+            <span class="step">1</span>
+            <div>
+              <strong>問題を読む</strong>
+              <p>困ったらヒントを確認できます。</p>
+            </div>
+          </li>
+
+          <li>
+            <span class="step">2</span>
+            <div>
+              <strong>ノートに書く</strong>
+              <p>
+                パソコンはマウス、スマホは指で。
+                ペンの色や太さも変えられます。
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <span class="step">3</span>
+            <div>
+              <strong>解説と見比べる</strong>
+              <p>答えだけでなく、途中式も確認しよう。</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="ai-note">
+          <strong>AI採点は準備中です</strong>
+          今は手書きと解答確認が使えます。
+          ノートをAIへ送信する機能は未接続です。
+        </div>
+      </aside>
+    </div>
+
+    <div class="save-note">
+      ノートはこのブラウザー内に自動保存されます。
+      別の端末には引き継がれません。
+      大切なノートは、問題画面の「画像で保存」で残してね。
+    </div>
+
+    <footer>Study Note · 自分のペースで、一問ずつ。</footer>
+  </main>
+</body>
+</html>
