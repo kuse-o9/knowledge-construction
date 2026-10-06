@@ -1,416 +1,1033 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ホーム｜Study Note</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study Note｜ホーム</title>
+<meta name="description" content="手書きノート、学習タイマー、暗記シートで一問ずつ学ぶ勉強アプリ。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232156d9'/%3E%3Cpath d='M9 8h14v17H9zM12 13h8M12 17h8M12 21h5' stroke='white' fill='none' stroke-width='2'/%3E%3C/svg%3E">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f1f5fa;color:#182439;font:16px/1.65 system-ui,sans-serif}
+button,input,select{font:inherit}
+button,a.btn,select,input[type=number]{min-height:44px;border:1px solid #ccd8e8;border-radius:9px;padding:8px 12px;background:white;color:#233a59}
+button,a.btn{cursor:pointer}
+button:hover,a.btn:hover{background:#edf3ff}
+button:disabled{cursor:not-allowed;color:#65758c;background:#e9eef5}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #589fff;outline-offset:3px}
+.primary,a.primary{background:#2156d9;color:white;border-color:#2156d9}
+.primary:hover,a.primary:hover{background:#1645bc}
+a{color:#2156d9}
+a.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.secondary{color:#627188;font-size:14px}
+header{background:white;border-bottom:1px solid #dce3ee;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-size:23px;font-weight:800;white-space:nowrap;text-decoration:none;color:#182439}
+.brand span{color:#2156d9}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{font-size:14px}
+main{max-width:1460px;margin:auto;padding:26px 28px}
+h1{font-size:28px;margin:0 0 8px}
+h2{font-size:21px;margin:0}
+h3{font-size:18px;margin:0}
+p{margin:8px 0 16px}
+.eyebrow{font-size:14px;font-weight:700;color:#2156d9;margin-bottom:10px}
+.card{background:white;border:1px solid #dce3ee;border-radius:16px;padding:22px}
+.timer{max-width:1404px;margin:22px auto 0;padding:14px 20px;background:#153574;color:white;display:flex;align-items:center;gap:14px;border-radius:14px;flex-wrap:wrap}
+.time{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:1px}
+.timer input{width:76px}
+.timer label{font-size:14px}
+.timer button{font-size:14px}
+.timer .timer-status{margin-left:auto;font-size:14px;color:#dce8ff}
+.intro{margin-bottom:24px}
+.decks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.deck{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.cover{height:130px;background:#e7effe;display:grid;place-items:center;padding:16px}
+.cover svg{max-height:105px;max-width:100%;width:260px}
+.deckbody{padding:22px;display:flex;flex-direction:column;flex:1}
+.deckbody p{color:#627188;font-size:14px}
+.deck-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.official{font-size:14px;color:#2156d9;font-weight:700;margin-bottom:8px}
+.notice{background:#eaf0fa;padding:15px 18px;border-radius:10px;margin-top:22px;font-size:14px;color:#536780}
+.workspace{display:grid;grid-template-columns:340px minmax(0,1fr);gap:22px}
+.equation{font-size:29px;font-weight:700;margin:22px 0;overflow-wrap:anywhere}
+.problem-image{width:100%;height:auto;display:block;margin:18px 0;background:#f7faff;border-radius:10px}
+.hint{background:#f0f5ff;border-left:3px solid #789eef;padding:12px;font-size:14px}
+details{padding:16px 0;border-top:1px solid #e1e8f2}
+summary{cursor:pointer;font-weight:600}
+.explain{white-space:pre-line;margin-top:12px}
+.question-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.notebook{padding:0;overflow:hidden}
+.notehead{padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
+.tools{padding:12px;background:#fafcff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tools label{display:flex;gap:7px;align-items:center;font-size:14px}
+.tools input[type=range]{width:75px}
+.selected{background:#e5edff!important;color:#174abc;border-color:#86a8f3}
+.paperwrap{padding:14px;background:#edf2f8}
+.paper{background:white;background-image:linear-gradient(#e2eaf4 1px,transparent 1px);background-size:100% 32px}
+canvas{width:100%;height:auto;display:block;touch-action:none;cursor:crosshair}
+.notefinal{padding:16px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.ai{margin-top:16px;border:1px dashed #9dafc9;border-radius:12px;padding:18px;font-size:14px;color:#526780}
+.memory-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.memory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.memory-card h3{margin-bottom:12px}
+.reveal{width:100%;text-align:left;background:#fff0f2;border:1px solid #eab8c2;color:#912440;min-height:70px}
+.reveal[aria-expanded=true]{background:white;color:#182439;border-color:#ccd8e8}
+.memorystate{display:block;font-size:14px;color:#627188;margin-top:10px}
+[hidden]{display:none!important}
+dialog{max-width:420px;width:90%;border:0;padding:26px;border-radius:16px}
+dialog::backdrop{background:#14213d66}
+.dialog-actions{display:flex;justify-content:flex-end;gap:10px}
+#feedback{min-height:24px;margin-top:16px;color:#415f87;font-size:14px}
+footer{font-size:14px;color:#627188;margin-top:24px}
 
-    body {
-      margin: 0;
-      background: #f1f5fa;
-      color: #182439;
-      font: 16px/1.7 system-ui, sans-serif;
-    }
-
-    header {
-      min-height: 76px;
-      padding: 16px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      background: white;
-      border-bottom: 1px solid #dce3ee;
-    }
-
-    .brand {
-      font-size: 22px;
-      font-weight: 800;
-    }
-
-    .brand span {
-      color: #2156d9;
-    }
-
-    .badge {
-      font-size: 14px;
-      padding: 5px 12px;
-      background: #edf3ff;
-      color: #46607d;
-      border-radius: 20px;
-    }
-
-    main {
-      max-width: 1120px;
-      margin: auto;
-      padding: 40px 28px;
-    }
-
-    .intro {
-      margin-bottom: 28px;
-    }
-
-    .label {
-      font-size: 14px;
-      font-weight: 700;
-      color: #2156d9;
-      margin: 0 0 8px;
-    }
-
-    h1 {
-      font-size: 32px;
-      line-height: 1.4;
-      margin: 0 0 8px;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    .muted {
-      color: #627188;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid #dce3ee;
-      border-radius: 18px;
-      overflow: hidden;
-    }
-
-    .course-heading {
-      background: #153574;
-      color: white;
-      padding: 26px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .course-heading .label {
-      color: #b7cfff;
-    }
-
-    .course-heading h2 {
-      font-size: 26px;
-      margin: 0;
-    }
-
-    .subject-icon {
-      font-size: 32px;
-      font-weight: 700;
-      width: 64px;
-      height: 64px;
-      background: #ffffff15;
-      display: grid;
-      place-items: center;
-      border: 1px solid #ffffff35;
-      border-radius: 14px;
-    }
-
-    .course-body {
-      padding: 28px;
-    }
-
-    .tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .tag {
-      font-size: 14px;
-      background: #eef3fc;
-      color: #415f8e;
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-
-    .description {
-      margin-bottom: 22px;
-    }
-
-    h3 {
-      font-size: 16px;
-      margin: 0 0 12px;
-    }
-
-    .topics {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 26px;
-    }
-
-    .topics li {
-      padding: 12px 0;
-      border-bottom: 1px solid #e8edf5;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .topics span {
-      font-size: 14px;
-      color: #627188;
-    }
-
-    .primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 10px 22px;
-      background: #2156d9;
-      border: 1px solid #2156d9;
-      border-radius: 10px;
-      text-decoration: none;
-      color: white;
-      font-weight: 700;
-    }
-
-    .primary:hover {
-      background: #1645bc;
-    }
-
-    a:focus-visible {
-      outline: 3px solid #5da3ff;
-      outline-offset: 4px;
-    }
-
-    .start-row {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .note {
-      font-size: 14px;
-      color: #627188;
-    }
-
-    aside {
-      padding: 24px;
-    }
-
-    aside h2 {
-      font-size: 18px;
-      margin: 0 0 18px;
-    }
-
-    .steps {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .steps li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .step {
-      width: 28px;
-      height: 28px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      background: #edf3ff;
-      border-radius: 50%;
-      color: #2156d9;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .steps strong {
-      display: block;
-    }
-
-    .steps p {
-      font-size: 14px;
-      color: #627188;
-      margin-top: 3px;
-    }
-
-    .ai-note {
-      border-top: 1px solid #e2e8f0;
-      padding-top: 18px;
-      font-size: 14px;
-      color: #627188;
-    }
-
-    .ai-note strong {
-      display: block;
-      color: #41536c;
-      margin-bottom: 4px;
-    }
-
-    .save-note {
-      margin-top: 24px;
-      padding: 16px 20px;
-      border: 1px dashed #a8b9d2;
-      border-radius: 12px;
-      font-size: 14px;
-      color: #627188;
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #627188;
-    }
-
-    @media (max-width: 800px) {
-      header {
-        padding: 16px;
-      }
-
-      main {
-        padding: 26px 16px;
-      }
-
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 26px;
-      }
-
-      .course-heading,
-      .course-body,
-      aside {
-        padding: 22px;
-      }
-
-      .brand {
-        font-size: 20px;
-      }
-
-      .badge {
-        font-size: 12px;
-      }
-
-      .primary {
-        width: 100%;
-      }
-    }
-  </style>
+@media(max-width:900px){
+  .decks{grid-template-columns:1fr}
+  .workspace{grid-template-columns:1fr}
+  .memory-grid{grid-template-columns:1fr}
+  header{padding:14px 16px;align-items:flex-start;flex-wrap:wrap;gap:12px}
+  main{padding:22px 14px}
+  .timer{margin:16px 14px 0;padding:14px;gap:10px}
+  .timer .timer-status{margin-left:0;width:100%}
+  h1{font-size:24px}
+  .notefinal{align-items:flex-start;flex-direction:column}
+  .cover{height:110px}
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="brand"><span>Study</span> Note</div>
-    <span class="badge">手書きノート・試作品</span>
-  </header>
+<header>
+  <a class="brand" href="#home"><span>Study</span> Note</a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a class="btn" href="#home">ホーム</a>
+    <a class="btn" id="memory-nav" href="#memory-math">暗記シート</a>
+  </nav>
+</header>
 
-  <main>
+<section class="timer" aria-label="学習タイマー">
+  <strong>学習タイマー</strong>
+  <span id="clock" class="time" role="timer" aria-label="残り時間">25:00</span>
+  <label>
+    時間
+    <input id="minutes" type="number" min="1" max="180" value="25"
+           aria-label="タイマーの分数">
+    分
+  </label>
+  <button id="set-time">設定</button>
+  <button id="start-timer">開始</button>
+  <button id="reset-timer">リセット</button>
+  <span id="timer-status" class="timer-status" role="status">
+    準備できたら開始
+  </span>
+</section>
+
+<main>
+  <section id="home-screen">
     <div class="intro">
-      <p class="label">ホーム</p>
+      <div class="eyebrow">ホーム</div>
       <h1>今日の勉強を始めよう。</h1>
-      <p class="muted">問題を読み、ノートに書いて考えてみよう。</p>
+      <p class="secondary">
+        公式デッキを選んで、書く練習と暗記を使い分けよう。
+      </p>
+    </div>
+    <div id="deck-list" class="decks"></div>
+    <div class="notice">
+      「公式」は、このアプリに最初から入っている問題パックの名称です。
+      学校や試験団体の公式教材ではありません。
+    </div>
+  </section>
+
+  <section id="study-screen" hidden>
+    <div class="intro">
+      <div class="eyebrow" id="pack-label"></div>
+      <h1 id="study-title"></h1>
     </div>
 
-    <div class="layout">
+    <div class="workspace">
       <section class="card">
-        <div class="course-heading">
-          <div>
-            <p class="label">数学</p>
-            <h2>一次方程式</h2>
-          </div>
-          <div class="subject-icon" aria-hidden="true">x</div>
+        <div class="eyebrow" id="number"></div>
+        <h2>問題</h2>
+        <div class="equation" id="question"></div>
+        <img id="problem-image" class="problem-image" hidden alt="">
+        <p id="instruction"></p>
+
+        <div class="hint">
+          途中の考え方もノートに書いてみよう。
         </div>
 
-        <div class="course-body">
-          <div class="tags">
-            <span class="tag">中学１年</span>
-            <span class="tag">３問</span>
-            <span class="tag">手書きで解く</span>
-          </div>
+        <details id="hint">
+          <summary>ヒントを見る</summary>
+          <div id="hinttext" class="explain"></div>
+        </details>
 
-          <p class="description">
-            等式の性質を使って、x の値を求めよう。
-            途中式も書いて、計算の流れを確認します。
-          </p>
+        <details id="solution">
+          <summary>解答・解説を見る</summary>
+          <div id="answer" class="explain"></div>
+        </details>
 
-          <h3>練習する内容</h3>
-
-          <ul class="topics">
-            <li><span>01</span>基本の方程式</li>
-            <li><span>02</span>両辺に x がある方程式</li>
-            <li><span>03</span>かっこを含む方程式</li>
-          </ul>
-
-          <div class="start-row">
-            <a class="primary" href="question.html">勉強を始める</a>
-            <span class="note">前に書いたノートも使えます</span>
-          </div>
+        <div class="question-nav">
+          <button id="prev">前の問題</button>
+          <button class="primary" id="next">次の問題</button>
         </div>
+
+        <p><a href="#home">ホームに戻る</a></p>
       </section>
 
-      <aside class="card">
-        <h2>ノートの使い方</h2>
+      <section>
+        <div class="card notebook">
+          <div class="notehead">
+            <h2>考えるノート</h2>
+            <span class="secondary">問題ごとに保存</span>
+          </div>
 
-        <ol class="steps">
-          <li>
-            <span class="step">1</span>
-            <div>
-              <strong>問題を読む</strong>
-              <p>困ったらヒントを確認できます。</p>
+          <div class="tools">
+            <button class="selected" id="pen" aria-pressed="true">ペン</button>
+            <button id="eraser" aria-pressed="false">消しゴム</button>
+
+            <label>
+              太さ
+              <input type="range" id="width" min="2" max="12" value="3">
+            </label>
+
+            <label>
+              色
+              <select id="color">
+                <option value="#1e3554">紺</option>
+                <option value="#d22b46">赤</option>
+                <option value="#2156d9">青</option>
+              </select>
+            </label>
+
+            <button id="undo">取り消し</button>
+            <button id="clear">すべて消す</button>
+          </div>
+
+          <div class="paperwrap">
+            <div class="paper">
+              <canvas id="canvas" width="1000" height="750"
+                      aria-label="手書きノート。マウス、指、ペンで書けます"></canvas>
             </div>
-          </li>
+          </div>
 
-          <li>
-            <span class="step">2</span>
-            <div>
-              <strong>ノートに書く</strong>
-              <p>
-                パソコンはマウス、スマホは指で。
-                ペンの色や太さも変えられます。
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <span class="step">3</span>
-            <div>
-              <strong>解説と見比べる</strong>
-              <p>答えだけでなく、途中式も確認しよう。</p>
-            </div>
-          </li>
-        </ol>
-
-        <div class="ai-note">
-          <strong>AI採点は準備中です</strong>
-          今は手書きと解答確認が使えます。
-          ノートをAIへ送信する機能は未接続です。
+          <div class="notefinal">
+            <span id="note-status" class="secondary" role="status">
+              マウス・指・ペンで書けます
+            </span>
+            <button id="download">画像で保存</button>
+          </div>
         </div>
-      </aside>
+
+        <div class="ai">
+          <strong>AI採点は未接続です</strong><br>
+          今は解答・解説と見比べて確認してください。
+          ノートを外部へ送信する機能はありません。
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section id="memory-screen" hidden>
+    <div class="memory-top">
+      <div>
+        <div class="eyebrow">暗記シート</div>
+        <h1 id="memory-title"></h1>
+        <p class="secondary">
+          答えを思い出してから、赤い部分をタップしよう。
+        </p>
+      </div>
+
+      <div>
+        <button id="hide-all">全部隠す</button>
+        <button id="show-all">全部表示</button>
+      </div>
     </div>
 
-    <div class="save-note">
-      ノートはこのブラウザー内に自動保存されます。
-      別の端末には引き継がれません。
-      大切なノートは、問題画面の「画像で保存」で残してね。
-    </div>
+    <div id="memory-list" class="memory-grid"></div>
 
-    <footer>Study Note · 自分のペースで、一問ずつ。</footer>
-  </main>
+    <p>
+      <a id="back-study" href="#study-math">このデッキの問題を解く</a>
+    </p>
+  </section>
+
+  <div id="feedback" role="status" aria-live="polite"></div>
+
+  <footer>
+    ノートとタイマーは、このブラウザーに保存されます。
+    別の端末には引き継がれません。
+    ブラウザーのデータを消すと記録も消えます。
+  </footer>
+</main>
+
+<dialog id="confirm">
+  <p>この問題のノートをすべて消しますか？</p>
+  <div class="dialog-actions">
+    <button id="cancel">戻る</button>
+    <button id="confirm-clear" class="primary">消す</button>
+  </div>
+</dialog>
+
+<script>
+'use strict';
+
+const $ = id => document.getElementById(id);
+
+// 問題やデッキの図を画像として作る
+const diagram = body =>
+  'data:image/svg+xml;charset=utf-8,' +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="500" height="260" viewBox="0 0 500 260">' +
+    '<rect width="500" height="260" fill="#f7faff"/>' +
+    body +
+    '</svg>'
+  );
+
+const triangle = diagram(
+  '<path d="M100 205L350 205L100 65Z" fill="#dce8ff" stroke="#2156d9" stroke-width="4"/>' +
+  '<path d="M100 185h20v20" fill="none" stroke="#2156d9" stroke-width="3"/>' +
+  '<g font-family="sans-serif" font-size="23" fill="#182439">' +
+  '<text x="210" y="239">8 cm</text>' +
+  '<text x="25" y="145">5 cm</text></g>'
+);
+
+const rectangle = diagram(
+  '<path d="M100 65H400V205H100Z" fill="#dce8ff" stroke="#2156d9" stroke-width="4"/>' +
+  '<g font-family="sans-serif" font-size="23" fill="#182439">' +
+  '<text x="218" y="239">9 cm</text>' +
+  '<text x="25" y="145">4 cm</text></g>'
+);
+
+const angle = diagram(
+  '<path d="M50 190H450M240 190L140 45" fill="none" stroke="#2156d9" stroke-width="4"/>' +
+  '<g font-family="sans-serif" font-size="25" fill="#182439">' +
+  '<text x="150" y="164">55°</text>' +
+  '<text x="285" y="160">x°</text></g>'
+);
+
+// 公式デッキ
+const packs = [
+  {
+    id: 'math',
+    title: '一次方程式',
+    subject: '数学',
+    description: '等式の性質を使って、途中式を整理する練習。',
+    image: diagram(
+      '<g font-family="sans-serif" fill="#2156d9" font-size="48" font-weight="bold">' +
+      '<text x="75" y="145">3x + 7 = 22</text></g>'
+    ),
+    alt: '一次方程式の例、3x＋7＝22',
+    questions: [
+      {
+        q: '3x + 7 = 22',
+        hint: '両辺から 7 を引きます。',
+        answer: '3x = 15\nx = 5\n両辺から 7 を引き、その後、両辺を 3 で割ります。'
+      },
+      {
+        q: '4x − 3 = 2x + 9',
+        hint: 'x のある項を片側にまとめましょう。',
+        answer: '4x − 2x = 9 + 3\n2x = 12\nx = 6'
+      },
+      {
+        q: '3(x + 2) = 21',
+        hint: '両辺を 3 で割ると計算が短くなります。',
+        answer: 'x + 2 = 7\nx = 5'
+      }
+    ],
+    memory: [
+      {
+        term: '等式の性質',
+        answer: '両辺に同じ数を足す・引く、同じ数をかける、0 でない同じ数で割ると、等式は成り立つ。'
+      },
+      {
+        term: '移項するときの符号',
+        answer: '項を反対側の辺へ移すと、符号が変わる。両辺に同じ操作をした結果を短く書いたもの。'
+      },
+      {
+        term: '解が正しいか確かめる方法',
+        answer: '求めた値を元の方程式に代入し、左辺と右辺が等しいか調べる。'
+      }
+    ]
+  },
+  {
+    id: 'fractions',
+    title: '分数の計算',
+    subject: '数学',
+    description: '通分・逆数・約分を、計算の途中で確認しよう。',
+    image: diagram(
+      '<g font-family="sans-serif" fill="#2156d9" font-size="48" font-weight="bold">' +
+      '<text x="80" y="145">1/2 + 1/3</text></g>'
+    ),
+    alt: '分数の加法の例、2分の1＋3分の1',
+    questions: [
+      {
+        q: '1/2 + 1/3',
+        hint: '分母を 6 にそろえます。',
+        answer: '3/6 + 2/6 = 5/6'
+      },
+      {
+        q: '3/4 ÷ 2/5',
+        hint: '割る数の逆数をかけます。',
+        answer: '3/4 × 5/2 = 15/8（1と7/8）'
+      },
+      {
+        q: '5/6 − 1/4',
+        hint: '分母を 12 にそろえましょう。',
+        answer: '10/12 − 3/12 = 7/12'
+      }
+    ],
+    memory: [
+      {
+        term: '通分とは？',
+        answer: '分数の大きさを変えずに、分母を同じ数にそろえること。'
+      },
+      {
+        term: '分数の割り算',
+        answer: '割る数の逆数をかける。0 では割れない。'
+      },
+      {
+        term: '約分とは？',
+        answer: '分母と分子を、共通の 0 でない整数で割って分数を簡単にすること。'
+      }
+    ]
+  },
+  {
+    id: 'geometry',
+    title: '図形の基本',
+    subject: '数学',
+    description: '図を見て、面積や角度を求める練習。図は模式図です。',
+    image: triangle,
+    alt: '底辺8センチメートル、高さ5センチメートルの三角形',
+    questions: [
+      {
+        q: '三角形の面積を求めよう。',
+        image: triangle,
+        alt: '底辺8cm、高さ5cmの直角三角形',
+        hint: '底辺 × 高さ ÷ 2 を使います。',
+        answer: '8 × 5 ÷ 2 = 20\n面積は 20 cm²。'
+      },
+      {
+        q: '長方形の周の長さを求めよう。',
+        image: rectangle,
+        alt: '縦4cm、横9cmの長方形',
+        hint: '４つの辺をすべて足します。',
+        answer: '(9 + 4) × 2 = 26\n周の長さは 26 cm。'
+      },
+      {
+        q: '図の x の値を求めよう。',
+        image: angle,
+        alt: '一直線上の隣り合う角の一方が55度、もう一方がx度',
+        hint: '一直線の角度は 180° です。',
+        answer: 'x = 180 − 55 = 125\nx の値は 125。角度は 125°。'
+      }
+    ],
+    memory: [
+      {
+        term: '三角形の面積',
+        answer: '底辺 × 高さ ÷ 2。高さは、底辺（またはその延長）に垂直な長さ。'
+      },
+      {
+        term: '長方形の周の長さ',
+        answer: '（縦 + 横）× 2。面積の「縦 × 横」と区別しよう。'
+      },
+      {
+        term: '一直線の角度',
+        answer: '180°。一直線を分ける角の大きさの和は 180°。'
+      }
+    ]
+  }
+];
+
+let pack = packs[0];
+let index = 0;
+let mode = 'pen';
+let strokes = [];
+let active = null;
+
+const canvas = $('canvas');
+const ctx = canvas.getContext('2d');
+const notes = new Map();
+
+// 保存領域を読み書きする
+function read(key) {
+  try {
+    return JSON.parse(localStorage.getItem(key));
+  } catch {
+    return null;
+  }
+}
+
+function write(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// 文字列をHTMLとして実行せずに表示する
+function node(tag, text, className) {
+  const element = document.createElement(tag);
+  if (text !== undefined) element.textContent = text;
+  if (className) element.className = className;
+  return element;
+}
+
+// ホームに公式デッキを表示する
+function deckHome() {
+  const list = $('deck-list');
+
+  for (const p of packs) {
+    const card = node('article', undefined, 'card deck');
+    const cover = node('div', undefined, 'cover');
+    const image = node('img');
+
+    image.src = p.image;
+    image.alt = p.alt;
+    image.style.cssText = 'max-width:100%;max-height:105px';
+    cover.append(image);
+
+    const body = node('div', undefined, 'deckbody');
+
+    body.append(
+      node('div', '公式デッキ · ' + p.subject, 'official'),
+      node('h2', p.title),
+      node('p', p.description),
+      node('p', p.questions.length + '問 / 暗記カード ' + p.memory.length + '枚')
+    );
+
+    const actions = node('div', undefined, 'deck-actions');
+
+    for (const [label, path, className] of [
+      ['問題を解く', 'study', 'btn primary'],
+      ['暗記する', 'memory', 'btn']
+    ]) {
+      const link = node('a', label, className);
+      link.href = '#' + path + '-' + p.id;
+      actions.append(link);
+    }
+
+    body.append(actions);
+    card.append(cover, body);
+    list.append(card);
+  }
+}
+
+// 問題ごとの保存名
+function noteKey() {
+  return 'study-note-v3-' + pack.id + '-' + index;
+}
+
+function valid(data) {
+  return (
+    Array.isArray(data) &&
+    data.length <= 5000 &&
+    data.every(s =>
+      s &&
+      ['pen', 'eraser'].includes(s.mode) &&
+      /^#[0-9a-f]{6}$/i.test(s.color) &&
+      Number.isFinite(s.width) &&
+      s.width > 0 &&
+      s.width <= 60 &&
+      Array.isArray(s.points) &&
+      s.points.length <= 30000 &&
+      s.points.every(p =>
+        Number.isFinite(p.x) && Number.isFinite(p.y)
+      )
+    )
+  );
+}
+
+// 手書きノートを描画する
+function render() {
+  ctx.clearRect(0, 0, 1000, 750);
+
+  for (const s of [...strokes, ...(active ? [active] : [])]) {
+    ctx.save();
+
+    ctx.globalCompositeOperation =
+      s.mode === 'eraser' ? 'destination-out' : 'source-over';
+
+    ctx.strokeStyle = s.color;
+    ctx.fillStyle = s.color;
+    ctx.lineWidth = s.width;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.beginPath();
+
+    if (s.points.length === 1) {
+      ctx.arc(
+        s.points[0].x,
+        s.points[0].y,
+        s.width / 2,
+        0,
+        Math.PI * 2
+      );
+      ctx.fill();
+    } else {
+      s.points.forEach((p, i) => {
+        if (i === 0) ctx.moveTo(p.x, p.y);
+        else ctx.lineTo(p.x, p.y);
+      });
+
+      ctx.stroke();
+    }
+
+    ctx.restore();
+  }
+
+  $('undo').disabled = !strokes.length;
+}
+
+function loadNote() {
+  let data = notes.get(noteKey()) || read(noteKey());
+
+  // 前の一次方程式ノートを引き継ぐ
+  if (!data && pack.id === 'math') {
+    data = read('study-note-v1-' + index);
+  }
+
+  strokes = valid(data) ? data : [];
+  render();
+  $('note-status').textContent = 'マウス・指・ペンで書けます';
+}
+
+function saveNote() {
+  notes.set(noteKey(), strokes);
+
+  $('note-status').textContent = write(noteKey(), strokes)
+    ? 'このブラウザーに保存しました'
+    : '自動保存できません。「画像で保存」で残してください。';
+}
+
+function endStroke() {
+  if (!active) return;
+
+  const { pointer, ...stroke } = active;
+  strokes.push(stroke);
+  active = null;
+
+  render();
+  saveNote();
+}
+
+// 問題を表示する
+function showQuestion() {
+  const q = pack.questions[index];
+
+  $('study-title').textContent = pack.title;
+  $('pack-label').textContent = '公式デッキ · ' + pack.subject;
+  $('number').textContent =
+    '問題 ' + (index + 1) + ' / ' + pack.questions.length;
+
+  $('question').textContent = q.q;
+  $('hinttext').textContent = q.hint;
+  $('answer').textContent = q.answer;
+
+  $('instruction').textContent = pack.id === 'math'
+    ? '途中式も書いて、x の値を求めてください。'
+    : '計算や考え方と一緒に、答えを書いてください。';
+
+  const image = $('problem-image');
+  image.hidden = !q.image;
+
+  if (q.image) {
+    image.src = q.image;
+    image.alt = q.alt;
+  } else {
+    image.removeAttribute('src');
+    image.alt = '';
+  }
+
+  $('hint').open = false;
+  $('solution').open = false;
+  $('prev').disabled = index === 0;
+  $('next').disabled = index === pack.questions.length - 1;
+
+  loadNote();
+}
+
+// 暗記シートを表示する
+function memorySheet() {
+  const list = $('memory-list');
+  list.replaceChildren();
+
+  $('memory-title').textContent = pack.title;
+  $('back-study').href = '#study-' + pack.id;
+
+  for (const m of pack.memory) {
+    const card = node('article', undefined, 'card memory-card');
+    const reveal = node('button', 'タップして答えを確認', 'reveal');
+
+    reveal.type = 'button';
+    reveal.setAttribute('aria-expanded', 'false');
+    reveal.dataset.answer = m.answer;
+
+    reveal.onclick = () => revealAnswer(
+      reveal,
+      reveal.getAttribute('aria-expanded') !== 'true'
+    );
+
+    card.append(
+      node('h3', m.term),
+      reveal,
+      node('span', '思い出してから確認しよう', 'memorystate')
+    );
+
+    list.append(card);
+  }
+}
+
+function revealAnswer(button, shown) {
+  button.setAttribute('aria-expanded', String(shown));
+  button.textContent = shown
+    ? button.dataset.answer
+    : 'タップして答えを確認';
+}
+
+// ホーム・問題・暗記画面を切り替える
+function route() {
+  endStroke();
+
+  const parts = location.hash.slice(1).split('-');
+  const screen = parts[0] || 'home';
+  const chosen = packs.find(p => p.id === parts[1]) || packs[0];
+
+  if (chosen.id !== pack.id) {
+    pack = chosen;
+    index = 0;
+  }
+
+  const view = ['study', 'memory'].includes(screen)
+    ? screen
+    : 'home';
+
+  for (const id of ['home', 'study', 'memory']) {
+    $(id + '-screen').hidden = id !== view;
+  }
+
+  $('memory-nav').href = '#memory-' + pack.id;
+
+  if (view === 'study') showQuestion();
+  if (view === 'memory') memorySheet();
+
+  document.title = 'Study Note｜' + (
+    view === 'home'
+      ? 'ホーム'
+      : pack.title + (view === 'memory' ? '・暗記シート' : '')
+  );
+
+  $('feedback').textContent = '';
+}
+
+// マウスや指の位置をノートの座標に変換する
+function position(event) {
+  const rect = canvas.getBoundingClientRect();
+
+  return {
+    x: (event.clientX - rect.left) * 1000 / rect.width,
+    y: (event.clientY - rect.top) * 750 / rect.height
+  };
+}
+
+canvas.addEventListener('pointerdown', event => {
+  if (event.button !== 0 || active) return;
+
+  canvas.setPointerCapture(event.pointerId);
+
+  active = {
+    mode,
+    color: $('color').value,
+    width: mode === 'eraser' ? 32 : Number($('width').value),
+    pointer: event.pointerId,
+    points: [position(event)]
+  };
+
+  render();
+});
+
+canvas.addEventListener('pointermove', event => {
+  if (active?.pointer === event.pointerId) {
+    active.points.push(position(event));
+    render();
+  }
+});
+
+for (const name of [
+  'pointerup',
+  'pointercancel',
+  'lostpointercapture'
+]) {
+  canvas.addEventListener(name, event => {
+    if (active?.pointer === event.pointerId) endStroke();
+  });
+}
+
+// ノートの道具
+for (const name of ['pen', 'eraser']) {
+  $(name).onclick = () => {
+    mode = name;
+
+    for (const tool of ['pen', 'eraser']) {
+      $(tool).classList.toggle('selected', tool === mode);
+      $(tool).setAttribute('aria-pressed', String(tool === mode));
+    }
+  };
+}
+
+$('undo').onclick = () => {
+  endStroke();
+  strokes.pop();
+  render();
+  saveNote();
+};
+
+$('clear').onclick = () => $('confirm').showModal();
+$('cancel').onclick = () => $('confirm').close();
+
+$('confirm-clear').onclick = () => {
+  active = null;
+  strokes = [];
+  render();
+  saveNote();
+  $('confirm').close();
+};
+
+// 前後の問題へ移る
+for (const [name, delta] of [['prev', -1], ['next', 1]]) {
+  $(name).onclick = () => {
+    endStroke();
+
+    const next = index + delta;
+    if (next < 0 || next >= pack.questions.length) return;
+
+    saveNote();
+    index = next;
+    showQuestion();
+  };
+}
+
+// ノートを画像で保存する
+$('download').onclick = () => {
+  endStroke();
+
+  const output = document.createElement('canvas');
+  output.width = 1000;
+  output.height = 850;
+
+  const context = output.getContext('2d');
+  context.fillStyle = 'white';
+  context.fillRect(0, 0, 1000, 850);
+  context.fillStyle = '#1e3554';
+  context.font = '24px sans-serif';
+
+  context.fillText(
+    pack.title + ' / 問題 ' + (index + 1) + ' : ' +
+    pack.questions[index].q,
+    25,
+    45,
+    950
+  );
+
+  context.drawImage(canvas, 0, 100);
+
+  const link = node('a');
+  link.download = 'study-note-' + pack.id + '-' + (index + 1) + '.png';
+  link.href = output.toDataURL('image/png');
+  link.click();
+
+  $('note-status').textContent = '画像の保存を開始しました';
+};
+
+// 暗記シートの一括操作
+$('hide-all').onclick = () => {
+  document.querySelectorAll('.reveal').forEach(
+    button => revealAnswer(button, false)
+  );
+};
+
+$('show-all').onclick = () => {
+  document.querySelectorAll('.reveal').forEach(
+    button => revealAnswer(button, true)
+  );
+};
+
+// 学習タイマー
+let timer = {
+  duration: 1500,
+  remaining: 1500,
+  deadline: null
+};
+
+let timerStarted = false;
+
+const saved = read('study-note-timer-v3');
+
+if (
+  saved &&
+  Number.isInteger(saved.duration) &&
+  saved.duration >= 60 &&
+  saved.duration <= 10800 &&
+  Number.isFinite(saved.remaining) &&
+  saved.remaining >= 0 &&
+  saved.remaining <= saved.duration &&
+  (saved.deadline === null || Number.isFinite(saved.deadline))
+) {
+  timer = saved;
+}
+
+function secondsLeft() {
+  return timer.deadline === null
+    ? timer.remaining
+    : Math.max(0, Math.ceil((timer.deadline - Date.now()) / 1000));
+}
+
+function persistTimer() {
+  if (!write('study-note-timer-v3', timer)) {
+    $('feedback').textContent =
+      'タイマーの状態を保存できません。この画面を開いている間は使えます。';
+  }
+}
+
+function paintTimer() {
+  const seconds = secondsLeft();
+
+  $('clock').textContent =
+    String(Math.floor(seconds / 60)).padStart(2, '0') +
+    ':' +
+    String(seconds % 60).padStart(2, '0');
+
+  $('minutes').disabled = timer.deadline !== null;
+  $('set-time').disabled = timer.deadline !== null;
+
+  $('start-timer').textContent = timer.deadline !== null
+    ? '一時停止'
+    : seconds === 0
+      ? 'もう一度開始'
+      : timerStarted
+        ? '再開'
+        : '開始';
+}
+
+function completeTimer() {
+  timer.remaining = 0;
+  timer.deadline = null;
+  persistTimer();
+
+  $('timer-status').textContent =
+    '時間です！ 一度区切って、学習内容を確認しよう。';
+
+  paintTimer();
+}
+
+function tick() {
+  if (timer.deadline !== null && secondsLeft() === 0) {
+    completeTimer();
+  } else {
+    paintTimer();
+  }
+}
+
+// 分数を設定する
+$('set-time').onclick = () => {
+  const minutes = Number($('minutes').value);
+
+  if (
+    !Number.isInteger(minutes) ||
+    minutes < 1 ||
+    minutes > 180
+  ) {
+    $('feedback').textContent =
+      '時間は 1〜180 分の整数で入力してください。';
+    return;
+  }
+
+  timer = {
+    duration: minutes * 60,
+    remaining: minutes * 60,
+    deadline: null
+  };
+
+  timerStarted = false;
+  persistTimer();
+
+  $('feedback').textContent = '';
+  $('timer-status').textContent = minutes + '分に設定しました';
+
+  paintTimer();
+};
+
+// 開始・一時停止・再開
+$('start-timer').onclick = () => {
+  if (timer.deadline !== null) {
+    timer.remaining = secondsLeft();
+    timer.deadline = null;
+
+    $('timer-status').textContent = timer.remaining === 0
+      ? '時間です！'
+      : '一時停止中';
+  } else {
+    if (timer.remaining === 0) {
+      timer.remaining = timer.duration;
+    }
+
+    timer.deadline = Date.now() + timer.remaining * 1000;
+    timerStarted = true;
+
+    $('timer-status').textContent = '集中して取り組もう';
+  }
+
+  persistTimer();
+  paintTimer();
+};
+
+// リセット
+$('reset-timer').onclick = () => {
+  if (
+    timerStarted &&
+    !window.confirm('タイマーを最初の時間に戻しますか？')
+  ) {
+    return;
+  }
+
+  timer.remaining = timer.duration;
+  timer.deadline = null;
+  timerStarted = false;
+
+  persistTimer();
+  $('timer-status').textContent = 'リセットしました';
+
+  paintTimer();
+};
+
+// 保存されたタイマーを復元する
+$('minutes').value = timer.duration / 60;
+
+timerStarted =
+  timer.deadline !== null ||
+  timer.remaining < timer.duration;
+
+if (timer.deadline !== null) {
+  $('timer-status').textContent = 'タイマーを再開しました';
+} else if (timer.remaining === 0) {
+  $('timer-status').textContent = '前のタイマーは終了しました';
+} else if (timerStarted) {
+  $('timer-status').textContent = '一時停止中';
+}
+
+window.addEventListener('hashchange', route);
+document.addEventListener('visibilitychange', tick);
+
+window.addEventListener('pagehide', () => {
+  endStroke();
+  persistTimer();
+});
+
+// 初期表示
+deckHome();
+route();
+tick();
+setInterval(tick, 250);
+</script>
 </body>
 </html>
