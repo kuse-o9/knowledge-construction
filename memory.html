@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自分で書く暗記ノート｜Study Note</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f3f6fb;
+  color: #182439;
+  font: 16px/1.7 system-ui, sans-serif;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+
+a { color: #2156d9; }
+h1 { font-size: 26px; margin: 18px 0 6px; }
+p { color: #60718b; }
+
+button, select {
+  font: inherit;
+  border: 1px solid #d4deeb;
+  border-radius: 10px;
+  background: white;
+  padding: 9px 14px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+button:focus-visible,
+select:focus-visible,
+[contenteditable]:focus-visible {
+  outline: 3px solid #5495ff;
+  outline-offset: 2px;
+}
+
+.tools {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.red {
+  color: #dc123d;
+  background: #fff0f3;
+}
+
+.active { outline: 2px solid #2156d9; }
+
+#status {
+  font-size: 14px;
+  color: #60718b;
+}
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #dce5f2;
+  border-radius: 18px;
+  background: white;
+  height: 640px;
+  isolation: isolate;
+}
+
+.writing {
+  margin: 0;
+  padding: 28px;
+  font-size: 21px;
+  line-height: 36px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  tab-size: 4;
+  color: #182439;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.writing [data-ink="red"] { color: #ef8080; }
+.writing [data-ink="normal"] { color: #182439; }
+
+.writing:empty:before {
+  content: attr(data-placeholder);
+  color: #8997aa;
+  pointer-events: none;
+}
+
+.sheet {
+  position: absolute;
+  left: 24px;
+  top: 90px;
+  width: 440px;
+  height: 260px;
+  border: 3px solid #f54c60;
+  border-radius: 18px;
+  background: #ef8080;
+  box-shadow: 0 16px 30px #a8393930;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.handle {
+  height: 40px;
+  background: #e60027;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.handle button {
+  min-height: 30px;
+  padding: 0 9px;
+  color: white;
+  background: #b50021;
+  border: 0;
+  font-size: 18px;
+}
+
+.sheet-body {
+  position: relative;
+  height: calc(100% - 40px);
+  overflow: hidden;
+  pointer-events: none;
+  background: #ef8080;
+}
+
+.mirror {
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+  background: #ef8080;
+}
+
+.mirror [data-ink="red"] { color: #ef8080; }
+
+.resize {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 10px 0 0 0;
+  background: #b50021;
+  color: white;
+  padding: 0;
+  min-height: 34px;
+  touch-action: none;
+  cursor: nwse-resize;
+}
+
+.tip { font-size: 14px; }
+
+.arrows {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.arrows button { padding: 4px 12px; }
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.drawing canvas#ink {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+.drawing #editor { pointer-events: none; }
+
+.mirror-canvas {
+  position: absolute;
+  pointer-events: none;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 600px) {
+  main { padding: 14px; }
+  h1 { font-size: 23px; }
+  .writing { padding: 18px; font-size: 18px; }
+  .stage { height: 560px; }
+  .sheet { width: 270px; }
+  .tools button { padding: 8px 10px; }
+}
+</style>
+</head>
+
+<body>
+<main>
+  <a href="index.html">← ホームに戻る</a>
+
+  <h1>自分で書く暗記シートノート</h1>
+  <p>
+    文字を入力したり、手書きしたりできます。
+    覚えたい部分は赤色にして、赤シートを重ねよう。
+  </p>
+
+  <div class="tools" aria-label="ノートの道具">
+    <button id="normal" class="active" aria-pressed="true">
+      黒文字
+    </button>
+
+    <button id="red" class="red" aria-pressed="false">
+      赤文字（隠す）
+    </button>
+
+    <button id="typing" class="active" aria-pressed="true">
+      文字入力
+    </button>
+
+    <button id="pen" aria-pressed="false">手書き</button>
+    <button id="undo-ink">手書きを１つ戻す</button>
+
+    <button id="toggle" class="red" aria-pressed="true">
+      赤シート：表示中
+    </button>
+
+    <label>
+      サイズ
+      <select id="size">
+        <option value="line">一行</option>
+        <option value="small">小</option>
+        <option value="medium" selected>中</option>
+        <option value="large">大</option>
+        <option value="full">全体</option>
+      </select>
+    </label>
+
+    <button id="clear">ノートを全部消す</button>
+    <span id="status" role="status">このブラウザーに自動保存</span>
+  </div>
+
+  <div class="stage" id="stage">
+    <div
+      id="editor"
+      class="writing"
+      contenteditable="true"
+      role="textbox"
+      aria-label="暗記ノート"
+      aria-multiline="true"
+      spellcheck="false"
+      data-placeholder="ここに入力できます。隠したい文字を選んで「赤文字」を押そう。"
+    ></div>
+
+    <canvas
+      id="ink"
+      width="1200"
+      height="640"
+      aria-label="手書き用のノート"
+    ></canvas>
+
+    <div id="sheet" class="sheet">
+      <div
+        id="handle"
+        class="handle"
+        tabindex="0"
+        role="group"
+        aria-label="赤シートの移動。矢印キーでも動かせます"
+      >
+        <strong>⠿ 赤シート</strong>
+        <button id="close" aria-label="赤シートを隠す">×</button>
+      </div>
+
+      <div class="sheet-body">
+        <div
+          id="mirror"
+          class="writing mirror"
+          aria-hidden="true"
+        ></div>
+
+        <canvas
+          id="mirror-ink"
+          class="mirror-canvas"
+          width="1200"
+          height="640"
+          aria-hidden="true"
+        ></canvas>
+      </div>
+
+      <button
+        id="resize"
+        class="resize"
+        aria-label="ドラッグして赤シートの大きさを変更"
+      >↘</button>
+    </div>
+  </div>
+
+  <p class="tip">
+    赤シートの上のバーをドラッグすると移動できます。
+    右下の ↘ で大きさを変えられます。
+    シートを隠すと、その下も編集できます。
+  </p>
+
+  <div class="arrows" aria-label="赤シートを移動">
+    <button data-dx="-24">← 左</button>
+    <button data-dy="-24">↑ 上</button>
+    <button data-dy="24">↓ 下</button>
+    <button data-dx="24">→ 右</button>
+  </div>
+
+  <p class="tip">
+    保存はこの端末・このブラウザーだけです。
+    別の端末との共有は、アカウント機能を作るときに追加します。
+  </p>
+</main>
+
+<script>
+'use strict';
+
+const $ = id => document.getElementById(id);
+
+const editor = $('editor');
+const stage = $('stage');
+const sheet = $('sheet');
+const mirror = $('mirror');
+const ink = $('ink');
+const masked = $('mirror-ink');
+const ctx = ink.getContext('2d');
+const mctx = masked.getContext('2d');
+
+const KEY = 'study-note-personal-memory-v1';
+
+let color = 'normal';
+let mode = 'typing';
+let selection = null;
+let strokes = [];
+let current = null;
+
+let box = { x: 24, y: 90, w: 440, h: 260 };
+let visible = true;
+
+// 保存した内容は、許可した文字と書式だけ読み込みます。
+function clean(html) {
+  const source = new DOMParser().parseFromString(html, 'text/html');
+  const root = document.createElement('div');
+
+  function copy(from, to) {
+    for (const n of from.childNodes) {
+      if (n.nodeType === 3) {
+        to.append(document.createTextNode(n.textContent));
+        continue;
+      }
+
+      if (
+        n.nodeType !== 1 ||
+        ['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT'].includes(n.tagName)
+      ) {
+        continue;
+      }
+
+      if (n.tagName === 'BR') {
+        to.append(document.createElement('br'));
+        continue;
+      }
+
+      const tag = ['DIV', 'P'].includes(n.tagName) ? 'div' : 'span';
+      const out = document.createElement(tag);
+
+      if (['red', 'normal'].includes(n.dataset.ink)) {
+        out.dataset.ink = n.dataset.ink;
+      }
+
+      copy(n, out);
+      to.append(out);
+    }
+  }
+
+  copy(source.body, root);
+  return root.innerHTML;
+}
+
+function validStrokes(a) {
+  return (
+    Array.isArray(a) &&
+    a.length <= 5000 &&
+    a.every(s =>
+      s &&
+      ['red', 'normal'].includes(s.color) &&
+      Array.isArray(s.points) &&
+      s.points.length > 0 &&
+      s.points.length <= 30000 &&
+      s.points.every(p =>
+        Number.isFinite(p.x) &&
+        Number.isFinite(p.y) &&
+        p.x >= 0 && p.x <= 1200 &&
+        p.y >= 0 && p.y <= 640
+      )
+    )
+  );
+}
+
+try {
+  const data = JSON.parse(localStorage.getItem(KEY));
+
+  if (data) {
+    if (typeof data.html === 'string') {
+      editor.innerHTML = clean(data.html);
+    }
+
+    if (validStrokes(data.strokes)) {
+      strokes = data.strokes;
+    }
+  }
+} catch (e) {
+  $('status').textContent = '保存データを読み込めませんでした';
+}
+
+function save() {
+  try {
+    localStorage.setItem(KEY, JSON.stringify({
+      html: clean(editor.innerHTML),
+      strokes
+    }));
+
+    $('status').textContent = 'このブラウザーに保存しました';
+  } catch (e) {
+    $('status').textContent =
+      '保存できません。内容をコピーして控えてください。';
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, 1200, 640);
+  mctx.clearRect(0, 0, 1200, 640);
+
+  const all = [...strokes, ...(current ? [current] : [])];
+
+  for (const s of all) {
+    for (const c of [ctx, mctx]) {
+      c.strokeStyle = s.color === 'red' ? '#ef8080' : '#182439';
+      c.fillStyle = c.strokeStyle;
+      c.lineWidth = 3;
+      c.lineCap = 'round';
+      c.lineJoin = 'round';
+      c.beginPath();
+
+      if (s.points.length === 1) {
+        c.arc(s.points[0].x, s.points[0].y, 1.5, 0, Math.PI * 2);
+        c.fill();
+      } else {
+        s.points.forEach((p, i) => {
+          if (i) c.lineTo(p.x, p.y);
+          else c.moveTo(p.x, p.y);
+        });
+
+        c.stroke();
+      }
+    }
+  }
+
+  $('undo-ink').disabled = strokes.length === 0;
+}
+
+function sync() {
+  mirror.innerHTML = clean(editor.innerHTML);
+  mirror.style.width = stage.clientWidth + 'px';
+  mirror.style.height = stage.clientHeight + 'px';
+  mirror.scrollTop = editor.scrollTop;
+
+  mirror.style.left = -box.x - 3 + 'px';
+  mirror.style.top = -box.y - 43 + 'px';
+
+  masked.style.width = stage.clientWidth + 'px';
+  masked.style.height = stage.clientHeight + 'px';
+  masked.style.left = -box.x - 3 + 'px';
+  masked.style.top = -box.y - 43 + 'px';
+}
+
+function layout() {
+  box.w = Math.max(160, Math.min(box.w, stage.clientWidth));
+  box.h = Math.max(84, Math.min(box.h, stage.clientHeight));
+
+  box.x = Math.max(0, Math.min(box.x, stage.clientWidth - box.w));
+  box.y = Math.max(0, Math.min(box.y, stage.clientHeight - box.h));
+
+  Object.assign(sheet.style, {
+    left: box.x + 'px',
+    top: box.y + 'px',
+    width: box.w + 'px',
+    height: box.h + 'px'
+  });
+
+  sync();
+}
+
+function show(value) {
+  visible = value;
+  sheet.hidden = !value;
+
+  $('toggle').textContent = value
+    ? '赤シート：表示中'
+    : '赤シート：非表示';
+
+  $('toggle').setAttribute('aria-pressed', String(value));
+
+  if (value) layout();
+}
+
+function remember() {
+  const s = getSelection();
+
+  if (
+    s.rangeCount &&
+    editor.contains(s.anchorNode) &&
+    editor.contains(s.focusNode)
+  ) {
+    selection = s.getRangeAt(0).cloneRange();
+  }
+}
+
+document.addEventListener('selectionchange', remember);
+
+function restore() {
+  editor.focus();
+  const s = getSelection();
+
+  if (
+    !selection ||
+    !editor.contains(selection.commonAncestorContainer)
+  ) {
+    selection = document.createRange();
+    selection.selectNodeContents(editor);
+    selection.collapse(false);
+  }
+
+  s.removeAllRanges();
+  s.addRange(selection);
+
+  return selection;
+}
+
+function insert(text) {
+  const r = restore();
+  const span = document.createElement('span');
+
+  span.dataset.ink = color;
+  span.textContent = text;
+
+  r.deleteContents();
+  r.insertNode(span);
+  r.setStartAfter(span);
+  r.collapse(true);
+
+  const s = getSelection();
+  s.removeAllRanges();
+  s.addRange(r);
+
+  selection = r.cloneRange();
+  sync();
+  save();
+}
+
+function setColor(value) {
+  color = value;
+
+  for (const name of ['normal', 'red']) {
+    $(name).classList.toggle('active', name === value);
+    $(name).setAttribute('aria-pressed', String(name === value));
+  }
+
+  if (mode !== 'typing') return;
+
+  const r = restore();
+  const span = document.createElement('span');
+  span.dataset.ink = value;
+
+  if (r.collapsed) {
+    span.textContent = '\u200b';
+    r.insertNode(span);
+    r.setStart(span.firstChild, 1);
+    r.collapse(true);
+  } else {
+    span.append(r.extractContents());
+
+    span.querySelectorAll('[data-ink]').forEach(n => {
+      n.removeAttribute('data-ink');
+    });
+
+    r.insertNode(span);
+    r.selectNodeContents(span);
+  }
+
+  const s = getSelection();
+  s.removeAllRanges();
+  s.addRange(r);
+
+  selection = r.cloneRange();
+  sync();
+  save();
+}
+
+for (const name of ['red', 'normal']) {
+  $(name).addEventListener('pointerdown', e => e.preventDefault());
+  $(name).onclick = () => setColor(name);
+}
+
+for (const name of ['typing', 'pen']) {
+  $(name).onclick = () => {
+    mode = name;
+    stage.classList.toggle('drawing', name === 'pen');
+
+    for (const n of ['typing', 'pen']) {
+      $(n).classList.toggle('active', n === name);
+      $(n).setAttribute('aria-pressed', String(n === name));
+    }
+
+    if (name === 'typing') editor.focus();
+  };
+}
+
+editor.addEventListener('input', () => {
+  remember();
+  sync();
+  save();
+});
+
+editor.addEventListener('scroll', sync);
+
+editor.addEventListener('paste', e => {
+  e.preventDefault();
+  insert(e.clipboardData.getData('text/plain'));
+});
+
+editor.addEventListener('drop', e => e.preventDefault());
+
+function point(e) {
+  const r = ink.getBoundingClientRect();
+
+  return {
+    x: Math.max(0, Math.min(1200,
+      (e.clientX - r.left) * 1200 / r.width
+    )),
+    y: Math.max(0, Math.min(640,
+      (e.clientY - r.top) * 640 / r.height
+    ))
+  };
+}
+
+ink.onpointerdown = e => {
+  if (e.button !== 0 || current) return;
+
+  ink.setPointerCapture(e.pointerId);
+
+  current = {
+    color,
+    points: [point(e)],
+    pointer: e.pointerId
+  };
+
+  draw();
+};
+
+ink.onpointermove = e => {
+  if (current && current.pointer === e.pointerId) {
+    current.points.push(point(e));
+    draw();
+  }
+};
+
+function finish(e) {
+  if (!current || current.pointer !== e.pointerId) return;
+
+  strokes.push({
+    color: current.color,
+    points: current.points
+  });
+
+  current = null;
+  draw();
+  save();
+}
+
+for (const event of [
+  'pointerup',
+  'pointercancel',
+  'lostpointercapture'
+]) {
+  ink.addEventListener(event, finish);
+}
+
+$('undo-ink').onclick = () => {
+  strokes.pop();
+  draw();
+  save();
+};
+
+function drag(target, resizing) {
+  let start = null;
+
+  target.addEventListener('pointerdown', e => {
+    if (e.button !== 0 || e.target.closest('#close')) return;
+
+    e.preventDefault();
+    target.setPointerCapture(e.pointerId);
+
+    start = {
+      id: e.pointerId,
+      clientX: e.clientX,
+      clientY: e.clientY,
+      ...box
+    };
+  });
+
+  target.addEventListener('pointermove', e => {
+    if (!start || start.id !== e.pointerId) return;
+
+    const dx = e.clientX - start.clientX;
+    const dy = e.clientY - start.clientY;
+
+    if (resizing) {
+      box.w = start.w + dx;
+      box.h = start.h + dy;
+    } else {
+      box.x = start.x + dx;
+      box.y = start.y + dy;
+    }
+
+    layout();
+  });
+
+  for (const event of [
+    'pointerup',
+    'pointercancel',
+    'lostpointercapture'
+  ]) {
+    target.addEventListener(event, () => start = null);
+  }
+}
+
+drag($('handle'), false);
+drag($('resize'), true);
+
+$('toggle').onclick = () => show(!visible);
+$('close').onclick = () => show(false);
+
+$('size').onchange = () => {
+  const sizes = {
+    line: [stage.clientWidth - 24, 84],
+    small: [260, 180],
+    medium: [440, 260],
+    large: [700, 400],
+    full: [stage.clientWidth, stage.clientHeight]
+  };
+
+  [box.w, box.h] = sizes[$('size').value];
+
+  if ($('size').value === 'full') {
+    box.x = 0;
+    box.y = 0;
+  }
+
+  show(true);
+};
+
+document.querySelectorAll('[data-dx],[data-dy]').forEach(b => {
+  b.onclick = () => {
+    box.x += Number(b.dataset.dx || 0);
+    box.y += Number(b.dataset.dy || 0);
+    show(true);
+  };
+});
+
+$('handle').onkeydown = e => {
+  if (e.target !== $('handle')) return;
+
+  const movement = {
+    ArrowLeft: [-16, 0],
+    ArrowRight: [16, 0],
+    ArrowUp: [0, -16],
+    ArrowDown: [0, 16]
+  }[e.key];
+
+  if (movement) {
+    e.preventDefault();
+    box.x += movement[0];
+    box.y += movement[1];
+    layout();
+  }
+};
+
+$('clear').onclick = () => {
+  if (confirm('入力した文字と手書きを全部消しますか？')) {
+    editor.replaceChildren();
+    selection = null;
+    strokes = [];
+    current = null;
+    draw();
+    sync();
+    save();
+  }
+};
+
+new ResizeObserver(layout).observe(stage);
+layout();
+draw();
+</script>
+</body>
+</html>
