@@ -1,27 +1,23 @@
 <!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-
-  <meta
-    http-equiv="refresh"
-    content="0;url=account.html?view=admin"
-  >
-
-  <title>管理者ページ｜Study Note</title>
-</head>
-
-<body>
-  <p>
-    <a href="account.html?view=admin">
-      管理者ページを開く
-    </a>
-  </p>
-
-  <p>
-    <a href="index.html">ホームに戻る</a>
-  </p>
-</body>
-</html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>管理者ページ｜Study Note</title><link rel="stylesheet" href="study.css"></head>
+<body><header><nav aria-label="メインメニュー"><a href="index.html">ホーム</a><a href="decks.html">公式デッキ</a><a href="memory.html">自分の暗記ノート</a><a href="account.html">アカウント</a></nav></header>
+<main><h1>管理者ページ</h1><p id="message" role="status" aria-live="polite">利用権限を確認しています…</p><div id="root"></div><p><a href="account.html">ログイン・アカウント設定</a></p></main>
+<script src="config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.102.0"></script><script src="study-client.js"></script>
+<script type="module">
+const root=document.getElementById('root'),message=document.getElementById('message');let generation=0;
+function clear(){generation++;root.replaceChildren();message.textContent='ログイン・利用権限を確認してください。';}
+if(!window.Study || Study.setupError){message.textContent=Study?.setupError || '通信を確認してください。';}
+else {
+ Study.client.auth.onAuthStateChange(event=>{if(event==='SIGNED_OUT') clear();});
+ const ticket=++generation;
+ try {
+  const data=await Study.api('admin_bootstrap');
+  if(ticket===generation){
+   // Both markup and module come only from the authorized server response.
+   root.innerHTML=data.html;
+   const url=URL.createObjectURL(new Blob([data.script],{type:'text/javascript'}));
+   try {const module=await import(url);if(ticket===generation) await module.default(root,data,message);} finally {URL.revokeObjectURL(url);}
+  }
+ } catch(e){root.replaceChildren();message.textContent=e.message;message.classList.add('error');}
+}
+</script></body></html>
