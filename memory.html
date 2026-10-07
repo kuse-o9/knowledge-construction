@@ -1,11 +1,5 @@
 <!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>自分で書く暗記ノート｜Study Note</title>
-
-<style>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>暗記ノート｜Study Note</title><link rel="stylesheet" href="study.css"><style>
 * { box-sizing: border-box; }
 
 body {
@@ -210,128 +204,19 @@ label {
   .sheet { width: 270px; }
   .tools button { padding: 8px 10px; }
 }
-</style>
-</head>
 
-<body>
-<main>
-  <a href="index.html">← ホームに戻る</a>
-
-  <h1>自分で書く暗記シートノート</h1>
-  <p>
-    文字を入力したり、手書きしたりできます。
-    覚えたい部分は赤色にして、赤シートを重ねよう。
-  </p>
-
-  <div class="tools" aria-label="ノートの道具">
-    <button id="normal" class="active" aria-pressed="true">
-      黒文字
-    </button>
-
-    <button id="red" class="red" aria-pressed="false">
-      赤文字（隠す）
-    </button>
-
-    <button id="typing" class="active" aria-pressed="true">
-      文字入力
-    </button>
-
-    <button id="pen" aria-pressed="false">手書き</button>
-    <button id="undo-ink">手書きを１つ戻す</button>
-
-    <button id="toggle" class="red" aria-pressed="true">
-      赤シート：表示中
-    </button>
-
-    <label>
-      サイズ
-      <select id="size">
-        <option value="line">一行</option>
-        <option value="small">小</option>
-        <option value="medium" selected>中</option>
-        <option value="large">大</option>
-        <option value="full">全体</option>
-      </select>
-    </label>
-
-    <button id="clear">ノートを全部消す</button>
-    <span id="status" role="status">このブラウザーに自動保存</span>
-  </div>
-
-  <div class="stage" id="stage">
-    <div
-      id="editor"
-      class="writing"
-      contenteditable="true"
-      role="textbox"
-      aria-label="暗記ノート"
-      aria-multiline="true"
-      spellcheck="false"
-      data-placeholder="ここに入力できます。隠したい文字を選んで「赤文字」を押そう。"
-    ></div>
-
-    <canvas
-      id="ink"
-      width="1200"
-      height="640"
-      aria-label="手書き用のノート"
-    ></canvas>
-
-    <div id="sheet" class="sheet">
-      <div
-        id="handle"
-        class="handle"
-        tabindex="0"
-        role="group"
-        aria-label="赤シートの移動。矢印キーでも動かせます"
-      >
-        <strong>⠿ 赤シート</strong>
-        <button id="close" aria-label="赤シートを隠す">×</button>
-      </div>
-
-      <div class="sheet-body">
-        <div
-          id="mirror"
-          class="writing mirror"
-          aria-hidden="true"
-        ></div>
-
-        <canvas
-          id="mirror-ink"
-          class="mirror-canvas"
-          width="1200"
-          height="640"
-          aria-hidden="true"
-        ></canvas>
-      </div>
-
-      <button
-        id="resize"
-        class="resize"
-        aria-label="ドラッグして赤シートの大きさを変更"
-      >↘</button>
-    </div>
-  </div>
-
-  <p class="tip">
-    赤シートの上のバーをドラッグすると移動できます。
-    右下の ↘ で大きさを変えられます。
-    シートを隠すと、その下も編集できます。
-  </p>
-
-  <div class="arrows" aria-label="赤シートを移動">
-    <button data-dx="-24">← 左</button>
-    <button data-dy="-24">↑ 上</button>
-    <button data-dy="24">↓ 下</button>
-    <button data-dx="24">→ 右</button>
-  </div>
-
-  <p class="tip">
-    保存はこの端末・このブラウザーだけです。
-    別の端末との共有は、アカウント機能を作るときに追加します。
-  </p>
-</main>
-
+body{background:#f5f7f7}.memory-main{max-width:1260px;margin:28px auto;padding:0 24px}.memory-main h1{font-size:30px;margin:7px 0;color:#fff}.memory-main .hero{margin-bottom:18px}.memory-main .hero p{margin:0;max-width:680px}.tools{margin:0;gap:0;display:grid;grid-template-columns:1.1fr 1fr 1.35fr;border:1px solid #dce5e8;background:#fff;border-radius:14px;overflow:hidden}.tool-group{padding:16px;border-right:1px solid #e1e8e8;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.tool-group:last-child{border-right:0}.tool-label{flex-basis:100%;font-size:11px;letter-spacing:.6px;color:#718389;font-weight:700;margin-bottom:5px}.tools button{min-height:40px;font-size:13px;margin:0;color:#3b5460;background:#f4f7f6;border-color:#e1e8e7}.tools button.active{background:#e5f3eb;color:#1c6a5f;outline:0;border:1px solid #5caa96;box-shadow:inset 0 0 0 1px #5caa96}.tools button.red{color:#b84453;background:#fff0f2}.tools button.red.active{background:#ffe8ec;border-color:#d77486;box-shadow:inset 0 0 0 1px #d77486}.tools label{display:flex;font-size:12px;margin:0;font-weight:500;gap:6px}.tools select{min-height:40px;font-size:13px;padding:6px;width:90px;margin:0}.notebook-shell{margin-top:20px;background:#e9eeed;border:1px solid #dce5e2;border-radius:16px;padding:12px}.notebook-top{display:flex;align-items:center;justify-content:space-between;padding:2px 8px 12px;gap:12px}.notebook-top span{font-size:12px;color:#617672}.notebook-top strong{font-size:13px;color:#31594d}.stage{background:#fff;background-image:linear-gradient(#eaf0f2 1px,transparent 1px);background-size:100% 36px;border-radius:10px;box-shadow:0 4px 12px #243d3510}.sheet{box-shadow:0 8px 20px #783e3e25;border-radius:10px}.handle{border-radius:6px 6px 0 0;font-size:13px}.tip-row{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:12px}.memory-main .tip{font-size:12px;margin:0;color:#6b7b82}.arrows button{font-size:12px;min-height:36px;margin:0;background:#fff;color:#526765;border-color:#d5e1dc}.memory-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:16px 0 28px}.memory-footer #clear{background:transparent;color:#a4534e;border-color:#e2c9c5;font-size:12px;min-height:38px}.memory-footer p{font-size:12px;margin:0;max-width:750px}.writing:empty:before{font-size:17px}.memory-main .eyebrow{color:#a5d8cb}@media(max-width:900px){.tools{grid-template-columns:1fr}.tool-group{border-right:0;border-bottom:1px solid #e1e8e8}.tool-group:last-child{border-bottom:0}.tool-label{flex-basis:auto;width:75px;margin:0}.tip-row,.memory-footer{align-items:flex-start;flex-direction:column;gap:12px}}@media(max-width:600px){.memory-main{padding:0 12px;margin:18px auto}.memory-main h1{font-size:25px}.notebook-shell{padding:7px}.tool-group{padding:12px}.stage{height:560px}.notebook-top{flex-wrap:wrap}.notebook-top #status{font-size:11px}.memory-main .hero{padding:22px}.writing:empty:before{font-size:15px}}
+</style></head>
+<body><header><div class="site-nav"><a class="brand" href="index.html"><span>Study</span> Note</a><nav aria-label="メインメニュー"><a href="index.html">ホーム</a><a href="decks.html">デッキ</a><a href="memory.html" aria-current="page">暗記ノート</a><a href="account.html">アカウント</a></nav></div></header>
+<main class="memory-main"><div class="hero"><div><div class="eyebrow">書く・隠す・思い出す</div><h1>書いて覚える、暗記ノート。</h1><p>大事なところを赤で書いて、シートで隠す。<br>思い出せるまで、自分のペースで繰り返そう。</p></div></div>
+<div class="tools" aria-label="ノートの道具"><div class="tool-group"><span class="tool-label">① 書き方</span><button id="typing" class="active" aria-pressed="true">文字入力</button><button id="pen" aria-pressed="false">✎ 手書き</button><button id="undo-ink">１つ戻す</button></div>
+<div class="tool-group"><span class="tool-label">② 文字の色</span><button id="normal" class="active" aria-pressed="true">● 黒で書く</button><button id="red" class="red" aria-pressed="false">● 赤で書く・隠す</button></div>
+<div class="tool-group"><span class="tool-label">③ 隠して覚える</span><button id="toggle" class="red" aria-pressed="true">赤シート：表示中</button><label>大きさ<select id="size"><option value="line">一行</option><option value="small">小</option><option value="medium" selected>中</option><option value="large">大</option><option value="full">全体</option></select></label></div></div>
+<div class="notebook-shell"><div class="notebook-top"><strong>自分の暗記ノート</strong><span id="status" role="status" aria-live="polite">このブラウザーに自動保存</span></div>
+<div class="stage" id="stage"><div id="editor" class="writing" contenteditable="true" role="textbox" aria-label="暗記ノート" aria-multiline="true" spellcheck="false" data-placeholder="ここにノートを書こう。隠したい文字を選んで「赤で書く・隠す」を押すと、赤文字にできます。"></div>
+<canvas id="ink" width="1200" height="640" aria-label="手書き用のノート"></canvas><div id="sheet" class="sheet"><div id="handle" class="handle" tabindex="0" role="group" aria-label="赤シートの移動。矢印キーでも動かせます"><strong>⠿ つかんで動かす</strong><button id="close" aria-label="赤シートを隠す">×</button></div><div class="sheet-body"><div id="mirror" class="writing mirror" aria-hidden="true"></div><canvas id="mirror-ink" class="mirror-canvas" width="1200" height="640" aria-hidden="true"></canvas></div><button id="resize" class="resize" aria-label="ドラッグして赤シートの大きさを変更">↘</button></div></div></div>
+<div class="tip-row"><p class="tip">赤シートは上のバーで移動、右下の ↘ で大きさを変更。シートを隠すと、その下を編集できます。</p><div class="arrows" aria-label="赤シートを移動"><button data-dx="-24">← 左</button><button data-dy="-24">↑ 上</button><button data-dy="24">↓ 下</button><button data-dx="24">→ 右</button></div></div>
+<div class="memory-footer"><p class="muted">ノートはこの端末・このブラウザーに保存します。ログインしても別の端末には同期されません。ブラウザーのデータを消すと、ノートも消えます。</p><button id="clear">ノートを全部消す</button></div></main>
 <script>
 'use strict';
 
@@ -821,6 +706,4 @@ $('clear').onclick = () => {
 new ResizeObserver(layout).observe(stage);
 layout();
 draw();
-</script>
-</body>
-</html>
+</script></body></html>
