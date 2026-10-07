@@ -101,12 +101,11 @@ footer{font-size:14px;color:#627188;margin-top:24px}
   <a class="brand" href="#home"><span>Study</span> Note</a>
   <nav class="nav" aria-label="メインメニュー">
     <a class="btn" href="#home">ホーム</a>
+    <a class="btn" href="decks.html">デッキ</a>
     <a class="btn" id="memory-nav" href="#memory-math">暗記シート</a>
- <a class="btn" href="memory.html">自分で書く暗記ノート</a> 
+    <a class="btn" href="memory.html">暗記ノート</a>
     <a class="btn" href="account.html">アカウント</a>
-<a class="btn" href="admin.html">管理者ページ</a>
- <a class="btn" href="decks.html">公式デッキ</a>
-  <a class="btn" href="decks.html">公式デッキ</a>
+    <a class="btn" href="admin.html">管理者ページ</a>
   </nav>
 </header>
 
@@ -133,12 +132,12 @@ footer{font-size:14px;color:#627188;margin-top:24px}
       <div class="eyebrow">ホーム</div>
       <h1>今日の勉強を始めよう。</h1>
       <p class="secondary">
-        公式デッキを選んで、書く練習と暗記を使い分けよう。
+        デッキを選んで、書く練習と暗記を使い分けよう。
       </p>
     </div>
     <div id="deck-list" class="decks"></div>
     <div class="notice">
-      「公式」は、このアプリに最初から入っている問題パックの名称です。
+      ホームにある問題パックは、このアプリに最初から入っている練習問題です。
       学校や試験団体の公式教材ではありません。
     </div>
   </section>
@@ -309,7 +308,7 @@ const angle = diagram(
   '<text x="285" y="160">x°</text></g>'
 );
 
-// 公式デッキ
+// デッキ
 const packs = [
   {
     id: 'math',
@@ -478,7 +477,7 @@ function node(tag, text, className) {
   return element;
 }
 
-// ホームに公式デッキを表示する
+// ホームにデッキを表示する
 function deckHome() {
   const list = $('deck-list');
 
@@ -495,7 +494,7 @@ function deckHome() {
     const body = node('div', undefined, 'deckbody');
 
     body.append(
-      node('div', '公式デッキ · ' + p.subject, 'official'),
+      node('div', 'デッキ · ' + p.subject, 'official'),
       node('h2', p.title),
       node('p', p.description),
       node('p', p.questions.length + '問 / 暗記カード ' + p.memory.length + '枚')
@@ -621,7 +620,7 @@ function showQuestion() {
   const q = pack.questions[index];
 
   $('study-title').textContent = pack.title;
-  $('pack-label').textContent = '公式デッキ · ' + pack.subject;
+  $('pack-label').textContent = 'デッキ · ' + pack.subject;
   $('number').textContent =
     '問題 ' + (index + 1) + ' / ' + pack.questions.length;
 
