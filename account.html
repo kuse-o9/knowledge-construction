@@ -6,857 +6,151 @@
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex,nofollow">
 <title>アカウント｜Study Note</title>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #f2f5fb;
-  color: #182439;
-  font: 16px/1.7 system-ui, sans-serif;
-}
-
-header {
-  padding: 16px 24px;
-  background: white;
-  border-bottom: 1px solid #dae3f0;
-}
-
-nav {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-a {
-  color: #2156d9;
-}
-
-main {
-  max-width: 840px;
-  margin: auto;
-  padding: 24px 16px;
-}
-
-h1 {
-  font-size: 28px;
-  margin: 8px 0;
-}
-
-h2 {
-  font-size: 21px;
-  margin: 0 0 14px;
-}
-
-p {
-  margin: 8px 0 16px;
-}
-
-.muted {
-  color: #61708a;
-  font-size: 14px;
-}
-
-.card {
-  background: white;
-  border: 1px solid #dbe4f1;
-  border-radius: 16px;
-  padding: 22px;
-  margin: 16px 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.grid .card {
-  margin: 0;
-}
-
-label {
-  display: block;
-  margin: 12px 0 5px;
-}
-
-input {
-  display: block;
-  width: 100%;
-  font: inherit;
-  border: 1px solid #b8c8dd;
-  border-radius: 9px;
-  padding: 10px;
-}
-
-button {
-  font: inherit;
-  min-height: 44px;
-  border: 1px solid #c2d1e5;
-  border-radius: 9px;
-  padding: 9px 15px;
-  background: white;
-  cursor: pointer;
-}
-
-button.primary {
-  background: #2156d9;
-  color: white;
-  border-color: #2156d9;
-}
-
-button:disabled {
-  opacity: .55;
-  cursor: wait;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible {
-  outline: 3px solid #75a7ff;
-  outline-offset: 3px;
-}
-
-form button {
-  margin-top: 16px;
-}
-
-.actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-#message {
-  padding: 12px 16px;
-  background: #e8effc;
-  border-radius: 10px;
-  min-height: 48px;
-  overflow-wrap: anywhere;
-}
-
-#message.error {
-  background: #fff0f1;
-  color: #a51a34;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-.number {
-  font-size: 32px;
-  color: #2156d9;
-  font-weight: 800;
-}
-
-.stats {
-  display: flex;
-  gap: 36px;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 650px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  header {
-    padding: 14px 16px;
-  }
-}
+*{box-sizing:border-box}body{margin:0;background:#f2f5fb;color:#182439;font:16px/1.7 system-ui,sans-serif}header{padding:16px 24px;background:white;border-bottom:1px solid #dae3f0}nav{display:flex;gap:14px;flex-wrap:wrap}a{color:#2156d9}main{max-width:840px;margin:auto;padding:24px 16px}h1{font-size:28px;margin:8px 0}h2{font-size:21px;margin:0 0 14px}p{margin:8px 0 16px}.muted{color:#61708a;font-size:14px}.card{background:white;border:1px solid #dbe4f1;border-radius:16px;padding:22px;margin:16px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid .card{margin:0}label{display:block;margin:12px 0 5px}input{display:block;width:100%;font:inherit;border:1px solid #b8c8dd;border-radius:9px;padding:10px}button{font:inherit;min-height:44px;border:1px solid #c2d1e5;border-radius:9px;padding:9px 15px;background:white;cursor:pointer}button.primary{background:#2156d9;color:white;border-color:#2156d9}button:disabled{opacity:.55;cursor:wait}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #75a7ff;outline-offset:3px}form button{margin-top:16px}.actions{display:flex;gap:10px;flex-wrap:wrap}#message{padding:12px 16px;background:#e8effc;border-radius:10px;min-height:48px;overflow-wrap:anywhere}#message.error{background:#fff0f1;color:#a51a34}[hidden]{display:none!important}.number{font-size:32px;color:#2156d9;font-weight:800}.stats{display:flex;gap:36px;flex-wrap:wrap}@media(max-width:650px){.grid{grid-template-columns:1fr}header{padding:14px 16px}}
 </style>
 </head>
-
 <body>
-<header>
-  <nav aria-label="メインメニュー">
-    <a href="index.html">ホーム</a>
-    <a href="memory.html">自分の暗記ノート</a>
-    <a href="account.html">アカウント</a>
-    <a href="admin.html">管理者ページ</a>
-  </nav>
-</header>
-
+<header><nav aria-label="メインメニュー"><a href="index.html">ホーム</a><a href="decks.html">公式デッキ</a><a href="memory.html">自分の暗記ノート</a><a href="account.html">アカウント</a><a href="admin.html">管理者ページ</a></nav></header>
 <main>
-  <h1 id="title">アカウント</h1>
+<h1 id="title">アカウント</h1>
+<p class="muted">メールアドレスで登録して、ログインできます。</p>
+<p id="message" role="status" aria-live="polite">接続を確認しています…</p>
+<section id="setup" class="card" hidden><h2>接続設定が必要です</h2><p>Supabaseでプロジェクトを作成し、config.jsに公開用の接続設定を入れてください。</p><p class="muted">秘密鍵・管理者パスワードはこのファイルに入れません。</p></section>
+<div id="guest" class="grid" hidden>
+<section class="card"><h2>ログイン</h2><form id="login">
+<label for="login-email">メールアドレス</label><input id="login-email" type="email" autocomplete="username" required maxlength="254">
+<label for="login-password">パスワード</label><input id="login-password" type="password" autocomplete="current-password" required maxlength="128">
+<button class="primary">ログイン</button></form></section>
+<section class="card"><h2>アカウントを作る</h2><form id="signup">
+<label for="nickname">ニックネーム</label><input id="nickname" autocomplete="nickname" required maxlength="30">
+<label for="signup-email">メールアドレス</label><input id="signup-email" type="email" autocomplete="email" required maxlength="254">
+<label for="signup-password">パスワード（10文字以上）</label><input id="signup-password" type="password" autocomplete="new-password" required minlength="10" maxlength="128">
+<label for="signup-again">パスワードをもう一度</label><input id="signup-again" type="password" autocomplete="new-password" required minlength="10" maxlength="128">
+<button class="primary">登録する</button></form><p class="muted">メールアドレスと認証情報はSupabaseで管理します。確認メールのリンクを開いて登録を完了してください。</p></section>
+</div>
+<section id="reset-box" class="card" hidden><h2>パスワードを忘れたとき</h2><form id="reset">
+<label for="reset-email">メールアドレス</label><input id="reset-email" type="email" autocomplete="email" required maxlength="254"><button>再設定メールを依頼する</button>
+</form></section>
+<section id="member" class="card" hidden><h2>ログイン中</h2><p id="who"></p><p id="mail" class="muted"></p><div class="actions"><button id="logout">ログアウト</button></div><p class="muted">問題ノートと暗記ノートは、今はこのブラウザーに保存されます。アカウント間の保存先の分離と端末間の共有は、今後追加します。</p></section>
+<section id="password-box" class="card" hidden><h2 id="password-title">パスワードを変更する</h2><form id="password">
+<div id="current-row"><label for="current-password">現在のパスワード</label><input id="current-password" type="password" autocomplete="current-password" maxlength="128"></div>
+<label for="new-password">新しいパスワード（10文字以上）</label><input id="new-password" type="password" autocomplete="new-password" required minlength="10" maxlength="128">
+<label for="new-again">新しいパスワードをもう一度</label><input id="new-again" type="password" autocomplete="new-password" required minlength="10" maxlength="128">
+<button class="primary">パスワードを更新する</button></form><p class="muted">変更通知は、メール配信と「パスワード変更通知」を有効にした後、サービス側から送信されます。</p></section>
 
-  <p class="muted">
-    メールアドレスで登録して、ログインできます。
-  </p>
 
-  <p id="message" role="status" aria-live="polite">
-    接続を確認しています…
-  </p>
-
-  <section id="setup" class="card" hidden>
-    <h2>接続設定が必要です</h2>
-    <p>
-      Supabaseでプロジェクトを作成し、
-      config.jsに公開用の接続設定を入れてください。
-    </p>
-    <p class="muted">
-      秘密鍵・管理者パスワードはこのファイルに入れません。
-    </p>
-  </section>
-
-  <div id="guest" class="grid" hidden>
-    <section class="card">
-      <h2>ログイン</h2>
-
-      <form id="login">
-        <label for="login-email">メールアドレス</label>
-        <input
-          id="login-email"
-          type="email"
-          autocomplete="username"
-          required
-          maxlength="254"
-        >
-
-        <label for="login-password">パスワード</label>
-        <input
-          id="login-password"
-          type="password"
-          autocomplete="current-password"
-          required
-          maxlength="128"
-        >
-
-        <button class="primary">ログイン</button>
-      </form>
-    </section>
-
-    <section class="card">
-      <h2>アカウントを作る</h2>
-
-      <form id="signup">
-        <label for="nickname">ニックネーム</label>
-        <input
-          id="nickname"
-          autocomplete="nickname"
-          required
-          maxlength="30"
-        >
-
-        <label for="signup-email">メールアドレス</label>
-        <input
-          id="signup-email"
-          type="email"
-          autocomplete="email"
-          required
-          maxlength="254"
-        >
-
-        <label for="signup-password">
-          パスワード（10文字以上）
-        </label>
-        <input
-          id="signup-password"
-          type="password"
-          autocomplete="new-password"
-          required
-          minlength="10"
-          maxlength="128"
-        >
-
-        <label for="signup-again">
-          パスワードをもう一度
-        </label>
-        <input
-          id="signup-again"
-          type="password"
-          autocomplete="new-password"
-          required
-          minlength="10"
-          maxlength="128"
-        >
-
-        <button class="primary">登録する</button>
-      </form>
-
-      <p class="muted">
-        メールアドレスと認証情報はSupabaseで管理します。
-        確認メールのリンクを開いて登録を完了してください。
-      </p>
-    </section>
-  </div>
-
-  <section id="reset-box" class="card" hidden>
-    <h2>パスワードを忘れたとき</h2>
-
-    <form id="reset">
-      <label for="reset-email">メールアドレス</label>
-      <input
-        id="reset-email"
-        type="email"
-        autocomplete="email"
-        required
-        maxlength="254"
-      >
-
-      <button>再設定メールを依頼する</button>
-    </form>
-  </section>
-
-  <section id="member" class="card" hidden>
-    <h2>ログイン中</h2>
-    <p id="who"></p>
-    <p id="mail" class="muted"></p>
-
-    <div class="actions">
-      <button id="logout">ログアウト</button>
-    </div>
-
-    <p class="muted">
-      問題ノートと暗記ノートは、
-      今はこのブラウザーに保存されます。
-      アカウント間の保存先の分離と端末間の共有は、
-      今後追加します。
-    </p>
-  </section>
-
-  <section id="password-box" class="card" hidden>
-    <h2 id="password-title">パスワードを変更する</h2>
-
-    <form id="password">
-      <div id="current-row">
-        <label for="current-password">
-          現在のパスワード
-        </label>
-        <input
-          id="current-password"
-          type="password"
-          autocomplete="current-password"
-          maxlength="128"
-        >
-      </div>
-
-      <label for="new-password">
-        新しいパスワード（10文字以上）
-      </label>
-      <input
-        id="new-password"
-        type="password"
-        autocomplete="new-password"
-        required
-        minlength="10"
-        maxlength="128"
-      >
-
-      <label for="new-again">
-        新しいパスワードをもう一度
-      </label>
-      <input
-        id="new-again"
-        type="password"
-        autocomplete="new-password"
-        required
-        minlength="10"
-        maxlength="128"
-      >
-
-      <button class="primary">
-        パスワードを更新する
-      </button>
-    </form>
-
-    <p class="muted">
-      変更通知は、メール配信と「パスワード変更通知」を
-      有効にした後、サービス側から送信されます。
-    </p>
-  </section>
-
-  <section id="admin-box" class="card" hidden>
-    <h2>管理者ダッシュボード</h2>
-    <p>管理者の権限をサーバーで確認しました。</p>
-
-    <div class="stats">
-      <div>
-        登録アカウント数
-        <div id="users-count" class="number"></div>
-      </div>
-
-      <div>
-        管理者数
-        <div id="admins-count" class="number"></div>
-      </div>
-    </div>
-
-    <button id="refresh-admin">
-      最新の状態に更新
-    </button>
-
-    <p class="muted">
-      画像付き問題の作成・BAN・アカウント削除は
-      ③で追加します。
-    </p>
-  </section>
-
-  <section id="denied" class="card" hidden>
-    <h2>管理者専用のページです</h2>
-    <p>
-      管理者に登録されたアカウントで
-      ログインしてください。
-    </p>
-  </section>
 </main>
-
 <script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.102.0"></script>
-
 <script>
 'use strict';
-
 const $ = id => document.getElementById(id);
-
-const adminView =
-  new URLSearchParams(location.search).get('view') === 'admin';
-
+if (new URLSearchParams(location.search).get('view') === 'admin') location.replace('admin.html');
 const callback = new URL('account.html', location.href).href;
-
-let client = null;
-
-let recovery =
-  new URLSearchParams(location.hash.slice(1)).get('type')
-  === 'recovery';
-
-const linkFailed =
-  new URLSearchParams(location.hash.slice(1)).has('error');
-
-let busy = false;
-let generation = 0;
-
-function message(text, error = false) {
-  $('message').textContent = text;
-  $('message').classList.toggle('error', error);
-}
-
-function clearPrivate() {
-  for (const id of [
-    'member',
-    'password-box',
-    'admin-box',
-    'denied'
-  ]) {
-    $(id).hidden = true;
-  }
-
-  for (const id of [
-    'who',
-    'mail',
-    'users-count',
-    'admins-count'
-  ]) {
-    $(id).textContent = '';
-  }
-}
-
+let client = null, recovery = new URLSearchParams(location.hash.slice(1)).get('type') === 'recovery';
+const linkFailed = new URLSearchParams(location.hash.slice(1)).has('error');
+let busy = false, generation = 0;
+function message(text, error = false) { $('message').textContent = text; $('message').classList.toggle('error', error); }
+function clearPrivate() { for (const id of ['member','password-box']) $(id).hidden = true; for (const id of ['who','mail']) $(id).textContent = ''; }
 function explain(error) {
-  const messages = {
-    invalid_credentials:
-      'メールアドレスかパスワードが違います。',
-
-    email_not_confirmed:
-      '確認メールのリンクを開いてからログインしてください。',
-
-    over_email_send_rate_limit:
-      'メールの送信上限に達しました。少し待ってからお試しください。',
-
-    over_request_rate_limit:
-      '操作が続いたため、少し待ってからお試しください。',
-
-    weak_password:
-      'パスワードが条件を満たしていません。別のパスワードにしてください。',
-
-    same_password:
-      '現在とは違うパスワードにしてください。',
-
-    reauthentication_needed:
-      'ログインし直してから、もう一度変更してください。',
-
-    invalid_current_password:
-      '現在のパスワードが違います。',
-
-    session_not_found:
-      'もう一度ログインしてください。',
-
-    user_banned:
-      'このアカウントではログインできません。'
-  };
-
-  if (messages[error?.code]) {
-    return messages[error.code];
-  }
-
-  if (error?.code === '42501') {
-    return '管理者の権限がありません。';
-  }
-
-  return (
-    '処理できませんでした。接続設定・メール設定を確認し、' +
-    'もう一度お試しください。'
-  );
+ const messages = {
+  invalid_credentials: 'メールアドレスかパスワードが違います。',
+  email_not_confirmed: '確認メールのリンクを開いてからログインしてください。',
+  over_email_send_rate_limit: 'メールの送信上限に達しました。少し待ってからお試しください。',
+  over_request_rate_limit: '操作が続いたため、少し待ってからお試しください。',
+  weak_password: 'パスワードが条件を満たしていません。別のパスワードにしてください。',
+  same_password: '現在とは違うパスワードにしてください。',
+  reauthentication_needed: 'ログインし直してから、もう一度変更してください。',
+  invalid_current_password: '現在のパスワードが違います。',
+  session_not_found: 'もう一度ログインしてください。',
+  user_banned: 'このアカウントではログインできません。'
+ };
+ if (messages[error?.code]) return messages[error.code];
+ if (error?.code === '42501') return '管理者の権限がありません。';
+ return '処理できませんでした。接続設定・メール設定を確認し、もう一度お試しください。';
 }
-
 async function refresh() {
-  const ticket = ++generation;
+ const ticket = ++generation;
+ clearPrivate(); $('guest').hidden = true; $('reset-box').hidden = true;
+ const { data, error } = await client.auth.getUser();
+ if (ticket !== generation) return;
+ const user = error ? null : data.user;
+ if (!user) { $('guest').hidden = false; $('reset-box').hidden = false; return; }
+ const access = await client.rpc('study_account_access');
+ if (ticket !== generation) return;
+ if (access.error || access.data !== true) { message(access.error ? '接続設定を確認してください。' : 'このアカウントの利用は停止されています。', true); $('member').hidden = false; $('who').textContent = 'ログアウトしてアカウントを確認してください。'; return; }
+ $('member').hidden = false; $('password-box').hidden = false;
+ $('mail').textContent = user.email || '';
+ $('who').textContent = 'アカウントでログインしています';
+ $('current-row').hidden = recovery; $('current-password').required = !recovery;
+ $('password-title').textContent = recovery ? '新しいパスワードを設定する' : 'パスワードを変更する';
+ const profile = await client.from('study_profiles').select('nickname').eq('id', user.id).maybeSingle();
+ if (ticket !== generation) return;
+ if (profile.data) $('who').textContent = profile.data.nickname + ' さん';
 
-  clearPrivate();
-  $('guest').hidden = true;
-  $('reset-box').hidden = true;
-
-  const { data, error } = await client.auth.getUser();
-
-  if (ticket !== generation) return;
-
-  const user = error ? null : data.user;
-
-  if (!user) {
-    $('guest').hidden = false;
-    $('reset-box').hidden = false;
-
-    if (adminView) {
-      $('denied').hidden = false;
-    }
-
-    return;
-  }
-
-  $('member').hidden = false;
-  $('password-box').hidden = false;
-
-  $('mail').textContent = user.email || '';
-  $('who').textContent = 'アカウントでログインしています';
-
-  $('current-row').hidden = recovery;
-  $('current-password').required = !recovery;
-
-  $('password-title').textContent = recovery
-    ? '新しいパスワードを設定する'
-    : 'パスワードを変更する';
-
-  const profile = await client
-    .from('study_profiles')
-    .select('nickname')
-    .eq('id', user.id)
-    .maybeSingle();
-
-  if (ticket !== generation) return;
-
-  if (profile.data) {
-    $('who').textContent = profile.data.nickname + ' さん';
-  }
-
-  if (adminView) {
-    const result = await client.rpc('study_admin_summary');
-
-    if (ticket !== generation) return;
-
-    if (result.error) {
-      $('denied').hidden = false;
-
-      message(
-        result.error.code === '42501'
-          ? 'このアカウントには管理者の権限がありません。'
-          : '管理者情報を取得できません。SupabaseのSQL設定を確認してください。',
-        true
-      );
-    } else {
-      $('admin-box').hidden = false;
-
-      $('users-count').textContent =
-        String(result.data.accounts);
-
-      $('admins-count').textContent =
-        String(result.data.admins);
-    }
-  }
 }
-
 async function action(work) {
-  if (!client || busy) return;
-
-  busy = true;
-
-  document.querySelectorAll('button').forEach(button => {
-    button.disabled = true;
-  });
-
-  try {
-    await work();
-  } catch (error) {
-    message(explain(error), true);
-  } finally {
-    busy = false;
-
-    document.querySelectorAll('button').forEach(button => {
-      button.disabled = !client;
-    });
-  }
+ if (!client || busy) return;
+ busy = true; document.querySelectorAll('button').forEach(b => b.disabled = true);
+ try { await work(); } catch (error) { message(explain(error), true); }
+ finally { busy = false; document.querySelectorAll('button').forEach(b => b.disabled = !client); }
 }
-
-$('login').onsubmit = event => {
-  event.preventDefault();
-
-  action(async () => {
-    const password = $('login-password').value;
-    $('login-password').value = '';
-
-    const { error } = await client.auth.signInWithPassword({
-      email: $('login-email').value.trim(),
-      password
-    });
-
-    if (error) throw error;
-
-    recovery = false;
-    message('ログインしました。');
-
-    await refresh();
-  });
-};
-
-$('signup').onsubmit = event => {
-  event.preventDefault();
-
-  action(async () => {
-    const password = $('signup-password').value;
-
-    if (password !== $('signup-again').value) {
-      message('２つのパスワードが一致していません。', true);
-      return;
-    }
-
-    const nickname = $('nickname').value.trim();
-
-    if (!nickname) {
-      message('ニックネームを入力してください。', true);
-      return;
-    }
-
-    $('signup-password').value = '';
-    $('signup-again').value = '';
-
-    const { error } = await client.auth.signUp({
-      email: $('signup-email').value.trim(),
-      password,
-      options: {
-        emailRedirectTo: callback,
-        data: { nickname }
-      }
-    });
-
-    if (error) throw error;
-
-    message(
-      '登録できる場合、確認メールが届きます。' +
-      'メール内のリンクを開いてください。'
-    );
-
-    await refresh();
-  });
-};
-
-$('reset').onsubmit = event => {
-  event.preventDefault();
-
-  action(async () => {
-    const { error } =
-      await client.auth.resetPasswordForEmail(
-        $('reset-email').value.trim(),
-        { redirectTo: callback }
-      );
-
-    if (error) throw error;
-
-    message(
-      '対象のアカウントがある場合、再設定メールが届きます。' +
-      'メールをご確認ください。'
-    );
-  });
-};
-
-$('password').onsubmit = event => {
-  event.preventDefault();
-
-  action(async () => {
-    const password = $('new-password').value;
-
-    if (password !== $('new-again').value) {
-      message(
-        '２つの新しいパスワードが一致していません。',
-        true
-      );
-      return;
-    }
-
-    const attributes = { password };
-
-    if (!recovery) {
-      attributes.current_password =
-        $('current-password').value;
-    }
-
-    $('new-password').value = '';
-    $('new-again').value = '';
-    $('current-password').value = '';
-
-    const { error } =
-      await client.auth.updateUser(attributes);
-
-    if (error) throw error;
-
-    recovery = false;
-
-    message(
-      'パスワードを変更しました。' +
-      '変更通知はサービス側のメール設定に従って送信されます。'
-    );
-
-    await refresh();
-  });
-};
-
-$('logout').onclick = () => {
-  action(async () => {
-    const { error } = await client.auth.signOut({
-      scope: 'local'
-    });
-
-    if (error) throw error;
-
-    recovery = false;
-    generation++;
-
-    clearPrivate();
-    message('ログアウトしました。');
-
-    await refresh();
-  });
-};
-
-$('refresh-admin').onclick = () => action(refresh);
-
+$('login').onsubmit = e => { e.preventDefault(); action(async () => {
+ const password = $('login-password').value; $('login-password').value = '';
+ const { error } = await client.auth.signInWithPassword({ email: $('login-email').value.trim(), password });
+ if (error) throw error;
+ recovery = false; message('ログインしました。'); await refresh();
+}); };
+$('signup').onsubmit = e => { e.preventDefault(); action(async () => {
+ const password = $('signup-password').value;
+ if (password !== $('signup-again').value) { message('２つのパスワードが一致していません。', true); return; }
+ const nickname = $('nickname').value.trim();
+ if (!nickname) { message('ニックネームを入力してください。', true); return; }
+ $('signup-password').value = ''; $('signup-again').value = '';
+ const { error } = await client.auth.signUp({ email: $('signup-email').value.trim(), password, options: { emailRedirectTo: callback, data: { nickname } } });
+ if (error) throw error;
+ message('登録できる場合、確認メールが届きます。メール内のリンクを開いてください。'); await refresh();
+}); };
+$('reset').onsubmit = e => { e.preventDefault(); action(async () => {
+ const { error } = await client.auth.resetPasswordForEmail($('reset-email').value.trim(), { redirectTo: callback });
+ if (error) throw error;
+ message('対象のアカウントがある場合、再設定メールが届きます。メールをご確認ください。');
+}); };
+$('password').onsubmit = e => { e.preventDefault(); action(async () => {
+ const password = $('new-password').value;
+ if (password !== $('new-again').value) { message('２つの新しいパスワードが一致していません。', true); return; }
+ const attributes = { password }; if (!recovery) attributes.current_password = $('current-password').value;
+ $('new-password').value = ''; $('new-again').value = ''; $('current-password').value = '';
+ const { error } = await client.auth.updateUser(attributes);
+ if (error) throw error;
+ recovery = false; message('パスワードを変更しました。変更通知はサービス側のメール設定に従って送信されます。'); await refresh();
+}); };
+$('logout').onclick = () => action(async () => {
+ const { error } = await client.auth.signOut({ scope: 'local' });
+ if (error) throw error;
+ recovery = false; generation++; clearPrivate(); message('ログアウトしました。'); await refresh();
+});
 async function start() {
-  if (adminView) {
-    $('title').textContent = '管理者ページ';
-    document.title = '管理者ページ｜Study Note';
-  }
-
-  const config = window.STUDY_CONFIG;
-
-  const validUrl =
-    /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/;
-
-  const validKey =
-    /^sb_publishable_[A-Za-z0-9_-]+$/;
-
-  if (
-    !config ||
-    !validUrl.test(config.supabaseUrl) ||
-    !validKey.test(config.publishableKey)
-  ) {
-    $('setup').hidden = false;
-
-    message('まだ接続設定が入っていません。', true);
-    return;
-  }
-
-  if (!window.supabase) {
-    message(
-      '認証サービスを読み込めませんでした。' +
-      '通信を確認して再読み込みしてください。',
-      true
-    );
-
-    return;
-  }
-
-  try {
-    client = window.supabase.createClient(
-      config.supabaseUrl,
-      config.publishableKey,
-      {
-        auth: {
-          storage: window.sessionStorage,
-          flowType: 'implicit',
-          persistSession: true,
-          autoRefreshToken: true,
-          detectSessionInUrl: true
-        }
-      }
-    );
-
-    client.auth.onAuthStateChange(event => {
-      if (event === 'PASSWORD_RECOVERY') {
-        recovery = true;
-
-        message(
-          'メールの確認ができました。' +
-          '新しいパスワードを入力してください。'
-        );
-      }
-
-      if (event === 'SIGNED_OUT') {
-        recovery = false;
-        generation++;
-        clearPrivate();
-      }
-
-      setTimeout(() => {
-        if (!busy) {
-          refresh().catch(() => {
-            message(
-              '通信を確認して再読み込みしてください。',
-              true
-            );
-          });
-        }
-      }, 0);
-    });
-
-    message(
-      linkFailed
-        ? 'メールのリンクが期限切れか、使用済みです。新しいメールを依頼してください。'
-        : recovery
-          ? '確認後、新しいパスワードを設定してください。'
-          : 'ログインするか、新しいアカウントを作ってください。',
-      linkFailed
-    );
-
-    await refresh();
-
-    if (location.hash) {
-      history.replaceState(
-        null,
-        '',
-        location.pathname + location.search
-      );
-    }
-  } catch (error) {
-    client = null;
-
-    message(
-      '接続できませんでした。' +
-      'config.jsと通信状態を確認してください。',
-      true
-    );
-  }
-}
-
-document.querySelectorAll('button').forEach(button => {
-  button.disabled = true;
-});
-
-start().then(() => {
-  document.querySelectorAll('button').forEach(button => {
-    button.disabled = !client;
+ const config = window.STUDY_CONFIG;
+ if (!config || !/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/.test(config.supabaseUrl) || !/^sb_publishable_[A-Za-z0-9_-]+$/.test(config.publishableKey)) {
+  $('setup').hidden = false; message('まだ接続設定が入っていません。', true); return;
+ }
+ if (!window.supabase) { message('認証サービスを読み込めませんでした。通信を確認して再読み込みしてください。', true); return; }
+ try {
+  client = window.supabase.createClient(config.supabaseUrl, config.publishableKey, { auth: { storage: window.sessionStorage, flowType: 'implicit', persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+  client.auth.onAuthStateChange((event) => {
+   if (event === 'PASSWORD_RECOVERY') { recovery = true; message('メールの確認ができました。新しいパスワードを入力してください。'); }
+   if (event === 'SIGNED_OUT') { recovery = false; generation++; clearPrivate(); }
+   setTimeout(() => { if (!busy) refresh().catch(() => message('通信を確認して再読み込みしてください。', true)); }, 0);
   });
-});
+  message(linkFailed ? 'メールのリンクが期限切れか、使用済みです。新しいメールを依頼してください。' : recovery ? '確認後、新しいパスワードを設定してください。' : 'ログインするか、新しいアカウントを作ってください。', linkFailed);
+  await refresh();
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+ } catch (error) { client = null; message('接続できませんでした。config.jsと通信状態を確認してください。', true); }
+}
+document.querySelectorAll('button').forEach(b => b.disabled = true);
+start().then(() => document.querySelectorAll('button').forEach(b => b.disabled = !client));
 </script>
 </body>
 </html>
