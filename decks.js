@@ -13,9 +13,18 @@
   const query=normalize($('search').value),result=list.filter(d=>['genre','subject','grade'].every(f=>!$(f).value || $(f).value===d[f]) && normalize([d.title,d.description,d.genre,d.subject,d.grade].join(' ')).includes(query));
   $('result-count').textContent=result.length+'件';$('deck-list').replaceChildren();
   for(const d of result){
-   const card=document.createElement('article');card.className='card';const title=document.createElement('h2');title.textContent=d.title;const p=document.createElement('p');p.textContent=d.description;const tags=document.createElement('p');tags.className='muted';tags.textContent=d.genre+' / '+d.subject+' / '+d.grade+'・'+d.question_count+'問';const button=document.createElement('button');button.textContent='このデッキを学習';button.onclick=()=>open(d.id);card.append(title,p,tags,button);$('deck-list').append(card);
+   const card=document.createElement('article');card.className='card deck-card';
+   const cover=document.createElement('div');cover.className='deck-cover';const subject=document.createElement('span');subject.className='deck-cover-subject';subject.textContent=d.subject;const symbol=document.createElement('span');symbol.className='deck-cover-symbol';symbol.setAttribute('aria-hidden','true');
+   if(/数学|算数/.test(d.subject)){cover.classList.add('math');symbol.textContent='x²';}
+   else if(/英語/.test(d.subject)){cover.classList.add('english');symbol.textContent='Aa';}
+   else if(/理科|物理|化学|生物/.test(d.subject)){cover.classList.add('science');symbol.textContent='◎';}
+   else if(/社会|地理|歴史/.test(d.subject)){cover.classList.add('social');symbol.textContent='世';}
+   else symbol.textContent='学';cover.append(subject,symbol);
+   const body=document.createElement('div');body.className='deck-card-body';const tags=document.createElement('div');tags.className='tags';for(const value of [d.genre,d.grade]){const tag=document.createElement('span');tag.className='tag';tag.textContent=value;tags.append(tag);}
+   const title=document.createElement('h2');title.textContent=d.title;const p=document.createElement('p');p.className='deck-card-description';p.textContent=d.description || '１問ずつ、書いて確かめよう。';
+   const footer=document.createElement('div');footer.className='deck-card-footer';const count=document.createElement('span');count.textContent=d.question_count+'問';const button=document.createElement('button');button.textContent='学習する →';button.onclick=()=>open(d.id);footer.append(count,button);body.append(tags,title,p,footer);card.append(cover,body);$('deck-list').append(card);
   }
-  if(!result.length){const p=document.createElement('p');p.textContent=list.length?'条件に合うデッキがありません。':'公開中のデッキはまだありません。管理者が問題を追加して公開すると、ここに表示されます。';$('deck-list').append(p);}
+  if(!result.length){const p=document.createElement('p');p.className='empty-state';p.textContent=list.length?'条件に合うデッキがありません。':'公開中のデッキはまだありません。管理者が問題を追加して公開すると、ここに表示されます。';$('deck-list').append(p);}
  }
  async function load(){
   const ticket=++generation;$('refresh').disabled=true;
