@@ -14,7 +14,7 @@
 <header><nav aria-label="メインメニュー"><a href="index.html">ホーム</a><a href="decks.html">デッキ</a><a href="memory.html">暗記ノート</a><a href="account.html">アカウント</a><a href="admin.html">管理者ページ</a><a href="feedback.html">フィードバック</a></nav></header>
 <main>
 <h1 id="title">アカウント</h1>
-<p class="muted">メールアドレスで登録して、ログインできます。</p>
+<p class="muted">メールアドレスで登録して、ログインできます。ログイン状態はこのブラウザーに保存され、サイトを閉じても引き継がれます。共用端末では使い終わったらログアウトしてください。</p>
 <p id="message" role="status" aria-live="polite">接続を確認しています…</p>
 <section id="setup" class="card" hidden><h2>接続設定が必要です</h2><p>Supabaseでプロジェクトを作成し、config.jsに公開用の接続設定を入れてください。</p><p class="muted">秘密鍵・管理者パスワードはこのファイルに入れません。</p></section>
 <div id="guest" class="grid" hidden>
@@ -33,6 +33,7 @@
 <label for="reset-email">メールアドレス</label><input id="reset-email" type="email" autocomplete="email" required maxlength="254"><button>再設定メールを依頼する</button>
 </form></section>
 <section id="member" class="card" hidden><h2>ログイン中</h2><p id="who"></p><p id="mail" class="muted"></p><div class="actions"><button id="logout">ログアウト</button></div><p class="muted">問題ノートと暗記ノートは、今はこのブラウザーに保存されます。アカウント間の保存先の分離と端末間の共有は、今後追加します。</p></section>
+<section id="delete-self-box" class="card" hidden><h2>自分のアカウントを削除する</h2><p>オーナーの承認は不要です。削除すると再ログインできず、元に戻せません。送信済みフィードバックと操作記録は保管されます。ブラウザー内のノートはこの操作では消えません。</p><form id="delete-self"><label for="delete-password">現在のパスワード</label><input id="delete-password" type="password" autocomplete="current-password" required maxlength="128"><label for="delete-confirm">確認のため「削除する」と入力</label><input id="delete-confirm" required autocomplete="off"><button>自分のアカウントを削除する</button></form></section>
 <section id="password-box" class="card" hidden><h2 id="password-title">パスワードを変更する</h2><form id="password">
 <div id="current-row"><label for="current-password">現在のパスワード</label><input id="current-password" type="password" autocomplete="current-password" maxlength="128"></div>
 <label for="new-password">新しいパスワード（10文字以上）</label><input id="new-password" type="password" autocomplete="new-password" required minlength="10" maxlength="128">
@@ -43,6 +44,7 @@
 </main>
 <script src="config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.102.0"></script>
+<script src="study-client.js"></script>
 <script>
 'use strict';
 const $ = id => document.getElementById(id);
@@ -52,8 +54,9 @@ let client = null, recovery = new URLSearchParams(location.hash.slice(1)).get('t
 const linkFailed = new URLSearchParams(location.hash.slice(1)).has('error');
 let busy = false, generation = 0;
 function message(text, error = false) { $('message').textContent = text; $('message').classList.toggle('error', error); }
-function clearPrivate() { for (const id of ['member','password-box']) $(id).hidden = true; for (const id of ['who','mail']) $(id).textContent = ''; }
+function clearPrivate() { for (const id of ['member','password-box','delete-self-box']) $(id).hidden = true; for (const id of ['who','mail']) $(id).textContent = ''; }
 function explain(error) {
+ if(error?.status)return error.message;
  const messages = {
   invalid_credentials: 'メールアドレスかパスワードが違います。',
   email_not_confirmed: '確認メールのリンクを開いてからログインしてください。',
@@ -81,6 +84,7 @@ async function refresh() {
  if (ticket !== generation) return;
  if (access.error || access.data !== true) { message(access.error ? '接続設定を確認してください。' : 'このアカウントの利用は停止されています。', true); $('member').hidden = false; $('who').textContent = 'ログアウトしてアカウントを確認してください。'; return; }
  $('member').hidden = false; $('password-box').hidden = false;
+ const selfInfo=await Study.api('account_self_info');if(ticket!==generation)return;$('delete-self-box').hidden=!selfInfo.canDelete;
  $('mail').textContent = user.email || '';
  $('who').textContent = 'アカウントでログインしています';
  $('current-row').hidden = recovery; $('current-password').required = !recovery;
@@ -131,6 +135,16 @@ $('logout').onclick = () => action(async () => {
  if (error) throw error;
  recovery = false; generation++; clearPrivate(); message('ログアウトしました。'); await refresh();
 });
+$('delete-self').onsubmit=e=>{e.preventDefault();action(async()=>{
+ if($('delete-confirm').value!=='削除する'){message('確認欄に「削除する」と入力してください。',true);return;}
+ if(!confirm('このアカウントを完全に削除します。元に戻せません。本当に削除しますか？'))return;
+ const password=$('delete-password').value;$('delete-password').value='';
+ const result=await Study.api('account_self_delete',{password,confirm:'削除する'});
+ const {error}=await client.auth.signOut({scope:'local'});
+ generation++;recovery=false;clearPrivate();$('delete-self').reset();
+ if(error){message('アカウントは削除済みですが、端末のログイン情報を消せませんでした。ページを再読み込みして確認してください。',true);return;}
+ await refresh();message(result.receiptPending?'アカウントを削除しました。処理記録の確認はオーナーが行います。':'自分のアカウントを削除しました。');
+});};
 async function start() {
  const config = window.STUDY_CONFIG;
  if (!config || !/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/.test(config.supabaseUrl) || !/^sb_publishable_[A-Za-z0-9_-]+$/.test(config.publishableKey)) {
@@ -138,16 +152,16 @@ async function start() {
  }
  if (!window.supabase) { message('認証サービスを読み込めませんでした。通信を確認して再読み込みしてください。', true); return; }
  try {
-  client = window.supabase.createClient(config.supabaseUrl, config.publishableKey, { auth: { storage: window.sessionStorage, flowType: 'implicit', persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+  if(!window.Study || Study.setupError)throw new Error('storage');client=Study.client;
   client.auth.onAuthStateChange((event) => {
    if (event === 'PASSWORD_RECOVERY') { recovery = true; message('メールの確認ができました。新しいパスワードを入力してください。'); }
-   if (event === 'SIGNED_OUT') { recovery = false; generation++; clearPrivate(); }
+   if (event === 'SIGNED_OUT') { recovery = false; generation++; clearPrivate();for(const id of ['login-password','current-password','new-password','new-again','delete-password','delete-confirm'])$(id).value=''; }
    setTimeout(() => { if (!busy) refresh().catch(() => message('通信を確認して再読み込みしてください。', true)); }, 0);
   });
   message(linkFailed ? 'メールのリンクが期限切れか、使用済みです。新しいメールを依頼してください。' : recovery ? '確認後、新しいパスワードを設定してください。' : 'ログインするか、新しいアカウントを作ってください。', linkFailed);
   await refresh();
   if (location.hash) history.replaceState(null, '', location.pathname + location.search);
- } catch (error) { client = null; message('接続できませんでした。config.jsと通信状態を確認してください。', true); }
+ } catch (error) { client = null; message(window.Study?.setupError || '接続できませんでした。config.jsと通信状態を確認してください。', true); }
 }
 document.querySelectorAll('button').forEach(b => b.disabled = true);
 start().then(() => document.querySelectorAll('button').forEach(b => b.disabled = !client));
