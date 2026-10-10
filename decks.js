@@ -6,7 +6,8 @@
  function option(label,value){const o=document.createElement('option');o.textContent=label;o.value=value;return o;}
  const normalize=s=>String(s).normalize('NFKC').toLocaleLowerCase('ja').trim();
  const question=()=>deck?.questions[index];
- const key=suffix=>'study-v6:'+deck.id+':'+question().id+':'+suffix;
+ let privateOwner=null,authVersion=0,observedSession=null;const personalId=new URLSearchParams(location.search).get('personal');
+ const key=suffix=>(privateOwner?'study-personal:'+privateOwner+':':'study-v6:')+deck.id+':'+question().id+':'+suffix;
  function write(suffix,value){try{localStorage.setItem(key(suffix),value);}catch{message('ブラウザーの保存容量が足りません。メモは保存できませんでした。',true);}}
  function read(suffix){try{return localStorage.getItem(key(suffix)) || '';}catch{return '';}}
  function catalog(){
@@ -44,10 +45,10 @@
  }
  async function open(id){
   const ticket=++generation;message('問題を読み込んでいます…');
-  try{const result=await S.api('public_deck',{id});if(ticket!==generation)return;if(!result.questions.length)throw new Error('このデッキには問題がありません。');deck=result;index=0;$('catalog').hidden=true;$('practice').hidden=false;show();message('回答を考えてから、答え・解説を確認してください。');$('practice').scrollIntoView({block:'start'});}
+  try{const result=await S.api(privateOwner?'personal_deck':'public_deck',{id});if(ticket!==generation)return;if(!result.questions.length)throw new Error('このデッキには問題がありません。');deck=result;index=0;$('catalog').hidden=true;$('practice').hidden=false;show();message('回答を考えてから、答え・解説を確認してください。');$('practice').scrollIntoView({block:'start'});}
   catch(e){message(e.message,true);}
  }
- $('back').onclick=()=>{generation++;deck=null;$('practice').hidden=true;$('catalog').hidden=false;message('デッキを選んでください。');};
+ $('back').onclick=()=>{if(privateOwner){location.href='my-decks.html';return;}generation++;deck=null;$('practice').hidden=true;$('catalog').hidden=false;message('デッキを選んでください。');};
  $('prev').onclick=()=>{if(index>0){index--;show();}};$('next').onclick=()=>{if(index<deck.questions.length-1){index++;show();}};
  $('hint-button').onclick=()=>{$('hint').hidden=!$('hint').hidden;};$('answer-button').onclick=()=>{$('answer').hidden=!$('answer').hidden;};
  $('response').oninput=()=>{if(deck)write('text',$('response').value);};
@@ -58,6 +59,10 @@
  $('clear-note').onclick=()=>{if(confirm('この問題の手書きメモを消しますか？')){inkVersion++;ctx.clearRect(0,0,canvas.width,canvas.height);write('ink','');}};
  for(const f of ['search','genre','subject','grade'])$(f).addEventListener(f==='search'?'input':'change',catalog);$('refresh').onclick=load;
  if(!S || S.setupError){message(S?.setupError || '通信を確認してください。',true);return;}
- S.client.auth.onAuthStateChange(event=>{if(event==='SIGNED_OUT'){generation++;deck=null;$('practice').hidden=true;$('catalog').hidden=false;setTimeout(load,0);}});
- await load();
+ S.client.auth.onAuthStateChange((event,session)=>{authVersion++;observedSession=session;if(privateOwner && session?.user?.id!==privateOwner){generation++;deck=null;privateOwner=null;inkVersion++;ctx.clearRect(0,0,canvas.width,canvas.height);$('response').value='';$('prompt').textContent='';$('answer-text').textContent='';$('explanation').textContent='';$('hint').textContent='';$('image').removeAttribute('src');$('image').hidden=true;$('practice').hidden=true;message('アカウントが切り替わりました。自分のデッキ画面から開き直してください。',true);return;}if(event==='SIGNED_OUT'){generation++;deck=null;$('practice').hidden=true;$('catalog').hidden=false;setTimeout(load,0);}});
+ if(personalId){
+  const authTicket=authVersion;let {data,error}=await S.client.auth.getSession();if(authTicket!==authVersion){data={session:observedSession};error=null;}
+  if(error || !data.session){message('自分のデッキを学習するには、アカウント画面からログインしてください。',true);$('catalog').hidden=true;return;}
+  privateOwner=data.session.user.id;$('catalog').hidden=true;$('back').textContent='← 自分のデッキ';await open(personalId);
+ }else await load();
 })();
