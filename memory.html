@@ -216,7 +216,7 @@ body{background:#f5f7f7}.memory-main{max-width:1260px;margin:28px auto;padding:0
 <div class="stage" id="stage"><div id="editor" class="writing" contenteditable="true" role="textbox" aria-label="暗記ノート" aria-multiline="true" spellcheck="false" data-placeholder="ここにノートを書こう。隠したい文字を選んで「赤で書く・隠す」を押すと、赤文字にできます。"></div>
 <canvas id="ink" width="1200" height="640" aria-label="手書き用のノート"></canvas><div id="sheet" class="sheet"><div id="handle" class="handle" tabindex="0" role="group" aria-label="赤シートの移動。矢印キーでも動かせます"><strong>⠿ つかんで動かす</strong><button id="close" aria-label="赤シートを隠す">×</button></div><div class="sheet-body"><div id="mirror" class="writing mirror" aria-hidden="true"></div><canvas id="mirror-ink" class="mirror-canvas" width="1200" height="640" aria-hidden="true"></canvas></div><button id="resize" class="resize" aria-label="ドラッグして赤シートの大きさを変更">↘</button></div></div></div>
 <div class="tip-row"><p class="tip">赤シートは上のバーで移動、右下の ↘ で大きさを変更。シートを隠すと、その下を編集できます。</p><div class="arrows" aria-label="赤シートを移動"><button data-dx="-24">← 左</button><button data-dy="-24">↑ 上</button><button data-dy="24">↓ 下</button><button data-dx="24">→ 右</button></div></div>
-<div class="memory-footer"><p class="muted">ノートはこの端末・このブラウザーに保存します。ログインしても別の端末には同期されません。ブラウザーのデータを消すと、ノートも消えます。</p><button id="clear">ノートを全部消す</button></div></main>
+<section class="card" aria-label="暗記ノートの共有"><h2>暗記ノートを共有・読み込む</h2><p>文字・赤文字・手書きを１つのファイルにして友達へ渡せます。名前や学校名などが入っていないか確認してください。渡したファイルは後から回収できません。</p><button id="export-memory">ノートをファイルに保存・共有</button><label>共有されたノートを選ぶ<input id="import-memory" type="file" accept=".json,application/json"></label><p>読み込む前に今のノートをファイルに保存してください。読み込むと、このブラウザーのノートを置き換えます。最大２MB。</p></section><div class="memory-footer"><p class="muted">ノートはこの端末・このブラウザーに保存します。ログインしても別の端末には同期されません。ブラウザーのデータを消すと、ノートも消えます。</p><button id="clear">ノートを全部消す</button></div></main>
 <script>
 'use strict';
 
@@ -701,6 +701,29 @@ $('clear').onclick = () => {
     sync();
     save();
   }
+};
+
+function shareableStrokes(a){return validStrokes(a)&&a.reduce((n,s)=>n+s.points.length,0)<=100000;}
+$('export-memory').onclick = () => {
+  if(!confirm('文字と手書きを含むノート全体を保存します。共有前に個人情報がないか確認しましたか？'))return;
+  const data=JSON.stringify({format:'study-note-memory',version:1,html:clean(editor.innerHTML),strokes});
+  const blob=new Blob([data],{type:'application/json'});
+  if(blob.size>2097152||clean(editor.innerHTML).length>500000||!shareableStrokes(strokes)){$('status').textContent='共有は２MB・手書き10万点までです。ノートを分けてください。';return;}
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='study-note-memory.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  $('status').textContent='共有用ファイルを保存しました。友達へ渡せます。';
+};
+$('import-memory').onchange=async()=>{
+  const file=$('import-memory').files[0];if(!file)return;
+  try{
+    if(file.size>2097152)throw new Error('ファイルは２MB以下にしてください。');
+    const data=JSON.parse(await file.text());
+    if(data?.format!=='study-note-memory'||data.version!==1||typeof data.html!=='string'||data.html.length>500000||!shareableStrokes(data.strokes))throw new Error('Study Noteの共有ファイルを選んでください。');
+    const html=clean(data.html);
+    if(!confirm('今のノートを共有されたノートで置き換えますか？現在のノートは先にファイルへ保存してください。'))return;
+    // Persist before changing the visible note; quota errors leave the old note intact.
+    localStorage.setItem(KEY,JSON.stringify({html,strokes:data.strokes}));
+    editor.innerHTML=html;strokes=data.strokes;selection=null;current=null;draw();sync();$('status').textContent='共有されたノートを読み込みました。自分用に編集できます。';
+  }catch(e){$('status').textContent=e.message||'読み込めませんでした。';}finally{$('import-memory').value='';}
 };
 
 new ResizeObserver(layout).observe(stage);
