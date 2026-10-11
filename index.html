@@ -109,22 +109,7 @@ footer{font-size:14px;color:#627188;margin-top:24px}
   <a href="feedback.html">フィードバック</a></nav>
 </header>
 
-<section class="timer" aria-label="学習タイマー">
-  <strong>学習タイマー</strong>
-  <span id="clock" class="time" role="timer" aria-label="残り時間">25:00</span>
-  <label>
-    時間
-    <input id="minutes" type="number" min="1" max="180" value="25"
-           aria-label="タイマーの分数">
-    分
-  </label>
-  <button id="set-time">設定</button>
-  <button id="start-timer">開始</button>
-  <button id="reset-timer">リセット</button>
-  <span id="timer-status" class="timer-status" role="status">
-    準備できたら開始
-  </span>
-</section>
+<section class="timer" aria-label="学習タイマー"><strong>学習タイマー</strong><span>ストップウォッチ・カウントダウン・ポモドーロ</span><a class="btn" href="timer.html" target="_blank" rel="noopener">タイマーを別タブで開く ↗</a></section>
 
 <main>
   <section id="home-screen">
@@ -856,182 +841,18 @@ $('show-all').onclick = () => {
   );
 };
 
-// 学習タイマー
-let timer = {
-  duration: 1500,
-  remaining: 1500,
-  deadline: null
-};
-
-let timerStarted = false;
-
-const saved = read('study-note-timer-v3');
-
-if (
-  saved &&
-  Number.isInteger(saved.duration) &&
-  saved.duration >= 60 &&
-  saved.duration <= 10800 &&
-  Number.isFinite(saved.remaining) &&
-  saved.remaining >= 0 &&
-  saved.remaining <= saved.duration &&
-  (saved.deadline === null || Number.isFinite(saved.deadline))
-) {
-  timer = saved;
-}
-
-function secondsLeft() {
-  return timer.deadline === null
-    ? timer.remaining
-    : Math.max(0, Math.ceil((timer.deadline - Date.now()) / 1000));
-}
-
-function persistTimer() {
-  if (!write('study-note-timer-v3', timer)) {
-    $('feedback').textContent =
-      'タイマーの状態を保存できません。この画面を開いている間は使えます。';
-  }
-}
-
-function paintTimer() {
-  const seconds = secondsLeft();
-
-  $('clock').textContent =
-    String(Math.floor(seconds / 60)).padStart(2, '0') +
-    ':' +
-    String(seconds % 60).padStart(2, '0');
-
-  $('minutes').disabled = timer.deadline !== null;
-  $('set-time').disabled = timer.deadline !== null;
-
-  $('start-timer').textContent = timer.deadline !== null
-    ? '一時停止'
-    : seconds === 0
-      ? 'もう一度開始'
-      : timerStarted
-        ? '再開'
-        : '開始';
-}
-
-function completeTimer() {
-  timer.remaining = 0;
-  timer.deadline = null;
-  persistTimer();
-
-  $('timer-status').textContent =
-    '時間です！ 一度区切って、学習内容を確認しよう。';
-
-  paintTimer();
-}
-
-function tick() {
-  if (timer.deadline !== null && secondsLeft() === 0) {
-    completeTimer();
-  } else {
-    paintTimer();
-  }
-}
-
-// 分数を設定する
-$('set-time').onclick = () => {
-  const minutes = Number($('minutes').value);
-
-  if (
-    !Number.isInteger(minutes) ||
-    minutes < 1 ||
-    minutes > 180
-  ) {
-    $('feedback').textContent =
-      '時間は 1〜180 分の整数で入力してください。';
-    return;
-  }
-
-  timer = {
-    duration: minutes * 60,
-    remaining: minutes * 60,
-    deadline: null
-  };
-
-  timerStarted = false;
-  persistTimer();
-
-  $('feedback').textContent = '';
-  $('timer-status').textContent = minutes + '分に設定しました';
-
-  paintTimer();
-};
-
-// 開始・一時停止・再開
-$('start-timer').onclick = () => {
-  if (timer.deadline !== null) {
-    timer.remaining = secondsLeft();
-    timer.deadline = null;
-
-    $('timer-status').textContent = timer.remaining === 0
-      ? '時間です！'
-      : '一時停止中';
-  } else {
-    if (timer.remaining === 0) {
-      timer.remaining = timer.duration;
-    }
-
-    timer.deadline = Date.now() + timer.remaining * 1000;
-    timerStarted = true;
-
-    $('timer-status').textContent = '集中して取り組もう';
-  }
-
-  persistTimer();
-  paintTimer();
-};
-
-// リセット
-$('reset-timer').onclick = () => {
-  if (
-    timerStarted &&
-    !window.confirm('タイマーを最初の時間に戻しますか？')
-  ) {
-    return;
-  }
-
-  timer.remaining = timer.duration;
-  timer.deadline = null;
-  timerStarted = false;
-
-  persistTimer();
-  $('timer-status').textContent = 'リセットしました';
-
-  paintTimer();
-};
-
-// 保存されたタイマーを復元する
-$('minutes').value = timer.duration / 60;
-
-timerStarted =
-  timer.deadline !== null ||
-  timer.remaining < timer.duration;
-
-if (timer.deadline !== null) {
-  $('timer-status').textContent = 'タイマーを再開しました';
-} else if (timer.remaining === 0) {
-  $('timer-status').textContent = '前のタイマーは終了しました';
-} else if (timerStarted) {
-  $('timer-status').textContent = '一時停止中';
-}
-
 window.addEventListener('hashchange', route);
-document.addEventListener('visibilitychange', tick);
+
 
 window.addEventListener('pagehide', () => {
   endStroke();
-  persistTimer();
+
 });
 
 // 初期表示
 deckHome();
 route();
-tick();
-setInterval(tick, 250);
+
 </script>
 </body>
 </html>
