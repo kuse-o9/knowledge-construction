@@ -4,17 +4,24 @@ const GAME_ID = 'komorebi-island-v1';
 const RESOURCE_KEYS = ['wood', 'stone', 'flower', 'seaFish', 'lakeFish', 'riverFish', 'money', 'bankBalance'];
 
 export function installGameSaveBridge(supabaseClient, onHome) {
+  let expectedId;
+  const initialUser=supabaseClient.auth.getUser().then(({data,error})=>{if(error&&error.name!=='AuthSessionMissingError')throw error;expectedId=data.user?.id||null;return data.user;});
+  // Register after the first identity is known; check again before every mutation.
+  initialUser.then(()=>supabaseClient.auth.onAuthStateChange((event,session)=>{if((session?.user?.id||null)!==expectedId)window.dispatchEvent(new Event('game-account-changed'));})).catch(()=>{});
   async function signedInUser() {
+    await initialUser;
     const { data, error } = await supabaseClient.auth.getUser();
-    if (error) throw error;
+    if (error&&error.name!=='AuthSessionMissingError') throw error;
+    if((data.user?.id||null)!==expectedId)throw new Error('アカウントが変わりました。島を更新してください。');
     return data.user;
   }
 
   async function claimResourceGrants() {
+    const user=await signedInUser();if(!user)return {};
     const { data, error } = await supabaseClient.rpc('game_claim_resource_grants');
     if (error) {
       // Keep ordinary saves working before the optional admin migration is installed.
-      if (error.code === 'PGRST202' || /game_claim_resource_grants/i.test(error.message || '')) return {};
+      if (error.code === 'PGRST202') return {};
       throw error;
     }
     return data || {};
@@ -40,6 +47,7 @@ export function installGameSaveBridge(supabaseClient, onHome) {
         .from('game_saves')
         .select('save_data')
         .eq('game_id', GAME_ID)
+        .eq('user_id', user.id)
         .maybeSingle();
       if (error) throw error;
       if (!data?.save_data) return null;
@@ -77,7 +85,7 @@ export function installGameSaveBridge(supabaseClient, onHome) {
       if (!user) return false;
       const { data, error } = await supabaseClient.rpc('game_admin_is_admin');
       if (error) {
-        if (error.code === 'PGRST202' || /game_admin_is_admin/i.test(error.message || '')) return false;
+        if (error.code === 'PGRST202') return false;
         throw error;
       }
       return data === true;
