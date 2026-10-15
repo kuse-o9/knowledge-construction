@@ -1,0 +1,3755 @@
+{
+  "updated": "2026-10-16",
+  "scope": "ユーザー提供一覧を基にした制作候補。全国全路線を網羅した公式台帳ではない。路線の分割・共用区間は制作時に調整。",
+  "published": [
+    "ゆりかもめ",
+    "山手線",
+    "京浜東北・根岸線",
+    "中央線快速（東京〜高尾・大月・青梅・河口湖・奥多摩方面）",
+    "中央・総武線各駅停車"
+  ],
+  "alreadyCovered": [
+    "根岸線は京浜東北線に含む",
+    "青梅線は中央線ゲーム内に含む",
+    "富士急行線は中央線ゲーム内の河口湖直通区間に含む",
+    "中央本線の東京〜大月は中央線快速に含む"
+  ],
+  "rules": [
+    "各駅の乗換路線を鉄道会社公式情報で確認し、画面と日英案内に反映する。",
+    "並走・交差する路線は実際の位置関係を調べ、対応する線路に他社・他系統の列車を定期的に走らせる。",
+    "対向列車と周辺列車はラッシュ・平日・休日で密度変更。実ダイヤとは区別する。",
+    "地表の地下鉄を架空に追加しない。地下・高架・単線・分岐を区別し、表示区間と地形干渉を確認する。",
+    "全駅・両方向・全区間の停止、ホーム、車両高さ、ドア、戻る導線を検証してから公開する。",
+    "模型は共通部品を再利用し、地域ごとに読み込みを分割する。",
+    "路線名・区間・運行状況・休廃止・BRTは制作開始時点の公式資料で再確認する。",
+    "予定の行を並べただけで完成扱いにしない。公開URL・検証範囲と未確認事項を記録する。",
+    "全駅・全区間・両方向について運転席と車外カメラの検査を実施し、検査方法と未確認範囲を明記する。",
+    "ケーブルカー・AGT・跨座式/懸垂式モノレール・索道・磁気浮上式は公式構造資料を調べて別の軌道・台車・駆動機構として制作する。"
+  ],
+  "items": [
+    {
+      "region": "先行制作",
+      "operator": "JR",
+      "line": "総武線快速（東京〜千葉先行）",
+      "status": "検証版を実装・公開準備（東京〜千葉10駅、数値/UI検査済。実ブラウザ映像検査・他社周辺列車等は未完）",
+      "number": 1,
+      "game": "sobu.html",
+      "validation": [
+        "sobu-corridor-audit.json",
+        "sobu-camera-audit.json"
+      ]
+    },
+    {
+      "region": "先行制作",
+      "operator": "JR",
+      "line": "特急あずさ",
+      "status": "未着手",
+      "number": 2
+    },
+    {
+      "region": "先行制作",
+      "operator": "JR",
+      "line": "特急かいじ",
+      "status": "未着手",
+      "number": 3
+    },
+    {
+      "region": "先行制作",
+      "operator": "JR",
+      "line": "東海道線（東京〜神戸を区間ごとに制作）",
+      "status": "未着手",
+      "number": 4
+    },
+    {
+      "region": "先行制作",
+      "operator": "JR",
+      "line": "東海道新幹線",
+      "status": "未着手",
+      "number": 5
+    },
+    {
+      "region": "先行制作",
+      "operator": "JR",
+      "line": "特急踊り子",
+      "status": "未着手",
+      "number": 6
+    },
+    {
+      "region": "新幹線",
+      "operator": "JR各社",
+      "line": "北海道新幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 7
+    },
+    {
+      "region": "新幹線",
+      "operator": "JR各社",
+      "line": "東北新幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 8
+    },
+    {
+      "region": "新幹線",
+      "operator": "JR各社",
+      "line": "秋田新幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 9
+    },
+    {
+      "region": "新幹線",
+      "operator": "JR各社",
+      "line": "山形新幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 10
+    },
+    {
+      "region": "新幹線",
+      "operator": "JR各社",
+      "line": "上越新幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 11
+    },
+    {
+      "region": "新幹線",
+      "operator": "JR各社",
+      "line": "北陸新幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 12
+    },
+    {
+      "region": "新幹線",
+      "operator": "JR各社",
+      "line": "山陽新幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 13
+    },
+    {
+      "region": "新幹線",
+      "operator": "JR各社",
+      "line": "九州新幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 14
+    },
+    {
+      "region": "新幹線",
+      "operator": "JR各社",
+      "line": "西九州新幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 15
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "函館本線（砂原支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 16
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "室蘭本線（室蘭支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 17
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "根室本線・花咲線（現存区間）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 18
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "千歳線（空港支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 19
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "札沼線・学園都市線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 20
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "石勝線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 21
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "石北本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 22
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "釧網本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 23
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "宗谷本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 24
+    },
+    {
+      "region": "北海道",
+      "operator": "JR北海道",
+      "line": "日高本線（現存区間）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 25
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "横浜線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 26
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "南武線（浜川崎支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 27
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "鶴見線（各支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 28
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "武蔵野線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 29
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "京葉線（各支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 30
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "赤羽線・埼京線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 31
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "川越線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 32
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "八高線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 33
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "相模線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 34
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "五日市線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 35
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "中央本線（大月〜塩尻・辰野支線）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 36
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "総武本線（千葉〜銚子）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 37
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "横須賀線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 38
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "品鶴線（横須賀線への接続区間）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 39
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "伊東線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 40
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "高崎線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 41
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "宇都宮線・東北本線（現存JR区間・利府支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 42
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "常磐線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 43
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "成田線（各支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 44
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "内房線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 45
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "外房線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 46
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "東金線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 47
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "久留里線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 48
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "烏山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 49
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "日光線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 50
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "水戸線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 51
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "水郡線（常陸太田支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 52
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "鹿島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 53
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "信越本線（高崎・長野・新潟の各現存区間）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 54
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "篠ノ井線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 55
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "小海線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 56
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "飯山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 57
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "越後線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 58
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "弥彦線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 59
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "白新線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 60
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "羽越本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 61
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "磐越西線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 62
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "磐越東線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 63
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "只見線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 64
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "米坂線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 65
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "奥羽本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 66
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "左沢線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 67
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "仙山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 68
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "仙石線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 69
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "石巻線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 70
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "気仙沼線（鉄道区間・BRT区間は区別）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 71
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "大船渡線（鉄道区間・BRT区間は区別）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 72
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "北上線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 73
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "釜石線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 74
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "山田線（現存区間）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 75
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "花輪線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 76
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "八戸線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 77
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "大湊線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 78
+    },
+    {
+      "region": "関東・東北・信越",
+      "operator": "JR東日本",
+      "line": "津軽線（鉄道・代替交通の状況を確認）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 79
+    },
+    {
+      "region": "東海",
+      "operator": "JR東海",
+      "line": "御殿場線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 80
+    },
+    {
+      "region": "東海",
+      "operator": "JR東海",
+      "line": "身延線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 81
+    },
+    {
+      "region": "東海",
+      "operator": "JR東海",
+      "line": "飯田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 82
+    },
+    {
+      "region": "東海",
+      "operator": "JR東海",
+      "line": "武豊線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 83
+    },
+    {
+      "region": "東海",
+      "operator": "JR東海",
+      "line": "中央本線（塩尻〜名古屋）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 84
+    },
+    {
+      "region": "東海",
+      "operator": "JR東海",
+      "line": "高山本線（JR西日本区間も一体化）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 85
+    },
+    {
+      "region": "東海",
+      "operator": "JR東海",
+      "line": "太多線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 86
+    },
+    {
+      "region": "東海",
+      "operator": "JR東海",
+      "line": "関西本線（名古屋〜亀山）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 87
+    },
+    {
+      "region": "東海",
+      "operator": "JR東海",
+      "line": "紀勢本線（亀山〜新宮）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 88
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "北陸本線（現存区間）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 89
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "小浜線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 90
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "越美北線・九頭竜線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 91
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "七尾線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 92
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "氷見線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 93
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "城端線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 94
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "山陽本線（和田岬支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 95
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "山陰本線（仙崎支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 96
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "湖西線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 97
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "大阪環状線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 98
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "桜島線・JRゆめ咲線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 99
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "福知山線・JR宝塚線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 100
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "JR東西線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 101
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "片町線・学研都市線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 102
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "おおさか東線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 103
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "関西本線・大和路線（亀山〜JR難波）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 104
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "草津線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 105
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "奈良線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 106
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "桜井線・万葉まほろば線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 107
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "和歌山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 108
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "阪和線（羽衣支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 109
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "関西空港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 110
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "紀勢本線・きのくに線（新宮〜和歌山市）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 111
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "舞鶴線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 112
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "播但線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 113
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "姫新線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 114
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "赤穂線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 115
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "津山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 116
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "吉備線・桃太郎線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 117
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "宇野線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 118
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "本四備讃線・瀬戸大橋線（児島以南も一体化）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 119
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "伯備線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 120
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "芸備線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 121
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "福塩線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 122
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "因美線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 123
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "境線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 124
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "木次線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 125
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "呉線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 126
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "可部線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 127
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "岩徳線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 128
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "山口線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 129
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "美祢線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 130
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "宇部線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 131
+    },
+    {
+      "region": "北陸・近畿・中国",
+      "operator": "JR西日本",
+      "line": "小野田線（本山支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 132
+    },
+    {
+      "region": "四国",
+      "operator": "JR四国",
+      "line": "予讃線（内子経由・海回り含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 133
+    },
+    {
+      "region": "四国",
+      "operator": "JR四国",
+      "line": "内子線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 134
+    },
+    {
+      "region": "四国",
+      "operator": "JR四国",
+      "line": "土讃線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 135
+    },
+    {
+      "region": "四国",
+      "operator": "JR四国",
+      "line": "高徳線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 136
+    },
+    {
+      "region": "四国",
+      "operator": "JR四国",
+      "line": "鳴門線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 137
+    },
+    {
+      "region": "四国",
+      "operator": "JR四国",
+      "line": "徳島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 138
+    },
+    {
+      "region": "四国",
+      "operator": "JR四国",
+      "line": "牟岐線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 139
+    },
+    {
+      "region": "四国",
+      "operator": "JR四国",
+      "line": "予土線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 140
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "鹿児島本線（現存JR区間）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 141
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "香椎線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 142
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "篠栗線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 143
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "筑豊本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 144
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "日豊本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 145
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "日南線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 146
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "宮崎空港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 147
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "長崎本線（長与経由含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 148
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "唐津線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 149
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "筑肥線（両区間）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 150
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "佐世保線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 151
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "大村線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 152
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "久大本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 153
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "豊肥本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 154
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "吉都線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 155
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "肥薩線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 156
+    },
+    {
+      "region": "九州",
+      "operator": "JR九州",
+      "line": "指宿枕崎線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 157
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "伊勢崎線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 158
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "亀戸線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 159
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "大師線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 160
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "野田線・アーバンパークライン",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 161
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "日光線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 162
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "宇都宮線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 163
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "鬼怒川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 164
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "小泉線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 165
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "佐野線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 166
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "桐生線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 167
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "東上線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 168
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東武鉄道",
+      "line": "越生線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 169
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "池袋線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 170
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "西武秩父線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 171
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "西武有楽町線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 172
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "豊島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 173
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "狭山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 174
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "山口線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 175
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "新宿線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 176
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "拝島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 177
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "多摩湖線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 178
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "国分寺線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 179
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "西武園線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 180
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "西武鉄道",
+      "line": "多摩川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 181
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京王電鉄",
+      "line": "京王線・京王新線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 182
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京王電鉄",
+      "line": "相模原線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 183
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京王電鉄",
+      "line": "高尾線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 184
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京王電鉄",
+      "line": "競馬場線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 185
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京王電鉄",
+      "line": "動物園線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 186
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京王電鉄",
+      "line": "井の頭線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 187
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "小田急電鉄",
+      "line": "小田原線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 188
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "小田急電鉄",
+      "line": "江ノ島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 189
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "小田急電鉄",
+      "line": "多摩線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 190
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東急電鉄",
+      "line": "東横線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 191
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東急電鉄",
+      "line": "目黒線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 192
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東急電鉄",
+      "line": "田園都市線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 193
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東急電鉄",
+      "line": "大井町線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 194
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東急電鉄",
+      "line": "池上線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 195
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東急電鉄",
+      "line": "東急多摩川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 196
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東急電鉄",
+      "line": "世田谷線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 197
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東急電鉄",
+      "line": "こどもの国線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 198
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東急電鉄",
+      "line": "東急新横浜線（原一覧への補足）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 199
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京急電鉄",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 200
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京急電鉄",
+      "line": "空港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 201
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京急電鉄",
+      "line": "大師線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 202
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京急電鉄",
+      "line": "逗子線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 203
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京急電鉄",
+      "line": "久里浜線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 204
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東京メトロ",
+      "line": "銀座線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 205
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東京メトロ",
+      "line": "丸ノ内線（方南町支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 206
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東京メトロ",
+      "line": "日比谷線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 207
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東京メトロ",
+      "line": "東西線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 208
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東京メトロ",
+      "line": "千代田線（北綾瀬支線含む）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 209
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東京メトロ",
+      "line": "有楽町線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 210
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東京メトロ",
+      "line": "半蔵門線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 211
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東京メトロ",
+      "line": "南北線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 212
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "東京メトロ",
+      "line": "副都心線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 213
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "相模鉄道",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 214
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "相模鉄道",
+      "line": "いずみ野線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 215
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "相模鉄道",
+      "line": "相鉄新横浜線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 216
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京成電鉄",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 217
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京成電鉄",
+      "line": "押上線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 218
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京成電鉄",
+      "line": "金町線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 219
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京成電鉄",
+      "line": "成田空港線・スカイアクセス",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 220
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京成電鉄",
+      "line": "千葉線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 221
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京成電鉄",
+      "line": "千原線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 222
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京成電鉄",
+      "line": "東成田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 223
+    },
+    {
+      "region": "関東私鉄",
+      "operator": "京成電鉄",
+      "line": "松戸線（旧新京成線）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 224
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "名古屋本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 225
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "豊川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 226
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "西尾線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 227
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "蒲郡線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 228
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "三河線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 229
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "豊田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 230
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "常滑線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 231
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "空港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 232
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "河和線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 233
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "知多新線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 234
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "築港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 235
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "瀬戸線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 236
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "津島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 237
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "尾西線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 238
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "竹鼻線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 239
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "羽島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 240
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "犬山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 241
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "広見線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 242
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "各務原線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 243
+    },
+    {
+      "region": "中部私鉄",
+      "operator": "名古屋鉄道",
+      "line": "小牧線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 244
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "大阪線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 245
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "信貴線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 246
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "難波線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 247
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "奈良線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 248
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "生駒線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 249
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "けいはんな線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 250
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "京都線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 251
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "橿原線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 252
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "天理線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 253
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "田原本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 254
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "名古屋線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 255
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "湯の山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 256
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "鈴鹿線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 257
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "山田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 258
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "鳥羽線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 259
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "志摩線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 260
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "南大阪線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 261
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "吉野線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 262
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "道明寺線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 263
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "長野線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 264
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "御所線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 265
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "葛城索道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 266
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "近畿日本鉄道",
+      "line": "生駒鋼索線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 267
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "南海電鉄",
+      "line": "南海本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 268
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "南海電鉄",
+      "line": "高野線（鉄道区間）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 269
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "南海電鉄",
+      "line": "高師浜線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 270
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "南海電鉄",
+      "line": "多奈川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 271
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "南海電鉄",
+      "line": "加太線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 272
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "南海電鉄",
+      "line": "和歌山港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 273
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "南海電鉄",
+      "line": "空港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 274
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "南海電鉄",
+      "line": "鋼索線（極楽橋〜高野山）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 275
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "南海電鉄",
+      "line": "泉北線（旧泉北高速鉄道線）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 276
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "京阪電鉄",
+      "line": "京阪本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 277
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "京阪電鉄",
+      "line": "鴨東線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 278
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "京阪電鉄",
+      "line": "中之島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 279
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "京阪電鉄",
+      "line": "交野線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 280
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "京阪電鉄",
+      "line": "宇治線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 281
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "京阪電鉄",
+      "line": "京津線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 282
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "京阪電鉄",
+      "line": "石山坂本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 283
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "京阪電鉄",
+      "line": "鋼索線・石清水八幡宮参道ケーブル",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 284
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "神戸本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 285
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "伊丹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 286
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "今津線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 287
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "甲陽線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 288
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "神戸高速線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 289
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "宝塚本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 290
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "箕面線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 291
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "京都本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 292
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "千里線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 293
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪急電鉄",
+      "line": "嵐山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 294
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪神電鉄",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 295
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪神電鉄",
+      "line": "阪神なんば線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 296
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪神電鉄",
+      "line": "武庫川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 297
+    },
+    {
+      "region": "近畿私鉄",
+      "operator": "阪神電鉄",
+      "line": "神戸高速線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 298
+    },
+    {
+      "region": "九州私鉄",
+      "operator": "西日本鉄道",
+      "line": "天神大牟田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 299
+    },
+    {
+      "region": "九州私鉄",
+      "operator": "西日本鉄道",
+      "line": "太宰府線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 300
+    },
+    {
+      "region": "九州私鉄",
+      "operator": "西日本鉄道",
+      "line": "甘木線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 301
+    },
+    {
+      "region": "九州私鉄",
+      "operator": "西日本鉄道",
+      "line": "貝塚線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 302
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "札幌市交通局",
+      "line": "地下鉄南北線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 303
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "札幌市交通局",
+      "line": "地下鉄東西線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 304
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "札幌市交通局",
+      "line": "地下鉄東豊線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 305
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "札幌市交通局",
+      "line": "札幌市電（一条・山鼻西・山鼻・都心線）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 306
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "函館市企業局",
+      "line": "函館市電（本線・湯の川・宝来谷地頭・大町線）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 307
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "弘南鉄道",
+      "line": "弘南線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 308
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "弘南鉄道",
+      "line": "大鰐線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 309
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "青い森鉄道",
+      "line": "青い森鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 310
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "IGRいわて銀河鉄道",
+      "line": "いわて銀河鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 311
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "三陸鉄道",
+      "line": "リアス線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 312
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "仙台市交通局",
+      "line": "南北線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 313
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "仙台市交通局",
+      "line": "東西線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 314
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "仙台空港鉄道",
+      "line": "仙台空港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 315
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "由利高原鉄道",
+      "line": "鳥海山ろく線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 316
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "秋田内陸縦貫鉄道",
+      "line": "秋田内陸線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 317
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "山形鉄道",
+      "line": "フラワー長井線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 318
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "福島交通",
+      "line": "飯坂線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 319
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "阿武隈急行",
+      "line": "阿武隈急行線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 320
+    },
+    {
+      "region": "北海道・東北の地域交通",
+      "operator": "会津鉄道",
+      "line": "会津線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 321
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "関東鉄道",
+      "line": "常総線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 322
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "関東鉄道",
+      "line": "竜ヶ崎線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 323
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "鹿島臨海鉄道",
+      "line": "大洗鹿島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 324
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "ひたちなか海浜鉄道",
+      "line": "湊線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 325
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "野岩鉄道",
+      "line": "会津鬼怒川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 326
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "真岡鐵道",
+      "line": "真岡線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 327
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "宇都宮ライトレール",
+      "line": "宇都宮芳賀ライトレール線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 328
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "上毛電気鉄道",
+      "line": "上毛線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 329
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "上信電鉄",
+      "line": "上信線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 330
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "わたらせ渓谷鐵道",
+      "line": "わたらせ渓谷線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 331
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "秩父鉄道",
+      "line": "秩父本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 332
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "秩父鉄道",
+      "line": "三ヶ尻線（貨物）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 333
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "首都圏新都市鉄道",
+      "line": "つくばエクスプレス",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 334
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "埼玉高速鉄道",
+      "line": "埼玉高速鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 335
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "北総鉄道",
+      "line": "北総線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 336
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "東葉高速鉄道",
+      "line": "東葉高速線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 337
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "小湊鐵道",
+      "line": "小湊鐵道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 338
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "いすみ鉄道",
+      "line": "いすみ線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 339
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "銚子電気鉄道",
+      "line": "銚子電気鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 340
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "流鉄",
+      "line": "流山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 341
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "芝山鉄道",
+      "line": "芝山鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 342
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "千葉都市モノレール",
+      "line": "1号線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 343
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "千葉都市モノレール",
+      "line": "2号線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 344
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "山万",
+      "line": "ユーカリが丘線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 345
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "舞浜リゾートライン",
+      "line": "ディズニーリゾートライン",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 346
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "東京都交通局",
+      "line": "浅草線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 347
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "東京都交通局",
+      "line": "三田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 348
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "東京都交通局",
+      "line": "新宿線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 349
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "東京都交通局",
+      "line": "大江戸線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 350
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "東京都交通局",
+      "line": "荒川線・東京さくらトラム",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 351
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "東京都交通局",
+      "line": "日暮里・舎人ライナー",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 352
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "東京臨海高速鉄道",
+      "line": "りんかい線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 353
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "東京モノレール",
+      "line": "東京モノレール羽田空港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 354
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "多摩都市モノレール",
+      "line": "多摩都市モノレール線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 355
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "高尾登山電鉄",
+      "line": "高尾鋼索線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 356
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "御岳登山鉄道",
+      "line": "御岳登山鉄道鋼索線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 357
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "横浜市交通局",
+      "line": "ブルーライン",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 358
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "横浜市交通局",
+      "line": "グリーンライン",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 359
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "横浜高速鉄道",
+      "line": "みなとみらい線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 360
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "江ノ島電鉄",
+      "line": "江ノ島電鉄線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 361
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "湘南モノレール",
+      "line": "江の島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 362
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "小田急箱根",
+      "line": "鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 363
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "小田急箱根",
+      "line": "鋼索線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 364
+    },
+    {
+      "region": "関東の地域交通",
+      "operator": "大山観光電鉄",
+      "line": "大山鋼索線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 365
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "北越急行",
+      "line": "ほくほく線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 366
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "えちごトキめき鉄道",
+      "line": "妙高はねうまライン",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 367
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "えちごトキめき鉄道",
+      "line": "日本海ひすいライン",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 368
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "富山地方鉄道",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 369
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "富山地方鉄道",
+      "line": "立山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 370
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "富山地方鉄道",
+      "line": "不二越線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 371
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "富山地方鉄道",
+      "line": "上滝線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 372
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "富山地方鉄道",
+      "line": "富山軌道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 373
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "富山地方鉄道",
+      "line": "富山港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 374
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "黒部峡谷鉄道",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 375
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "万葉線",
+      "line": "高岡軌道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 376
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "万葉線",
+      "line": "新湊港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 377
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "あいの風とやま鉄道",
+      "line": "あいの風とやま鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 378
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "IRいしかわ鉄道",
+      "line": "IRいしかわ鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 379
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "北陸鉄道",
+      "line": "浅野川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 380
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "北陸鉄道",
+      "line": "石川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 381
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "えちぜん鉄道",
+      "line": "三国芦原線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 382
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "えちぜん鉄道",
+      "line": "勝山永平寺線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 383
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "福井鉄道",
+      "line": "福武線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 384
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "ハピラインふくい",
+      "line": "ハピラインふくい線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 385
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "長野電鉄",
+      "line": "長野線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 386
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "しなの鉄道",
+      "line": "しなの鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 387
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "しなの鉄道",
+      "line": "北しなの線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 388
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "上田電鉄",
+      "line": "別所線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 389
+    },
+    {
+      "region": "甲信越・北陸の地域交通",
+      "operator": "アルピコ交通",
+      "line": "上高地線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 390
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "静岡鉄道",
+      "line": "静岡清水線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 391
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "伊豆箱根鉄道",
+      "line": "駿豆線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 392
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "伊豆箱根鉄道",
+      "line": "大雄山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 393
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "大井川鐵道",
+      "line": "大井川本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 394
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "大井川鐵道",
+      "line": "井川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 395
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "天竜浜名湖鉄道",
+      "line": "天竜浜名湖線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 396
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "遠州鉄道",
+      "line": "鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 397
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "岳南電車",
+      "line": "岳南線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 398
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "樽見鉄道",
+      "line": "樽見線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 399
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "明知鉄道",
+      "line": "明知線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 400
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "養老鉄道",
+      "line": "養老線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 401
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "長良川鉄道",
+      "line": "越美南線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 402
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "名古屋市交通局",
+      "line": "東山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 403
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "名古屋市交通局",
+      "line": "名城線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 404
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "名古屋市交通局",
+      "line": "名港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 405
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "名古屋市交通局",
+      "line": "鶴舞線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 406
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "名古屋市交通局",
+      "line": "桜通線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 407
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "名古屋市交通局",
+      "line": "上飯田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 408
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "名古屋臨海高速鉄道",
+      "line": "あおなみ線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 409
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "愛知環状鉄道",
+      "line": "愛知環状鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 410
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "城北線運行事業者（制作前に現名称確認）",
+      "line": "城北線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 411
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "愛知高速交通",
+      "line": "東部丘陵線・リニモ",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 412
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "名古屋ガイドウェイバス",
+      "line": "志段味線・ゆとりーとライン",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 413
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "豊橋鉄道",
+      "line": "渥美線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 414
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "豊橋鉄道",
+      "line": "東田本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 415
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "伊勢鉄道",
+      "line": "伊勢線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 416
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "三岐鉄道",
+      "line": "三岐線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 417
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "三岐鉄道",
+      "line": "北勢線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 418
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "四日市あすなろう鉄道",
+      "line": "内部線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 419
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "四日市あすなろう鉄道",
+      "line": "八王子線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 420
+    },
+    {
+      "region": "東海の地域交通",
+      "operator": "伊賀鉄道",
+      "line": "伊賀線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 421
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "近江鉄道",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 422
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "近江鉄道",
+      "line": "多賀線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 423
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "近江鉄道",
+      "line": "八日市線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 424
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "信楽高原鐵道",
+      "line": "信楽線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 425
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "京都市交通局",
+      "line": "烏丸線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 426
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "京都市交通局",
+      "line": "東西線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 427
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "叡山電鉄",
+      "line": "叡山本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 428
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "叡山電鉄",
+      "line": "鞍馬線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 429
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "嵯峨野観光鉄道",
+      "line": "嵯峨野観光線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 430
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "京都丹後鉄道",
+      "line": "宮福線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 431
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "京都丹後鉄道",
+      "line": "宮舞線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 432
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "京都丹後鉄道",
+      "line": "宮豊線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 433
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "Osaka Metro",
+      "line": "御堂筋線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 434
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "Osaka Metro",
+      "line": "谷町線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 435
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "Osaka Metro",
+      "line": "四つ橋線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 436
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "Osaka Metro",
+      "line": "中央線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 437
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "Osaka Metro",
+      "line": "千日前線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 438
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "Osaka Metro",
+      "line": "堺筋線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 439
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "Osaka Metro",
+      "line": "長堀鶴見緑地線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 440
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "Osaka Metro",
+      "line": "今里筋線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 441
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "Osaka Metro",
+      "line": "南港ポートタウン線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 442
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "大阪モノレール",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 443
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "大阪モノレール",
+      "line": "国際文化公園都市線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 444
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "北大阪急行電鉄",
+      "line": "南北線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 445
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "水間鉄道",
+      "line": "水間線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 446
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "能勢電鉄",
+      "line": "妙見線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 447
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "能勢電鉄",
+      "line": "日生線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 448
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "阪堺電気軌道",
+      "line": "阪堺線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 449
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "阪堺電気軌道",
+      "line": "上町線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 450
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸市交通局",
+      "line": "西神・山手線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 451
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸市交通局",
+      "line": "北神線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 452
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸市交通局",
+      "line": "海岸線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 453
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸新交通",
+      "line": "ポートアイランド線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 454
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸新交通",
+      "line": "六甲アイランド線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 455
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "山陽電気鉄道",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 456
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "山陽電気鉄道",
+      "line": "網干線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 457
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸電鉄",
+      "line": "有馬線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 458
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸電鉄",
+      "line": "三田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 459
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸電鉄",
+      "line": "公園都市線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 460
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸電鉄",
+      "line": "粟生線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 461
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "神戸電鉄",
+      "line": "神戸高速線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 462
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "北条鉄道",
+      "line": "北条線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 463
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "和歌山電鐵",
+      "line": "貴志川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 464
+    },
+    {
+      "region": "近畿の地域交通",
+      "operator": "紀州鉄道",
+      "line": "紀州鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 465
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "若桜鉄道",
+      "line": "若桜線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 466
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "智頭急行",
+      "line": "智頭線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 467
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "岡山電気軌道",
+      "line": "東山本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 468
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "岡山電気軌道",
+      "line": "清輝橋線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 469
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "水島臨海鉄道",
+      "line": "水島本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 470
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "井原鉄道",
+      "line": "井原線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 471
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "広島電鉄",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 472
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "広島電鉄",
+      "line": "宇品線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 473
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "広島電鉄",
+      "line": "江波線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 474
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "広島電鉄",
+      "line": "白島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 475
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "広島電鉄",
+      "line": "皆実線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 476
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "広島電鉄",
+      "line": "横川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 477
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "広島電鉄",
+      "line": "宮島線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 478
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "広島高速交通",
+      "line": "広島新交通1号線・アストラムライン",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 479
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "錦川鉄道",
+      "line": "錦川清流線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 480
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "阿佐海岸鉄道",
+      "line": "阿佐東線・DMV",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 481
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "高松琴平電気鉄道",
+      "line": "琴平線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 482
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "高松琴平電気鉄道",
+      "line": "長尾線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 483
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "高松琴平電気鉄道",
+      "line": "志度線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 484
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "伊予鉄道",
+      "line": "高浜線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 485
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "伊予鉄道",
+      "line": "横河原線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 486
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "伊予鉄道",
+      "line": "郡中線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 487
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "伊予鉄道",
+      "line": "城北線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 488
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "伊予鉄道",
+      "line": "城南線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 489
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "伊予鉄道",
+      "line": "本町線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 490
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "伊予鉄道",
+      "line": "大手町線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 491
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "伊予鉄道",
+      "line": "花園線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 492
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "とさでん交通",
+      "line": "伊野線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 493
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "とさでん交通",
+      "line": "後免線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 494
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "とさでん交通",
+      "line": "桟橋線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 495
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "土佐くろしお鉄道",
+      "line": "中村線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 496
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "土佐くろしお鉄道",
+      "line": "宿毛線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 497
+    },
+    {
+      "region": "中国・四国の地域交通",
+      "operator": "土佐くろしお鉄道",
+      "line": "ごめん・なはり線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 498
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "福岡市交通局",
+      "line": "空港線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 499
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "福岡市交通局",
+      "line": "箱崎線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 500
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "福岡市交通局",
+      "line": "七隈線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 501
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "北九州高速鉄道",
+      "line": "小倉線・北九州モノレール",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 502
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "筑豊電気鉄道",
+      "line": "筑豊電気鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 503
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "甘木鉄道",
+      "line": "甘木線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 504
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "平成筑豊鉄道",
+      "line": "伊田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 505
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "平成筑豊鉄道",
+      "line": "糸田線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 506
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "平成筑豊鉄道",
+      "line": "田川線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 507
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "平成筑豊鉄道",
+      "line": "門司港レトロ観光線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 508
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "長崎電気軌道",
+      "line": "本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 509
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "長崎電気軌道",
+      "line": "赤迫支線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 510
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "長崎電気軌道",
+      "line": "桜町支線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 511
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "長崎電気軌道",
+      "line": "大浦支線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 512
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "長崎電気軌道",
+      "line": "蛍茶屋支線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 513
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "松浦鉄道",
+      "line": "西九州線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 514
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "熊本電気鉄道",
+      "line": "菊池線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 515
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "熊本電気鉄道",
+      "line": "藤崎線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 516
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "熊本市交通局",
+      "line": "幹線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 517
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "熊本市交通局",
+      "line": "水前寺線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 518
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "熊本市交通局",
+      "line": "健軍線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 519
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "熊本市交通局",
+      "line": "上熊本線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 520
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "熊本市交通局",
+      "line": "田崎線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 521
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "南阿蘇鉄道",
+      "line": "高森線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 522
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "肥薩おれんじ鉄道",
+      "line": "肥薩おれんじ鉄道線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 523
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "鹿児島市交通局",
+      "line": "第一期線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 524
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "鹿児島市交通局",
+      "line": "第二期線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 525
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "鹿児島市交通局",
+      "line": "谷山線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 526
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "鹿児島市交通局",
+      "line": "唐湊線",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 527
+    },
+    {
+      "region": "九州・沖縄の地域交通",
+      "operator": "沖縄都市モノレール",
+      "line": "沖縄都市モノレール線・ゆいレール",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 528
+    },
+    {
+      "region": "廃線復元・別枠",
+      "operator": "JR北海道",
+      "line": "留萌本線（2026年3月31日最終運行）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 529
+    },
+    {
+      "region": "廃線復元・別枠",
+      "operator": "能勢電鉄",
+      "line": "妙見の森ケーブル（2023年12月3日営業終了）",
+      "status": "未着手・制作前に公式情報確認",
+      "number": 530
+    }
+  ],
+  "sources": [
+    "https://www.jreast.co.jp/map/pdf/map_tokyo.pdf",
+    "https://www.jreast.co.jp/chiba/pdf/soubu.pdf",
+    "https://www.keisei.co.jp/news/detail.php?CN=6939",
+    "https://www.nankai.co.jp/news/241101_1.html",
+    "https://www.jrhokkaido.co.jp/CM/Info/press/pdf/20250328_KO_todokede.pdf",
+    "https://noseden.hankyu.co.jp/guide/mountain_close/"
+  ],
+  "qualityStandard": "quality-standards.md"
+}

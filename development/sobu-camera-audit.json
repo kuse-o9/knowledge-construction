@@ -1,0 +1,10 @@
+{
+  "cabSamples": 39761,
+  "chaseSamples": 36320,
+  "maxCabPitchDegrees": 4.301783839335394,
+  "buildingIntrusions": 0,
+  "tunnelRule": "Underground chase view uses cab position and hides own body; prevents terrain clipping.",
+  "terrainCameraSamples": 36320,
+  "minimumChaseTerrainClearance": 51.09914031804843,
+  "actualBrowserGPU": "not run; browser-control skill unavailable"
+}

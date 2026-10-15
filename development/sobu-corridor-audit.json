@@ -1,0 +1,19 @@
+{
+  "coverage": {
+    "reverse": {
+      "length": 39771.94204031415,
+      "stops": 10,
+      "samples": 22496
+    },
+    "forward": {
+      "length": 39749.5531791267,
+      "stops": 10,
+      "samples": 22485
+    }
+  },
+  "cameraRays": 404829,
+  "stationApproachPositions": 5220,
+  "triangles": 1009054,
+  "blocked": 0,
+  "hits": []
+}

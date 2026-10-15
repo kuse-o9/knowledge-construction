@@ -1,0 +1,10 @@
+{
+  "sources": [
+    "https://www.openstreetmap.org/relation/9475339",
+    "https://www.jreast.co.jp/map/pdf/map_tokyo.pdf",
+    "https://www.jreast.co.jp/chiba/pdf/soubu.pdf"
+  ],
+  "credit": "© OpenStreetMap contributors",
+  "license": "ODbL-1.0",
+  "notes": "OSMの総武快速線の線形を使用。線路間隔・地下深さ・配線・車両外観・ホームの形と出口側はゲーム用近似。地下・高架を区別し、地下区間は覆いを設ける。実在駅の精密模型ではありません。"
+}

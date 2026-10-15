@@ -1,0 +1,52 @@
+{
+  "kind": "official facts, original game script; not copied recordings",
+  "sources": [
+    "https://www.jreast.co.jp/map/pdf/map_tokyo.pdf",
+    "https://www.jreast.co.jp/chiba/pdf/soubu.pdf",
+    "https://www.keisei.co.jp/news/detail.php?CN=6939",
+    "https://www.tokyometro.jp/station/mitsukoshimae/index.html",
+    "https://www.kotsu.metro.tokyo.jp/subway/stations/higashi-nihombashi.html"
+  ],
+  "transfers": {
+    "JO19": [
+      "新幹線、中央線、山手線、京浜東北線、東海道線、上野東京ライン、横須賀線、京葉線、東京メトロ丸ノ内線",
+      "the Shinkansen, the Chuo Line, the Yamanote Line, the Keihin-Tohoku Line, the Tokaido Line, the Ueno-Tokyo Line, the Yokosuka Line, the Keiyo Line, and the Marunouchi Subway Line"
+    ],
+    "JO20": [
+      "東京メトロ銀座線、半蔵門線（三越前駅）",
+      "the Ginza and Hanzomon Subway Lines at Mitsukoshimae"
+    ],
+    "JO21": [
+      "都営新宿線（馬喰横山駅）、都営浅草線（東日本橋駅）",
+      "the Shinjuku Subway Line at Bakuro-yokoyama and the Asakusa Subway Line at Higashi-nihombashi"
+    ],
+    "JO22": [
+      "中央・総武線各駅停車、東京メトロ半蔵門線",
+      "the Chuo-Sobu Line local service and the Hanzomon Subway Line"
+    ],
+    "JO23": [
+      "中央・総武線各駅停車",
+      "the Chuo-Sobu Line local service"
+    ],
+    "JO24": [
+      "中央・総武線各駅停車",
+      "the Chuo-Sobu Line local service"
+    ],
+    "JO25": [
+      "中央・総武線各駅停車、東武アーバンパークライン、京成線（京成船橋駅）",
+      "the Chuo-Sobu Line local service, the Tobu Urban Park Line, and the Keisei Line at Keisei-Funabashi"
+    ],
+    "JO26": [
+      "中央・総武線各駅停車、京成松戸線（新津田沼駅）",
+      "the Chuo-Sobu Line local service and the Keisei Matsudo Line at Shin-Tsudanuma"
+    ],
+    "JO27": [
+      "中央・総武線各駅停車",
+      "the Chuo-Sobu Line local service"
+    ],
+    "JO28": [
+      "中央・総武線各駅停車、総武本線、成田線、内房線、外房線、千葉都市モノレール、京成線（京成千葉駅）",
+      "the Chuo-Sobu Line local service, the Sobu Main Line, the Narita Line, the Uchibo Line, the Sotobo Line, the Chiba Urban Monorail, and the Keisei Line at Keisei-Chiba"
+    ]
+  }
+}
