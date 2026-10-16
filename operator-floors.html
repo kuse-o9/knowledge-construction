@@ -1,0 +1,164 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BAYLINE 会社別車両基地</title><style>
+*{box-sizing:border-box}body{background:#edf3ef;color:#17342c;font:16px/1.65 system-ui,sans-serif;margin:0}main{max-width:1030px;margin:auto;padding:24px}h1{font-size:clamp(25px,5vw,40px)}a{color:#135e67}select{padding:11px;font:inherit;border:1px solid #9bb4a8;border-radius:10px;width:100%;background:white}.layout{display:grid;grid-template-columns:245px 1fr;gap:18px}.floor{display:block;width:100%;padding:11px;text-align:left;background:#fff;border:1px solid #ceddd2;border-radius:8px;margin:4px 0;cursor:pointer}.floor[aria-current=true]{background:#bfe6d3;border-color:#479a77;font-weight:bold}.panel{padding:22px;border-radius:14px;background:white;min-height:320px}.train{display:block;background:#e9f6f0;padding:13px;border-radius:9px;margin:10px 0}.empty{color:#647770;background:#f3f5f2;padding:22px;border-radius:8px}small{color:#5f766a}@media(max-width:650px){.layout{grid-template-columns:1fr}.floors{max-height:200px;overflow:auto}}
+</style><main><a href="index.html#game-room">← ゲームの部屋</a><h1>🚃 会社別・車両基地フロア案内</h1><p>鉄道会社ごとに専用フロア。好きなフロアを選び、完成済みの路線から運転ゲームを開始できます。これは新しい車両基地の入口の先行版で、3D車両基地そのものは今後拡張します。</p><label for="jump">フロアを選択</label><select id="jump"></select><div class="layout"><nav class="floors" id="floors" aria-label="会社別フロア一覧"></nav><section class="panel" id="detail" aria-live="polite"></section></div><p><small>未制作の車両は「準備中」と表示します。既存のゲームファイルは変更していません。</small></p></main>
+<script>
+const base='https://kuse-o9.github.io/knowledge-construction/';
+Promise.resolve({
+  "schema": 1,
+  "description": "会社ごとに一階。実装済みのゲームだけ出発可能。",
+  "floors": [
+    {
+      "floor": 1,
+      "operator": "東武鉄道",
+      "trains": []
+    },
+    {
+      "floor": 2,
+      "operator": "西武鉄道",
+      "trains": []
+    },
+    {
+      "floor": 3,
+      "operator": "京成電鉄",
+      "trains": []
+    },
+    {
+      "floor": 4,
+      "operator": "京王電鉄",
+      "trains": []
+    },
+    {
+      "floor": 5,
+      "operator": "小田急電鉄",
+      "trains": []
+    },
+    {
+      "floor": 6,
+      "operator": "東急電鉄",
+      "trains": []
+    },
+    {
+      "floor": 7,
+      "operator": "京浜急行電鉄（京急）",
+      "trains": []
+    },
+    {
+      "floor": 8,
+      "operator": "相模鉄道（相鉄）",
+      "trains": []
+    },
+    {
+      "floor": 9,
+      "operator": "東京メトロ",
+      "trains": []
+    },
+    {
+      "floor": 10,
+      "operator": "東京都交通局",
+      "trains": [],
+      "sections": [
+        "都営浅草線",
+        "都営三田線",
+        "都営新宿線",
+        "都営大江戸線",
+        "都電荒川線（東京さくらトラム）",
+        "日暮里・舎人ライナー"
+      ]
+    },
+    {
+      "floor": 11,
+      "operator": "横浜市交通局",
+      "trains": []
+    },
+    {
+      "floor": 12,
+      "operator": "首都圏新都市鉄道（つくばエクスプレス）",
+      "trains": []
+    },
+    {
+      "floor": 13,
+      "operator": "東京モノレール",
+      "trains": []
+    },
+    {
+      "floor": 14,
+      "operator": "秩父鉄道",
+      "trains": []
+    },
+    {
+      "floor": 15,
+      "operator": "関東鉄道",
+      "trains": []
+    },
+    {
+      "floor": 16,
+      "operator": "宇都宮ライトレール",
+      "trains": []
+    },
+    {
+      "floor": 17,
+      "operator": "JR北海道",
+      "trains": []
+    },
+    {
+      "floor": 18,
+      "operator": "JR東日本",
+      "trains": [
+        {
+          "name": "山手線",
+          "path": "yamanote/index.html"
+        },
+        {
+          "name": "京浜東北・根岸線",
+          "path": "keihin.html"
+        },
+        {
+          "name": "中央線快速",
+          "path": "chuo.html"
+        },
+        {
+          "name": "中央・総武線各駅停車",
+          "path": "chuo-local.html"
+        },
+        {
+          "name": "総武線快速（検証版）",
+          "path": "sobu.html"
+        }
+      ]
+    },
+    {
+      "floor": 19,
+      "operator": "JR東海",
+      "trains": []
+    },
+    {
+      "floor": 20,
+      "operator": "JR西日本",
+      "trains": []
+    },
+    {
+      "floor": 21,
+      "operator": "JR四国",
+      "trains": []
+    },
+    {
+      "floor": 22,
+      "operator": "JR九州",
+      "trains": []
+    },
+    {
+      "floor": 23,
+      "operator": "ゆりかもめ株式会社",
+      "trains": [
+        {
+          "name": "ゆりかもめ",
+          "path": "railway/index.html"
+        }
+      ],
+      "note": "追加の専用フロア。既存ゲームとの接続を維持"
+    }
+  ]
+}).then(data=>{
+const floors=data.floors,select=document.getElementById('jump'),nav=document.getElementById('floors'),detail=document.getElementById('detail');function show(n){let f=floors.find(f=>f.floor===n);if(!f)return;select.value=String(n);nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(+b.dataset.floor===n)));detail.replaceChildren();let h=document.createElement('h2');h.textContent=f.floor+'F '+f.operator;detail.append(h);if(f.sections){let sub=document.createElement('p');sub.textContent='路線別エリア：'+f.sections.join(' ／ ');detail.append(sub)}if(f.trains.length){for(const train of f.trains){let a=document.createElement('a');a.className='train';a.href=base+train.path;a.textContent='🚆 '+train.name+' — 運転する →';detail.append(a)}}else{let p=document.createElement('p');p.className='empty';p.textContent='この会社の運転ゲームは準備中。制作が完了するとここに追加されます。';detail.append(p)}}for(let f of floors){let o=document.createElement('option');o.value=f.floor;o.textContent=f.floor+'F '+f.operator;select.append(o);let b=document.createElement('button');b.type='button';b.className='floor';b.dataset.floor=f.floor;b.textContent=f.floor+'F　'+f.operator;b.onclick=()=>show(f.floor);nav.append(b)}select.onchange=()=>show(+select.value);show(18);
+}).catch(e=>{document.getElementById('detail').textContent='読み込みエラー：'+e.message});
+</script>
