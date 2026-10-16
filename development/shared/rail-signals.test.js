@@ -1,0 +1,20 @@
+/* Run with: node development/shared/rail-signals.test.js */
+'use strict';
+const assert=require('node:assert/strict');
+const s=require('./rail-signals.js');
+const blocks=s.buildBlocks(600,[200,400]);
+assert.equal(blocks.length,3);
+assert.deepEqual(blocks.map(b=>[b.start,b.end]),[[0,200],[200,400],[400,600]]);
+assert.equal(s.blockAt(blocks,200),1);
+assert.equal(s.blockAt(blocks,600),2);
+assert.equal(s.blockAt(blocks,-1),-1);
+assert.throws(()=>s.buildBlocks(600,[400,200]),RangeError);
+assert.equal(s.aspectAt(blocks,0,[]),'GREEN');
+assert.equal(s.aspectAt(blocks,0,[{id:'A',front:300,length:40}]),'YELLOW');
+assert.equal(s.aspectAt(blocks,1,[{id:'A',front:300,length:40}]),'RED');
+assert.equal(s.aspectAt(blocks,0,[],{routeAvailable:false}),'RED');
+assert.equal(s.aspectAt(blocks,0,[{id:'A',front:100,length:30}],{excludeId:'A'}),'GREEN');
+assert.deepEqual([...s.occupiedBlocks(blocks,[{id:'X',front:210,length:25}])],[0,1]);
+assert.equal(s.stopDistance(blocks,1,'RED'),200);
+assert.equal(s.stopDistance(blocks,1,'GREEN'),Infinity);
+console.log('BAYLINE shared signals: 12 checks passed');
