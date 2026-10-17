@@ -48,7 +48,21 @@ function stopDistance(blocks,signalBlockIndex,aspect){
   if(aspect!=='RED')return Infinity;
   return blocks[signalBlockIndex].start;
 }
-const api=Object.freeze({buildBlocks,blockAt,occupiedBlocks,aspectAt,stopDistance});
+/* Direction-aware route selection. Only trains on the same physical track may occupy a block.
+ * A route request conflicts with another reserved movement when any resource ID overlaps.
+ */
+function routeClear(request,reservations=[]){
+  if(!request||!Array.isArray(request.resources)||!request.resources.length)return false;
+  if(request.switchAligned===false||request.enabled===false)return false;
+  const own=new Set(request.resources);
+  return !reservations.some(other=>other.id!==request.id&&(other.active!==false)&&
+    Array.isArray(other.resources)&&other.resources.some(id=>own.has(id)));
+}
+function signalForRoute(blocks,index,trains,request,reservations=[]){
+  return aspectAt(blocks,index,(trains||[]).filter(t=>t.trackId===request.trackId),
+    {routeAvailable:routeClear(request,reservations)});
+}
+const api=Object.freeze({buildBlocks,blockAt,occupiedBlocks,aspectAt,stopDistance,routeClear,signalForRoute});
 if(typeof module==='object'&&module.exports)module.exports=api;
 root.BaylineSignals=api;
 })(typeof globalThis==='object'?globalThis:this);
