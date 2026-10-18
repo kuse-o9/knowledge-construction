@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BAYLINE｜会社別車両基地</title>
-<link rel="stylesheet" href="development/game-room/depot-webgl.css">
-<script src="development/game-room/depot-webgl.js" defer></script>
+<link rel="stylesheet" href="development/game-room/depot-webgl.css?v=walk1">
+<script src="development/game-room/depot-webgl.js?v=walk1" defer></script>
 </head>
 <body>
 <header><a href="index.html#game-room">← Study Note</a><span>BAYLINE / DEPOT</span></header>
@@ -12,11 +12,13 @@
 <div class="heading"><div><p class="eyebrow">ひと休み、次の路線へ。</p><h1>会社別車両基地</h1></div><span class="badge">23社・局の専用フロア</span></div>
 <div class="layout">
 <section class="scene" aria-label="屋内車両基地">
-<canvas id="depot" tabindex="0" aria-label="3D車両基地。ドラッグで見回し、ホイールで拡大。車両クリック、または右の路線ボタンで出発。"></canvas>
-<div class="scene-top"><div><span id="floor-number">18F</span><h2 id="scene-title">JR東日本</h2><p id="train-count"></p></div><button id="reset" type="button">視点を戻す ↺</button></div>
+<canvas id="depot" tabindex="0" aria-label="3D車両基地。WASD・矢印で歩く。ドラッグで見回す。ホームの電車の横でEキーで出発。"></canvas>
+<div class="scene-top"><div><span id="floor-number">18F</span><h2 id="scene-title">JR東日本</h2><p id="train-count"></p></div><button id="reset" type="button">入口に戻る ↺</button></div>
 <div id="loading" role="status">車両基地を準備しています…</div>
 <div id="lift" hidden aria-live="polite"><span>エレベーター移動中</span><b id="lift-number">18F</b></div>
-<div class="scene-bottom"><span id="hover-note" aria-live="polite">車両をクリックして出発</span><span>ドラッグ：見回す　スクロール：拡大</span></div>
+<div class="walk-pad" aria-label="移動ボタン"><button id="walk-up" aria-label="前へ">▲</button><button id="walk-left" aria-label="左へ">◀</button><button id="walk-down" aria-label="後ろへ">▼</button><button id="walk-right" aria-label="右へ">▶</button></div>
+<button id="board" type="button" disabled>ホームの電車に近づこう</button>
+<div class="scene-bottom"><span id="hover-note" aria-live="polite">車両をクリックして出発</span><span>WASD・矢印：歩く　ドラッグ：見回す　E：乗る</span></div>
 </section>
 <aside>
 <p class="eyebrow">ELEVATOR</p><h2>フロアを移動</h2>
@@ -24,7 +26,7 @@
 <div class="buttons"><button id="down" type="button" disabled>▼ 下の階</button><button id="up" type="button" disabled>▲ 上の階</button></div>
 <div class="route-heading"><h3>この階の路線</h3><span id="route-count"></span></div>
 <div id="routes"></div><p id="sections"></p>
-<p class="hint">車両を選ぶと運転ゲームが開きます。総武線快速は検証版です。</p>
+<p class="hint">画面をクリックしてWASD・矢印で歩けます。ホーム手前のスロープを上がり、電車の横でEキーか乗車ボタンを押してください。右の路線名からも直接出発できます。総武線快速は検証版です。</p>
 <a class="all-routes" href="operator-floors.html">全フロアの路線一覧 →</a>
 </aside>
 </div>

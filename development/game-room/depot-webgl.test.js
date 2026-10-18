@@ -6,14 +6,14 @@ const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'../..');
 const floors=JSON.parse(fs.readFileSync(path.join(__dirname,'operator-floors.json'))).floors;
 async function boot(gpu=true){
-  const nodes=new Map(),events={},draws=[],uploads=[];let count=0;
+  const nodes=new Map(),events={},draws=[],uploads=[];let count=0,now=0;const frames=[];
   function node(id=''){
     return {id,hidden:false,disabled:false,value:'',textContent:'',dataset:{},style:{setProperty(){}},children:[],classList:{toggle(){}},
       clientWidth:1000,clientHeight:680,width:0,height:0,
       append(x){this.children.push(x)},replaceChildren(){this.children=[]},
       addEventListener(name,fn){(this.events??={})[name]=fn},
       getBoundingClientRect(){return {left:0,top:0,width:1000,height:680}},
-      setPointerCapture(){},hasPointerCapture(){return false},releasePointerCapture(){}};
+      focus(){},setPointerCapture(){},hasPointerCapture(){return false},releasePointerCapture(){}};
   }
   const gl=new Proxy({getShaderParameter:()=>true,getProgramParameter:()=>true,getError:()=>0,
     getAttribLocation:()=>0,createBuffer:()=>({}),createShader:()=>({}),createProgram:()=>({}),
@@ -26,12 +26,12 @@ async function boot(gpu=true){
   document.getElementById('depot').getContext=()=>gpu?gl:null;
   const location={href:'http://localhost/depot-3d.html'};
   const context=vm.createContext({document,location,URL,Float32Array,Set,Map,Math,Promise,console:{error(){}},
-    devicePixelRatio:1,performance:{now:()=>0},matchMedia:()=>({matches:true}),
-    requestAnimationFrame:fn=>{setImmediate(()=>fn(1000));return ++count},
+    devicePixelRatio:1,performance:{now:()=>now},matchMedia:()=>({matches:true}),
+    requestAnimationFrame:fn=>{frames.push(fn);return ++count},
     ResizeObserver:class{observe(){}},addEventListener:(name,fn)=>events[name]=fn,
     fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,url.pathname)))})});
   await vm.runInContext(fs.readFileSync(path.join(__dirname,'depot-webgl.js'),'utf8'),context);
-  const flush=()=>new Promise(r=>setImmediate(()=>setImmediate(r)));await flush();
+  const flush=async(n=4)=>{for(let i=0;i<n;i++){now+=50;const batch=frames.splice(0);for(const fn of batch)fn(now);await new Promise(r=>setImmediate(r));}};await flush();
   return {nodes,draws,uploads,location,flush,events};
 }
 test('JR five routes, finite 3D mesh upload, and all 23 independent floors',async()=>{
@@ -51,19 +51,22 @@ test('JR five routes, finite 3D mesh upload, and all 23 independent floors',asyn
   }
   assert.match(n('train-count').textContent,/1編成/);
 });
-test('ray click selects the actual visible JR train; dragging never navigates',async()=>{
-  const b=await boot(),c=b.nodes.get('depot');
-  // Project a point on the front of the original green train using initial camera.
-  const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0),sub=(a,b)=>a.map((v,i)=>v-b[i]);
-  const norm=a=>a.map(v=>v/Math.hypot(...a)),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
-  const eye=[Math.sin(.25)*Math.cos(.12)*68,3+Math.sin(.12)*68,Math.cos(.25)*Math.cos(.12)*68-5];
-  const f=norm(sub([0,3,-5],eye)),r=norm(cross(f,[0,1,0])),u=cross(r,f),v=sub([-20,2.5,12.17],eye),z=dot(v,f),t=Math.tan(Math.PI/8);
-  const e={clientX:500+dot(v,r)/z/t*340,clientY:340-dot(v,u)/z/t*340,button:0,pointerId:1};
-  c.events.pointermove(e);assert.match(b.nodes.get('hover-note').textContent,/山手線で出発/);
-  c.events.pointerdown(e);c.events.pointermove({...e,clientX:e.clientX+70});c.events.pointerup(e);
-  assert.equal(b.location.href,'http://localhost/depot-3d.html');
-  b.nodes.get('reset').onclick();await b.flush();
-  c.events.pointerdown(e);c.events.pointerup(e);assert.equal(b.location.href,'http://localhost/yamanote/index.html');
+test('walk up ramp, stop at train and platform walls, board only nearby, reset on travel',async()=>{
+  const b=await boot(),c=b.nodes.get('depot'),n=id=>b.nodes.get(id);
+  const pos=()=>JSON.parse(c.dataset.player);
+  const walk=async(key,frames)=>{c.events.keydown({key,preventDefault(){}});await b.flush(frames);b.events.keyup({key});await b.flush();};
+  assert.equal(pos().y,0);assert.equal(n('board').disabled,true);
+  c.events.keydown({key:'e',preventDefault(){}});assert.match(b.location.href,/depot-3d/);
+  await walk('w',22);assert.ok(pos().y>.9,'ramp reaches platform height');
+  await walk('w',60);assert.equal(c.dataset.nearby,'yamanote/index.html');assert.equal(n('board').disabled,false);
+  await walk('a',20);assert.ok(pos().x>-18.11,'cannot walk through platform side or train');
+  c.events.keydown({key:'e',preventDefault(){}});assert.equal(b.location.href,'http://localhost/yamanote/index.html');
+  n('reset').onclick();await b.flush();assert.equal(pos().y,0);assert.equal(pos().z,24.8);
+  await walk('d',7);await walk('w',45);await walk('a',20);assert.ok(pos().x>-16.51,'platform wall stops sideways entry');
+  n('floor').value=23;n('floor').onchange();await b.flush(8);
+  assert.equal(pos().x,2.7);assert.equal(pos().y,0);assert.equal(n('board').disabled,true);
+  await walk('w',85);assert.equal(c.dataset.nearby,'railway/index.html');
+  n('board').onclick();assert.equal(b.location.href,'http://localhost/railway/index.html');
 });
 test('no WebGL keeps six route links available',async()=>{
   const b=await boot(false);assert.equal(b.nodes.get('routes').children.length,6);
