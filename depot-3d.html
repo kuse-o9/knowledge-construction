@@ -1,44 +1,33 @@
-<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BAYLINE｜会社別立体車両基地</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#101e23;color:#e9f3f2;font:15px/1.6 system-ui,"Yu Gothic",sans-serif}main{max-width:1240px;margin:auto;padding:20px}a{color:#9be4ee}h1{margin:.2em 0;font-size:clamp(24px,4vw,36px)}p{margin:8px 0}.shell{display:grid;grid-template-columns:minmax(0,1fr) 295px;gap:16px;margin-top:18px}#scene{position:relative;background:#1c3238;border:1px solid #45636a;border-radius:16px;overflow:hidden;min-height:510px}canvas{width:100%;height:510px;display:block;touch-action:pan-y}.scenehead{position:absolute;left:14px;top:12px;background:#0d2229d9;padding:8px 12px;border-radius:8px;pointer-events:none}.controls{background:#20343b;border:1px solid #45636a;border-radius:16px;padding:16px}select,button{font:inherit;border:1px solid #78969e;border-radius:9px;padding:9px 10px;background:#ebf5f5;color:#17353b;width:100%}button{cursor:pointer;background:#aee5ca}label{display:block;margin:10px 0 5px}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.buttons button{background:#d7e8e5}.trainlink{display:block;margin:10px 0;padding:11px;background:#30535c;border:1px solid #65868b;color:#f2f9fa;border-radius:9px;text-decoration:none}.trainlink:hover{background:#3a6971}.status{background:#142a31;border-radius:10px;padding:12px;margin-top:12px}.hint{font-size:12px;color:#c0d2d5}.badges{display:flex;gap:8px;flex-wrap:wrap}.badges span{border:1px solid #597681;border-radius:25px;padding:3px 9px;font-size:12px}.foot{margin-top:18px;color:#b5c9cb;font-size:12px}@media(max-width:750px){.shell{grid-template-columns:1fr}canvas{height:400px}#scene{min-height:400px}}
-</style><main><a href="index.html#game-room">← ゲームの部屋</a><h1>🚃 BAYLINE 立体車両基地</h1><p>会社ごとに1フロア。各階に線路・停車中の車両・隣接ホームを配置した、屋内車両基地の3D風表示。</p>
-<div class="badges"><span>23フロア</span><span>電車の横にホーム</span><span>エレベーター移動</span><span>全体／各階 切替</span></div>
-<div class="shell"><div id="scene"><canvas id="depot" aria-label="立体車両基地。ホームと線路、車両が並ぶ様子を描画します"></canvas><div class="scenehead"><b id="sceneTitle">18F JR東日本</b><div class="hint" id="viewLabel">各階表示</div></div></div>
-<aside class="controls"><h2>エレベーター</h2><label for="floor">行き先・鉄道会社</label><select id="floor"></select><div class="buttons"><button id="up" type="button">▲ 1階上へ</button><button id="down" type="button">▼ 1階下へ</button><button id="one" type="button">現在の階</button><button id="all" type="button">建物全体</button></div>
-<p class="hint">マウスで左右ドラッグ：見回し ／ ボタンで階を移動</p><div class="status"><b id="floorName"></b><div id="routes"></div></div></aside></div>
-<p class="foot">この表示は車両基地の形状を検討する先行3D風モデル。実車模型や実施設の完全再現、建物内での自由移動はまだ未対応です。未制作の路線は表示専用の仮車両で、運転開始できません。</p></main>
-<script>
-'use strict';
-const floors=[{"floor":1,"operator":"東武鉄道","trains":[]},{"floor":2,"operator":"西武鉄道","trains":[]},{"floor":3,"operator":"京成電鉄","trains":[]},{"floor":4,"operator":"京王電鉄","trains":[]},{"floor":5,"operator":"小田急電鉄","trains":[]},{"floor":6,"operator":"東急電鉄","trains":[]},{"floor":7,"operator":"京浜急行電鉄（京急）","trains":[]},{"floor":8,"operator":"相模鉄道（相鉄）","trains":[]},{"floor":9,"operator":"東京メトロ","trains":[]},{"floor":10,"operator":"東京都交通局","trains":[],"sections":["都営浅草線","都営三田線","都営新宿線","都営大江戸線","都電荒川線（東京さくらトラム）","日暮里・舎人ライナー"]},{"floor":11,"operator":"横浜市交通局","trains":[]},{"floor":12,"operator":"首都圏新都市鉄道（つくばエクスプレス）","trains":[]},{"floor":13,"operator":"東京モノレール","trains":[]},{"floor":14,"operator":"秩父鉄道","trains":[]},{"floor":15,"operator":"関東鉄道","trains":[]},{"floor":16,"operator":"宇都宮ライトレール","trains":[]},{"floor":17,"operator":"JR北海道","trains":[]},{"floor":18,"operator":"JR東日本","trains":[{"name":"山手線","path":"yamanote/index.html"},{"name":"京浜東北・根岸線","path":"keihin.html"},{"name":"中央線快速","path":"chuo.html"},{"name":"中央・総武線各駅停車","path":"chuo-local.html"},{"name":"総武線快速（検証版）","path":"sobu.html"}]},{"floor":19,"operator":"JR東海","trains":[]},{"floor":20,"operator":"JR西日本","trains":[]},{"floor":21,"operator":"JR四国","trains":[]},{"floor":22,"operator":"JR九州","trains":[]},{"floor":23,"operator":"ゆりかもめ株式会社","trains":[{"name":"ゆりかもめ","path":"railway/index.html"}],"note":"追加の専用フロア。既存ゲームとの接続を維持"}];
-const $=id=>document.getElementById(id),canvas=$('depot'),ctx=canvas.getContext('2d');
-let selected=18,overview=false,yaw=-.57,drag=null;
-for(const f of floors){const o=document.createElement('option');o.value=f.floor;o.textContent=f.floor+'F  '+f.operator;$('floor').append(o)}
-function project(x,y,z,w,h,scale){const c=Math.cos(yaw),s=Math.sin(yaw),xx=x*c-z*s,zz=x*s+z*c,depth=38+zz;return [w/2+xx*scale*36/depth,h*.57-y*scale*36/depth+zz*scale*.16,depth]}
-function polygon(pts,fill,stroke,w,h,scale){ctx.beginPath();pts.forEach((p,i)=>{const q=project(...p,w,h,scale);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])});ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=1.2;ctx.stroke()}}
-function line(a,b,color,wid,w,h,scale){const A=project(...a,w,h,scale),B=project(...b,w,h,scale);ctx.strokeStyle=color;ctx.lineWidth=wid;ctx.beginPath();ctx.moveTo(...A.slice(0,2));ctx.lineTo(...B.slice(0,2));ctx.stroke()}
-function cuboid(x0,x1,y0,y1,z0,z1,color,w,h,k){polygon([[x0,y0,z0],[x1,y0,z0],[x1,y0,z1],[x0,y0,z1]],color,'#789198',w,h,k);polygon([[x0,y1,z0],[x1,y1,z0],[x1,y1,z1],[x0,y1,z1]],color,'#a4c2c5',w,h,k);polygon([[x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]],color,'#60797f',w,h,k);polygon([[x1,y0,z0],[x1,y0,z1],[x1,y1,z1],[x1,y1,z0]],color,'#526a70',w,h,k)}
-function floorScene(y,scale,w,h,alpha=1){ctx.globalAlpha=alpha;
-polygon([[-16,y,-21],[16,y,-21],[16,y,22],[-16,y,22]],'#43595b','#719095',w,h,scale);
-for(let track=0;track<4;track++){const x=-11+track*7.3; // Rails and sleepers
-for(let z=-17;z<=18;z+=2){line([x-1.8,y+.05,z],[x+1.8,y+.05,z],'#807c71',3,w,h,scale)}
-for(const dx of [-.8,.8])line([x+dx,y+.15,-18],[x+dx,y+.15,20],'#c2d3d5',2.5,w,h,scale);
-// Side platform: physically adjacent to each train
-cuboid(x+2.0,x+3.15,y,y+.45,-18,19,'#c8c5b6',w,h,scale);
-line([x+2,y+.49,-18],[x+2,y+.49,19],'#f5cb54',3,w,h,scale);
-// Train body, windows, roof and front
-cuboid(x-1.75,x+1.65,y+.6,y+3.6,-13,12,'#dce6e7',w,h,scale);
-polygon([[x-1.75,y+1.1,12],[x+1.65,y+1.1,12],[x+1.65,y+3,12],[x-1.75,y+3,12]],track===0?'#2c656e':'#366075','#20393f',w,h,scale);
-for(let z=-11;z<11;z+=3.8){polygon([[x-1.8,y+2,z],[x-1.8,y+3,z],[x-1.8,y+3,z+2.5],[x-1.8,y+2,z+2.5]],'#457b90',null,w,h,scale)}
-line([x-1.79,y+1.05,-13],[x-1.79,y+1.05,12],track===0?'#e0cb51':'#85b8d4',4,w,h,scale);
-}
-for(const x of [-16,16]){for(const z of [-19,3,19])cuboid(x-.35,x+.35,y,y+7,z-.35,z+.35,'#879798',w,h,scale)}
-ctx.globalAlpha=1}
-function render(){const w=canvas.clientWidth,h=canvas.clientHeight,dpr=Math.min(2,devicePixelRatio||1);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#182e36';ctx.fillRect(0,0,w,h);
-const grad=ctx.createLinearGradient(0,0,0,h);grad.addColorStop(0,'#142831');grad.addColorStop(1,'#33515b');ctx.fillStyle=grad;ctx.fillRect(0,0,w,h);
-if(overview){const scale=Math.min(w/290,h/180);for(let i=0;i<floors.length;i++){const y=(i-11)*4;floorScene(y,scale,w,h,i+1===selected?1:.28)}}else{const scale=Math.min(w/29,h/18);floorScene(0,scale,w,h)}
-}
-function update(){selected=Number($('floor').value);const f=floors.find(x=>x.floor===selected);$('sceneTitle').textContent=f.floor+'F　'+f.operator;$('viewLabel').textContent=overview?'23フロア全体':'選択した階の車両・ホーム';$('floorName').textContent=f.operator;const routes=$('routes');routes.replaceChildren();if(f.sections){const p=document.createElement('p');p.className='hint';p.textContent=f.sections.join(' ／ ');routes.append(p)}if(f.trains?.length){for(const t of f.trains){const a=document.createElement('a');a.className='trainlink';a.href='https://kuse-o9.github.io/knowledge-construction/'+t.path;a.textContent='🚆 '+t.name+'　出発 →';routes.append(a)}}else{const p=document.createElement('p');p.textContent='運転ゲームは現在準備中。';routes.append(p)}render()}
-$('floor').addEventListener('change',()=>{overview=false;update()});$('up').onclick=()=>{$('floor').value=Math.min(23,selected+1);overview=false;update()};$('down').onclick=()=>{$('floor').value=Math.max(1,selected-1);overview=false;update()};$('one').onclick=()=>{overview=false;update()};$('all').onclick=()=>{overview=true;update()};
-canvas.addEventListener('pointerdown',e=>{drag=e.clientX;canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointermove',e=>{if(drag!==null){yaw=Math.max(-1.15,Math.min(.2,yaw+(e.clientX-drag)*.006));drag=e.clientX;render()}});canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('pointercancel',()=>drag=null);addEventListener('resize',render);$('floor').value=18;update();
-</script>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BAYLINE｜会社別車両基地</title>
+<link rel="stylesheet" href="development/game-room/depot-webgl.css">
+<script src="development/game-room/depot-webgl.js" defer></script>
+</head>
+<body>
+<header><a href="index.html#game-room">← Study Note</a><span>BAYLINE / DEPOT</span></header>
+<main>
+<div class="heading"><div><p class="eyebrow">ひと休み、次の路線へ。</p><h1>会社別車両基地</h1></div><span class="badge">23社・局の専用フロア</span></div>
+<div class="layout">
+<section class="scene" aria-label="屋内車両基地">
+<canvas id="depot" tabindex="0" aria-label="3D車両基地。ドラッグで見回し、ホイールで拡大。車両クリック、または右の路線ボタンで出発。"></canvas>
+<div class="scene-top"><div><span id="floor-number">18F</span><h2 id="scene-title">JR東日本</h2><p id="train-count"></p></div><button id="reset" type="button">視点を戻す ↺</button></div>
+<div id="loading" role="status">車両基地を準備しています…</div>
+<div id="lift" hidden aria-live="polite"><span>エレベーター移動中</span><b id="lift-number">18F</b></div>
+<div class="scene-bottom"><span id="hover-note" aria-live="polite">車両をクリックして出発</span><span>ドラッグ：見回す　スクロール：拡大</span></div>
+</section>
+<aside>
+<p class="eyebrow">ELEVATOR</p><h2>フロアを移動</h2>
+<label for="floor">行き先・鉄道会社</label><select id="floor" disabled></select>
+<div class="buttons"><button id="down" type="button" disabled>▼ 下の階</button><button id="up" type="button" disabled>▲ 上の階</button></div>
+<div class="route-heading"><h3>この階の路線</h3><span id="route-count"></span></div>
+<div id="routes"></div><p id="sections"></p>
+<p class="hint">車両を選ぶと運転ゲームが開きます。総武線快速は検証版です。</p>
+<a class="all-routes" href="operator-floors.html">全フロアの路線一覧 →</a>
+</aside>
+</div>
+<p class="foot">各社・局に1フロア。既存の車両モデルを使用したゲーム内の基地です。路線未制作のフロアは、車両のいない状態で見学できます。</p>
+</main>
+</body></html>
