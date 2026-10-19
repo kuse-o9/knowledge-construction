@@ -19,8 +19,14 @@ for name in ['chuo','chuo-local','keihin','sobu']:
   if 'function atcLimit' in text:return '<script>'+(source/'rail-core.js').read_text()+'</script>'
   if 'function playerGap' in text:return '<script>'+shared+'</script>'
   if 'function updateTraffic' in text:return '<script>'+(source/'rail.js').read_text()+'</script>'
+  if name=='chuo' and ('const q=new URLSearchParams(location.search),plans=' in text or 'Journey setup precedes the scene' in text):
+   return '<script>'+'\n'.join((ROOT/p).read_text() for p in ['development/shared/through-services.js','development/shared/rail-journey-core.js','development/through-running/chuo-journey.js'])+'</script>'
   return m[0]
  bundle['html']=re.sub(r'<script>(.*?)</script>',script,bundle['html'],flags=re.S)
+ if name=='chuo':
+  if 'id="handoff-note"' not in bundle['html']:bundle['html']=bundle['html'].replace('<button id="next-section"','<p id="handoff-note" role="status"></p><button id="next-section"')
+  boot=boot.replace("fetch('chuo-'+segment+'.bin')","fetch('chuo-'+segment+'.bin?v=through2')")
+  boot=boot.replace("Math.max(0,Number(q.get('leg'))||0)","Math.max(0,Math.floor(Number(q.get('leg'))||0))")
  if 'id="game-signal-note"' not in bundle['html']:
   bundle['html']=bundle['html'].replace('<h3>データと出典</h3>','<p id="game-signal-note">線路脇の3灯信号はゲーム用の閉塞表示です。実際の信号位置・信号方式・運転取扱いとは異なります。</p><h3>データと出典</h3>')
  raw=json.dumps(bundle,ensure_ascii=False,separators=(',',':')).encode();packed=gzip.compress(raw,compresslevel=9,mtime=0)

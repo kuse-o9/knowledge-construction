@@ -3,9 +3,9 @@
     "sobu-data-0.bin",
     "sobu-data-1.bin"
   ],
-  "compressedBytes": 9906392,
-  "uncompressedBytes": 32421014,
-  "sha256": "450516ae7732bee6cbaf928bf953d03e00eee49a0464d9dcb4f0a272e9ae3a48",
+  "compressedBytes": 9906380,
+  "uncompressedBytes": 32420988,
+  "sha256": "0e0f40c9a30c82f814b087eb1c22b06c9e4d181227112c0075ccc6fc8c32b5b2",
   "stationCount": 10,
   "directions": 2
 }

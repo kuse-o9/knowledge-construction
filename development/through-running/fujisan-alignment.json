@@ -1,0 +1,15 @@
+{
+  "station": "富士山",
+  "oldCoordinate": [
+    138.7907861,
+    35.4844393
+  ],
+  "targetCoordinate": [
+    138.7949689,
+    35.4835397
+  ],
+  "displacementMetres": 392.53918027401664,
+  "approachMetres": 1000,
+  "trackAccuracy": "game interpolation, not surveyed",
+  "newPacketBytes": 3910345
+}
