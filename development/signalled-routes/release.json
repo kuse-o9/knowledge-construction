@@ -1,0 +1,26 @@
+[
+  {
+    "route": "chuo",
+    "signals": "direction-specific 600m approximate blocks",
+    "bytes": 9406863,
+    "sha256": "d909dbd384d79db8c54335eb2f4128870d344f5c7678e94e7d0d2e1a3613c6ae"
+  },
+  {
+    "route": "chuo-local",
+    "signals": "direction-specific 600m approximate blocks",
+    "bytes": 11593758,
+    "sha256": "61ca723a3eca3fddd3e2a1b7b9118e1ace8605b331d0287888b4222dfc0a0ad8"
+  },
+  {
+    "route": "keihin",
+    "signals": "direction-specific 600m approximate blocks",
+    "bytes": 16204557,
+    "sha256": "b7be8e4735ce3052a1209006e38cc9396f52d4c0cd885baf664e2d7ec12fd3dc"
+  },
+  {
+    "route": "sobu",
+    "signals": "direction-specific 600m approximate blocks",
+    "bytes": 9906392,
+    "sha256": "450516ae7732bee6cbaf928bf953d03e00eee49a0464d9dcb4f0a272e9ae3a48"
+  }
+]
