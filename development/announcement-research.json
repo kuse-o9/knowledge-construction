@@ -1,0 +1,36 @@
+{
+  "checked": "2026-10-20",
+  "method": "公式路線図の乗換接続を目視照合。ホーム・出口・実際の放送文の承認を意味しない。",
+  "sources": [
+    "https://www.jreast.co.jp/map/pdf/map_tokyo.pdf",
+    "https://www.keisei.co.jp/news/detail.php?CN=6939",
+    "https://www.tokyometro.jp/station/mitsukoshimae/index.html",
+    "https://www.kotsu.metro.tokyo.jp/subway/stations/higashi-nihombashi.html"
+  ],
+  "correctedTransfers": {
+    "JK01": {
+      "ja": "東海道線、横須賀線、湘南新宿ライン、湘南モノレール",
+      "en": "the Tokaido Line, the Yokosuka Line, the Shonan-Shinjuku Line, and the Shonan Monorail"
+    },
+    "JK13": {
+      "ja": "横浜線",
+      "en": "the Yokohama Line"
+    },
+    "JK38": {
+      "ja": "宇都宮線、高崎線、湘南新宿ライン、埼京線",
+      "en": "the Utsunomiya Line, the Takasaki Line, the Shonan-Shinjuku Line, and the Saikyo Line"
+    },
+    "JK43": {
+      "ja": "宇都宮線、高崎線、湘南新宿ライン",
+      "en": "the Utsunomiya Line, the Takasaki Line, and the Shonan-Shinjuku Line"
+    },
+    "JK46": {
+      "ja": "宇都宮線、高崎線",
+      "en": "the Utsunomiya Line and the Takasaki Line"
+    }
+  },
+  "allStationIndividualOfficialReview": "pending",
+  "physicalListening": "not available",
+  "removedNonAnnouncementFragments": 9,
+  "scriptNotice": "追加文はゲーム用オリジナル。公式録音ではない。"
+}

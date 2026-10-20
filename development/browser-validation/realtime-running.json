@@ -1,0 +1,1132 @@
+{
+  "created": "2026-10-20T12:44:15.189Z",
+  "hardwareGPU": false,
+  "physicalPhone": false,
+  "physicalListening": false,
+  "runs": [
+    {
+      "travel": "out",
+      "leg": 3,
+      "status": "completed",
+      "samples": [
+        {
+          "distance": 415.4170648250489,
+          "speed": 8.80810000000002,
+          "elapsed": 20.59939999999986,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3912347.5760716414,
+            3425681.006061647,
+            3682186.287461149
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 10.609
+        },
+        {
+          "distance": 547.8315266585496,
+          "speed": 16.216130000000042,
+          "elapsed": 31.18229999999989,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3912254.835996846,
+            3425775.0498355282,
+            3682200.873674497
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 21.249
+        },
+        {
+          "distance": 735.3452700805628,
+          "speed": 19.444425598753952,
+          "elapsed": 41.21519999999971,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3912121.694625579,
+            3425906.1518391212,
+            3682220.325549617
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 31.277
+        },
+        {
+          "distance": 922.978314273675,
+          "speed": 19.444444444442585,
+          "elapsed": 50.86489999999955,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911980.9089586525,
+            3426023.101321055,
+            3682259.6438817647
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 41.323
+        },
+        {
+          "distance": 1118.0605364958935,
+          "speed": 19.444444444444432,
+          "elapsed": 60.897699999999546,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911828.121597136,
+            3426115.79735337,
+            3682336.64565256
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 51.359
+        },
+        {
+          "distance": 1311.5249809403313,
+          "speed": 19.444444444444432,
+          "elapsed": 70.84729999999938,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911681.068887472,
+            3426176.022300519,
+            3682446.0793389743
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 61.375
+        },
+        {
+          "distance": 1506.270834270345,
+          "speed": 19.34829134254193,
+          "elapsed": 80.86359999999931,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911536.9195136083,
+            3426217.4552941876,
+            3682570.0302041094
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 71.413
+        },
+        {
+          "distance": 1663.7007074054175,
+          "speed": 12.475587946526382,
+          "elapsed": 90.69669999999918,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911419.1151332823,
+            3426256.2474091216,
+            3682666.6036781603
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 81.519
+        },
+        {
+          "distance": 1751.878371186124,
+          "speed": 5.0707027747195434,
+          "elapsed": 100.71239999999925,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911351.584940546,
+            3426286.424599497,
+            3682714.515941027
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 91.588
+        },
+        {
+          "distance": 1767.037798853642,
+          "speed": 0,
+          "elapsed": 110.72849999999893,
+          "complete": false,
+          "running": true,
+          "doors": true,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911339.9173285244,
+            3426292.133069738,
+            3682722.3329543816
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 101.625
+        },
+        {
+          "distance": 1786.8104407076426,
+          "speed": 5.261339999999978,
+          "elapsed": 121.11129999999864,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3911324.820501187,
+            3426299.687210758,
+            3682732.291107349
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 112.066
+        },
+        {
+          "distance": 1875.2370752696443,
+          "speed": 12.307679999999996,
+          "elapsed": 131.1774999999991,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3911256.443820981,
+            3426338.2103381283,
+            3682773.402565639
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 122.122
+        },
+        {
+          "distance": 2033.9353797625113,
+          "speed": 19.24051637017623,
+          "elapsed": 141.21040000000116,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3911132.6482877634,
+            3426414.299530972,
+            3682837.7623688933
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 132.151
+        },
+        {
+          "distance": 2228.2499349928466,
+          "speed": 19.444444432817225,
+          "elapsed": 151.21000000000302,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910978.214105914,
+            3426504.2150033517,
+            3682913.6697762776
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 142.168
+        },
+        {
+          "distance": 2423.334101652561,
+          "speed": 19.44444444444443,
+          "elapsed": 161.24290000000502,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910831.3686511475,
+            3426560.233956417,
+            3683026.8355742637
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 152.185
+        },
+        {
+          "distance": 2613.559101652566,
+          "speed": 19.444444444444432,
+          "elapsed": 171.02590000000518,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910701.371810416,
+            3426569.9323108736,
+            3683164.823871968
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 162.233
+        },
+        {
+          "distance": 2802.4852127636805,
+          "speed": 19.444444444444432,
+          "elapsed": 180.74210000000548,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910573.3523835004,
+            3426576.9524412346,
+            3683303.1350297052
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 172.261
+        },
+        {
+          "distance": 2997.2466016525664,
+          "speed": 19.444444444444432,
+          "elapsed": 190.75840000000676,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910428.4713467374,
+            3426616.992437548,
+            3683424.9880673345
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 182.278
+        },
+        {
+          "distance": 3177.1262569381033,
+          "speed": 15.931276063207044,
+          "elapsed": 200.45800000000833,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910287.76332205,
+            3426703.437286376,
+            3683493.6259745606
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 192.286
+        },
+        {
+          "distance": 3300.5306458441773,
+          "speed": 8.640695981333957,
+          "elapsed": 210.49080000001027,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910197.512450507,
+            3426785.2867723596,
+            3683511.7066190494
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 202.315
+        },
+        {
+          "distance": 3348.4231654626838,
+          "speed": 0,
+          "elapsed": 220.5238000000124,
+          "complete": false,
+          "running": true,
+          "doors": true,
+          "visited": [
+            0,
+            1,
+            2
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910163.7133742743,
+            3426819.1523761926,
+            3683514.945841032
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 212.343
+        },
+        {
+          "distance": 3348.4231654626838,
+          "speed": 0,
+          "elapsed": 228.156800000014,
+          "complete": true,
+          "running": false,
+          "doors": false,
+          "visited": [
+            0,
+            1,
+            2
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910163.7133742743,
+            3426819.1523761926,
+            3683514.945841032
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 222.739
+        }
+      ],
+      "errors": [],
+      "settings": {
+        "scale": 1,
+        "sound": false,
+        "quality": "production defaults"
+      },
+      "wallStart": "2026-10-20T12:44:37.290Z",
+      "initial": {
+        "segment": "lake",
+        "direction": "reverse",
+        "distance": 363.43683345904867,
+        "elapsed": 11.149599999999994,
+        "stops": [
+          {
+            "name": "富士山",
+            "distance": 360.00090367504873
+          },
+          {
+            "name": "富士急ハイランド",
+            "distance": 1767.037798853642
+          },
+          {
+            "name": "河口湖",
+            "distance": 3348.4231654626838
+          }
+        ],
+        "webgl2": true,
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+        "scale": "1"
+      },
+      "wallEnd": "2026-10-20T12:48:20.030Z",
+      "wallSeconds": 222.74
+    },
+    {
+      "travel": "in",
+      "leg": 0,
+      "status": "completed",
+      "samples": [
+        {
+          "distance": 416.00275828226944,
+          "speed": 8.854650000000001,
+          "elapsed": 20.66579999999984,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3910203.0287104305,
+            3426779.75959508,
+            3683511.1779510886
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 10.541
+        },
+        {
+          "distance": 541.1270761987697,
+          "speed": 15.924160000000033,
+          "elapsed": 30.76509999999988,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3910295.200999312,
+            3426697.5958634936,
+            3683490.9151581842
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 21.51
+        },
+        {
+          "distance": 726.2572819052448,
+          "speed": 19.444405878691803,
+          "elapsed": 40.74769999999979,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3910440.4954713853,
+            3426611.89480528,
+            3683417.3412716878
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 31.559
+        },
+        {
+          "distance": 921.6661476342434,
+          "speed": 19.44444444444235,
+          "elapsed": 50.79729999999962,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3910584.1219518245,
+            3426576.1272345814,
+            3683291.736662999
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 41.599
+        },
+        {
+          "distance": 1109.2992031897932,
+          "speed": 19.444444444444432,
+          "elapsed": 60.44699999999944,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3910711.138290312,
+            3426569.4325754005,
+            3683154.2393362876
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 51.625
+        },
+        {
+          "distance": 1302.4389254120092,
+          "speed": 19.444444444444432,
+          "elapsed": 70.37989999999931,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3910843.8062065644,
+            3426557.862064217,
+            3683015.009728296
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 61.69
+        },
+        {
+          "distance": 1494.6025365231155,
+          "speed": 19.444444444444432,
+          "elapsed": 80.26259999999918,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3910989.3383216374,
+            3426497.6815551585,
+            3682907.2389966687
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 71.789
+        },
+        {
+          "distance": 1689.2576238447473,
+          "speed": 19.133759172130766,
+          "elapsed": 90.2787999999988,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911144.5595864775,
+            3426407.5300196735,
+            3682832.2166099786
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 81.843
+        },
+        {
+          "distance": 1845.9866710268966,
+          "speed": 12.004709882486493,
+          "elapsed": 100.31169999999841,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911266.3183790897,
+            3426332.262831631,
+            3682767.8204523465
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 91.878
+        },
+        {
+          "distance": 1928.8150183073,
+          "speed": 4.661304418414567,
+          "elapsed": 110.2109999999982,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911330.23453009,
+            3426296.978396304,
+            3682728.7197514707
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 101.904
+        },
+        {
+          "distance": 1941.3846773038072,
+          "speed": 0,
+          "elapsed": 120.24399999999781,
+          "complete": false,
+          "running": true,
+          "doors": true,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 1,
+          "hidden": false,
+          "camera": [
+            -3911339.9173285244,
+            3426292.133069738,
+            3682722.3329543816
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 111.926
+        },
+        {
+          "distance": 1964.1580604398057,
+          "speed": 5.646479999999995,
+          "elapsed": 130.66029999999813,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3911357.442748818,
+            3426283.58506948,
+            3682710.566830697
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 122.325
+        },
+        {
+          "distance": 2056.0393084753046,
+          "speed": 12.66950999999999,
+          "elapsed": 140.6932000000002,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3911427.7227740753,
+            3426252.804894656,
+            3682660.119123553
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 132.368
+        },
+        {
+          "distance": 2218.2632217501778,
+          "speed": 19.358760401024128,
+          "elapsed": 150.72610000000225,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3911548.8589784624,
+            3426213.9887190606,
+            3682559.8043577927
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 142.424
+        },
+        {
+          "distance": 2413.9457012046632,
+          "speed": 19.444444439764844,
+          "elapsed": 160.7924000000043,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3911693.5443008956,
+            3426172.191644479,
+            3682435.647414283
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 152.456
+        },
+        {
+          "distance": 2606.762645646276,
+          "speed": 19.444444444444425,
+          "elapsed": 170.70870000000642,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3911840.761390048,
+            3426109.15740912,
+            3682328.56856572
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 162.496
+        },
+        {
+          "distance": 2801.844867868491,
+          "speed": 19.444444444444432,
+          "elapsed": 180.74150000000827,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3911993.3599298694,
+            3426013.6828895896,
+            3682254.5892220945
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": false,
+          "wallSeconds": 172.535
+        },
+        {
+          "distance": 2994.982645646266,
+          "speed": 19.444444444444432,
+          "elapsed": 190.67430000001028,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3912137.7705593263,
+            3425891.3611335056,
+            3682218.001011971
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 182.551
+        },
+        {
+          "distance": 3180.039759656242,
+          "speed": 15.799022620745259,
+          "elapsed": 200.67400000001203,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3912268.44059144,
+            3425761.2847414096,
+            3682198.7084504114
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 192.589
+        },
+        {
+          "distance": 3302.247049709067,
+          "speed": 8.492765300526672,
+          "elapsed": 210.72360000001407,
+          "complete": false,
+          "running": true,
+          "doors": false,
+          "visited": [
+            0,
+            1
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3912353.72739652,
+            3425674.759624605,
+            3682185.32705824
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 202.62
+        },
+        {
+          "distance": 3348.421572482402,
+          "speed": 0,
+          "elapsed": 220.75660000001625,
+          "complete": false,
+          "running": true,
+          "doors": true,
+          "visited": [
+            0,
+            1,
+            2
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3912386.0744182877,
+            3425641.9120998327,
+            3682180.2767088567
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 212.664
+        },
+        {
+          "distance": 3348.421572482402,
+          "speed": 0,
+          "elapsed": 228.15620000001786,
+          "complete": true,
+          "running": false,
+          "doors": false,
+          "visited": [
+            0,
+            1,
+            2
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3912386.0744182877,
+            3425641.9120998327,
+            3682180.2767088567
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 222.881
+        }
+      ],
+      "errors": [],
+      "settings": {
+        "scale": 1,
+        "sound": false,
+        "quality": "production defaults"
+      },
+      "wallStart": "2026-10-20T12:48:39.208Z",
+      "initial": {
+        "segment": "lake",
+        "direction": "forward",
+        "distance": 362.45700019826904,
+        "elapsed": 10.666200000000012,
+        "stops": [
+          {
+            "name": "河口湖",
+            "distance": 359.999310694769
+          },
+          {
+            "name": "富士急ハイランド",
+            "distance": 1941.3846773038072
+          },
+          {
+            "name": "富士山",
+            "distance": 3348.421572482402
+          }
+        ],
+        "webgl2": true,
+        "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+        "scale": "1"
+      },
+      "wallEnd": "2026-10-20T12:52:22.089Z",
+      "wallSeconds": 222.881
+    }
+  ],
+  "limitations": [
+    "Software WebGL, not a physical GPU.",
+    "Real-time rendering may run slower than wall clock.",
+    "Other route/direction combinations remain unverified in real time."
+  ]
+}

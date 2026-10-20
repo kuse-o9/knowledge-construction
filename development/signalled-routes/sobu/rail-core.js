@@ -1,11 +1,12 @@
 /* Station-boundary game speeds. Curve geometry never imposes a speed limit. */
 (function(g){'use strict';
 function profile(route,data){
- const name=data?.name||'',id=data?.id||'';
+ const name=route.lineName||data?.name||'',id=route.lineId||data?.id||'';
  let maximum=/中央線快速/.test(name)?100:/総武線快速/.test(name)?120:/中央・総武/.test(name)?95:90;
- // Extension speeds are game settings until individual operating limits are sourced.
- if(/okutama|fuji|lake/.test(id))maximum=65;
- else if(/ome/.test(id))maximum=85;
+ // Route maxima, not individual operating restrictions. Sources: development/speed-research.json.
+ if(/fuji|lake/.test(id))maximum=70;
+ else if(/ome|okutama/.test(id))maximum=85;
+ else if(/京浜東北/.test(name))maximum=95;
  route.gameMaximum=maximum;
  route.physicalStops=route.physicalStops||route.stops;
  route.stationSpeeds=route.physicalStops.map((s,i,a)=>{
@@ -14,6 +15,10 @@ function profile(route,data){
    const kin=a.findIndex(x=>x.name==='錦糸町'),tokyo=a.findIndex(x=>x.name==='東京');
    // Limits describe the section departing this station in this direction.
    if(kin>=0&&tokyo>=0&&(tokyo<kin?i<kin:i>=kin))limit=100;
+  }
+  if(/京浜東北/.test(name)){
+   const sak=a.findIndex(x=>x.name==='桜木町'),ofuna=a.findIndex(x=>x.name==='大船');
+   if(sak>=0&&ofuna>=0)limit=(ofuna<sak?i<sak:i>=sak)?95:90;
   }
   return {code:s.code,distance:s.distance,limit};
  });
@@ -67,16 +72,18 @@ else if(remain< -25){state.missed.push(state.next);state.message=target.name+'�
 if(state.distance>=geo.length){state.speed=0;state.notch=0;if(state.mode==='manual'&&!state.doors)state.message='終点です。ドアを開けて到着を記録しよう。';}
 }
 function openDoors(s,geo){const stop=geo.route.stops[s.next];if(!stop||s.doors||s.complete)return false;const error=s.distance-stop.distance;if(s.speed>.12||Math.abs(error)>8){s.message='停止位置から８m以内で完全に止まってからドアを開けよう。';return false;}s.doors=true;s.dwell=0;s.speed=0;s.notch=0;if(!s.visited.some(v=>v.index===s.next)){s.visited.push({index:s.next,error,timeError:s.schedule?clock(s)-s.schedule.stops[s.next].arrival:null});s.score+=Math.max(20,100-Math.round(Math.abs(error)*10));}s.message=stop.name+'に到着！ 乗降中。';return true;}
-function closeDoors(s,geo){if(!s.doors)return false;if(s.tripMode==='timetable'&&!canDepart(s)){s.message='発車時刻まで停車中。「発車時刻まで進める」で待ち時間を飛ばせます。';return false;}if(s.dwell<3){s.message='乗降中。あと'+Math.ceil(3-s.dwell)+'秒待とう。';return false;}s.doors=false;s.dwell=0;if(s.startingDoors){s.startingDoors=false;s.message='ドアを閉めました。'+geo.route.stops[s.next].name+'へ出発。';return true;}if(s.next>=geo.route.stops.length-1){s.complete=true;s.running=false;s.speed=0;s.message='この区間を走破！ '+geo.route.stops.at(-1).name+'。運転おつかれさま！';}else{s.next++;s.message='ドアを閉めました。'+geo.route.stops[s.next].name+'へ出発。';}return true;}
+function closeDoors(s,geo){if(!s.doors)return false;if(s.dwell<3){s.message='乗降中。あと'+Math.ceil(3-s.dwell)+'秒待とう。';return false;}s.doors=false;s.dwell=0;if(s.startingDoors){s.startingDoors=false;s.message='ドアを閉めました。'+geo.route.stops[s.next].name+'へ出発。';return true;}if(s.next>=geo.route.stops.length-1){s.complete=true;s.running=false;s.speed=0;s.message='この区間を走破！ '+geo.route.stops.at(-1).name+'。運転おつかれさま！';}else{s.next++;s.message='ドアを閉めました。'+geo.route.stops[s.next].name+'へ出発。';}return true;}
 
 const timetableCache=new WeakMap();
 function clock(s){return 8*3600+s.elapsed+(s.schedule?.offset||0);}
 function platformIndex(s){return s.visited.at(-1)?.index??0;}
-function canDepart(s,lead=0){if(s.tripMode!=='timetable'||!s.schedule)return true;const entry=s.schedule.stops[platformIndex(s)];return !entry||entry.departure===null||clock(s)+lead>=entry.departure;}
+// Timetables are advisory: early departure is allowed after boarding/audio.
+function canDepart(){return true;}
 function makeTimetable(geo,start){let byService=timetableCache.get(geo.route.points);if(!byService){byService=new Map();timetableCache.set(geo.route.points,byService);}const key=geo.route.stops.map(x=>x.code).join(',');let travel=byService.get(key);if(!travel){travel=[];for(let i=1;i<geo.route.stops.length;i++){const ref=create(geo.route,i-1);ref.doors=false;ref.startingDoors=false;ref.running=true;let steps=0;while(!ref.doors&&!ref.complete&&steps++<120000)step(ref,geo,.1);if(!ref.doors)throw Error('運転時刻を計算できませんでした。');travel[i]=Math.ceil(ref.elapsed/5)*5+5;}byService.set(key,travel);}const stops=geo.route.stops.map((stop,index)=>({code:stop.code,index,arrival:null,departure:null}));let at=8*3600;for(let i=start;i<stops.length;i++){if(i>start)at=stops[i-1].departure+travel[i];stops[i].arrival=at;stops[i].departure=i===stops.length-1?null:at+(i===start?40:20);}return {version:1,offset:0,start,stops};}
 function configureTrip(s,geo,kind='free',start=0){s.tripMode=kind==='timetable'?'timetable':'free';s.schedule=s.tripMode==='timetable'?makeTimetable(geo,start):null;return s;}
-function skipWait(s){if(!s.doors||s.tripMode!=='timetable'||!s.schedule||s.complete)return false;const entry=s.schedule.stops[platformIndex(s)];if(entry?.departure===null||!entry)return false;s.schedule.offset+=Math.max(0,entry.departure-clock(s));s.message='発車時刻まで進めました。乗降確認後に出発します。';return true;}
+function skipWait(){return false;}
 
 function restore(raw,route){if(!raw||raw.version!==1||!raw.state)return null;const s=raw.state,n=route.stops.length;if(!Number.isFinite(s.distance)||s.distance<0||s.distance>route.length+.1||!Number.isFinite(s.speed)||s.speed<0||s.speed>120/3.6+1e-6||!Number.isInteger(s.next)||s.next<1||s.next>=n||!['auto','manual'].includes(s.mode)||!Array.isArray(s.visited)||!Array.isArray(s.missed)||!Number.isFinite(s.elapsed)||s.elapsed<0)return null;if(!s.visited.every(v=>Number.isInteger(v.index)&&v.index>=0&&v.index<n&&Number.isFinite(v.error))||!s.missed.every(v=>Number.isInteger(v)&&v>=0&&v<n))return null;const base=create(route,0,s.mode);return {...base,...s,trafficGap:Infinity,signalLimit:Infinity,signalStop:Infinity,signalAspect:null,notch:0,speed:0,running:false,departureHold:false,doors:!!s.doors,dwell:0,score:Number.isFinite(s.score)?clamp(s.score,0,(n-1)*100):0,complete:!!s.complete,message:'前回の続きです。安全のため停止状態で再開します。'};}
 g.RailCore={clamp,distance,geometry,position,heightAt,applyElevation,sampleDistances,speedLimit,approachLimit,atcLimit,loopRoute,create,step,openDoors,closeDoors,restore,clock,platformIndex,canDepart,configureTrip,skipWait};
 })(typeof globalThis!=='undefined'?globalThis:window);
+

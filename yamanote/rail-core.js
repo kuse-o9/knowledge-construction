@@ -1,11 +1,12 @@
 /* Station-boundary game speeds. Curve geometry never imposes a speed limit. */
 (function(g){'use strict';
 function profile(route,data){
- const name=data?.name||'',id=data?.id||'';
+ const name=route.lineName||data?.name||'',id=route.lineId||data?.id||'';
  let maximum=/中央線快速/.test(name)?100:/総武線快速/.test(name)?120:/中央・総武/.test(name)?95:90;
- // Extension speeds are game settings until individual operating limits are sourced.
- if(/okutama|fuji|lake/.test(id))maximum=65;
- else if(/ome/.test(id))maximum=85;
+ // Route maxima, not individual operating restrictions. Sources: development/speed-research.json.
+ if(/fuji|lake/.test(id))maximum=70;
+ else if(/ome|okutama/.test(id))maximum=85;
+ else if(/京浜東北/.test(name))maximum=95;
  route.gameMaximum=maximum;
  route.physicalStops=route.physicalStops||route.stops;
  route.stationSpeeds=route.physicalStops.map((s,i,a)=>{
@@ -14,6 +15,10 @@ function profile(route,data){
    const kin=a.findIndex(x=>x.name==='錦糸町'),tokyo=a.findIndex(x=>x.name==='東京');
    // Limits describe the section departing this station in this direction.
    if(kin>=0&&tokyo>=0&&(tokyo<kin?i<kin:i>=kin))limit=100;
+  }
+  if(/京浜東北/.test(name)){
+   const sak=a.findIndex(x=>x.name==='桜木町'),ofuna=a.findIndex(x=>x.name==='大船');
+   if(sak>=0&&ofuna>=0)limit=(ofuna<sak?i<sak:i>=sak)?95:90;
   }
   return {code:s.code,distance:s.distance,limit};
  });

@@ -21,6 +21,8 @@ for name in ['chuo','chuo-local','keihin','sobu']:
  bundle=json.loads(raw)
  def script(m):
   text=m[1];source=ROOT/'development/signalled-routes'/name
+  if text.lstrip().startswith('window.RAIL_ANNOUNCEMENTS='):return '<script>'+(source/'rail-announcements.js').read_text()+'</script>'
+  if 'function speakText' in text:return '<script>'+(source/'rail-audio.js').read_text()+'</script>'
   if 'function atcLimit' in text:return '<script>'+(source/'rail-core.js').read_text()+'</script>'
   if 'function playerGap' in text:return '<script>'+shared+'</script>'
   if 'function updateTraffic' in text:return '<script>'+(source/'rail.js').read_text()+'</script>'
@@ -34,6 +36,9 @@ for name in ['chuo','chuo-local','keihin','sobu']:
   boot=boot.replace("Math.max(0,Number(q.get('leg'))||0)","Math.max(0,Math.floor(Number(q.get('leg'))||0))")
  if 'id="game-signal-note"' not in bundle['html']:
   bundle['html']=bundle['html'].replace('<h3>データと出典</h3>','<p id="game-signal-note">線路脇の3灯信号はゲーム用の閉塞表示です。実際の信号位置・信号方式・運転取扱いとは異なります。</p><h3>データと出典</h3>')
+ bundle['html']=bundle['html'].replace('id="skip-wait" class="lcd-button" disabled','id="skip-wait" class="lcd-button" hidden disabled')
+ bundle['html']=bundle['html'].replace('「発車時刻まで進める」で停車待ちを省略できます。','乗降と音声案内が終われば、予定時刻より早く発車できます。')
+ bundle['html']=bundle['html'].replace('早着したら、乗降確認後に「発車時刻まで進める」で停車の待ち時間を飛ばせます。','乗降と音声案内が終われば、予定時刻より早く発車できます。')
  raw=json.dumps(bundle,ensure_ascii=False,separators=(',',':')).encode();packed=gzip.compress(raw,compresslevel=9,mtime=0)
  version=hashlib.sha256(packed).hexdigest()[:12]
  if inline:

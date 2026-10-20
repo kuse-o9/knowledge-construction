@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-20",
   "scope": "ユーザー提供一覧を基にした制作候補。全国全路線を網羅した公式台帳ではない。路線の分割・共用区間は制作時に調整。",
   "published": [
     "ゆりかもめ",
@@ -3751,5 +3751,35 @@
     "https://www.jrhokkaido.co.jp/CM/Info/press/pdf/20250328_KO_todokede.pdf",
     "https://noseden.hankyu.co.jp/guide/mountain_close/"
   ],
-  "qualityStandard": "quality-standards.md"
+  "qualityStandard": "quality-standards.md",
+  "futureRouteRequirements": {
+    "neighbourTraffic": {
+      "required": true,
+      "appliesTo": "今後制作する全路線",
+      "rules": [
+        "実在する隣接・並走・交差線の位置・高さ・走行方式を調査",
+        "地上・地下を区別し、確認済み線形に対応する編成を走行させる",
+        "相手路線自身の速度設定とラッシュ・平日・休日の密度を使う",
+        "対応する周辺路線が未制作なら未実装として残し、架空の線路で埋めない"
+      ]
+    },
+    "releaseValidation": [
+      "全駅・両方向の数値検査",
+      "全区間・等速の連続走行記録",
+      "物理GPU確認",
+      "スピーカーで日英読み上げ・音質確認",
+      "スマホ実機で操作確認"
+    ]
+  },
+  "validationUserAcceptance": {
+    "date": "2026-10-20",
+    "planningStatus": "closed by user decision",
+    "items": [
+      "物理GPU",
+      "耳で聴く音質・読み上げ",
+      "スマホ実端末の操作感",
+      "全区間の実時間走行"
+    ],
+    "evidence": "検査記録の実施範囲はそのまま保持。未実施の検査を合格と記録しない。"
+  }
 }

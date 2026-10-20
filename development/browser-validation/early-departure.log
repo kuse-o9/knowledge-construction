@@ -1,0 +1,12 @@
+OPEN chuo manual
+PASS chuo manual
+OPEN chuo auto
+PASS chuo auto
+OPEN chuo-local manual
+PASS chuo-local manual
+OPEN keihin auto
+PASS keihin auto
+OPEN sobu manual
+PASS sobu manual
+OPEN yamanote/index manual
+PASS yamanote/index manual

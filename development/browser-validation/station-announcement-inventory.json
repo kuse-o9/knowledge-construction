@@ -1,0 +1,8140 @@
+{
+  "stationDirectionEntries": 410,
+  "method": "Script presence inventory only, not a listening or all-transfers correctness test.",
+  "stations": [
+    {
+      "key": "yamanote:forward",
+      "code": "JY01",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY30",
+      "name": "有楽町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY29",
+      "name": "新橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY28",
+      "name": "浜松町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY27",
+      "name": "田町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY26",
+      "name": "高輪ゲートウェイ",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY25",
+      "name": "品川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY24",
+      "name": "大崎",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY23",
+      "name": "五反田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY22",
+      "name": "目黒",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY21",
+      "name": "恵比寿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY20",
+      "name": "渋谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY19",
+      "name": "原宿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY18",
+      "name": "代々木",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY17",
+      "name": "新宿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY16",
+      "name": "新大久保",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY15",
+      "name": "高田馬場",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY14",
+      "name": "目白",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY13",
+      "name": "池袋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY12",
+      "name": "大塚",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY11",
+      "name": "巣鴨",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY10",
+      "name": "駒込",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY09",
+      "name": "田端",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY08",
+      "name": "西日暮里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY07",
+      "name": "日暮里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY06",
+      "name": "鶯谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY05",
+      "name": "上野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY04",
+      "name": "御徒町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY03",
+      "name": "秋葉原",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY02",
+      "name": "神田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:forward",
+      "code": "JY01",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY01",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY02",
+      "name": "神田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY03",
+      "name": "秋葉原",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY04",
+      "name": "御徒町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY05",
+      "name": "上野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY06",
+      "name": "鶯谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY07",
+      "name": "日暮里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY08",
+      "name": "西日暮里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY09",
+      "name": "田端",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY10",
+      "name": "駒込",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY11",
+      "name": "巣鴨",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY12",
+      "name": "大塚",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY13",
+      "name": "池袋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY14",
+      "name": "目白",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY15",
+      "name": "高田馬場",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY16",
+      "name": "新大久保",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY17",
+      "name": "新宿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY18",
+      "name": "代々木",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY19",
+      "name": "原宿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY20",
+      "name": "渋谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY21",
+      "name": "恵比寿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY22",
+      "name": "目黒",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY23",
+      "name": "五反田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY24",
+      "name": "大崎",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY25",
+      "name": "品川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY26",
+      "name": "高輪ゲートウェイ",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY27",
+      "name": "田町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY28",
+      "name": "浜松町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY29",
+      "name": "新橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY30",
+      "name": "有楽町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "yamanote:reverse",
+      "code": "JY01",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC01",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC02",
+      "name": "神田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC03",
+      "name": "御茶ノ水",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC04",
+      "name": "四ツ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC05",
+      "name": "新宿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC06",
+      "name": "中野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC07",
+      "name": "高円寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC08",
+      "name": "阿佐ケ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC09",
+      "name": "荻窪",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC10",
+      "name": "西荻窪",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC11",
+      "name": "吉祥寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC12",
+      "name": "三鷹",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC13",
+      "name": "武蔵境",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC14",
+      "name": "東小金井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC15",
+      "name": "武蔵小金井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC16",
+      "name": "国分寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC17",
+      "name": "西国分寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC18",
+      "name": "国立",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC19",
+      "name": "立川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC20",
+      "name": "日野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC21",
+      "name": "豊田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC22",
+      "name": "八王子",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC23",
+      "name": "西八王子",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:reverse",
+      "code": "JC24",
+      "name": "高尾",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC24",
+      "name": "高尾",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC23",
+      "name": "西八王子",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC22",
+      "name": "八王子",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC21",
+      "name": "豊田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC20",
+      "name": "日野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC19",
+      "name": "立川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC18",
+      "name": "国立",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC17",
+      "name": "西国分寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC16",
+      "name": "国分寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC15",
+      "name": "武蔵小金井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC14",
+      "name": "東小金井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC13",
+      "name": "武蔵境",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC12",
+      "name": "三鷹",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC11",
+      "name": "吉祥寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC10",
+      "name": "西荻窪",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC09",
+      "name": "荻窪",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC08",
+      "name": "阿佐ケ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC07",
+      "name": "高円寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC06",
+      "name": "中野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC05",
+      "name": "新宿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC04",
+      "name": "四ツ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC03",
+      "name": "御茶ノ水",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC02",
+      "name": "神田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo:forward",
+      "code": "JC01",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB01",
+      "name": "三鷹",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB02",
+      "name": "吉祥寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB03",
+      "name": "西荻窪",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB04",
+      "name": "荻窪",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB05",
+      "name": "阿佐ケ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB06",
+      "name": "高円寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB07",
+      "name": "中野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB08",
+      "name": "東中野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB09",
+      "name": "大久保",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB10",
+      "name": "新宿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB11",
+      "name": "代々木",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB12",
+      "name": "千駄ケ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB13",
+      "name": "信濃町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB14",
+      "name": "四ツ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB15",
+      "name": "市ケ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB16",
+      "name": "飯田橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB17",
+      "name": "水道橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB18",
+      "name": "御茶ノ水",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB19",
+      "name": "秋葉原",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB20",
+      "name": "浅草橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB21",
+      "name": "両国",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB22",
+      "name": "錦糸町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB23",
+      "name": "亀戸",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB24",
+      "name": "平井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB25",
+      "name": "新小岩",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB26",
+      "name": "小岩",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB27",
+      "name": "市川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB28",
+      "name": "本八幡",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB29",
+      "name": "下総中山",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB30",
+      "name": "西船橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB31",
+      "name": "船橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB32",
+      "name": "東船橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB33",
+      "name": "津田沼",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB34",
+      "name": "幕張本郷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB35",
+      "name": "幕張",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB36",
+      "name": "新検見川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB37",
+      "name": "稲毛",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB38",
+      "name": "西千葉",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:reverse",
+      "code": "JB39",
+      "name": "千葉",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB39",
+      "name": "千葉",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB38",
+      "name": "西千葉",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB37",
+      "name": "稲毛",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB36",
+      "name": "新検見川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB35",
+      "name": "幕張",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB34",
+      "name": "幕張本郷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB33",
+      "name": "津田沼",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB32",
+      "name": "東船橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB31",
+      "name": "船橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB30",
+      "name": "西船橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB29",
+      "name": "下総中山",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB28",
+      "name": "本八幡",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB27",
+      "name": "市川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB26",
+      "name": "小岩",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB25",
+      "name": "新小岩",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB24",
+      "name": "平井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB23",
+      "name": "亀戸",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB22",
+      "name": "錦糸町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB21",
+      "name": "両国",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB20",
+      "name": "浅草橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB19",
+      "name": "秋葉原",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB18",
+      "name": "御茶ノ水",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB17",
+      "name": "水道橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB16",
+      "name": "飯田橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB15",
+      "name": "市ケ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB14",
+      "name": "四ツ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB13",
+      "name": "信濃町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB12",
+      "name": "千駄ケ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB11",
+      "name": "代々木",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB10",
+      "name": "新宿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB09",
+      "name": "大久保",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB08",
+      "name": "東中野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB07",
+      "name": "中野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB06",
+      "name": "高円寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB05",
+      "name": "阿佐ケ谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB04",
+      "name": "荻窪",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB03",
+      "name": "西荻窪",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB02",
+      "name": "吉祥寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "chuo-local:forward",
+      "code": "JB01",
+      "name": "三鷹",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK47",
+      "name": "大宮",
+      "scriptLanguages": {
+        "next": [],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK46",
+      "name": "さいたま新都心",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK45",
+      "name": "与野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK44",
+      "name": "北浦和",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK43",
+      "name": "浦和",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK42",
+      "name": "南浦和",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK41",
+      "name": "蕨",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK40",
+      "name": "西川口",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK39",
+      "name": "川口",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK38",
+      "name": "赤羽",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK37",
+      "name": "東十条",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK36",
+      "name": "王子",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK35",
+      "name": "上中里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK34",
+      "name": "田端",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK33",
+      "name": "西日暮里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK32",
+      "name": "日暮里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK31",
+      "name": "鶯谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK30",
+      "name": "上野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK29",
+      "name": "御徒町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK28",
+      "name": "秋葉原",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK27",
+      "name": "神田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK26",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK25",
+      "name": "有楽町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK24",
+      "name": "新橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK23",
+      "name": "浜松町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK22",
+      "name": "田町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK21",
+      "name": "高輪ゲートウェイ",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK20",
+      "name": "品川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK19",
+      "name": "大井町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK18",
+      "name": "大森",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK17",
+      "name": "蒲田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK16",
+      "name": "川崎",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK15",
+      "name": "鶴見",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK14",
+      "name": "新子安",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK13",
+      "name": "東神奈川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK12",
+      "name": "横浜",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK11",
+      "name": "桜木町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK10",
+      "name": "関内",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK09",
+      "name": "石川町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK08",
+      "name": "山手",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK07",
+      "name": "根岸",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK06",
+      "name": "磯子",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK05",
+      "name": "新杉田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK04",
+      "name": "洋光台",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK03",
+      "name": "港南台",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK02",
+      "name": "本郷台",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:forward",
+      "code": "JK01",
+      "name": "大船",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK01",
+      "name": "大船",
+      "scriptLanguages": {
+        "next": [],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK02",
+      "name": "本郷台",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK03",
+      "name": "港南台",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK04",
+      "name": "洋光台",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK05",
+      "name": "新杉田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK06",
+      "name": "磯子",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK07",
+      "name": "根岸",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK08",
+      "name": "山手",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK09",
+      "name": "石川町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK10",
+      "name": "関内",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK11",
+      "name": "桜木町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK12",
+      "name": "横浜",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK13",
+      "name": "東神奈川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK14",
+      "name": "新子安",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK15",
+      "name": "鶴見",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK16",
+      "name": "川崎",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK17",
+      "name": "蒲田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US",
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK18",
+      "name": "大森",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK19",
+      "name": "大井町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK20",
+      "name": "品川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK21",
+      "name": "高輪ゲートウェイ",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK22",
+      "name": "田町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK23",
+      "name": "浜松町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK24",
+      "name": "新橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK25",
+      "name": "有楽町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK26",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK27",
+      "name": "神田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK28",
+      "name": "秋葉原",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK29",
+      "name": "御徒町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK30",
+      "name": "上野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK31",
+      "name": "鶯谷",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK32",
+      "name": "日暮里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK33",
+      "name": "西日暮里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK34",
+      "name": "田端",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK35",
+      "name": "上中里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK36",
+      "name": "王子",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK37",
+      "name": "東十条",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK38",
+      "name": "赤羽",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK39",
+      "name": "川口",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK40",
+      "name": "西川口",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK41",
+      "name": "蕨",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK42",
+      "name": "南浦和",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK43",
+      "name": "浦和",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK44",
+      "name": "北浦和",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK45",
+      "name": "与野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK46",
+      "name": "さいたま新都心",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "keihin:reverse",
+      "code": "JK47",
+      "name": "大宮",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO19",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO20",
+      "name": "新日本橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO21",
+      "name": "馬喰町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO22",
+      "name": "錦糸町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO23",
+      "name": "新小岩",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO24",
+      "name": "市川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO25",
+      "name": "船橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO26",
+      "name": "津田沼",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO27",
+      "name": "稲毛",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:reverse",
+      "code": "JO28",
+      "name": "千葉",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO28",
+      "name": "千葉",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO27",
+      "name": "稲毛",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO26",
+      "name": "津田沼",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO25",
+      "name": "船橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO24",
+      "name": "市川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO23",
+      "name": "新小岩",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO22",
+      "name": "錦糸町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO21",
+      "name": "馬喰町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO20",
+      "name": "新日本橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "sobu:forward",
+      "code": "JO19",
+      "name": "東京",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:reverse",
+      "code": "JC24",
+      "name": "高尾",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:reverse",
+      "code": "JC25",
+      "name": "相模湖",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:reverse",
+      "code": "JC26",
+      "name": "藤野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:reverse",
+      "code": "JC27",
+      "name": "上野原",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:reverse",
+      "code": "JC28",
+      "name": "四方津",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:reverse",
+      "code": "JC29",
+      "name": "梁川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:reverse",
+      "code": "JC30",
+      "name": "鳥沢",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:reverse",
+      "code": "JC31",
+      "name": "猿橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:reverse",
+      "code": "JC32",
+      "name": "大月",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:forward",
+      "code": "JC32",
+      "name": "大月",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:forward",
+      "code": "JC31",
+      "name": "猿橋",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:forward",
+      "code": "JC30",
+      "name": "鳥沢",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:forward",
+      "code": "JC29",
+      "name": "梁川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:forward",
+      "code": "JC28",
+      "name": "四方津",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:forward",
+      "code": "JC27",
+      "name": "上野原",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:forward",
+      "code": "JC26",
+      "name": "藤野",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:forward",
+      "code": "JC25",
+      "name": "相模湖",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "west:forward",
+      "code": "JC24",
+      "name": "高尾",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC19",
+      "name": "立川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC51",
+      "name": "西立川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC52",
+      "name": "東中神",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC53",
+      "name": "中神",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC54",
+      "name": "昭島",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC55",
+      "name": "拝島",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC56",
+      "name": "牛浜",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC57",
+      "name": "福生",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC58",
+      "name": "羽村",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC59",
+      "name": "小作",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC60",
+      "name": "河辺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC61",
+      "name": "東青梅",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:reverse",
+      "code": "JC62",
+      "name": "青梅",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC62",
+      "name": "青梅",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC61",
+      "name": "東青梅",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC60",
+      "name": "河辺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC59",
+      "name": "小作",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC58",
+      "name": "羽村",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC57",
+      "name": "福生",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC56",
+      "name": "牛浜",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC55",
+      "name": "拝島",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC54",
+      "name": "昭島",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC53",
+      "name": "中神",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC52",
+      "name": "東中神",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC51",
+      "name": "西立川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "ome:forward",
+      "code": "JC19",
+      "name": "立川",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC62",
+      "name": "青梅",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC63",
+      "name": "宮ノ平",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC64",
+      "name": "日向和田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC65",
+      "name": "石神前",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC66",
+      "name": "二俣尾",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC67",
+      "name": "軍畑",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC68",
+      "name": "沢井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC69",
+      "name": "御嶽",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC70",
+      "name": "川井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC71",
+      "name": "古里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC72",
+      "name": "鳩ノ巣",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC73",
+      "name": "白丸",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:reverse",
+      "code": "JC74",
+      "name": "奥多摩",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC74",
+      "name": "奥多摩",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC73",
+      "name": "白丸",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC72",
+      "name": "鳩ノ巣",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC71",
+      "name": "古里",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC70",
+      "name": "川井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC69",
+      "name": "御嶽",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC68",
+      "name": "沢井",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC67",
+      "name": "軍畑",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC66",
+      "name": "二俣尾",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC65",
+      "name": "石神前",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC64",
+      "name": "日向和田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC63",
+      "name": "宮ノ平",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "okutama:forward",
+      "code": "JC62",
+      "name": "青梅",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "JC32",
+      "name": "大月",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ02",
+      "name": "上大月",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ03",
+      "name": "田野倉",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ04",
+      "name": "禾生",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ05",
+      "name": "赤坂",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ06",
+      "name": "都留市",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ07",
+      "name": "谷村町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ08",
+      "name": "都留文科大学前",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ09",
+      "name": "十日市場",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ10",
+      "name": "東桂",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ11",
+      "name": "三つ峠",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ12",
+      "name": "寿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ13",
+      "name": "葭池温泉前",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ14",
+      "name": "下吉田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ15",
+      "name": "月江寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:reverse",
+      "code": "FJ16",
+      "name": "富士山",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ16",
+      "name": "富士山",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ15",
+      "name": "月江寺",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ14",
+      "name": "下吉田",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ13",
+      "name": "葭池温泉前",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ12",
+      "name": "寿",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ11",
+      "name": "三つ峠",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ10",
+      "name": "東桂",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ09",
+      "name": "十日市場",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ08",
+      "name": "都留文科大学前",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ07",
+      "name": "谷村町",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ06",
+      "name": "都留市",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ05",
+      "name": "赤坂",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ04",
+      "name": "禾生",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ03",
+      "name": "田野倉",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "FJ02",
+      "name": "上大月",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "fuji:forward",
+      "code": "JC32",
+      "name": "大月",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "lake:reverse",
+      "code": "FJ16",
+      "name": "富士山",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "lake:reverse",
+      "code": "FJ17",
+      "name": "富士急ハイランド",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "lake:reverse",
+      "code": "FJ18",
+      "name": "河口湖",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "lake:forward",
+      "code": "FJ18",
+      "name": "河口湖",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "lake:forward",
+      "code": "FJ17",
+      "name": "富士急ハイランド",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    },
+    {
+      "key": "lake:forward",
+      "code": "FJ16",
+      "name": "富士山",
+      "scriptLanguages": {
+        "next": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrival": [
+          "ja-JP",
+          "en-US"
+        ],
+        "arrived": [
+          "ja-JP"
+        ]
+      },
+      "nativeListening": "not-tested",
+      "individualOfficialTransferReview": "pending"
+    }
+  ]
+}

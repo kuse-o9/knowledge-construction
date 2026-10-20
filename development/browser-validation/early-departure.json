@@ -1,0 +1,135 @@
+{
+  "method": "Production UI/animation loop, controlled audio completion promise; WebGL unavailable fallback.",
+  "physicalListening": false,
+  "cases": [
+    {
+      "name": "chuo",
+      "mode": "manual",
+      "pass": true,
+      "before": {
+        "doors": true,
+        "hold": true,
+        "distance": 360.00069117906537,
+        "elapsed": 4.433200000000004,
+        "clock": 28804.4332,
+        "departure": 28840,
+        "skipHidden": true
+      },
+      "after": {
+        "doors": false,
+        "hold": false,
+        "elapsed": 4.749800000000007,
+        "clock": 28804.7498,
+        "scheduleOffset": 0,
+        "mode": "manual"
+      }
+    },
+    {
+      "name": "chuo",
+      "mode": "auto",
+      "pass": true,
+      "before": {
+        "doors": true,
+        "hold": true,
+        "distance": 360.00069117906537,
+        "elapsed": 4.4331,
+        "clock": 28804.4331,
+        "departure": 28840,
+        "skipHidden": true
+      },
+      "after": {
+        "doors": false,
+        "hold": false,
+        "elapsed": 4.749800000000004,
+        "clock": 28804.7498,
+        "scheduleOffset": 0,
+        "mode": "auto"
+      }
+    },
+    {
+      "name": "chuo-local",
+      "mode": "manual",
+      "pass": true,
+      "before": {
+        "doors": true,
+        "hold": true,
+        "distance": 359.999872069882,
+        "elapsed": 4.433200000000006,
+        "clock": 28804.4332,
+        "departure": 28840,
+        "skipHidden": true
+      },
+      "after": {
+        "doors": false,
+        "hold": false,
+        "elapsed": 4.73320000000001,
+        "clock": 28804.7332,
+        "scheduleOffset": 0,
+        "mode": "manual"
+      }
+    },
+    {
+      "name": "keihin",
+      "mode": "auto",
+      "pass": true,
+      "before": {
+        "doors": true,
+        "hold": true,
+        "distance": 300.0060341778631,
+        "elapsed": 4.4331,
+        "clock": 28804.4331,
+        "departure": 28840,
+        "skipHidden": true
+      },
+      "after": {
+        "doors": false,
+        "hold": false,
+        "elapsed": 4.749800000000004,
+        "clock": 28804.7498,
+        "scheduleOffset": 0,
+        "mode": "auto"
+      }
+    },
+    {
+      "name": "sobu",
+      "mode": "manual",
+      "pass": true,
+      "before": {
+        "doors": true,
+        "hold": true,
+        "distance": 360.00221864147284,
+        "elapsed": 4.433200000000005,
+        "clock": 28804.4332,
+        "departure": 28840,
+        "skipHidden": true
+      },
+      "after": {
+        "doors": false,
+        "hold": false,
+        "elapsed": 4.749800000000009,
+        "clock": 28804.7498,
+        "scheduleOffset": 0,
+        "mode": "manual"
+      }
+    },
+    {
+      "name": "yamanote/index",
+      "mode": "manual",
+      "pass": true,
+      "before": {
+        "doors": false,
+        "hold": true,
+        "distance": 0,
+        "elapsed": 0
+      },
+      "after": {
+        "doors": false,
+        "hold": false,
+        "elapsed": 0.01669999999999891,
+        "mode": "manual"
+      }
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

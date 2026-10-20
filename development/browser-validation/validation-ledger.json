@@ -1,0 +1,458 @@
+{
+  "updated": "2026-10-20",
+  "deduplication": "One job per built corridor, direction, geometry/stops hash. Numerical, sampled-render and wall-clock runs remain separate evidence types.",
+  "jobs": [
+    {
+      "key": "yamanote:forward",
+      "dataId": "yamanote-osm-2026-10-13",
+      "geometryAndStopsHash": "abefb49f24c1692b4276d77ca38364dcec0c1891752b8a0beafa0e38d1770318",
+      "stationCount": 31,
+      "physicalStationCount": 31,
+      "start": "東京",
+      "end": "東京",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "yamanote:reverse",
+      "dataId": "yamanote-osm-2026-10-13",
+      "geometryAndStopsHash": "506978365f8835c95c15eb3a19d3ce953df2ddc7b6922cf6506ed323c93959c4",
+      "stationCount": 31,
+      "physicalStationCount": 31,
+      "start": "東京",
+      "end": "東京",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "chuo:reverse",
+      "dataId": "chuo-rapid-20261015",
+      "geometryAndStopsHash": "f40ec4c490ab11a6521d69273787bc1f018b2403d81711f59fc15d01136c8ce3",
+      "stationCount": 24,
+      "physicalStationCount": 24,
+      "start": "東京",
+      "end": "高尾",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "chuo:forward",
+      "dataId": "chuo-rapid-20261015",
+      "geometryAndStopsHash": "5854ca21d56bc6846d173078bc79d45dc78b6a61f96a1589d7361eacf7295fcd",
+      "stationCount": 24,
+      "physicalStationCount": 24,
+      "start": "高尾",
+      "end": "東京",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "chuo-local:reverse",
+      "dataId": "chuo-local-20261015",
+      "geometryAndStopsHash": "0c48585192d60e4925d746bfb2313e66505b69be360205ae1253f508772193d9",
+      "stationCount": 39,
+      "physicalStationCount": 39,
+      "start": "三鷹",
+      "end": "千葉",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "chuo-local:forward",
+      "dataId": "chuo-local-20261015",
+      "geometryAndStopsHash": "61fbcdff125b24637ef3854895a132800d2dfdaee3cdc5fa3dbaa56ca816f0a9",
+      "stationCount": 39,
+      "physicalStationCount": 39,
+      "start": "千葉",
+      "end": "三鷹",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "keihin:forward",
+      "dataId": "keihin-negishi-full-47-20261014",
+      "geometryAndStopsHash": "b3d72a265ce2585b04166baf5c4f58dfe04de530cfa4163e95e8994b89fbcba9",
+      "stationCount": 47,
+      "physicalStationCount": 47,
+      "start": "大宮",
+      "end": "大船",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "keihin:reverse",
+      "dataId": "keihin-negishi-full-47-20261014",
+      "geometryAndStopsHash": "fa3021880e0241a26f5f51ff8bb04296cca26b1cc19008f01c0f473972a8cc12",
+      "stationCount": 47,
+      "physicalStationCount": 47,
+      "start": "大船",
+      "end": "大宮",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "sobu:reverse",
+      "dataId": "sobu-rapid-20261016",
+      "geometryAndStopsHash": "4241528f70faefb727d5d98c799d7bfb01c6d0b696e291d202d265c4740f68a5",
+      "stationCount": 10,
+      "physicalStationCount": 21,
+      "start": "東京",
+      "end": "千葉",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "sobu:forward",
+      "dataId": "sobu-rapid-20261016",
+      "geometryAndStopsHash": "eb178785fefc1f021abf29572d25564b61eb8af8331268858d3b0a1652ac3d38",
+      "stationCount": 10,
+      "physicalStationCount": 21,
+      "start": "千葉",
+      "end": "東京",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "west:reverse",
+      "dataId": "chuo-extension-west-20261015",
+      "geometryAndStopsHash": "1e9ff41ad914ea075886b70e8fc988aec9dc1c58bdf6b43c83ab95b5b3ae4753",
+      "stationCount": 9,
+      "physicalStationCount": 9,
+      "start": "高尾",
+      "end": "大月",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "west:forward",
+      "dataId": "chuo-extension-west-20261015",
+      "geometryAndStopsHash": "70e4f8e5db3442b8314b5565b99d5796aed170ae0dc880a369238464dc31227e",
+      "stationCount": 9,
+      "physicalStationCount": 9,
+      "start": "大月",
+      "end": "高尾",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "ome:reverse",
+      "dataId": "chuo-extension-ome-20261015",
+      "geometryAndStopsHash": "4fba79757ee5654d9db9d43d178c2748a29e1a65389297f26c26efa3f66b6c10",
+      "stationCount": 13,
+      "physicalStationCount": 13,
+      "start": "立川",
+      "end": "青梅",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "ome:forward",
+      "dataId": "chuo-extension-ome-20261015",
+      "geometryAndStopsHash": "f004d22fbbc267957b011e8500ce88f92a20699dfbd44b40055402c2937746e9",
+      "stationCount": 13,
+      "physicalStationCount": 13,
+      "start": "青梅",
+      "end": "立川",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "okutama:reverse",
+      "dataId": "chuo-extension-okutama-20261015",
+      "geometryAndStopsHash": "fb1dbc34dc6fe28f258e03281f7ba25c1826df8f98597295279a445809e40139",
+      "stationCount": 13,
+      "physicalStationCount": 13,
+      "start": "青梅",
+      "end": "奥多摩",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "okutama:forward",
+      "dataId": "chuo-extension-okutama-20261015",
+      "geometryAndStopsHash": "80fad8f2478b542a6d2bef1606ac299094908ac2e774d0f7048d24e6fb6ca483",
+      "stationCount": 13,
+      "physicalStationCount": 13,
+      "start": "奥多摩",
+      "end": "青梅",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "fuji:reverse",
+      "dataId": "chuo-extension-fuji-20261015",
+      "geometryAndStopsHash": "080c9d4c85c2136620e629c17118a2a1a13753cac3fac4af140554d498f643d4",
+      "stationCount": 16,
+      "physicalStationCount": 16,
+      "start": "大月",
+      "end": "富士山",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "fuji:forward",
+      "dataId": "chuo-extension-fuji-20261015",
+      "geometryAndStopsHash": "8b08143200d854fa116088fc29938a8c327fa25a5341b089dc8fda9f92f72cec",
+      "stationCount": 16,
+      "physicalStationCount": 16,
+      "start": "富士山",
+      "end": "大月",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "not-run",
+        "softwareGPUFullRun": "not-run",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      }
+    },
+    {
+      "key": "lake:reverse",
+      "dataId": "chuo-extension-lake-20261015",
+      "geometryAndStopsHash": "82ae702fc9c2e696871cfdcc1784426159cb801e2fe53431404320abaffed4cf",
+      "stationCount": 3,
+      "physicalStationCount": 3,
+      "start": "富士山",
+      "end": "河口湖",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "completed, sound off / cab only",
+        "softwareGPUFullRun": "completed, Mesa llvmpipe WebGL2 / cab only",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      },
+      "realTimeEvidence": {
+        "file": "realtime-running.json",
+        "status": "completed",
+        "wallSeconds": 222.74,
+        "lastSample": {
+          "distance": 3348.4231654626838,
+          "speed": 0,
+          "elapsed": 228.156800000014,
+          "complete": true,
+          "running": false,
+          "doors": false,
+          "visited": [
+            0,
+            1,
+            2
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3910163.7133742743,
+            3426819.1523761926,
+            3683514.945841032
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 222.739
+        }
+      }
+    },
+    {
+      "key": "lake:forward",
+      "dataId": "chuo-extension-lake-20261015",
+      "geometryAndStopsHash": "96c434fb429fc3cc48d0863b82355eef5c92713e7086b6405c84688d69f9ef91",
+      "stationCount": 3,
+      "physicalStationCount": 3,
+      "start": "河口湖",
+      "end": "富士山",
+      "checks": {
+        "numericalFullRun": "passed (research-tests-final.log)",
+        "realTimeFullRun": "completed, sound off / cab only",
+        "softwareGPUFullRun": "completed, Mesa llvmpipe WebGL2 / cab only",
+        "allCameraViewsAlongWholeRoute": "not-run",
+        "physicalGPU": "unavailable",
+        "physicalAudioListening": "unavailable",
+        "physicalPhoneTouch": "unavailable",
+        "individualStationOfficialTransferReview": "pending"
+      },
+      "realTimeEvidence": {
+        "file": "realtime-running.json",
+        "status": "completed",
+        "wallSeconds": 222.881,
+        "lastSample": {
+          "distance": 3348.421572482402,
+          "speed": 0,
+          "elapsed": 228.15620000001786,
+          "complete": true,
+          "running": false,
+          "doors": false,
+          "visited": [
+            0,
+            1,
+            2
+          ],
+          "missed": [],
+          "next": 2,
+          "hidden": false,
+          "camera": [
+            -3912386.0744182877,
+            3425641.9120998327,
+            3682180.2767088567
+          ],
+          "webglError": 0,
+          "resolutionScale": 0.75,
+          "tilesLoaded": true,
+          "wallSeconds": 222.881
+        }
+      }
+    }
+  ],
+  "userAcceptance": {
+    "date": "2026-10-20",
+    "planningStatus": "closed by user decision",
+    "items": [
+      "physicalGPU",
+      "physicalAudioListening",
+      "physicalPhoneTouch",
+      "realTimeFullRun"
+    ],
+    "meaning": "ユーザーの指示で予定上の確認を終了。未実施の検査を実施・合格したという意味ではない。"
+  },
+  "completionRule": "No physical validation or whole-route camera/transfer review is inferred from numerical tests or touch emulation."
+}

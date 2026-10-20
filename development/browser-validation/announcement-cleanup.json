@@ -1,0 +1,65 @@
+[
+  {
+    "route": "keihin",
+    "direction": "reverse",
+    "stage": "next",
+    "station": "JK47",
+    "text": "スポンサーリンク"
+  },
+  {
+    "route": "keihin",
+    "direction": "reverse",
+    "stage": "next",
+    "station": "JK47",
+    "text": "大船ゆき（大宮→大"
+  },
+  {
+    "route": "keihin",
+    "direction": "forward",
+    "stage": "arrival",
+    "station": "JK01",
+    "text": "アナウンス"
+  },
+  {
+    "route": "keihin",
+    "direction": "forward",
+    "stage": "arrival",
+    "station": "JK01",
+    "text": "スポンサーリンク"
+  },
+  {
+    "route": "keihin",
+    "direction": "forward",
+    "stage": "arrival",
+    "station": "JK01",
+    "text": "関連記事"
+  },
+  {
+    "route": "keihin",
+    "direction": "forward",
+    "stage": "arrival",
+    "station": "JK01",
+    "text": "アナウンス"
+  },
+  {
+    "route": "keihin",
+    "direction": "forward",
+    "stage": "arrival",
+    "station": "JK01",
+    "text": "アナウンス"
+  },
+  {
+    "route": "keihin",
+    "direction": "forward",
+    "stage": "arrival",
+    "station": "JK01",
+    "text": "【英語付き】「江ノ島電鉄」 車内アナウンスセリフまとめ"
+  },
+  {
+    "route": "keihin",
+    "direction": "forward",
+    "stage": "arrival",
+    "station": "JK01",
+    "text": "【英語付き】JR東日本「山手線」車内アナウンスセリフまとめ"
+  }
+]

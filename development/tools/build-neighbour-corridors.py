@@ -13,7 +13,7 @@ for name in ['yamanote','chuo','chuo-local','keihin','sobu']:
  routes={}
  for key,r in data['routes'].items():
   if key not in ['forward','reverse']:continue
-  routes[key]={k:v for k,v in r.items()if k in ['label','points','stops','trackOffsets','loop','gameMaximum','stationSpeeds','physicalStops']};routes[key]['groundHeights']=models['groundHeights'][key]
+  routes[key]={k:v for k,v in r.items()if k in ['label','points','stops','trackOffsets','loop','gameMaximum','stationSpeeds','physicalStops']};routes[key]['groundHeights']=models['groundHeights'][key];routes[key]['lineName']=data['name'];routes[key]['lineId']=data['id']
  out.append({'id':name,'dataId':data['id'],'cars':data['train']['cars'],'routes':routes,'stock':{k:models[k]for k in ['train','trainHead','trainTail','bogie','pantograph']if k in models},'credit':models.get('credit'),'license':models.get('license')})
 packed=gzip.compress(json.dumps({'version':1,'corridors':out},ensure_ascii=False,separators=(',',':')).encode(),mtime=0)
 p=root/'shared/neighbour-corridors.bin';p.write_bytes(packed)

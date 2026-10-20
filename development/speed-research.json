@@ -1,0 +1,60 @@
+{
+  "checked": "2026-10-20",
+  "policy": "路線最高速度を参考にしたゲームの区間上限。カーブ制限なし、切替は駅境界。個々の運転制限や実運転規則の再現ではない。一次資料で未確定の行は参考値として区別する。",
+  "rows": [
+    {
+      "route": "山手線",
+      "maximum": 90,
+      "status": "reference-secondary",
+      "url": "https://ja.wikipedia.org/wiki/山手線"
+    },
+    {
+      "route": "中央線快速・高尾〜大月のE233系",
+      "maximum": 100,
+      "status": "central-rapid-official-report; west-section-individual-limits-pending",
+      "url": "https://media.jreast.co.jp/articles/604"
+    },
+    {
+      "route": "中央・総武各停",
+      "maximum": 95,
+      "status": "reference-secondary",
+      "url": "https://ja.wikipedia.org/wiki/中央・総武緩行線"
+    },
+    {
+      "route": "京浜東北・根岸 大宮〜桜木町",
+      "maximum": 90,
+      "status": "reference-secondary",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2969218071"
+    },
+    {
+      "route": "根岸 桜木町〜大船",
+      "maximum": 95,
+      "status": "reference-secondary",
+      "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2969218071"
+    },
+    {
+      "route": "青梅・奥多摩",
+      "maximum": 85,
+      "status": "reference-secondary",
+      "url": "https://ja.wikipedia.org/wiki/青梅線"
+    },
+    {
+      "route": "富士急 大月〜富士山〜河口湖",
+      "maximum": 70,
+      "status": "firsthand-operator-interview-republished",
+      "url": "https://ecnavi.jp/mainichi_news/article/3179e6bc1a2bbc1d78722bf81937f48e/"
+    },
+    {
+      "route": "総武快速 東京〜錦糸町",
+      "maximum": 100,
+      "status": "reference-secondary",
+      "url": "https://takumick.com/2015/10/30/soubu-rapid-speed/"
+    },
+    {
+      "route": "総武快速 錦糸町〜千葉",
+      "maximum": 120,
+      "status": "official-historical-introduction; all-current-individual-limits-pending",
+      "url": "https://www.jreast.co.jp/press/1999_1/19991001/zairai.html"
+    }
+  ]
+}

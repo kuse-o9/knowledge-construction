@@ -2,7 +2,7 @@
  * No synthetic ground-level metro tracks or unbuilt railways are generated here.
  */
 (function(g){'use strict';let ready=null;const scenes=new WeakMap();
-function load(){if(!ready){const u=new URL((location.pathname.includes('/yamanote/')?'../':'')+'shared/neighbour-corridors.bin?v=existing1',location.href);ready=fetch(u).then(r=>{if(!r.ok)throw Error('nearby railway data');return new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).json();}).catch(()=>{ready=null;return null;});}return ready;}
+function load(){if(!ready){const u=new URL((location.pathname.includes('/yamanote/')?'../':'')+'shared/neighbour-corridors.bin?v=profiles1',location.href);ready=fetch(u).then(r=>{if(!r.ok)throw Error('nearby railway data');return new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).json();}).catch(()=>{ready=null;return null;});}return ready;}
 function setup(viewer,C,core,ownId,adapter){if(scenes.has(viewer))return scenes.get(viewer);const s={viewer,C,core,ownId,adapter,corridors:[],slots:[],rails:[],lastRail:null,elapsed:0,failed:false};scenes.set(viewer,s);void load().then(data=>{if(!data){s.failed=true;return;}for(const line of data.corridors){if(line.id===ownId||(ownId==='sobu'&&line.id==='chuo-local'))continue;const geos=Object.fromEntries(Object.entries(line.routes).map(([key,r])=>{const geo=core.geometry(r);core.applyElevation(geo,r.groundHeights);return [key,geo];}));const traffic=g.RailTraffic.create(geos,'weekday',{direction:'none',distance:-10000,length:line.cars*20});s.corridors.push({...line,geos,traffic});}});return s;}
 // Index the same samples used previously; no coarser route geometry or shorter draw range.
 const indexes=new WeakMap(),CELL=1000;
