@@ -21,11 +21,11 @@ function trainViews(geo,traffic,player,exclude){
 }
 function aspect(geo,index,traffic,player,exclude,precomputed){
  if(g.BaylineJunctions&&!g.BaylineJunctions.allowed(traffic,geo,index,exclude||'player'))return 'RED';
- const {blocks,loop}=layout(geo),trains=trainViews(geo,traffic,player,exclude);
+ const {blocks,loop}=layout(geo);
  const request=geo.route.signalRoutes?.[index];
  // Configured junctions fail closed until their route is aligned and reserved.
  if(request&&(request.switchAligned!==true||!S.routeClear(request,traffic.reservations||[])))return 'RED';
- const occupied=precomputed||S.occupiedBlocks(blocks,trains);
+ const occupied=precomputed||S.occupiedBlocks(blocks,trainViews(geo,traffic,player,exclude));
  if(occupied.has(index))return 'RED';
  const next=index+1<blocks.length?index+1:loop?0:-1;
  return occupied.has(next)?'YELLOW':'GREEN';

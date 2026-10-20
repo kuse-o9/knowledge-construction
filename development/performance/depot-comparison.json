@@ -1,0 +1,10 @@
+{
+  "identicalGpuInputs": true,
+  "comparedDraws": 613,
+  "idle": {
+    "oldUploads": 51,
+    "newUploads": 3,
+    "oldLocations": 250,
+    "newLocations": 5
+  }
+}

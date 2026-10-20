@@ -15,7 +15,9 @@ function blockAt(blocks,distance){
   assertFinite(distance,'distance');
   if(distance<0||distance>blocks.at(-1).end)return -1;
   if(distance===blocks.at(-1).end)return blocks.length-1;
-  return blocks.findIndex(b=>distance>=b.start&&distance<b.end);
+  let lo=0,hi=blocks.length;
+  while(lo<hi){const mid=(lo+hi)>>1;if(blocks[mid].start<=distance)lo=mid+1;else hi=mid;}
+  const index=lo-1;return index>=0&&distance<blocks[index].end?index:-1;
 }
 /* A block is occupied if any part of a train overlaps it, not just its midpoint.
  * Each train: {id, front, length}, with front at the leading end in increasing coordinates.
@@ -28,7 +30,10 @@ function occupiedBlocks(blocks,trains,excludeId){
     assertFinite(t.front,'train.front');assertFinite(t.length,'train.length');
     if(t.length<=0)throw new RangeError('train.length must be positive');
     const rear=t.front-t.length;
-    blocks.forEach((b,i)=>{if(rear<b.end&&t.front>b.start)occupied.add(i);});
+    // Ordered blocks: find the first possible overlap, then visit only covered blocks.
+    let lo=0,hi=blocks.length;
+    while(lo<hi){const mid=(lo+hi)>>1;if(blocks[mid].end<=rear)lo=mid+1;else hi=mid;}
+    for(let i=lo;i<blocks.length&&blocks[i].start<t.front;i++)if(rear<blocks[i].end)occupied.add(i);
   }
   return occupied;
 }

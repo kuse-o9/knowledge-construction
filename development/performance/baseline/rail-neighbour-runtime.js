@@ -1,0 +1,24 @@
+/* Nearby traffic uses retained existing alignments, terrain heights and stock meshes.
+ * No synthetic ground-level metro tracks or unbuilt railways are generated here.
+ */
+(function(g){'use strict';let ready=null;const scenes=new WeakMap();
+function load(){if(!ready){const u=new URL((location.pathname.includes('/yamanote/')?'../':'')+'shared/neighbour-corridors.bin?v=existing1',location.href);ready=fetch(u).then(r=>{if(!r.ok)throw Error('nearby railway data');return new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).json();}).catch(()=>{ready=null;return null;});}return ready;}
+function setup(viewer,C,core,ownId,adapter){if(scenes.has(viewer))return scenes.get(viewer);const s={viewer,C,core,ownId,adapter,corridors:[],slots:[],rails:[],lastRail:null,elapsed:0,failed:false};scenes.set(viewer,s);void load().then(data=>{if(!data){s.failed=true;return;}for(const line of data.corridors){if(line.id===ownId||(ownId==='sobu'&&line.id==='chuo-local'))continue;const geos=Object.fromEntries(Object.entries(line.routes).map(([key,r])=>{const geo=core.geometry(r);core.applyElevation(geo,r.groundHeights);return [key,geo];}));const bounds=Object.fromEntries(Object.entries(geos).map(([key,geo])=>[key,geo.route.points.filter((_,i)=>i%20===0)]));const traffic=g.RailTraffic.create(geos,'weekday',{direction:'none',distance:-10000,length:line.cars*20});s.corridors.push({...line,geos,bounds,traffic});}});return s;}
+function near(core,geo,p,range=1000){let best=Infinity;for(let i=0;i<geo.route.points.length;i+=20){const q=geo.route.points[i],d=Math.hypot((q[0]-p.lon)*90400,(q[1]-p.lat)*111200);if(d<best)best=d;}return best<range;}
+function step(viewer,dt){const s=scenes.get(viewer);if(!s||!dt)return;s.elapsed+=dt;for(const line of s.corridors)g.RailTraffic.step(line.traffic,line.geos,dt,null);}
+function clearRails(s){for(const e of s.rails)s.viewer.entities.remove(e);s.rails=[];}
+function render(viewer,position,quality=1){const s=scenes.get(viewer);if(!s)return;const {C,core,adapter:a}=s,own=C.Cartesian3.fromDegrees(position.lon,position.lat,position.height),candidates=[];
+ const corridors=s.corridors.filter(line=>Object.values(line.geos).some(geo=>near(core,geo,position)));
+ if(!s.lastRail||Math.hypot((position.lon-s.lastRail.lon)*90400,(position.lat-s.lastRail.lat)*111200)>250){clearRails(s);s.lastRail={...position};for(const line of corridors)for(const geo of Object.values(line.geos)){
+  let at=0,best=Infinity;for(let i=0;i<geo.route.points.length;i+=5){const p=geo.route.points[i],d=Math.hypot((p[0]-position.lon)*90400,(p[1]-position.lat)*111200);if(d<best){best=d;at=geo.cumulative[i];}}
+  if(best<3||best>900)continue;for(const side of [-.5335,.5335]){const points=[];for(let d=Math.max(0,at-850);d<Math.min(geo.length,at+850);d+=12){const f=a.frame(geo,d);points.push(C.Cartesian3.add(C.Cartesian3.add(f.center,C.Cartesian3.multiplyByScalar(f.left,side,new C.Cartesian3()),new C.Cartesian3()),C.Cartesian3.multiplyByScalar(f.up,.14,new C.Cartesian3()),new C.Cartesian3()));}if(points.length>1)s.rails.push(viewer.entities.add({name:'既存路線 '+line.id+' の隣接線路',polyline:{positions:points,width:2,material:C.Color.fromCssColorString('#a6b7bc')}}));}
+ }}
+ for(const line of corridors)for(const t of line.traffic.trains){const geo=line.geos[t.direction],p=core.position(geo,t.distance),distance=C.Cartesian3.distance(own,C.Cartesian3.fromDegrees(p.lon,p.lat,p.height));if(distance<950)candidates.push({line,t,geo,distance});}
+ candidates.sort((x,y)=>x.distance-y.distance);const wanted=candidates.slice(0,quality===0?1:2);let n=0;
+ for(const {line,t,geo}of wanted){let slot=s.slots[n];if(slot?.id!==line.id){if(slot)for(const parts of slot.parts.flat())for(const p of parts)viewer.scene.primitives.remove(p);slot={id:line.id,parts:Array.from({length:line.cars},(_,i)=>[a.load(i===0?line.stock.trainHead:i===line.cars-1?(line.stock.trainTail||line.stock.train):line.stock.train),...(line.stock.bogie?[-7.1,7.1].map(()=>a.load(line.stock.bogie)):[])])};s.slots[n]=slot;}
+  for(let i=0;i<line.cars;i++){const d=t.distance-10-i*20,valid=d>=0&&d<=geo.length;for(let j=0;j<slot.parts[i].length;j++){const f=j===0?a.pose(d,geo):a.frame(geo,d+[-7.1,7.1][j-1],.9);if(j>0)f.center=C.Cartesian3.add(f.center,C.Cartesian3.multiplyByScalar(f.up,.07,new C.Cartesian3()),new C.Cartesian3());const matrix=a.matrix(f);for(const p of slot.parts[i][j]){p.show=valid;p.modelMatrix=matrix;}}}n++;
+ }for(let i=n;i<s.slots.length;i++)for(const parts of s.slots[i].parts.flat())for(const p of parts)p.show=false;
+}
+function dispose(viewer){const s=scenes.get(viewer);if(!s)return;clearRails(s);for(const slot of s.slots)for(const parts of slot.parts.flat())for(const p of parts)viewer.scene.primitives.remove(p);scenes.delete(viewer);}
+g.BaylineNeighbours={setup,step,render,dispose,near};
+})(typeof globalThis==='object'?globalThis:window);

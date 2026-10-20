@@ -1,0 +1,21 @@
+{
+  "identical": true,
+  "comparisons": [
+    {
+      "view": "depot",
+      "size": [
+        518,
+        514
+      ],
+      "differentPixels": 0
+    },
+    {
+      "view": "orbit",
+      "size": [
+        518,
+        514
+      ],
+      "differentPixels": 0
+    }
+  ]
+}

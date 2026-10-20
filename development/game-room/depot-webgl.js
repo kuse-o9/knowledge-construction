@@ -17,7 +17,7 @@
   let gl, program, floors, model, current, geometry, dragging, moving = false, lost = false;
   let yaw = 0, pitch = 0, distance = 4.5, frame = 0, hovered = null;
   const player={x:-17.3,y:0,z:24.8,angle:Math.PI,walk:0}, keys=new Set();
-  let lastTick=0, avatarBuffer, avatarCount=0,liftBuffer,liftScene=null;
+  let lastTick=0, avatarBuffer, avatarCount=0,liftBuffer,liftScene=null,avatarKey=null,liftKey=null,liftMesh=null,locations;
   const FOV=48*Math.PI/180;
   const tracks=()=>current?.floor===23?[0]:[-20,-12,-4,4,12,20];
   function surface(x,z) {
@@ -77,6 +77,7 @@
   const dot = (a,b) => a.reduce((s,v,i) => s+v*b[i],0);
   const cross = (a,b) => [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
   const norm = a => { const n=Math.hypot(...a); return a.map(v=>v/n); };
+  const lightDirection=norm([-.3,1,.8]),baseColors=new Map();
   const loadingError = message => { $('loading').hidden=false; $('loading').textContent=message; };
   function shader(type, source) {
     const s=gl.createShader(type); gl.shaderSource(s,source); gl.compileShader(s);
@@ -99,6 +100,7 @@
       gl_FragColor=vec4(mix(shade,vec3(.20,.28,.24),fog),1.);}`));
     gl.linkProgram(program);
     if(!gl.getProgramParameter(program,gl.LINK_STATUS)) throw Error(gl.getProgramInfoLog(program));
+    locations={};for(const name of ['view','projection','elevation'])locations[name]=gl.getUniformLocation(program,name);for(const name of ['position','color'])locations[name]=gl.getAttribLocation(program,name);
     gl.useProgram(program); gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LEQUAL);
     gl.clearColor(.19,.27,.23,1);
     // Depth testing handles all occlusion. No painter sorting or 2D context.
@@ -160,8 +162,8 @@
   function upload(faces,existing) {
     const data=[];
     for(const f of faces) {
-      const light=.65+.35*Math.max(0,dot(f.n,norm([-.3,1,.8])));
-      const rgb=[1,3,5].map(i=>parseInt(f.c.slice(i,i+2),16)/255*light);
+      const light=.65+.35*Math.max(0,dot(f.n,lightDirection));
+      let base=baseColors.get(f.c);if(!base){base=[1,3,5].map(i=>parseInt(f.c.slice(i,i+2),16)/255);baseColors.set(f.c,base);}const rgb=base.map(v=>v*light);
       for(let i=1;i<f.v.length-1;i++) for(const v of [f.v[0],f.v[i],f.v[i+1]]) data.push(...v,...rgb);
     }
     const buffer=existing||gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buffer);
@@ -186,14 +188,15 @@
     gl.viewport(0,0,w,h); gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
     const f=1/Math.tan(FOV/2),near=.2,far=250,aspect=w/h;
     const p=new Float32Array([f/aspect,0,0,0,0,f,0,0,0,0,(far+near)/(near-far),-1,0,0,2*far*near/(near-far),0]);
-    gl.uniformMatrix4fv(gl.getUniformLocation(program,'view'),false,basis());
-    gl.uniformMatrix4fv(gl.getUniformLocation(program,'projection'),false,p);
-    gl.uniform1f(gl.getUniformLocation(program,'elevation'),liftScene?liftScene.fromElevation:elevation);
+    gl.uniformMatrix4fv(locations.view,false,basis());
+    gl.uniformMatrix4fv(locations.projection,false,p);
+    gl.uniform1f(locations.elevation,liftScene?liftScene.fromElevation:elevation);
     renderMesh(geometry.buffer,geometry.count);
-    if(liftScene){gl.uniform1f(gl.getUniformLocation(program,'elevation'),liftScene.toElevation);renderMesh(liftScene.targetGeometry.buffer,liftScene.targetGeometry.count);}
-    gl.uniform1f(gl.getUniformLocation(program,'elevation'),elevation);
+    if(liftScene){gl.uniform1f(locations.elevation,liftScene.toElevation);renderMesh(liftScene.targetGeometry.buffer,liftScene.targetGeometry.count);}
+    gl.uniform1f(locations.elevation,elevation);
     renderLift();
-    const faces=[],swing=keys.size?Math.sin(player.walk)*.13:0;
+    const swing=keys.size?Math.sin(player.walk)*.13:0,key=[player.x,player.y,player.z,player.angle,swing].join('|');
+    if(!avatarBuffer||key!==avatarKey){const faces=[];
     box(faces,0,.8,0,.49,.63,.3,'#e8a35f');
     box(faces,0,1.3,0,.45,.43,.4,'#f1c99d');
     box(faces,0,1.55,0,.56,.13,.51,'#5c9a70');
@@ -205,12 +208,13 @@
     }
     const c=Math.cos(player.angle),s=Math.sin(player.angle);
     for(const face of faces){face.v=face.v.map(([x,y,z])=>[player.x+x*c+z*s,player.y+y,player.z-x*s+z*c]);const [x,y,z]=face.n;face.n=[x*c+z*s,y,-x*s+z*c];}
-    const avatar=upload(faces,avatarBuffer);avatarBuffer=avatar.buffer;avatarCount=avatar.count;renderMesh(avatarBuffer,avatarCount);
+    const avatar=upload(faces,avatarBuffer);avatarBuffer=avatar.buffer;avatarCount=avatar.count;avatarKey=key;}renderMesh(avatarBuffer,avatarCount);
     canvas.dataset.floor=String(current.floor);canvas.dataset.elevation=String(elevation);
     canvas.dataset.renderer='webgl';canvas.dataset.glError=String(gl.getError());
   }
   function renderLift(){
-    const faces=[],x=-23,z=28.2,door=liftScene?.door??1;
+    const door=liftScene?.door??1,key=liftScene?door+'|'+elevation+'|'+floors.length:'idle';
+    if(!liftBuffer||key!==liftKey){const faces=[],x=-23,z=28.2;
     // Actual car floor, walls, door leaves and shaft markers share the avatar's elevation.
     box(faces,x,-.08,z,4.6,.16,4.4,'#9caa9c');box(faces,x,3.3,z,4.6,.15,4.4,'#b8c6b2');
     box(faces,x-2.25,1.6,z,.12,3.2,4.4,'#607b6e');box(faces,x+2.25,1.6,z,.12,3.2,4.4,'#607b6e');
@@ -221,13 +225,13 @@
       box(faces,x,.03+y,z-2.6,5,.1,.8,'#ddc369');
       for(const side of [-1,1])box(faces,x+side*2.65,y+6.8,z-2.65,.13,14,.13,'#3c5547');
     }
-    const mesh=upload(faces,liftBuffer);liftBuffer=mesh.buffer;renderMesh(mesh.buffer,mesh.count);
+    const mesh=upload(faces,liftBuffer);liftBuffer=mesh.buffer;liftMesh=mesh;liftKey=key;}renderMesh(liftMesh.buffer,liftMesh.count);
     canvas.dataset.liftPhase=liftScene?.phase||'open';canvas.dataset.liftY=String(elevation);
   }
   function renderMesh(buffer,count){
     gl.bindBuffer(gl.ARRAY_BUFFER,buffer);
     for(const [name,offset] of [['position',0],['color',12]]) {
-      const a=gl.getAttribLocation(program,name);gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,3,gl.FLOAT,false,24,offset);
+      const a=locations[name];gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,3,gl.FLOAT,false,24,offset);
     }
     gl.drawArrays(gl.TRIANGLES,0,count);
   }

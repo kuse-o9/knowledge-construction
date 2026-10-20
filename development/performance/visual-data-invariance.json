@@ -1,0 +1,61 @@
+{
+  "identical": true,
+  "scope": "All non-runtime scripts (including core, line data, models, city data, audio and game UI) plus other packed fields",
+  "hashes": {
+    "chuo": {
+      "otherFields": "b3b7a30157c4d32e5c32116ee068727326c721a134263a88eeed8dd0bb739959",
+      "untouchedScripts": [
+        "4035f71d0f55f743506ac804c4ee4e46d7690dad93b593e013a49a33a07acd56",
+        "f2c09532fc547907634b9807a50e1a5c7d404497d395be8b5961e82b1dd0d5e2",
+        "ea2ea07717eb9a0fbb557047b70f575bb5e2667216304330be3bd777b02cf77d",
+        "3bf3b48f5c8c78b25be72cc3df120cd62ba9ab3f9be22b1d599310342c06025f",
+        "b3e5bba885b64cbac25add0cff8856d9e85bf338f05436e24b9f044dede62bcd",
+        "a4e4ab0d7a60ef22a2fc461727ed1f6dc4f346f770751911b49cfb771c99d54a",
+        "d574f978c22ae30a3bea7c34ae2123fc6b52cad9011f0e12fdeeed6098312397",
+        "0e7be33248fdb5ea4085c8fbd3c4ed51d5b7de5d344a240fa6579928d36fee57",
+        "926f9081535de3bcbad6f54e554727ad10bd1835118ec72cf946270c5c4db56a",
+        "99755c01218ff84715b9fa302397032733371d7cfd51bac826d31aa828e42d75"
+      ]
+    },
+    "chuo-local": {
+      "otherFields": "b3b7a30157c4d32e5c32116ee068727326c721a134263a88eeed8dd0bb739959",
+      "untouchedScripts": [
+        "48a3af978ed66e188fb796c7f8d0e0d9c3efdc28cf451fdaeafa7b09c406daab",
+        "f2c09532fc547907634b9807a50e1a5c7d404497d395be8b5961e82b1dd0d5e2",
+        "e0793c183d3518fbd154e53123703000000801cd6ef28407e1789711b378f9af",
+        "3bf3b48f5c8c78b25be72cc3df120cd62ba9ab3f9be22b1d599310342c06025f",
+        "b3e5bba885b64cbac25add0cff8856d9e85bf338f05436e24b9f044dede62bcd",
+        "20611328b5bb99de03df17104f1bdf15e12044f9f1c98269e2dec87ea3402a5d",
+        "9f3f1890c7323ac0eaee42864ce438114ea22726d4648b47bbd642af513b012f",
+        "2aa5afca69583d75bd92dd29c0d074637ebadb7a5b1d8035c42d46054bc6eb45"
+      ]
+    },
+    "keihin": {
+      "otherFields": "b3b7a30157c4d32e5c32116ee068727326c721a134263a88eeed8dd0bb739959",
+      "untouchedScripts": [
+        "252e78c2d54c5f76ae2c905d488386bc48188177a2ee2f0d5f8eae9e067b2648",
+        "f2c09532fc547907634b9807a50e1a5c7d404497d395be8b5961e82b1dd0d5e2",
+        "9611a6254f829de583cdd46b136abbded16f8190e9102c8cb2fb24baa38f72ed",
+        "3bf3b48f5c8c78b25be72cc3df120cd62ba9ab3f9be22b1d599310342c06025f",
+        "b3e5bba885b64cbac25add0cff8856d9e85bf338f05436e24b9f044dede62bcd",
+        "abe63e803256bd19dd179d2e66ab564a7eaae959825555fecb409d6c90a896e9",
+        "d23d3ca346db61125ccf9d7eff5e331a546175aa8c38204beceea408ea381764",
+        "3ad7ea5680b4484ddd4cdbf298625091e0d13a3e2801d690d166e3af27f642a6"
+      ]
+    },
+    "sobu": {
+      "otherFields": "b3b7a30157c4d32e5c32116ee068727326c721a134263a88eeed8dd0bb739959",
+      "untouchedScripts": [
+        "22b25842b61832128230b9316befa43b2765aa3d849b84c6fad2add5d8dab7ec",
+        "f2c09532fc547907634b9807a50e1a5c7d404497d395be8b5961e82b1dd0d5e2",
+        "9fd126db339f89665bf65a2dcc579d273784dad20a7d56be177f129088397cbd",
+        "3bf3b48f5c8c78b25be72cc3df120cd62ba9ab3f9be22b1d599310342c06025f",
+        "b3e5bba885b64cbac25add0cff8856d9e85bf338f05436e24b9f044dede62bcd",
+        "7e29a37cb1ffb223181cfe63c20f3f06c28a5f546817fe19e7bfe7cdf056df98",
+        "6a737b35622c7fb8d7571cb951b47c210fef036c63b46ad01c5dfe7a7cc38a22",
+        "03e42de7419fd37b5bb3769e9c987512c1cd70dd1af144ebc38c708b8a80319b",
+        "8290bd173b60c4b4c7db00c4e610a7e1b5d31098f26c9a35f0ff529b5bcc8d1b"
+      ]
+    }
+  }
+}

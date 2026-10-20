@@ -1,0 +1,46 @@
+{
+  "results": [
+    {
+      "mode": "before",
+      "renderer": "Chromium / ANGLE SwiftShader software WebGL",
+      "delta": {
+        "uploads": 48,
+        "bytes": 393984,
+        "locations": 240,
+        "draws": 72
+      },
+      "dataset": {
+        "player": "{\"x\":-17.3,\"y\":0,\"z\":24.8}",
+        "nearby": "",
+        "liftPhase": "open",
+        "liftY": "238",
+        "floor": "18",
+        "elevation": "238",
+        "renderer": "webgl",
+        "glError": "0"
+      },
+      "errors": []
+    },
+    {
+      "mode": "after",
+      "renderer": "Chromium / ANGLE SwiftShader software WebGL",
+      "delta": {
+        "uploads": 0,
+        "bytes": 0,
+        "locations": 0,
+        "draws": 72
+      },
+      "dataset": {
+        "player": "{\"x\":-17.3,\"y\":0,\"z\":24.8}",
+        "nearby": "",
+        "liftPhase": "open",
+        "liftY": "238",
+        "floor": "18",
+        "elevation": "238",
+        "renderer": "webgl",
+        "glError": "0"
+      },
+      "errors": []
+    }
+  ]
+}
