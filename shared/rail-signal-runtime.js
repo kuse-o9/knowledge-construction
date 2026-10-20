@@ -20,6 +20,7 @@ function trainViews(geo,traffic,player,exclude){
  }return list;
 }
 function aspect(geo,index,traffic,player,exclude,precomputed){
+ if(g.BaylineJunctions&&!g.BaylineJunctions.allowed(traffic,geo,index,exclude||'player'))return 'RED';
  const {blocks,loop}=layout(geo),trains=trainViews(geo,traffic,player,exclude);
  const request=geo.route.signalRoutes?.[index];
  // Configured junctions fail closed until their route is aligned and reserved.
@@ -32,6 +33,7 @@ function aspect(geo,index,traffic,player,exclude,precomputed){
 function control(geo,traffic,train,player){
  const {blocks,loop}=layout(geo),L=geo.length,d=train.distance;let next=null,stop=Infinity;
  const occupied=S.occupiedBlocks(blocks,trainViews(geo,traffic,player,train.id||'player'));
+ if(g.BaylineJunctions?.blockedInside(traffic,geo,train))stop=0;
  for(let i=0;i<blocks.length;i++){
   let ahead=blocks[i].start-d;
   if(loop)ahead=wrap(ahead,L);
@@ -85,6 +87,7 @@ function render(viewer,Ces,geos,traffic,player,frameAt){
  }
  for(const [id,item]of pool)if(!wanted.has(id)){for(const e of item.entities)viewer.entities.remove(e);pool.delete(id);}
 }
-g.BaylineSignalRuntime={layout,bind,aspect,control,clearance,update,render};
+function clear(viewer){const pool=pools.get(viewer);if(pool)for(const item of pool.values())for(const e of item.entities)viewer.entities.remove(e);pools.delete(viewer);}
+g.BaylineSignalRuntime={layout,bind,aspect,control,clearance,update,render,clear};
 if(typeof module==='object'&&module.exports)module.exports=g.BaylineSignalRuntime;
 })(typeof globalThis==='object'?globalThis:window);

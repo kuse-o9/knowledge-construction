@@ -75,3 +75,11 @@ test('actual acceleration reaches the configured 100/120 km/h instead of the leg
   assert.ok(state.speed*3.6>limit-.1);assert.ok(state.speed*3.6<=limit+.1);
  }
 });
+
+test('saving at 100/120 km/h preserves progress on reload while invalid speed is rejected',()=>{
+ for(const name of ['yamanote','chuo','chuo-local','keihin','sobu']){
+  const {C,D}=context(name),route=D.routes.forward,s=C.create(route);s.distance+=50;s.elapsed=10;
+  for(const speed of [100/3.6,120/3.6]){const restored=C.restore({version:1,state:{...s,speed}},route);assert.ok(restored,name+' restores high-speed save');assert.equal(restored.distance,s.distance);assert.equal(restored.speed,0);assert.equal(restored.running,false);}
+  assert.equal(C.restore({version:1,state:{...s,speed:50}},route),null);
+ }
+});

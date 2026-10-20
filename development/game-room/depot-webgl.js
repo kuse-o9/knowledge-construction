@@ -17,7 +17,7 @@
   let gl, program, floors, model, current, geometry, dragging, moving = false, lost = false;
   let yaw = 0, pitch = 0, distance = 4.5, frame = 0, hovered = null;
   const player={x:-17.3,y:0,z:24.8,angle:Math.PI,walk:0}, keys=new Set();
-  let lastTick=0, avatarBuffer, avatarCount=0;
+  let lastTick=0, avatarBuffer, avatarCount=0,liftBuffer,liftScene=null;
   const FOV=48*Math.PI/180;
   const tracks=()=>current?.floor===23?[0]:[-20,-12,-4,4,12,20];
   function surface(x,z) {
@@ -29,6 +29,7 @@
   }
   function canStand(x,z) {
     if(x < -26.35 || x > 26.35 || z < -36.8 || z > 31.5)return false;
+    if(x>-25.5&&x<-20.5&&z>25.5&&!(x>-25.3&&x<-20.7&&z<30.3))return false;
     const height=surface(x,z);
     if(Math.abs(height-player.y)>.18)return false;
     return !geometry?.obstacles.some(b=>x>b.minX-.26&&x<b.maxX+.26&&z>b.minZ-.26&&z<b.maxZ+.26);
@@ -115,11 +116,11 @@
   }
   function makeFloor(floor) {
     const faces=[];
-    box(faces,0,-.35,-3,54,.7,70,'#626e65');
+    for(const [x,z,w,d]of [[0,-6.25,54,63.5],[-26.25,28.75,1.5,6.5],[3.25,28.75,47.5,6.5]])box(faces,x,-.35,z,w,.7,d,'#626e65');box(faces,-23,-.08,25.75,4.6,.16,.7,'#9caa9c');
     box(faces,0,6.1,-37.5,54,12.2,.6,'#879187');
     box(faces,-27,6,-3,.55,12,70,'#7c887e');
     box(faces,27,6,-3,.55,12,70,'#7c887e');
-    box(faces,0,12.4,-3,54,.5,70,'#a4afa2');
+    for(const [x,z,w,d]of [[0,-6.25,54,63.5],[-26.25,28.75,1.5,6.5],[3.25,28.75,47.5,6.5]])box(faces,x,12.4,z,w,.5,d,'#a4afa2');
     for(const z of [-33,-19,-5,9,23]) {
       for(const x of [-25.7,25.7]) box(faces,x,5.9,z,.65,11.8,.8,'#c1cabb');
       box(faces,0,11.5,z,53,.55,.65,'#c6cdbf');
@@ -150,14 +151,10 @@
       // Reuse the original train geometry, windows, bogies and roof equipment.
       faces.push({...f,v:f.v.map(v=>[v[0]+(agt?12:0),v[1],v[2]])});
     }
-    // An elevator lobby lies outside the track beds at the front of each floor.
-    box(faces,-23,2.3,24.4,4.8,4.6,.55,'#45594e');
-    for(const x of [-24,-22]) box(faces,x,2.1,24.75,1.96,4.2,.12,'#aab7ac');
-    box(faces,-23,4.55,24.78,3.7,.35,.13,'#263c32');
     const obstacles=[];
     for(const game of ids){const vertices=faces.filter(f=>f.game===game).flatMap(f=>f.v);
       if(vertices.length)obstacles.push({game,minX:Math.min(...vertices.map(v=>v[0])),maxX:Math.max(...vertices.map(v=>v[0])),minZ:Math.min(...vertices.map(v=>v[2])),maxZ:Math.max(...vertices.map(v=>v[2]))});}
-    obstacles.push({minX:-25.4,maxX:-20.6,minZ:24.1,maxZ:24.9});
+    obstacles.push({minX:-25.4,maxX:-25.1,minZ:26,maxZ:30.4},{minX:-20.9,maxX:-20.6,minZ:26,maxZ:30.4},{minX:-25.4,maxX:-20.6,minZ:30.2,maxZ:30.5});
     return {...upload(faces),obstacles};
   }
   function upload(faces,existing) {
@@ -191,8 +188,11 @@
     const p=new Float32Array([f/aspect,0,0,0,0,f,0,0,0,0,(far+near)/(near-far),-1,0,0,2*far*near/(near-far),0]);
     gl.uniformMatrix4fv(gl.getUniformLocation(program,'view'),false,basis());
     gl.uniformMatrix4fv(gl.getUniformLocation(program,'projection'),false,p);
-    gl.uniform1f(gl.getUniformLocation(program,'elevation'),elevation);
+    gl.uniform1f(gl.getUniformLocation(program,'elevation'),liftScene?liftScene.fromElevation:elevation);
     renderMesh(geometry.buffer,geometry.count);
+    if(liftScene){gl.uniform1f(gl.getUniformLocation(program,'elevation'),liftScene.toElevation);renderMesh(liftScene.targetGeometry.buffer,liftScene.targetGeometry.count);}
+    gl.uniform1f(gl.getUniformLocation(program,'elevation'),elevation);
+    renderLift();
     const faces=[],swing=keys.size?Math.sin(player.walk)*.13:0;
     box(faces,0,.8,0,.49,.63,.3,'#e8a35f');
     box(faces,0,1.3,0,.45,.43,.4,'#f1c99d');
@@ -208,6 +208,21 @@
     const avatar=upload(faces,avatarBuffer);avatarBuffer=avatar.buffer;avatarCount=avatar.count;renderMesh(avatarBuffer,avatarCount);
     canvas.dataset.floor=String(current.floor);canvas.dataset.elevation=String(elevation);
     canvas.dataset.renderer='webgl';canvas.dataset.glError=String(gl.getError());
+  }
+  function renderLift(){
+    const faces=[],x=-23,z=28.2,door=liftScene?.door??1;
+    // Actual car floor, walls, door leaves and shaft markers share the avatar's elevation.
+    box(faces,x,-.08,z,4.6,.16,4.4,'#9caa9c');box(faces,x,3.3,z,4.6,.15,4.4,'#b8c6b2');
+    box(faces,x-2.25,1.6,z,.12,3.2,4.4,'#607b6e');box(faces,x+2.25,1.6,z,.12,3.2,4.4,'#607b6e');
+    box(faces,x,.55,z+2.15,4.5,1.1,.12,'#698273');
+    for(const side of [-1,1]){box(faces,x+side*(.55+door*1.1),1.6,z-2.15,1.1,3.2,.10,'#b3c1b3');box(faces,x+side*2.1,1.65,z-2.15,.18,3.3,.18,'#536b5a');}
+    if(liftScene)for(let floor=1;floor<=floors.length;floor++){
+      const y=(floor-1)*14-elevation;if(Math.abs(y)>35)continue;
+      box(faces,x,.03+y,z-2.6,5,.1,.8,'#ddc369');
+      for(const side of [-1,1])box(faces,x+side*2.65,y+6.8,z-2.65,.13,14,.13,'#3c5547');
+    }
+    const mesh=upload(faces,liftBuffer);liftBuffer=mesh.buffer;renderMesh(mesh.buffer,mesh.count);
+    canvas.dataset.liftPhase=liftScene?.phase||'open';canvas.dataset.liftY=String(elevation);
   }
   function renderMesh(buffer,count){
     gl.bindBuffer(gl.ARRAY_BUFFER,buffer);
@@ -263,16 +278,22 @@
   async function travel(number) {
     if(moving||!current) return;
     const target=floors.find(f=>f.floor===Number(number));if(!target||target===current)return;
-    moving=true;stopWalking();highlight(null);$('floor').disabled=true;$('up').disabled=true;$('down').disabled=true;
-    const from=current.floor,start=performance.now(),duration=matchMedia('(prefers-reduced-motion: reduce)').matches?0:900;
+    const oldCamera={yaw,pitch};moving=true;$('reset').disabled=true;stopWalking();highlight(null);$('floor').disabled=true;$('up').disabled=true;$('down').disabled=true;
+    const from=current.floor,start=performance.now(),duration=matchMedia('(prefers-reduced-motion: reduce)').matches?0:Math.min(6500,1800+Math.abs(target.floor-from)*180);
+    if(!bufferCache.has(target.floor))bufferCache.set(target.floor,makeFloor(target));
+    liftScene={fromElevation:elevation,toElevation:(target.floor-1)*14,targetGeometry:bufferCache.get(target.floor),door:1,phase:'closing'};
+    player.x=-23;player.y=0;player.z=26.8;player.angle=Math.PI;yaw=0;pitch=.6;updateWalkUI();
     $('lift').hidden=false;
     await new Promise(resolve=>{
-      function step(now){const t=duration?Math.min(1,(now-start)/duration):1;
-        $('lift-number').textContent=Math.round(from+(target.floor-from)*t)+'F';
+      function step(now){if(lost){resolve();return;}const t=duration?Math.min(1,(now-start)/duration):1,travel=Math.max(0,Math.min(1,(t-.15)/.7)),ease=travel*travel*(3-2*travel);
+        liftScene.door=t<.15?1-t/.15:t>.85?(t-.85)/.15:0;liftScene.phase=t<.15?'closing':t>.85?'opening':'travelling';
+        elevation=liftScene.fromElevation+(liftScene.toElevation-liftScene.fromElevation)*ease;
+        $('lift-number').textContent=(1+elevation/14).toFixed(1)+'F';schedule();
         if(t<1)requestAnimationFrame(step);else resolve();}
       requestAnimationFrame(step);
     });
-    display(target);$('lift').hidden=true;$('floor').disabled=false;moving=false;updateWalkUI();
+    liftScene=null;yaw=oldCamera.yaw;pitch=oldCamera.pitch;
+    display(target);$('lift').hidden=true;$('floor').disabled=false;$('reset').disabled=false;moving=false;updateWalkUI();
   }
   canvas.addEventListener('pointerdown',e=>{
     if(e.button!==0||moving)return;canvas.focus();dragging={x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,moved:false};canvas.setPointerCapture(e.pointerId);
@@ -310,7 +331,7 @@
   addEventListener('resize',schedule);new ResizeObserver(schedule).observe(canvas);
   canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();lost=true;stopWalking();loadingError('3D表示が一時停止しました。復旧を待つか、路線ボタンから出発できます。');});
   canvas.addEventListener('webglcontextrestored',()=>{
-    try{lost=false;bufferCache.clear();avatarBuffer=null;initGL();display(current);$('loading').hidden=true;}catch(e){loadingError('3D表示を復旧できませんでした。路線ボタンから出発できます。');}
+    try{lost=false;bufferCache.clear();avatarBuffer=null;liftBuffer=null;initGL();display(current);$('loading').hidden=true;}catch(e){loadingError('3D表示を復旧できませんでした。路線ボタンから出発できます。');}
   });
   try {
     const read=async path=>{const r=await fetch(new URL(path,BASE));if(!r.ok)throw Error(path);return r.json();};

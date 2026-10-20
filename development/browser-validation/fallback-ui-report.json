@@ -1,0 +1,64 @@
+{
+  "renderer": "Chromium 151 / WebGL unavailable fallback UI validation",
+  "tests": [
+    {
+      "name": "chuo WebGL-unavailable map fallback",
+      "result": {
+        "journey": "ome",
+        "webgl2": false,
+        "status": "地形や３Dを読み込めません。全線マップで運転できます。"
+      }
+    },
+    {
+      "name": "same document Ome -> Tokyo main handoff / main cache",
+      "pass": true,
+      "navigationEntries": 1
+    },
+    {
+      "name": "manual power and emergency input",
+      "pass": true
+    },
+    {
+      "name": "Web Audio starts after interaction, horn/volume/off handlers",
+      "pass": true
+    },
+    {
+      "name": "Ome platform walk requires movement and explicit boarding",
+      "pass": true
+    },
+    {
+      "name": "Otsuki physical consist timing and 12 -> 4-car packet",
+      "pass": true
+    },
+    {
+      "name": "390px responsive map/control view",
+      "pass": true
+    },
+    {
+      "name": "chuo-local initial game / map / manual emergency",
+      "pass": true
+    },
+    {
+      "name": "keihin initial game / map / manual emergency",
+      "pass": true
+    },
+    {
+      "name": "sobu initial game / map / manual emergency",
+      "pass": true
+    },
+    {
+      "name": "yamanote/index initial game / map / manual emergency",
+      "pass": true
+    },
+    {
+      "name": "depot WebGL-unavailable fallback screen",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "No physical hardware GPU validation",
+    "Native speech voice quality and physical speaker output require user device"
+  ],
+  "pass": true
+}

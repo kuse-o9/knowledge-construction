@@ -54,8 +54,8 @@
       "meshGroups": 2108,
       "vertices": 615349,
       "railSamples": 11171,
-      "maximumRailDistanceFromCenterMeters": 0.6166420307175171,
-      "endpointCapMaximumDistanceMeters": 0.6119765706745438
+      "maximumRailDistanceFromCenterMeters": 0.616826954550067,
+      "endpointCapMaximumDistanceMeters": 0.6119765704976889
     },
     "lake": {
       "meshGroups": 348,

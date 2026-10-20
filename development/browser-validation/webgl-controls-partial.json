@@ -1,0 +1,17 @@
+{
+  "renderer": "Chromium 151 / ANGLE SwiftShader software WebGL2",
+  "completeRun": false,
+  "observations": [
+    {
+      "name": "Chuo live scene initializes",
+      "segment": "ome",
+      "webgl2": true,
+      "status": "３D走行 · 街の表示なし"
+    },
+    {
+      "name": "same document Ome to main / manual power and emergency / explicit platform walk",
+      "passed": true
+    }
+  ],
+  "limitation": "Rail 3D screenshot capture stalled in software rendering. Subsequent full UI validation used WebGL-disabled fallback; no full rail 3D visual approval is claimed."
+}

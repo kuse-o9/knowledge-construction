@@ -1,0 +1,14 @@
+✔ yamanote: refreshing dashboard preserves signal gap and brake limit (44.538483ms)
+✔ chuo: refreshing dashboard preserves signal gap and brake limit (3.882671ms)
+✔ chuo-local: refreshing dashboard preserves signal gap and brake limit (4.821245ms)
+✔ keihin: refreshing dashboard preserves signal gap and brake limit (2.504482ms)
+✔ sobu: refreshing dashboard preserves signal gap and brake limit (2.50551ms)
+✔ rebuilt published script syntax and journey handoff UI are present (6906.917172ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8666.207393

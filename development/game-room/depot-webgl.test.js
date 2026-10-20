@@ -5,7 +5,7 @@ const assert=require('node:assert/strict');
 const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'../..');
 const floors=JSON.parse(fs.readFileSync(path.join(__dirname,'operator-floors.json'))).floors;
-async function boot(gpu=true){
+async function boot(gpu=true,reducedMotion=true){
   const nodes=new Map(),events={},draws=[],uploads=[];let count=0,now=0;const frames=[];
   function node(id=''){
     return {id,hidden:false,disabled:false,value:'',textContent:'',dataset:{},style:{setProperty(){}},children:[],classList:{toggle(){}},
@@ -26,7 +26,7 @@ async function boot(gpu=true){
   document.getElementById('depot').getContext=()=>gpu?gl:null;
   const location={href:'http://localhost/depot-3d.html'};
   const context=vm.createContext({document,location,URL,Float32Array,Set,Map,Math,Promise,console:{error(){}},
-    devicePixelRatio:1,performance:{now:()=>now},matchMedia:()=>({matches:true}),
+    devicePixelRatio:1,performance:{now:()=>now},matchMedia:()=>({matches:reducedMotion}),
     requestAnimationFrame:fn=>{frames.push(fn);return ++count},
     ResizeObserver:class{observe(){}},addEventListener:(name,fn)=>events[name]=fn,
     fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,url.pathname)))})});
@@ -71,4 +71,10 @@ test('walk up ramp, stop at train and platform walls, board only nearby, reset o
 test('no WebGL keeps six route links available',async()=>{
   const b=await boot(false);assert.equal(b.nodes.get('routes').children.length,6);
   assert.match(b.nodes.get('loading').textContent,/3D表示を開始できません/);
+});
+
+test('elevator carries the avatar through real intermediate heights with physical doors and stationary floor levels',async()=>{
+ const b=await boot(true,false),c=b.nodes.get('depot'),floor=b.nodes.get('floor');floor.value=1;floor.onchange();await b.flush(20);
+ assert.equal(c.dataset.floor,'18');assert.ok(Number(c.dataset.elevation)>0&&Number(c.dataset.elevation)<238);assert.equal(c.dataset.liftPhase,'travelling');assert.equal(JSON.parse(c.dataset.player).x,-23);
+ await b.flush(120);assert.equal(c.dataset.floor,'1');assert.equal(c.dataset.elevation,'0');assert.equal(c.dataset.liftPhase,'open');assert.equal(floor.disabled,false);
 });

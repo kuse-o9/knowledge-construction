@@ -1,5 +1,7 @@
 /* Journey setup precedes the scene. Loaded data is checked before driving. */
 (()=>{'use strict';const K=window.BaylineJourneyCore,J=K.parse(location.search),E=window.__BAYLINE_EXTENSION;
+window.BaylineSegmentStore.seed('main',{segment:'main',data:structuredClone(window.RAIL_DATA),models:window.RAIL_PREBUILT_MODELS,city:window.RAIL_CITY_MODELS,announcements:window.RAIL_ANNOUNCEMENTS});
+if(E)window.BaylineSegmentStore.seed(E.segment,{...E,data:structuredClone(E.data)});
 if(J.segment!=='main'){if(!E||E.segment!==J.segment)throw Error('直通区間のデータがありません');window.RAIL_DATA=E.data;window.RAIL_PREBUILT_MODELS={...window.RAIL_PREBUILT_MODELS,...E.models};window.RAIL_CITY_MODELS=E.city;window.RAIL_ANNOUNCEMENTS=E.announcements;window.__BAYLINE_EXTENSION=null;}
 const D=window.RAIL_DATA;if(J.segment==='main'&&['ome','okutama'].includes(J.id))for(const [key,r]of Object.entries(D.routes)){r.stops=r.stops.filter(s=>Number(s.code.slice(2))<=19);r.label=key==='reverse'?'本線・東京 → 立川':'本線・立川 → 東京';}
 const valid=K.validateLoaded(J,D);if(!valid.ok)throw Error(valid.problems.join(' ／ '));

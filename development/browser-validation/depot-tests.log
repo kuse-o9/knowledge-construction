@@ -1,0 +1,12 @@
+✔ JR five routes, finite 3D mesh upload, and all 23 independent floors (1712.143207ms)
+✔ walk up ramp, stop at train and platform walls, board only nearby, reset on travel (905.958382ms)
+✔ no WebGL keeps six route links available (29.680614ms)
+✔ elevator carries the avatar through real intermediate heights with physical doors and stationary floor levels (943.35745ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3939.64817
