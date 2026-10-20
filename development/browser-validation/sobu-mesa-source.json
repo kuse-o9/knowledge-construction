@@ -1,0 +1,22 @@
+{
+  "parentCommit": "70e1585824df99493f932de32682ab1b272764a6",
+  "files": [
+    {
+      "path": "sobu.html",
+      "gitBlobSha": "a266db789128fcc2ac2a3207a36f5f3e5277b265"
+    },
+    {
+      "path": "sobu-data-0.bin",
+      "gitBlobSha": "1dbb4432f2ad49f32720f339b9bd10877bfefec5"
+    },
+    {
+      "path": "sobu-data-1.bin",
+      "gitBlobSha": "5e870ead5592a60a1c033f02d621f9374062412c"
+    },
+    {
+      "path": "development/shared/rail-tunnel-runtime.js",
+      "gitBlobSha": "94de3a0962a18d75a043b0d7964eddf1ee33457e"
+    }
+  ],
+  "placement": "Paused test samples; ground sample avoids AI trains. Not a whole real-time route run."
+}

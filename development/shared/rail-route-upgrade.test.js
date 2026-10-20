@@ -49,6 +49,9 @@ test('supported tunnel setup actually assigns globe clipping and renders bounded
  const frame=(geo,d)=>{const p=C.position(geo,d);return {center:new V(p.lon*90400,p.lat*111200,p.height),left:new V(Math.cos(p.heading),-Math.sin(p.heading),0),up:new V(0,0,1)};};
  const result=T.setup(viewer,Ces,geos,frame);assert.equal(result.supported,true);assert.ok(viewer.scene.globe.clippingPolygons.polygons.length>4);for(const p of viewer.scene.globe.clippingPolygons.polygons)assert.ok(p.positions.length>=4);
  const range=T.ranges(geos.reverse)[0];T.render({direction:'reverse',distance:(range.start+range.end)/2});assert.ok([...entities].some(e=>e.wall));assert.ok([...entities].some(e=>e.polygon));assert.ok([...entities].some(e=>e.ellipsoid));assert.ok(entities.size<1000);
+ const floors=[...entities].filter(e=>e.name==='tunnel-floor');assert.ok(floors.length>0,'clipped ground must have a floor below the retained rails');
+ for(const floor of floors){const ps=floor.polygon.hierarchy;assert.equal(ps.length,4);assert.equal(floor.polygon.perPositionHeight,true);for(const p of ps)assert.ok([p.x,p.y,p.z].every(Number.isFinite));assert.ok(Math.abs(V.distance(ps[0],ps[3])-20)<1e-6,'floor spans the full 20m opening');assert.ok(Math.abs(V.distance(ps[1],ps[2])-20)<1e-6);}
+ T.render({direction:'reverse',distance:range.end-50});assert.ok([...entities].some(e=>e.name==='tunnel-floor'),'portal transition keeps its floor');
  const model=M.tracks.find(m=>m.direction==='reverse'&&m.start===0),filtered=T.model(model);assert.ok(filtered.groups.length<model.groups.length);assert.ok(filtered.groups.some(g=>g.color==='#858d8a'));
  T.render({direction:'reverse',distance:30000});assert.equal(entities.size,0);T.dispose();assert.equal(viewer.scene.globe.clippingPolygons,undefined);
 });

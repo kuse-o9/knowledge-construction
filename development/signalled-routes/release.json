@@ -2,25 +2,25 @@
   {
     "route": "chuo",
     "signals": "direction-specific 600m approximate blocks",
-    "bytes": 10402214,
-    "sha256": "d31f97a20e68cae5586a8ac4fa53fb7cfab11c559a31d3d5aea16eba701739a2"
+    "bytes": 10402289,
+    "sha256": "3f2b2e36574c0146c45236565e2e1a439c6275454aaab39669033ec57c0b28a0"
   },
   {
     "route": "chuo-local",
     "signals": "direction-specific 600m approximate blocks",
-    "bytes": 12639640,
-    "sha256": "f8fb2638c85ebb30632b9ed1ad346d45f6fc4805fe9b69cc0b7dce09e7a16409"
+    "bytes": 12639719,
+    "sha256": "3dba7ad0d471e0bc8549e073eff58458b2efed8dac9802cbcd565aa1fa40856c"
   },
   {
     "route": "keihin",
     "signals": "direction-specific 600m approximate blocks",
-    "bytes": 17827881,
-    "sha256": "e63b78ed5a873b1dd108ce4981b72431a095f633c29b7267f0599cf083bd7dd1"
+    "bytes": 17827958,
+    "sha256": "05e95e3713ba436b1cac2a4040d7cf6673d632d5e1fbc6d973d32622511b716a"
   },
   {
     "route": "sobu",
     "signals": "direction-specific 600m approximate blocks",
-    "bytes": 11949688,
-    "sha256": "fc3487af32d77998a078bbffe18a064fed5f01ce6684df8121d4558ae07b37d1"
+    "bytes": 11949761,
+    "sha256": "e94684d29eefd6c4bad23d672ff593aa87345620b6c4cda2bdd259c3d47c0e09"
   }
 ]

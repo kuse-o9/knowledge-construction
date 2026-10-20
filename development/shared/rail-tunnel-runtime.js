@@ -55,6 +55,9 @@ function render(player){
    if(C.Cartesian3.distance(f.center,ownPosition)>650)continue;
    const f0=frame(r.geo,d),f1=frame(r.geo,end),p=g.RailCore.position(r.geo,d),q=g.RailCore.position(r.geo,end);
    const buried=offset(r.geo,(d+end)/2)<-8;
+   // Fill the whole terrain opening below the retained ballast and rails.
+   const floor=[side(C,f0,-10),side(C,f1,-10),side(C,f1,10),side(C,f0,10)].map((v,i)=>C.Cartesian3.add(v,C.Cartesian3.multiplyByScalar(i===0||i===3?f0.up:f1.up,-.3,new C.Cartesian3()),new C.Cartesian3()));
+   add({name:'tunnel-floor',polygon:{hierarchy:floor,perPositionHeight:true,material:C.Color.fromCssColorString('#697277')}});
    for(const sign of [-1,1]){
     const positions=[side(C,f0,sign*9.6),side(C,f1,sign*9.6)];
     add({name:'tunnel-retaining-wall',wall:{positions,minimumHeights:[p.height-1,q.height-1],maximumHeights:[p.height+(buried?8.5:Math.max(1,1-offset(r.geo,d))),q.height+(buried?8.5:Math.max(1,1-offset(r.geo,end)))],material:C.Color.fromCssColorString('#667079')}});

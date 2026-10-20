@@ -1,0 +1,63 @@
+OPEN sobu
+VIEWER READY 1792498892217
+FRAME START ground cab 0 1792498893516
+FRAME END 0 1792498921170
+FRAME START ground cab 1 1792498921421
+FRAME END 1 1792498921540
+FRAME START ground cab 2 1792498921790
+FRAME END 2 1792498921828
+FRAME START ground cab 3 1792498922079
+FRAME END 3 1792498922090
+INFO {"status":"着色済みの軽量3D街 · 9区画 / 全246区画","webgl2":true,"nearestTrafficAlong":1227.2521413577106,"canvas":[675,378],"resolution":0.75,"camera":[-3965357.426265123,3338479.3933585756,3703956.6916465303],"height":49.24519196702033,"visibleReadyPrimitives":99,"primitives":136,"tunnelEntities":0,"clippingPolygons":30,"terrainTilesLoaded":false,"imageryMinimum":2,"imageryMaximum":15,"glError":0,"visible":true}
+CAPTURE sobu ground cab 99 false
+FRAME START ground chase 0 1792498953060
+FRAME END 0 1792498953199
+FRAME START ground chase 1 1792498953450
+FRAME END 1 1792498953586
+FRAME START ground chase 2 1792498953837
+FRAME END 2 1792498953986
+FRAME START ground chase 3 1792498954237
+FRAME END 3 1792498954377
+INFO {"status":"着色済みの軽量3D街 · 9区画 / 全246区画","webgl2":true,"nearestTrafficAlong":1227.2521413577106,"canvas":[675,378],"resolution":0.75,"camera":[-3965285.4835830713,3338494.927716246,3704119.8442801214],"height":107.9690610362156,"visibleReadyPrimitives":135,"primitives":136,"tunnelEntities":0,"clippingPolygons":30,"terrainTilesLoaded":false,"imageryMinimum":2,"imageryMaximum":15,"glError":0,"visible":true}
+CAPTURE sobu ground chase 135 false
+FRAME START tunnel cab 0 1792498955744
+FRAME END 0 1792498956496
+FRAME START tunnel cab 1 1792498956752
+FRAME END 1 1792498956957
+FRAME START tunnel cab 2 1792498957207
+FRAME END 2 1792498957398
+FRAME START tunnel cab 3 1792498957649
+FRAME END 3 1792498957875
+INFO {"status":"着色済みの軽量3D街 · 9区画 / 全246区画","webgl2":true,"nearestTrafficAlong":1348.323411245307,"canvas":[675,378],"resolution":0.75,"camera":[-3959800.515885269,3349068.3445338802,3700310.2257837406],"height":17.403773066973514,"visibleReadyPrimitives":46,"primitives":143,"tunnelEntities":918,"clippingPolygons":30,"terrainTilesLoaded":true,"imageryMinimum":2,"imageryMaximum":15,"glError":0,"visible":true}
+CAPTURE sobu tunnel cab 46 true
+FRAME START tunnel chase 0 1792498975042
+FRAME END 0 1792498975212
+FRAME START tunnel chase 1 1792498975463
+FRAME END 1 1792498975614
+FRAME START tunnel chase 2 1792498975866
+FRAME END 2 1792498976017
+FRAME START tunnel chase 3 1792498976268
+FRAME END 3 1792498976420
+INFO {"status":"着色済みの軽量3D街 · 9区画 / 全246区画","webgl2":true,"nearestTrafficAlong":1348.323411245307,"canvas":[675,378],"resolution":0.75,"camera":[-3959800.515885269,3349068.3445338802,3700310.2257837406],"height":17.403773066973514,"visibleReadyPrimitives":46,"primitives":143,"tunnelEntities":918,"clippingPolygons":30,"terrainTilesLoaded":true,"imageryMinimum":2,"imageryMaximum":15,"glError":0,"visible":true}
+CAPTURE sobu tunnel chase 46 true
+FRAME START portal cab 0 1792498977759
+FRAME END 0 1792498978093
+FRAME START portal cab 1 1792498978345
+FRAME END 1 1792498978737
+FRAME START portal cab 2 1792498978989
+FRAME END 2 1792498979120
+FRAME START portal cab 3 1792498979371
+FRAME END 3 1792498979507
+INFO {"status":"着色済みの軽量3D街 · 9区画 / 全246区画","webgl2":true,"nearestTrafficAlong":400.7901143966387,"canvas":[675,378],"resolution":0.75,"camera":[-3960470.3750174423,3347659.7352385838,3700914.494479705],"height":46.75659348136543,"visibleReadyPrimitives":88,"primitives":185,"tunnelEntities":395,"clippingPolygons":30,"terrainTilesLoaded":true,"imageryMinimum":2,"imageryMaximum":15,"glError":0,"visible":true}
+CAPTURE sobu portal cab 88 true
+FRAME START portal chase 0 1792498988199
+FRAME END 0 1792498988361
+FRAME START portal chase 1 1792498988612
+FRAME END 1 1792498988746
+FRAME START portal chase 2 1792498988997
+FRAME END 2 1792498989154
+FRAME START portal chase 3 1792498989405
+FRAME END 3 1792498989555
+INFO {"status":"着色済みの軽量3D街 · 9区画 / 全246区画","webgl2":true,"nearestTrafficAlong":400.7901143966387,"canvas":[675,378],"resolution":0.75,"camera":[-3960470.3750174423,3347659.7352385838,3700914.494479705],"height":46.75659348136543,"visibleReadyPrimitives":88,"primitives":185,"tunnelEntities":395,"clippingPolygons":30,"terrainTilesLoaded":true,"imageryMinimum":2,"imageryMaximum":15,"glError":0,"visible":true}
+CAPTURE sobu portal chase 88 true
+PASS
