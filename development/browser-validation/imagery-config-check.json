@@ -1,0 +1,57 @@
+[
+  {
+    "name": "chuo",
+    "routePointsCovered": 9842,
+    "minimum": 2,
+    "maximum": [
+      15,
+      15,
+      17
+    ],
+    "pass": true
+  },
+  {
+    "name": "chuo-local",
+    "routePointsCovered": 11128,
+    "minimum": 2,
+    "maximum": [
+      15,
+      15,
+      17
+    ],
+    "pass": true
+  },
+  {
+    "name": "keihin",
+    "routePointsCovered": 15225,
+    "minimum": 2,
+    "maximum": [
+      15,
+      15,
+      17
+    ],
+    "pass": true
+  },
+  {
+    "name": "sobu",
+    "routePointsCovered": 7142,
+    "minimum": 2,
+    "maximum": [
+      15,
+      15,
+      17
+    ],
+    "pass": true
+  },
+  {
+    "name": "yamanote",
+    "routePointsCovered": 6680,
+    "minimum": 2,
+    "maximum": [
+      15,
+      15,
+      17
+    ],
+    "pass": true
+  }
+]

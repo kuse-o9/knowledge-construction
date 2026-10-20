@@ -1,0 +1,184 @@
+{
+  "renderer": "Chromium 151 / ANGLE SwiftShader software WebGL2",
+  "scheduling": "Default Cesium render loop disabled only in test harness; explicit resize/render frames, production model detail and resolution retained.",
+  "routes": [
+    {
+      "name": "chuo",
+      "stages": [
+        {
+          "name": "ground",
+          "distance": 16113.219228313756,
+          "view": "cab",
+          "file": "render-chuo-ground-cab.png",
+          "status": "着色済みの軽量3D街 · 8区画 / 全332区画",
+          "webgl2": true,
+          "canvas": [
+            675,
+            378
+          ],
+          "resolution": 0.75,
+          "camera": [
+            -3951856.1314788433,
+            3356979.3829908823,
+            3701744.2017080877
+          ],
+          "height": 86.65963596662854,
+          "visibleReadyPrimitives": 32,
+          "primitives": 72,
+          "tunnelEntities": 0,
+          "clippingPolygons": 0,
+          "terrainTilesLoaded": false,
+          "glError": 0,
+          "visible": true
+        },
+        {
+          "name": "ground",
+          "distance": 16113.219228313756,
+          "view": "chase",
+          "file": "render-chuo-ground-chase.png",
+          "status": "着色済みの軽量3D街 · 8区画 / 全332区画",
+          "webgl2": true,
+          "canvas": [
+            675,
+            378
+          ],
+          "resolution": 0.75,
+          "camera": [
+            -3952024.9673209167,
+            3356949.0838587014,
+            3701693.0748388367
+          ],
+          "height": 145.38349144432297,
+          "visibleReadyPrimitives": 71,
+          "primitives": 72,
+          "tunnelEntities": 0,
+          "clippingPolygons": 0,
+          "terrainTilesLoaded": false,
+          "glError": 0,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "chuo-local",
+      "stages": [
+        {
+          "name": "ground",
+          "distance": 18260.701559417786,
+          "view": "cab",
+          "file": "render-chuo-local-ground-cab.png",
+          "status": "着色済みの軽量3D街 · 9区画 / 全376区画",
+          "webgl2": true,
+          "canvas": [
+            675,
+            378
+          ],
+          "resolution": 0.75,
+          "camera": [
+            -3957242.80700665,
+            3352237.9191298503,
+            3700256.727650048
+          ],
+          "height": 63.77581846563198,
+          "visibleReadyPrimitives": 75,
+          "primitives": 109,
+          "tunnelEntities": 0,
+          "clippingPolygons": 0,
+          "terrainTilesLoaded": false,
+          "glError": 0,
+          "visible": true
+        },
+        {
+          "name": "ground",
+          "distance": 18260.701559417786,
+          "view": "chase",
+          "file": "render-chuo-local-ground-chase.png",
+          "status": "着色済みの軽量3D街 · 9区画 / 全376区画",
+          "webgl2": true,
+          "canvas": [
+            675,
+            378
+          ],
+          "resolution": 0.75,
+          "camera": [
+            -3957196.701573574,
+            3352410.8321100706,
+            3700250.762263367
+          ],
+          "height": 122.50080050323527,
+          "visibleReadyPrimitives": 108,
+          "primitives": 109,
+          "tunnelEntities": 0,
+          "clippingPolygons": 0,
+          "terrainTilesLoaded": true,
+          "glError": 0,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "keihin",
+      "stages": [
+        {
+          "name": "ground",
+          "distance": 24440.534426782324,
+          "view": "cab",
+          "file": "render-keihin-ground-cab.png",
+          "status": "着色済みの軽量3D街 · 9区画 / 全606区画",
+          "webgl2": true,
+          "canvas": [
+            675,
+            378
+          ],
+          "resolution": 0.75,
+          "camera": [
+            -3961882.147470081,
+            3367399.9123311676,
+            3681584.3624305553
+          ],
+          "height": 52.59784072170803,
+          "visibleReadyPrimitives": 33,
+          "primitives": 67,
+          "tunnelEntities": 0,
+          "clippingPolygons": 0,
+          "terrainTilesLoaded": false,
+          "glError": 0,
+          "visible": true
+        },
+        {
+          "name": "ground",
+          "distance": 24440.534426782324,
+          "view": "chase",
+          "file": "render-keihin-ground-chase.png",
+          "status": "着色済みの軽量3D街 · 9区画 / 全606区画",
+          "webgl2": true,
+          "canvas": [
+            675,
+            378
+          ],
+          "resolution": 0.75,
+          "camera": [
+            -3961812.538243561,
+            3367562.428069777,
+            3681612.284101656
+          ],
+          "height": 111.32169746974802,
+          "visibleReadyPrimitives": 66,
+          "primitives": 67,
+          "tunnelEntities": 0,
+          "clippingPolygons": 0,
+          "terrainTilesLoaded": true,
+          "glError": 0,
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Physical GPU and speaker listening are not validated.",
+    "Terrain and aerial tiles depend on external servers; primitive/camera checks do not prove full ground imagery availability."
+  ],
+  "pass": false,
+  "fatal": "locator.screenshot: Timeout 19994.892999999996ms exceeded.\nCall log:\n\u001b[2m  - taking element screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - attempting scroll into view action\u001b[22m\n\u001b[2m    - waiting for element to be stable\u001b[22m\n"
+}

@@ -1,0 +1,73 @@
+{
+  "renderer": "Chromium 151 / ANGLE SwiftShader software WebGL2",
+  "scheduling": "Default Cesium render loop disabled only in test harness; explicit resize/render frames, production model detail and resolution retained.",
+  "routes": [
+    {
+      "name": "yamanote/index",
+      "stages": [
+        {
+          "name": "ground",
+          "distance": 10360.44882274317,
+          "view": "cab",
+          "file": "render-yamanote-ground-cab.png",
+          "status": "着色済みの軽量3D街 · 9区画 / 全200区画",
+          "webgl2": true,
+          "canvas": [
+            675,
+            378
+          ],
+          "resolution": 0.75,
+          "camera": [
+            -3959352.2619887623,
+            3355664.600384059,
+            3694922.960265218
+          ],
+          "height": 61.86094645036652,
+          "visibleReadyPrimitives": 58,
+          "primitives": 73,
+          "tunnelEntities": 0,
+          "clippingPolygons": 0,
+          "terrainTilesLoaded": false,
+          "imageryMinimum": 2,
+          "imageryMaximum": 15,
+          "glError": 0,
+          "visible": true
+        },
+        {
+          "name": "ground",
+          "distance": 10360.44882274317,
+          "view": "chase",
+          "file": "render-yamanote-ground-chase.png",
+          "status": "着色済みの軽量3D街 · 9区画 / 全200区画",
+          "webgl2": true,
+          "canvas": [
+            675,
+            378
+          ],
+          "resolution": 0.75,
+          "camera": [
+            -3959481.553307099,
+            3355735.832111909,
+            3694821.8918130524
+          ],
+          "height": 120.58769550414834,
+          "visibleReadyPrimitives": 72,
+          "primitives": 73,
+          "tunnelEntities": 0,
+          "clippingPolygons": 0,
+          "terrainTilesLoaded": false,
+          "imageryMinimum": 2,
+          "imageryMaximum": 15,
+          "glError": 0,
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Physical GPU and speaker listening are not validated.",
+    "Terrain and aerial tiles depend on external servers; primitive/camera checks do not prove full ground imagery availability."
+  ],
+  "pass": true
+}

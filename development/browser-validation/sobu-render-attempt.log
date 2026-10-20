@@ -1,0 +1,23 @@
+OPEN sobu
+RESOURCE 404 https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/1/0/1.jpg
+CONSOLE Failed to load resource: the server responded with a status of 404 ()
+RESOURCE 404 https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/1/1/0.jpg
+CONSOLE Failed to load resource: the server responded with a status of 404 ()
+RESOURCE 404 https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/1/1/1.jpg
+CONSOLE Failed to load resource: the server responded with a status of 404 ()
+RESOURCE 404 https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/1/0/0.jpg
+CONSOLE Failed to load resource: the server responded with a status of 404 ()
+page.screenshot: Timeout 20000ms exceeded.
+Call log:
+[2m  - taking page screenshot[22m
+[2m  - waiting for fonts to load...[22m
+[2m  - fonts loaded[22m
+
+    at /workspace/scratch/4aa798ff9687/repo/development/browser-validation/render-matrix.cjs:8:1321 {
+  log: [
+    '  - taking page screenshot',
+    '  - waiting for fonts to load...',
+    '  - fonts loaded'
+  ],
+  name: 'TimeoutError'
+}

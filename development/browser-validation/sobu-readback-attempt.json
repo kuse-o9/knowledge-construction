@@ -1,0 +1,6 @@
+{
+  "completeRun": false,
+  "pass": false,
+  "renderer": "ANGLE SwiftShader software WebGL2",
+  "failure": "Canvas readback did not complete; stopped by SIGINT. No Sobu 3D screenshot or full visual approval is claimed."
+}

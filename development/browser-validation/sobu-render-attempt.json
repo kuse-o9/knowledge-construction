@@ -1,0 +1,12 @@
+{
+  "renderer": "Chromium 151 / ANGLE SwiftShader software WebGL2",
+  "scheduling": "Default Cesium render loop disabled only in test harness; explicit resize/render frames, production model detail and resolution retained.",
+  "routes": [],
+  "errors": [],
+  "limitations": [
+    "Physical GPU and speaker listening are not validated.",
+    "Terrain and aerial tiles depend on external servers; primitive/camera checks do not prove full ground imagery availability."
+  ],
+  "pass": false,
+  "fatal": "page.screenshot: Timeout 20000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+}

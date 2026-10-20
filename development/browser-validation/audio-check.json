@@ -1,0 +1,75 @@
+{
+  "reports": [
+    {
+      "name": "yamanote",
+      "pass": true,
+      "moving": 0.05524719424749213,
+      "stopped": 0,
+      "doors": 0.025675848360586482,
+      "cancelled": false,
+      "disabled": "suspended",
+      "busy": false,
+      "ready": false,
+      "notices": [
+        "発車ベル"
+      ]
+    },
+    {
+      "name": "chuo",
+      "pass": true,
+      "moving": 0.044206785243652104,
+      "stopped": 0,
+      "doors": 0.029040739406771425,
+      "cancelled": false,
+      "disabled": "suspended",
+      "busy": false,
+      "ready": false,
+      "notices": [
+        "発車ベル"
+      ]
+    },
+    {
+      "name": "chuo-local",
+      "pass": true,
+      "moving": 0.053598448617081934,
+      "stopped": 0,
+      "doors": 0.02903901546910404,
+      "cancelled": false,
+      "disabled": "suspended",
+      "busy": false,
+      "ready": false,
+      "notices": [
+        "発車ベル"
+      ]
+    },
+    {
+      "name": "keihin",
+      "pass": true,
+      "moving": 0.05523454460201833,
+      "stopped": 0,
+      "doors": 0.02894780358026485,
+      "cancelled": false,
+      "disabled": "suspended",
+      "busy": false,
+      "ready": false,
+      "notices": [
+        "発車ベル"
+      ]
+    },
+    {
+      "name": "sobu",
+      "pass": true,
+      "moving": 0.04922941085477615,
+      "stopped": 0,
+      "doors": 0.028936870844160665,
+      "cancelled": false,
+      "disabled": "suspended",
+      "busy": false,
+      "ready": false,
+      "notices": [
+        "発車ベル"
+      ]
+    }
+  ],
+  "limitation": "Native Web Audio signal and controls checked; physical speaker output and speech voice listening not checked."
+}
