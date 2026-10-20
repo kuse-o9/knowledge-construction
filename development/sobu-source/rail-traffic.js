@@ -23,7 +23,7 @@ function step(t,geos,dt,player){dt=Math.max(0,Math.min(.1,dt));if(!dt)return;R()
    if(!blocked){train.distance=start;train.next=1;train.speed=0;}continue;
   }
   const remain=Math.max(0,stops[train.next].distance-train.distance),signal=R().control(geo,snapshot,train,player),gap=R().clearance(geo,snapshot,train,player),clear=Math.max(0,Math.min(gap-45,signal.stopDistance));
-  const desired=Math.min(g.RailCore.speedLimit(geo,train.distance)/3.6,signal.limit/3.6,Math.sqrt(1.4*Math.max(0,remain-.1)),Math.sqrt(1.3*clear));
+  const desired=Math.min((g.RailCore.approachLimit||g.RailCore.speedLimit)(geo,train.distance)/3.6,signal.limit/3.6,Math.sqrt(1.4*Math.max(0,remain-.1)),Math.sqrt(1.3*clear));
   const old=train.speed;train.speed=Math.max(0,old+Math.max(-1.05,Math.min(.7,(desired-old)*1.6))*dt);
   let move=Math.min(clear,(old+train.speed)*dt/2);
   if(move>=remain||remain<.45&&train.speed<.65){move=remain;train.speed=0;train.dwell=8;train.next++;train.stops++;}

@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-20T03:39:03.493191+00:00",
+  "nodeTests": 49,
+  "preflightChecks": 8,
+  "routeFamilies": 10,
+  "directions": 20,
+  "allStationsAutomaticRun": true,
+  "splitPackageHashesMatch": true,
+  "meshBuffersValidated": true,
+  "throughConnections": 10,
+  "throughCoordinateAndHeightToleranceMeters": 0.01,
+  "gpuVisualCheck": false,
+  "audioAndPhysicalInputCheck": false,
+  "excluded": [
+    "yurikamome",
+    "monorails"
+  ],
+  "remaining": [
+    "surveyed switch interlocking",
+    "unbuilt neighbouring-company trains",
+    "unbuilt through routes",
+    "physical coupling and transfer walking",
+    "single-world continuous rendering",
+    "national 530-route production"
+  ],
+  "yamanoteCompressedModelLoaderVerified": true,
+  "actual100And120KmhAccelerationVerified": true
+}

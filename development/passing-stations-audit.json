@@ -1,0 +1,137 @@
+{
+  "revision": "local-platforms-v1",
+  "platforms": [
+    {
+      "direction": "reverse",
+      "name": "亀戸",
+      "code": "JB23",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "平井",
+      "code": "JB24",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "小岩",
+      "code": "JB26",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "本八幡",
+      "code": "JB28",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "下総中山",
+      "code": "JB29",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "西船橋",
+      "code": "JB30",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "東船橋",
+      "code": "JB32",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "幕張本郷",
+      "code": "JB34",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "幕張",
+      "code": "JB35",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "新検見川",
+      "code": "JB36",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "reverse",
+      "name": "西千葉",
+      "code": "JB38",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "西千葉",
+      "code": "JB38",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "新検見川",
+      "code": "JB36",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "幕張",
+      "code": "JB35",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "幕張本郷",
+      "code": "JB34",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "東船橋",
+      "code": "JB32",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "西船橋",
+      "code": "JB30",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "下総中山",
+      "code": "JB29",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "本八幡",
+      "code": "JB28",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "小岩",
+      "code": "JB26",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "平井",
+      "code": "JB24",
+      "alignmentErrorMeters": 0.0
+    },
+    {
+      "direction": "forward",
+      "name": "亀戸",
+      "code": "JB23",
+      "alignmentErrorMeters": 0.0
+    }
+  ]
+}

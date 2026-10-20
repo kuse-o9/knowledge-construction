@@ -1,0 +1,112 @@
+{
+  "revision": "smooth-track-v1",
+  "maximumShiftMeters": 3,
+  "stationProtectionMeters": 280,
+  "routes": {
+    "chuo": {
+      "reverse": {
+        "points": 4921,
+        "maximumShiftMeters": 3.0094164956251643,
+        "stationCoordinateErrorDegrees": 0.0,
+        "pointSha256": "921cb2da001e4f8511202da5d4b21fd58a408b6e5e64f616860c2471e809390b"
+      },
+      "forward": {
+        "points": 4921,
+        "maximumShiftMeters": 3.009418900317034,
+        "stationCoordinateErrorDegrees": 0.0,
+        "pointSha256": "a69c1bdf0208f87e5bf6d95ef03929399ef15daa1a3372ff8ee33d777313a0ca"
+      }
+    },
+    "chuo-local": {
+      "reverse": {
+        "points": 5564,
+        "maximumShiftMeters": 3.0000210344376237,
+        "stationCoordinateErrorDegrees": 0.0,
+        "pointSha256": "9833b24525373c94ad8572269b510d3944ee631ab30b4fb59aab0b9b62dd96dc"
+      },
+      "forward": {
+        "points": 5564,
+        "maximumShiftMeters": 3.0031226954980625,
+        "stationCoordinateErrorDegrees": 0.0,
+        "pointSha256": "ea96d92434675b51b15958ab7dd683bab1b923c08c0054dfa0891abde33a0bed"
+      }
+    },
+    "keihin": {
+      "forward": {
+        "points": 7632,
+        "maximumShiftMeters": 3.009536507185543,
+        "stationCoordinateErrorDegrees": 0.0,
+        "pointSha256": "e5c49232f6b9d98d8130546eccd6a6d0b735b12b663942d42e69c7acfb9ebc7c"
+      },
+      "reverse": {
+        "points": 7593,
+        "maximumShiftMeters": 3.0099191724478596,
+        "stationCoordinateErrorDegrees": 0.0,
+        "pointSha256": "6b0d2cfc1c5fc070b2500ecf7b09c2f48a41a12bb3883f5c822461574c71c3d5"
+      }
+    },
+    "sobu": {
+      "reverse": {
+        "points": 3571,
+        "maximumShiftMeters": 3.0097857622697157,
+        "stationCoordinateErrorDegrees": 0.0,
+        "pointSha256": "9eec51a0b206dbca4be6cacae59935a2414c7ec806d353a529f367afe8483b63"
+      },
+      "forward": {
+        "points": 3571,
+        "maximumShiftMeters": 3.0096498537166485,
+        "stationCoordinateErrorDegrees": 0.0,
+        "pointSha256": "04fc37ce3e146b5212d61bc224d6b9d3440d2086dd017cb07598e350d16704ea"
+      }
+    },
+    "west": {
+      "revision": "smooth-track-v1",
+      "directions": {
+        "reverse": 3148,
+        "forward": 3148
+      }
+    },
+    "ome": {
+      "revision": "smooth-track-v1",
+      "directions": {
+        "reverse": 1771,
+        "forward": 1771
+      }
+    },
+    "okutama": {
+      "revision": "smooth-track-v1",
+      "directions": {
+        "reverse": 1909,
+        "forward": 1909
+      }
+    },
+    "fuji": {
+      "revision": "smooth-track-v1",
+      "directions": {
+        "reverse": 2340,
+        "forward": 2340
+      }
+    },
+    "lake": {
+      "revision": "smooth-track-v1",
+      "directions": {
+        "reverse": 350,
+        "forward": 350
+      }
+    },
+    "yamanote": {
+      "forward": {
+        "points": 3332,
+        "maximumDisplacement": 3.0000000000000004,
+        "lengthBefore": 34532.077023801656,
+        "lengthAfter": 34526.14494388504
+      },
+      "reverse": {
+        "points": 3348,
+        "maximumDisplacement": 3.0000000000000004,
+        "lengthBefore": 34502.30315659448,
+        "lengthAfter": 34496.37044809479
+      }
+    }
+  }
+}

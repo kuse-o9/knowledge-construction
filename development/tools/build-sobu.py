@@ -2,7 +2,7 @@ from pathlib import Path
 import json,re,gzip,hashlib
 ROOT=Path(__file__).resolve().parents[2];R=ROOT/'development/sobu-source'
 html=(R/'index.html').read_text();html=re.sub(r'<link rel="stylesheet" href="rail\.css[^\"]*">','<style>'+(R/'rail.css').read_text()+'</style>',html)
-for name in ['../shared/rail-signals.js','../shared/rail-signal-runtime.js','rail-data.js','rail-core.js','rail-announcements.js','rail-recordings.js','rail-audio.js','city-models.js','rail-models.js','rail-traffic.js','rail-parallel.js','rail.js']:
+for name in ['../shared/rail-signals.js','../shared/rail-signal-runtime.js','../shared/rail-tunnel-runtime.js','rail-data.js','rail-core.js','rail-announcements.js','rail-recordings.js','rail-audio.js','city-models.js','rail-models.js','rail-traffic.js','rail-parallel.js','rail.js']:
  text=(R/name).read_text().replace('</script','<\\/script');html=re.sub(r'<script src="'+re.escape(name)+r'(?:\?[^\"]*)?"></script>',lambda m:'<script>'+text+'</script>',html)
 assert len(re.findall(r'<script src=',html))==1
 raw=json.dumps({'html':html,'models':{}},separators=(',',':'),ensure_ascii=False).encode();packed=gzip.compress(raw,compresslevel=9,mtime=0);parts=[packed[i:i+6*1024*1024] for i in range(0,len(packed),6*1024*1024)];names=[]

@@ -1,0 +1,75 @@
+{
+  "scope": "numerical only; GPU not verified",
+  "routes": {
+    "chuo": {
+      "meshGroups": 4352,
+      "vertices": 1502814,
+      "railSamples": 26353,
+      "maximumRailDistanceFromCenterMeters": 0.619961456756651,
+      "endpointCapMaximumDistanceMeters": 0.6105455853465422
+    },
+    "chuo-local": {
+      "meshGroups": 5308,
+      "vertices": 1838277,
+      "railSamples": 29078,
+      "maximumRailDistanceFromCenterMeters": 0.6191455314610369,
+      "endpointCapMaximumDistanceMeters": 0.6064514849655206
+    },
+    "keihin": {
+      "meshGroups": 7045,
+      "vertices": 2569814,
+      "railSamples": 37050,
+      "maximumRailDistanceFromCenterMeters": 0.618499375796837,
+      "endpointCapMaximumDistanceMeters": 0.6095325944774549
+    },
+    "sobu": {
+      "meshGroups": 5434,
+      "vertices": 1786145,
+      "railSamples": 18634,
+      "maximumRailDistanceFromCenterMeters": 0.6193517352427275,
+      "endpointCapMaximumDistanceMeters": 0.6106865869952542
+    },
+    "west": {
+      "meshGroups": 2612,
+      "vertices": 843098,
+      "railSamples": 17589,
+      "maximumRailDistanceFromCenterMeters": 0.6195976648562621,
+      "endpointCapMaximumDistanceMeters": 0.6111765656627041
+    },
+    "ome": {
+      "meshGroups": 1704,
+      "vertices": 622886,
+      "railSamples": 8889,
+      "maximumRailDistanceFromCenterMeters": 0.6182894477310213,
+      "endpointCapMaximumDistanceMeters": 0.6115361726496332
+    },
+    "okutama": {
+      "meshGroups": 1704,
+      "vertices": 496456,
+      "railSamples": 9508,
+      "maximumRailDistanceFromCenterMeters": 0.6189280706227696,
+      "endpointCapMaximumDistanceMeters": 0.6112074343212768
+    },
+    "fuji": {
+      "meshGroups": 2108,
+      "vertices": 615349,
+      "railSamples": 11171,
+      "maximumRailDistanceFromCenterMeters": 0.6166420307175171,
+      "endpointCapMaximumDistanceMeters": 0.6119765706745438
+    },
+    "lake": {
+      "meshGroups": 348,
+      "vertices": 99801,
+      "railSamples": 1795,
+      "maximumRailDistanceFromCenterMeters": 0.6170548561880891,
+      "endpointCapMaximumDistanceMeters": 0.6095632708082049
+    },
+    "yamanote": {
+      "meshGroups": 3174,
+      "vertices": 1830885,
+      "railSamples": 13761,
+      "maximumRailDistanceFromCenterMeters": 0.6186320696088365,
+      "endpointCapMaximumDistanceMeters": 5.360531900579826
+    }
+  }
+}

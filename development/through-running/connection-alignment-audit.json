@@ -1,0 +1,143 @@
+{
+  "revision": "through-coordinate-height-v1",
+  "corrections": {
+    "west": {
+      "reverse": {
+        "maximumVerticalCorrectionMeters": 381.033393135076,
+        "maximumGradePerMille": 25.26997059485588,
+        "offsetMinimum": -377.33339313507594,
+        "offsetMaximum": 52.6317430357675
+      },
+      "forward": {
+        "maximumVerticalCorrectionMeters": 380.5422678149661,
+        "maximumGradePerMille": 25.873009967720975,
+        "offsetMinimum": -370.48908190052,
+        "offsetMaximum": 53.222511179425396
+      }
+    },
+    "ome": {
+      "reverse": {
+        "maximumVerticalCorrectionMeters": 0.14609421578785486,
+        "maximumGradePerMille": 32.60465890954471,
+        "offsetMinimum": 3.5860314884862987,
+        "offsetMaximum": 11.62129999999999
+      },
+      "forward": {
+        "maximumVerticalCorrectionMeters": 0.1460660874530788,
+        "maximumGradePerMille": 34.22291058828092,
+        "offsetMinimum": 3.55393391254691,
+        "offsetMaximum": 11.012499999999989
+      }
+    },
+    "okutama": {
+      "reverse": {
+        "maximumVerticalCorrectionMeters": 359.11804248668585,
+        "maximumGradePerMille": 38.51634635989058,
+        "offsetMinimum": -355.4180424866858,
+        "offsetMaximum": 40.30883330453841
+      },
+      "forward": {
+        "maximumVerticalCorrectionMeters": 359.11804248668585,
+        "maximumGradePerMille": 38.51634635989663,
+        "offsetMinimum": -355.4180424866858,
+        "offsetMaximum": 40.30883330453841
+      }
+    },
+    "fuji": {
+      "reverse": {
+        "maximumVerticalCorrectionMeters": 1.981780126165404,
+        "maximumGradePerMille": 44.262619369063984,
+        "offsetMinimum": 1.7182198738346415,
+        "offsetMaximum": 31.74420082564012
+      },
+      "forward": {
+        "maximumVerticalCorrectionMeters": 1.981780126165404,
+        "maximumGradePerMille": 44.26261936905876,
+        "offsetMinimum": 1.7182198738346415,
+        "offsetMaximum": 31.73788156918141
+      }
+    }
+  },
+  "connections": [
+    {
+      "from": "main",
+      "to": "west",
+      "station": "高尾",
+      "direction": "reverse",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    },
+    {
+      "from": "main",
+      "to": "west",
+      "station": "高尾",
+      "direction": "forward",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    },
+    {
+      "from": "main",
+      "to": "ome",
+      "station": "立川",
+      "direction": "reverse",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    },
+    {
+      "from": "main",
+      "to": "ome",
+      "station": "立川",
+      "direction": "forward",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    },
+    {
+      "from": "ome",
+      "to": "okutama",
+      "station": "青梅",
+      "direction": "reverse",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    },
+    {
+      "from": "ome",
+      "to": "okutama",
+      "station": "青梅",
+      "direction": "forward",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    },
+    {
+      "from": "west",
+      "to": "fuji",
+      "station": "大月",
+      "direction": "reverse",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    },
+    {
+      "from": "west",
+      "to": "fuji",
+      "station": "大月",
+      "direction": "forward",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    },
+    {
+      "from": "fuji",
+      "to": "lake",
+      "station": "富士山",
+      "direction": "reverse",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    },
+    {
+      "from": "fuji",
+      "to": "lake",
+      "station": "富士山",
+      "direction": "forward",
+      "horizontalErrorMeters": 0.0,
+      "heightErrorMeters": 0.0
+    }
+  ]
+}

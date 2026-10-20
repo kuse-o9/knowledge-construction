@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path'),zlib=require('node:zlib');
 const root=path.resolve(__dirname,'../..');global.BaylineThrough=require('./through-services.js');const K=require('./rail-journey-core.js');
-function bundle(name){const h=fs.readFileSync(path.join(root,name+'.html'),'utf8'),m=h.match(/<script id="game-bundle"[^>]*>([\s\S]*?)<\/script>/);const prefix=name==='keihin'?'keihin-bundle':'sobu-data';return JSON.parse(zlib.gunzipSync(m?Buffer.from(m[1],'base64'):Buffer.concat([0,1].map(i=>fs.readFileSync(path.join(root,prefix+'-'+i+'.bin'))))));}
+function bundle(name){const h=fs.readFileSync(path.join(root,name+'.html'),'utf8'),m=h.match(/<script id="game-bundle"[^>]*>([\s\S]*?)<\/script>/);const prefix=name==='sobu'?'sobu-data':name+'-bundle';return JSON.parse(zlib.gunzipSync(m?Buffer.from(m[1],'base64'):Buffer.concat([0,1].map(i=>fs.readFileSync(path.join(root,prefix+'-'+i+'.bin'))))));}
 const main=bundle('chuo'),dataScript=[...main.html.matchAll(/<script>([\s\S]*?)<\/script>/g)].find(m=>m[1].startsWith('window.RAIL_DATA='))[1];const c={window:{}};vm.runInNewContext(dataScript,c);const data={main:c.window.RAIL_DATA};for(const id of ['west','ome','okutama','fuji','lake'])data[id]=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(root,'chuo-'+id+'.bin')))).data;
 for(const id of Object.keys(K.plans))for(const travel of ['in','out'])test(id+' '+travel+': every leg and boundary validates loaded endpoints and cars',()=>{
  const p=K.parse('?journey='+id+'&travel='+travel);

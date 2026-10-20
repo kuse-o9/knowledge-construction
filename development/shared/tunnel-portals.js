@@ -8,7 +8,7 @@ function portal({trackCenter,heading,width=13,height=8,depth=20,groundY,railY}){
  if(width<=0||height<=0||depth<=0)throw Error('坑口の寸法は正数');
  const lateral=[-Math.sin(heading),Math.cos(heading)],forward=[Math.cos(heading),Math.sin(heading)];
  const corners=[];
- for(const side of [-1,1])for(const d of [0,depth])corners.push([trackCenter[0]+lateral[0]*side*width/2+forward[0]*d,trackCenter[1]+lateral[1]*side*width/2+forward[1]*d]);
+ for(const [side,d] of [[-1,0],[-1,depth],[1,depth],[1,0]])corners.push([trackCenter[0]+lateral[0]*side*width/2+forward[0]*d,trackCenter[1]+lateral[1]*side*width/2+forward[1]*d]);
  return {cutout:{polygon:corners,minimumY:railY-.8,maximumY:Math.max(groundY+1,railY+height+1)},
   lining:{width,height,depth,center:trackCenter,heading},needsTerrainBoolean:true,
   checks:['地面メッシュに穴が空いている','坑口の壁と覆工が地面に接続','線路が途切れない','カメラが地形を貫通しない','明暗変化が自然']};
