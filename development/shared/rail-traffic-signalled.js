@@ -3,7 +3,10 @@
 function create(geos,mode,player){R().bind(geos);const trains=[],length=player.length||220;
  for(const [direction,geo]of Object.entries(geos)){
   const stops=geo.route.stops,start=stops[0].distance,end=stops.at(-1).distance,L=end-start;
-  const count=Math.max(1,Math.min(Math.floor(L/1800),mode==='rush'?Math.ceil(L/2000):mode==='holiday'?Math.ceil(L/6000):Math.ceil(L/4000)));
+  // Widen initial spacing only: inbound x1.5, outbound x2. Ring/directional lines use forward/reverse.
+  const spacingScale=/上り/.test(geo.route.label||'')?1.5:/下り/.test(geo.route.label||'')?2:direction==='forward'?1.5:2;
+  const spacing=(mode==='rush'?2000:mode==='holiday'?6000:4000)*spacingScale;
+  const count=Math.max(1,Math.min(Math.floor(L/(1800*spacingScale)),Math.ceil(L/spacing)));
   for(let i=0;i<count;i++){
    const d=start+(i+.5)*L/count;let gap=Math.abs(d-player.distance);if(geo.route.loop)gap=Math.min(gap,L-gap);
    if(direction===player.direction&&gap<1000)continue;
