@@ -13,7 +13,24 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "1d0f86be5d0688d8f32aa4bed2461f58ec005b7af5005a7ec0ece314177b2c28",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0866_1f.png",
+          "sha256": "2bae900140873f4eec5ef4f221343418f1bd2eb3cf361de942817dfb7e4c1059"
+        },
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0866_2f.png",
+          "sha256": "c2a4941bfb742efa53790b4d32b6f94002853943758a717fc7b63df3edaae083"
+        },
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0866_b1f.png",
+          "sha256": "2e881afe6fc884b1a79d19587d3619756ffd4f21b94c894246b6d2df8e63ff45"
+        },
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0866_all.png",
+          "sha256": "473646759a89158a96f1ac3b2f111ef53c7be4873d8d0b427ddb23dcb09220e5"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -26,7 +43,12 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "18580bd2ab147ed7c76ec15c06951ea298c1b11422eb9e5630d8fd4790c76205",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0958_1f-2f.png",
+          "sha256": "0eb7d36ff1bfcf3f66c7179a6bffb8249aacd0cd5078e8b6bb9571bf83cd1fea"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -39,7 +61,12 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "7edb683dd81d4e80fe54577456c2304cbe0433247cf45422dfbbcc4f9a3ea365",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1227_1f-2f.png",
+          "sha256": "438ce4ffba0edc12aba3cba81613d81d0a085e087b96ee11a018a99ba1665db6"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -52,7 +79,12 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "8005678bd9c10c8e31094bcfe0b2cd78ecf8fea5e1e587c8b382de06afa8f138",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0671_1f-2f.png",
+          "sha256": "316a4b086da3cf0f70132657b1efb38df9501696fb3418e4a6ebc798cdb73b3f"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -64,7 +96,12 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "3fd032dce6bced739752f1aa49b1e5726b9f0f2587886600269d2c014a6fae86",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1689_1f-2f.png",
+          "sha256": "3136c8df48e92d22f0c805cf2b54abb33683487b311415353b584bca6ac31fab"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -77,7 +114,16 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "ecd865ee113fc31ef01aea589857cb0d0353d266acb8ac5b38e4268d82391639",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1444_1f.png",
+          "sha256": "54e7757e02fc84fda0c7fa276f477ef3d72771ccb9c13373daaedc459f61ace7"
+        },
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1444_2f-3f.png",
+          "sha256": "f8a4672a8d25b08138f3c79514c7d13101727eedcb6aefd531f07375f7e6adb0"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -90,7 +136,12 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "c83eda6e7530fc24c750a6a9361dd3e77fb05561a72884192b0881b169023e6c",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0707_1f.png",
+          "sha256": "bd52825effe1ad98e1a1c07a081626ec25179ebe6be6d049b5c8f777ffbedb89"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -107,7 +158,12 @@
         "reverse": "3"
       },
       "pageSha256": "caa72409f4c20b69d56df3841dff3749f391ab51851ef8fd992442e57874a3e8",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0988_1f-2f.png",
+          "sha256": "b8f091c7c9f972946ba2e550d3a3cb15de81059fee84f8c25eda9ec1796bc561"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -124,7 +180,12 @@
         "reverse": "1"
       },
       "pageSha256": "013a94a103b1f3c07326ce3549ff0818f8dbb9308ff4963074163c947eba06f3",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0492_1f.png",
+          "sha256": "5100712a4ae6e4a7ec87dc07e341fccb4e567d23f1caa96c641d94b079b4d781"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -141,7 +202,12 @@
         "reverse": "1"
       },
       "pageSha256": "d831dd4259f1832cb21d71e846be7167e28ac84a5283d983d690c9f9679ee4c3",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0358_1f-2f.png",
+          "sha256": "43ce66936ada75a0a2c053ed5eb9d3e08a57a45a341a84cec87980899bb5420a"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -157,7 +223,12 @@
         "reverse": "1"
       },
       "pageSha256": "a3363b6677d4199f7039210deae51c61724801f72b9036d30086b93bdf57f80f",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0774_1f-2f.png",
+          "sha256": "b91db1840ea6907232f4f8d78219659c0a47986e15e178402b2dfb4cfe47cfe5"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -172,7 +243,12 @@
         "reverse": "2"
       },
       "pageSha256": "222d575f80ee132a676c339dd844a0364bb664d2eb8262a5ce94a1f24fe2436d",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1189_1f-2f.png",
+          "sha256": "561dd134fa5e2f2a8a33dbdb566e115e2dbacac8a19f1e823bfaa9155702bca1"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -185,7 +261,12 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "649099972862a791a1d3dcf5c555719973ad488208feafcfdb8a30fe5f09b144",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0331_1f.png",
+          "sha256": "a593c20562d15dae71e62cc42c4ce15ad9ea08d9ff33e62b02ece716745190c0"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -198,7 +279,12 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "d479c26029a5334290d40f198c1dc057f223835cce16391f325e59ffc3efdaa2",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0293_1f-2f.png",
+          "sha256": "1e07d423095de29ee3a79a2ac19fc944668e5218436502e9e87d8a63e1ec013f"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -211,7 +297,12 @@
       },
       "gamePlatformChoice": null,
       "pageSha256": "f76ebd089c5fe176a167df3dd3f2c8b32bd5d6a523ef915b6a1eb8a6b07b89b2",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1609_1f.png",
+          "sha256": "01bec7ff1102e0f70f2b17c951953bdeb48a0090a8fa20a79f71717f3551b996"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     },
     {
@@ -227,7 +318,12 @@
         "reverse": "2"
       },
       "pageSha256": "97d8d90ad06f6b02a1113a64ddb28287b520b0f9486370036dbf24b01797a602",
-      "mapImageCandidates": [],
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0110_1f.png",
+          "sha256": "cb800cb85ef77bdc9e51f98a3e21add93dc9dc8171ccfa49fc5f3ecc4d0003b4"
+        }
+      ],
       "assignmentVerifiedByMapAlone": false
     }
   ],

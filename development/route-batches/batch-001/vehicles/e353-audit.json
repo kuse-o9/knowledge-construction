@@ -10,13 +10,13 @@
     },
     "trainHead": {
       "groups": 16,
-      "vertices": 4348,
-      "triangles": 2162
+      "vertices": 4252,
+      "triangles": 2114
     },
     "trainTail": {
       "groups": 16,
-      "vertices": 4492,
-      "triangles": 2234
+      "vertices": 4300,
+      "triangles": 2138
     }
   },
   "pending": [

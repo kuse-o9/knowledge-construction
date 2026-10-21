@@ -92,8 +92,10 @@ all dimensions remain subject to individual review.
 as page/WebGL errors, and exercises repeated tunnel/surface transitions. Regional
 photographic imagery is an overlay on a global colour base: a regional base
 layer in Cesium 1.117 can reach an undefined clipped rectangle during edge
-stretching after underground camera travel. No engine exception is suppressed.
+stretching after underground camera travel. No engine exception is suppressed. A clipping collection is replaced only when its nearby window changes: Cesium 1.117 updates its GPU polygon texture when vertex counts change, so mutating an equal-sized set would retain stale cuts.
 
 See `batch-001/geometry-review-status.json` for the outstanding checks. These
 changes do not mark any route completed, playable in the public catalog, or
 release-ready. Software rendering is not a physical GPU/phone/audio test.
+
+Validation on the current development packets: 38 unit tests passed, 212 station meshes checked, 420 consist placements checked, four directional control cases plus two station scenes passed, and ten tunnel/bridge diagnostic views passed. Bridge snapshots require settled terrain; Cesium render errors and visible error panels fail the regression. These are software/direct-positioning checks, not surveyed structure approval or real-time full-route testing.

@@ -55,7 +55,12 @@
         "integratedRunningDiagnostics": "integrated-running-diagnostics.json",
         "integratedBrowserDiagnostics": "integrated-game-diagnostics.json",
         "gsiRailwaySource": "sources/chuo-gsi-railways.json.gz",
-        "gsiStructureCandidates": "reference-paths/azusa-gsi-structures-audit.json"
+        "gsiStructureCandidates": "reference-paths/azusa-gsi-structures-audit.json",
+        "estimatedRailProfile": "alignments/azusa-rail-profile.json.gz",
+        "operatorPlatformReview": "sources/priority-platform-review.json",
+        "manufacturerReview": "vehicles/e353-source-review.json",
+        "geometryReview": "geometry-review-diagnostics.json",
+        "reviewStatus": "geometry-review-status.json"
       },
       "inputArtifact": {
         "path": "development/route-batches/batch-001/job-inputs/b001-001.json.gz",
@@ -119,12 +124,12 @@
       "componentEvidence": {
         "manualAutoAndEarlyDeparture": {
           "report": "integrated-game-diagnostics.json",
-          "reportSha256": "cbe8bf0fa1e200d7f76cb1e0908bbf56edc437011896e32eeb9cbb3916e0eb06",
+          "reportSha256": "f4540e488010e302b5c9ae92853cfd91ff7b5eeceb45e0ffe1cedd2338e3b17e",
           "scope": "Development packet only; retest the final public artifacts before release"
         },
         "saveAndLoad": {
           "report": "integrated-game-diagnostics.json",
-          "reportSha256": "cbe8bf0fa1e200d7f76cb1e0908bbf56edc437011896e32eeb9cbb3916e0eb06",
+          "reportSha256": "f4540e488010e302b5c9ae92853cfd91ff7b5eeceb45e0ffe1cedd2338e3b17e",
           "scope": "Development packet only; retest the final public artifacts before release"
         }
       }
@@ -173,7 +178,12 @@
         "integratedRunningDiagnostics": "integrated-running-diagnostics.json",
         "integratedBrowserDiagnostics": "integrated-game-diagnostics.json",
         "gsiRailwaySource": "sources/chuo-gsi-railways.json.gz",
-        "gsiStructureCandidates": "reference-paths/kaiji-gsi-structures-audit.json"
+        "gsiStructureCandidates": "reference-paths/kaiji-gsi-structures-audit.json",
+        "estimatedRailProfile": "alignments/kaiji-rail-profile.json.gz",
+        "operatorPlatformReview": "sources/priority-platform-review.json",
+        "manufacturerReview": "vehicles/e353-source-review.json",
+        "geometryReview": "geometry-review-diagnostics.json",
+        "reviewStatus": "geometry-review-status.json"
       },
       "inputArtifact": {
         "path": "development/route-batches/batch-001/job-inputs/b001-002.json.gz",
@@ -205,12 +215,12 @@
       "componentEvidence": {
         "manualAutoAndEarlyDeparture": {
           "report": "integrated-game-diagnostics.json",
-          "reportSha256": "cbe8bf0fa1e200d7f76cb1e0908bbf56edc437011896e32eeb9cbb3916e0eb06",
+          "reportSha256": "f4540e488010e302b5c9ae92853cfd91ff7b5eeceb45e0ffe1cedd2338e3b17e",
           "scope": "Development packet only; retest the final public artifacts before release"
         },
         "saveAndLoad": {
           "report": "integrated-game-diagnostics.json",
-          "reportSha256": "cbe8bf0fa1e200d7f76cb1e0908bbf56edc437011896e32eeb9cbb3916e0eb06",
+          "reportSha256": "f4540e488010e302b5c9ae92853cfd91ff7b5eeceb45e0ffe1cedd2338e3b17e",
           "scope": "Development packet only; retest the final public artifacts before release"
         }
       }

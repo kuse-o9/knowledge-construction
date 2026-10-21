@@ -7,8 +7,8 @@
       "direction": "forward",
       "stoppingStations": 10,
       "passingStations": 54,
-      "simulatedSeconds": 8338.200000012803,
-      "steps": 83382,
+      "simulatedSeconds": 8338.000000012802,
+      "steps": 83380,
       "earlyDeparture": true,
       "restore": true,
       "pass": true
@@ -18,8 +18,8 @@
       "direction": "reverse",
       "stoppingStations": 11,
       "passingStations": 53,
-      "simulatedSeconds": 8383.300000012967,
-      "steps": 83833,
+      "simulatedSeconds": 8383.400000012967,
+      "steps": 83834,
       "earlyDeparture": true,
       "restore": true,
       "pass": true
@@ -29,8 +29,8 @@
       "direction": "forward",
       "stoppingStations": 9,
       "passingStations": 33,
-      "simulatedSeconds": 4891.200000000263,
-      "steps": 48912,
+      "simulatedSeconds": 4891.000000000262,
+      "steps": 48910,
       "earlyDeparture": true,
       "restore": true,
       "pass": true
@@ -40,8 +40,8 @@
       "direction": "reverse",
       "stoppingStations": 9,
       "passingStations": 33,
-      "simulatedSeconds": 4891.500000000264,
-      "steps": 48915,
+      "simulatedSeconds": 4891.7000000002645,
+      "steps": 48917,
       "earlyDeparture": true,
       "restore": true,
       "pass": true
@@ -49,8 +49,8 @@
   ],
   "inputHashes": {
     "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
-    "games/azusa.json.gz": "097be50bdb085813a0e602401d27727d5e70311e37c389657a233fb6180f6de8",
-    "games/kaiji.json.gz": "e11bf33ae43fbab01f3cbf9e1ad20eadd88af6f31e77bb979db3ba5e15e01ef4"
+    "games/azusa.json.gz": "ef3ec236a6baba8df2d4249ebb4bcd4b3706ec349d05bc775b855665305bf740",
+    "games/kaiji.json.gz": "898a64587cf7c63d56a0a70ffd46a82f2569584848b252cca9e28fa14ef7eda2"
   },
   "pass": true
 }

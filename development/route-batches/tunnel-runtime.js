@@ -30,7 +30,7 @@ function setup(viewer,C,geos,frame){
  if(!segments.length)return {supported:true,segments:0};
  const supported=!!C.ClippingPolygonCollection?.isSupported(viewer.scene);
  if(!supported){active={viewer,C,segments,frame,entities:[],supported:false};return {supported:false,segments:segments.length};}
- // One owned collection per scene. Mutate only at a window boundary.
+ // One owned collection at a time; replace only at a window boundary.
  const collection=new C.ClippingPolygonCollection({enabled:false});viewer.scene.globe.clippingPolygons=collection;
  viewer.scene.screenSpaceCameraController.enableCollisionDetection=false;
  active={viewer,C,segments,frame,collection,entities:[],supported:true,last:null};
@@ -41,7 +41,9 @@ function render(player){
  const own=a.segments.find(r=>r.key===player.direction&&player.distance>=r.start-700&&player.distance<=r.end+700);
  const cell=own?player.direction+':'+Math.floor(player.distance/120):'outside';if(cell===a.last)return;a.last=cell;
  for(const e of a.entities)a.viewer.entities.remove(e);a.entities=[];
- const {collection}=a;collection.enabled=false;collection.removeAll();
+ // Cesium 1.117 detects vertex-count changes, not arbitrary position edits.
+ // A fresh collection prevents stale clipping textures when counts are equal.
+ a.viewer.scene.globe.clippingPolygons=undefined;a.collection=null;
  if(!own){a.viewer.scene.requestRender();return;}
  const polygons=[];
  for(const r of a.segments)for(let start=r.start;start<r.end;start+=160){
@@ -52,7 +54,7 @@ function render(player){
   const f=a.frame(r.geo,end);left.push(side(a.C,f,10));right.push(side(a.C,f,-10));
   polygons.push(new a.C.ClippingPolygon({positions:left.concat(right.reverse())}));
  }
- for(const polygon of polygons)collection.add(polygon);collection.enabled=polygons.length>0;
+ a.collection=new a.C.ClippingPolygonCollection({polygons,enabled:polygons.length>0});a.viewer.scene.globe.clippingPolygons=a.collection;
  const {C,viewer,frame}=a,add=e=>a.entities.push(viewer.entities.add(e));
  for(const r of a.segments){
   // Both tunnel bores remain visible; work is bounded to the player's nearby window.

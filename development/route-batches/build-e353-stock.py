@@ -32,7 +32,7 @@ class Mesh:
    out.append({'color':color,'positions':base64.b64encode(np.rint(ps*1000).astype('<i2').tobytes()).decode(),'positionScale':.001,'normals':base64.b64encode(np.rint(ns*127).astype('i1').tobytes()).decode(),'indices':base64.b64encode(indices.astype('<u2').tobytes()).decode(),'indexType':16});allpoints.extend(g['p'])
   return {'origin':[0,0,0],'radius':float(np.linalg.norm(np.asarray(allpoints),axis=1).max()+.2),'groups':out}
 def car(head=False,tail=False,doors=None,green=False):
- m=Mesh();white='#e5e7e8';purple='#8066ad';glass='#172c39';blue='#183f64';dark='#333d43';middle=[(-10,1.46,3.54),(10,1.46,3.54)];nose=[(-10,1.46,4.04),(6.7,1.46,4.04),(8.7,1.30,3.94),(11,.66,2.78)]
+ m=Mesh();white='#e5e7e8';purple='#8066ad';glass='#172c39';blue='#183f64';dark='#333d43';middle=[(-10,1.46,3.54),(10,1.46,3.54)];nose=[(-10,1.46,3.54),(6.7,1.46,3.54),(8.7,1.30,3.94),(11,.66,2.78)]
  m.loft(white,nose if head else middle)
  m.box(dark,-.4,0,.96,19,2.70,.38)
  # Underfloor power/control/air equipment, not a painted body stripe.
@@ -47,6 +47,7 @@ def car(head=False,tail=False,doors=None,green=False):
    m.box(glass,x,side*1.477,2.65,.70,.025,.78)
    m.box('#bcc4cc',x+.43,side*1.479,2.06,.035,.025,1.94)
   for x in [-6.8,-5.0,-3.2,-1.4,.4,2.2,4.0,5.8]:
+   if any(abs(x-door)<1.2 for door in doors):continue
    m.box(glass,x,side*1.477,2.88,1.30,.035,.91)
    m.box('#aab4bb',x,side*1.4775,2.39,1.30,.018,.035)
   # Seat backs remain separate geometry behind the windows.

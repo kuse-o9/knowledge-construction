@@ -78,17 +78,17 @@
   "errors": [],
   "networkErrors": [],
   "inputHashes": {
-    "games/azusa.html": "5f27097c26a0a5a3635df116222fa27f4a4ab06e2e88e892e469213cb1140c91",
-    "games/kaiji.html": "5452ef54afbdd6323688469d2f63a737bb4439f384f04711923b076825e93342",
-    "games/azusa.json.gz": "097be50bdb085813a0e602401d27727d5e70311e37c389657a233fb6180f6de8",
-    "games/kaiji.json.gz": "e11bf33ae43fbab01f3cbf9e1ad20eadd88af6f31e77bb979db3ba5e15e01ef4",
+    "games/azusa.html": "22291356c96895a47d9565b1ccc275545f02ca995114071fafb2d10298e5474b",
+    "games/kaiji.html": "5ee749f4bbc070f873c4a2fc9441e63c829e3b2d4a93739979271cb903f52648",
+    "games/azusa.json.gz": "ef3ec236a6baba8df2d4249ebb4bcd4b3706ec349d05bc775b855665305bf740",
+    "games/kaiji.json.gz": "898a64587cf7c63d56a0a70ffd46a82f2569584848b252cca9e28fa14ef7eda2",
     "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
-    "games/e353.json.gz": "c1945c9e4c6da7a7bd36cec396592d18842c801994031c276f70c288430e1a90",
-    "games/rail.js": "87f72d0a804fed481dc93717bb65827d889856f4e3672c55110369042223ae35",
-    "games/shared.js": "14e36e2808dd2c55ab07c4c4a251bc44d070ef9b97c9101745b4fb00a391d40f",
+    "games/e353.json.gz": "63e58b8bb59ef1933058ecb35c59dbb0766a999d2de7164d2c993ea72b497300",
+    "games/rail.js": "d6ebe171b7f689ec837d408cc0a49f39508d046866e65ba90b86122e81598732",
+    "games/shared.js": "6a139c57cde5790421dc1281b6ee0bf79833c99d2e2f85f6c8707409090c428e",
     "games/rail-audio.js": "c8eb2d56cfb6e91bbdedf5dc6abf0020bce7530d54b4b1d8e77487557610288d",
     "games/loader.js": "805663149fb949429d464a6970bffd498001cd0d92d2b78871799c5c86965ffa",
-    "games/model-builder.js": "6388047a604924e89fa123439a52ed1372848f6699780b674c087cd1319d4137"
+    "games/model-builder.js": "41c4ba55ea2d6c4fed77e4b7f7b63638f03976b1fcb86f11e5a04120b5e01a9f"
   },
   "pass": true
 }

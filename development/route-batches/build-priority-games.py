@@ -113,7 +113,7 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
    d=max(0,min(original[-1],d));i=min(len(original)-2,max(0,bisect.bisect_right(original,d)-1));t=(d-original[i])/(original[i+1]-original[i]);return cumulative[i]*(1-t)+cumulative[i+1]*t
   route['structures']=[{**r,'start':mapped(original[-1]-r['end']if reverse else r['start']),'end':mapped(original[-1]-r['start']if reverse else r['end']),'startHeight':r['endHeight']if reverse else r['startHeight'],'endHeight':r['startHeight']if reverse else r['endHeight']}for r in profile['structures']]
   for stop in physical+stops:
-   review=platform_review.get(stop['name']);reported=stop.get('reportedPlatform');chosen=str(reported)if reported is not None else(review.get('gamePlatformChoice')or{}).get(direction)if review else None
+   review=platform_review.get(stop['name']);reported=stop.get('reportedPlatform',next((s.get('reportedPlatform')for s in stops if s['code']==stop['code']),None));chosen=str(reported)if reported is not None else((review.get('gamePlatformChoice')or{}).get(direction)or next(iter(review['sideTowardMatsumoto'])))if review else None
    side=(review['sideTowardMatsumoto'].get(str(chosen))if review else None)
    stop.update(gamePlatformNumber=chosen,side=(side*(-1 if reverse else 1))if side is not None else 1,chosenPlatformSideReviewed=side is not None,platformSideVerified=side is not None and reported is not None,platformSideSource=review['sourceUrl']if review else None,platformEdgeOffset=1.58,platformHeight=1.10,platformGeometryVerified=False)
   data['routes'][direction]=route;data['serviceSources'].append(service['source'])
