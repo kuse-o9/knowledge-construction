@@ -18,7 +18,7 @@ class BatchInputs(unittest.TestCase):
   for name,terminal in [('azusa','松本'),('kaiji','竜王')]:
    d=json.loads(gzip.decompress((DEST/'reference-paths'/(name+'.json.gz')).read_bytes()));ss=d['physicalStationCandidates'];self.assertEqual(ss[0]['name'],'新宿');self.assertEqual(ss[-1]['name'],terminal);self.assertEqual(d['inventedConnectors'],0);self.assertTrue(all(a['distance']<=b['distance']for a,b in zip(ss,ss[1:])));self.assertLess(max(d['endpointMatchingErrorsMetres']),.01)
  def test_vehicle_is_distinct_complete_mesh_not_a_recolour(self):
-  d=json.loads(gzip.decompress((DEST/'vehicles/e353-draft.json.gz').read_bytes()));self.assertFalse(d['releaseReady']);self.assertEqual(d['provisionalModelParameters']['doorCentresMiddle'],[-8.65,8.65]);self.assertEqual(d['provisionalModelParameters']['doorCentresHead'],[-8.65])
+  d=json.loads(gzip.decompress((DEST/'vehicles/e353-draft.json.gz').read_bytes()));self.assertFalse(d['releaseReady']);self.assertEqual(d['provisionalModelParameters']['doorCentresMiddle'],[8.65]);self.assertEqual(d['provisionalModelParameters']['doorCentresHead'],[6.15])
   for name in ['train','trainHead','trainTail']:
    triangles=0
    for group in d[name]['groups']:

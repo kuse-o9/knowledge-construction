@@ -32,7 +32,7 @@ function mount(viewer,C,Core,geo,stock,formation){
    const primitive=viewer.scene.primitives.add(new C.Primitive({geometryInstances:instances,modelMatrix:M.IDENTITY,appearance:new C.PerInstanceColorAppearance({flat:false,closed:true,translucent}),asynchronous:false}));parts.push(primitive);primitives.push(primitive);
   }return parts;
  }
- const instances=cars.map(car=>({body:model(stock[car.model]),bogies:[model(stock.bogie),model(stock.bogie)],pantograph:car.pantograph?model(stock.pantograph):[]}));
+ const instances=cars.map(car=>({body:model(stock[car.model]),bogies:[model(stock.bogie),model(stock.bogie)],pantograph:car.pantograph?model(stock[car.pantographModel]||stock.pantograph):[]}));
  function setFront(frontDistance,visible=true){
   if(!Number.isFinite(frontDistance)||frontDistance-accumulated<.5||frontDistance>geo.length-.5)throw Error('Insufficient source-track buffer for this formation');
   const poses=[];

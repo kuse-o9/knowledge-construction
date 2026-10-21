@@ -72,3 +72,28 @@
 2026-10-20追記：ユーザーの指示で、物理GPU・耳で聴く音質・スマホ実端末の操作感・全区間の実時間走行は「ユーザー判断による確認終了」として予定上は閉じる。実施した検査と省略した検査の技術記録は変更せず、実施済み・合格という意味に置き換えない。
 
 時刻表は目安として表示し、定刻までの戸閉・発車待ちは撤廃。乗降の完了後、音声を使う場合は発車案内の終了で自動戸閉し、手動・自動とも早発を許可する。音声オフでも定刻待ちは行わない。
+
+### Geometry review checkpoint
+
+The two integrated development games now use a separately estimated rail elevation
+profile (`build-priority-elevation.py`). GSI map classifications locate candidate
+structures but do not supply surveyed rail heights or portal endpoints. The game
+profile's 34 per mille centreline constraint is a modelling constraint, not a
+claimed real operating gradient. Kaiji reuses Azusa's overlapping elevation.
+
+`vehicles/e353-source-review.json` records manufacturer 2015 pre-series table and
+drawing facts. Direction-specific basic-set cars, passenger doors and pantographs
+replace the generic nine-car formation. This does not verify all 2026 production
+or service-specific details. The 16 operator map reviews distinguish a platform's
+side from the selected train's actual assignment. Passing-station layouts and
+all dimensions remain subject to individual review.
+
+`check-priority-geometry.cjs` catches Cesium's internal `scene.renderError` as well
+as page/WebGL errors, and exercises repeated tunnel/surface transitions. Regional
+photographic imagery is an overlay on a global colour base: a regional base
+layer in Cesium 1.117 can reach an undefined clipped rectangle during edge
+stretching after underground camera travel. No engine exception is suppressed.
+
+See `batch-001/geometry-review-status.json` for the outstanding checks. These
+changes do not mark any route completed, playable in the public catalog, or
+release-ready. Software rendering is not a physical GPU/phone/audio test.

@@ -1,0 +1,46 @@
+{
+  "series": "E353",
+  "sourceUrl": "https://www.j-trec.co.jp/company/070/04/jtr04.pdf",
+  "archiveUrl": "https://web.archive.org/web/20180110174747id_/https://www.j-trec.co.jp/company/070/04/jtr04.pdf",
+  "documentSha256": "4a01cacb636f16fc75c97d3f192f5cc428a5ae5d5b1e368f1bc42f05a80fad77",
+  "printedPages": [
+    104,
+    105
+  ],
+  "scope": "2015 pre-series",
+  "dimensions": {
+    "middleBodyLength": 20.0,
+    "middlePitch": 20.5,
+    "headBodyLength": 21.0,
+    "headPitch": 21.43,
+    "width": 2.92,
+    "roofHeight": 3.54,
+    "floorHeight": 1.13,
+    "bogieCentres": 14.15
+  },
+  "drawingFacts": {
+    "passengerDoorsPerSide": {
+      "4": 2,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1
+    },
+    "pantographCars": [
+      5,
+      10
+    ],
+    "sparePantographCar": 5,
+    "greenCar": 9
+  },
+  "releaseReady": false,
+  "limitations": [
+    "Original URL now unavailable; retained manufacturer archive reviewed",
+    "Source is pre-series; service-specific production variation pending",
+    "Door centre modelling coordinates scaled visually from drawing, not dimensioned measurements"
+  ]
+}

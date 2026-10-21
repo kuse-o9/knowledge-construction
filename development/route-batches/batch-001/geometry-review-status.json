@@ -1,0 +1,26 @@
+{
+  "requestedChecksComplete": false,
+  "releaseReady": false,
+  "public": false,
+  "developmentGames": ["azusa", "kaiji"],
+  "changes": [
+    "Separate estimated rail elevation from terrain; constrain and smooth game grades",
+    "Share the estimated Azusa elevation prefix with Kaiji",
+    "Window tunnel clipping and retain one owned clipping collection",
+    "Use regional photographic imagery as an overlay above a global colour base to avoid Cesium 1.117 base-layer edge intersection failures",
+    "Apply manufacturer 2015 pre-series body, coupler pitch and bogie dimensions",
+    "Use direction-specific car order, passenger doors and pantographs",
+    "Review 16 stopping station maps; platform side is separate from service platform assignment",
+    "Adjust platform edge gap and generate bridge deck/support estimates"
+  ],
+  "validationStatus": "Current-version geometry, controls and mesh regression reruns in progress. Prior reports must not be treated as approval of changed assets.",
+  "remaining": [
+    "Survey rail elevations, portal positions, bridge clearances and exact individual structures",
+    "Review the individual layouts and dimensions of 48 passing-only physical stations",
+    "Confirm selected-service platform assignment at 6 stopping stations",
+    "Verify 2026 consist/production changes beyond the 2015 manufacturer pre-series source",
+    "Detailed bogie, pantograph, roof and cab shape review",
+    "Research release speed profiles, western neighbouring traffic and complete transfer announcements",
+    "Complete the original release gates and artifact/hash checks before publication"
+  ]
+}

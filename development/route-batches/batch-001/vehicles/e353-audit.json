@@ -5,24 +5,23 @@
   "meshes": {
     "train": {
       "groups": 13,
-      "vertices": 3216,
-      "triangles": 1596
+      "vertices": 4128,
+      "triangles": 2052
     },
     "trainHead": {
       "groups": 16,
-      "vertices": 3292,
-      "triangles": 1634
+      "vertices": 4348,
+      "triangles": 2162
     },
     "trainTail": {
       "groups": 16,
-      "vertices": 3292,
-      "triangles": 1634
+      "vertices": 4492,
+      "triangles": 2234
     }
   },
   "pending": [
-    "Validate dimensions and bogie centres against official drawings",
-    "Match door positions to car number and platform stopping positions",
-    "Check nose, windows, pantograph/roof equipment placement in 3D",
-    "Visual validation in the common engine before release"
+    "Verify 2026 service consist and production changes against the 2015 pre-series source",
+    "Door centres are scaled modelling coordinates, not surveyed exact positions",
+    "Detailed bogie, roof equipment and nose validation remains pending"
   ]
 }
