@@ -16,6 +16,12 @@ test_games_keep_physical_stations_separate_from_service_stops (test_game_integra
 test_numerical_and_browser_results_match_the_current_game_packets (test_game_integration.IntegratedGames.test_numerical_and_browser_results_match_the_current_game_packets) ... ok
 test_original_passenger_and_city_detail_was_not_reduced (test_game_integration.IntegratedGames.test_original_passenger_and_city_detail_was_not_reduced) ... ok
 test_published_controls_and_mobile_shell_are_preserved (test_game_integration.IntegratedGames.test_published_controls_and_mobile_shell_are_preserved) ... ok
+test_acquired_data_hashes_geometry_and_unfinished_status (test_gsi_vectors.GSIVectors.test_acquired_data_hashes_geometry_and_unfinished_status) ... ok
+test_external_wire_contract_properties_and_multiple_paths (test_gsi_vectors.GSIVectors.test_external_wire_contract_properties_and_multiple_paths) ... ok
+test_match_rejects_crossing_lines_and_uses_engine_distance (test_gsi_vectors.GSIVectors.test_match_rejects_crossing_lines_and_uses_engine_distance) ... ok
+test_signed_numbers_floats_and_polygon_closure (test_gsi_vectors.GSIVectors.test_signed_numbers_floats_and_polygon_closure) ... ok
+test_truncation_rejected_instead_of_inventing_coordinates (test_gsi_vectors.GSIVectors.test_truncation_rejected_instead_of_inventing_coordinates) ... ok
+test_zoom_sensitive_classification_and_geographic_coordinates (test_gsi_vectors.GSIVectors.test_zoom_sensitive_classification_and_geographic_coordinates) ... ok
 test_current_100_unfinished_jobs_produce_no_public_upload (test_publication.Publication.test_current_100_unfinished_jobs_produce_no_public_upload) ... ok
 test_existing_release_corruption_is_rejected_instead_of_silently_dropping_it (test_publication.Publication.test_existing_release_corruption_is_rejected_instead_of_silently_dropping_it) ... ok
 test_one_direction_missing_a_station_cannot_pass (test_publication.Publication.test_one_direction_missing_a_station_cannot_pass) ... ok
@@ -26,6 +32,6 @@ test_rerun_is_idempotent_and_pending_upgrade_keeps_existing_release (test_public
 test_tampered_game_cannot_enter_public_catalogue (test_publication.Publication.test_tampered_game_cannot_enter_public_catalogue) ... ok
 
 ----------------------------------------------------------------------
-Ran 26 tests in 5.284s
+Ran 32 tests in 5.234s
 
 OK

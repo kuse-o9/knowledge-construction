@@ -66,6 +66,8 @@ shell=re.sub(r'href="depot-3d.html"','href="../../../../depot-3d.html"',shell)
 shell=shell.replace('中央・総武線各駅停車','__NAME__').replace('全39駅・区間走破','全線・停車駅と通過駅').replace('各駅停車</option>','特急</option>')
 shell=shell.replace('三鷹〜千葉','__SCOPE__').replace('三鷹','__END__').replace('千葉','新宿')
 shell=shell.replace('E231','E353').replace('E233','E353')
+shell=shell.replace('href="chuo.html"','href="../../../../chuo.html"').replace('中央線快速を運転','中央線快速のゲームへ')
+shell=shell.replace('https://www.jreast.co.jp/train/local/e231.html','https://www.jreast.co.jp/train/express/azusa_kaiji.html')
 shell=re.sub(r'<body\b([^>]*)>',lambda m:m[0]+'<div id="development-banner" style="position:fixed;top:42px;left:18px;right:18px;z-index:9000;padding:7px 12px;background:#f2e6cee8;color:#654c25;font-size:12px;font-weight:700;pointer-events:none" role="status">開発中：線路・ホーム・車両の再現を調整しています。公開版ではありません。</div>',shell,count=1)
 shell=shell.replace('</body>','<script src="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js"></script><script src="../engine/rail-core.js"></script><script src="../engine/train-scene.js"></script><script src="shared.js"></script><script src="rail-audio.js"></script><script src="model-builder.js"></script><script src="loader.js"></script></body>')
 english={'新宿':'Shinjuku','立川':'Tachikawa','八王子':'Hachioji','甲府':'Kofu','小淵沢':'Kobuchizawa','茅野':'Chino','上諏訪':'Kami-Suwa','岡谷':'Okaya','塩尻':'Shiojiri','松本':'Matsumoto','韮崎':'Nirasaki','大月':'Otsuki','塩山':'Enzan','山梨市':'Yamanashishi','石和温泉':'Isawa-Onsen','竜王':'Ryuo'}

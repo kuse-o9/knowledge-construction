@@ -53,7 +53,9 @@
         "gamePrototype": "games/azusa.html",
         "gamePacket": "games/azusa.json.gz",
         "integratedRunningDiagnostics": "integrated-running-diagnostics.json",
-        "integratedBrowserDiagnostics": "integrated-game-diagnostics.json"
+        "integratedBrowserDiagnostics": "integrated-game-diagnostics.json",
+        "gsiRailwaySource": "sources/chuo-gsi-railways.json.gz",
+        "gsiStructureCandidates": "reference-paths/azusa-gsi-structures-audit.json"
       },
       "inputArtifact": {
         "path": "development/route-batches/batch-001/job-inputs/b001-001.json.gz",
@@ -117,12 +119,12 @@
       "componentEvidence": {
         "manualAutoAndEarlyDeparture": {
           "report": "integrated-game-diagnostics.json",
-          "reportSha256": "bac65b4d9ee263904a9ae8bbc5e90807c084737f3ec3a0009bba052ff77c99aa",
+          "reportSha256": "cbe8bf0fa1e200d7f76cb1e0908bbf56edc437011896e32eeb9cbb3916e0eb06",
           "scope": "Development packet only; retest the final public artifacts before release"
         },
         "saveAndLoad": {
           "report": "integrated-game-diagnostics.json",
-          "reportSha256": "bac65b4d9ee263904a9ae8bbc5e90807c084737f3ec3a0009bba052ff77c99aa",
+          "reportSha256": "cbe8bf0fa1e200d7f76cb1e0908bbf56edc437011896e32eeb9cbb3916e0eb06",
           "scope": "Development packet only; retest the final public artifacts before release"
         }
       }
@@ -169,7 +171,9 @@
         "gamePrototype": "games/kaiji.html",
         "gamePacket": "games/kaiji.json.gz",
         "integratedRunningDiagnostics": "integrated-running-diagnostics.json",
-        "integratedBrowserDiagnostics": "integrated-game-diagnostics.json"
+        "integratedBrowserDiagnostics": "integrated-game-diagnostics.json",
+        "gsiRailwaySource": "sources/chuo-gsi-railways.json.gz",
+        "gsiStructureCandidates": "reference-paths/kaiji-gsi-structures-audit.json"
       },
       "inputArtifact": {
         "path": "development/route-batches/batch-001/job-inputs/b001-002.json.gz",
@@ -201,12 +205,12 @@
       "componentEvidence": {
         "manualAutoAndEarlyDeparture": {
           "report": "integrated-game-diagnostics.json",
-          "reportSha256": "bac65b4d9ee263904a9ae8bbc5e90807c084737f3ec3a0009bba052ff77c99aa",
+          "reportSha256": "cbe8bf0fa1e200d7f76cb1e0908bbf56edc437011896e32eeb9cbb3916e0eb06",
           "scope": "Development packet only; retest the final public artifacts before release"
         },
         "saveAndLoad": {
           "report": "integrated-game-diagnostics.json",
-          "reportSha256": "bac65b4d9ee263904a9ae8bbc5e90807c084737f3ec3a0009bba052ff77c99aa",
+          "reportSha256": "cbe8bf0fa1e200d7f76cb1e0908bbf56edc437011896e32eeb9cbb3916e0eb06",
           "scope": "Development packet only; retest the final public artifacts before release"
         }
       }

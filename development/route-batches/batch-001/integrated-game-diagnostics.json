@@ -78,8 +78,8 @@
   "errors": [],
   "networkErrors": [],
   "inputHashes": {
-    "games/azusa.html": "fbbcd7fbed0c179dabb7883f9f2b4111ac6b615fd322c88d1835abc0f0c41691",
-    "games/kaiji.html": "570a5ef6f16c2355c5d4ca2d68e2ec23b6e9e4ea266e52c375cdf9d178e394bd",
+    "games/azusa.html": "5f27097c26a0a5a3635df116222fa27f4a4ab06e2e88e892e469213cb1140c91",
+    "games/kaiji.html": "5452ef54afbdd6323688469d2f63a737bb4439f384f04711923b076825e93342",
     "games/azusa.json.gz": "097be50bdb085813a0e602401d27727d5e70311e37c389657a233fb6180f6de8",
     "games/kaiji.json.gz": "e11bf33ae43fbab01f3cbf9e1ad20eadd88af6f31e77bb979db3ba5e15e01ef4",
     "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",

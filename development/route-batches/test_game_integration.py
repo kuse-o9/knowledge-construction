@@ -10,7 +10,10 @@ class IntegratedGames(unittest.TestCase):
  def test_published_controls_and_mobile_shell_are_preserved(self):
   base=re.sub(r'<script\b[^>]*>.*?</script>','',self.base,flags=re.S);ids=set(re.findall(r'\bid="([^"]+)"',base))
   for key in ['azusa','kaiji']:
-   html=(DEST/'games'/(key+'.html')).read_text();self.assertTrue(ids<=set(re.findall(r'\bid="([^"]+)"',html)));self.assertIn('development-banner',html);self.assertNotIn('E231',html);self.assertNotIn('E233',html)
+   html=(DEST/'games'/(key+'.html')).read_text();self.assertTrue(ids<=set(re.findall(r'\bid="([^"]+)"',html)));self.assertIn('development-banner',html);self.assertNotIn('E231',html);self.assertNotIn('E233',html);self.assertNotIn('/local/e231.html',html)
+   for href in re.findall(r'href="([^"]+)"',html):
+    if href.startswith(('https://','http://','#')):continue
+    self.assertTrue((DEST/'games'/href.split('#')[0]).resolve().is_file(),href)
  def test_entry_and_shared_packets_are_bound_to_exact_versions(self):
   for key in ['azusa','kaiji']:
    html=(DEST/'games'/(key+'.html')).read_text();file=DEST/'games'/(key+'.json.gz');self.assertEqual(re.search(r'data-packet-sha="([a-f0-9]+)"',html)[1],hashlib.sha256(file.read_bytes()).hexdigest());packet=json.loads(gzip.decompress(file.read_bytes()))
