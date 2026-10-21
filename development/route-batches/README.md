@@ -47,6 +47,14 @@
 
 `preview-batch.py --count 100` は候補確認用の読取専用コマンド。実際の今回の100件は `batch-001/manifest.json` を使い、名前だけの追加を完成と数えない。
 
+## 現在の制作パイプライン
+
+`batch-001/WORKLOG.md` に実施結果と残作業を記録する。102の共有系統の地形・元線分・駅候補を検査した入力は `terrain-inputs/` と `networks/`。接続が離れた区間は離れたまま保存し、元の線分を消したり架空の線を足したりしない。地表面高度をトンネル内のレール高さとして使わない。
+
+優先2系統の `alignments/` は元線路による前後350mの余裕を持ち、`services/` は選択した2026年10月平日の列車別停車パターンを持つ。`engine/train-scene.js` は車両ごとの長さ・台車・扉・前後向きを受け取る開発用描画部品。E353の寸法と編成は暫定であり、完成車両とは数えない。
+
+入力検査は `python -m unittest discover -s development/route-batches -p test_batch_inputs.py -v`。停車・通過と早発の数値検査は `node development/route-batches/check-priority-services.cjs`。編成のソフトウェアWebGL検査は `check-train-scene.cjs`（PlaywrightとChromiumが必要）。検査記録は使用した入力/部品のハッシュを参照する。検査用100km/hを実際の路線速度に転用しない。`release-gate.py` は未完成のゲームの公開を拒否する。
+
 ## 2026-10-20の追加指示（⑲・㉖）
 
 ⑲の周辺列車は今後制作する全路線に必須。実在する並走・交差線の位置、高さ、走行方式、編成を調査し、各列車自身の路線速度と密度で走らせる。未制作の周辺線は未実装として記録し、架空の地上線で置き換えない。

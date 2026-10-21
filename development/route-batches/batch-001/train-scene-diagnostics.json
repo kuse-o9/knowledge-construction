@@ -1,0 +1,83 @@
+{
+  "method": "Software WebGL2 integration of a provisional nine-car E353 consist with buffered source alignments. No physical GPU, rail-grade verification, platform validation or completed game is implied.",
+  "releaseReady": false,
+  "physicalGPU": false,
+  "realTime": false,
+  "runs": [
+    {
+      "id": "azusa",
+      "direction": "forward",
+      "checkedLocations": 127,
+      "cars": 9,
+      "primitives": 29,
+      "ready": 29,
+      "webgl2": true,
+      "glError": 0,
+      "canvasSize": [
+        1200,
+        700
+      ],
+      "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+      "image": "vehicles/e353-consist-forward.png",
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "direction": "reverse",
+      "checkedLocations": 127,
+      "cars": 9,
+      "primitives": 29,
+      "ready": 29,
+      "webgl2": true,
+      "glError": 0,
+      "canvasSize": [
+        1200,
+        700
+      ],
+      "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+      "image": "vehicles/e353-consist-reverse.png",
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "forward",
+      "checkedLocations": 83,
+      "cars": 9,
+      "primitives": 29,
+      "ready": 29,
+      "webgl2": true,
+      "glError": 0,
+      "canvasSize": [
+        1200,
+        700
+      ],
+      "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "reverse",
+      "checkedLocations": 83,
+      "cars": 9,
+      "primitives": 29,
+      "ready": 29,
+      "webgl2": true,
+      "glError": 0,
+      "canvasSize": [
+        1200,
+        700
+      ],
+      "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "inputHashes": {
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "engine/train-scene.js": "8d75615e2d9953c6c80fbe64cd03f9ba526874614dd3b46b60b7649a59ba8452",
+    "vehicles/e353-draft.json.gz": "c1945c9e4c6da7a7bd36cec396592d18842c801994031c276f70c288430e1a90",
+    "alignments/azusa.json.gz": "9321396f8dae616fe06b7fb78d64d140db3c22ae5804eef3bba14c1ca27d8f26",
+    "alignments/kaiji.json.gz": "5f48e88991b500e08c685bd0995e2c10fbf246577a6fe979cdcb3a34803af601"
+  },
+  "pass": true
+}

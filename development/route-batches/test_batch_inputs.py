@@ -39,4 +39,30 @@ class BatchInputs(unittest.TestCase):
   for row in rows:
    p=DEST/row['path'];self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),row['sha256']);d=json.loads(gzip.decompress(p.read_bytes()));self.assertTrue(d['complete']);self.assertEqual(d['missingIndices'],[]);self.assertFalse(row['railElevationVerified']);self.assertEqual(len(d['points']),len(d['terrainHeights']))
   self.assertTrue(all(j['qualityGates']['elevationTunnelAndBridge']=='pending' for j in m['jobs']))
+ def test_networks_preserve_every_source_segment_without_gap_filling(self):
+  m=json.loads((DEST/'manifest.json').read_text());rows=json.loads((DEST/'networks/index.json').read_text())['corridors'];catalog=json.loads(gzip.decompress((DEST/'sources/national-corridors.json.gz').read_bytes()))['corridors'];self.assertEqual({r['id']for r in rows},{key for job in m['jobs']for key in job['sourceCorridors']})
+  for row in rows:
+   p=DEST/row['path'];self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),row['sha256']);d=json.loads(gzip.decompress(p.read_bytes()));source=catalog[row['id']];expected={(s['sourceFeature'],i):(a,b)for s in source['sections']for i,(a,b)in enumerate(zip(s['coordinates'],s['coordinates'][1:]))if a!=b};totals={key:0 for key in expected}
+   self.assertEqual(d['inventedConnectors'],0);self.assertFalse(d['railElevationVerified']);self.assertEqual(len(d['stations'])+len(d['unmatchedStations']),len(source['stations']))
+   for edge in d['edges']:
+    key=(edge['sourceFeature'],edge['sourceSegment']);self.assertIn(key,expected);a,b=expected[key]
+    for n in [edge['a'],edge['b']]:
+     point=d['nodes'][n];self.assertTrue(all(np.isfinite(x)for x in point));self.assertLess(G.projection([a,b],point[:2])[0],.001)
+    totals[key]+=edge['metres']
+   for key,metres in totals.items():self.assertAlmostEqual(metres,G.metres(*expected[key]),delta=.001)
+ def test_service_profiles_keep_passing_stations_and_direction_specific_stops(self):
+  patterns={}
+  for key in ['azusa','kaiji']:
+   alignment=json.loads(gzip.decompress((DEST/'alignments'/(key+'.json.gz')).read_bytes()));self.assertEqual(alignment['sourceBuffer']['inventedConnectors'],0);self.assertGreater(alignment['sourceBuffer']['trimmedBeforeMetres'],349);self.assertGreater(alignment['sourceBuffer']['trimmedAfterMetres'],349)
+   codes={s['code']for s in alignment['physicalStops']}
+   for direction in ['forward','reverse']:
+    service=json.loads((DEST/'services'/(key+'-'+direction+'.json')).read_text());stops={s['sourceCode']for s in service['stops']};passing=set(service['passingStationSourceCodes']);self.assertFalse(stops&passing);self.assertEqual(stops|passing,codes);self.assertFalse(service['releaseReady']);self.assertEqual(service['timetableMonth'],'2026-10');patterns[key+'-'+direction]=stops
+  self.assertNotEqual(patterns['azusa-forward'],patterns['azusa-reverse'])
+ def test_diagnostics_cover_current_source_and_component_versions(self):
+  for name in ['service-running-diagnostics.json','train-scene-diagnostics.json']:
+   report=json.loads((DEST/name).read_text());self.assertTrue(report['pass']);self.assertFalse(report['releaseReady']);self.assertFalse(report['physicalGPU']);self.assertFalse(report['realTime']);self.assertTrue(report['inputHashes']);self.assertEqual(len(report['runs']),4)
+   for file,sha in report['inputHashes'].items():self.assertEqual(hashlib.sha256((DEST/file).read_bytes()).hexdigest(),sha)
+   if name=='train-scene-diagnostics.json':
+    self.assertEqual(sum(r['checkedLocations']for r in report['runs']),420)
+    for run in report['runs']:self.assertEqual(run['canvasSize'],[1200,700]);self.assertEqual(run['ready'],run['primitives']);self.assertEqual(run['glError'],0)
 if __name__=='__main__':unittest.main()
