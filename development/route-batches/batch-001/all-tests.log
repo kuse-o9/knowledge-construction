@@ -10,6 +10,12 @@ test_service_profiles_keep_passing_stations_and_direction_specific_stops (test_b
 test_station_anchor_does_not_drop_a_terminal (test_batch_inputs.BatchInputs.test_station_anchor_does_not_drop_a_terminal) ... ok
 test_terrain_matches_the_exact_path_revision (test_batch_inputs.BatchInputs.test_terrain_matches_the_exact_path_revision) ... ok
 test_vehicle_is_distinct_complete_mesh_not_a_recolour (test_batch_inputs.BatchInputs.test_vehicle_is_distinct_complete_mesh_not_a_recolour) ... ok
+test_development_games_are_not_counted_as_completed_or_published (test_game_integration.IntegratedGames.test_development_games_are_not_counted_as_completed_or_published) ... ok
+test_entry_and_shared_packets_are_bound_to_exact_versions (test_game_integration.IntegratedGames.test_entry_and_shared_packets_are_bound_to_exact_versions) ... ok
+test_games_keep_physical_stations_separate_from_service_stops (test_game_integration.IntegratedGames.test_games_keep_physical_stations_separate_from_service_stops) ... ok
+test_numerical_and_browser_results_match_the_current_game_packets (test_game_integration.IntegratedGames.test_numerical_and_browser_results_match_the_current_game_packets) ... ok
+test_original_passenger_and_city_detail_was_not_reduced (test_game_integration.IntegratedGames.test_original_passenger_and_city_detail_was_not_reduced) ... ok
+test_published_controls_and_mobile_shell_are_preserved (test_game_integration.IntegratedGames.test_published_controls_and_mobile_shell_are_preserved) ... ok
 test_current_100_unfinished_jobs_produce_no_public_upload (test_publication.Publication.test_current_100_unfinished_jobs_produce_no_public_upload) ... ok
 test_existing_release_corruption_is_rejected_instead_of_silently_dropping_it (test_publication.Publication.test_existing_release_corruption_is_rejected_instead_of_silently_dropping_it) ... ok
 test_one_direction_missing_a_station_cannot_pass (test_publication.Publication.test_one_direction_missing_a_station_cannot_pass) ... ok
@@ -20,6 +26,6 @@ test_rerun_is_idempotent_and_pending_upgrade_keeps_existing_release (test_public
 test_tampered_game_cannot_enter_public_catalogue (test_publication.Publication.test_tampered_game_cannot_enter_public_catalogue) ... ok
 
 ----------------------------------------------------------------------
-Ran 20 tests in 4.915s
+Ran 26 tests in 5.284s
 
 OK

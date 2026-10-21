@@ -1,0 +1,94 @@
+{
+  "method": "Actual browser interaction with local development builds; software WebGL/Mesa. No physical device or completed-route claim.",
+  "releaseReady": false,
+  "physicalGPU": false,
+  "realTimeFullRoute": false,
+  "runs": [
+    {
+      "id": "azusa",
+      "direction": "forward",
+      "physicalCount": 64,
+      "manualPowerBrakeDoors": true,
+      "earlyDeparture": true,
+      "saveRestore": true,
+      "startStationSelection": true,
+      "automaticDeparture": true,
+      "mapView": true,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "direction": "reverse",
+      "physicalCount": 64,
+      "manualPowerBrakeDoors": true,
+      "earlyDeparture": true,
+      "saveRestore": true,
+      "startStationSelection": true,
+      "automaticDeparture": true,
+      "mapView": true,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "scene": {
+        "webgl2": true,
+        "error": 0,
+        "primitives": 52,
+        "ready": 51
+      },
+      "softwareRendering": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "forward",
+      "physicalCount": 42,
+      "manualPowerBrakeDoors": true,
+      "earlyDeparture": true,
+      "saveRestore": true,
+      "startStationSelection": true,
+      "automaticDeparture": true,
+      "mapView": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "reverse",
+      "physicalCount": 42,
+      "manualPowerBrakeDoors": true,
+      "earlyDeparture": true,
+      "saveRestore": true,
+      "startStationSelection": true,
+      "automaticDeparture": true,
+      "mapView": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "scene": {
+        "webgl2": true,
+        "error": 0,
+        "primitives": 52,
+        "ready": 51
+      },
+      "softwareRendering": true,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "networkErrors": [],
+  "inputHashes": {
+    "games/azusa.html": "fbbcd7fbed0c179dabb7883f9f2b4111ac6b615fd322c88d1835abc0f0c41691",
+    "games/kaiji.html": "570a5ef6f16c2355c5d4ca2d68e2ec23b6e9e4ea266e52c375cdf9d178e394bd",
+    "games/azusa.json.gz": "097be50bdb085813a0e602401d27727d5e70311e37c389657a233fb6180f6de8",
+    "games/kaiji.json.gz": "e11bf33ae43fbab01f3cbf9e1ad20eadd88af6f31e77bb979db3ba5e15e01ef4",
+    "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
+    "games/e353.json.gz": "c1945c9e4c6da7a7bd36cec396592d18842c801994031c276f70c288430e1a90",
+    "games/rail.js": "87f72d0a804fed481dc93717bb65827d889856f4e3672c55110369042223ae35",
+    "games/shared.js": "14e36e2808dd2c55ab07c4c4a251bc44d070ef9b97c9101745b4fb00a391d40f",
+    "games/rail-audio.js": "c8eb2d56cfb6e91bbdedf5dc6abf0020bce7530d54b4b1d8e77487557610288d",
+    "games/loader.js": "805663149fb949429d464a6970bffd498001cd0d92d2b78871799c5c86965ffa",
+    "games/model-builder.js": "6388047a604924e89fa123439a52ed1372848f6699780b674c087cd1319d4137"
+  },
+  "pass": true
+}

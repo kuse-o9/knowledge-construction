@@ -22,7 +22,7 @@
         "09a5df92317ffd42",
         "3ee6c44486f9e146"
       ],
-      "stage": "geometry-and-vehicle-in-production",
+      "stage": "integrated-development-game",
       "playable": false,
       "releaseReady": false,
       "completed": false,
@@ -35,8 +35,8 @@
         "speedAndSignals": "pending",
         "neighbourTraffic": "pending",
         "bilingualAnnouncements": "pending",
-        "manualAutoAndEarlyDeparture": "pending",
-        "saveAndLoad": "pending",
+        "manualAutoAndEarlyDeparture": "passed",
+        "saveAndLoad": "passed",
         "softwareRendering": "pending",
         "releaseHashes": "pending"
       },
@@ -49,7 +49,11 @@
         "forwardService": "services/azusa-forward.json",
         "reverseService": "services/azusa-reverse.json",
         "serviceDiagnostics": "service-running-diagnostics.json",
-        "consistDiagnostics": "train-scene-diagnostics.json"
+        "consistDiagnostics": "train-scene-diagnostics.json",
+        "gamePrototype": "games/azusa.html",
+        "gamePacket": "games/azusa.json.gz",
+        "integratedRunningDiagnostics": "integrated-running-diagnostics.json",
+        "integratedBrowserDiagnostics": "integrated-game-diagnostics.json"
       },
       "inputArtifact": {
         "path": "development/route-batches/batch-001/job-inputs/b001-001.json.gz",
@@ -108,7 +112,20 @@
           "sha256": "88335bbc9e03079a24b1a5462df22a8fa2eeee5759fcfb292eb51679f14def2f",
           "sourceInputSha256": "64b8bc9d359e44f60e4f5026f63adb1d69a5a12cec67005b4d37f660a73e6eff"
         }
-      ]
+      ],
+      "developmentPlayable": true,
+      "componentEvidence": {
+        "manualAutoAndEarlyDeparture": {
+          "report": "integrated-game-diagnostics.json",
+          "reportSha256": "bac65b4d9ee263904a9ae8bbc5e90807c084737f3ec3a0009bba052ff77c99aa",
+          "scope": "Development packet only; retest the final public artifacts before release"
+        },
+        "saveAndLoad": {
+          "report": "integrated-game-diagnostics.json",
+          "reportSha256": "bac65b4d9ee263904a9ae8bbc5e90807c084737f3ec3a0009bba052ff77c99aa",
+          "scope": "Development packet only; retest the final public artifacts before release"
+        }
+      }
     },
     {
       "id": "b001-002",
@@ -121,7 +138,7 @@
       "sourceCorridors": [
         "0802f2ca111756a9"
       ],
-      "stage": "geometry-and-vehicle-in-production",
+      "stage": "integrated-development-game",
       "playable": false,
       "releaseReady": false,
       "completed": false,
@@ -134,8 +151,8 @@
         "speedAndSignals": "pending",
         "neighbourTraffic": "pending",
         "bilingualAnnouncements": "pending",
-        "manualAutoAndEarlyDeparture": "pending",
-        "saveAndLoad": "pending",
+        "manualAutoAndEarlyDeparture": "passed",
+        "saveAndLoad": "passed",
         "softwareRendering": "pending",
         "releaseHashes": "pending"
       },
@@ -148,7 +165,11 @@
         "forwardService": "services/kaiji-forward.json",
         "reverseService": "services/kaiji-reverse.json",
         "serviceDiagnostics": "service-running-diagnostics.json",
-        "consistDiagnostics": "train-scene-diagnostics.json"
+        "consistDiagnostics": "train-scene-diagnostics.json",
+        "gamePrototype": "games/kaiji.html",
+        "gamePacket": "games/kaiji.json.gz",
+        "integratedRunningDiagnostics": "integrated-running-diagnostics.json",
+        "integratedBrowserDiagnostics": "integrated-game-diagnostics.json"
       },
       "inputArtifact": {
         "path": "development/route-batches/batch-001/job-inputs/b001-002.json.gz",
@@ -175,7 +196,20 @@
           "sha256": "da5727e7d8dcb1e5e25dc981f3b8f339c29825d147962e2cd3590100c3a61d2a",
           "sourceInputSha256": "f7233314c606e20cb661e30a83a6cd6ea41064cd9d45c1105ab5c234867f3a89"
         }
-      ]
+      ],
+      "developmentPlayable": true,
+      "componentEvidence": {
+        "manualAutoAndEarlyDeparture": {
+          "report": "integrated-game-diagnostics.json",
+          "reportSha256": "bac65b4d9ee263904a9ae8bbc5e90807c084737f3ec3a0009bba052ff77c99aa",
+          "scope": "Development packet only; retest the final public artifacts before release"
+        },
+        "saveAndLoad": {
+          "report": "integrated-game-diagnostics.json",
+          "reportSha256": "bac65b4d9ee263904a9ae8bbc5e90807c084737f3ec3a0009bba052ff77c99aa",
+          "scope": "Development packet only; retest the final public artifacts before release"
+        }
+      }
     },
     {
       "id": "b001-003",
@@ -5851,5 +5885,6 @@
     "stations": 2974,
     "unmatchedStations": 0,
     "railElevationVerified": false
-  }
+  },
+  "developmentPlayableGames": 2
 }
