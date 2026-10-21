@@ -1,0 +1,928 @@
+{
+  "stage": "terrain-acquisition",
+  "physicalGPU": false,
+  "method": "Existing PLATEAU terrain provider / Cesium 1.117 sampleTerrain level 14",
+  "source": "https://tile.plateauview.mlit.go.jp/terrain",
+  "started": "2026-10-21T04:31:26.923Z",
+  "corridors": [
+    {
+      "id": "0802f2ca111756a9",
+      "line": "中央線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 4084,
+      "missing": 0,
+      "sha256": "4f11ebec3d3aa4c4eba17e240262fd6fc41c1f0295a439b526d32b55d16ecb94"
+    },
+    {
+      "id": "09a5df92317ffd42",
+      "line": "篠ノ井線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 789,
+      "missing": 0,
+      "sha256": "8a21807f412239897cc525593a8aca5b99ac8aad8e365bd04ae4fc1e86a38cb8"
+    },
+    {
+      "id": "3ee6c44486f9e146",
+      "line": "大糸線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 920,
+      "missing": 0,
+      "sha256": "30e2d3d79a67218c717a24f8293e6c0d0b26b9a2490d6fb651afc2e66c3ade4c"
+    },
+    {
+      "id": "377e220bc277a970",
+      "line": "東海道線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1914,
+      "missing": 0,
+      "sha256": "6b949d10a4bda896ea3005e69f1af13eeb7acb6012cfad6024ad121efdbf21fc"
+    },
+    {
+      "id": "41f72fdd2a53c266",
+      "line": "東海道線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 4420,
+      "missing": 0,
+      "sha256": "8fbe6bb0506166826669d719f2b4bceb49c8df9d8a3bc95a94c22d816733c75c"
+    },
+    {
+      "id": "55a600263146a820",
+      "line": "東海道線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 1799,
+      "missing": 0,
+      "sha256": "2334f11d110973c8de4f5c10b2b642490beebac601883fda208ac1782f27a34b"
+    },
+    {
+      "id": "f60cbda9811b005f",
+      "line": "東海道新幹線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 6199,
+      "missing": 0,
+      "sha256": "4a6245480449a3115317ad1a4c5247a968f9711011443be9faf03caa486b647e"
+    },
+    {
+      "id": "e311fe7f3b7e0ee3",
+      "line": "伊東線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 304,
+      "missing": 0,
+      "sha256": "e7b31a903dc91f3180dbe54b6a017ffde20f7c6611147dd0a605a4ba372843b7"
+    },
+    {
+      "id": "dd6a562c64e38625",
+      "line": "伊豆急行線",
+      "operator": "伊豆急行",
+      "status": "sampled",
+      "points": 636,
+      "missing": 0,
+      "sha256": "07f032c6fe4998774174a8e8e030dfc443cdaaa842e29e4ef1e83d90ac9dd822"
+    },
+    {
+      "id": "8adf3cd5eb25f111",
+      "line": "北海道新幹線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 870,
+      "missing": 0,
+      "sha256": "a6a85364273f11b6f1d59e9f05e8bdddc34645d43e7a87ab5c3f3948f07505f8"
+    },
+    {
+      "id": "1e1cedf0fea7834b",
+      "line": "東北新幹線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 5342,
+      "missing": 0,
+      "sha256": "b8470e6771a2c6c93a5abd6e42e9bded3f4ace03ddbf804b6ef1191e903a7982"
+    },
+    {
+      "id": "078ce1e7be81dfa8",
+      "line": "田沢湖線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 926,
+      "missing": 0,
+      "sha256": "29b6cb084b68b3f5094db801e2db1632b2831019756222e304ae1e670d59dfda"
+    },
+    {
+      "id": "1d73cfaac3456e81",
+      "line": "奥羽線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 4575,
+      "missing": 0,
+      "sha256": "397f568b22ce3a4797a25fe627b20c77e2f6e7940ed9c00e7d4172bc7594f1e6"
+    },
+    {
+      "id": "ef90a63ff7cfed39",
+      "line": "上越新幹線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 2756,
+      "missing": 0,
+      "sha256": "eb40ae3d54ebeed728bb630e844c749ad16cceb9d7127ee9bafd0a19e7239c7c"
+    },
+    {
+      "id": "c357b7bad300a214",
+      "line": "北陸新幹線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1341,
+      "missing": 0,
+      "sha256": "8580b356ffdb6178f8e8b5ae5753087691c0791654a6ec35553837a6afd3edbe"
+    },
+    {
+      "id": "2fae1b5931c71752",
+      "line": "北陸新幹線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 782,
+      "missing": 0,
+      "sha256": "b89f95a10d4f98673426e80ac0f447709ff568d03e79cef00c55e41f6db32ba6"
+    },
+    {
+      "id": "31c88eecccc4639f",
+      "line": "山陽新幹線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 4424,
+      "missing": 0,
+      "sha256": "be4918beaaac55a3315b780b1b976b8a283a6cfe48ca93a041a49642e0f9d7b1"
+    },
+    {
+      "id": "24dc68371968a390",
+      "line": "九州新幹線",
+      "operator": "九州旅客鉄道",
+      "status": "sampled",
+      "points": 1065,
+      "missing": 0,
+      "sha256": "26d2c1b0fdc40d3480d923608baa40d039581ef5d401946d50d9c51b2af08263"
+    },
+    {
+      "id": "bcb20d5442e3bab3",
+      "line": "西九州新幹線",
+      "operator": "九州旅客鉄道",
+      "status": "sampled",
+      "points": 293,
+      "missing": 0,
+      "sha256": "fba439977ad4ce46a031b4e439c48e506157ebb6b205402c8d67eccf890ff9aa"
+    },
+    {
+      "id": "506c5d6be246210e",
+      "line": "函館線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 6032,
+      "missing": 0,
+      "sha256": "ebe47d506d9942a0903dc5d65d62b0a1193bf4ba600b65166db849ce98b4d3ab"
+    },
+    {
+      "id": "17d99656446d8fc2",
+      "line": "室蘭線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 1932,
+      "missing": 0,
+      "sha256": "79c4daf75ad6744704d65ad471731e43ccd909de332b751fbdd9776ae80e55bb"
+    },
+    {
+      "id": "38ce8d9cec0336e2",
+      "line": "根室線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 4363,
+      "missing": 0,
+      "sha256": "edce2357eec3fba077aa19a0eb5e7e268f84b982f7e2897ce5039e0c700471df"
+    },
+    {
+      "id": "40185c0732fc4645",
+      "line": "千歳線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 566,
+      "missing": 0,
+      "sha256": "82e982985a0d1b8b9a04405f2c32deda71ef9103d67f6c4c9d5a3996a29dd6cd"
+    },
+    {
+      "id": "fd7373eed90aa923",
+      "line": "札沼線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 239,
+      "missing": 0,
+      "sha256": "13fa5cfe51c3da3b49ea7823f8e84dc592df3ea57c91c11ca17ae6f31c597591"
+    },
+    {
+      "id": "434b40854e859b3e",
+      "line": "石勝線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 1526,
+      "missing": 0,
+      "sha256": "cdafbd405d0a4558a80e73f4ea21d610e8e56f27d8124270d6f2447487218016"
+    },
+    {
+      "id": "887aef536a1709aa",
+      "line": "石北線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 3904,
+      "missing": 0,
+      "sha256": "161c37d1d49454158e870884e60164162340ff6ae3abff93a31f2677078f8a06"
+    },
+    {
+      "id": "a9a0413458324601",
+      "line": "釧網線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 2335,
+      "missing": 0,
+      "sha256": "0bf193115d4189cd28187e922ba185a91832f3e41914119239ff75e413561974"
+    },
+    {
+      "id": "e141b47b71fcd257",
+      "line": "宗谷線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 3893,
+      "missing": 0,
+      "sha256": "08b593fa8fb6ed65b83e47cfc10a0edf5ee6e474c872e362a7d945a0643a04e9"
+    },
+    {
+      "id": "f387d83b788f2a3e",
+      "line": "日高線",
+      "operator": "北海道旅客鉄道",
+      "status": "sampled",
+      "points": 135,
+      "missing": 0,
+      "sha256": "74e6fa7a14f8b85837f37717fad25881e3f2cfae2b50b60455fe51051bdcba2d"
+    },
+    {
+      "id": "1bb7e3a4b68c0372",
+      "line": "横浜線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 559,
+      "missing": 0,
+      "sha256": "f3bc9e7fafddb4870a95e0f1de13df199f3ef05c7c24e36691ddce82f8921cf0"
+    },
+    {
+      "id": "2237b1c1b86efe4d",
+      "line": "南武線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 476,
+      "missing": 0,
+      "sha256": "60c87b5764952b6d251ec703b46eba33be628f694acf47e584e622e0dc7aac87"
+    },
+    {
+      "id": "2031bc2aed1f214a",
+      "line": "鶴見線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 193,
+      "missing": 0,
+      "sha256": "0f475bdf50813b1bd3c8105c59c4d5b36331526ce2ef5359587c7c18a0c21a92"
+    },
+    {
+      "id": "8b04194978b1a2ff",
+      "line": "武蔵野線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 874,
+      "missing": 0,
+      "sha256": "89046b32fd1c1866d03140144dbd3c5aecea887d4396344fd9aa23a4996987e1"
+    },
+    {
+      "id": "e75c1053a3217b4c",
+      "line": "京葉線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 453,
+      "missing": 0,
+      "sha256": "0138383bbb6a49ad557ae4a056576d6fe6de1bf342d4f8b15479d80e61589dc8"
+    },
+    {
+      "id": "247940c8928821e1",
+      "line": "赤羽線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 60,
+      "missing": 0,
+      "sha256": "903123aa77db61472e974a6cc0686abd9f9133b2280543fc1a079c9892fb2dad"
+    },
+    {
+      "id": "9c870ab988927dea",
+      "line": "山手線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 290,
+      "missing": 0,
+      "sha256": "80c565a8f52aa77c06847fecaf1c5412e94e247c5cdcb94ed93547d35fbc9eab"
+    },
+    {
+      "id": "356f077a183b876b",
+      "line": "東北線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 7107,
+      "missing": 0,
+      "sha256": "fc333f5fca57c6c0dff638b3e8bbcc6acfaff561e738e753bdc6101311fe6b5b"
+    },
+    {
+      "id": "fa3d01a3f481528b",
+      "line": "川越線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 306,
+      "missing": 0,
+      "sha256": "5591d6aff1b5edf00ece54a396f223275742d84ab348032d56c151b7be31229b"
+    },
+    {
+      "id": "16132c8baa0ffd50",
+      "line": "八高線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1530,
+      "missing": 0,
+      "sha256": "e7d81350276c10bb1fadef34d1a55b6405a6aa473e1a303090a0ca57a27bb640"
+    },
+    {
+      "id": "64f75a4d74892f12",
+      "line": "相模線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 482,
+      "missing": 0,
+      "sha256": "9370c332cfaafcf2b3a599fc5d7cfca06d8a2f919ee82baab43a9531432d84d6"
+    },
+    {
+      "id": "e3865b9aba753888",
+      "line": "五日市線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 129,
+      "missing": 0,
+      "sha256": "6e01d77ccd3759c0ea6ee2e5e43f831bd55402d0c731fdff5af6da7b1757b220"
+    },
+    {
+      "id": "79aaed8842c1aff5",
+      "line": "総武線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1602,
+      "missing": 0,
+      "sha256": "4794647b7331398bc3b22810eadf286e66a314f3859b3f0d8f0ad0e4dfadf5c1"
+    },
+    {
+      "id": "f24920f0efc325c3",
+      "line": "横須賀線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 452,
+      "missing": 0,
+      "sha256": "26e129716154e24cb553beb0b952b07ee7d69ecd21eb357daf00403ff491a713"
+    },
+    {
+      "id": "d209e5ccc387553d",
+      "line": "高崎線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1048,
+      "missing": 0,
+      "sha256": "9273b25b547679013d53cbc2d7eb82adf892982263e083f38c3219542e7c0091"
+    },
+    {
+      "id": "4425596f8be7da79",
+      "line": "常磐線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 3707,
+      "missing": 0,
+      "sha256": "70123c6d73d1270e3cd2bff6ec1a391a39e746b808c9f7a4bf5d6d653e1efc88"
+    },
+    {
+      "id": "c1fc7c446f7e24ec",
+      "line": "成田線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1578,
+      "missing": 0,
+      "sha256": "c92dd57670e43c4a12c7e4b42ba5556cddc35418e054c9915af1a7b0d4761501"
+    },
+    {
+      "id": "1f469876b8fda1a2",
+      "line": "内房線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1703,
+      "missing": 0,
+      "sha256": "b5e1191ca15d03feb0f476be0932e56eb6f53ec9235d75baa3b7e9d009ea636d"
+    },
+    {
+      "id": "e7a36a6a310c4aa9",
+      "line": "外房線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1252,
+      "missing": 0,
+      "sha256": "2d72339c3d0e884a4682f76541b152dbfdf6489b64cd2b1008eff49aed6e6226"
+    },
+    {
+      "id": "7d5040ca18d099e4",
+      "line": "東金線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 198,
+      "missing": 0,
+      "sha256": "1c937747c321781d62e9b638ed64b05f7fee4b20a74c84c5d241866c1d84764b"
+    },
+    {
+      "id": "87d35d6e6b17dd7b",
+      "line": "久留里線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 497,
+      "missing": 0,
+      "sha256": "50e2d646df64e5d8d8027f92b5635d29aca2f7b3ec4e5bd184e6aee0b46a0b0c"
+    },
+    {
+      "id": "fb57e02ff2ea7fd2",
+      "line": "烏山線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 241,
+      "missing": 0,
+      "sha256": "9f0d140de7bb062ef68b26c9487cde7a973c158626c7cd5f2c7357b57b7fb16e"
+    },
+    {
+      "id": "78e3fb7744c675b5",
+      "line": "日光線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 512,
+      "missing": 0,
+      "sha256": "76c5e2ae667380c0220356b1cd0205641bc8cad264bd9e4f4de2898155cc1c0d"
+    },
+    {
+      "id": "c4bde01d1748653f",
+      "line": "水戸線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 590,
+      "missing": 0,
+      "sha256": "dd0e06de29b013b765f69fb614662bbfd2b8ee509b99b995ad25830d09cb7e77"
+    },
+    {
+      "id": "a7b4aae00fac6859",
+      "line": "水郡線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 2578,
+      "missing": 0,
+      "sha256": "34528d047adbfbcd11e55d99e7dc73dc5883761bd6f57f6e1f37027b1065d844"
+    },
+    {
+      "id": "18352708b0d309d4",
+      "line": "鹿島線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 279,
+      "missing": 0,
+      "sha256": "c7bbf37e13439684ecaca5c64be9b346f7f5a31b2c78f46d584c5b5366b8c80d"
+    },
+    {
+      "id": "1610d5c9b7b29147",
+      "line": "信越線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 2091,
+      "missing": 0,
+      "sha256": "9b9661e47f7759f4c546ca9fd1d3f2b204e71b542209676dd491c4bfbb6f64ef"
+    },
+    {
+      "id": "bb24296ffb0bd013",
+      "line": "小海線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1480,
+      "missing": 0,
+      "sha256": "e6f937580aba10813cf175707e6047df61d47234b8c14a73d86ba6473633dbc4"
+    },
+    {
+      "id": "5af6575336a1acb1",
+      "line": "飯山線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 2228,
+      "missing": 0,
+      "sha256": "800a9ee3b235a09c2221bddd458db5e2c0f27299f02500f7aecae6d8390f689a"
+    },
+    {
+      "id": "a327ba784690ce33",
+      "line": "越後線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 819,
+      "missing": 0,
+      "sha256": "7fbfba90118b7e4153a62c395a4439a05d4855f63d87884e7990b1b235885bbb"
+    },
+    {
+      "id": "16fe440d129e542c",
+      "line": "弥彦線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 216,
+      "missing": 0,
+      "sha256": "d11f23eed3e85001927c615058406b9ab4ebdd383297893409a2b2f30e2930dd"
+    },
+    {
+      "id": "74e295308cd53b40",
+      "line": "白新線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 316,
+      "missing": 0,
+      "sha256": "79b6a52c56b612ffe54e207886825e4363b33d70fd749977fbee88bee3b66608"
+    },
+    {
+      "id": "e90d9e3854972159",
+      "line": "羽越線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 3157,
+      "missing": 0,
+      "sha256": "3a6dd89c21fb36da8eb62e9bf0849a3923cd018a2b5cf503cbbbd7bdddd1d0f8"
+    },
+    {
+      "id": "cc0d98b39dee8e0e",
+      "line": "磐越西線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 3387,
+      "missing": 0,
+      "sha256": "8652f49dee2deeef6415b4d65bb29d68d81662ab2350e3a399155a386fcca588"
+    },
+    {
+      "id": "be6509f8ea829b95",
+      "line": "磐越東線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1591,
+      "missing": 0,
+      "sha256": "db143493c9f3f0da9f0dda42da0fde807205edc4703ee77260659f987ecbdbb4"
+    },
+    {
+      "id": "6c41aa1e8b38185f",
+      "line": "只見線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 3155,
+      "missing": 0,
+      "sha256": "8af7ca22f2901f6e9ba6c43dc51d36843153ed974325798024b75f78187e5a55"
+    },
+    {
+      "id": "b8cec0e9ef5a75fa",
+      "line": "米坂線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1214,
+      "missing": 0,
+      "sha256": "4fba73dad887627c4b2bd3fa5462c8b0ea61a0045bb6cea1e7f4ec93383e5ad6"
+    },
+    {
+      "id": "dba770d2fdee1f1b",
+      "line": "左沢線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 244,
+      "missing": 0,
+      "sha256": "518210a07951289076c36a6a58633a9aafa4fbcebac214ddc1ab30fadda31dad"
+    },
+    {
+      "id": "66c6bf7ae8f3db8d",
+      "line": "仙山線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 997,
+      "missing": 0,
+      "sha256": "e9acbbc1ca10af21f324e3697c78a11dd292f17917562ad3b017e101634f57de"
+    },
+    {
+      "id": "18db9a1041e047fe",
+      "line": "仙石線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 862,
+      "missing": 0,
+      "sha256": "d39cc98f3297a791730adec031fa2931439fc3885ea9f2d7fc04daec527d88d4"
+    },
+    {
+      "id": "65a871ed4135c271",
+      "line": "石巻線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 525,
+      "missing": 0,
+      "sha256": "cdfa585425a4b085f420882ac0c273b4d95b3206e15a7d66e6c40b41b6aadec5"
+    },
+    {
+      "id": "adc4caca47e48741",
+      "line": "北上線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 845,
+      "missing": 0,
+      "sha256": "d45be0dc3bc51bfd90c7589c713188de385d9c572ffc087333cc953b02cfb278"
+    },
+    {
+      "id": "eb13db4d7f025c83",
+      "line": "釜石線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1528,
+      "missing": 0,
+      "sha256": "d360d49060e44754522489df52635b1b49488dda3518033c6df521eda31db1fd"
+    },
+    {
+      "id": "e05c0070739920c4",
+      "line": "山田線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 2065,
+      "missing": 0,
+      "sha256": "9c6711d9f95d9b52ea32f7b70c79016aac88d5063dd1d180dfd2f4d12cd32f41"
+    },
+    {
+      "id": "5dc11f69f3e5b2a0",
+      "line": "花輪線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1386,
+      "missing": 0,
+      "sha256": "10d127c35df204aac709fb048194f14c0f952fe2850c245934f5b0f95e90f75a"
+    },
+    {
+      "id": "25d09c9375b871ec",
+      "line": "八戸線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 1040,
+      "missing": 0,
+      "sha256": "6a727462aa7ea81c07c685047c319b931ddddb3f01b265b742c299d3eedb7434"
+    },
+    {
+      "id": "ff2b400c4324db96",
+      "line": "大湊線",
+      "operator": "東日本旅客鉄道",
+      "status": "sampled",
+      "points": 454,
+      "missing": 0,
+      "sha256": "755e2e3641fb27ad2beaeaeb4d25c616bdb0953e5a5c37adbf696fcce78469b0"
+    },
+    {
+      "id": "6ef3ebc566f64742",
+      "line": "御殿場線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 763,
+      "missing": 0,
+      "sha256": "ce3b0266d82d3058f1ef9128dae7bbcf11079002c1683b292e17934b59f26646"
+    },
+    {
+      "id": "3c588003107fdb99",
+      "line": "身延線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 2204,
+      "missing": 0,
+      "sha256": "4c7219a0adf1a72e90e3750a55bbfb55c82ef54efdb586e4e02a75743557612b"
+    },
+    {
+      "id": "bc799a2d6e8e70f0",
+      "line": "飯田線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 4177,
+      "missing": 0,
+      "sha256": "44a066deec4e81bd14038882bb9a036241b683d1a295bfab00e9b53d8ac51acb"
+    },
+    {
+      "id": "4dd16477a9d059bc",
+      "line": "武豊線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 209,
+      "missing": 0,
+      "sha256": "7390983c3fe05e12fda6027d99bede9d303710b235004e5cbf44c7a1fce76c69"
+    },
+    {
+      "id": "0403a155dd282f21",
+      "line": "中央線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 3317,
+      "missing": 0,
+      "sha256": "474d9d2e16362038babae6f8db300c3a9424785d13907c8ae45b2cd04da6e20c"
+    },
+    {
+      "id": "eb8e585e4b72819e",
+      "line": "高山線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 2815,
+      "missing": 0,
+      "sha256": "6925ac349c427637c68205bbb7e1dd71f455b9e163542d1e4bd27204471ba5a8"
+    },
+    {
+      "id": "33ac3c24da2ed356",
+      "line": "高山線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 486,
+      "missing": 0,
+      "sha256": "1372a5993664937ad23232772d7ee2f9d281d756449766e3380c044899d0e9e6"
+    },
+    {
+      "id": "65880533aa53e376",
+      "line": "太多線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 208,
+      "missing": 0,
+      "sha256": "a912e3d583d74e8977ffa0afa444a55899c581d98ae01f45fb9e1135cbdbf277"
+    },
+    {
+      "id": "eac3c96c108dbcc2",
+      "line": "関西線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 934,
+      "missing": 0,
+      "sha256": "72db0a9ebc27430f3ad82ebef3a47ea049d7a5e6909dcad8495d1d11951f1d36"
+    },
+    {
+      "id": "877d462f4513397f",
+      "line": "紀勢線",
+      "operator": "東海旅客鉄道",
+      "status": "sampled",
+      "points": 2983,
+      "missing": 0,
+      "sha256": "2e7282c0f5c23348c6ae6329915bae0bc82cf3c14cdec5a6e70f1178dbd4780d"
+    },
+    {
+      "id": "be4698aae20819c0",
+      "line": "北陸線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 787,
+      "missing": 0,
+      "sha256": "237256ec2992397f5a52996b348063e1aa99e7f43fcf6b15391c67cabf568a90"
+    },
+    {
+      "id": "35150a8eab3b8537",
+      "line": "小浜線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 1072,
+      "missing": 0,
+      "sha256": "22ae740650a76683166727a72772f196d748a16898e3db394437298e15ef2120"
+    },
+    {
+      "id": "c68347f8de1e901d",
+      "line": "越美北線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 678,
+      "missing": 0,
+      "sha256": "48d914f9f193300978703afdd06daa418d8594842f9bbb970935fd0dcc078ac4"
+    },
+    {
+      "id": "90275b112a826b5c",
+      "line": "七尾線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 636,
+      "missing": 0,
+      "sha256": "af15688a89e8cf1e866626f27c92b2cfaf8eae762f97f1d3e733469f1fcc9cb6"
+    },
+    {
+      "id": "83f13f60007a985e",
+      "line": "氷見線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 170,
+      "missing": 0,
+      "sha256": "927ed6a9029b5968c5f6571d8bb9451d780c1bae28352802b56989d07ea7de4a"
+    },
+    {
+      "id": "772a92b58076fa71",
+      "line": "城端線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 360,
+      "missing": 0,
+      "sha256": "81736cdf8b20aefb73157eaba797fe3af83758bbf5c554070e72633d1a7f0fd5"
+    },
+    {
+      "id": "8ee1408d031cdb5a",
+      "line": "山陽線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 7851,
+      "missing": 0,
+      "sha256": "5e14aabf54cc5b10537b10cc8c50ecf2ce338bf06b4b9668c9df3e2e549b881d"
+    },
+    {
+      "id": "156acc952b49ff40",
+      "line": "山陰線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 11297,
+      "missing": 0,
+      "sha256": "2fc7cf384b9ec5f12aebcdc44289339af4b95018b0dd5122983d3a4c7bf7f091"
+    },
+    {
+      "id": "692e841da7f5ee0c",
+      "line": "湖西線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 922,
+      "missing": 0,
+      "sha256": "d2921b1f74939518054b6b3115fe353bb3c85a607bd29f71a052aef65b6a2ffb"
+    },
+    {
+      "id": "20cff8146d0457b3",
+      "line": "大阪環状線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 407,
+      "missing": 0,
+      "sha256": "3ef64982d8f860a2f2267518ee8c8723b499e552e30db6f2a262242236d283be"
+    },
+    {
+      "id": "bd820ae6972840ba",
+      "line": "桜島線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 59,
+      "missing": 0,
+      "sha256": "45b6f017f255a9c20f97e1491dc7ee09aa367f433a0127bf6cfe59a81b73475a"
+    },
+    {
+      "id": "a1ad81ae911b7b19",
+      "line": "福知山線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 1918,
+      "missing": 0,
+      "sha256": "9ee5a3a71cb8a7311ba839bd27614bf600e8af5cc9c85108acf4453078cb2657"
+    },
+    {
+      "id": "9e6ff2341bb80ee9",
+      "line": "JR東西線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 136,
+      "missing": 0,
+      "sha256": "5dfd7447409cbf1823c27c58aa021379d919fbee1f8e36de231bf32a6e110cc9"
+    },
+    {
+      "id": "0dc3cc5cd527d45e",
+      "line": "片町線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 724,
+      "missing": 0,
+      "sha256": "a16f7fe1075c35857575c6e4fa3a7a868ce3b2c28405e99795b02dcf9e6c0d99"
+    },
+    {
+      "id": "d60649e423b2607d",
+      "line": "おおさか東線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 160,
+      "missing": 0,
+      "sha256": "b89e8540876067d63c46e88969fc9be3bfc0750c7acbc0c963b52cf0d83718f8"
+    },
+    {
+      "id": "99dc1fac1e099fb6",
+      "line": "関西線",
+      "operator": "西日本旅客鉄道",
+      "status": "sampled",
+      "points": 2080,
+      "missing": 0,
+      "sha256": "db4cfd9eaa2b552d534028a6b8fe8a235f2da7d3c179d34eb77235d695c1417d"
+    }
+  ],
+  "finished": "2026-10-21T04:38:27.377Z"
+}

@@ -34,4 +34,9 @@ class BatchInputs(unittest.TestCase):
  def test_terrain_matches_the_exact_path_revision(self):
   for name in ['azusa','kaiji']:
    p=DEST/'reference-paths'/(name+'.json.gz');route=json.loads(gzip.decompress(p.read_bytes()));terrain=json.loads(gzip.decompress((DEST/'reference-paths'/(name+'-terrain.json.gz')).read_bytes()));self.assertEqual(terrain['referencePathSha256'],hashlib.sha256(p.read_bytes()).hexdigest());self.assertEqual(len(terrain['heights']),len(route['points']));self.assertTrue(all(np.isfinite(h)for h in terrain['heights']))
+ def test_all_shared_terrain_inputs_are_complete_and_versioned(self):
+  m=json.loads((DEST/'manifest.json').read_text());ids={k for j in m['jobs']for k in j['sourceCorridors']};rows=json.loads((DEST/'terrain-inputs/index.json').read_text())['corridors'];self.assertEqual({r['id']for r in rows},ids);self.assertEqual(len(rows),102)
+  for row in rows:
+   p=DEST/row['path'];self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),row['sha256']);d=json.loads(gzip.decompress(p.read_bytes()));self.assertTrue(d['complete']);self.assertEqual(d['missingIndices'],[]);self.assertFalse(row['railElevationVerified']);self.assertEqual(len(d['points']),len(d['terrainHeights']))
+  self.assertTrue(all(j['qualityGates']['elevationTunnelAndBridge']=='pending' for j in m['jobs']))
 if __name__=='__main__':unittest.main()

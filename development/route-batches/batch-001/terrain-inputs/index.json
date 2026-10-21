@@ -1,0 +1,933 @@
+{
+  "source": "https://tile.plateauview.mlit.go.jp/terrain",
+  "method": "Cesium sampleTerrain level 14",
+  "corridors": [
+    {
+      "id": "0403a155dd282f21",
+      "path": "terrain-inputs/0403a155dd282f21.json.gz",
+      "sha256": "474d9d2e16362038babae6f8db300c3a9424785d13907c8ae45b2cd04da6e20c",
+      "sourceInputSha256": "1920322f6166ed5f753a642269347e8b9fe6f66de5445248d0ff1ced54d04892",
+      "points": 3317,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "078ce1e7be81dfa8",
+      "path": "terrain-inputs/078ce1e7be81dfa8.json.gz",
+      "sha256": "29b6cb084b68b3f5094db801e2db1632b2831019756222e304ae1e670d59dfda",
+      "sourceInputSha256": "4ef33323498c55ea3ce52abffe5874c16aa42e66c3adb030ad9a04e6bdceadc8",
+      "points": 926,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "0802f2ca111756a9",
+      "path": "terrain-inputs/0802f2ca111756a9.json.gz",
+      "sha256": "4f11ebec3d3aa4c4eba17e240262fd6fc41c1f0295a439b526d32b55d16ecb94",
+      "sourceInputSha256": "f7233314c606e20cb661e30a83a6cd6ea41064cd9d45c1105ab5c234867f3a89",
+      "points": 4084,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "09a5df92317ffd42",
+      "path": "terrain-inputs/09a5df92317ffd42.json.gz",
+      "sha256": "8a21807f412239897cc525593a8aca5b99ac8aad8e365bd04ae4fc1e86a38cb8",
+      "sourceInputSha256": "b9b73e35efa1c8fbb9ada13c836baaa967af71a7cefee2f8ed951a3f5adf74d0",
+      "points": 789,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "0dc3cc5cd527d45e",
+      "path": "terrain-inputs/0dc3cc5cd527d45e.json.gz",
+      "sha256": "a16f7fe1075c35857575c6e4fa3a7a868ce3b2c28405e99795b02dcf9e6c0d99",
+      "sourceInputSha256": "38c1798888009c6e2fb0a3796c95d6db0e555ea568972b51246ec2ad5e5f5c87",
+      "points": 724,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "156acc952b49ff40",
+      "path": "terrain-inputs/156acc952b49ff40.json.gz",
+      "sha256": "2fc7cf384b9ec5f12aebcdc44289339af4b95018b0dd5122983d3a4c7bf7f091",
+      "sourceInputSha256": "6a9c72f805dda229a074394db711de39037bc2ca0c2e4488be7bd2c2497651ed",
+      "points": 11297,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "1610d5c9b7b29147",
+      "path": "terrain-inputs/1610d5c9b7b29147.json.gz",
+      "sha256": "9b9661e47f7759f4c546ca9fd1d3f2b204e71b542209676dd491c4bfbb6f64ef",
+      "sourceInputSha256": "de7512a5c815459bf5d8a61cd25f1aec6fc8b24169298cdefda3d35328fd97b0",
+      "points": 2091,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "16132c8baa0ffd50",
+      "path": "terrain-inputs/16132c8baa0ffd50.json.gz",
+      "sha256": "e7d81350276c10bb1fadef34d1a55b6405a6aa473e1a303090a0ca57a27bb640",
+      "sourceInputSha256": "7e84afaf5731861335c1f803c4bc2e67fe389388c70c3ff0d8b56754b5577a6f",
+      "points": 1530,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "16fe440d129e542c",
+      "path": "terrain-inputs/16fe440d129e542c.json.gz",
+      "sha256": "d11f23eed3e85001927c615058406b9ab4ebdd383297893409a2b2f30e2930dd",
+      "sourceInputSha256": "8edaa144edb633d1a0b9437db1590838ceb2de9338f786101d82391b96ab9c73",
+      "points": 216,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "17d99656446d8fc2",
+      "path": "terrain-inputs/17d99656446d8fc2.json.gz",
+      "sha256": "79c4daf75ad6744704d65ad471731e43ccd909de332b751fbdd9776ae80e55bb",
+      "sourceInputSha256": "55cd94f469c4d120070d440e4cb362b7776985055b6be97b4cb25f82171b2444",
+      "points": 1932,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "18352708b0d309d4",
+      "path": "terrain-inputs/18352708b0d309d4.json.gz",
+      "sha256": "c7bbf37e13439684ecaca5c64be9b346f7f5a31b2c78f46d584c5b5366b8c80d",
+      "sourceInputSha256": "3679f710b8ddcf8b33e740bd4538ff36fe83645bed3526950f21bdf9702783de",
+      "points": 279,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "18db9a1041e047fe",
+      "path": "terrain-inputs/18db9a1041e047fe.json.gz",
+      "sha256": "d39cc98f3297a791730adec031fa2931439fc3885ea9f2d7fc04daec527d88d4",
+      "sourceInputSha256": "253e72bbfcd6a15faeb0ffb855c9f53d2b8c161034fa780935618c0e03ec3bed",
+      "points": 862,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "1bb7e3a4b68c0372",
+      "path": "terrain-inputs/1bb7e3a4b68c0372.json.gz",
+      "sha256": "f3bc9e7fafddb4870a95e0f1de13df199f3ef05c7c24e36691ddce82f8921cf0",
+      "sourceInputSha256": "191f1264b8c7acf2d5df58ebc3b9c7bd4b06d14986c5f9d47e71c588a7799f2c",
+      "points": 559,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "1d73cfaac3456e81",
+      "path": "terrain-inputs/1d73cfaac3456e81.json.gz",
+      "sha256": "397f568b22ce3a4797a25fe627b20c77e2f6e7940ed9c00e7d4172bc7594f1e6",
+      "sourceInputSha256": "e68efc8d5ff44f90428c0f2803718cc5743b876a8738efeb3d2f68628b97ed6f",
+      "points": 4575,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "1e1cedf0fea7834b",
+      "path": "terrain-inputs/1e1cedf0fea7834b.json.gz",
+      "sha256": "b8470e6771a2c6c93a5abd6e42e9bded3f4ace03ddbf804b6ef1191e903a7982",
+      "sourceInputSha256": "2795551f91fb58f2bdb70aa9a609fcb6a480dc80145510fd833dba075d5c9d1c",
+      "points": 5342,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "1f469876b8fda1a2",
+      "path": "terrain-inputs/1f469876b8fda1a2.json.gz",
+      "sha256": "b5e1191ca15d03feb0f476be0932e56eb6f53ec9235d75baa3b7e9d009ea636d",
+      "sourceInputSha256": "20f3abd297d9a8c2e9c782d78286d1a47d3bb06fac4ea73a172584fa1577ee37",
+      "points": 1703,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "2031bc2aed1f214a",
+      "path": "terrain-inputs/2031bc2aed1f214a.json.gz",
+      "sha256": "0f475bdf50813b1bd3c8105c59c4d5b36331526ce2ef5359587c7c18a0c21a92",
+      "sourceInputSha256": "7c53e5776cc878dd09ebd21039c5fd0f185000e04efbcfd0b4f50137c4472d5d",
+      "points": 193,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "20cff8146d0457b3",
+      "path": "terrain-inputs/20cff8146d0457b3.json.gz",
+      "sha256": "3ef64982d8f860a2f2267518ee8c8723b499e552e30db6f2a262242236d283be",
+      "sourceInputSha256": "52f1cc98121d6b9d68f8887514e8e2ed39fb793b86aa59b54037d5d45b1122af",
+      "points": 407,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "2237b1c1b86efe4d",
+      "path": "terrain-inputs/2237b1c1b86efe4d.json.gz",
+      "sha256": "60c87b5764952b6d251ec703b46eba33be628f694acf47e584e622e0dc7aac87",
+      "sourceInputSha256": "868c7329315370ca7af5dc5a83f3aa3c1309a00de944af05d277afd1c9ae1ac4",
+      "points": 476,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "247940c8928821e1",
+      "path": "terrain-inputs/247940c8928821e1.json.gz",
+      "sha256": "903123aa77db61472e974a6cc0686abd9f9133b2280543fc1a079c9892fb2dad",
+      "sourceInputSha256": "4668de176b9c5ba17eb7448917091d5751ab749bf4a82d4cf13eff79b4712924",
+      "points": 60,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "24dc68371968a390",
+      "path": "terrain-inputs/24dc68371968a390.json.gz",
+      "sha256": "26d2c1b0fdc40d3480d923608baa40d039581ef5d401946d50d9c51b2af08263",
+      "sourceInputSha256": "89989c1fa86212ad8a434911a455c106d7cee6b5802bf897c7f71def39b620e2",
+      "points": 1065,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "25d09c9375b871ec",
+      "path": "terrain-inputs/25d09c9375b871ec.json.gz",
+      "sha256": "6a727462aa7ea81c07c685047c319b931ddddb3f01b265b742c299d3eedb7434",
+      "sourceInputSha256": "2efb47035858c4a4a227813662af48312d36780e3333c36f0fabe0bc7d4980fc",
+      "points": 1040,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "2fae1b5931c71752",
+      "path": "terrain-inputs/2fae1b5931c71752.json.gz",
+      "sha256": "b89f95a10d4f98673426e80ac0f447709ff568d03e79cef00c55e41f6db32ba6",
+      "sourceInputSha256": "c385af11795090b30f055f9904c2c7d05621fdc4a3072bd2321c572f7fee22b9",
+      "points": 782,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "31c88eecccc4639f",
+      "path": "terrain-inputs/31c88eecccc4639f.json.gz",
+      "sha256": "be4918beaaac55a3315b780b1b976b8a283a6cfe48ca93a041a49642e0f9d7b1",
+      "sourceInputSha256": "56654cf0e1a5000300f247dd7ea7c2cb438ca7b15545efd0f8f7a0b4fd6100b3",
+      "points": 4424,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "33ac3c24da2ed356",
+      "path": "terrain-inputs/33ac3c24da2ed356.json.gz",
+      "sha256": "1372a5993664937ad23232772d7ee2f9d281d756449766e3380c044899d0e9e6",
+      "sourceInputSha256": "d53fa887564d824257fc0352407f37353c4839589ee15399230fb01f737866a3",
+      "points": 486,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "35150a8eab3b8537",
+      "path": "terrain-inputs/35150a8eab3b8537.json.gz",
+      "sha256": "22ae740650a76683166727a72772f196d748a16898e3db394437298e15ef2120",
+      "sourceInputSha256": "d99dd042d7780b613308dc90b26e46a5f89da8fe1487b429a0f970cb16182874",
+      "points": 1072,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "356f077a183b876b",
+      "path": "terrain-inputs/356f077a183b876b.json.gz",
+      "sha256": "fc333f5fca57c6c0dff638b3e8bbcc6acfaff561e738e753bdc6101311fe6b5b",
+      "sourceInputSha256": "dc9e9fc84a1e629024d2d088ccd8aba2de8f5fe757dc26fe00ff8d98dbb4d11e",
+      "points": 7107,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "377e220bc277a970",
+      "path": "terrain-inputs/377e220bc277a970.json.gz",
+      "sha256": "6b949d10a4bda896ea3005e69f1af13eeb7acb6012cfad6024ad121efdbf21fc",
+      "sourceInputSha256": "9dc7be8a252e2c1f9cf0031849046e0b513a352c10ff61b0b12e43e2951e01af",
+      "points": 1914,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "38ce8d9cec0336e2",
+      "path": "terrain-inputs/38ce8d9cec0336e2.json.gz",
+      "sha256": "edce2357eec3fba077aa19a0eb5e7e268f84b982f7e2897ce5039e0c700471df",
+      "sourceInputSha256": "a7a58880ae16e5311ecca21e7f14b1da1a3a1e71c43aa68ab18b85c5ef34a00c",
+      "points": 4363,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "3c588003107fdb99",
+      "path": "terrain-inputs/3c588003107fdb99.json.gz",
+      "sha256": "4c7219a0adf1a72e90e3750a55bbfb55c82ef54efdb586e4e02a75743557612b",
+      "sourceInputSha256": "5625dcdfa0191d279671b30f81a50bd750114d07478e8b054622eced6d176128",
+      "points": 2204,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "3ee6c44486f9e146",
+      "path": "terrain-inputs/3ee6c44486f9e146.json.gz",
+      "sha256": "30e2d3d79a67218c717a24f8293e6c0d0b26b9a2490d6fb651afc2e66c3ade4c",
+      "sourceInputSha256": "64b8bc9d359e44f60e4f5026f63adb1d69a5a12cec67005b4d37f660a73e6eff",
+      "points": 920,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "40185c0732fc4645",
+      "path": "terrain-inputs/40185c0732fc4645.json.gz",
+      "sha256": "82e982985a0d1b8b9a04405f2c32deda71ef9103d67f6c4c9d5a3996a29dd6cd",
+      "sourceInputSha256": "2121778b6ccd683fb86acf1ea6a04f419cac7b5a3ca924ad8c6043c19b065224",
+      "points": 566,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "41f72fdd2a53c266",
+      "path": "terrain-inputs/41f72fdd2a53c266.json.gz",
+      "sha256": "8fbe6bb0506166826669d719f2b4bceb49c8df9d8a3bc95a94c22d816733c75c",
+      "sourceInputSha256": "9ee8737081afb4d1ac2703b75676cce1bd3b9e2bd647bf1dc5f69c8b43fa79b8",
+      "points": 4420,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "434b40854e859b3e",
+      "path": "terrain-inputs/434b40854e859b3e.json.gz",
+      "sha256": "cdafbd405d0a4558a80e73f4ea21d610e8e56f27d8124270d6f2447487218016",
+      "sourceInputSha256": "1d193ba78bab47ef0b783af78a76b5a3c0242339fd349fd8dd3f75ff37e1ef20",
+      "points": 1526,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "4425596f8be7da79",
+      "path": "terrain-inputs/4425596f8be7da79.json.gz",
+      "sha256": "70123c6d73d1270e3cd2bff6ec1a391a39e746b808c9f7a4bf5d6d653e1efc88",
+      "sourceInputSha256": "424ca19ea695af6aed823a8c38d9c2e1e574720d28ebe6e8815bf5430e4347ee",
+      "points": 3707,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "4dd16477a9d059bc",
+      "path": "terrain-inputs/4dd16477a9d059bc.json.gz",
+      "sha256": "7390983c3fe05e12fda6027d99bede9d303710b235004e5cbf44c7a1fce76c69",
+      "sourceInputSha256": "d92390f3f6aafa5b30bbfcd75210e9b7eb61e9a5ed8bed1501757ca20294a284",
+      "points": 209,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "506c5d6be246210e",
+      "path": "terrain-inputs/506c5d6be246210e.json.gz",
+      "sha256": "ebe47d506d9942a0903dc5d65d62b0a1193bf4ba600b65166db849ce98b4d3ab",
+      "sourceInputSha256": "5737d50cc776b2e274f3057c7cb48935ecdab77d222af70196268439d9af0059",
+      "points": 6032,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "55a600263146a820",
+      "path": "terrain-inputs/55a600263146a820.json.gz",
+      "sha256": "2334f11d110973c8de4f5c10b2b642490beebac601883fda208ac1782f27a34b",
+      "sourceInputSha256": "bbceec9b5e340f494428511e714b84ca1165698785401a71feaea83de5b3c738",
+      "points": 1799,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "5af6575336a1acb1",
+      "path": "terrain-inputs/5af6575336a1acb1.json.gz",
+      "sha256": "800a9ee3b235a09c2221bddd458db5e2c0f27299f02500f7aecae6d8390f689a",
+      "sourceInputSha256": "423001166504541c4a17ec9157eec2718ec1df6a6539a229bc8ea61e1d5ef87e",
+      "points": 2228,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "5dc11f69f3e5b2a0",
+      "path": "terrain-inputs/5dc11f69f3e5b2a0.json.gz",
+      "sha256": "10d127c35df204aac709fb048194f14c0f952fe2850c245934f5b0f95e90f75a",
+      "sourceInputSha256": "37d1ed4fdd2376a753cd4d5e6965c8f447ceb6873de2d9bc47815565de788447",
+      "points": 1386,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "64f75a4d74892f12",
+      "path": "terrain-inputs/64f75a4d74892f12.json.gz",
+      "sha256": "9370c332cfaafcf2b3a599fc5d7cfca06d8a2f919ee82baab43a9531432d84d6",
+      "sourceInputSha256": "31e33de3303d02131a21f59c0951ed75c2a2dea99f3dab275bd5f56f4e13d5b4",
+      "points": 482,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "65880533aa53e376",
+      "path": "terrain-inputs/65880533aa53e376.json.gz",
+      "sha256": "a912e3d583d74e8977ffa0afa444a55899c581d98ae01f45fb9e1135cbdbf277",
+      "sourceInputSha256": "cfe8e54ac2d8e6083ba23ea803d40170ba9da6f004544f3c1a832f248c44e821",
+      "points": 208,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "65a871ed4135c271",
+      "path": "terrain-inputs/65a871ed4135c271.json.gz",
+      "sha256": "cdfa585425a4b085f420882ac0c273b4d95b3206e15a7d66e6c40b41b6aadec5",
+      "sourceInputSha256": "ff314f97841bf995903ed92b5eb431c4557ee677beaad489fbd719bb83051007",
+      "points": 525,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "66c6bf7ae8f3db8d",
+      "path": "terrain-inputs/66c6bf7ae8f3db8d.json.gz",
+      "sha256": "e9acbbc1ca10af21f324e3697c78a11dd292f17917562ad3b017e101634f57de",
+      "sourceInputSha256": "b668cf82ef32c459019f37d8346db03cc2055bd0cad0ae2ac2a5c1066f8421e0",
+      "points": 997,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "692e841da7f5ee0c",
+      "path": "terrain-inputs/692e841da7f5ee0c.json.gz",
+      "sha256": "d2921b1f74939518054b6b3115fe353bb3c85a607bd29f71a052aef65b6a2ffb",
+      "sourceInputSha256": "e78bf9d6613edd7918431060662533c87a5516f1b2a202df9cbacbc20aaaa60e",
+      "points": 922,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "6c41aa1e8b38185f",
+      "path": "terrain-inputs/6c41aa1e8b38185f.json.gz",
+      "sha256": "8af7ca22f2901f6e9ba6c43dc51d36843153ed974325798024b75f78187e5a55",
+      "sourceInputSha256": "542012ad018cf6457ea2bc31d6528f9604dd934f97f933840299fb93d906e84b",
+      "points": 3155,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "6ef3ebc566f64742",
+      "path": "terrain-inputs/6ef3ebc566f64742.json.gz",
+      "sha256": "ce3b0266d82d3058f1ef9128dae7bbcf11079002c1683b292e17934b59f26646",
+      "sourceInputSha256": "dbfa53d92809fa0a2d60a899f0186d53282628fe04e02dd4c3e244823bf111b9",
+      "points": 763,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "74e295308cd53b40",
+      "path": "terrain-inputs/74e295308cd53b40.json.gz",
+      "sha256": "79b6a52c56b612ffe54e207886825e4363b33d70fd749977fbee88bee3b66608",
+      "sourceInputSha256": "a2a33be8ae5d24aa5e63968ccbc37e4885c03ca2de90b7cbe678ff6050635251",
+      "points": 316,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "772a92b58076fa71",
+      "path": "terrain-inputs/772a92b58076fa71.json.gz",
+      "sha256": "81736cdf8b20aefb73157eaba797fe3af83758bbf5c554070e72633d1a7f0fd5",
+      "sourceInputSha256": "68cec4ac443c7a816895e57e31774b79cc1f931b66725f79b7ad2da83ec583b8",
+      "points": 360,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "78e3fb7744c675b5",
+      "path": "terrain-inputs/78e3fb7744c675b5.json.gz",
+      "sha256": "76c5e2ae667380c0220356b1cd0205641bc8cad264bd9e4f4de2898155cc1c0d",
+      "sourceInputSha256": "b981061c57875720a54cf3e4a74da1b0c7266d31ec4995da0a31ad21b880e148",
+      "points": 512,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "79aaed8842c1aff5",
+      "path": "terrain-inputs/79aaed8842c1aff5.json.gz",
+      "sha256": "4794647b7331398bc3b22810eadf286e66a314f3859b3f0d8f0ad0e4dfadf5c1",
+      "sourceInputSha256": "c9d9559a9b9a25b1f624bde854f7799d68c94abe8ce664a9044d6bd265b6b5b7",
+      "points": 1602,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "7d5040ca18d099e4",
+      "path": "terrain-inputs/7d5040ca18d099e4.json.gz",
+      "sha256": "1c937747c321781d62e9b638ed64b05f7fee4b20a74c84c5d241866c1d84764b",
+      "sourceInputSha256": "64e4f8fdbe9b0692b3dd51446ef1d0219898ab528c2fb47a46a11b115ec94ade",
+      "points": 198,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "83f13f60007a985e",
+      "path": "terrain-inputs/83f13f60007a985e.json.gz",
+      "sha256": "927ed6a9029b5968c5f6571d8bb9451d780c1bae28352802b56989d07ea7de4a",
+      "sourceInputSha256": "94e853c5d11857c86e55f63693f9199b07470339d9982b4f0fdad54da356ac2a",
+      "points": 170,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "877d462f4513397f",
+      "path": "terrain-inputs/877d462f4513397f.json.gz",
+      "sha256": "2e7282c0f5c23348c6ae6329915bae0bc82cf3c14cdec5a6e70f1178dbd4780d",
+      "sourceInputSha256": "6da3e1f1bd3236df845c3d31e0de3103db60224ff590f07fc0d914e64ef74671",
+      "points": 2983,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "87d35d6e6b17dd7b",
+      "path": "terrain-inputs/87d35d6e6b17dd7b.json.gz",
+      "sha256": "50e2d646df64e5d8d8027f92b5635d29aca2f7b3ec4e5bd184e6aee0b46a0b0c",
+      "sourceInputSha256": "b429c9483904e0c7035b3e79bacf31d10e4facdf4047e41ed5e99c1d9c8a97e0",
+      "points": 497,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "887aef536a1709aa",
+      "path": "terrain-inputs/887aef536a1709aa.json.gz",
+      "sha256": "161c37d1d49454158e870884e60164162340ff6ae3abff93a31f2677078f8a06",
+      "sourceInputSha256": "42251941d441d2d7d23b3bb865158dd765057a1671cf4fad2bb801d193304a46",
+      "points": 3904,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "8adf3cd5eb25f111",
+      "path": "terrain-inputs/8adf3cd5eb25f111.json.gz",
+      "sha256": "a6a85364273f11b6f1d59e9f05e8bdddc34645d43e7a87ab5c3f3948f07505f8",
+      "sourceInputSha256": "6b024045f2b3cac245060ae13d718efd87f817d1194ba09e9e2f7e46dafde985",
+      "points": 870,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "8b04194978b1a2ff",
+      "path": "terrain-inputs/8b04194978b1a2ff.json.gz",
+      "sha256": "89046b32fd1c1866d03140144dbd3c5aecea887d4396344fd9aa23a4996987e1",
+      "sourceInputSha256": "0fa5b84f15b35394fb3a91fbd994f4979606cd80cb5318d2d6402902610e381c",
+      "points": 874,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "8ee1408d031cdb5a",
+      "path": "terrain-inputs/8ee1408d031cdb5a.json.gz",
+      "sha256": "5e14aabf54cc5b10537b10cc8c50ecf2ce338bf06b4b9668c9df3e2e549b881d",
+      "sourceInputSha256": "99e26ae9febff22f352deb4152084a74b3a35a768cb55911ae289072a7f17645",
+      "points": 7851,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "90275b112a826b5c",
+      "path": "terrain-inputs/90275b112a826b5c.json.gz",
+      "sha256": "af15688a89e8cf1e866626f27c92b2cfaf8eae762f97f1d3e733469f1fcc9cb6",
+      "sourceInputSha256": "ec1e1004be7af338fe09f40ad70d9419005b312bbaad5afa66c71627d4dd0ab8",
+      "points": 636,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "99dc1fac1e099fb6",
+      "path": "terrain-inputs/99dc1fac1e099fb6.json.gz",
+      "sha256": "db4cfd9eaa2b552d534028a6b8fe8a235f2da7d3c179d34eb77235d695c1417d",
+      "sourceInputSha256": "eab7860b5c8ea81520a4c7ae6c212ef249be1c39251183fbc293eec050e07518",
+      "points": 2080,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "9c870ab988927dea",
+      "path": "terrain-inputs/9c870ab988927dea.json.gz",
+      "sha256": "80c565a8f52aa77c06847fecaf1c5412e94e247c5cdcb94ed93547d35fbc9eab",
+      "sourceInputSha256": "451a2f15f1d5ac4f55e23cbe1e88ff63b02aeff0edc0a3b1c1f86a47fabb97f5",
+      "points": 290,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "9e6ff2341bb80ee9",
+      "path": "terrain-inputs/9e6ff2341bb80ee9.json.gz",
+      "sha256": "5dfd7447409cbf1823c27c58aa021379d919fbee1f8e36de231bf32a6e110cc9",
+      "sourceInputSha256": "26f4cb72421e21d25233c66fbd01d13a6f354aac9be219c600c83c7623005f5e",
+      "points": 136,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "a1ad81ae911b7b19",
+      "path": "terrain-inputs/a1ad81ae911b7b19.json.gz",
+      "sha256": "9ee5a3a71cb8a7311ba839bd27614bf600e8af5cc9c85108acf4453078cb2657",
+      "sourceInputSha256": "73d9070fd32e4398837d7393bcc5515d91905c2056eea08758a97d883a97ffd8",
+      "points": 1918,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "a327ba784690ce33",
+      "path": "terrain-inputs/a327ba784690ce33.json.gz",
+      "sha256": "7fbfba90118b7e4153a62c395a4439a05d4855f63d87884e7990b1b235885bbb",
+      "sourceInputSha256": "e3b6bd0b0f902f8a21f5cd81258cd5cf667f7f87c15f7e193748b7ba414b72b9",
+      "points": 819,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "a7b4aae00fac6859",
+      "path": "terrain-inputs/a7b4aae00fac6859.json.gz",
+      "sha256": "34528d047adbfbcd11e55d99e7dc73dc5883761bd6f57f6e1f37027b1065d844",
+      "sourceInputSha256": "ebc54837554689f42c16e71cd1aadb2c7c91ad8baffea8c81c848666452dd8fc",
+      "points": 2578,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "a9a0413458324601",
+      "path": "terrain-inputs/a9a0413458324601.json.gz",
+      "sha256": "0bf193115d4189cd28187e922ba185a91832f3e41914119239ff75e413561974",
+      "sourceInputSha256": "1abb58c736dd3ce5d89540ed4df00b7adc749e6d9aa11aab62eed60e798449d8",
+      "points": 2335,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "adc4caca47e48741",
+      "path": "terrain-inputs/adc4caca47e48741.json.gz",
+      "sha256": "d45be0dc3bc51bfd90c7589c713188de385d9c572ffc087333cc953b02cfb278",
+      "sourceInputSha256": "a40816c1be05f13e9e10593c3086d4e744a37887a4040f52e697507bf86694a1",
+      "points": 845,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "b8cec0e9ef5a75fa",
+      "path": "terrain-inputs/b8cec0e9ef5a75fa.json.gz",
+      "sha256": "4fba73dad887627c4b2bd3fa5462c8b0ea61a0045bb6cea1e7f4ec93383e5ad6",
+      "sourceInputSha256": "d4fe58bb8fb1a0750f2c6cc3a8e3a8c7da3ec44a227b6dc0c471a44183034788",
+      "points": 1214,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "bb24296ffb0bd013",
+      "path": "terrain-inputs/bb24296ffb0bd013.json.gz",
+      "sha256": "e6f937580aba10813cf175707e6047df61d47234b8c14a73d86ba6473633dbc4",
+      "sourceInputSha256": "c46da3808c3da46ef05d4108d157aa64d46011e6e256f7e685ea0f169d5a2842",
+      "points": 1480,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "bc799a2d6e8e70f0",
+      "path": "terrain-inputs/bc799a2d6e8e70f0.json.gz",
+      "sha256": "44a066deec4e81bd14038882bb9a036241b683d1a295bfab00e9b53d8ac51acb",
+      "sourceInputSha256": "9d330b7847edadaae3439eabe87790746eec8b6ed709b46c2460af5fdee25e55",
+      "points": 4177,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "bcb20d5442e3bab3",
+      "path": "terrain-inputs/bcb20d5442e3bab3.json.gz",
+      "sha256": "fba439977ad4ce46a031b4e439c48e506157ebb6b205402c8d67eccf890ff9aa",
+      "sourceInputSha256": "4bc6cb3ead62f78cad56931314335aaf13271599387338400faafe7b69e0cba0",
+      "points": 293,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "bd820ae6972840ba",
+      "path": "terrain-inputs/bd820ae6972840ba.json.gz",
+      "sha256": "45b6f017f255a9c20f97e1491dc7ee09aa367f433a0127bf6cfe59a81b73475a",
+      "sourceInputSha256": "252f4d543cc383e3be271ff4d2cfab96bea50364e6059c649868c2018fd79ed0",
+      "points": 59,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "be4698aae20819c0",
+      "path": "terrain-inputs/be4698aae20819c0.json.gz",
+      "sha256": "237256ec2992397f5a52996b348063e1aa99e7f43fcf6b15391c67cabf568a90",
+      "sourceInputSha256": "c0ddbf0ba827b1e24fcc5ae18854fb106fb6da5052782b486b885564bcdbb966",
+      "points": 787,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "be6509f8ea829b95",
+      "path": "terrain-inputs/be6509f8ea829b95.json.gz",
+      "sha256": "db143493c9f3f0da9f0dda42da0fde807205edc4703ee77260659f987ecbdbb4",
+      "sourceInputSha256": "9d0707a00f2ac5b5c65fef03056007ea2b19d125f8edf985f00717dd07e837db",
+      "points": 1591,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "c1fc7c446f7e24ec",
+      "path": "terrain-inputs/c1fc7c446f7e24ec.json.gz",
+      "sha256": "c92dd57670e43c4a12c7e4b42ba5556cddc35418e054c9915af1a7b0d4761501",
+      "sourceInputSha256": "006cbc6ac62544da8dea9ecf0245ef1d8c059d6455ff0ce28e655d83a7645dd3",
+      "points": 1578,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "c357b7bad300a214",
+      "path": "terrain-inputs/c357b7bad300a214.json.gz",
+      "sha256": "8580b356ffdb6178f8e8b5ae5753087691c0791654a6ec35553837a6afd3edbe",
+      "sourceInputSha256": "875700f501088172ed61eb67896b907a35ee6348f0f49b07a95d899ee7ff10a0",
+      "points": 1341,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "c4bde01d1748653f",
+      "path": "terrain-inputs/c4bde01d1748653f.json.gz",
+      "sha256": "dd0e06de29b013b765f69fb614662bbfd2b8ee509b99b995ad25830d09cb7e77",
+      "sourceInputSha256": "406dbae492a702d384f2e69039e0ef44fabab2940eab2679c41fe47cc89f0380",
+      "points": 590,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "c68347f8de1e901d",
+      "path": "terrain-inputs/c68347f8de1e901d.json.gz",
+      "sha256": "48d914f9f193300978703afdd06daa418d8594842f9bbb970935fd0dcc078ac4",
+      "sourceInputSha256": "f446e3adf6e4c2422a71fa1c8ce3bde2e788929db355294db75553f8e0a9eff4",
+      "points": 678,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "cc0d98b39dee8e0e",
+      "path": "terrain-inputs/cc0d98b39dee8e0e.json.gz",
+      "sha256": "8652f49dee2deeef6415b4d65bb29d68d81662ab2350e3a399155a386fcca588",
+      "sourceInputSha256": "6e98fd495820bdfd6e0018bd4ef1d0d4dae2e4f34a61aea65b27fbf1e63c4de0",
+      "points": 3387,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "d209e5ccc387553d",
+      "path": "terrain-inputs/d209e5ccc387553d.json.gz",
+      "sha256": "9273b25b547679013d53cbc2d7eb82adf892982263e083f38c3219542e7c0091",
+      "sourceInputSha256": "021683b374410d1df298a75787fe1ddd708c43fcf350d0167d3a4924b73c896b",
+      "points": 1048,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "d60649e423b2607d",
+      "path": "terrain-inputs/d60649e423b2607d.json.gz",
+      "sha256": "b89e8540876067d63c46e88969fc9be3bfc0750c7acbc0c963b52cf0d83718f8",
+      "sourceInputSha256": "34dd3b59f7dd710624a5c40ddb384164469f2cca5cbe7a9012e37395a5619602",
+      "points": 160,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "dba770d2fdee1f1b",
+      "path": "terrain-inputs/dba770d2fdee1f1b.json.gz",
+      "sha256": "518210a07951289076c36a6a58633a9aafa4fbcebac214ddc1ab30fadda31dad",
+      "sourceInputSha256": "fb87da19a5a8e999b6859220034eec28a957c3fc5fb5d9bea253f57dfd78f408",
+      "points": 244,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "dd6a562c64e38625",
+      "path": "terrain-inputs/dd6a562c64e38625.json.gz",
+      "sha256": "07f032c6fe4998774174a8e8e030dfc443cdaaa842e29e4ef1e83d90ac9dd822",
+      "sourceInputSha256": "4fc35eb882ae3b2c8f4c4112ee9c7c18141d810f433b19bf4bfcb0c6836120c5",
+      "points": 636,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "e05c0070739920c4",
+      "path": "terrain-inputs/e05c0070739920c4.json.gz",
+      "sha256": "9c6711d9f95d9b52ea32f7b70c79016aac88d5063dd1d180dfd2f4d12cd32f41",
+      "sourceInputSha256": "b8a5da37889e7d463e694c5bc285edd316ccc4d8af389e6b4b539f30216aa7df",
+      "points": 2065,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "e141b47b71fcd257",
+      "path": "terrain-inputs/e141b47b71fcd257.json.gz",
+      "sha256": "08b593fa8fb6ed65b83e47cfc10a0edf5ee6e474c872e362a7d945a0643a04e9",
+      "sourceInputSha256": "8c389736d0da61f0eab3b34522d85c2c8c439203d984e6b1e6d4443dbee14c20",
+      "points": 3893,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "e311fe7f3b7e0ee3",
+      "path": "terrain-inputs/e311fe7f3b7e0ee3.json.gz",
+      "sha256": "e7b31a903dc91f3180dbe54b6a017ffde20f7c6611147dd0a605a4ba372843b7",
+      "sourceInputSha256": "d9f157c3bd860b94a1f7ff28c20fcb3774267a058205af2a60f376fc15d54ce6",
+      "points": 304,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "e3865b9aba753888",
+      "path": "terrain-inputs/e3865b9aba753888.json.gz",
+      "sha256": "6e01d77ccd3759c0ea6ee2e5e43f831bd55402d0c731fdff5af6da7b1757b220",
+      "sourceInputSha256": "581fff7fc80d59fde7babdac8057b5b1090f494bcdddcdf1702fbccddeccda4c",
+      "points": 129,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "e75c1053a3217b4c",
+      "path": "terrain-inputs/e75c1053a3217b4c.json.gz",
+      "sha256": "0138383bbb6a49ad557ae4a056576d6fe6de1bf342d4f8b15479d80e61589dc8",
+      "sourceInputSha256": "f9c95b92c87b08be61ce1c272ed61ec04c0cac5201505e570ccb4b4162d45c5b",
+      "points": 453,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "e7a36a6a310c4aa9",
+      "path": "terrain-inputs/e7a36a6a310c4aa9.json.gz",
+      "sha256": "2d72339c3d0e884a4682f76541b152dbfdf6489b64cd2b1008eff49aed6e6226",
+      "sourceInputSha256": "8240a8cef246d88f08f20e4b7667afb7f41b4846df40e01aa2a6525ab2ac3af0",
+      "points": 1252,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "e90d9e3854972159",
+      "path": "terrain-inputs/e90d9e3854972159.json.gz",
+      "sha256": "3a6dd89c21fb36da8eb62e9bf0849a3923cd018a2b5cf503cbbbd7bdddd1d0f8",
+      "sourceInputSha256": "19448e4785ffc93e5c558f2c5239b400e95e7b19b43c5c35450bf0e0d5ff64a5",
+      "points": 3157,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "eac3c96c108dbcc2",
+      "path": "terrain-inputs/eac3c96c108dbcc2.json.gz",
+      "sha256": "72db0a9ebc27430f3ad82ebef3a47ea049d7a5e6909dcad8495d1d11951f1d36",
+      "sourceInputSha256": "33360c7a9c0eaf682918d5dc75725904e6f5da71729c105f31eb90f1fa28498c",
+      "points": 934,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "eb13db4d7f025c83",
+      "path": "terrain-inputs/eb13db4d7f025c83.json.gz",
+      "sha256": "d360d49060e44754522489df52635b1b49488dda3518033c6df521eda31db1fd",
+      "sourceInputSha256": "01c0d6a615b9a18737f557f9b6dd05ecfb2c742d958ae9b1344b740fac44b12a",
+      "points": 1528,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "eb8e585e4b72819e",
+      "path": "terrain-inputs/eb8e585e4b72819e.json.gz",
+      "sha256": "6925ac349c427637c68205bbb7e1dd71f455b9e163542d1e4bd27204471ba5a8",
+      "sourceInputSha256": "4378148d7d0f8dff5b16231710168e319bdde6c4be75a5259dcdc00bff638182",
+      "points": 2815,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "ef90a63ff7cfed39",
+      "path": "terrain-inputs/ef90a63ff7cfed39.json.gz",
+      "sha256": "eb40ae3d54ebeed728bb630e844c749ad16cceb9d7127ee9bafd0a19e7239c7c",
+      "sourceInputSha256": "790206dab92e30fbf962e99333b228a3d2946edf8b78a7aefffc80163ecdc5e9",
+      "points": 2756,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "f24920f0efc325c3",
+      "path": "terrain-inputs/f24920f0efc325c3.json.gz",
+      "sha256": "26e129716154e24cb553beb0b952b07ee7d69ecd21eb357daf00403ff491a713",
+      "sourceInputSha256": "de0b68c822c07338cec5fed20312bf68c9d7de299016ab432519749313e70b2a",
+      "points": 452,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "f387d83b788f2a3e",
+      "path": "terrain-inputs/f387d83b788f2a3e.json.gz",
+      "sha256": "74e6fa7a14f8b85837f37717fad25881e3f2cfae2b50b60455fe51051bdcba2d",
+      "sourceInputSha256": "8aacd13dd5070cd897f3c589b95ca4708138878d02d19c1a91ea3a00e535b712",
+      "points": 135,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "f60cbda9811b005f",
+      "path": "terrain-inputs/f60cbda9811b005f.json.gz",
+      "sha256": "4a6245480449a3115317ad1a4c5247a968f9711011443be9faf03caa486b647e",
+      "sourceInputSha256": "433d9afc3a90c39542f184df9ead47447a5b9cd92c60f34fa1cac7bfd9b68d67",
+      "points": 6199,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "fa3d01a3f481528b",
+      "path": "terrain-inputs/fa3d01a3f481528b.json.gz",
+      "sha256": "5591d6aff1b5edf00ece54a396f223275742d84ab348032d56c151b7be31229b",
+      "sourceInputSha256": "679b7bd2e165dd3459ae2f047539a380f32f496988781303a4bfd0f313f49771",
+      "points": 306,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "fb57e02ff2ea7fd2",
+      "path": "terrain-inputs/fb57e02ff2ea7fd2.json.gz",
+      "sha256": "9f0d140de7bb062ef68b26c9487cde7a973c158626c7cd5f2c7357b57b7fb16e",
+      "sourceInputSha256": "0aa3b880f292639e8dcb48d53c99e364f854638bdd74abd5144d1a904ff88067",
+      "points": 241,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "fd7373eed90aa923",
+      "path": "terrain-inputs/fd7373eed90aa923.json.gz",
+      "sha256": "13fa5cfe51c3da3b49ea7823f8e84dc592df3ea57c91c11ca17ae6f31c597591",
+      "sourceInputSha256": "1daa9ce114d4c81313695bc850fa8d8ea896bfde44007fa0fa2c4207adff44e9",
+      "points": 239,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    },
+    {
+      "id": "ff2b400c4324db96",
+      "path": "terrain-inputs/ff2b400c4324db96.json.gz",
+      "sha256": "755e2e3641fb27ad2beaeaeb4d25c616bdb0953e5a5c37adbf696fcce78469b0",
+      "sourceInputSha256": "4602ebe391b2646ea2f4e15e30c1376244550f45ecd65c4eb04d1ccd116d3085",
+      "points": 454,
+      "terrainOnly": true,
+      "railElevationVerified": false
+    }
+  ],
+  "terrainInputComplete": true,
+  "doesNotValidate": [
+    "rail elevation",
+    "tunnels",
+    "bridges",
+    "platform edges",
+    "3D rendering",
+    "operation"
+  ]
+}
