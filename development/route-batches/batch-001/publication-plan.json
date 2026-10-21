@@ -1,0 +1,2013 @@
+{
+  "schema": 1,
+  "batch": "001",
+  "eligibleJobs": [],
+  "blockedJobs": [
+    {
+      "jobId": "b001-001",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-002",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-003",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-004",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-005",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-006",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-007",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-008",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-009",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-010",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-011",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-012",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-013",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-014",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-015",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-016",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-017",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-018",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-019",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-020",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-021",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-022",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-023",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-024",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-025",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-026",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-027",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-028",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-029",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-030",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-031",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-032",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-033",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-034",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-035",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-036",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-037",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-038",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-039",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-040",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-041",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-042",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-043",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-044",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-045",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-046",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-047",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-048",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-049",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-050",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-051",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-052",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-053",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-054",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-055",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-056",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-057",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-058",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-059",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-060",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-061",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-062",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-063",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-064",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-065",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-066",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-067",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-068",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-069",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-070",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-071",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-072",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-073",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-074",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-075",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-076",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-077",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-078",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-079",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-080",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-081",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-082",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-083",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-084",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-085",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-086",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-087",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-088",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-089",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-090",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-091",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-092",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-093",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-094",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-095",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-096",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-097",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-098",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-099",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-100",
+      "reasons": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:manualAutoAndEarlyDeparture:pending",
+        "quality:saveAndLoad:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    }
+  ],
+  "catalogChanged": false,
+  "publicRoutes": 0,
+  "uploads": [],
+  "deploymentComplete": false,
+  "publicReadbackComplete": false,
+  "nextSteps": []
+}

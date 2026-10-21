@@ -2,9 +2,13 @@
 from pathlib import Path
 import hashlib,json,argparse
 ROOT=Path(__file__).resolve().parents[2]
+REQUIRED_GATES=('currentOperatorScope','allStationsAndStops','correctTrackAndPlatformGeometry','elevationTunnelAndBridge','vehicleSpecificModel','speedAndSignals','neighbourTraffic','bilingualAnnouncements','manualAutoAndEarlyDeparture','saveAndLoad','softwareRendering','releaseHashes')
 def validate(job,root=ROOT):
  problems=[]
- for gate,state in job['qualityGates'].items():
+ states=job.get('qualityGates',{})
+ for gate in REQUIRED_GATES:
+  if gate not in states:problems.append('Missing required quality gate: '+gate)
+ for gate,state in states.items():
   if state!='passed':problems.append('quality:'+gate+':'+state)
  artifacts=job.get('releaseArtifacts',[])
  if not artifacts:problems.append('No release artifacts')
@@ -24,6 +28,10 @@ def validate(job,root=ROOT):
     if report.get('pass') is not True or report.get('jobId')!=job['id']:problems.append('Validation report does not pass this job')
     if set(report.get('directions',[]))!={'forward','reverse'}:problems.append('Both directions not validated')
     if not job.get('expectedPhysicalStationCodes') or set(report.get('physicalStationCodes',[]))!=set(job['expectedPhysicalStationCodes']):problems.append('All physical stations not validated')
+    for direction in ['forward','reverse']:
+     if not job.get('expectedPhysicalStationCodes')or set(report.get('stationCodesByDirection',{}).get(direction,[]))!=set(job['expectedPhysicalStationCodes']):problems.append('All physical stations not validated for '+direction)
+    for gate in REQUIRED_GATES:
+     if report.get('qualityGateResults',{}).get(gate)!='passed':problems.append('Report does not pass required quality gate: '+gate)
     for artifact in artifacts:
      if report.get('testedArtifactHashes',{}).get(artifact['path'])!=artifact['sha256']:problems.append('Report does not cover artifact hash: '+artifact['path'])
    except (ValueError,TypeError):problems.append('Invalid validation report')
