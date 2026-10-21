@@ -1,0 +1,28 @@
+{
+  "stage": "vehicle-model-draft",
+  "releaseReady": false,
+  "source": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
+  "meshes": {
+    "train": {
+      "groups": 13,
+      "vertices": 3216,
+      "triangles": 1596
+    },
+    "trainHead": {
+      "groups": 16,
+      "vertices": 3292,
+      "triangles": 1634
+    },
+    "trainTail": {
+      "groups": 16,
+      "vertices": 3292,
+      "triangles": 1634
+    }
+  },
+  "pending": [
+    "Validate dimensions and bogie centres against official drawings",
+    "Match door positions to car number and platform stopping positions",
+    "Check nose, windows, pantograph/roof equipment placement in 3D",
+    "Visual validation in the common engine before release"
+  ]
+}

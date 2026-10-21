@@ -1,0 +1,31 @@
+{
+  "source": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2025.html",
+  "download": "https://nlftp.mlit.go.jp/ksj/gml/data/N02/N02-25/N02-25_GML.zip",
+  "acquired": "2026-10-21",
+  "datasetDate": "2025-12-31",
+  "archiveSha256": "aaf76af133b2e771e538fabc4646d2e443dc1d5a67b221382a28d744e706cc9f",
+  "geojsonSha256": {
+    "RailroadSection": "4269b076c0689db13cadf0d07801418b7215b2160ebf1278c508031cd08c4da2",
+    "Station": "908e2c3036e9c80760ae3514be3682c77f81f0bd60ab5fb1b3da1aa9352bbd94"
+  },
+  "terms": "https://nlftp.mlit.go.jp/ksj/other/agreement.html",
+  "termsChecked": "2026-10-21",
+  "termsName": "Public Data License 1.0 (site terms effective 2026-03-23; retain attribution and identify processing)",
+  "attribution": "国土数値情報（鉄道データ・2025年度）（国土交通省）をもとにBAYLINE開発用に加工。国が作成したゲームではありません。",
+  "transformations": [
+    "Group source records by exact operator/line identity",
+    "Preserve source coordinates and source-feature indices",
+    "Compress deterministic JSON without simplification",
+    "Compute endpoint-only topology; do not join gaps or infer crossings"
+  ],
+  "limitations": [
+    "Two-dimensional reference geometry; no surveyed track heights, platform edges or signalling positions",
+    "Dataset reference date differs from current operation; each operator must be checked before release",
+    "Input import does not certify a game as playable, complete, or validated"
+  ],
+  "counts": {
+    "corridors": 597,
+    "sourceRailSections": 21933,
+    "sourceStationFeatures": 10234
+  }
+}

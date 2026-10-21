@@ -1,0 +1,13 @@
+test_all_100_jobs_bound_and_not_falsely_released (test_batch_inputs.BatchInputs.test_all_100_jobs_bound_and_not_falsely_released) ... ok
+test_all_100_materialized_input_hashes (test_batch_inputs.BatchInputs.test_all_100_materialized_input_hashes) ... ok
+test_every_payload_hash_preserves_geometry (test_batch_inputs.BatchInputs.test_every_payload_hash_preserves_geometry) ... ok
+test_no_artificial_connection_at_track_crossings (test_batch_inputs.BatchInputs.test_no_artificial_connection_at_track_crossings) ... ok
+test_passing_gate_labels_alone_never_release_a_fake_game (test_batch_inputs.BatchInputs.test_passing_gate_labels_alone_never_release_a_fake_game) ... ok
+test_station_anchor_does_not_drop_a_terminal (test_batch_inputs.BatchInputs.test_station_anchor_does_not_drop_a_terminal) ... ok
+test_terrain_matches_the_exact_path_revision (test_batch_inputs.BatchInputs.test_terrain_matches_the_exact_path_revision) ... ok
+test_vehicle_is_distinct_complete_mesh_not_a_recolour (test_batch_inputs.BatchInputs.test_vehicle_is_distinct_complete_mesh_not_a_recolour) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.331s
+
+OK
