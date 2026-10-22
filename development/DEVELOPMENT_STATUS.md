@@ -201,3 +201,11 @@
 - 管理者ページの「ゲーム」、公開管理画面・検索・絞り込み・お知らせ・取り消し・競合検出を実装。SQLの権限/競合/取り消し12検査、UI7検査、公開カタログ6検査が成功。DBの既存管理者認証だけをフィクスチャにした検査と、本番の検査を分ける。
 - 本番Supabase SQLはログイン待ちで未適用。`gamePublicationEnabled=false` のまま、新APIへの依存で既存ゲームを止めない。ログイン後に適用・本番権限確認・有効化して初めて公開管理が完了する。
 - PHP2Shell対応を `SECURITY_CURRENT_PLAN.md` に追加。リポジトリ内にPHP利用設定は見つからない。
+
+
+## 2026-10-22 本番のゲーム公開管理を有効化
+
+- 対象プロジェクト zlefzpbrbvniijmohpao のSQL Editorで game-publication.sql を適用し、Successを確認。
+- 本番PostgreSQLで既存study_dispatch→dispatch_v5→dispatch_v4の実際の管理者判定を利用。匿名、非管理者の拒否、有効な管理者の一覧取得・切り替え、古いrevisionの拒否、undoを検査。JWTのsubをトランザクション内で設定するSQL検査で、ブラウザー利用者のBearer tokenを使った検査とは区別する。検査の変更とイベントはROLLBACK。
+- 本番HTTP RPC：study_game_catalog は匿名で200、7件すべて公開。study_game_admin は匿名で401/42501拒否。
+- config.js のgamePublicationEnabledをtrueへ変更。既存7ゲームを管理画面から制御できる構成にする。
