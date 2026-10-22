@@ -1,0 +1,21 @@
+{
+  "database": {
+    "pass": true,
+    "checks": 12,
+    "engine": "PGlite PostgreSQL WASM",
+    "scope": "Actual migration and database role/permission/CAS/undo tests with a fixture for the existing administrator dispatch. Production migration not applied."
+  },
+  "browserUI": {
+    "pass": true,
+    "checks": 7,
+    "method": "Actual admin UI with mocked RPC transport; database authorization tested separately"
+  },
+  "publicCatalogBrowser": {
+    "pass": true,
+    "checks": 6,
+    "scope": "Browser tests with mock public catalog; production SQL not installed"
+  },
+  "productionDatabaseApplied": false,
+  "productionEnabled": false,
+  "blocker": "Supabase dashboard sign-in is required before migration and production verification."
+}

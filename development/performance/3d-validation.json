@@ -1,0 +1,625 @@
+{
+  "scope": "Software WebGL2/Mesa plus CPU/in-memory fixtures. No physical-GPU FPS, real phone or full real-time claim.",
+  "scenes": {
+    "renderer": "Chromium 151 / ANGLE Mesa llvmpipe software WebGL2",
+    "scheduling": "Default Cesium render loop disabled only in test harness; explicit resize/render frames, production model detail and resolution retained.",
+    "routes": [
+      {
+        "name": "sobu",
+        "stages": [
+          {
+            "name": "ground",
+            "distance": 15524.424811796149,
+            "view": "cab",
+            "file": "render-sobu-ground-cab.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全246区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1227.2521413577106,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3965357.426265123,
+              3338479.3933585756,
+              3703956.6916465303
+            ],
+            "height": 49.24519196702033,
+            "visibleReadyPrimitives": 99,
+            "primitives": 136,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": true,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          },
+          {
+            "name": "ground",
+            "distance": 15524.424811796149,
+            "view": "chase",
+            "file": "render-sobu-ground-chase.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全246区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1227.2521413577106,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3965285.4835830713,
+              3338494.927716246,
+              3704119.8442801214
+            ],
+            "height": 107.9690610362156,
+            "visibleReadyPrimitives": 135,
+            "primitives": 136,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": false,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          },
+          {
+            "name": "tunnel",
+            "distance": 1799.1135256419457,
+            "view": "cab",
+            "file": "render-sobu-tunnel-cab.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全246区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1348.323411245307,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3959800.515885269,
+              3349068.3445338802,
+              3700310.2257837406
+            ],
+            "height": 17.403773066973514,
+            "visibleReadyPrimitives": 68,
+            "primitives": 143,
+            "tunnelEntities": 918,
+            "clippingPolygons": 26,
+            "terrainTilesLoaded": true,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          },
+          {
+            "name": "tunnel",
+            "distance": 1799.1135256419457,
+            "view": "chase",
+            "file": "render-sobu-tunnel-chase.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全246区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1348.323411245307,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3959800.515885269,
+              3349068.3445338802,
+              3700310.2257837406
+            ],
+            "height": 17.403773066973514,
+            "visibleReadyPrimitives": 68,
+            "primitives": 143,
+            "tunnelEntities": 918,
+            "clippingPolygons": 26,
+            "terrainTilesLoaded": true,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          },
+          {
+            "name": "portal",
+            "distance": 3548.2270512838913,
+            "view": "cab",
+            "file": "render-sobu-portal-cab.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全246区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 400.7901143966387,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3960470.3750174423,
+              3347659.7352385838,
+              3700914.494479705
+            ],
+            "height": 46.75659348136543,
+            "visibleReadyPrimitives": 110,
+            "primitives": 185,
+            "tunnelEntities": 395,
+            "clippingPolygons": 14,
+            "terrainTilesLoaded": true,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          },
+          {
+            "name": "portal",
+            "distance": 3548.2270512838913,
+            "view": "chase",
+            "file": "render-sobu-portal-chase.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全246区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 400.7901143966387,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3960470.3750174423,
+              3347659.7352385838,
+              3700914.494479705
+            ],
+            "height": 46.75659348136543,
+            "visibleReadyPrimitives": 110,
+            "primitives": 185,
+            "tunnelEntities": 395,
+            "clippingPolygons": 14,
+            "terrainTilesLoaded": true,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          }
+        ]
+      },
+      {
+        "name": "chuo-local",
+        "stages": [
+          {
+            "name": "ground",
+            "distance": 20694.424057985303,
+            "view": "cab",
+            "file": "render-chuo-local-ground-cab.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全376区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1200.0741890809004,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3957684.343479395,
+              3350367.362137002,
+              3701453.830442334
+            ],
+            "height": 54.17964359797592,
+            "visibleReadyPrimitives": 117,
+            "primitives": 151,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": true,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          },
+          {
+            "name": "ground",
+            "distance": 20694.424057985303,
+            "view": "chase",
+            "file": "render-chuo-local-ground-chase.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全376区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1200.0741890809004,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3957590.311092555,
+              3350444.1919782143,
+              3701585.2484973357
+            ],
+            "height": 112.90483356244482,
+            "visibleReadyPrimitives": 150,
+            "primitives": 151,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": false,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          }
+        ]
+      },
+      {
+        "name": "keihin",
+        "stages": [
+          {
+            "name": "ground",
+            "distance": 24440.534426782324,
+            "view": "cab",
+            "file": "render-keihin-ground-cab.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全606区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1651.169607305328,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3961882.147470081,
+              3367399.9123311676,
+              3681584.3624305553
+            ],
+            "height": 52.59784072170803,
+            "visibleReadyPrimitives": 33,
+            "primitives": 67,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": true,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          },
+          {
+            "name": "ground",
+            "distance": 24440.534426782324,
+            "view": "chase",
+            "file": "render-keihin-ground-chase.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全606区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1651.169607305328,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3961812.538243561,
+              3367562.428069777,
+              3681612.284101656
+            ],
+            "height": 111.32169746974802,
+            "visibleReadyPrimitives": 66,
+            "primitives": 67,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": false,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          }
+        ]
+      },
+      {
+        "name": "chuo",
+        "stages": [
+          {
+            "name": "ground",
+            "distance": 16328.049599557133,
+            "view": "cab",
+            "file": "render-chuo-ground-cab.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全332区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1241.0312691056206,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3951719.8280902463,
+              3357145.687316044,
+              3701739.466690422
+            ],
+            "height": 86.97378275233073,
+            "visibleReadyPrimitives": 63,
+            "primitives": 103,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": true,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          },
+          {
+            "name": "ground",
+            "distance": 16328.049599557133,
+            "view": "chase",
+            "file": "render-chuo-ground-chase.png",
+            "status": "着色済みの軽量3D街 · 9区画 / 全332区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1241.0312691056206,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3951888.6554494263,
+              3357115.531535239,
+              3701688.2271462623
+            ],
+            "height": 145.69763824146338,
+            "visibleReadyPrimitives": 102,
+            "primitives": 103,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": false,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          }
+        ]
+      },
+      {
+        "name": "yamanote/index",
+        "stages": [
+          {
+            "name": "ground",
+            "distance": 11572.462524387607,
+            "view": "cab",
+            "file": "render-yamanote-ground-cab.png",
+            "status": "着色済みの軽量3D街 · 7区画 / 全200区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1223.5513899591697,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3958615.7827709885,
+              3355534.349622596,
+              3695848.0006022346
+            ],
+            "height": 75.74242631454806,
+            "visibleReadyPrimitives": 45,
+            "primitives": 60,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": true,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          },
+          {
+            "name": "ground",
+            "distance": 11572.462524387607,
+            "view": "chase",
+            "file": "render-yamanote-ground-chase.png",
+            "status": "着色済みの軽量3D街 · 7区画 / 全200区画",
+            "webgl2": true,
+            "nearestTrafficAlong": 1223.5513899591697,
+            "canvas": [
+              675,
+              378
+            ],
+            "resolution": 0.75,
+            "camera": [
+              -3958683.5200010864,
+              3355670.6171832127,
+              3695753.818442123
+            ],
+            "height": 134.46660083418178,
+            "visibleReadyPrimitives": 59,
+            "primitives": 60,
+            "tunnelEntities": 0,
+            "clippingPolygons": 0,
+            "terrainTilesLoaded": false,
+            "imageryMinimum": 0,
+            "imageryMaximum": 0,
+            "glError": 0,
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "limitations": [
+      "Physical GPU and speaker listening are not validated.",
+      "Terrain and aerial tiles depend on external servers; primitive/camera checks do not prove full ground imagery availability."
+    ],
+    "pass": true
+  },
+  "tunnelRegression": {
+    "pass": true,
+    "decodedCacheBounded": true,
+    "sourceDetailEqual": true,
+    "tunnel": {
+      "before": {
+        "allLinePolygons": 42,
+        "windowPolygons": 42,
+        "addedOnMove": 918,
+        "removedOnMove": 923,
+        "reused": 0,
+        "entities": 918
+      },
+      "after": {
+        "allLinePolygons": 0,
+        "windowPolygons": 26,
+        "addedOnMove": 84,
+        "removedOnMove": 89,
+        "reused": 834,
+        "entities": 918
+      }
+    }
+  },
+  "profiling": {
+    "before": {
+      "samples": {
+        "updateBoarding": {
+          "calls": 896,
+          "total": 140.29999999981374,
+          "max": 4.2999999999883585
+        },
+        "updateUI": {
+          "calls": 88,
+          "total": 44.30000000022119,
+          "max": 12.300000000046566
+        },
+        "updateTraffic": {
+          "calls": 979,
+          "total": 96.30000000016298,
+          "max": 4.2000000000116415
+        },
+        "updateMovingModels": {
+          "calls": 173,
+          "total": 22.799999999522697,
+          "max": 1.8999999999650754
+        },
+        "updateStationWindow": {
+          "calls": 172,
+          "total": 24.50000000029104,
+          "max": 21.399999999965075
+        },
+        "updateTrackModels": {
+          "calls": 172,
+          "total": 14.999999999883585,
+          "max": 14
+        },
+        "updateCity": {
+          "calls": 173,
+          "total": 1.5999999999185093,
+          "max": 1.099999999976717
+        },
+        "updateCamera": {
+          "calls": 161,
+          "total": 19.499999999825377,
+          "max": 5.7000000000116415
+        },
+        "renderTraffic": {
+          "calls": 171,
+          "total": 20.199999999429565,
+          "max": 1
+        }
+      },
+      "elapsed": 8.016399999999992,
+      "primitives": 65,
+      "entities": 751,
+      "clipping": 30,
+      "renderMs": [
+        0.9000000000232831,
+        0.5,
+        0.3999999999650754
+      ],
+      "errors": [],
+      "glError": 0
+    },
+    "after": {
+      "samples": {
+        "updateBoarding": {
+          "calls": 1147,
+          "total": 160.7999999965541,
+          "max": 4.900000000139698
+        },
+        "updateUI": {
+          "calls": 106,
+          "total": 50.59999999939464,
+          "max": 12.800000000046566
+        },
+        "updateTraffic": {
+          "calls": 1201,
+          "total": 108.10000000172295,
+          "max": 3.3999999999068677
+        },
+        "updateMovingModels": {
+          "calls": 162,
+          "total": 9.499999999301508,
+          "max": 1.3999999999068677
+        },
+        "updateStationWindow": {
+          "calls": 161,
+          "total": 22.100000000325963,
+          "max": 18.699999999953434
+        },
+        "updateTrackModels": {
+          "calls": 161,
+          "total": 17.99999999953434,
+          "max": 17.299999999813735
+        },
+        "updateCity": {
+          "calls": 162,
+          "total": 1.6000000000931323,
+          "max": 0.8999999999068677
+        },
+        "updateCamera": {
+          "calls": 156,
+          "total": 12.90000000060536,
+          "max": 0.6000000000931323
+        },
+        "renderTraffic": {
+          "calls": 160,
+          "total": 23.000000000698492,
+          "max": 2.800000000046566
+        }
+      },
+      "cache": {
+        "bytes": 2643840,
+        "limit": 67108864,
+        "entries": 267,
+        "hits": 1162,
+        "misses": 267,
+        "evictions": 0
+      },
+      "elapsed": 8.066499999999998,
+      "primitives": 65,
+      "entities": 751,
+      "clipping": 19,
+      "renderMs": [
+        1.1000000000931323,
+        0.39999999990686774,
+        0.39999999990686774
+      ],
+      "errors": [],
+      "glError": 0
+    }
+  },
+  "productionDatabaseApplied": false,
+  "recovery": {
+    "pass": true,
+    "method": "Injected renderer-error event followed by real UI reload and save restoration; not physical GPU loss",
+    "before": {
+      "distance": 360.00221864147284,
+      "elapsed": 8.033099999999996
+    },
+    "after": {
+      "distance": 360.00309364147284,
+      "elapsed": 8.083099999999996,
+      "running": false,
+      "visible": true
+    }
+  },
+  "runtimeInputHashes": {
+    "shared/rail-driver-chuo-local.js": "0ad814b4ac3cb2d6b82abb2711b4b8810b4853101537827a5a5f332288661a12",
+    "shared/rail-driver-sobu.js": "c2c4f1cbfe71c6965c509e35da080c47f2140c864cf4b826fa310864f7b8d2bd",
+    "shared/rail-driver-chuo.js": "63d11623eac7dc067c505c6b60d1694c7aa06c2c47565ff31166844331b60e04",
+    "shared/rail-driver-keihin.js": "38bfb3340df4c2236df0ef000af02d2782a4cd2aee921cb074c7ebca922842d7",
+    "shared/rail-tunnel-runtime.js": "22501f050609cf4a60dece5dfc91438d100e6e6c3036dab6101f258bb0cabe94",
+    "shared/rail-mesh-cache.js": "fcfa3dae938f5fa65bb4c5162390fbd51e0fb6b7963bed2c10736ab0555f34d7",
+    "shared/rail-recovery.js": "e021251d1c2366cec5ecffc61292a6d425cc0a6bc1ad516ed22b44ad8a2ed21f",
+    "shared/rail-loader.js": "bb91762f1f2218e2941f82fe300f81cf9d332a61f0e57a5d6e1e8fe14ba45d3a",
+    "yamanote/rail.js": "be9619c693ff1dd04fcd908488e9c482b781c00b998fe7a80361562c405f601a"
+  }
+}

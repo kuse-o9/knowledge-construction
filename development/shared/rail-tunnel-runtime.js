@@ -29,30 +29,39 @@ function setup(viewer,C,geos,frame){
  const segments=Object.entries(geos).flatMap(([key,geo])=>rangesCached(geo).map(r=>({...r,key,geo})));
  if(!segments.length)return {supported:true,segments:0};
  const supported=!!C.ClippingPolygonCollection?.isSupported(viewer.scene);
- if(!supported){active={viewer,C,segments,frame,entities:[],supported:false};return {supported:false,segments:segments.length};}
- const polygons=[];
- for(const r of segments)for(let a=r.start;a<r.end;a+=240){
-  const b=Math.min(r.end,a+240),left=[],right=[];
-  for(let d=a;d<b;d+=8){const f=frame(r.geo,d);left.push(side(C,f,10));right.push(side(C,f,-10));}
-  const f=frame(r.geo,b);left.push(side(C,f,10));right.push(side(C,f,-10));
-  polygons.push(new C.ClippingPolygon({positions:left.concat(right.reverse())}));
- }
- const collection=new C.ClippingPolygonCollection({polygons});viewer.scene.globe.clippingPolygons=collection;
+ if(!supported){active={viewer,C,segments,frame,groups:new Map(),supported:false};return {supported:false,segments:segments.length};}
+ // One owned collection at a time; replace only at a window boundary.
+ const collection=new C.ClippingPolygonCollection({enabled:false});viewer.scene.globe.clippingPolygons=collection;
  viewer.scene.screenSpaceCameraController.enableCollisionDetection=false;
- active={viewer,C,segments,frame,collection,entities:[],supported:true,last:null};
- return {supported:true,segments:segments.length,polygons:polygons.length};
+ active={viewer,C,segments,frame,collection,groups:new Map(),supported:true,last:null};
+ return {supported:true,segments:segments.length,polygons:0};
 }
 function render(player){
  const a=active;if(!a?.supported)return;
  const own=a.segments.find(r=>r.key===player.direction&&player.distance>=r.start-700&&player.distance<=r.end+700);
  const cell=own?player.direction+':'+Math.floor(player.distance/120):'outside';if(cell===a.last)return;a.last=cell;
- for(const e of a.entities)a.viewer.entities.remove(e);a.entities=[];if(!own)return;
- const {C,viewer,frame}=a,add=e=>a.entities.push(viewer.entities.add(e));
+
+ // Cesium 1.117 detects vertex-count changes, not arbitrary position edits.
+ // A fresh collection prevents stale clipping textures when counts are equal.
+ a.viewer.scene.globe.clippingPolygons=undefined;a.collection=null;
+ if(!own){clearEntities(a);a.viewer.scene.requestRender();return;}
+ const polygons=[];
+ for(const r of a.segments)for(let start=r.start;start<r.end;start+=160){
+  const end=Math.min(r.end,start+160),mid=a.frame(r.geo,(start+end)/2);
+  if(a.C.Cartesian3.distance(mid.center,a.frame(own.geo,player.distance).center)>1000)continue;
+  const left=[],right=[];
+  for(let d=start;d<end;d+=8){const f=a.frame(r.geo,d);left.push(side(a.C,f,10));right.push(side(a.C,f,-10));}
+  const f=a.frame(r.geo,end);left.push(side(a.C,f,10));right.push(side(a.C,f,-10));
+  polygons.push(new a.C.ClippingPolygon({positions:left.concat(right.reverse())}));
+ }
+ a.collection=new a.C.ClippingPolygonCollection({polygons,enabled:polygons.length>0});a.viewer.scene.globe.clippingPolygons=a.collection;
+ const {C,viewer,frame}=a,wanted=new Set();
  for(const r of a.segments){
   // Both tunnel bores remain visible; work is bounded to the player's nearby window.
   const ownPosition=frame(own.geo,Math.max(own.start,Math.min(own.end,player.distance))).center;
   for(let d=r.start;d<r.end;d+=12){const end=Math.min(r.end,d+12),f=frame(r.geo,(d+end)/2);
    if(C.Cartesian3.distance(f.center,ownPosition)>650)continue;
+   const key=r.key+':'+d;wanted.add(key);if(a.groups.has(key))continue;const bucket=[];a.groups.set(key,bucket);const add=e=>bucket.push(viewer.entities.add(e));
    const f0=frame(r.geo,d),f1=frame(r.geo,end),p=g.RailCore.position(r.geo,d),q=g.RailCore.position(r.geo,end);
    const buried=offset(r.geo,(d+end)/2)<-8;
    // Fill the whole terrain opening below the retained ballast and rails.
@@ -71,6 +80,7 @@ function render(player){
    }
   }
  }
+ for(const [key,entities]of a.groups)if(!wanted.has(key)){for(const e of entities)viewer.entities.remove(e);a.groups.delete(key);}
  viewer.scene.requestRender();
 }
 function model(m){
@@ -81,6 +91,9 @@ function model(m){
  return {...m,groups:m.groups.filter(x=>!['#515d64','#606a70'].includes(x.color))};
 }
 function canRender(geo,d){return active?.supported!==false||!near(geo,d,200);}
-function dispose(){if(!active)return;for(const e of active.entities)active.viewer.entities.remove(e);if(active.collection&&active.viewer.scene.globe.clippingPolygons===active.collection)active.viewer.scene.globe.clippingPolygons=undefined;active=null;}
+function clearEntities(a){for(const entities of a.groups.values())for(const e of entities)a.viewer.entities.remove(e);a.groups.clear();}
+function dispose(){if(!active)return;clearEntities(active);if(active.collection&&active.viewer.scene.globe.clippingPolygons===active.collection)active.viewer.scene.globe.clippingPolygons=undefined;active=null;}
 g.BaylineTunnels={offset,ranges,near,setup,render,model,dispose,canRender};
 })(typeof globalThis==='object'?globalThis:window);
+
+

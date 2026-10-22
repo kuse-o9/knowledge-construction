@@ -1,0 +1,50 @@
+{
+  "detailReduced": false,
+  "resolutionReduced": false,
+  "featuresRemoved": false,
+  "changes": [
+    "64 MiB LRU decoded geometry cache",
+    "Windowed tunnel clipping and differential entity reuse",
+    "Regional aerial imagery overlay prevents Cesium 1.117 edge intersection crash",
+    "Stationary passenger transforms and train visibility cached",
+    "Recoverable loader and saved-state reload button"
+  ],
+  "bundles": [
+    {
+      "id": "chuo",
+      "parts": [
+        "chuo-bundle-0.bin",
+        "chuo-bundle-1.bin"
+      ],
+      "sha256": "2ab9cd9eaee0e2c18e75b7ffcdde82f64974f8e32dc85f1e4fec82746de826c5",
+      "driver": "shared/rail-driver-chuo.js"
+    },
+    {
+      "id": "chuo-local",
+      "parts": [
+        "chuo-local-bundle-0.bin",
+        "chuo-local-bundle-1.bin"
+      ],
+      "sha256": "a4af7bb30c5c4f4f4a9bb94684281f17faa35bd9bef3945b06ed13e6100ff50a",
+      "driver": "shared/rail-driver-chuo-local.js"
+    },
+    {
+      "id": "keihin",
+      "parts": [
+        "keihin-bundle-0.bin",
+        "keihin-bundle-1.bin"
+      ],
+      "sha256": "9b4bc0578636c0fbc38669c9ee1cb35c4e0fc75be2c06c89f32e661247947528",
+      "driver": "shared/rail-driver-keihin.js"
+    },
+    {
+      "id": "sobu",
+      "parts": [
+        "sobu-data-0.bin",
+        "sobu-data-1.bin"
+      ],
+      "sha256": "8ac4048e13520ef4d900cd7b13e5d2967660e6de0becbc53d7f3c16cde6acc4f",
+      "driver": "shared/rail-driver-sobu.js"
+    }
+  ]
+}
