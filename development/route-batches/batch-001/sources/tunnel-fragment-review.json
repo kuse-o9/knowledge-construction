@@ -1,0 +1,314 @@
+{
+  "checked": "2026-10-22",
+  "method": "Individual plan-view inspection of retained GSI railway paths against MLIT centreline, source classifications and along-distance continuity. Accept only enumerated Chuo main-line tunnel fragments, retaining source offsets. This is corridor modelling, not surveyed directional tunnel geometry.",
+  "sourceGeometry": "sources/chuo-gsi-railways.json.gz",
+  "sourceGeometrySha256": "20f4036fdb9fbd8cbde732341f33c281ea3f1a6347478093c52463a7128512d0",
+  "maximumObservedPlanOffsetMetres": 82.554,
+  "surveyedPortalPositions": false,
+  "routes": [
+    {
+      "id": "azusa",
+      "auditSha256": "9176b8ec9b85e29ca9bb480507cfd8f3ce5ac57e7712321d17c5cfe009815b50",
+      "acceptedFragments": [
+        {
+          "sourceTile": [
+            14,
+            14520,
+            6455
+          ],
+          "sourceFeatureIndex": 2,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 65851.106,
+          "end": 65852.163,
+          "rtCode": "40201000121",
+          "sourceLength": 1.086,
+          "headingAgreement": 0.9736,
+          "maxMatchingErrorMetres": 39.024
+        },
+        {
+          "sourceTile": [
+            14,
+            14520,
+            6455
+          ],
+          "sourceFeatureIndex": 18,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 65624.67,
+          "end": 65851.106,
+          "rtCode": "40201000121",
+          "sourceLength": 226.661,
+          "headingAgreement": 0.9994,
+          "maxMatchingErrorMetres": 46.767
+        },
+        {
+          "sourceTile": [
+            14,
+            14520,
+            6455
+          ],
+          "sourceFeatureIndex": 21,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 65323.702,
+          "end": 65624.67,
+          "rtCode": "40201000121",
+          "sourceLength": 291.24,
+          "headingAgreement": 0.9817,
+          "maxMatchingErrorMetres": 46.767
+        },
+        {
+          "sourceTile": [
+            14,
+            14522,
+            6455
+          ],
+          "sourceFeatureIndex": 7,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 61257.353,
+          "end": 61916.378,
+          "rtCode": "40201000121",
+          "sourceLength": 690.669,
+          "headingAgreement": 0.9997,
+          "maxMatchingErrorMetres": 70.385
+        },
+        {
+          "sourceTile": [
+            14,
+            14522,
+            6455
+          ],
+          "sourceFeatureIndex": 8,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 61241.47,
+          "end": 61907.824,
+          "rtCode": "40201000121",
+          "sourceLength": 684.066,
+          "headingAgreement": 0.992,
+          "maxMatchingErrorMetres": 48.333
+        },
+        {
+          "sourceTile": [
+            14,
+            14522,
+            6455
+          ],
+          "sourceFeatureIndex": 13,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 61956.133,
+          "end": 61956.491,
+          "rtCode": "40201000121",
+          "sourceLength": 0.485,
+          "headingAgreement": 0.7386,
+          "maxMatchingErrorMetres": 5.925
+        },
+        {
+          "sourceTile": [
+            14,
+            14528,
+            6453
+          ],
+          "sourceFeatureIndex": 5,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 47636.436,
+          "end": 48131.815,
+          "rtCode": "40201000121",
+          "sourceLength": 507.876,
+          "headingAgreement": 0.9992,
+          "maxMatchingErrorMetres": 51.939
+        },
+        {
+          "sourceTile": [
+            14,
+            14528,
+            6454
+          ],
+          "sourceFeatureIndex": 7,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 47903.181,
+          "end": 48411.922,
+          "rtCode": "40201000121",
+          "sourceLength": 515.249,
+          "headingAgreement": 0.991,
+          "maxMatchingErrorMetres": 51.802
+        },
+        {
+          "sourceTile": [
+            14,
+            14528,
+            6454
+          ],
+          "sourceFeatureIndex": 8,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 47637.906,
+          "end": 48441.098,
+          "rtCode": "40201000121",
+          "sourceLength": 797.113,
+          "headingAgreement": 0.9778,
+          "maxMatchingErrorMetres": 82.554
+        }
+      ]
+    },
+    {
+      "id": "kaiji",
+      "auditSha256": "5b554e00c86f08b04d11a8863aaf080f381baf5ed5d78e596587e1b0547ede82",
+      "acceptedFragments": [
+        {
+          "sourceTile": [
+            14,
+            14520,
+            6455
+          ],
+          "sourceFeatureIndex": 2,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 65851.046,
+          "end": 65852.103,
+          "rtCode": "40201000121",
+          "sourceLength": 1.086,
+          "headingAgreement": 0.9737,
+          "maxMatchingErrorMetres": 39.049
+        },
+        {
+          "sourceTile": [
+            14,
+            14520,
+            6455
+          ],
+          "sourceFeatureIndex": 18,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 65624.598,
+          "end": 65851.046,
+          "rtCode": "40201000121",
+          "sourceLength": 226.661,
+          "headingAgreement": 0.9994,
+          "maxMatchingErrorMetres": 46.797
+        },
+        {
+          "sourceTile": [
+            14,
+            14520,
+            6455
+          ],
+          "sourceFeatureIndex": 21,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 65323.686,
+          "end": 65624.598,
+          "rtCode": "40201000121",
+          "sourceLength": 291.24,
+          "headingAgreement": 0.9818,
+          "maxMatchingErrorMetres": 46.797
+        },
+        {
+          "sourceTile": [
+            14,
+            14522,
+            6455
+          ],
+          "sourceFeatureIndex": 7,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 61257.352,
+          "end": 61916.378,
+          "rtCode": "40201000121",
+          "sourceLength": 690.669,
+          "headingAgreement": 0.9997,
+          "maxMatchingErrorMetres": 70.401
+        },
+        {
+          "sourceTile": [
+            14,
+            14522,
+            6455
+          ],
+          "sourceFeatureIndex": 8,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 61241.469,
+          "end": 61907.835,
+          "rtCode": "40201000121",
+          "sourceLength": 684.066,
+          "headingAgreement": 0.992,
+          "maxMatchingErrorMetres": 48.344
+        },
+        {
+          "sourceTile": [
+            14,
+            14522,
+            6455
+          ],
+          "sourceFeatureIndex": 13,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 61956.142,
+          "end": 61956.5,
+          "rtCode": "40201000121",
+          "sourceLength": 0.485,
+          "headingAgreement": 0.7381,
+          "maxMatchingErrorMetres": 5.93
+        },
+        {
+          "sourceTile": [
+            14,
+            14528,
+            6453
+          ],
+          "sourceFeatureIndex": 5,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 47636.44,
+          "end": 48131.838,
+          "rtCode": "40201000121",
+          "sourceLength": 507.876,
+          "headingAgreement": 0.9992,
+          "maxMatchingErrorMetres": 51.943
+        },
+        {
+          "sourceTile": [
+            14,
+            14528,
+            6454
+          ],
+          "sourceFeatureIndex": 7,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 47903.212,
+          "end": 48411.923,
+          "rtCode": "40201000121",
+          "sourceLength": 515.249,
+          "headingAgreement": 0.991,
+          "maxMatchingErrorMetres": 51.806
+        },
+        {
+          "sourceTile": [
+            14,
+            14528,
+            6454
+          ],
+          "sourceFeatureIndex": 8,
+          "pathIndex": 0,
+          "kind": "tunnel",
+          "start": 47637.905,
+          "end": 48441.018,
+          "rtCode": "40201000121",
+          "sourceLength": 797.113,
+          "headingAgreement": 0.9779,
+          "maxMatchingErrorMetres": 82.568
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "GSI has distinct up/down paths but current game uses one MLIT centreline; exact directional portal geometry remains pending.",
+    "No general matching threshold increase; nearby unreviewed structures remain excluded."
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "method": "Direct diagnostic positioning, software Mesa WebGL. Not full-route real-time driving or physical GPU testing.",
+  "method": "Direct diagnostic positioning, software ANGLE WebGL. Not full-route real-time driving or physical GPU testing.",
   "releaseReady": false,
   "physicalGPU": false,
   "runs": [
@@ -16,134 +16,26 @@
     },
     {
       "id": "azusa",
-      "kind": "tunnel",
-      "distance": 20985.511206585987,
+      "kind": "tunnel-fragment-0",
+      "distance": 172645.26445143492,
       "glError": 0,
-      "clippingPolygons": 25,
-      "clippingEnabled": true,
-      "tilesLoaded": false,
-      "primitives": 100,
-      "pass": true
-    },
-    {
-      "id": "azusa",
-      "kind": "tunnel-window",
-      "distance": 21230.511206585987,
-      "glError": 0,
-      "clippingPolygons": 24,
-      "clippingEnabled": true,
-      "tilesLoaded": false,
-      "primitives": 71,
-      "pass": true
-    },
-    {
-      "id": "azusa",
-      "kind": "bridge",
-      "distance": 203204.93444663676,
-      "glError": 0,
-      "clippingPolygons": 0,
-      "clippingEnabled": false,
-      "tilesLoaded": true,
-      "primitives": 52,
-      "pass": true
-    },
-    {
-      "id": "azusa",
-      "kind": "tunnel-return",
-      "distance": 21110.511206585987,
-      "glError": 0,
-      "clippingPolygons": 24,
-      "clippingEnabled": true,
-      "tilesLoaded": false,
-      "primitives": 100,
-      "pass": true
-    },
-    {
-      "id": "azusa",
-      "kind": "bridge-return",
-      "distance": 203329.93444663676,
-      "glError": 0,
-      "clippingPolygons": 0,
-      "clippingEnabled": false,
-      "tilesLoaded": true,
-      "primitives": 52,
-      "pass": true
-    },
-    {
-      "id": "kaiji",
-      "kind": "station-models",
-      "stations": 84,
-      "vertices": 460656,
-      "maxGradePerMille": 34.23310236438982,
-      "cacheSize": 32,
-      "platformEdgeOffset": 1.58,
-      "platformGeometryVerified": false,
-      "pass": true
-    },
-    {
-      "id": "kaiji",
-      "kind": "tunnel",
-      "distance": 34386.10788460516,
-      "glError": 0,
-      "clippingPolygons": 26,
+      "clippingPolygons": 21,
       "clippingEnabled": true,
       "tilesLoaded": false,
       "primitives": 42,
-      "pass": true
-    },
-    {
-      "id": "kaiji",
-      "kind": "tunnel-window",
-      "distance": 34631.10788460516,
-      "glError": 0,
-      "clippingPolygons": 24,
-      "clippingEnabled": true,
-      "tilesLoaded": false,
-      "primitives": 42,
-      "pass": true
-    },
-    {
-      "id": "kaiji",
-      "kind": "bridge",
-      "distance": 108712.25020347771,
-      "glError": 0,
-      "clippingPolygons": 0,
-      "clippingEnabled": false,
-      "tilesLoaded": true,
-      "primitives": 52,
-      "pass": true
-    },
-    {
-      "id": "kaiji",
-      "kind": "tunnel-return",
-      "distance": 34511.10788460516,
-      "glError": 0,
-      "clippingPolygons": 25,
-      "clippingEnabled": true,
-      "tilesLoaded": false,
-      "primitives": 42,
-      "pass": true
-    },
-    {
-      "id": "kaiji",
-      "kind": "bridge-return",
-      "distance": 108837.25020347771,
-      "glError": 0,
-      "clippingPolygons": 0,
-      "clippingEnabled": false,
-      "tilesLoaded": true,
-      "primitives": 52,
+      "tunnelRoofs": 206,
       "pass": true
     }
   ],
   "errors": [],
   "inputHashes": {
-    "games/azusa.json.gz": "ef3ec236a6baba8df2d4249ebb4bcd4b3706ec349d05bc775b855665305bf740",
-    "games/kaiji.json.gz": "898a64587cf7c63d56a0a70ffd46a82f2569584848b252cca9e28fa14ef7eda2",
+    "games/azusa.json.gz": "122e455004e33cddecc642688a2312ecccda6abe586f2ff3a74313a8f285ce1e",
+    "games/kaiji.json.gz": "db730fa16294aa7cce8a79f9f8194320ed3c55badc8438f1040f2dceea9c7124",
     "games/shared.js": "6a139c57cde5790421dc1281b6ee0bf79833c99d2e2f85f6c8707409090c428e",
     "games/model-builder.js": "41c4ba55ea2d6c4fed77e4b7f7b63638f03976b1fcb86f11e5a04120b5e01a9f",
-    "games/rail.js": "d6ebe171b7f689ec837d408cc0a49f39508d046866e65ba90b86122e81598732",
+    "games/rail.js": "2606b79ad46f4d37d5e19747c76d1595e929694934de306fe0115d2dbb42ddb6",
     "engine/train-scene.js": "99fcaf5544d6c430fa25a1c406a2acd6a3bb19a3206cf395dc418caef7021892"
   },
-  "pass": true
+  "pass": false,
+  "fatal": "page.evaluate: Target page, context or browser has been closed\n    at /workspace/scratch/4aa798ff9687/railway-review/development/route-batches/check-priority-geometry.cjs:37:255"
 }

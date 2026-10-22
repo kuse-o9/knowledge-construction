@@ -49,8 +49,8 @@
   ],
   "inputHashes": {
     "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
-    "games/azusa.json.gz": "ef3ec236a6baba8df2d4249ebb4bcd4b3706ec349d05bc775b855665305bf740",
-    "games/kaiji.json.gz": "898a64587cf7c63d56a0a70ffd46a82f2569584848b252cca9e28fa14ef7eda2"
+    "games/azusa.json.gz": "122e455004e33cddecc642688a2312ecccda6abe586f2ff3a74313a8f285ce1e",
+    "games/kaiji.json.gz": "db730fa16294aa7cce8a79f9f8194320ed3c55badc8438f1040f2dceea9c7124"
   },
   "pass": true
 }

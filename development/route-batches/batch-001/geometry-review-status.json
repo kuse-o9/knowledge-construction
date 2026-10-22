@@ -15,16 +15,20 @@
     "Use direction-specific car order, passenger doors and pantographs",
     "Review 16 stopping station maps; platform side is separate from service platform assignment",
     "Adjust platform edge gap and generate bridge deck/support estimates",
-    "Add operator-timetable transfer wording at four western stations in both languages; announce exit side only for verified service platform assignments"
+    "Add operator-timetable transfer wording at four western stations in both languages; announce exit side only for verified service platform assignments",
+    "Restore nine individually reviewed GSI tunnel fragments per route instead of increasing the global match threshold",
+    "Use the production same-detail WebGL2 startup recovery and save-on-failure in both development games",
+    "Omit a platform number from departure speech when the selected train platform is unknown",
+    "Extend checked JR/Fujikyu transfer wording to nine stations"
   ],
-  "validationStatus": "Current development inputs passed station-mesh, consist-placement, controls, persistence and strict software scene regression. Release geometry verification remains incomplete.",
+  "validationStatus": "New profiles passed source-bound grade/shared-prefix and deep-trench regression (3 checks); numerical integrated runs passed four directions; transfer wording passed 39 station-direction cases; departure wording passed 2 mocked-audio cases. Current full software scene regression is still pending; no release approval.",
   "remaining": [
     "Survey rail elevations, portal positions, bridge clearances and exact individual structures",
     "Review the individual layouts and dimensions of 48 passing-only physical stations",
     "Confirm selected-service platform assignment at 6 stopping stations",
     "Verify 2026 consist/production changes beyond the 2015 manufacturer pre-series source",
     "Detailed bogie, pantograph, roof and cab shape review",
-    "Research release speed profiles, western neighbouring traffic and complete transfer announcements",
+    "Research release speed profiles, western neighbouring traffic and non-JR transfer completeness",
     "Complete the original release gates and artifact/hash checks before publication"
   ],
   "checked": {
@@ -39,7 +43,10 @@
     "physicalGPU": false,
     "fullRouteRealTime": false,
     "unitTestsPassed": 38,
-    "announcementStationDirectionCases": 39
+    "announcementStationDirectionCases": 39,
+    "tunnelFragmentReviewPerRoute": 9,
+    "deepUnclassifiedSourceSamplesAfterReview": 0,
+    "announcementWordingCases": 2
   },
   "evidence": {
     "geometry-review-diagnostics.json": "488510e6ac4180f489f949a997a70b77e01dd23bbf5d1212d7cec1c1997e17be",
@@ -47,7 +54,8 @@
     "integrated-running-diagnostics.json": "0933ed6758fc6a1fc04c66aeb093e69d3394a947624eee8f57aa9fe8b4d17808",
     "train-scene-diagnostics.json": "6b5a38b557a507bc8881159f32f0b1e42894cbf62293e95cd78020120317be3c",
     "geometry-unit-tests.txt": "e7da5e649023194c8fbf6b5e755133e95c63dde0ec0189e5a063e31d27506ab7",
-    "games/announcements-reviewed.js": "295d26591a0030f51fd6f6483be114e72ca84086dd8b9dd0298b4c6c3ec34b97",
-    "sources/followup-review-20261022.json": "e52eadc8872c89ab191b1ee755b1971c9dcb901d0492b96e1d7889e3bf92262e"
+    "games/announcements-reviewed.js": "0382c191c547118411e53f490c5678cdfd58005f124632c3f7d69157803ee6bf",
+    "sources/followup-review-20261022.json": "5e076c495d947b11d25fb84718284de0760fa9880d373fff2d8ea9ad14a13840",
+    "sources/tunnel-fragment-review.json": "04e5b0a68a9ca22b29bcf9a20022265b5a8dbe1cd978420a4788cc8106d6c517"
   }
 }

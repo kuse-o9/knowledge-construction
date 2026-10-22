@@ -48,8 +48,11 @@ replace('async function initialize3D(){if(!window.Cesium)',"function discardScen
 replace('try{Ces=window.Cesium;','sceneLoading=true;sceneFailure=\'\';try{Ces=window.Cesium;')
 replace("catch(error){sceneReady=false;if(viewer){try{viewer.destroy();}catch{}viewer=null;}setView('map');$('scene-status').textContent='地形や３Dを読み込めません。全線マップで運転できます。';}}","catch(error){sceneFailure=String(error.message||error);sceneReady=false;discardScene();if(viewer){try{viewer.destroy();}catch{}viewer=null;}setView('map');$('scene-status').textContent='地形や３Dを読み込めません。全線マップで運転できます。運転席・車外ボタンで再試行できます。';}finally{sceneLoading=false;}}")
 replace('function setView(next){view=next;','function setView(next){view=next;if(next!==\'map\'&&!sceneReady&&!sceneLoading)void initialize3D();')
+replace("viewer=new Ces.Viewer('cesium',", "viewer=window.BaylineSceneStart.create(Ces,'cesium',")
+replace("$('scene-status').textContent='地形や３Dを読み込めません。全線マップで運転できます。運転席・車外ボタンで再試行できます。';", "window.BaylineSceneStart.failure(error,()=>{state.running=false;audioController?.cancel();save();});")
+replace("$('scene-status').textContent='３D描画を続けられないため全線マップへ切り替えました。';", "window.BaylineSceneStart.failure(error,()=>{state.running=false;audioController?.cancel();save();});")
 replace("addEventListener('pagehide',()=>{audioController?.disable();save();});","addEventListener('pagehide',()=>{audioController?.disable();save();sceneReady=false;discardScene();if(viewer){try{viewer.destroy();}catch{}viewer=null;}});addEventListener('pageshow',e=>{if(e.persisted)void initialize3D();});")
-replace("audioController.departure(1,","audioController.departure(Number(route.stops[state.visited.at(-1)?.index]?.reportedPlatform)||1,")
+replace("audioController.departure(1,","audioController.departure(route.stops[state.visited.at(-1)?.index]?.reportedPlatform??null,")
 replace("'この電車は、中央・総武線各駅停車、'","'この電車は、'+D.name+'、'")
 replace("'This is the Chuo-Sobu Line local service train for '","'This is the '+D.englishName+' limited express train for '")
 replace("window.BaylineNeighbours.setup(viewer,Ces,C,'chuo-local',","window.BaylineNeighbours.setup(viewer,Ces,C,D.id,")
@@ -64,7 +67,11 @@ replace("previousDoors=state.doors;routeUI();setMode(state.mode);", "window.Bayl
 runtime=runtime.replace('#f2cc39','#8066ad')
 (OUT/'rail.js').write_text(runtime)
 shared=scripts[8][2].replace("(location.pathname.includes('/yamanote/')?'../':'')+'shared/neighbour-corridors.bin?v=profiles1'","'../../../../shared/neighbour-corridors.bin?v=profiles1'")
-shared=shared[:shared.index('/* Terrain openings')]+(HERE/'tunnel-runtime.js').read_text()+shared[shared.index('/* Existing Tachikawa branch'):];(OUT/'shared.js').write_text(shared);(OUT/'rail-audio.js').write_text(scripts[4][2]);
+shared=shared[:shared.index('/* Terrain openings')]+(HERE/'tunnel-runtime.js').read_text()+shared[shared.index('/* Existing Tachikawa branch'):];(OUT/'shared.js').write_text(shared)
+audio=scripts[4][2]
+old="platform+'番線、ドアが閉まります。ご注意ください。'"
+if old not in audio:raise ValueError('Departure wording adapter changed')
+(OUT/'rail-audio.js').write_text(audio.replace(old,"(platform!=null?platform+'番線、':'')+'ドアが閉まります。ご注意ください。'"))
 shell=re.sub(r'<script\b[^>]*>.*?</script>','',html,flags=re.S)
 shell=re.sub(r'href="(?:https://kuse-o9.github.io/knowledge-construction/)?index.html#game-room"','href="../../../../index.html#game-room"',shell)
 shell=re.sub(r'href="depot-3d.html"','href="../../../../depot-3d.html"',shell)
@@ -74,7 +81,7 @@ shell=shell.replace('E231','E353').replace('E233','E353')
 shell=shell.replace('href="chuo.html"','href="../../../../chuo.html"').replace('中央線快速を運転','中央線快速のゲームへ')
 shell=shell.replace('https://www.jreast.co.jp/train/local/e231.html','https://www.jreast.co.jp/train/express/azusa_kaiji.html')
 shell=re.sub(r'<body\b([^>]*)>',lambda m:m[0]+'<div id="development-banner" style="position:fixed;top:42px;left:18px;right:18px;z-index:9000;padding:7px 12px;background:#f2e6cee8;color:#654c25;font-size:12px;font-weight:700;pointer-events:none" role="status">開発中：線路・ホーム・車両の再現を調整しています。公開版ではありません。</div>',shell,count=1)
-shell=shell.replace('</body>','<script src="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js"></script><script src="../engine/rail-core.js"></script><script src="../engine/train-scene.js"></script><script src="shared.js"></script><script src="rail-audio.js"></script><script src="model-builder.js"></script><script src="announcements-reviewed.js"></script><script src="loader.js"></script></body>')
+shell=shell.replace('</body>','<script src="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js"></script><script src="scene-start.js"></script><script src="../engine/rail-core.js"></script><script src="../engine/train-scene.js"></script><script src="shared.js"></script><script src="rail-audio.js"></script><script src="model-builder.js"></script><script src="announcements-reviewed.js"></script><script src="loader.js"></script></body>')
 english={'新宿':'Shinjuku','立川':'Tachikawa','八王子':'Hachioji','甲府':'Kofu','小淵沢':'Kobuchizawa','茅野':'Chino','上諏訪':'Kami-Suwa','岡谷':'Okaya','塩尻':'Shiojiri','松本':'Matsumoto','韮崎':'Nirasaki','大月':'Otsuki','塩山':'Enzan','山梨市':'Yamanashishi','石和温泉':'Isawa-Onsen','竜王':'Ryuo'}
 platform_review={r['name']:r for r in json.loads((DEST/'sources/priority-platform-review.json').read_text())['stations']}
 reports=[]

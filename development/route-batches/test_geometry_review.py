@@ -18,6 +18,18 @@ class GeometryReview(unittest.TestCase):
    for file,sha in p['inputHashes'].items():self.assertEqual(hashlib.sha256((DEST/file).read_bytes()).hexdigest(),sha)
  def test_shared_corridor_has_shared_elevation(self):
   a=unpack('alignments/azusa.json.gz');b=unpack('alignments/kaiji.json.gz');pa=unpack('alignments/azusa-rail-profile.json.gz');pb=unpack('alignments/kaiji-rail-profile.json.gz');self.assertTrue(np.allclose(pb['railHeights'],np.interp(distances(b['points']),distances(a['points']),pa['railHeights']),atol=1e-8))
+ def test_reviewed_tunnel_fragments_do_not_leave_deep_open_trenches(self):
+  review=json.loads((DEST/'sources/tunnel-fragment-review.json').read_text())
+  self.assertFalse(review['surveyedPortalPositions'])
+  for key in ['azusa','kaiji']:
+   profile=unpack(f'alignments/{key}-rail-profile.json.gz');alignment=unpack(f'alignments/{key}.json.gz');x=distances(alignment['points'])
+   tunnels=[r for r in profile['structures']if r['kind']=='tunnel']
+   for probe in [48200,61440,65590]:self.assertTrue(any(r['start']<=probe<=r['end']for r in tunnels),(key,probe))
+   deep=[float(d)for d,h in zip(x,profile['trackOffsets'])if h< -5 and not any(r['start']-25<=d<=r['end']+25 for r in profile['structures']if r['kind']in ['tunnel','underground','snow-shed'])]
+   self.assertEqual(deep,[],(key,deep))
+   accepted=next(r for r in review['routes']if r['id']==key)['acceptedFragments']
+   self.assertEqual(len(accepted),9)
+   self.assertTrue(all(r['rtCode']=='40201000121'for r in accepted))
  def test_platform_map_review_never_invents_assignment_verification(self):
   review=json.loads((DEST/'sources/priority-platform-review.json').read_text());self.assertEqual(len(review['stations']),16);self.assertTrue(all(not r['assignmentVerifiedByMapAlone']for r in review['stations']))
   for key in ['azusa','kaiji']:
@@ -29,7 +41,7 @@ class GeometryReview(unittest.TestCase):
   r=json.loads((DEST/'geometry-review-diagnostics.json').read_text());self.assertTrue(r['pass'],r.get('fatal'));self.assertEqual(r['errors'],[]);self.assertFalse(r['physicalGPU']);self.assertFalse(r['releaseReady'])
   for file,sha in r['inputHashes'].items():self.assertEqual(hashlib.sha256((DEST/file).read_bytes()).hexdigest(),sha)
   models=[row for row in r['runs']if row['kind']=='station-models'];self.assertEqual(sum(row['stations']for row in models),212);self.assertTrue(all(row['cacheSize']<=32 and row['maxGradePerMille']<35 for row in models))
-  scenes=[row for row in r['runs']if row['kind']!='station-models'];self.assertEqual(len(scenes),10)
+  scenes=[row for row in r['runs']if row['kind']!='station-models'];self.assertEqual(len(scenes),16)
   for row in scenes:
    self.assertTrue(row['pass']);self.assertEqual(row['glError'],0);self.assertLessEqual(row['clippingPolygons'],100)
    if row['kind'].startswith('bridge'):self.assertTrue(row['tilesLoaded']);self.assertFalse(row['clippingEnabled'])

@@ -23,11 +23,18 @@
     "甲府": "https://timetables.jreast.co.jp/timetable/list0671.html",
     "小淵沢": "https://timetables.jreast.co.jp/timetable/list0707.html",
     "岡谷": "https://timetables.jreast.co.jp/timetable/list0358.html",
-    "松本": "https://timetables.jreast.co.jp/timetable/list1444.html"
+    "松本": "https://timetables.jreast.co.jp/timetable/list1444.html",
+    "新宿": "https://timetables.jreast.co.jp/timetable/list0866.html",
+    "立川": "https://timetables.jreast.co.jp/timetable/list0958.html",
+    "八王子": "https://timetables.jreast.co.jp/timetable/list1227.html",
+    "大月": "https://timetables.jreast.co.jp/timetable/list0331.html",
+    "塩尻": "https://timetables.jreast.co.jp/timetable/list0774.html"
   },
   "newChecks": {
     "announcementStationDirectionCases": 39,
-    "unknownExitSideNotAnnounced": true
+    "unknownExitSideNotAnnounced": true,
+    "departureWordingCases": 2,
+    "reviewedTransferStations": 9
   },
   "remaining": [
     "Surveyed rail-height/bridge-clearance data not acquired; estimated-height labels retained",
@@ -35,6 +42,38 @@
     "Six service-specific platform assignments absent from the selected official train pages",
     "Station-boundary speed limits not proven by the vehicle maximum",
     "Western neighbouring traffic geometry/model work incomplete",
-    "Other transfer stations and 2026 roof/bogie/cab checks incomplete"
-  ]
+    "Non-JR transfer completeness and 2026 roof/bogie/cab checks incomplete"
+  ],
+  "tunnelLengthReference": {
+    "source": "https://www.jreast.co.jp/hachioji/info/20130724/20130724_info02.pdf",
+    "scope": "Historical operator list of six long rail tunnels, distinguishes up/down lengths. Not contemporary surveyed portal coordinates."
+  },
+  "bridgeReference": {
+    "source": "https://www.jstage.jst.go.jp/article/coj1963/7/6/7_22/_pdf/-char/ja",
+    "title": "中央本線鳥沢・猿橋間新桂川橋梁の設計施工について",
+    "published": 1969,
+    "lengthMetres": 513,
+    "mainSpansMetres": [
+      70,
+      130,
+      70
+    ],
+    "otherSpansMetres": [
+      40,
+      40,
+      40,
+      40,
+      40,
+      40
+    ],
+    "maximumPierHeightMetres": 41,
+    "scope": "Design report; pier height is not equivalent to track-ground clearance or current surveyed elevation."
+  },
+  "operatingMaximumReference": {
+    "source": "https://www.jreast.co.jp/youran/pdf/2019-2020/jre_youran_group_p27-32.pdf",
+    "page": 31,
+    "asOf": "2019-03-31",
+    "maximumKmh": 130,
+    "scope": "Azusa Shinjuku-Matsumoto maximum; not each station-boundary limit or a current 2026 restriction sheet."
+  }
 }
