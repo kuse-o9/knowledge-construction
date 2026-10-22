@@ -1,0 +1,79 @@
+{
+  "checked": "2026-10-22",
+  "pass": true,
+  "scope": "Local current source under production URLs; publication catalog fixture only. Real Cesium, original models/terrain, software WebGL2 with LIBGL_ALWAYS_SOFTWARE=true. No physical-GPU or full-route claim.",
+  "routes": [
+    {
+      "route": "yamanote/",
+      "initialization": true,
+      "firstRender": true,
+      "webgl2": true,
+      "primitives": 60,
+      "softwareScreenshot": true
+    },
+    {
+      "route": "chuo.html",
+      "initialization": true,
+      "firstRender": true,
+      "webgl2": true,
+      "primitives": 67,
+      "softwareScreenshot": true
+    },
+    {
+      "route": "chuo-local.html",
+      "initialization": true,
+      "firstRender": true,
+      "webgl2": true,
+      "primitives": 61,
+      "softwareScreenshot": true
+    },
+    {
+      "route": "keihin.html",
+      "initialization": true,
+      "firstRender": true,
+      "webgl2": true,
+      "primitives": 61,
+      "softwareScreenshot": true
+    },
+    {
+      "route": "sobu.html",
+      "initialization": true,
+      "firstRender": true,
+      "webgl2": true,
+      "glError": 0,
+      "primitives": 65,
+      "resolution": 0.75,
+      "softwareScreenshot": false,
+      "screenshotLimitation": "60-second screenshot timeout on first attempt; initialization/render checks passed separately"
+    },
+    {
+      "route": "railway/",
+      "initialization": true,
+      "firstRender": true,
+      "webgl2": true,
+      "glError": 0,
+      "primitives": 224,
+      "resolution": 0.5,
+      "softwareScreenshot": false,
+      "screenshotLimitation": "Initial harness did not hook this scene; retested using shared scene startup hook without screenshot"
+    }
+  ],
+  "tests": {
+    "sceneStartUnit": 7,
+    "maintenanceSql": 18,
+    "maintenanceUi": 6,
+    "existingAccessUi": 7,
+    "folderPublication": 6,
+    "existingPublicationSql": 12,
+    "modelCacheAndTunnelRegression": true,
+    "regeneratedDriversMatch": 4
+  },
+  "modelPacketsChanged": false,
+  "passengerOrResolutionReduction": false,
+  "maintenanceProductionSql": "Pending authenticated Supabase dashboard access",
+  "limitations": [
+    "Device-specific WebGL failures cannot all be repaired by site code",
+    "Production game visibility is retained; hidden routes need administrator republication when appropriate",
+    "No maintenance reservation has been created without requested dates"
+  ]
+}

@@ -17,13 +17,18 @@
    const {data,error}=await Study.client.rpc('study_security_status');if(error||!data)throw Error('connection');
    window.StudyAccessStatus=data;window.dispatchEvent(new CustomEvent('study-access-status',{detail:data}));
    const page=location.pathname.split('/').pop();
+   const existing=document.getElementById('study-maintenance-notices');existing?.remove();
+   if(data.allowed&&data.announcements?.length){const panel=document.createElement('aside');panel.id='study-maintenance-notices';panel.className='card';panel.setAttribute('aria-label','メンテナンスのお知らせ');
+    const date=v=>new Date(v).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+    for(const a of data.announcements){const title=document.createElement('h2');title.textContent=a.title;const time=document.createElement('p');time.textContent='メンテナンス予定（日本時間）：'+date(a.starts_at)+' 〜 '+date(a.ends_at);const message=document.createElement('p');message.textContent=a.message;panel.append(title,time,message);}document.querySelector('main')?.prepend(panel);
+   }
    html.classList.toggle('study-maintenance-login',page==='account.html'&&!data.allowed);
    if(!data.allowed&&page==='account.html'){
     html.classList.remove('study-pending','study-restricted');wall?.remove();wall=null;
     let notice=document.getElementById('maintenance-login-notice');if(!notice){notice=document.createElement('p');notice.id='maintenance-login-notice';notice.setAttribute('role','status');document.querySelector('main').prepend(notice);}notice.textContent=data.message+' オーナーのアカウントでログインしてください。';return;
    }
    document.getElementById('maintenance-login-notice')?.remove();
-   if(!data.allowed){restrict('メンテナンス中です',data.message);return;}
+   if(!data.allowed){const end=data.scheduledEnd?' 予約終了予定：'+new Date(data.scheduledEnd).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'})+'（日本時間）':'';restrict('メンテナンス中です',data.message+end);return;}
    if(/^admin(?:-|\.html)/.test(page)&&page!=='admin-verify.html'&&(!data.admin||!data.adminVerified)){
     restrict('管理者の本人確認',data.admin?'管理者アカウントと管理者専用パスワードで本人確認してください。':'管理者アカウントでログインしてください。',true);return;
    }
