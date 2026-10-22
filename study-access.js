@@ -25,7 +25,7 @@
    document.getElementById('maintenance-login-notice')?.remove();
    if(!data.allowed){restrict('メンテナンス中です',data.message);return;}
    if(/^admin(?:-|\.html)/.test(page)&&page!=='admin-verify.html'&&(!data.admin||!data.adminVerified)){
-    restrict('管理者の本人確認',data.admin?'登録済みのメールアドレスとパスワードで本人確認してください。':'管理者アカウントでログインしてください。',true);return;
+    restrict('管理者の本人確認',data.admin?'管理者アカウントと管理者専用パスワードで本人確認してください。':'管理者アカウントでログインしてください。',true);return;
    }
    html.classList.remove('study-pending','study-restricted');wall?.remove();wall=null;
   }catch{restrict('接続を確認できません','通信状態を確認してから、もう一度お試しください。');}

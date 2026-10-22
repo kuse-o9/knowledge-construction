@@ -1,0 +1,13 @@
+const {JSDOM}=require('jsdom'),fs=require('fs'),assert=require('node:assert/strict');
+const html=fs.readFileSync(require('node:path').join(__dirname,'../..','admin-verify.html'),'utf8'),js=fs.readFileSync(require('node:path').join(__dirname,'../..','admin-verify.js'),'utf8');
+(async()=>{let checks=0;async function scene(status,user=true){const d=new JSDOM(html,{url:'https://test.example/admin-verify.html',runScripts:'outside-only'});d.window.Study={client:{auth:{getUser:async()=>({data:{user:user?{email:'test@example.test'}:null}})},rpc:async()=>({data:status})},api:async()=>{throw Error('test rejected')}};d.window.eval(js);await new Promise(r=>setTimeout(r,0));return d;}
+let d=await scene({admin:true,owner:true,adminPasswordConfigured:false,adminPasswordRevision:0});const $=id=>d.window.document.getElementById(id);assert($('admin-verify').hidden);assert(!$('password-owner').hidden);checks++;
+$('generate-admin-password').click();const first=$('new-admin-password').value;assert.equal(first.length,24);assert.equal(first,$('new-admin-again').value);assert(!$('saved-admin-password').checked);assert.equal($('new-admin-password').type,'text');checks++;
+$('generate-admin-password').click();assert.notEqual(first,$('new-admin-password').value);checks++;
+$('saved-admin-password').checked=true;$('new-admin-password').dispatchEvent(new d.window.Event('input'));assert(!$('saved-admin-password').checked);checks++;
+$('owner-password').value='fixture-only';$('saved-admin-password').checked=true;await $('admin-password-set').onsubmit({preventDefault(){}});assert.equal($('new-admin-password').value,'');assert.equal($('new-admin-again').value,'');assert.equal($('owner-password').value,'');assert.equal($('verify-message').textContent,'test rejected');d.window.close();checks++;
+d=await scene({admin:true,owner:false,adminPasswordConfigured:true});assert(!d.window.document.getElementById('admin-verify').hidden);assert(d.window.document.getElementById('password-owner').hidden);d.window.close();checks++;
+d=await scene({admin:true,owner:false,adminPasswordConfigured:false});assert(d.window.document.getElementById('admin-verify').hidden);assert(d.window.document.getElementById('password-owner').hidden);d.window.close();checks++;
+d=await scene({admin:false});assert(d.window.document.getElementById('admin-verify').hidden);assert(d.window.document.getElementById('password-owner').hidden);d.window.close();checks++;
+d=await scene({},false);assert(d.window.document.getElementById('admin-verify').hidden);d.window.close();checks++;
+console.log(JSON.stringify({pass:true,checks}));})().catch(e=>{console.error(e);process.exit(1)});
