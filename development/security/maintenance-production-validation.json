@@ -1,0 +1,46 @@
+{
+  "checked": "2026-10-22",
+  "pass": true,
+  "productionSql": {
+    "pass": true,
+    "checks": 13,
+    "scope": "Production transaction; simulated JWT claims; test mutations rolled back. Not a real owner browser login."
+  },
+  "preservedState": {
+    "manualMaintenance": true,
+    "revision": 2,
+    "realPlans": 0,
+    "passwordConfigured": true
+  },
+  "httpChecks": [
+    {
+      "case": "public status / manual setting preserved",
+      "http": 200,
+      "pass": true
+    },
+    {
+      "case": "rest/v1/rpc/study_maintenance_plan",
+      "http": 401,
+      "pass": true
+    },
+    {
+      "case": "rest/v1/rpc/study_security_admin",
+      "http": 401,
+      "pass": true
+    },
+    {
+      "case": "study API maintenance gate",
+      "http": 503,
+      "pass": true
+    },
+    {
+      "case": "game catalog remains available",
+      "http": 200,
+      "pass": true
+    }
+  ],
+  "limitations": [
+    "No real reservation created without dates",
+    "Owner scheduling form not tested with real owner browser sign-in"
+  ]
+}

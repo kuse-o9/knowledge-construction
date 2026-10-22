@@ -70,7 +70,7 @@
   },
   "modelPacketsChanged": false,
   "passengerOrResolutionReduction": false,
-  "maintenanceProductionSql": "Pending authenticated Supabase dashboard access",
+  "maintenanceProductionSql": "Applied successfully 2026-10-22; production rollback transaction 13 checks passed. See ../security/maintenance-production-validation.json",
   "limitations": [
     "Device-specific WebGL failures cannot all be repaired by site code",
     "Production game visibility is retained; hidden routes need administrator republication when appropriate",
