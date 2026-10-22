@@ -1,0 +1,40 @@
+{
+  "checked": "2026-10-22",
+  "releaseReady": false,
+  "vehicle": {
+    "source": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
+    "maximumKmh": 130,
+    "note": "Vehicle maximum only; not evidence for each running section. Keep the diagnostic 100 km/h profile unverified."
+  },
+  "productionChanges": {
+    "source": "https://www.jreast.co.jp/nagano/pdf/171026.pdf",
+    "pages": [
+      2,
+      3
+    ],
+    "facts": [
+      "Production stock has active damping on all cars",
+      "Inter-car dampers removed on production stock",
+      "Luggage areas in cars 1,3,5,7,9,10,12"
+    ],
+    "scope": "Official 2017 production differences; selected 2026 formations still unconfirmed"
+  },
+  "transfers": {
+    "甲府": "https://timetables.jreast.co.jp/timetable/list0671.html",
+    "小淵沢": "https://timetables.jreast.co.jp/timetable/list0707.html",
+    "岡谷": "https://timetables.jreast.co.jp/timetable/list0358.html",
+    "松本": "https://timetables.jreast.co.jp/timetable/list1444.html"
+  },
+  "newChecks": {
+    "announcementStationDirectionCases": 39,
+    "unknownExitSideNotAnnounced": true
+  },
+  "remaining": [
+    "Surveyed rail-height/bridge-clearance data not acquired; estimated-height labels retained",
+    "48 passing-station layout reviews incomplete",
+    "Six service-specific platform assignments absent from the selected official train pages",
+    "Station-boundary speed limits not proven by the vehicle maximum",
+    "Western neighbouring traffic geometry/model work incomplete",
+    "Other transfer stations and 2026 roof/bogie/cab checks incomplete"
+  ]
+}

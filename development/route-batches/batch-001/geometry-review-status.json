@@ -14,7 +14,8 @@
     "Apply manufacturer 2015 pre-series body, coupler pitch and bogie dimensions",
     "Use direction-specific car order, passenger doors and pantographs",
     "Review 16 stopping station maps; platform side is separate from service platform assignment",
-    "Adjust platform edge gap and generate bridge deck/support estimates"
+    "Adjust platform edge gap and generate bridge deck/support estimates",
+    "Add operator-timetable transfer wording at four western stations in both languages; announce exit side only for verified service platform assignments"
   ],
   "validationStatus": "Current development inputs passed station-mesh, consist-placement, controls, persistence and strict software scene regression. Release geometry verification remains incomplete.",
   "remaining": [
@@ -37,13 +38,16 @@
     "bridgeTerrainSettled": true,
     "physicalGPU": false,
     "fullRouteRealTime": false,
-    "unitTestsPassed": 38
+    "unitTestsPassed": 38,
+    "announcementStationDirectionCases": 39
   },
   "evidence": {
     "geometry-review-diagnostics.json": "488510e6ac4180f489f949a997a70b77e01dd23bbf5d1212d7cec1c1997e17be",
-    "integrated-game-diagnostics.json": "f4540e488010e302b5c9ae92853cfd91ff7b5eeceb45e0ffe1cedd2338e3b17e",
+    "integrated-game-diagnostics.json": "ee01c9211c209e6a7dd897b8febcb415f6c9307a49fffa38c7bb307727c1c41a",
     "integrated-running-diagnostics.json": "0933ed6758fc6a1fc04c66aeb093e69d3394a947624eee8f57aa9fe8b4d17808",
     "train-scene-diagnostics.json": "6b5a38b557a507bc8881159f32f0b1e42894cbf62293e95cd78020120317be3c",
-    "geometry-unit-tests.txt": "e7da5e649023194c8fbf6b5e755133e95c63dde0ec0189e5a063e31d27506ab7"
+    "geometry-unit-tests.txt": "e7da5e649023194c8fbf6b5e755133e95c63dde0ec0189e5a063e31d27506ab7",
+    "games/announcements-reviewed.js": "295d26591a0030f51fd6f6483be114e72ca84086dd8b9dd0298b4c6c3ec34b97",
+    "sources/followup-review-20261022.json": "e52eadc8872c89ab191b1ee755b1971c9dcb901d0492b96e1d7889e3bf92262e"
   }
 }

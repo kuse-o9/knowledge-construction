@@ -6,7 +6,7 @@
  try{
   const route=await packet(id+'.json.gz',document.body.dataset.packetSha);
   const [common,stock]=await Promise.all([packet('common.json.gz',route.commonSha256),packet('e353.json.gz',route.stockSha256)]);
-  window.RAIL_DATA=route.data;window.RAIL_ANNOUNCEMENTS=route.announcements;window.RAIL_RECORDINGS={};window.BATCH_STOCK=stock;window.RAIL_CITY_MODELS=common.city;
+  window.RAIL_DATA=route.data;window.RAIL_ANNOUNCEMENTS=route.announcements;window.RAIL_RECORDINGS={};window.BaylineReviewedAnnouncements.apply(route.data,route.announcements);window.BATCH_STOCK=stock;window.RAIL_CITY_MODELS=common.city;
   window.BaylineBatchModels.initialize(route.data,common,stock);
   const script=document.createElement('script');script.src='rail.js';script.onerror=()=>{document.getElementById('scene-status').textContent='運転画面を読み込めませんでした。再読み込みしてください。';};document.body.append(script);
  }catch(e){document.getElementById('scene-status').textContent=e.message;document.getElementById('start').disabled=true;document.body.dataset.loadError=e.message;}
