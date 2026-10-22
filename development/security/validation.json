@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-22",
+  "sql": {
+    "pass": true,
+    "checks": 18,
+    "idempotent": true,
+    "existingAuthority": "fixture"
+  },
+  "api": {
+    "pass": true,
+    "checks": 12,
+    "authProvider": "mock"
+  },
+  "ui": {
+    "pass": true,
+    "checks": 7,
+    "runtime": "jsdom"
+  },
+  "production": {
+    "sql": "applied",
+    "authorityChecks": "PASS in a production transaction with rollback; auth claims and test grants set by SQL",
+    "anonymousHTTP": {
+      "status": 200,
+      "publicDecks": 200,
+      "adminVerify": 401,
+      "serviceUnlock": 401,
+      "gameCatalog": 200,
+      "gameCount": 7
+    }
+  }
+}
