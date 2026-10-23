@@ -84,17 +84,25 @@
     if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)) throw Error(gl.getShaderInfoLog(s));
     return s;
   }
+  let contextFailure='';
+  canvas.addEventListener('webglcontextcreationerror',e=>{contextFailure=String(e.statusMessage||'').slice(0,180);});
   function initGL() {
-    gl=canvas.getContext('webgl',{antialias:true,alpha:false});
-    if(!gl) throw Error('WebGLを利用できません');
+    const options={antialias:true,alpha:false,powerPreference:'default',failIfMajorPerformanceCaveat:false};
+    gl=canvas.getContext('webgl2',options);
+    const modern=!!gl;
+    if(!gl)gl=canvas.getContext('webgl',options);
+    if(!gl)throw Error('WebGL 2 / WebGL 1を開始できません'+(contextFailure?'（'+contextFailure+'）':''));
+    canvas.dataset.contextVersion=modern?'2':'1';
+    const vertex=modern?'#version 300 es\n#define attribute in\n#define varying out\n':'';
+    const fragment=modern?'#version 300 es\n#define varying in\n#define gl_FragColor depotColor\nprecision mediump float;out vec4 depotColor;\n':'';
     program=gl.createProgram();
-    gl.attachShader(program,shader(gl.VERTEX_SHADER,`
+    gl.attachShader(program,shader(gl.VERTEX_SHADER,vertex+`
       attribute vec3 position; attribute vec3 color;
       uniform mat4 view; uniform mat4 projection; uniform float elevation;
       varying vec3 shade; varying float depth;
       void main(){vec4 p=view*vec4(position+vec3(0.,elevation,0.),1.);
       gl_Position=projection*p; shade=color; depth=-p.z;}`));
-    gl.attachShader(program,shader(gl.FRAGMENT_SHADER,`
+    gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fragment+`
       precision mediump float; varying vec3 shade; varying float depth;
       void main(){float fog=smoothstep(75.,180.,depth)*.55;
       gl_FragColor=vec4(mix(shade,vec3(.20,.28,.24),fog),1.);}`));
@@ -346,7 +354,8 @@
     try{initGL();display(current);$('loading').hidden=true;$('floor').disabled=false;}
     catch(e){
       $('routes').replaceChildren();for(const f of floors)for(const t of f.trains){const a=document.createElement('a');a.className='trainlink';a.href=new URL(t.path,BASE).href;a.textContent=t.name;$('routes').append(a);}
-      loadingError('この環境では3D表示を開始できません。路線ボタンから遊べます。');console.error(e);
+      loadingError('車両基地の3D表示を開始できません：'+String(e?.message||e).slice(0,220)+'。ほかの3Dタブを閉じて再読み込みできます。');
+      $('depot-retry3d').hidden=false;$('depot-retry3d').onclick=()=>location.reload();console.error('DEPOT_3D_START',e);
     }
   }catch(e){loadingError('車両基地を読み込めませんでした。全フロアの路線一覧から出発できます。');console.error(e);}
 })();

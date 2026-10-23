@@ -1,0 +1,38 @@
+{
+  "method": "Software WebGL; forced API availability, real shader compilation and depot rendering. No physical GPU claim.",
+  "cases": [
+    {
+      "mode": "webgl2",
+      "contextVersion": "2",
+      "player": "{\"x\":-17.3,\"y\":0,\"z\":24.8}",
+      "nearby": "",
+      "liftPhase": "open",
+      "liftY": "238",
+      "floor": "18",
+      "elevation": "238",
+      "renderer": "webgl",
+      "glError": "0",
+      "pass": true
+    },
+    {
+      "mode": "webgl1",
+      "contextVersion": "1",
+      "player": "{\"x\":-17.3,\"y\":0,\"z\":24.8}",
+      "nearby": "",
+      "liftPhase": "open",
+      "liftY": "238",
+      "floor": "18",
+      "elevation": "238",
+      "renderer": "webgl",
+      "glError": "0",
+      "pass": true
+    },
+    {
+      "mode": "none",
+      "links": 6,
+      "retry": true,
+      "message": "車両基地の3D表示を開始できません：WebGL 2 / WebGL 1を開始できません。ほかの3Dタブを閉じて再読み込みできます。"
+    }
+  ],
+  "pass": true
+}
