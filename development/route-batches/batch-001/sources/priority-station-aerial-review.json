@@ -1,0 +1,1564 @@
+{
+  "checked": "2026-10-23",
+  "source": "https://maps.gsi.go.jp/development/ichiran.html",
+  "layer": "seamlessphoto",
+  "zoom": 18,
+  "scope": "Visual station-form references only. Composite photo capture dates unknown. No platform numbers, current operating assignments, precise dimensions or surveyed coordinates inferred. Ambiguous rows are not applied to game side choices. All 22 photographed stations now also have visually inspected operator schematics. These supersede any aerial inference; no aerial-only platform choice is applied.",
+  "stations": [
+    {
+      "name": "大久保",
+      "code": "003604",
+      "lon": 139.69744500000002,
+      "lat": 35.70063499999999,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232795/103208.jpg",
+          "sha256": "2cba240d003da4bdf2e2e27afd0c59821d865d283548fbd8e384da0594933d99",
+          "x": 232795,
+          "y": 103208
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232796/103208.jpg",
+          "sha256": "7335ed1efd2315631eca99e4000cf2bf82dba0bb6389af442d71d13b8677d0a3",
+          "x": 232796,
+          "y": 103208
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232797/103208.jpg",
+          "sha256": "767a926b6be8ad964442df33e76ad014dd45d67c8856dfc9025098d3b0c11402",
+          "x": 232797,
+          "y": 103208
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232795/103209.jpg",
+          "sha256": "71801897a6dec59c59e4cfd7e7c0967da65b6d270c0813a59c4e78cba806f774",
+          "x": 232795,
+          "y": 103209
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232796/103209.jpg",
+          "sha256": "f0bcc08b1c403e3c657d050cbc2a910ece09f5ab1a5b8dc06329253cce1b0dad",
+          "x": 232796,
+          "y": 103209
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232797/103209.jpg",
+          "sha256": "2277f3956c92527921412efa67dbc21ae60c4273876ac0087ae9d35a2793da53",
+          "x": 232797,
+          "y": 103209
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232795/103210.jpg",
+          "sha256": "206976e24adecd8aebc47a0d7f3d4e029763742f01ee5aef839385af88d5c51f",
+          "x": 232795,
+          "y": 103210
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232796/103210.jpg",
+          "sha256": "9ea3bd2cc6b99c12db88f01844eecb292dcc6ddc319cd31ed64374d0ec0b711e",
+          "x": 232796,
+          "y": 103210
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232797/103210.jpg",
+          "sha256": "fb50ee84ffa3349eec2686af69c9a363f3dc37320504eb62d01a408b2682199a",
+          "x": 232797,
+          "y": 103210
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "operator map overrides",
+      "observedLayout": null,
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "東中野",
+      "code": "003563",
+      "lon": 139.68508,
+      "lat": 35.70625,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232786/103203.jpg",
+          "sha256": "a3b7347087c169739b04d79bbd4e6f4ce29a60e819d3e657dd4a3cdea0e89a80",
+          "x": 232786,
+          "y": 103203
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232787/103203.jpg",
+          "sha256": "08122f15858d10aefc081bec99a9c1536a1a610e4cd088b35dd54e51cbdadf87",
+          "x": 232787,
+          "y": 103203
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232788/103203.jpg",
+          "sha256": "722aeca9cf690167c5a67ab3d637cd21d3a6b880a9fdbf0415d07b26956bcc6f",
+          "x": 232788,
+          "y": 103203
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232786/103204.jpg",
+          "sha256": "f48c5ae5963b9b2c4b283ac8084a7e0d13229d6c03f080d95615a60e6dba7a19",
+          "x": 232786,
+          "y": 103204
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232787/103204.jpg",
+          "sha256": "d49b908b07f2428738f57086a839e1c497888f538cbf3168b7d064e76ac1694f",
+          "x": 232787,
+          "y": 103204
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232788/103204.jpg",
+          "sha256": "872933d842c2392cc257c55615f2cc79459bf3389fedf4fe75555d162f6ed2a0",
+          "x": 232788,
+          "y": 103204
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232786/103205.jpg",
+          "sha256": "3224ce677589a775f3395d3b8447f2c7dc538b010b4188e446b11f61449e55b2",
+          "x": 232786,
+          "y": 103205
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232787/103205.jpg",
+          "sha256": "842654d337b65214e09b7aff42865c363779c146d32a1735d821112e1f9899e8",
+          "x": 232787,
+          "y": 103205
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232788/103205.jpg",
+          "sha256": "7c20bd569f2a00772a1c23397b9747eb45cd70129d15d4562e3a465766eecb25",
+          "x": 232788,
+          "y": 103205
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "operator map overrides",
+      "observedLayout": null,
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "梁川",
+      "code": "004213",
+      "lon": 139.0373,
+      "lat": 35.606265,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232314/103292.jpg",
+          "sha256": "cc191a21d7c19c78b78a63ceeb9de6bf917b8f54afcad4754750ce5591fdfcb6",
+          "x": 232314,
+          "y": 103292
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232315/103292.jpg",
+          "sha256": "88378f1cb446cf43e5c75face6588bb56f9ac65b163cb30371b0093d35d9b007",
+          "x": 232315,
+          "y": 103292
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232316/103292.jpg",
+          "sha256": "a556e0d56aefe7ca559c6365289f9b96c71fcabaee372f9c6fd216fa0ce8c217",
+          "x": 232316,
+          "y": 103292
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232314/103293.jpg",
+          "sha256": "d70feaaa5a396208561259690ec5d81fc61b5a3582d8180012e44d447122b1c6",
+          "x": 232314,
+          "y": 103293
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232315/103293.jpg",
+          "sha256": "80167174bcc993b88e6bd494b5d325facaae81661f916e9f2411115f87f08d39",
+          "x": 232315,
+          "y": 103293
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232316/103293.jpg",
+          "sha256": "5ddae7a3560bdf25294976001ddff9a11d544463970da38c403ee24ba78d0e05",
+          "x": 232316,
+          "y": 103293
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232314/103294.jpg",
+          "sha256": "057a791a27bec141ac695d5be7b5fcf9c7a9920b20726b182d400998c30c3357",
+          "x": 232314,
+          "y": 103294
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232315/103294.jpg",
+          "sha256": "044b7775006d2bb36ff8b90726642354c91b6bc208892599a31459b98307b5fa",
+          "x": 232315,
+          "y": 103294
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232316/103294.jpg",
+          "sha256": "70564a5ee26702b435c586801e53bc3f2dde1b4049a37b5af18085e0014469d3",
+          "x": 232316,
+          "y": 103294
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "side",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true,
+      "correction": "Aerial side-platform inference was incorrect; operator schematic shows one island. No aerial choice remains active."
+    },
+    {
+      "name": "鳥沢",
+      "code": "004192",
+      "lon": 139.003485,
+      "lat": 35.60804,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232290/103291.jpg",
+          "sha256": "c63f8dd6bf0e8e763a603822764528ba9a64a85bfe5928cc74fd1655ace9dbd0",
+          "x": 232290,
+          "y": 103291
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232291/103291.jpg",
+          "sha256": "f6364d2266b1513bb13cf9a67d9bf605316329e509b23dfaa604a74c143f84f8",
+          "x": 232291,
+          "y": 103291
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232292/103291.jpg",
+          "sha256": "5af7967bd6148a48fe4e704b17037a29ed45cde6570438c7fbbf410df2060157",
+          "x": 232292,
+          "y": 103291
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232290/103292.jpg",
+          "sha256": "54f5c04a0256a4ac8ac64f527717f8e8cde4f8b8b4aa3fdef4c285ca1b6118df",
+          "x": 232290,
+          "y": 103292
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232291/103292.jpg",
+          "sha256": "c2116bdd378369b5cca5c8a1048deba7d7a972577e1b0ae68161f2cfac269494",
+          "x": 232291,
+          "y": 103292
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232292/103292.jpg",
+          "sha256": "10640de9c90a40a63f5fc84c9c0ae24842c2db92d44727197725401accdafc8d",
+          "x": 232292,
+          "y": 103292
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232290/103293.jpg",
+          "sha256": "25269999c8738e145da5710149e4747f68e15098f0438bb71afecb614c38c04b",
+          "x": 232290,
+          "y": 103293
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232291/103293.jpg",
+          "sha256": "38a9714d2e485908d6d673878f97d5644dc08d4ba61b57a4263594efabda54f1",
+          "x": 232291,
+          "y": 103293
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232292/103293.jpg",
+          "sha256": "0d1d1acf4f4094066ae9ce288b2b4ed246ce7ac336f8733da48fc1dd096b71f6",
+          "x": 232292,
+          "y": 103293
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "island",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "初狩",
+      "code": "004255",
+      "lon": 138.88372918663813,
+      "lat": 35.59429215224139,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232203/103303.jpg",
+          "sha256": "bca0e23a60f5fcb925237e235a2c80cef892aa17cc02487537dbf7e67fac95c1",
+          "x": 232203,
+          "y": 103303
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232204/103303.jpg",
+          "sha256": "e8b77739a224ad5590bded6fa73d1a6b663f3a77477dbf38ee6975bcdf8a929b",
+          "x": 232204,
+          "y": 103303
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232205/103303.jpg",
+          "sha256": "948d01e5154c147f63a97ef4bb09fe1f2cdbc5119164f8e621eb82d1b2e112f8",
+          "x": 232205,
+          "y": 103303
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232203/103304.jpg",
+          "sha256": "671286edbbcd686b741badcc56adb574ee96c49dd3285ef87f3c0eaf4e8d0012",
+          "x": 232203,
+          "y": 103304
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232204/103304.jpg",
+          "sha256": "defea1ef80410b5643d57d4bf4620058d2005cd796dd8c07af1764f697162740",
+          "x": 232204,
+          "y": 103304
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232205/103304.jpg",
+          "sha256": "c4b52a8e4a0ca3acde21285832e4a77622e9bf5d1246ba0e61fd75b079b5adae",
+          "x": 232205,
+          "y": 103304
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232203/103305.jpg",
+          "sha256": "9f7e5022aa3ee2075f9bb75738eae82479ccc708729589b25410bb173b5cafcd",
+          "x": 232203,
+          "y": 103305
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232204/103305.jpg",
+          "sha256": "6f439caa907071abb61d00478543776e22f6c7c882354cd02dfcbc44f54af433",
+          "x": 232204,
+          "y": 103305
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232205/103305.jpg",
+          "sha256": "3ee5e9dfac94754c61343cdbde2aff10f36185f366f748f1a01a2d6d73fb3e61",
+          "x": 232205,
+          "y": 103305
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "island",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "笹子",
+      "code": "004224",
+      "lon": 138.8253756936328,
+      "lat": 35.603942808693894,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232160/103294.jpg",
+          "sha256": "dde527f95578845c1e4e0598d8bdf96fac36bf9a2d88fe89bc6d15bfcdcdb42f",
+          "x": 232160,
+          "y": 103294
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232161/103294.jpg",
+          "sha256": "89bb28f0b84c1c80d5b794eb7beaa166869f261054dc2ee751d79f80b4ced7a4",
+          "x": 232161,
+          "y": 103294
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232162/103294.jpg",
+          "sha256": "2a1591f3415cb81a7ebc778386cf2d0cde433b9facec6df3a6a4ee3f57ba57ea",
+          "x": 232162,
+          "y": 103294
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232160/103295.jpg",
+          "sha256": "ebb4af8f95582df789013d02c4e9e5a25114e5f7e3165e53110549eb3caf03cf",
+          "x": 232160,
+          "y": 103295
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232161/103295.jpg",
+          "sha256": "1a2aff92724a43b542a17571efaa259f78aab3ea3a11103aa364a18118f15295",
+          "x": 232161,
+          "y": 103295
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232162/103295.jpg",
+          "sha256": "d6613d302d501b380556d9848046e0b1cb1ee039e2538617ac1af1f25b80ebd8",
+          "x": 232162,
+          "y": 103295
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232160/103296.jpg",
+          "sha256": "e1f19000f760a8db472b3c6446bda55fb36dfd0025d6c22da35a4ad33ea9d0d6",
+          "x": 232160,
+          "y": 103296
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232161/103296.jpg",
+          "sha256": "1040df7a0c534766b03e663d85ebb4ce3068922f0c8a867d3706b1dcf098f49f",
+          "x": 232161,
+          "y": 103296
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232162/103296.jpg",
+          "sha256": "b813c0e1bb084e440e75eadfe7cac4fb8e03af95e02c4fb976c91b2ce5843828",
+          "x": 232162,
+          "y": 103296
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "island",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "甲斐大和",
+      "code": "004040",
+      "lon": 138.7816444446963,
+      "lat": 35.63940444437249,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232128/103263.jpg",
+          "sha256": "f1aec192552f58fa9b1c8e13344da53803cdc1a516f836b73270e8bf1f620d70",
+          "x": 232128,
+          "y": 103263
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232129/103263.jpg",
+          "sha256": "c03c737656e3e4e4fba4e6e045706747ce39e7f3d51a7de493b52d727d41d171",
+          "x": 232129,
+          "y": 103263
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232130/103263.jpg",
+          "sha256": "12f69720b6830f72bdaaf79676142f5458c825c49642ec61147b866c8cde536c",
+          "x": 232130,
+          "y": 103263
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232128/103264.jpg",
+          "sha256": "7b33bf3121338f6b223f6b55fdda9be1168dd08b6e022632a76777e47484013e",
+          "x": 232128,
+          "y": 103264
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232129/103264.jpg",
+          "sha256": "aad7ede31124e055f555ced42531fb2a20789f617aab2a547c09b723bac2281a",
+          "x": 232129,
+          "y": 103264
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232130/103264.jpg",
+          "sha256": "ae51d7f815dbfa678ed44a4d074dfb3e0310a5392a70de5176d5d7603bc1a186",
+          "x": 232130,
+          "y": 103264
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232128/103265.jpg",
+          "sha256": "310c15ca75eddb9d47abbb6eb3db331cee3822433b9e99534edf93b56c0f6c81",
+          "x": 232128,
+          "y": 103265
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232129/103265.jpg",
+          "sha256": "6cc9db84e2debcf55ede16da39395c78eed5ea060190327fa66f65107bd022da",
+          "x": 232129,
+          "y": 103265
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232130/103265.jpg",
+          "sha256": "ce81f1cf5bed9d54b5205182a28b2d033d192c0313bdaaa29e9cd3c018792d31",
+          "x": 232130,
+          "y": 103265
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "ambiguous",
+      "observedLayout": null,
+      "note": "Possible side + island / three tracks; roofs obscure faces.",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "勝沼ぶどう郷",
+      "code": "003816",
+      "lon": 138.74322884019452,
+      "lat": 35.6728417264183,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232100/103233.jpg",
+          "sha256": "e9a0c05aed2d18d9102f4628744bc3f69b2f84f4bd7b564d9d9d5b4173a228c7",
+          "x": 232100,
+          "y": 103233
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232101/103233.jpg",
+          "sha256": "6a20d5c5379ad8c4b4a7e5ef3f4387ee67611e4accf036643ca32b412882e467",
+          "x": 232101,
+          "y": 103233
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232102/103233.jpg",
+          "sha256": "b80c4b0400f2f5f078e66783b4349e9031297e0d6b1a3b67978b0e832ce41614",
+          "x": 232102,
+          "y": 103233
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232100/103234.jpg",
+          "sha256": "515096d54a3f3a4fd6b9dd924fe5facdbc9954e2ee1789beec4545b8bbc92ea9",
+          "x": 232100,
+          "y": 103234
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232101/103234.jpg",
+          "sha256": "86f01b74f6ad7ab49020e35317fc33c8f80f26d3d19c2ce71fd1fe519b109b9f",
+          "x": 232101,
+          "y": 103234
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232102/103234.jpg",
+          "sha256": "578381ff720fe760922816b1497836e8138502137e16ce3a1095a51963ba1182",
+          "x": 232102,
+          "y": 103234
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232100/103235.jpg",
+          "sha256": "a84c56058414dade8f0b0fd645e06ba647b119dd65369d4f6fbb815936496e6e",
+          "x": 232100,
+          "y": 103235
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232101/103235.jpg",
+          "sha256": "599b2bddb50e1e5880c9222588f75c49285681c9272480e1232641c1222de60b",
+          "x": 232101,
+          "y": 103235
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232102/103235.jpg",
+          "sha256": "3f04ed6b59e0e66286ee83736f8ec9b42363a991a08b48884c1c39800cff4d6b",
+          "x": 232102,
+          "y": 103235
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "island",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "東山梨",
+      "code": "003663",
+      "lon": 138.703055,
+      "lat": 35.69434,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232071/103213.jpg",
+          "sha256": "aa46100c91e0490674450522bb826c9e13925eee3c518b94b081100ee8896b69",
+          "x": 232071,
+          "y": 103213
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232072/103213.jpg",
+          "sha256": "95f29b4c59e705aa40ea6ada25dde59f7ae62120c4cddb9706d4810153f201b6",
+          "x": 232072,
+          "y": 103213
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232073/103213.jpg",
+          "sha256": "0d9008af3bf20640440387fa528485e51bcd13b79b239d5320d55dd3076cae08",
+          "x": 232073,
+          "y": 103213
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232071/103214.jpg",
+          "sha256": "a6049c0febc0e6e752f7a7235ac6173619bc8fb9dfb475f4d2a8dbc0d69f448b",
+          "x": 232071,
+          "y": 103214
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232072/103214.jpg",
+          "sha256": "2bd40c1c43eb82b584c5694e20d8447579c9c8104f5001ffa53641e58dfba933",
+          "x": 232072,
+          "y": 103214
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232073/103214.jpg",
+          "sha256": "e00117606cbddd33ab90a7a12a75054dbd4123750dfad92100f9f3e9227c3819",
+          "x": 232073,
+          "y": 103214
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232071/103215.jpg",
+          "sha256": "96f07a8e3396c2c596626613900bb48ac97d2971e5698fa05031177c933f59a4",
+          "x": 232071,
+          "y": 103215
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232072/103215.jpg",
+          "sha256": "090f952cc348295a3f5f6e3a9accccbf364e76d8ca8768c0dcde59f3c1ecaa86",
+          "x": 232072,
+          "y": 103215
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232073/103215.jpg",
+          "sha256": "1ac071d43a77c0adb42639e7e6e84f29b078b48395d4912b1c474787646afdc9",
+          "x": 232073,
+          "y": 103215
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "side",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "春日居町",
+      "code": "003808",
+      "lon": 138.65897999999999,
+      "lat": 35.67346499999999,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232039/103232.jpg",
+          "sha256": "e0b9933b0ca4b7cb000664ba1a8de2e7bf9174219080559590d2880d8a6266ed",
+          "x": 232039,
+          "y": 103232
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232040/103232.jpg",
+          "sha256": "61dd113011f29c3d61c978312711904ec4dcddc374e262922bd3694691b5485b",
+          "x": 232040,
+          "y": 103232
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232041/103232.jpg",
+          "sha256": "06bde15887389dc31685aadc1a149b6531f5584fbe7641c6e1e0d385c9f6cef2",
+          "x": 232041,
+          "y": 103232
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232039/103233.jpg",
+          "sha256": "19a3786f5fcb3d8c0847cfebd27937aa1531bccbf165fc2f2d3f547c03bf8f37",
+          "x": 232039,
+          "y": 103233
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232040/103233.jpg",
+          "sha256": "17fd13203e6651c59f776be21bebb054735d20bc14d0df8f6d7e2fe467e1a674",
+          "x": 232040,
+          "y": 103233
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232041/103233.jpg",
+          "sha256": "b6cd25a23e85534b1e2d8739fcf7a70887f514ea9af9c580caea840cecdb0036",
+          "x": 232041,
+          "y": 103233
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232039/103234.jpg",
+          "sha256": "4de00845e896e9e11378a778dc64b24fa4d812bd9214b7485d4de4d26a2441c0",
+          "x": 232039,
+          "y": 103234
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232040/103234.jpg",
+          "sha256": "04c0bed5f2d00b51ab21c132980273264442221aaba1c714900a40a56fd1c449",
+          "x": 232040,
+          "y": 103234
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/232041/103234.jpg",
+          "sha256": "c935b63a03fb5422f9d00e4c937dd7d1687cf116a2d48ce35786e551a10a7b6a",
+          "x": 232041,
+          "y": 103234
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "side",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "新府",
+      "code": "003344",
+      "lon": 138.43316640910064,
+      "lat": 35.73686281820129,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231874/103175.jpg",
+          "sha256": "2fe3b64fafa7dcf0c64de6ad4c447d22f83820a6a00d1b493f17a142d76aed3b",
+          "x": 231874,
+          "y": 103175
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231875/103175.jpg",
+          "sha256": "c87fecde85fbddef921a9ea34b541af2f540b50a66decbb461e5b19d4bd514cb",
+          "x": 231875,
+          "y": 103175
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231876/103175.jpg",
+          "sha256": "e07b80c585f6fbb080c6710006179e217df09583d69e3a2e9168de39d6d26db7",
+          "x": 231876,
+          "y": 103175
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231874/103176.jpg",
+          "sha256": "6f23e001e32811e6f7c919621830d2af410c238415530a638ddf53bdee4dcc46",
+          "x": 231874,
+          "y": 103176
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231875/103176.jpg",
+          "sha256": "72b843ba40f5a3268c2184fc012376506d5416139fcf787d8885c839885729be",
+          "x": 231875,
+          "y": 103176
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231876/103176.jpg",
+          "sha256": "7352f9c6723fdc91940cadecb7a3b50a84af81d7db2e5715ab28654c8bb861d7",
+          "x": 231876,
+          "y": 103176
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231874/103177.jpg",
+          "sha256": "3806d829ca0ffa53ccb47d254bf1584e5207378fdfeccf7eacb99f40f440133c",
+          "x": 231874,
+          "y": 103177
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231875/103177.jpg",
+          "sha256": "7661255d44989d8f3cb36e61cba089af17499239956ba38700916d92708a8cae",
+          "x": 231875,
+          "y": 103177
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231876/103177.jpg",
+          "sha256": "0a2d738ed3f2c74911330a95290a149dd22ec8cb65de63181c17aee80d169d1d",
+          "x": 231876,
+          "y": 103177
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "side",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "穴山",
+      "code": "003247",
+      "lon": 138.41387278577665,
+      "lat": 35.751046370756505,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231860/103162.jpg",
+          "sha256": "a447a824d25c44f003f7ad5b5d1ac8fb35833b61e4c5edef2389af2c4314442f",
+          "x": 231860,
+          "y": 103162
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231861/103162.jpg",
+          "sha256": "6af4fc09d7781408a4af959781a8d3ea61f4ff822e2a32564764044ae79e78b8",
+          "x": 231861,
+          "y": 103162
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231862/103162.jpg",
+          "sha256": "501237901608a771f59b4c8bf3d467c89a8b03cc38398c2292a2afd634660104",
+          "x": 231862,
+          "y": 103162
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231860/103163.jpg",
+          "sha256": "4bfe10cbd3764bbf00200fe0bd32db837ad209d7ee32d911f63e4b64fad8df2f",
+          "x": 231860,
+          "y": 103163
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231861/103163.jpg",
+          "sha256": "44f4d1bf4e87253e182937ab2a42cbd1db80d767557078c20792e2415bbb8b10",
+          "x": 231861,
+          "y": 103163
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231862/103163.jpg",
+          "sha256": "c4e052527c30414ce851bbc509a15fb0b39b98ab35f6f6418da759e1766c1b80",
+          "x": 231862,
+          "y": 103163
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231860/103164.jpg",
+          "sha256": "63f355a2e5fd414b14768e5dbe1b9bd1bd10937698a2a01a33febe20a5360bbc",
+          "x": 231860,
+          "y": 103164
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231861/103164.jpg",
+          "sha256": "5156872de57cae5bc2f4b610da9bbb5d0c48d1c027da8b9e4c6245262c74b577",
+          "x": 231861,
+          "y": 103164
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231862/103164.jpg",
+          "sha256": "8bcf8b980990db943d46dbf257e7c1f0026fb0f3847777c8dbe9a61efa104cf4",
+          "x": 231862,
+          "y": 103164
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "island",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "日野春",
+      "code": "003108",
+      "lon": 138.39430832575033,
+      "lat": 35.79071167424967,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231846/103127.jpg",
+          "sha256": "7cbf7019674f742d74b09e66649efd91ba08f7ac616598db9178bebef40ba4e6",
+          "x": 231846,
+          "y": 103127
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231847/103127.jpg",
+          "sha256": "0bfe407bf5d503776f58ce8c7862a3fffff02010f20355eaf7d1a763a231160e",
+          "x": 231847,
+          "y": 103127
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231848/103127.jpg",
+          "sha256": "b60d060702e1614ef3b45227b2d3a65507bb772f57b120be2841cd5f1f6ffc65",
+          "x": 231848,
+          "y": 103127
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231846/103128.jpg",
+          "sha256": "06a4155f55e3782b087bd85afd15f4c435e9f8d904fdad8559e2dc092c19784f",
+          "x": 231846,
+          "y": 103128
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231847/103128.jpg",
+          "sha256": "ef6e0c8fe40c5716d311630c15b5d4bb12122a95a12d37839543d33db9760335",
+          "x": 231847,
+          "y": 103128
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231848/103128.jpg",
+          "sha256": "2f14f2b15d953dd89502f36d83544ca925ede13474dc2d92e09ec33043ccf6dd",
+          "x": 231848,
+          "y": 103128
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231846/103129.jpg",
+          "sha256": "070e4abe6c861bf61bdd3648e1fa5f81238a97fe738c27bb943647ae4e35d527",
+          "x": 231846,
+          "y": 103129
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231847/103129.jpg",
+          "sha256": "a4d30c9aa0ce7cbd410adf0e072ca616a31c8ef2df01de60680c6d879ae919a9",
+          "x": 231847,
+          "y": 103129
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231848/103129.jpg",
+          "sha256": "44ff3afdb9961c0bbf91d3c29c4d897d65bf58138d4d2b826ab2d21f8e3a8785",
+          "x": 231848,
+          "y": 103129
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "ambiguous",
+      "observedLayout": null,
+      "note": "Side + island / three passenger tracks visible; direction-to-track assignment not resolved.",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "長坂",
+      "code": "003042",
+      "lon": 138.36644714617958,
+      "lat": 35.82716473051395,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231826/103094.jpg",
+          "sha256": "89c12aa2c0afb56da603eb91626a76681b7295ba0f4a878553f88a26f42a86a5",
+          "x": 231826,
+          "y": 103094
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231827/103094.jpg",
+          "sha256": "0476f68a2e288e4ba29be2957beab55b301bb3d9b3017395c453723eb1ac2ce1",
+          "x": 231827,
+          "y": 103094
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231828/103094.jpg",
+          "sha256": "d89ad6c5714d0c215601c960dae11b6f12dec044320474a23dd245ca5182b24e",
+          "x": 231828,
+          "y": 103094
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231826/103095.jpg",
+          "sha256": "e432ba9753309d2800337f2798bbe354ef76cc39e651a2be218b95c8f0098863",
+          "x": 231826,
+          "y": 103095
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231827/103095.jpg",
+          "sha256": "51bab00abeac8e9e98090cf2bc483c3de76b34e1b09f1a7779d93200e4e12948",
+          "x": 231827,
+          "y": 103095
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231828/103095.jpg",
+          "sha256": "ad0e572105435e57b712e31148a3c215c3af263d9749f4673874baa62352eaf4",
+          "x": 231828,
+          "y": 103095
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231826/103096.jpg",
+          "sha256": "a223baae73fa128db6772dc03325229e8a1d2d15fdf391ca1a9871ce6e05ff93",
+          "x": 231826,
+          "y": 103096
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231827/103096.jpg",
+          "sha256": "7014999a1c4a19ce93d4233b896355ff89272e6ada336aab9637f6a6cf69b972",
+          "x": 231827,
+          "y": 103096
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231828/103096.jpg",
+          "sha256": "31bd3d5cf8b973274211e4a2ede1f8d5e9205e7afdcc57ecd6a42a289b5be153",
+          "x": 231828,
+          "y": 103096
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "ambiguous",
+      "observedLayout": null,
+      "note": "Image detail/age insufficient for a current layout decision.",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "信濃境",
+      "code": "002946",
+      "lon": 138.2754469045211,
+      "lat": 35.88494196737893,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231760/103042.jpg",
+          "sha256": "e63493971bb951c83680c8b3811e4915cf3c54547bfa825fc41647a173b209b4",
+          "x": 231760,
+          "y": 103042
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231761/103042.jpg",
+          "sha256": "e415d04eb80115de853bc2c141b4f89470704e5915e19738e6a71db2533d36cf",
+          "x": 231761,
+          "y": 103042
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231762/103042.jpg",
+          "sha256": "9f284afd30ac97a28078d318ff64cfc027903c5535792910e3bab9dd54b1817c",
+          "x": 231762,
+          "y": 103042
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231760/103043.jpg",
+          "sha256": "5d3261d8c177dcfca063313ee1de964818c59e7321bc63b4cdd383624b97d59d",
+          "x": 231760,
+          "y": 103043
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231761/103043.jpg",
+          "sha256": "53e0fd474fc004bb5a7bc002bd422fee01d5397648db139ab818bd3b1e2f9288",
+          "x": 231761,
+          "y": 103043
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231762/103043.jpg",
+          "sha256": "98a459ef3f53a204fb976986d8b813142a56e031610fbe5d8bb6a1ab7cc68128",
+          "x": 231762,
+          "y": 103043
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231760/103044.jpg",
+          "sha256": "6b49df8303f60debb37405621845c58a4c234a65f6eae6b4aeee7b1f321879bf",
+          "x": 231760,
+          "y": 103044
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231761/103044.jpg",
+          "sha256": "ca6d13c2831e16b18dfe68e97dbc445719ba186b6f33725a61af487b8e6f999b",
+          "x": 231761,
+          "y": 103044
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231762/103044.jpg",
+          "sha256": "dcd868c3718e9db6b3df708c6975078dba2c7464818563365dfc955ce68311a2",
+          "x": 231762,
+          "y": 103044
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "side",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "富士見",
+      "code": "002897",
+      "lon": 138.237865,
+      "lat": 35.912265,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231732/103018.jpg",
+          "sha256": "37d1e81dbbe6b0308c4a7f0886216a21cd60556a082b3c4745c9cee6d1f98572",
+          "x": 231732,
+          "y": 103018
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231733/103018.jpg",
+          "sha256": "2ff1c1063790a8c282f64f3c9d39515af7aff198f333c037758a9c914f35509d",
+          "x": 231733,
+          "y": 103018
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231734/103018.jpg",
+          "sha256": "4a991ce404104fca445dcef81196a0edafdcc5970253f7258637875e83fe6c69",
+          "x": 231734,
+          "y": 103018
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231732/103019.jpg",
+          "sha256": "6f538d1f3c1fa65207c3c97756c9edeae4724058101945134882ad3280f07cba",
+          "x": 231732,
+          "y": 103019
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231733/103019.jpg",
+          "sha256": "e38703d8801ef5b7079c740da71065b269185a7ec957cc794f500f198ce9af3a",
+          "x": 231733,
+          "y": 103019
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231734/103019.jpg",
+          "sha256": "b94368495a1ba02b4019bf1de807a3c37b29c9fee97e477b4c19cc6222c2b409",
+          "x": 231734,
+          "y": 103019
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231732/103020.jpg",
+          "sha256": "ba765bcd4d92329aef7513bc074190cc110b1db6857336d2521a14b3e9a6bf9a",
+          "x": 231732,
+          "y": 103020
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231733/103020.jpg",
+          "sha256": "5bc0eb016bfa12615c889113f79a78c72ff9380d694dff7baa2685b8553dd681",
+          "x": 231733,
+          "y": 103020
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231734/103020.jpg",
+          "sha256": "0af7224a3d6936f0813b8eee170a8115e83228e85f30db5c9357d2e22860e728",
+          "x": 231734,
+          "y": 103020
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "ambiguous",
+      "observedLayout": null,
+      "note": "Side + island visible; exact through-track choice not resolved.",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "すずらんの里",
+      "code": "002863",
+      "lon": 138.21184519532738,
+      "lat": 35.9304318437381,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231713/103001.jpg",
+          "sha256": "2c8cd09f5cc4087cdf0b1ff983a8516d1e367290183bf053f1731d78c5f81398",
+          "x": 231713,
+          "y": 103001
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231714/103001.jpg",
+          "sha256": "e2e9eaeb2a7cfed5c0c0f2b3b1f629df2adff8e5aff0b3769301569d93010ff3",
+          "x": 231714,
+          "y": 103001
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231715/103001.jpg",
+          "sha256": "cba1c2ff1fe46a4991f4e8b60b115b0418f337c3951d4148b459309eacad079d",
+          "x": 231715,
+          "y": 103001
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231713/103002.jpg",
+          "sha256": "ab7ab3ad354246a97f982adde5142ab8ff56d82b0bb2e5b4cd157ae40a3d5e08",
+          "x": 231713,
+          "y": 103002
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231714/103002.jpg",
+          "sha256": "203593773d6c68c57f615d52272077f7aebe8c115bb3c84202804f573614c611",
+          "x": 231714,
+          "y": 103002
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231715/103002.jpg",
+          "sha256": "b7500046ad983af1a67534320075fdba02bbf6b48a48371af2e4bfd5435c9452",
+          "x": 231715,
+          "y": 103002
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231713/103003.jpg",
+          "sha256": "58c7da83ad0b85776a4ef025fd655758f9af36ee5147719b4248f2ac395096d1",
+          "x": 231713,
+          "y": 103003
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231714/103003.jpg",
+          "sha256": "5989b603d71a73d13899f7f037b50ef6f1c96ccf55b0a47614b125502d24e079",
+          "x": 231714,
+          "y": 103003
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231715/103003.jpg",
+          "sha256": "702c2be5151b43a4d742f9515ad9757532cb1a904fd049252aecfb9f8bcc9bbe",
+          "x": 231715,
+          "y": 103003
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "side",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "青柳",
+      "code": "002843",
+      "lon": 138.1974685406533,
+      "lat": 35.942781970210326,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231703/102990.jpg",
+          "sha256": "d72d3c74656d826ad45959c867ad08d0b2f3527667958a7cb05e658a35e0516a",
+          "x": 231703,
+          "y": 102990
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231704/102990.jpg",
+          "sha256": "a6c8b4715d883508046df9453859dfbe1cbd43c618e2a2155cc8368fd93c4200",
+          "x": 231704,
+          "y": 102990
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231705/102990.jpg",
+          "sha256": "e8e33b9ba39c78c21481cce1cde50f4946ca72e476bf667da1b52686ec25b9d8",
+          "x": 231705,
+          "y": 102990
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231703/102991.jpg",
+          "sha256": "c3a6da3c02122912f425e9e96fadc2e3a0335983d31fd29f97f1510c9c32b553",
+          "x": 231703,
+          "y": 102991
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231704/102991.jpg",
+          "sha256": "6ae774437ad86f151f180ae29820510151ae5e48753233be48b0e6debeae9946",
+          "x": 231704,
+          "y": 102991
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231705/102991.jpg",
+          "sha256": "a34dae6d0231a5152591ab8ae4ca67b9cac5644d6533848dc7efe9fef9143418",
+          "x": 231705,
+          "y": 102991
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231703/102992.jpg",
+          "sha256": "424e1c21820127c6df9260fabe928e2088775fdab1cc68b52478f036a55a2c9f",
+          "x": 231703,
+          "y": 102992
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231704/102992.jpg",
+          "sha256": "812f612749ab80858d6da06c76cfc75b9189f4e948d27452eb6dfb5e18367a7a",
+          "x": 231704,
+          "y": 102992
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231705/102992.jpg",
+          "sha256": "624efb198904ac83ce18e99193b711033dafdbc0688d1115a3bcb3c1397a5443",
+          "x": 231705,
+          "y": 102992
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "ambiguous",
+      "observedLayout": null,
+      "note": "Possible side + island; platform edges partly obscured.",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "みどり湖",
+      "code": "002636",
+      "lon": 137.98197,
+      "lat": 36.094260000000006,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231546/102854.jpg",
+          "sha256": "9d50517d40c1559217cdf05dba743663685b66c88084920fefa4eb0d33d75993",
+          "x": 231546,
+          "y": 102854
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231547/102854.jpg",
+          "sha256": "9f282c338ba175233155c29f014f59e5284effb40a48acb274f48d970bdef3d2",
+          "x": 231547,
+          "y": 102854
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231548/102854.jpg",
+          "sha256": "b8fa65dae565265a9390e366407cd1991a7f6aa30f4e7aff54d63b4064bed081",
+          "x": 231548,
+          "y": 102854
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231546/102855.jpg",
+          "sha256": "f6f6432761f3c5d2526eb127c7caff005fdc9f9c8648f4ac858e18f65e683aee",
+          "x": 231546,
+          "y": 102855
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231547/102855.jpg",
+          "sha256": "801c19d08cd5f02b53913d57935baf1f24daf013a33010ce493be050980d96df",
+          "x": 231547,
+          "y": 102855
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231548/102855.jpg",
+          "sha256": "85852e7f691b0d5847158ca787daaf2ed9b506fa8a0b79749624d32699b1ce36",
+          "x": 231548,
+          "y": 102855
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231546/102856.jpg",
+          "sha256": "2435e21c020058c1b2784cb2ca553ea7a375bf3f4f2b653b5157a4a40d22b346",
+          "x": 231546,
+          "y": 102856
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231547/102856.jpg",
+          "sha256": "e8db5a0cca86b3ae67bea8e7a749e2146cc559343557fe337faa97eb6f2ee5f9",
+          "x": 231547,
+          "y": 102856
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231548/102856.jpg",
+          "sha256": "4011acbac379a361f473e50439ba6cc0bcbc076c5ba8624a21990c7581b25c75",
+          "x": 231548,
+          "y": 102856
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "clear form, numbering unknown",
+      "observedLayout": {
+        "form": "side",
+        "mainTracks": 2
+      },
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "村井",
+      "code": "002562",
+      "lon": 137.9560507236218,
+      "lat": 36.17430359579347,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231527/102782.jpg",
+          "sha256": "2590bdfb0ba2ef19667fd83a5928f9cadf58afc7190321ded66cddb15c55a164",
+          "x": 231527,
+          "y": 102782
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231528/102782.jpg",
+          "sha256": "5df00de49139f007c6106aa066deddd0d87ae1c4ac08f95e2398a50303e77dd3",
+          "x": 231528,
+          "y": 102782
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231529/102782.jpg",
+          "sha256": "3694fe5a6a3387a62128c81f7f27e81ecd4428df3d794678d6a768c4a0987a29",
+          "x": 231529,
+          "y": 102782
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231527/102783.jpg",
+          "sha256": "66a482960ab632d321a52358b741825743a9ba3d3bf597e994e69cdacf93ec13",
+          "x": 231527,
+          "y": 102783
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231528/102783.jpg",
+          "sha256": "066b9b95583a9d0bf5e7859242a849f763ada7d4c7a72f22c3e5be1e9ae9c92c",
+          "x": 231528,
+          "y": 102783
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231529/102783.jpg",
+          "sha256": "d44774148128c867ef433748961672ac18c5a4bc40f59abeaf4b4a61da7065be",
+          "x": 231529,
+          "y": 102783
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231527/102784.jpg",
+          "sha256": "99f981c4e702065b442a5d97cc9e163766270a306d757a5cec3ddbf14d6487ed",
+          "x": 231527,
+          "y": 102784
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231528/102784.jpg",
+          "sha256": "447d6992b2c47fb19e1e6d1e5bdbae662cc78c0ee7cdf59334c6e7830e9c5894",
+          "x": 231528,
+          "y": 102784
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231529/102784.jpg",
+          "sha256": "2ead5ec23afe796058a1d59264bd33da1e72b4b152e5bbdb49aab3de7b6d10ad",
+          "x": 231529,
+          "y": 102784
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "operator map overrides",
+      "observedLayout": null,
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "平田",
+      "code": "002551",
+      "lon": 137.96254223802987,
+      "lat": 36.19166566945899,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231532/102766.jpg",
+          "sha256": "4130a38bbe96230bbcdcbe9ddd6ad866fb84f14dfb5f7ab4b25d944a92210163",
+          "x": 231532,
+          "y": 102766
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231533/102766.jpg",
+          "sha256": "920192b5e69d36c068e9315e7636cf0378f9477e023f3ce2cbbf1c3f8c793a17",
+          "x": 231533,
+          "y": 102766
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231534/102766.jpg",
+          "sha256": "1b93e327e04c053fab712414a255874651e4a2b62bba9179b5c8104a90b4c1c5",
+          "x": 231534,
+          "y": 102766
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231532/102767.jpg",
+          "sha256": "2ff7ec584f20191290929f1c6ee58426dc436b0f6791dd01b594ce1a9792736a",
+          "x": 231532,
+          "y": 102767
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231533/102767.jpg",
+          "sha256": "756ab73dcb7300a9d92e51ec739b3170ce292290fc6789ee15d9f52c5480676c",
+          "x": 231533,
+          "y": 102767
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231534/102767.jpg",
+          "sha256": "b0b15c80b3324bcb18554f54da2c3fce109a0861b861a6f7c50917a73fe24c38",
+          "x": 231534,
+          "y": 102767
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231532/102768.jpg",
+          "sha256": "be10a2e5a4377653421e88e258bdbd69abe70f2baf089446ac85a4f79444c8ff",
+          "x": 231532,
+          "y": 102768
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231533/102768.jpg",
+          "sha256": "674472ccdcd350e0f814071fb16236423294dd8ebbfbca08cd319f340a430e75",
+          "x": 231533,
+          "y": 102768
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231534/102768.jpg",
+          "sha256": "a10c9ed96e78f3d2a384a7acaad93a0acf7651b167472250cfc0b7434c02ecb4",
+          "x": 231534,
+          "y": 102768
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "operator map overrides",
+      "observedLayout": null,
+      "note": "",
+      "supersededByOperatorSchematic": true
+    },
+    {
+      "name": "南松本",
+      "code": "002535",
+      "lon": 137.9696157552689,
+      "lat": 36.21070862050818,
+      "tiles": [
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231537/102749.jpg",
+          "sha256": "a921cf89093660783793fbe5731755aae1f45a25ddc9246c733604294da0cbbc",
+          "x": 231537,
+          "y": 102749
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231538/102749.jpg",
+          "sha256": "c6ef8736e912f645ca1b0d22d7965a2fd566a3b606cfc6f828fec466d1eb7c24",
+          "x": 231538,
+          "y": 102749
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231539/102749.jpg",
+          "sha256": "66205b5d92f4b666457f6222289dce494c2d1f60f9d544fb375b9f7b22e22dba",
+          "x": 231539,
+          "y": 102749
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231537/102750.jpg",
+          "sha256": "77c798c7cb93eaf74379ccfbb35de2600632f683254d7c1031af3e2d82d16595",
+          "x": 231537,
+          "y": 102750
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231538/102750.jpg",
+          "sha256": "5e3ef24dc679515546204e7580086853440ca1cecf718d095f5af0fa1a9c7909",
+          "x": 231538,
+          "y": 102750
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231539/102750.jpg",
+          "sha256": "49333ae7e667195ea0879336b9eb0dab4f1ae90705c23a5b889cf804fa20c89a",
+          "x": 231539,
+          "y": 102750
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231537/102751.jpg",
+          "sha256": "24f8edf0a9f28219e09ecc2b472118867f51f37bc46197fee766dca9a529d91b",
+          "x": 231537,
+          "y": 102751
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231538/102751.jpg",
+          "sha256": "0597a5d1f5eeae9f1c9b2cb07860f1e06e7ff3d978130250d2fdd92806c97dbf",
+          "x": 231538,
+          "y": 102751
+        },
+        {
+          "url": "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/18/231539/102751.jpg",
+          "sha256": "c0135561ca4b8b7d6ea46580e03c3a259eae2ff820ede2d89b24a9e012b530eb",
+          "x": 231539,
+          "y": 102751
+        }
+      ],
+      "visuallyInspected": true,
+      "captureDateKnown": false,
+      "surveyedTrackCoordinates": false,
+      "layoutConfidence": "operator map overrides",
+      "observedLayout": null,
+      "note": "",
+      "supersededByOperatorSchematic": true
+    }
+  ]
+}

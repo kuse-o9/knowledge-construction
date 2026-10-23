@@ -39,6 +39,7 @@ replace('alignTerrainResolution(provider,level=13)','alignTerrainResolution(prov
 replace("viewer.imageryLayers.addImageryProvider(new Ces.UrlTemplateImageryProvider(","viewer.imageryLayers.addImageryProvider(await Ces.SingleTileImageryProvider.fromUrl('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGOQDkoFAAFeANMvysHcAAAAAElFTkSuQmCC'));viewer.imageryLayers.addImageryProvider(new Ces.UrlTemplateImageryProvider(")
 
 replace('stationPrimitives.push(...loadPassengers(meta))','stationPrimitives.push(...loadPassengers(model))')
+replace('s.direction===direction&&Math.hypot',"(s.direction===direction||s.platformLine!=='chuo-sobu-local')&&Math.hypot")
 replace("o.textContent=stop.code+' '+stop.name","o.textContent=(stop.publicCode?stop.publicCode+' ':'')+stop.name")
 replace("code.textContent=stop.code","code.textContent=stop.publicCode||(i<0?'通過':'停車')")
 replace("$('next-code').textContent=target.code","$('next-code').textContent=target.publicCode||'LIMITED EXPRESS'")
@@ -84,6 +85,7 @@ shell=re.sub(r'<body\b([^>]*)>',lambda m:m[0]+'<div id="development-banner" styl
 shell=shell.replace('</body>','<script src="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js"></script><script src="scene-start.js"></script><script src="../engine/rail-core.js"></script><script src="../engine/train-scene.js"></script><script src="shared.js"></script><script src="rail-audio.js"></script><script src="model-builder.js"></script><script src="announcements-reviewed.js"></script><script src="loader.js"></script></body>')
 english={'新宿':'Shinjuku','立川':'Tachikawa','八王子':'Hachioji','甲府':'Kofu','小淵沢':'Kobuchizawa','茅野':'Chino','上諏訪':'Kami-Suwa','岡谷':'Okaya','塩尻':'Shiojiri','松本':'Matsumoto','韮崎':'Nirasaki','大月':'Otsuki','塩山':'Enzan','山梨市':'Yamanashishi','石和温泉':'Isawa-Onsen','竜王':'Ryuo'}
 platform_review={r['name']:r for r in json.loads((DEST/'sources/priority-platform-review.json').read_text())['stations']}
+local_station_names={'大久保','東中野'}
 reports=[]
 chuo_html=json.loads(gzip.decompress(b''.join((ROOT/f'chuo-bundle-{i}.bin').read_bytes()for i in [0,1])))['html'];chuo_data=json.JSONDecoder().raw_decode(chuo_html.split('window.RAIL_DATA=',1)[1])[0];public_codes={s['name']:s['code']for r in chuo_data['routes'].values()for s in r['stops']}
 for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特急かいじ','竜王')]:
@@ -115,14 +117,21 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
   for s in (list(reversed(alignment['physicalStops']))if reverse else alignment['physicalStops']):
    i=len(points)-1-s['index']if reverse else s['index'];physical.append({**s,'index':i,'distance':cumulative[i]+110,'platformCenterDistance':cumulative[i],'lon':shifted[i][0],'lat':shifted[i][1],'english':english.get(s['name'],''),'publicCode':public_codes.get(s['name'],''),'platformGeometryVerified':False})
   by_code={s['code']:s for s in physical};stops=[{**by_code[s['sourceCode']],**{k:s[k]for k in ['arrival','departure','reportedPlatform']}}for s in service['stops']]
-  route={'label':service['name']+' ／ '+stops[0]['name']+' → '+stops[-1]['name'],'points':shifted,'groundHeights':heights,'trackOffsets':list(reversed(profile['trackOffsets']))if reverse else profile['trackOffsets'],'surveyedRailHeights':False,'railHeightMethod':profile['method'],'stops':stops,'physicalStops':physical,'length':cumulative[-1],'loop':False,'vehicleMaximum':130,'stationSpeeds':[{'code':s['code'],'distance':s['distance'],'limit':100}for s in physical],'gameMaximum':100,'operatingSpeedVerified':False,'prototypeLimitsNote':'100 km/h diagnostic limits; not the researched release profile'}
+  route={'label':service['name']+' ／ '+stops[0]['name']+' → '+stops[-1]['name'],'points':shifted,'groundHeights':heights,'trackOffsets':list(reversed(profile['trackOffsets']))if reverse else profile['trackOffsets'],'surveyedRailHeights':False,'railHeightMethod':profile['method'],'stops':stops,'physicalStops':physical,'length':cumulative[-1],'loop':False,'vehicleMaximum':130,'stationSpeeds':[{'code':s['code'],'distance':s['distance'],'limit':130}for s in physical],'gameMaximum':130,'operatingSpeedVerified':False,'speedPolicy':'published-maximum-game-cap','speedSource':'https://www.jreast.co.jp/train/express/azusa_kaiji.html','prototypeLimitsNote':'130 km/h game cap based on the published E353 maximum. Actual station-to-station operating restrictions are not reproduced. Curve geometry imposes no limit.'}
   def mapped(d):
    d=max(0,min(original[-1],d));i=min(len(original)-2,max(0,bisect.bisect_right(original,d)-1));t=(d-original[i])/(original[i+1]-original[i]);return cumulative[i]*(1-t)+cumulative[i+1]*t
   route['structures']=[{**r,'start':mapped(original[-1]-r['end']if reverse else r['start']),'end':mapped(original[-1]-r['start']if reverse else r['end']),'startHeight':r['endHeight']if reverse else r['startHeight'],'endHeight':r['startHeight']if reverse else r['endHeight']}for r in profile['structures']]
   for stop in physical+stops:
    review=platform_review.get(stop['name']);reported=stop.get('reportedPlatform',next((s.get('reportedPlatform')for s in stops if s['code']==stop['code']),None));chosen=str(reported)if reported is not None else((review.get('gamePlatformChoice')or{}).get(direction)or next(iter(review['sideTowardMatsumoto'])))if review else None
    side=(review['sideTowardMatsumoto'].get(str(chosen))if review else None)
-   stop.update(gamePlatformNumber=chosen,side=(side*(-1 if reverse else 1))if side is not None else 1,chosenPlatformSideReviewed=side is not None,platformSideVerified=side is not None and reported is not None,platformSideSource=review['sourceUrl']if review else None,platformEdgeOffset=1.58,platformHeight=1.10,platformGeometryVerified=False)
+   stop.update(gamePlatformNumber=chosen if chosen and chosen.isdigit()else None,side=(side*(-1 if reverse else 1))if side is not None else 1,chosenPlatformSideReviewed=side is not None,platformSideVerified=side is not None and reported is not None,platformSideSource=review['sourceUrl']if review else None,platformEdgeOffset=1.58,platformHeight=1.10,platformGeometryVerified=False,observedLayout=review.get('observedLayout')if review else None)
+   layout=(review or{}).get('observedLayout')or{}
+   stop['islandOuterTrack']=bool(layout.get('tracks')==3 and chosen and chosen.isdigit()and int(chosen)in layout.get('islandPlatformNumbers',[]))
+   if stop['name']in local_station_names:
+    i=stop['index'];p=points[i];q=shifted[i];separation=math.hypot((q[0]-p[0])*111320*math.cos(math.radians(p[1])),(q[1]-p[1])*111320)
+    # Adjacent local-line island, not an E353 platform. Offset is an explicit
+    # aerial-based game estimate; no surveyed alignment or platform assignment.
+    stop.update(side=-1 if reverse else 1,platformLine='chuo-sobu-local',platformLateralOrigin=16+(separation if reverse else -separation)-3.78,platformPlacementEstimated=True,platformSideVerified=False,gamePlatformNumber=None)
   data['routes'][direction]=route;data['serviceSources'].append(service['source'])
  announcements={}
  for direction,r in data['routes'].items():

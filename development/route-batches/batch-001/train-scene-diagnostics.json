@@ -78,8 +78,8 @@
     "vehicles/e353-draft.json.gz": "63e58b8bb59ef1933058ecb35c59dbb0766a999d2de7164d2c993ea72b497300",
     "alignments/azusa.json.gz": "9321396f8dae616fe06b7fb78d64d140db3c22ae5804eef3bba14c1ca27d8f26",
     "alignments/kaiji.json.gz": "5f48e88991b500e08c685bd0995e2c10fbf246577a6fe979cdcb3a34803af601",
-    "games/azusa.json.gz": "bcd4136dee478210f41f97f778c0c7d3e747e52bc6b71ed6efe9cd2eb50619e2",
-    "games/kaiji.json.gz": "2a4cf2af26f30d6e462117849026eab48137a3fdff6efeda97e17ab26268599c"
+    "games/azusa.json.gz": "06cf82e52915900ffb369fdb3aa11a420f676d4bd05038a4d002fb7913646691",
+    "games/kaiji.json.gz": "991ae00cf06495440b2a6da2ff0ae8cbb32149aefe6275aa4280685b04271450"
   },
   "pass": true
 }

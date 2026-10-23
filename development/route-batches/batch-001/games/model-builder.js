@@ -20,7 +20,7 @@ function build(meta){
  function point(d){const p=RailCore.position(geo,d);return V.fromDegrees(p.lon,p.lat,p.height);}
  function frame(d){const center=point(d),forward=V.normalize(V.subtract(point(d+.3),point(d-.3),new V()),new V()),normal=C.Ellipsoid.WGS84.geodeticSurfaceNormal(center,new V()),left=V.normalize(V.cross(normal,forward,new V()),new V()),up=V.normalize(V.cross(forward,left,new V()),new V());return {center,forward,left,up};}
  const f=frame(meta.kind==='track'?(meta.start+meta.end)/2:meta.platformCenterDistance),origin=f.center,groups=new Map();let radius=1;
- function xyz(f,x,y,z){if(meta.kind==='station')y*=meta.side;const out=V.clone(f.center);V.add(out,V.multiplyByScalar(f.forward,x,new V()),out);V.add(out,V.multiplyByScalar(f.left,y,new V()),out);V.add(out,V.multiplyByScalar(f.up,z,new V()),out);return out;}
+ function xyz(f,x,y,z){if(meta.kind==='station')y=(y+(meta.platformLateralOrigin||0))*meta.side;const out=V.clone(f.center);V.add(out,V.multiplyByScalar(f.forward,x,new V()),out);V.add(out,V.multiplyByScalar(f.left,y,new V()),out);V.add(out,V.multiplyByScalar(f.up,z,new V()),out);return out;}
  function quad(color,a,b,c,d){
   const normal=V.cross(V.subtract(b,a,new V()),V.subtract(c,a,new V()),new V());if(V.magnitudeSquared(normal)<1e-12)return;V.normalize(normal,normal);
   if(!groups.has(color))groups.set(color,{p:[],n:[],i:[]});const group=groups.get(color),at=group.p.length/3;
@@ -44,7 +44,20 @@ function build(meta){
  }else{
   const start=Math.max(1,meta.distance-250),end=Math.min(geo.length-1,meta.distance+15);
   for(let d=start;d<end;d+=5){const e=Math.min(end,d+5);strip(d,e,3.78,4.4,.05,1.05,'#a6a89e');strip(d,e,1.78,.30,1.10,.025,'#e0c257');strip(d,e,1.62,.08,.08,.95,'#d8d8ce');}
-  for(let d=start+15;d<end-10;d+=15){const p=frame(d);box(p,0,6.15,1.65,.08,.08,1.2,'#727b75');box(p,0,6.15,2.17,15,.065,.065,'#727b75');}
+  if(meta.platformLine==='chuo-sobu-local'){
+   // Keep the local island and both local tracks separate from the rapid pair.
+   for(let d=start;d<end;d+=4){const e=Math.min(end,d+4);strip(d,e,5.78,.30,1.10,.025,'#e0c257');for(const centre of[0,7.56]){strip(d,e,centre,3.15,-.30,.12,'#85847b');for(const sign of[-1,1]){const y=centre+sign*.5335;strip(d,e,y,.13,-.04,.025,'#727a79');strip(d,e,y,.028,-.015,.09,'#43484b');strip(d,e,y,.067,.075,.045,'#b8bec0');}strip(d,e,centre,.022,5.45,.022,'#8b9395');}}
+   for(let d=start;d<end;d+=.7)for(const centre of[0,7.56])box(frame(d),0,centre,-.075,.22,2.45,.11,'#b7b5a8');
+  }
+  if(meta.islandOuterTrack){
+   // The operator map establishes a third passenger track. Widths, turnout
+   // positions and transitions are game estimates, never surveyed geometry.
+   const a=Math.max(1,start-100),b=Math.min(geo.length-1,end+100),centre=d=>{const t=Math.max(0,Math.min(1,Math.min((d-a)/100,(b-d)/100)));return 12+(7.56-12)*t*t*(3-2*t);};
+   for(let d=a;d<b;d+=4){const e=Math.min(b,d+4),u=frame(d),v=frame(e);for(const sign of[-1,1])for(const[width,z,height,color]of[[.13,-.04,.025,'#727a79'],[.028,-.015,.09,'#43484b'],[.067,.075,.045,'#b8bec0']]){const y=sign*.5335,ps=[xyz(u,0,centre(d)+y-width/2,z+height),xyz(u,0,centre(d)+y+width/2,z+height),xyz(v,0,centre(e)+y+width/2,z+height),xyz(v,0,centre(e)+y-width/2,z+height)];quad(color,ps[0],ps[3],ps[2],ps[1]);}strip(d,e,centre((d+e)/2),3.15,-.30,.12,'#85847b');}
+   for(let d=a;d<b;d+=.7)box(frame(d),0,centre(d),-.075,.22,2.45,.11,'#b7b5a8');
+   for(let d=start;d<end;d+=5){const e=Math.min(end,d+5);strip(d,e,5.78,.30,1.10,.025,'#e0c257');strip(d,e,5.94,.08,.08,.95,'#d8d8ce');}
+  }
+  if(!meta.islandOuterTrack&&meta.platformLine!=='chuo-sobu-local')for(let d=start+15;d<end-10;d+=15){const p=frame(d);box(p,0,6.15,1.65,.08,.08,1.2,'#727b75');box(p,0,6.15,2.17,15,.065,.065,'#727b75');}
   for(let d=meta.distance-190;d<meta.distance-35;d+=18){const p=frame(d);box(p,0,4.6,3,.16,.2,3.9,'#aab7b3');box(p,0,4.2,4.9,18,4.8,.15,'#cdd5d0');box(p,0,4.0,4.73,7,.12,.09,'#eee7cc');box(p,0,5.4,1.5,2.8,.52,.13,'#728d82');for(const x of [-1,1])box(p,x,5.4,1.28,.08,.35,.45,'#4d5a56');}
   for(const d of [meta.distance-185,meta.distance-95,meta.distance-30]){const p=frame(d);box(p,0,4.3,2.6,.10,.10,3.1,'#869b8d');box(p,0,4.3,3.65,2.6,.10,.8,'#e4e9de');box(p,0,4.22,3.4,2.6,.06,.13,'#8066ad');}
   box(frame(meta.distance),0,2.5,1.4,.10,.8,.65,'#eee9dd');
@@ -55,7 +68,7 @@ function build(meta){
   const label=xyz(frame(meta.distance-100),0,4.25,3.7),outer=xyz(frame(meta.distance-25),0,4.25,3.7);model.label=[label.x,label.y,label.z];model.outer=[outer.x,outer.y,outer.z];model.gateBatches=[];model.targets=[];model.passengers=[];
   const doors=(data.train.formations?.[meta.direction]||data.train.formation).flatMap(car=>car.doorCentres.map(x=>meta.distance-car.centreBehindFront+(car.reverse?-x:x)));
   const count=common.baselineStationPassengerCount;
-  for(let i=0;i<count;i++){const d=doors[(i*3)%doors.length]+(Math.floor(i/doors.length)-3)*1.1,p=frame(d),position=xyz(p,0,2.8+(i%3)*.75,1.08),rotation=new C.Matrix3();C.Matrix3.setColumn(rotation,0,p.forward,rotation);C.Matrix3.setColumn(rotation,1,p.left,rotation);C.Matrix3.setColumn(rotation,2,p.up,rotation);const q=C.Quaternion.fromRotationMatrix(rotation,new C.Quaternion());model.passengers.push({position:[position.x,position.y,position.z],rotation:[q.x,q.y,q.z,q.w],variant:i%common.passengerModels.length,distance:d-meta.distance,lateral:2.8*meta.side,width:4.4,scale:.94});}
+  for(let i=0;i<count;i++){const d=doors[(i*3)%doors.length]+(Math.floor(i/doors.length)-3)*1.1,p=frame(d),position=xyz(p,0,2.8+(i%3)*.75,1.08),rotation=new C.Matrix3();C.Matrix3.setColumn(rotation,0,p.forward,rotation);C.Matrix3.setColumn(rotation,1,p.left,rotation);C.Matrix3.setColumn(rotation,2,p.up,rotation);const q=C.Quaternion.fromRotationMatrix(rotation,new C.Quaternion());model.passengers.push({position:[position.x,position.y,position.z],rotation:[q.x,q.y,q.z,q.w],variant:i%common.passengerModels.length,distance:d-meta.distance,lateral:(2.8+(meta.platformLateralOrigin||0))*meta.side,width:4.4,scale:.94});}
  }
  cache.set(meta.id,model);while(cache.size>32)cache.delete(cache.keys().next().value);return model;
 }

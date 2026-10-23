@@ -31,7 +31,7 @@ class GeometryReview(unittest.TestCase):
    self.assertEqual(len(accepted),9)
    self.assertTrue(all(r['rtCode']=='40201000121'for r in accepted))
  def test_platform_map_review_never_invents_assignment_verification(self):
-  review=json.loads((DEST/'sources/priority-platform-review.json').read_text());self.assertEqual(len(review['stations']),42);self.assertTrue(all(not r['assignmentVerifiedByMapAlone']for r in review['stations']))
+  review=json.loads((DEST/'sources/priority-platform-review.json').read_text());self.assertEqual(len(review['stations']),62);self.assertTrue(all(not r['assignmentVerifiedByMapAlone']for r in review['stations']))
   for key in ['azusa','kaiji']:
    for route in unpack(f'games/{key}.json.gz')['data']['routes'].values():
     self.assertTrue(all(not s['platformGeometryVerified']for s in route['physicalStops']))

@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "samples": 18769,
+  "gameMaximumKmh": 130,
+  "actualSectionLimitsVerified": false,
+  "curveLimits": false,
+  "inputHashes": {
+    "games/azusa.json.gz": "06cf82e52915900ffb369fdb3aa11a420f676d4bd05038a4d002fb7913646691",
+    "games/kaiji.json.gz": "991ae00cf06495440b2a6da2ff0ae8cbb32149aefe6275aa4280685b04271450",
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b"
+  },
+  "method": "Current packet boundary and mid-section samples; actual operating restrictions remain unverified."
+}

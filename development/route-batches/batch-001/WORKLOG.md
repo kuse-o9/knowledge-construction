@@ -109,3 +109,20 @@ JR東日本の中央本線・中央線快速・中央総武各停の駅情報一
 元ゲームの音声そのものを保持する既存検査は、未知の番線を省く承認済みの文面修正だけを許す形へ更新。戸閉2ケースと乗換39ケースを再確認。ソフトウェア描画の重い検査と模型生成の検査を分離し、BAYLINE_MODELS_ONLY=1 は駅模型・勾配・キャッシュだけを station-model-diagnostics.json に記録する。描画検査の結果を置き換えたり、描画完了と数えたりしない。
 
 全区間のトンネル・橋描画は未完了。以前のパケットで2箇所のトンネル描画を確認できたが、残りは実行時間内に完了しておらず、新パケットの完全検査証拠には使わない。既存の公開ゲートは閉じたままにする。新しい最終検査結果は対応する診断JSONとgeometry-review-status.jsonを参照。
+
+
+## 2026-10-23 — rendering and complete station-map inventory
+
+Vehicle depot startup compatibility was separately published on main 012bd96c0c9b4cc38641dbe0967b9c14cb887725. Real software shader/render checks passed forced WebGL2 and WebGL1; the no-context case keeps route links and retry. Public exact readback matched all four files. This is not evidence from the user's physical GPU.
+
+Tunnel clipping now removes only redundant mask vertices within a measured 1 mm bound (RDP on ECEF boundaries). Train/track/roof/wall meshes, resolution and all passengers are retained. Earlier current-turn full 16-case tunnel/bridge rendering completed successfully; final packet binding is being rerun after station fixes.
+
+All 64 physical stations now have visually inspected operator schematics: 62 main/rapid platform records plus 2 local-line-only maps. Added the remaining 20 operator diagrams. A GSI aerial reference inventory of 22 stations is retained as source URL/hash/observation metadata only; operator schematics override all aerial inferences. In particular Yanagawa is an island, contrary to the initial aerial inference. No aerial-only platform choice remains active. Blank platform number boxes remain unnamed. This does not verify exact lengths, current train assignments or surveyed coordinates.
+
+Corrected Okubo/Higashi-Nakano to estimated adjacent local-line islands with both local rails. Kept 128 passengers per generated station. Render the opposite-direction main platforms too, avoiding duplicate local-only islands. At the four newly checked three-track stations (Kai-Yamato, Hinoharu, Fujimi, Aoyagi), draw the island's other face and third track with estimated turnout transitions. Complete station-specific layouts at every other complex station remain unfinished.
+
+Game cap is 130 km/h, based on JR East's published E353 maximum. No curve restrictions; station-boundary profile retained. Do not treat this cap as actual current restrictions in every section. 2013 rapid-service 95→100 km/h document is explicitly not extrapolated to E353. Operating-speed verification remains false.
+
+Four accelerated packet runs, 18,769 speed samples, 39 announcement direction cases and two departure wording cases passed on final packets. Four actual browser control cases + two software startup scenes passed. Final geometry/train/station checks and suite counts are recorded in their bound diagnostic files after completion. These are development updates; no Azusa/Kaiji public release is claimed.
+
+Final verification completed on packets Azusa 06cf82e52915900ffb369fdb3aa11a420f676d4bd05038a4d002fb7913646691 / Kaiji 991ae00cf06495440b2a6da2ff0ae8cbb32149aefe6275aa4280685b04271450: 39/39 unit tests, 16 bridge/tunnel scenes, 11 corrected-station scenes, 212 meshes, 420 consist locations, four controls + two software startup scenes, eight local-platform clearance cases. All bound report hashes were checked. Only representative screenshots listed in geometry-review-status.json are current evidence; other screenshots may be historical. Remaining reproduction and release work is explicitly listed there; this checkpoint is not a new public game.

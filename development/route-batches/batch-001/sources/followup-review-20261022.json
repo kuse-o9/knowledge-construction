@@ -1,10 +1,10 @@
 {
-  "checked": "2026-10-22",
+  "checked": "2026-10-23",
   "releaseReady": false,
   "vehicle": {
     "source": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
     "maximumKmh": 130,
-    "note": "Vehicle maximum only; not evidence for each running section. Keep the diagnostic 100 km/h profile unverified."
+    "note": "Published E353 maximum. The game cap is now 130 km/h; this does not verify individual operating section restrictions."
   },
   "productionChanges": {
     "source": "https://www.jreast.co.jp/nagano/pdf/171026.pdf",
@@ -38,9 +38,9 @@
   },
   "remaining": [
     "Surveyed rail-height/bridge-clearance data not acquired; estimated-height labels retained",
-    "20 passing-station maps still unreviewed; multi-track mesh and dimensions remain incomplete at all 48 passing stations",
+    "All 64 station schematics inspected; precise platform dimensions, complete station-specific track meshes and six train-specific platform assignments remain incomplete",
     "Six service-specific platform assignments absent from the selected official train pages",
-    "Station-boundary speed limits not proven by the vehicle maximum",
+    "Actual current station-boundary restrictions are not proven. Game uses a disclosed published-maximum cap of 130 km/h with no curve limits.",
     "Western neighbouring traffic geometry/model work incomplete",
     "Non-JR transfer completeness and 2026 roof/bogie/cab checks incomplete"
   ],
@@ -78,15 +78,16 @@
   },
   "stationMapContinuation": {
     "checked": "2026-10-23",
-    "mapsReviewed": 44,
-    "rapidPlatformSideRecords": 42,
-    "newPassingStationSideRecords": 26,
+    "mapsReviewed": 64,
+    "rapidPlatformSideRecords": 62,
+    "newPassingStationSideRecords": 46,
     "localLineOnlyStationMaps": [
       "大久保",
       "東中野"
     ],
-    "mapReviewStillPending": 20,
+    "mapReviewStillPending": 0,
     "dimensionsOrFullTrackMeshVerified": false,
-    "source": "sources/priority-platform-review.json"
+    "source": "sources/priority-platform-review.json",
+    "localLinePlacement": "Estimated adjacent local islands + two local rails now implemented at Okubo and Higashi-Nakano; 128 passengers retained per generated station model."
   }
 }

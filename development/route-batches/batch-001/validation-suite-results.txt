@@ -21,7 +21,7 @@ test_manufacturer_facts_and_directional_formation (test_geometry_review.Geometry
 test_platform_map_review_never_invents_assignment_verification (test_geometry_review.GeometryReview.test_platform_map_review_never_invents_assignment_verification) ... ok
 test_reviewed_tunnel_fragments_do_not_leave_deep_open_trenches (test_geometry_review.GeometryReview.test_reviewed_tunnel_fragments_do_not_leave_deep_open_trenches) ... ok
 test_shared_corridor_has_shared_elevation (test_geometry_review.GeometryReview.test_shared_corridor_has_shared_elevation) ... ok
-test_strict_scene_regression_matches_current_inputs (test_geometry_review.GeometryReview.test_strict_scene_regression_matches_current_inputs) ... FAIL
+test_strict_scene_regression_matches_current_inputs (test_geometry_review.GeometryReview.test_strict_scene_regression_matches_current_inputs) ... ok
 test_unreviewed_work_blocks_publication (test_geometry_review.GeometryReview.test_unreviewed_work_blocks_publication) ... ok
 test_acquired_data_hashes_geometry_and_unfinished_status (test_gsi_vectors.GSIVectors.test_acquired_data_hashes_geometry_and_unfinished_status) ... ok
 test_external_wire_contract_properties_and_multiple_paths (test_gsi_vectors.GSIVectors.test_external_wire_contract_properties_and_multiple_paths) ... ok
@@ -38,17 +38,7 @@ test_removing_quality_gates_does_not_bypass_publication_checks (test_publication
 test_rerun_is_idempotent_and_pending_upgrade_keeps_existing_release (test_publication.Publication.test_rerun_is_idempotent_and_pending_upgrade_keeps_existing_release) ... ok
 test_tampered_game_cannot_enter_public_catalogue (test_publication.Publication.test_tampered_game_cannot_enter_public_catalogue) ... ok
 
-======================================================================
-FAIL: test_strict_scene_regression_matches_current_inputs (test_geometry_review.GeometryReview.test_strict_scene_regression_matches_current_inputs)
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/workspace/scratch/4aa798ff9687/railway-review/development/route-batches/test_geometry_review.py", line 41, in test_strict_scene_regression_matches_current_inputs
-    r=json.loads((DEST/'geometry-review-diagnostics.json').read_text());self.assertTrue(r['pass'],r.get('fatal'));self.assertEqual(r['errors'],[]);self.assertFalse(r['physicalGPU']);self.assertFalse(r['releaseReady'])
-                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError: False is not true : page.evaluate: Target page, context or browser has been closed
-    at /workspace/scratch/4aa798ff9687/railway-review/development/route-batches/check-priority-geometry.cjs:37:255
+Ran 39 tests in 5.743s
 
-----------------------------------------------------------------------
-Ran 39 tests in 12.669s
-
-FAILED (failures=1)
+OK

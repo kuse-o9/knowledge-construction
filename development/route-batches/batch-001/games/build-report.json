@@ -21,7 +21,7 @@
       "id": "azusa",
       "entry": "games/azusa.html",
       "packet": "games/azusa.json.gz",
-      "sha256": "bcd4136dee478210f41f97f778c0c7d3e747e52bc6b71ed6efe9cd2eb50619e2",
+      "sha256": "06cf82e52915900ffb369fdb3aa11a420f676d4bd05038a4d002fb7913646691",
       "directions": 2,
       "physicalStations": 64,
       "releaseReady": false
@@ -30,7 +30,7 @@
       "id": "kaiji",
       "entry": "games/kaiji.html",
       "packet": "games/kaiji.json.gz",
-      "sha256": "2a4cf2af26f30d6e462117849026eab48137a3fdff6efeda97e17ab26268599c",
+      "sha256": "991ae00cf06495440b2a6da2ff0ae8cbb32149aefe6275aa4280685b04271450",
       "directions": 2,
       "physicalStations": 42,
       "releaseReady": false

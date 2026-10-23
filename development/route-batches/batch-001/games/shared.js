@@ -231,6 +231,18 @@ function ranges(geo){
 function near(geo,d,margin=0){return rangesCached(geo).some(r=>d>=r.start-margin&&d<=r.end+margin);}
 const cache=new WeakMap();function rangesCached(geo){if(!cache.has(geo))cache.set(geo,ranges(geo));return cache.get(geo);}
 function side(C,frame,width){return C.Cartesian3.add(frame.center,C.Cartesian3.multiplyByScalar(frame.left,width,new C.Cartesian3()),new C.Cartesian3());}
+
+// Remove redundant terrain-mask vertices to millimetre precision. Rail, roof,
+// wall and train meshes, clipping texture resolution and view distance stay intact.
+function simplifyBoundary(points,tolerance=.001){
+ if(points.length<=2)return points.slice();
+ const keep=new Set([0,points.length-1]),stack=[[0,points.length-1]],limit=tolerance*tolerance;
+ while(stack.length){const [lo,hi]=stack.pop(),a=points[lo],b=points[hi],dx=b.x-a.x,dy=b.y-a.y,dz=b.z-a.z,length=dx*dx+dy*dy+dz*dz;let best=limit,index=-1;
+  for(let i=lo+1;i<hi;i++){const p=points[i],x=p.x-a.x,y=p.y-a.y,z=p.z-a.z,t=length?Math.max(0,Math.min(1,(x*dx+y*dy+z*dz)/length)):0,d=(x-t*dx)**2+(y-t*dy)**2+(z-t*dz)**2;if(d>best){best=d;index=i;}}
+  if(index!==-1){keep.add(index);stack.push([lo,index],[index,hi]);}
+ }return Array.from(keep).sort((a,b)=>a-b).map(i=>points[i]);
+}
+
 function setup(viewer,C,geos,frame){
  if(active)dispose();
  const segments=Object.entries(geos).flatMap(([key,geo])=>rangesCached(geo).map(r=>({...r,key,geo})));
@@ -252,15 +264,17 @@ function render(player){
  // A fresh collection prevents stale clipping textures when counts are equal.
  a.viewer.scene.globe.clippingPolygons=undefined;a.collection=null;
  if(!own){a.viewer.scene.requestRender();return;}
- const polygons=[];
+ const polygons=[];let sourceVertices=0,maskVertices=0;
  for(const r of a.segments)for(let start=r.start;start<r.end;start+=160){
   const end=Math.min(r.end,start+160),mid=a.frame(r.geo,(start+end)/2);
   if(a.C.Cartesian3.distance(mid.center,a.frame(own.geo,player.distance).center)>1000)continue;
   const left=[],right=[];
   for(let d=start;d<end;d+=8){const f=a.frame(r.geo,d);left.push(side(a.C,f,10));right.push(side(a.C,f,-10));}
   const f=a.frame(r.geo,end);left.push(side(a.C,f,10));right.push(side(a.C,f,-10));
-  polygons.push(new a.C.ClippingPolygon({positions:left.concat(right.reverse())}));
+  sourceVertices+=left.length+right.length;const positions=simplifyBoundary(left).concat(simplifyBoundary(right).reverse());maskVertices+=positions.length;
+  polygons.push(new a.C.ClippingPolygon({positions}));
  }
+ a.maskStats={sourceVertices,maskVertices,toleranceMetres:.001};
  a.collection=new a.C.ClippingPolygonCollection({polygons,enabled:polygons.length>0});a.viewer.scene.globe.clippingPolygons=a.collection;
  const {C,viewer,frame}=a,add=e=>a.entities.push(viewer.entities.add(e));
  for(const r of a.segments){
@@ -297,7 +311,7 @@ function model(m){
 }
 function canRender(geo,d){return active?.supported!==false||!near(geo,d,200);}
 function dispose(){if(!active)return;for(const e of active.entities)active.viewer.entities.remove(e);if(active.collection&&active.viewer.scene.globe.clippingPolygons===active.collection)active.viewer.scene.globe.clippingPolygons=undefined;active=null;}
-g.BaylineTunnels={offset,ranges,near,setup,render,model,dispose,canRender};
+g.BaylineTunnels={offset,ranges,near,setup,render,model,dispose,canRender,simplifyBoundary,get maskStats(){return active?.maskStats;}};
 })(typeof globalThis==='object'?globalThis:window);
 
 /* Existing Tachikawa branch: game interlocking, not a surveyed signal diagram.
