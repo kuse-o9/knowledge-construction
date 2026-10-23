@@ -25,6 +25,18 @@
       "primitives": 42,
       "tunnelRoofs": 206,
       "pass": true
+    },
+    {
+      "id": "azusa",
+      "kind": "tunnel-fragment-1",
+      "distance": 159405.26445143492,
+      "glError": 0,
+      "clippingPolygons": 19,
+      "clippingEnabled": true,
+      "tilesLoaded": false,
+      "primitives": 42,
+      "tunnelRoofs": 154,
+      "pass": true
     }
   ],
   "errors": [],
@@ -37,5 +49,7 @@
     "engine/train-scene.js": "99fcaf5544d6c430fa25a1c406a2acd6a3bb19a3206cf395dc418caef7021892"
   },
   "pass": false,
-  "fatal": "page.evaluate: Target page, context or browser has been closed\n    at /workspace/scratch/4aa798ff9687/railway-review/development/route-batches/check-priority-geometry.cjs:37:255"
+  "fatal": "page.evaluate: Target page, context or browser has been closed\n    at /workspace/scratch/4aa798ff9687/railway-review/development/route-batches/check-priority-geometry.cjs:37:255",
+  "supersededByCurrentPackets": true,
+  "currentPacketValidation": "Full tunnel/bridge scene regression has not completed for the current station-map packets. Historical rows must not be counted as current scene coverage."
 }

@@ -38,7 +38,7 @@
   },
   "remaining": [
     "Surveyed rail-height/bridge-clearance data not acquired; estimated-height labels retained",
-    "48 passing-station layout reviews incomplete",
+    "20 passing-station maps still unreviewed; multi-track mesh and dimensions remain incomplete at all 48 passing stations",
     "Six service-specific platform assignments absent from the selected official train pages",
     "Station-boundary speed limits not proven by the vehicle maximum",
     "Western neighbouring traffic geometry/model work incomplete",
@@ -75,5 +75,18 @@
     "asOf": "2019-03-31",
     "maximumKmh": 130,
     "scope": "Azusa Shinjuku-Matsumoto maximum; not each station-boundary limit or a current 2026 restriction sheet."
+  },
+  "stationMapContinuation": {
+    "checked": "2026-10-23",
+    "mapsReviewed": 44,
+    "rapidPlatformSideRecords": 42,
+    "newPassingStationSideRecords": 26,
+    "localLineOnlyStationMaps": [
+      "大久保",
+      "東中野"
+    ],
+    "mapReviewStillPending": 20,
+    "dimensionsOrFullTrackMeshVerified": false,
+    "source": "sources/priority-platform-review.json"
   }
 }

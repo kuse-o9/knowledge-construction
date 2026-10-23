@@ -1,0 +1,39 @@
+{
+  "method": "Station mesh, grade and cache validation in the actual game; no scene rendering claim.",
+  "releaseReady": false,
+  "physicalGPU": false,
+  "runs": [
+    {
+      "id": "azusa",
+      "kind": "station-models",
+      "stations": 128,
+      "vertices": 701952,
+      "maxGradePerMille": 34.67076965299489,
+      "cacheSize": 32,
+      "platformEdgeOffset": 1.58,
+      "platformGeometryVerified": false,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "kind": "station-models",
+      "stations": 84,
+      "vertices": 460656,
+      "maxGradePerMille": 34.39504650398132,
+      "cacheSize": 32,
+      "platformEdgeOffset": 1.58,
+      "platformGeometryVerified": false,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "inputHashes": {
+    "games/azusa.json.gz": "bcd4136dee478210f41f97f778c0c7d3e747e52bc6b71ed6efe9cd2eb50619e2",
+    "games/kaiji.json.gz": "2a4cf2af26f30d6e462117849026eab48137a3fdff6efeda97e17ab26268599c",
+    "games/shared.js": "6a139c57cde5790421dc1281b6ee0bf79833c99d2e2f85f6c8707409090c428e",
+    "games/model-builder.js": "41c4ba55ea2d6c4fed77e4b7f7b63638f03976b1fcb86f11e5a04120b5e01a9f",
+    "games/rail.js": "2606b79ad46f4d37d5e19747c76d1595e929694934de306fe0115d2dbb42ddb6",
+    "engine/train-scene.js": "99fcaf5544d6c430fa25a1c406a2acd6a3bb19a3206cf395dc418caef7021892"
+  },
+  "pass": true
+}

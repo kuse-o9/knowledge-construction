@@ -21,7 +21,11 @@ class IntegratedGames(unittest.TestCase):
  def test_original_passenger_and_city_detail_was_not_reduced(self):
   base_models=json.JSONDecoder().raw_decode(self.base.split('window.RAIL_PREBUILT_MODELS=',1)[1])[0];base_city=json.JSONDecoder().raw_decode(self.base.split('window.RAIL_CITY_MODELS=',1)[1])[0]
   self.assertEqual(self.common['passengerModels'],base_models['passengerModels']);self.assertEqual(self.common['city'],base_city);self.assertEqual(self.common['baselineStationPassengerCount'],128)
-  audio=re.findall(r'<script[^>]*>(.*?)</script>',self.base,re.S)[4];self.assertEqual((DEST/'games/rail-audio.js').read_text(),audio)
+  audio=re.findall(r'<script[^>]*>(.*?)</script>',self.base,re.S)[4]
+  # Keep every original audio synthesis path; the only adaptation is to omit
+  # an unknown platform number. Its actual speech is exercised separately.
+  audio=audio.replace("platform+'番線、ドアが閉まります。ご注意ください。'", "(platform!=null?platform+'番線、':'')+'ドアが閉まります。ご注意ください。'")
+  self.assertEqual((DEST/'games/rail-audio.js').read_text(),audio)
  def test_games_keep_physical_stations_separate_from_service_stops(self):
   for key,expected in [('azusa',64),('kaiji',42)]:
    packet=json.loads(gzip.decompress((DEST/'games'/(key+'.json.gz')).read_bytes()));self.assertFalse(packet['releaseReady'])

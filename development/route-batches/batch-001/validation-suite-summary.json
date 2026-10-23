@@ -1,0 +1,10 @@
+{
+  "testsRun": 39,
+  "passed": 38,
+  "failures": [
+    "test_strict_scene_regression_matches_current_inputs (test_geometry_review.GeometryReview.test_strict_scene_regression_matches_current_inputs)"
+  ],
+  "errors": [],
+  "skipped": 0,
+  "releaseReady": false
+}

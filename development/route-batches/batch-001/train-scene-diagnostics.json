@@ -17,7 +17,7 @@
         1200,
         700
       ],
-      "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
       "image": "vehicles/e353-consist-forward.png",
       "pass": true
     },
@@ -34,7 +34,7 @@
         1200,
         700
       ],
-      "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
       "image": "vehicles/e353-consist-reverse.png",
       "pass": true
     },
@@ -51,7 +51,7 @@
         1200,
         700
       ],
-      "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
       "pass": true
     },
     {
@@ -67,7 +67,7 @@
         1200,
         700
       ],
-      "renderer": "ANGLE (Mesa, llvmpipe (LLVM 20.1.2 256 bits), OpenGL ES 3.2)",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
       "pass": true
     }
   ],
@@ -78,8 +78,8 @@
     "vehicles/e353-draft.json.gz": "63e58b8bb59ef1933058ecb35c59dbb0766a999d2de7164d2c993ea72b497300",
     "alignments/azusa.json.gz": "9321396f8dae616fe06b7fb78d64d140db3c22ae5804eef3bba14c1ca27d8f26",
     "alignments/kaiji.json.gz": "5f48e88991b500e08c685bd0995e2c10fbf246577a6fe979cdcb3a34803af601",
-    "games/azusa.json.gz": "ef3ec236a6baba8df2d4249ebb4bcd4b3706ec349d05bc775b855665305bf740",
-    "games/kaiji.json.gz": "898a64587cf7c63d56a0a70ffd46a82f2569584848b252cca9e28fa14ef7eda2"
+    "games/azusa.json.gz": "bcd4136dee478210f41f97f778c0c7d3e747e52bc6b71ed6efe9cd2eb50619e2",
+    "games/kaiji.json.gz": "2a4cf2af26f30d6e462117849026eab48137a3fdff6efeda97e17ab26268599c"
   },
   "pass": true
 }
