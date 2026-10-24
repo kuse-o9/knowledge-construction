@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "function": "study_editor_access",
+      "status": 401,
+      "code": "42501",
+      "denied": true
+    },
+    {
+      "function": "study_editor_job",
+      "status": 401,
+      "code": "42501",
+      "denied": true
+    }
+  ],
+  "schemaApplied": true,
+  "AIProviderConfigured": false
+}

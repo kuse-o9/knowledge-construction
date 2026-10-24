@@ -1,0 +1,34 @@
+{
+  "pass": true,
+  "errors": [],
+  "checks": [
+    "50 BGM / 32 SFX entries",
+    "text / undo",
+    "image import / trim / overlay",
+    "project JSON",
+    "actual WebM export",
+    "actual 60-second BGM generation",
+    "actual SFX generation",
+    "actual video import / timeline split",
+    "mobile width"
+  ],
+  "inputHashes": {
+    "index.html": "ce302e45d2d3d597a0724cfdaf93a727d1858c7ae13d3efd43c4848213b54ed3",
+    "admin-loader.js": "a306e18a984b6f96c4f797ea07ba874a2c9de3f20b0a86cddff2a5e3f54c9c5a",
+    "admin-ai.html": "0726803f269dd04f6f0ac021ddb10c05948ccb20ea71214a892e2fd4abbfbcab",
+    "admin-ai.js": "75b3cddf084187ed918b8fd7d145b43da2bdef92cd6be157105ccd137569f8f3",
+    "editor/index.html": "a8d5b4670bde374af15426d99bfa4842d657cf347675a8ec17ac7e15839a144b",
+    "editor/studio.css": "04f98eaf449ab8d3d60d92a6611397c3e17398341ca91a4e8fd3afabb16e05f9",
+    "editor/studio.js": "3b94c9f2391a29a972e5581b780024951ba5d746c7c531a7c5faeba6b4904f4c",
+    "development/editor/editor-access.sql": "a09c8544c07dcb1c786893b55693a33d5a6621fc3e57042daa51ea79ca0f6928",
+    "development/STUDY_CURRENT_PLAN.md": "b376e060a4b2072020a6e221996304f65beeb70dc59ef232c949d7fc6a66f1a2"
+  },
+  "exportVerified": {
+    "video": "VP8",
+    "audio": "Opus",
+    "width": 1920,
+    "height": 1080
+  },
+  "AIProcessingConnected": false,
+  "scope": "Basic editor; advanced Resolve parity and actual AI processing are not complete."
+}
