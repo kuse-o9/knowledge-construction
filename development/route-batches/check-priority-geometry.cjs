@@ -31,8 +31,11 @@ for(const f of ['games/azusa.json.gz','games/kaiji.json.gz','games/shared.js','g
  if(BaylineBatchModels.cacheSize>32||maxGrade>.035)throw Error('Station cache or grade regression');return {stations,vertices,maxGradePerMille:maxGrade*1000,cacheSize:BaylineBatchModels.cacheSize,platformEdgeOffset:1.58,platformGeometryVerified:false};
  });report.runs.push({id,kind:'station-models',...models,pass:true});
  if(modelsOnly){await page.close();continue;}
+ for(const travel of stationsOnly?['forward','reverse']:['forward']){
+ await page.locator('#view-map').click();await page.locator('#settings-button').click();await page.locator('#direction').selectOption(travel);await page.locator('#settings-close').click();
+ if(await page.evaluate(()=>document.querySelector('#direction').value)!==travel)throw Error('Diagnostic direction did not change');
  const targets=await page.evaluate(stationsOnly=>{
- if(stationsOnly)return ['大久保','東中野','国立','東小金井','相模湖','四方津','酒折','下諏訪','甲斐大和','日野春','富士見','青柳','村井','南松本'].map(name=>BaylineGame.route.physicalStops.find(s=>s.name===name)).filter(Boolean).map(s=>({kind:'station-'+s.code,distance:s.distance-60,name:s.name}));
+ if(stationsOnly)return ['大久保','東中野','国立','東小金井','相模湖','四方津','酒折','下諏訪','甲斐大和','日野春','富士見','青柳','村井','南松本','茅野','上諏訪','岡谷'].map(name=>BaylineGame.route.physicalStops.find(s=>s.name===name)).filter(Boolean).map(s=>({kind:'station-'+s.code,distance:s.distance-60,name:s.name}));
  const g=BaylineGame,geo=g.geometry,structures=g.route.structures,tunnel=structures.filter(s=>s.kind==='tunnel').sort((a,b)=>(b.end-b.start)-(a.end-a.start))[0],bridge=structures.filter(s=>s.kind==='bridge-or-viaduct'&&s.maxRailAboveTerrain>3).sort((a,b)=>(b.end-b.start)-(a.end-a.start))[0];
  if(!tunnel||!bridge)throw Error('Missing classified diagnostic locations');return [48200,61440,65590].map((d,i)=>({kind:'tunnel-fragment-'+i,distance:document.querySelector('#direction').value==='reverse'?geo.length-d:d})).concat([{kind:'tunnel',distance:(tunnel.start+tunnel.end)/2},{kind:'tunnel-window',distance:(tunnel.start+tunnel.end)/2+245},{kind:'bridge',distance:(bridge.start+bridge.end)/2},{kind:'tunnel-return',distance:(tunnel.start+tunnel.end)/2+125},{kind:'bridge-return',distance:(bridge.start+bridge.end)/2+125}]);},stationsOnly);
  for(const target of targets){
@@ -44,7 +47,8 @@ for(const f of ['games/azusa.json.gz','games/kaiji.json.gz','games/shared.js','g
  const result=await page.evaluate(()=>{window.__qaRenderEnabled=false;if(__renderErrors.length)throw Error(__renderErrors.join('\n'));if(document.querySelector('.cesium-widget-errorPanel'))throw Error('Cesium error panel');const v=BaylineGame.viewer;v.render();v.scene.context._gl.finish();return {glError:v.scene.context._gl.getError(),clippingPolygons:v.scene.globe.clippingPolygons?.length||0,clippingEnabled:v.scene.globe.clippingPolygons?.enabled||false,tilesLoaded:v.scene.globe.tilesLoaded,primitives:v.scene.primitives.length,tunnelRoofs:v.entities.values.filter(e=>e.name==='tunnel-roof').length};});
  if(target.kind.startsWith('tunnel-fragment')&&result.tunnelRoofs===0)throw Error('Reviewed tunnel roof missing');
  if(result.glError||result.clippingPolygons>100||target.kind.startsWith('bridge')&&!result.tilesLoaded)throw Error('Invalid scene state');
- await page.screenshot({path:path.join(DEST,'games',id+'-'+target.kind+'.png')});report.runs.push({id,...target,...result,pass:true});console.log('PASS',id,target.kind,result);
+ await page.screenshot({path:path.join(DEST,'games',id+'-'+(travel==='reverse'?'reverse-':'')+target.kind+'.png')});report.runs.push({id,direction:travel,...target,...result,pass:true});console.log('PASS',id,target.kind,result);
+ }
  }
  await page.close();
  }

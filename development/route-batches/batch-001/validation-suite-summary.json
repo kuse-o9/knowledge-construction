@@ -1,8 +1,7 @@
 {
-  "testsRun": 39,
-  "passed": 39,
-  "failures": [],
-  "errors": [],
-  "skipped": 0,
-  "releaseReady": false
+  "testsRun": 45,
+  "passed": 45,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0
 }

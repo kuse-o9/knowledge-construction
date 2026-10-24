@@ -8,6 +8,7 @@ function mount(viewer,C,Core,geo,stock,formation){
  let accumulated=0;
  const cars=formation.map(car=>{
   if(![car.pitch,car.frontExtent,car.bogieHalfSpan].every(Number.isFinite)||!(car.pitch>0&&car.frontExtent>0&&car.frontExtent<car.pitch&&car.bogieHalfSpan>0&&car.bogieHalfSpan<car.pitch/2)||!stock[car.model]||!Array.isArray(car.doorCentres)||!car.doorCentres.every(Number.isFinite))throw Error('Invalid stock-specific car geometry');
+  if(car.bogieModels&&(!Array.isArray(car.bogieModels)||car.bogieModels.length!==2))throw Error('Two bogie models are required per car');
   const out={...car,centreBehindFront:accumulated+car.frontExtent};accumulated+=car.pitch;return out;
  });
  const V=C.Cartesian3,M=C.Matrix4,geometries=new WeakMap();
@@ -32,7 +33,7 @@ function mount(viewer,C,Core,geo,stock,formation){
    const primitive=viewer.scene.primitives.add(new C.Primitive({geometryInstances:instances,modelMatrix:M.IDENTITY,appearance:new C.PerInstanceColorAppearance({flat:false,closed:true,translucent}),asynchronous:false}));parts.push(primitive);primitives.push(primitive);
   }return parts;
  }
- const instances=cars.map(car=>({body:model(stock[car.model]),bogies:[model(stock.bogie),model(stock.bogie)],pantograph:car.pantograph?model(stock[car.pantographModel]||stock.pantograph):[]}));
+ const instances=cars.map(car=>({body:model(stock[car.model]),bogies:(car.bogieModels||['bogie','bogie']).map(key=>{if(!stock[key])throw Error('Missing stock-specific bogie '+key);return model(stock[key]);}),pantograph:car.pantograph?model(stock[car.pantographModel]||stock.pantograph):[]}));
  function setFront(frontDistance,visible=true){
   if(!Number.isFinite(frontDistance)||frontDistance-accumulated<.5||frontDistance>geo.length-.5)throw Error('Insufficient source-track buffer for this formation');
   const poses=[];
@@ -47,7 +48,7 @@ function mount(viewer,C,Core,geo,stock,formation){
    const transform=matrix(body,!!car.reverse),instance=instances[i];
    for(const part of [...instance.body,...instance.pantograph]){part.modelMatrix=transform;part.show=visible;}
    const bogies=[-car.bogieHalfSpan,car.bogieHalfSpan].map(offset=>frame(distance+offset));
-   bogies.forEach((f,n)=>{for(const part of instance.bogies[n]){part.modelMatrix=matrix(f);part.show=visible;}});
+   bogies.forEach((f,n)=>{for(const part of instance.bogies[n]){part.modelMatrix=matrix(f,!!car.reverse);part.show=visible;}});
    poses.push({distance,body,bogies,doors:car.doorCentres.map(x=>distance+(car.reverse?-x:x)),reverse:!!car.reverse});
   });return poses;
  }

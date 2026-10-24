@@ -139,3 +139,12 @@ Visual review found cab wipers appearing in chase/map views. Fixed only inline c
 Geometry-source pilot: Overpass request returnedHTTP406; one bounded OSM main-API map read succeeded at Kai-Yamato. Kept20rail way segments (not20tracks) with ODbL attribution and zero platform ways. Reference only; no operating-speed or survey inference, no data wired to gameplay. No mass API fetch.
 
 Study-only bulletin board and chat were appended as unstarted backlog items in main1281fcf87b460c1368c8eee21b6aabf9bfff411f. Pages40055346786 passed and exact public Markdown readback matched. No study UI/backend changes. Railway reproduction/release blockers remain in geometry-review-status.json; these development updates are not an Azusa/Kaiji release.
+
+
+## 2026-10-24 — Azusa/Kaiji source corrections and isolated release candidate
+
+Reviewed62 directional station choices separately from actual selected-train platform assignments. Added Chino/Kami-Suwa/Okaya third tracks;13 unique stations,19 direction cases. Exact unchanged mesh comparison retained193 station groups/passengers and61 sampled track chunks. E353 manufacturer paper confirms active collectors5/7/10 plus folded spare5, directional passenger-door coordinates,4.054m AC and4.045m cab height. Added detailed original DT81A/DT82A/TR265-family bogies, damping/air springs/brakes/plows; round wheel faces wind outward; chassis no longer buries bogies. Component placement remains scaled, not surveyed. Passenger count128/model, cache32 and full resolution retained.
+
+Final packet checks:45/45 Python tests;4 numerical directions;18,769 speed samples;39 bilingual station-direction checks+5 non-JR assertions;4 browser control cases+2 startup scenes;6 camera overlay cases;212 station models;420 consist positions+4 scenes;16 bridge/tunnel and50 station scenes across both directions;8 local-platform clearances;19 loop/profile cases. Harness now explicitly chooses forward/reverse, fixing an earlier default-direction ambiguity. Software ANGLE only; no physical-GPU/listening/phone/full-route-real-time claim.
+
+Prepared15 isolated candidate assets with latest production publication guard;10 cases passed: visible/hidden/absent/offline/corrupt for both games. No production catalog/database/Pages change. Five gates now have direct evidence; seven remain pending per priority-release-review.json.22 complex/uncounted station layouts including shared Ryuo terminal platform2 need follow-up. No release-ready/public/completed claim.

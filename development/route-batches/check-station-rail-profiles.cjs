@@ -21,6 +21,6 @@ const base=path.join(__dirname,'batch-001'),read=f=>fs.readFileSync(path.join(ba
     if(BaylineBatchModels.cacheSize>32)throw Error('Unbounded model cache');return {unchangedStations:unchanged,unchangedTrackChunks:tracks,solidThirdTrackStations:solid,cacheSize:BaylineBatchModels.cacheSize};
    },{data:unpack('games/'+id+'.json.gz').data,common:unpack('games/common.json.gz'),stock:unpack('games/e353.json.gz')});report.runs.push({id,...result});
   }
-  if(report.runs.reduce((s,r)=>s+r.solidThirdTrackStations,0)!==16)throw Error('Missing reviewed third tracks');report.pass=true;console.log(JSON.stringify(report));
+  if(report.runs.reduce((s,r)=>s+r.solidThirdTrackStations,0)!==19)throw Error('Missing reviewed third tracks');report.pass=true;console.log(JSON.stringify(report));
  }finally{fs.writeFileSync(path.join(base,'station-rail-profile-diagnostics.json'),JSON.stringify(report,null,2)+'\n');await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

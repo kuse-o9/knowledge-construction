@@ -1,17 +1,34 @@
 from pathlib import Path
 import gzip,json,hashlib,math,unittest
 import numpy as np
+import base64
 HERE=Path(__file__).parent;DEST=HERE/'batch-001'
 def unpack(path):return json.loads(gzip.decompress((DEST/path).read_bytes()))
 def distances(points):
  return np.r_[0,np.cumsum([math.hypot((b[0]-a[0])*111320*math.cos(math.radians((a[1]+b[1])/2)),(b[1]-a[1])*111320)for a,b in zip(points,points[1:])])]
 class GeometryReview(unittest.TestCase):
+ def test_collectors_and_specific_bogies_follow_the_manufacturer_review(self):
+  stock=unpack('vehicles/e353-draft.json.gz')
+  def vertices(model):return np.concatenate([np.frombuffer(base64.b64decode(g['positions']),dtype='<i2').reshape(-1,3)*g.get('positionScale',.001)for g in model['groups']])
+  self.assertEqual(stock['pantographCars'],[5,7,10]);active=vertices(stock['pantograph']);self.assertGreater(active[:,0].min(),5);self.assertAlmostEqual(active[:,2].max(),5.45)
+  self.assertEqual(stock['doorCentresByCar'],{'4':[-7.65,6.15],'5':[-8.65],'6':[-8.65],'7':[8.65],'8':[-8.65],'9':[-6.2],'10':[8.65],'11':[-8.65],'12':[6.15]})
+  both=vertices(stock['pantograph5']);spare=both[both[:,0]<0];self.assertGreater(len(spare),0);self.assertLessEqual(spare[:,2].max(),3.95);self.assertGreaterEqual(spare[:,2].min(),3.54)
+  for kind in ['DT81A','DT82A','TR265','TR265A','TR265B']:
+   model=stock['bogie'+kind];points=vertices(model);self.assertTrue(np.isfinite(points).all());self.assertGreater(len(points),360)
+   for g in model['groups']:
+    count=len(base64.b64decode(g['positions']))//6;indices=np.frombuffer(base64.b64decode(g['indices']),dtype='<u2');self.assertLess(indices.max(),count)
+  for key in ['azusa','kaiji']:
+   for formation in unpack(f'games/{key}.json.gz')['data']['train']['formations'].values():
+    for car in formation:
+     self.assertEqual(len(car['bogieModels']),2)
+     if car['number']in[4,12]:self.assertEqual(car['bogieModels'],['bogieTR265','bogieTR265A']if car['reverse']else['bogieTR265A','bogieTR265'])
+     else:self.assertEqual(car['bogieModels'],['bogieDT82A']*2 if car['number']in[5,7,10]else['bogieDT81A']*2 if car['number']in[6,11]else['bogieTR265B']*2 if car['number']==8 else['bogieTR265A']*2)
  def test_manufacturer_facts_and_directional_formation(self):
   stock=unpack('vehicles/e353-draft.json.gz');d=stock['manufacturerDimensions'];self.assertEqual(d['bogieCentres'],14.15);self.assertEqual(d['headPitch'],21.43);self.assertEqual(d['roofHeight'],3.54);self.assertEqual(d['floorHeight'],1.13)
   for key in ['azusa','kaiji']:
    train=unpack(f'games/{key}.json.gz')['data']['train'];self.assertAlmostEqual(train['totalLength'],186.36);self.assertFalse(train['verified'])
    for direction,formation in train['formations'].items():
-    self.assertEqual([c['number']for c in formation],list(range(12,3,-1))if direction=='forward'else list(range(4,13)));self.assertEqual(sum(len(c['doorCentres'])for c in formation),10);self.assertEqual(sorted(c['number']for c in formation if c['pantograph']),[5,10]);self.assertTrue(all(c['bogieHalfSpan']==7.075 for c in formation))
+    self.assertEqual([c['number']for c in formation],list(range(12,3,-1))if direction=='forward'else list(range(4,13)));self.assertEqual(sum(len(c['doorCentres'])for c in formation),10);self.assertEqual(sorted(c['number']for c in formation if c['pantograph']),[5,7,10]);self.assertTrue(all(c['bogieHalfSpan']==7.075 for c in formation))
  def test_estimated_profiles_are_bounded_and_keep_source_bindings(self):
   for key in ['azusa','kaiji']:
    p=unpack(f'alignments/{key}-rail-profile.json.gz');a=unpack(f'alignments/{key}.json.gz');x=distances(a['points']);self.assertFalse(p['surveyedRailHeights']);self.assertFalse(p['releaseReady']);self.assertLessEqual(max(abs(np.diff(p['railHeights'])/np.diff(x))),.034000001);self.assertGreater(max(s['maxTerrainAboveRail']for s in p['structures']if s['kind']=='tunnel'),400 if key=='kaiji'else 400)

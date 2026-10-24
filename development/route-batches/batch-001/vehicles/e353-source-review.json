@@ -16,7 +16,10 @@
     "width": 2.92,
     "roofHeight": 3.54,
     "floorHeight": 1.13,
-    "bogieCentres": 14.15
+    "bogieCentres": 14.15,
+    "airConditionerTop": 4.054,
+    "cabMaximumHeight": 4.045,
+    "foldedPantographHeight": 3.95
   },
   "drawingFacts": {
     "passengerDoorsPerSide": {
@@ -32,15 +35,32 @@
     },
     "pantographCars": [
       5,
+      7,
       10
     ],
     "sparePantographCar": 5,
-    "greenCar": 9
+    "greenCar": 9,
+    "activePantographEnd": "native positive X (Tokyo/front end), scaled model centre +7m",
+    "sparePantographEnd": "car5 native negative X (Matsumoto/rear end), scaled model centre -7m"
   },
   "releaseReady": false,
   "limitations": [
     "Original URL now unavailable; retained manufacturer archive reviewed",
     "Source is pre-series; service-specific production variation pending",
     "Door centre modelling coordinates scaled visually from drawing, not dimensioned measurements"
-  ]
+  ],
+  "reviewCorrection": {
+    "checked": "2026-10-24",
+    "documentSha256Rechecked": true,
+    "printedPages": [
+      101,
+      102,
+      104,
+      105
+    ],
+    "method": "Visually inspected full manufacturer table and formation drawing after reacquiring identical archived PDF",
+    "correction": "Earlier pantograph inventory omitted car7 and placed the active car5 collector at the rear end. Corrected to cars5,7,10, front collector active, rear car5 spare folded.",
+    "doorCoordinateReview": "Figure8 rechecked: intermediate native +X is Tokyo; passenger doors on cars5,6,8,9,11 are toward Matsumoto (negative), cars7,10 toward Tokyo (positive). Car4 two passenger doors; car12 front passenger door. Centres remain scaled model coordinates.",
+    "bogieScope": "New original meshes follow the 2015 DT81/DT82/TR265 family photographs and diagram. Internal production variant labels and small component dimensions are not a fully verified 2026 bogie drawing."
+  }
 }

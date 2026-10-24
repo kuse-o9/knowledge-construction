@@ -1,0 +1,217 @@
+{
+  "checked": "2026-10-24",
+  "stations": [
+    {
+      "name": "新宿",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/866.html",
+      "observedLayout": {},
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "立川",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/958.html",
+      "observedLayout": {},
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "八王子",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1227.html",
+      "observedLayout": {},
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "甲府",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/671.html",
+      "observedLayout": {},
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "竜王",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1689.html",
+      "observedLayout": {},
+      "task": "Implement shared platform2 alignment, approach turnout and direction-aware movement interlocking before treating the terminal layout as complete.",
+      "selectedServiceNote": "Both retained forward arrival (Kaiji47) and reverse departure (Kaiji2) report platform2. Current independently offset directions do not implement the shared terminal track or conflicting movement lock."
+    },
+    {
+      "name": "松本",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1444.html",
+      "observedLayout": {},
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "小淵沢",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/707.html",
+      "observedLayout": {},
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "塩尻",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/774.html",
+      "observedLayout": {
+        "islandPlatforms": 3,
+        "tracks": 6,
+        "islandPlatformPairs": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "大月",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/331.html",
+      "observedLayout": {},
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "塩山",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/293.html",
+      "observedLayout": {},
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "山梨市",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1609.html",
+      "observedLayout": {},
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "阿佐ヶ谷",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/45.html",
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4,
+        "rapidPlatformNumbers": [
+          "3",
+          "4"
+        ]
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "高円寺",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/663.html",
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4,
+        "rapidPlatformNumbers": [
+          "3",
+          "4"
+        ]
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "荻窪",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/362.html",
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4,
+        "rapidPlatformNumbers": [
+          "3",
+          "4"
+        ]
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "中野",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1104.html",
+      "observedLayout": {
+        "islandPlatforms": 4,
+        "numberedPlatforms": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8
+        ],
+        "scope": "Numbered passenger platform faces only; does not establish total non-platform tracks"
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "三鷹",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1463.html",
+      "observedLayout": {
+        "islandPlatforms": 3,
+        "numberedPlatforms": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "西荻窪",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1152.html",
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "吉祥寺",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/596.html",
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracksOnJRLine": 4
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "武蔵小金井",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1526.html",
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "国分寺",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/682.html",
+      "observedLayout": {
+        "islandPlatformsOnJRLine": 2,
+        "tracksOnJRLine": 4
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "豊田",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1069.html",
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "numberedPlatformFaces": 4
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    },
+    {
+      "name": "高尾",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/931.html",
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "numberedPlatformFaces": 4
+      },
+      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+    }
+  ],
+  "count": 22
+}

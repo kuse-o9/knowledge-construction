@@ -8,4 +8,4 @@ for(const id of['azusa','kaiji'])for(const route of Object.values(JSON.parse(z.g
  for(const d of[a,a+100,b-100,b])assert.ok(Math.abs((offset(s,a,b,d+.01)-offset(s,a,b,d-.01))/.02)<.00005,'Non-smooth transition '+s.name);
  names.add(s.name);cases++;
 }
-assert.equal(names.size,10);assert.equal(cases,16);console.log(JSON.stringify({pass:true,cases,stations:[...names],endpointOwnership:true,smoothTransitions:true,positionsEstimated:true}));
+assert.equal(names.size,13);assert.equal(cases,19);console.log(JSON.stringify({pass:true,cases,stations:[...names],endpointOwnership:true,smoothTransitions:true,positionsEstimated:true}));

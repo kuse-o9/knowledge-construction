@@ -1,0 +1,176 @@
+{
+  "schema": 1,
+  "stage": "isolated-publication-candidate",
+  "deployed": false,
+  "public": false,
+  "releaseReady": false,
+  "layoutAndDependenciesResolved": true,
+  "catalogueGuard": "Existing server catalogue; absent or hidden rows stop packet loading",
+  "assets": [
+    {
+      "path": "rail-games/priority/batch-001/engine/rail-core.js",
+      "sha256": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+      "bytes": 12580
+    },
+    {
+      "path": "rail-games/priority/batch-001/engine/train-scene.js",
+      "sha256": "5e9a514b2fdae23c17824fa5e248f8eebeb7343480f795351b37a6f8f7d6a14e",
+      "bytes": 5317
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/announcements-reviewed.js",
+      "sha256": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc",
+      "bytes": 3779
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/azusa.html",
+      "sha256": "25ad3e3ffcf49ca879fba5ddef95df70db90f4b91f8530ac88fbd756e78cb0a5",
+      "bytes": 56796
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/azusa.json.gz",
+      "sha256": "d47a41c4722f6f7730ac33c0940f2f3065dab95bbd83b04f7b84f3df21563a83",
+      "bytes": 253891
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/common.json.gz",
+      "sha256": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
+      "bytes": 232950
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/e353.json.gz",
+      "sha256": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
+      "bytes": 359944
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/kaiji.html",
+      "sha256": "6fd8b778c0ad8989e662343ad9103a726c9feb96cb59ed59e4e7eae91df8577f",
+      "bytes": 56794
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/kaiji.json.gz",
+      "sha256": "3d4701fc5980126da002f4477563f45adc05aa9645d1e438c9177cce8a9f1230",
+      "bytes": 138754
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/loader.js",
+      "sha256": "ba4f738ba874a75c678d12c0b0c4d8c5f64891aad291727597fec8394e3900c3",
+      "bytes": 1998
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/model-builder.js",
+      "sha256": "8cefd6c6936acb7fdb9f92e30f5c9c9bd6b2fef38fe35f49dc199f91759caee2",
+      "bytes": 9765
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/rail-audio.js",
+      "sha256": "b1795fda595bf434036031c71bdb6f40236974c44b56c074f72c4f2b63437768",
+      "bytes": 13686
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/rail.js",
+      "sha256": "ff8d923322736e42958e3c4063f5ae522535937b41e81fcb6a2c6c7d046ce5cf",
+      "bytes": 62372
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/scene-start.js",
+      "sha256": "d6114259b14e792e395da9265e8961166e8b9279f6d8327c39a9d9cd54499930",
+      "bytes": 2203
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/shared.js",
+      "sha256": "80cc8dda31edb5e9c0f77877eaa26085c26657d012d75c3054709871113d79fc",
+      "bytes": 32686
+    }
+  ],
+  "productionDependencies": [
+    {
+      "path": "config.js",
+      "sha256": "3177c7389debb76fe95df3d25d00c90dbdf891f874c6032f4cfad54aac0cb4aa",
+      "bytes": 344
+    },
+    {
+      "path": "game-publication.js",
+      "sha256": "9709b7ffb24b3d18121b5b1e2aef7f7e4aa1070b7052b61ee65e167852495e3a",
+      "bytes": 4303
+    },
+    {
+      "path": "game-publication.css",
+      "sha256": "cedbaa2c3828801f17cdbcb5941354af5e7496e1d98382e135b198a64e3e4da2",
+      "bytes": 54
+    },
+    {
+      "path": "game-unavailable.html",
+      "sha256": "9937b60aff44fc201b5ee1d7b1938f944d9b8382411c147467b63144888f6f4c",
+      "bytes": 701
+    },
+    {
+      "path": "game-unavailable.js",
+      "sha256": "34f895404c63fc3fb23bd0df36aad181b82e94083b008c851b5020d1ad4ffb13",
+      "bytes": 1013
+    },
+    {
+      "path": "shared/neighbour-corridors.bin",
+      "sha256": "80173a80d44952f6d208a5b473877a0cce1c9f4af2cd3fdc379025b67663ffa7",
+      "bytes": 1276542
+    },
+    {
+      "path": "index.html",
+      "sha256": "68178d87debdcc068ec75370c6b8b7fa2120a73f745d905991231cd847fac9dc",
+      "bytes": 910495
+    },
+    {
+      "path": "chuo.html",
+      "sha256": "cceda104bba2ed082a69cbd8257c216090658a10cad6cd91c25ac7ff78f82224",
+      "bytes": 909
+    },
+    {
+      "path": "depot-3d.html",
+      "sha256": "e13cb959d1dccc79c6e1ad52886ce6ac134d10abb212cab55c334fd2c250d928",
+      "bytes": 3036
+    }
+  ],
+  "jobs": [
+    {
+      "jobId": "b001-001",
+      "name": "特急あずさ",
+      "ready": false,
+      "problems": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    },
+    {
+      "jobId": "b001-002",
+      "name": "特急かいじ",
+      "ready": false,
+      "problems": [
+        "quality:currentOperatorScope:pending",
+        "quality:allStationsAndStops:pending",
+        "quality:correctTrackAndPlatformGeometry:pending",
+        "quality:elevationTunnelAndBridge:pending",
+        "quality:vehicleSpecificModel:pending",
+        "quality:speedAndSignals:pending",
+        "quality:neighbourTraffic:pending",
+        "quality:bilingualAnnouncements:pending",
+        "quality:softwareRendering:pending",
+        "quality:releaseHashes:pending",
+        "No release artifacts",
+        "No tested game entry point among release artifacts",
+        "No validation report"
+      ]
+    }
+  ],
+  "note": "Packaging does not resolve geometry, rolling stock, current operating limits or neighbouring-line implementation."
+}

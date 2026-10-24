@@ -4,8 +4,8 @@
   "method": "Actual station mesh and passenger clearance, Cesium Cartesian math; no surveyed placement claim.",
   "inputHashes": {
     "games/model-builder.js": "8cefd6c6936acb7fdb9f92e30f5c9c9bd6b2fef38fe35f49dc199f91759caee2",
-    "games/azusa.json.gz": "0833ea60710d47b705b0c04f9a9adf79d0deb909855a82b233a2698d2b2c3ec5",
-    "games/kaiji.json.gz": "a0ccc25bf747a7eecb090da1e01b698a14902558db862098e7903780cc8d2a0c",
+    "games/azusa.json.gz": "d47a41c4722f6f7730ac33c0940f2f3065dab95bbd83b04f7b84f3df21563a83",
+    "games/kaiji.json.gz": "3d4701fc5980126da002f4477563f45adc05aa9645d1e438c9177cce8a9f1230",
     "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b"
   },
   "runs": [
@@ -13,7 +13,7 @@
       "id": "azusa",
       "name": "大久保",
       "direction": "forward",
-      "minPassengerDistanceFromRapidRail": 13.214208261337701,
+      "minPassengerDistanceFromRapidRail": 13.214208261352908,
       "passengers": 128,
       "adjacentRails": true,
       "placementEstimated": true
@@ -22,7 +22,7 @@
       "id": "azusa",
       "name": "東中野",
       "direction": "forward",
-      "minPassengerDistanceFromRapidRail": 13.214208262291736,
+      "minPassengerDistanceFromRapidRail": 13.214208262226744,
       "passengers": 128,
       "adjacentRails": true,
       "placementEstimated": true
@@ -31,7 +31,7 @@
       "id": "azusa",
       "name": "東中野",
       "direction": "reverse",
-      "minPassengerDistanceFromRapidRail": 16.90453489390571,
+      "minPassengerDistanceFromRapidRail": 16.90453489371717,
       "passengers": 128,
       "adjacentRails": true,
       "placementEstimated": true
@@ -40,7 +40,7 @@
       "id": "azusa",
       "name": "大久保",
       "direction": "reverse",
-      "minPassengerDistanceFromRapidRail": 16.904534894783573,
+      "minPassengerDistanceFromRapidRail": 16.9045348947914,
       "passengers": 128,
       "adjacentRails": true,
       "placementEstimated": true
@@ -49,7 +49,7 @@
       "id": "kaiji",
       "name": "大久保",
       "direction": "forward",
-      "minPassengerDistanceFromRapidRail": 13.214208261337701,
+      "minPassengerDistanceFromRapidRail": 13.214208261352908,
       "passengers": 128,
       "adjacentRails": true,
       "placementEstimated": true
@@ -58,7 +58,7 @@
       "id": "kaiji",
       "name": "東中野",
       "direction": "forward",
-      "minPassengerDistanceFromRapidRail": 13.214208262291736,
+      "minPassengerDistanceFromRapidRail": 13.214208262226744,
       "passengers": 128,
       "adjacentRails": true,
       "placementEstimated": true
@@ -67,7 +67,7 @@
       "id": "kaiji",
       "name": "東中野",
       "direction": "reverse",
-      "minPassengerDistanceFromRapidRail": 16.90453489390571,
+      "minPassengerDistanceFromRapidRail": 16.90453489371717,
       "passengers": 128,
       "adjacentRails": true,
       "placementEstimated": true
@@ -76,7 +76,7 @@
       "id": "kaiji",
       "name": "大久保",
       "direction": "reverse",
-      "minPassengerDistanceFromRapidRail": 16.904534894783573,
+      "minPassengerDistanceFromRapidRail": 16.9045348947914,
       "passengers": 128,
       "adjacentRails": true,
       "placementEstimated": true

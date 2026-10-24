@@ -4,19 +4,19 @@
   "source": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
   "meshes": {
     "train": {
-      "groups": 13,
-      "vertices": 4128,
-      "triangles": 2052
+      "groups": 14,
+      "vertices": 5064,
+      "triangles": 2520
     },
     "trainHead": {
-      "groups": 16,
-      "vertices": 4252,
-      "triangles": 2114
+      "groups": 18,
+      "vertices": 5428,
+      "triangles": 2702
     },
     "trainTail": {
-      "groups": 16,
-      "vertices": 4300,
-      "triangles": 2138
+      "groups": 18,
+      "vertices": 5476,
+      "triangles": 2726
     }
   },
   "pending": [

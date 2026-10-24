@@ -4,19 +4,19 @@
   "physicalGPU": false,
   "inputHashes": {
     "games/model-builder.js": "8cefd6c6936acb7fdb9f92e30f5c9c9bd6b2fef38fe35f49dc199f91759caee2",
-    "games/azusa.json.gz": "0833ea60710d47b705b0c04f9a9adf79d0deb909855a82b233a2698d2b2c3ec5",
-    "games/kaiji.json.gz": "a0ccc25bf747a7eecb090da1e01b698a14902558db862098e7903780cc8d2a0c",
+    "games/azusa.json.gz": "d47a41c4722f6f7730ac33c0940f2f3065dab95bbd83b04f7b84f3df21563a83",
+    "games/kaiji.json.gz": "3d4701fc5980126da002f4477563f45adc05aa9645d1e438c9177cce8a9f1230",
     "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
     "../tunnel-runtime.js": "b75f3ebc2f1b3787847afb909376210cd61e06abdd3cd3c431fbbdf016eb0dc2",
     "../fixtures/model-builder-20261023.js": "8aa5de57da685ae1d09c828a38439d0221b30952befb6eae92f83c57c6e8c273",
-    "sources/priority-platform-review.json": "d7c0b337141f26b963605879baee8af8b788b0694c71c99db4469e3d9fbbec12"
+    "sources/priority-platform-review.json": "2109930525595f69f1e7be33d1902e3a929050d28bbc0eed1682d177b0603bea"
   },
   "runs": [
     {
       "id": "azusa",
-      "unchangedStations": 118,
+      "unchangedStations": 115,
       "unchangedTrackChunks": 39,
-      "solidThirdTrackStations": 10,
+      "solidThirdTrackStations": 13,
       "cacheSize": 32
     },
     {

@@ -4,9 +4,10 @@ These integration builds are development games. Source-specific geometry, stock,
 structures and announcements remain subject to the existing release gates.
 """
 from pathlib import Path
-import copy,gzip,hashlib,json,re,math,bisect
+import copy,gzip,hashlib,json,re,math,bisect,importlib.util
 
 ROOT=Path(__file__).resolve().parents[2];HERE=Path(__file__).parent;DEST=HERE/'batch-001';OUT=DEST/'games';OUT.mkdir(exist_ok=True)
+spec=importlib.util.spec_from_file_location('platform_selection',HERE/'platform-selection.py');platform_selection=importlib.util.module_from_spec(spec);spec.loader.exec_module(platform_selection)
 base_bytes=b''.join((ROOT/f'chuo-local-bundle-{i}.bin').read_bytes()for i in [0,1]);html=json.loads(gzip.decompress(base_bytes))['html'];scripts=list(re.finditer(r'<script([^>]*)>(.*?)</script>',html,re.S))
 def extract(marker):return json.JSONDecoder().raw_decode(html.split(marker,1)[1])[0]
 base_data=extract('window.RAIL_DATA=');base_models=extract('window.RAIL_PREBUILT_MODELS=');city=extract('window.RAIL_CITY_MODELS=')
@@ -85,6 +86,11 @@ shell=shell.replace('https://www.jreast.co.jp/train/local/e231.html','https://ww
 shell=re.sub(r'<body\b([^>]*)>',lambda m:m[0]+'<div id="development-banner" style="position:fixed;top:42px;left:18px;right:18px;z-index:9000;padding:7px 12px;background:#f2e6cee8;color:#654c25;font-size:12px;font-weight:700;pointer-events:none" role="status">開発中：線路・ホーム・車両の再現を調整しています。公開版ではありません。</div>',shell,count=1)
 shell=shell.replace('</body>','<script src="https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js"></script><script src="scene-start.js"></script><script src="../engine/rail-core.js"></script><script src="../engine/train-scene.js"></script><script src="shared.js"></script><script src="rail-audio.js"></script><script src="model-builder.js"></script><script src="announcements-reviewed.js"></script><script src="loader.js"></script></body>')
 english={'新宿':'Shinjuku','立川':'Tachikawa','八王子':'Hachioji','甲府':'Kofu','小淵沢':'Kobuchizawa','茅野':'Chino','上諏訪':'Kami-Suwa','岡谷':'Okaya','塩尻':'Shiojiri','松本':'Matsumoto','韮崎':'Nirasaki','大月':'Otsuki','塩山':'Enzan','山梨市':'Yamanashishi','石和温泉':'Isawa-Onsen','竜王':'Ryuo'}
+def help_section(page,heading,content):
+ pattern=r'(<h3>'+re.escape(heading)+r'</h3>).*?(?=<h3>|</dialog>)'
+ page,count=re.subn(pattern,lambda m:m[1]+content,page,count=1,flags=re.S)
+ if count!=1:raise ValueError('Missing help section: '+heading)
+ return page
 platform_review={r['name']:r for r in json.loads((DEST/'sources/priority-platform-review.json').read_text())['stations']}
 local_station_names={'大久保','東中野'}
 reports=[]
@@ -98,7 +104,10 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
   numbers=list(range(12,3,-1))if travel=='forward'else list(range(4,13))
   for i,number in enumerate(numbers):
    head=number in [4,12];native_reverse=(number==4)if travel=='forward'else(number!=4);pitch=21.43 if head else 20.5;front=(10.25 if native_reverse else 11.18)if head else 10.25
-   formation.append({'number':number,'model':f'car{number}'+('Front'if i==0 else'Tail'if i==8 else'')if head else f'car{number}','reverse':native_reverse,'pitch':pitch,'frontExtent':front,'centreBehindFront':behind+front,'bogieHalfSpan':7.075,'doorCentres':stock['doorCentresByCar'][str(number)],'pantograph':number in [5,10],'pantographModel':'pantograph5'if number==5 else'pantograph'});behind+=pitch
+   formation.append({'number':number,'model':f'car{number}'+('Front'if i==0 else'Tail'if i==8 else'')if head else f'car{number}','reverse':native_reverse,'pitch':pitch,'frontExtent':front,'centreBehindFront':behind+front,'bogieHalfSpan':7.075,'doorCentres':stock['doorCentresByCar'][str(number)],'pantograph':number in stock['pantographCars'],'pantographModel':'pantograph5'if number==5 else'pantograph'});behind+=pitch
+   kind='bogieDT82A'if number in [5,7,10]else'bogieDT81A'if number in [6,11]else'bogieTR265B'if number==8 else'bogieTR265A'
+   # Model bogie order follows increasing route distance, not native car order.
+   formation[-1]['bogieModels']=(['bogieTR265','bogieTR265A']if native_reverse else['bogieTR265A','bogieTR265'])if head else[kind,kind]
   formations[travel]=formation
  data['train']={'cars':9,'length':20.5,'width':2.92,'totalLength':behind,'cabHeight':3.55,'formation':formations['forward'],'formations':formations,'manufacturerDimensionsVerified':True,'verified':False}
  for direction in ['forward','reverse']:
@@ -123,9 +132,10 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
    d=max(0,min(original[-1],d));i=min(len(original)-2,max(0,bisect.bisect_right(original,d)-1));t=(d-original[i])/(original[i+1]-original[i]);return cumulative[i]*(1-t)+cumulative[i+1]*t
   route['structures']=[{**r,'start':mapped(original[-1]-r['end']if reverse else r['start']),'end':mapped(original[-1]-r['start']if reverse else r['end']),'startHeight':r['endHeight']if reverse else r['startHeight'],'endHeight':r['startHeight']if reverse else r['endHeight']}for r in profile['structures']]
   for stop in physical+stops:
-   review=platform_review.get(stop['name']);reported=stop.get('reportedPlatform',next((s.get('reportedPlatform')for s in stops if s['code']==stop['code']),None));chosen=str(reported)if reported is not None else((review.get('gamePlatformChoice')or{}).get(direction)or next(iter(review['sideTowardMatsumoto'])))if review else None
+   review=platform_review.get(stop['name']);reported=stop.get('reportedPlatform',next((s.get('reportedPlatform')for s in stops if s['code']==stop['code']),None));chosen,choice_kind=platform_selection.select(review,direction,reported)
    side=(review['sideTowardMatsumoto'].get(str(chosen))if review else None)
    stop.update(gamePlatformNumber=chosen if chosen and chosen.isdigit()else None,side=(side*(-1 if reverse else 1))if side is not None else 1,chosenPlatformSideReviewed=side is not None,platformSideVerified=side is not None and reported is not None,platformSideSource=review['sourceUrl']if review else None,platformEdgeOffset=1.58,platformHeight=1.10,platformGeometryVerified=False,observedLayout=review.get('observedLayout')if review else None)
+   stop.update(platformChoiceKind=choice_kind,gamePlatformKey=chosen,directionalPlatformChoiceReviewed=choice_kind in ['service-timetable','operator-direction-game-choice'])
    layout=(review or{}).get('observedLayout')or{}
    stop['islandOuterTrack']=bool(layout.get('tracks')==3 and chosen and chosen.isdigit()and int(chosen)in layout.get('islandPlatformNumbers',[]))
    if stop['islandOuterTrack']:stop['islandOuterTrackJoin']=0 if stop['side']>0 else 12
@@ -143,6 +153,17 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
   announcements[direction]=groups
  payload={'data':data,'announcements':announcements,'commonSha256':common_sha,'stockSha256':stock_sha,'stage':'integrated-development-game','releaseReady':False};sha=packed(key+'.json.gz',payload)
  page=shell.replace('__NAME__',title).replace('__SCOPE__','新宿〜'+destination).replace('__END__',destination);page=page.replace('東行 ／ '+destination+' → 新宿','上り ／ '+destination+' → 新宿').replace('西行 ／ 新宿 → '+destination,'下り ／ 新宿 → '+destination)
+ physical_count=len(data['routes']['forward']['physicalStops']);stop_counts={d:len(r['stops'])for d,r in data['routes'].items()}
+ page=page.replace('新宿〜'+destination+'の39駅を収録。全駅に停車します。',f'新宿〜{destination}の全{physical_count}駅を収録。停車駅と通過駅を分けた特急運転です。')
+ intro=f'新宿〜{destination}の両方向・全{physical_count}駅を収録。下りは{stop_counts["forward"]}駅、上りは{stop_counts["reverse"]}駅に停車し、それ以外の駅は通過します。E353系の基本編成9両（4〜12号車）で運転します。路線・出発駅の設定から、停車駅を選んで始められます。'
+ page,count=re.subn(r'(<h2>'+re.escape(title)+r'を運転しよう</h2>)<p>.*?</p>',lambda m:m[1]+'<p>'+intro+'</p>',page,count=1,flags=re.S)
+ if count!=1:raise ValueError('Missing game introduction')
+ page=help_section(page,'2つの運転モード','<p>フリーランは時刻に縛られず走れます。「時刻通りに運転」は、収録した2026年10月の列車別時刻を目安に使います。遅れや運転変更などのリアルタイム情報は反映しません。乗降と音声案内が終われば、予定時刻より早く発車できます。自動・手動は両モードで選べます。</p>')
+ page=help_section(page,'車両・ホーム・街','<p>E353系専用の車体・先頭形状・9両の編成を使用し、進行方向に合わせて号車の順序、扉、パンタグラフを変えます。メーカーの量産先行車資料を基にした模型で、量産車の台車・屋根・運転台などの細部は調整中です。ホームの向きは公式構内図を参照し、列車の番線が資料で確認できない場合はゲーム用のホームを選びます。寸法・配線・高さは推定を含みます。対向線には同じ路線の列車が走り、列車間隔はラッシュ・平日・休日のゲーム用設定から選べます。</p><p>線路・車両・架線は同じ高さ基準で配置し、ゲーム用のレール勾配を34‰以内に調整しています。地形はレールの実測高ではありません。街・乗客は元の共通モデルの詳細を保持しています。画質や街の量は設定画面から選べます。</p>')
+ page=help_section(page,'音と放送','<p>収録列車の停車駅には、日本語・英語のゲーム用案内を用意しています。JR各線に加え、新宿の私鉄・地下鉄、立川の多摩モノレール、松本の上高地線などの乗換を案内します。通過駅は路線一覧・地図・ホームに残ります。番線や出口側は選択列車の資料で確認できた場合だけ案内します。</p><p>発車ベル、戸閉案内、戸閉の順に進みます。番線が不明な駅では戸閉案内から番線の数字を省きます。走行音・ドア音・警笛は合成音です。放送は端末の音声で読み上げ、日本語の声がない場合は字幕で案内します。本物の録音や発車メロディーは使用していません。</p>')
+ page=page.replace('全区間で約3%以内','全区間で34‰以内')
+ page=re.sub(r'<li>走行線形：.*?</li>', '<li>走行線形：<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2025.html" target="_blank" rel="noopener">国土数値情報・鉄道データ（2025年12月31日時点）</a>を加工。線路ごとの位置・間隔・高さはゲーム向けに推定しています。<a id="download-route" href="#">加工した路線データを保存</a></li>',page,count=1,flags=re.S)
+ page=page.replace('建物は共通の着色済み簡易模型を架空配置。','建物は共通の着色済み模型を架空配置。共通街データには <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors / ODbL-1.0</a> の加工データを含みます。')
  page=re.sub(r'<body\b([^>]*)>',lambda m:'<body'+m[1]+' data-packet-sha="'+sha+'">',page,count=1).replace('全39駅','全'+str(len(data['routes']['forward']['physicalStops']))+'駅')
  (OUT/(key+'.html')).write_text(page)
  reports.append({'id':key,'entry':'games/'+key+'.html','packet':'games/'+key+'.json.gz','sha256':sha,'directions':2,'physicalStations':len(data['routes']['forward']['physicalStops']),'releaseReady':False})

@@ -5,8 +5,8 @@
   "actualSectionLimitsVerified": false,
   "curveLimits": false,
   "inputHashes": {
-    "games/azusa.json.gz": "0833ea60710d47b705b0c04f9a9adf79d0deb909855a82b233a2698d2b2c3ec5",
-    "games/kaiji.json.gz": "a0ccc25bf747a7eecb090da1e01b698a14902558db862098e7903780cc8d2a0c",
-    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b"
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "games/azusa.json.gz": "d47a41c4722f6f7730ac33c0940f2f3065dab95bbd83b04f7b84f3df21563a83",
+    "games/kaiji.json.gz": "3d4701fc5980126da002f4477563f45adc05aa9645d1e438c9177cce8a9f1230"
   }
 }

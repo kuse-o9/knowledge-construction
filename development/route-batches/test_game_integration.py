@@ -26,6 +26,13 @@ class IntegratedGames(unittest.TestCase):
   # an unknown platform number. Its actual speech is exercised separately.
   audio=audio.replace("platform+'番線、ドアが閉まります。ご注意ください。'", "(platform!=null?platform+'番線、':'')+'ドアが閉まります。ご注意ください。'")
   self.assertEqual((DEST/'games/rail-audio.js').read_text(),audio)
+ def test_help_describes_the_selected_express_and_its_actual_source(self):
+  for key,expected in [('azusa',64),('kaiji',42)]:
+   html=(DEST/'games'/(key+'.html')).read_text();packet=json.loads(gzip.decompress((DEST/'games'/(key+'.json.gz')).read_bytes()))
+   self.assertNotIn('39駅すべて',html);self.assertNotIn('黄色の10両',html);self.assertNotIn('E353系500番台',html)
+   self.assertIn(f'全{expected}駅',html);self.assertIn('基本編成9両（4〜12号車）',html)
+   self.assertIn('KsjTmplt-N02-2025.html',html);self.assertIn('34‰',html)
+   for direction,label in [('forward','下り'),('reverse','上り')]:self.assertIn(f'{label}は{len(packet["data"]["routes"][direction]["stops"])}駅',html)
  def test_games_keep_physical_stations_separate_from_service_stops(self):
   for key,expected in [('azusa',64),('kaiji',42)]:
    packet=json.loads(gzip.decompress((DEST/'games'/(key+'.json.gz')).read_bytes()));self.assertFalse(packet['releaseReady'])

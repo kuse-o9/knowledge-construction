@@ -9,8 +9,8 @@
       "direction": "forward",
       "checkedLocations": 127,
       "cars": 9,
-      "primitives": 29,
-      "ready": 29,
+      "primitives": 30,
+      "ready": 30,
       "webgl2": true,
       "glError": 0,
       "canvasSize": [
@@ -26,8 +26,8 @@
       "direction": "reverse",
       "checkedLocations": 127,
       "cars": 9,
-      "primitives": 29,
-      "ready": 29,
+      "primitives": 30,
+      "ready": 30,
       "webgl2": true,
       "glError": 0,
       "canvasSize": [
@@ -43,8 +43,8 @@
       "direction": "forward",
       "checkedLocations": 83,
       "cars": 9,
-      "primitives": 29,
-      "ready": 29,
+      "primitives": 30,
+      "ready": 30,
       "webgl2": true,
       "glError": 0,
       "canvasSize": [
@@ -59,8 +59,8 @@
       "direction": "reverse",
       "checkedLocations": 83,
       "cars": 9,
-      "primitives": 29,
-      "ready": 29,
+      "primitives": 30,
+      "ready": 30,
       "webgl2": true,
       "glError": 0,
       "canvasSize": [
@@ -74,12 +74,12 @@
   "errors": [],
   "inputHashes": {
     "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
-    "engine/train-scene.js": "99fcaf5544d6c430fa25a1c406a2acd6a3bb19a3206cf395dc418caef7021892",
-    "vehicles/e353-draft.json.gz": "63e58b8bb59ef1933058ecb35c59dbb0766a999d2de7164d2c993ea72b497300",
+    "engine/train-scene.js": "5e9a514b2fdae23c17824fa5e248f8eebeb7343480f795351b37a6f8f7d6a14e",
+    "vehicles/e353-draft.json.gz": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
     "alignments/azusa.json.gz": "9321396f8dae616fe06b7fb78d64d140db3c22ae5804eef3bba14c1ca27d8f26",
     "alignments/kaiji.json.gz": "5f48e88991b500e08c685bd0995e2c10fbf246577a6fe979cdcb3a34803af601",
-    "games/azusa.json.gz": "0833ea60710d47b705b0c04f9a9adf79d0deb909855a82b233a2698d2b2c3ec5",
-    "games/kaiji.json.gz": "a0ccc25bf747a7eecb090da1e01b698a14902558db862098e7903780cc8d2a0c"
+    "games/azusa.json.gz": "d47a41c4722f6f7730ac33c0940f2f3065dab95bbd83b04f7b84f3df21563a83",
+    "games/kaiji.json.gz": "3d4701fc5980126da002f4477563f45adc05aa9645d1e438c9177cce8a9f1230"
   },
   "pass": true
 }
