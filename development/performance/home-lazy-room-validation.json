@@ -1,0 +1,8 @@
+{
+  "beforeHomeBytes": 910495,
+  "afterHomeBytes": 28868,
+  "deferredBytes": 827262,
+  "deferredExactSha256": "33f9070027c9d3a878d5b37b5a5e62936e4ab333d1ddb045801ba2c7a598f0bc",
+  "initialHtmlReductionPercent": 96.83,
+  "embeddedFeaturesUnchanged": true
+}

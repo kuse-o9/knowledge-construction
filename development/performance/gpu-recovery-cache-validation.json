@@ -1,0 +1,48 @@
+{
+  "pass": true,
+  "softwareGPU": true,
+  "tests": [
+    {
+      "name": "real-Cesium-context-recovery",
+      "attempts": 3,
+      "webgl2": true,
+      "glError": 0,
+      "canvasCount": 1,
+      "scale": 1,
+      "oldDestroyed": true,
+      "finalCanvasCount": 1,
+      "secondError": 0
+    },
+    {
+      "name": "all-depot-floors",
+      "floors": 23,
+      "maxCache": 3,
+      "errors": []
+    },
+    {
+      "name": "home-lazy-room",
+      "beforeOpenRequests": 0,
+      "openCloseCycles": 2,
+      "roomRequests": 2
+    }
+  ],
+  "scope": "Local current source under production URLs; public maintenance/catalogue responses are fixtures only. Real Cesium software WebGL2; first two constructor failures injected to verify cleanup/retry. No physical-user-device claim.",
+  "inputHashes": {
+    "shared/rail-scene-start.js": "41ba1ed258e822f6d3736ad7600f10b6761c39700635cbfee5593484000ad7e7",
+    "shared/rail-loader.js": "db72f161c959713b2f72bd81372ba890ff71fa055c597c55223cd6b1dd403eee",
+    "development/game-room/depot-webgl.js": "f498982c900d55aaa02d3e30222975827a1f5a7e68f9b3d230ade46409e24944",
+    "development/game-room/depot-cache.test.cjs": "00b079ef9321796d9b11b8a27414ed758d97e8597299a65430021fa4aabca7b7",
+    "development/performance/scene-start.test.cjs": "722e66d62aa33963d3eece481f3b31f3944b2315fad9f0ba23fcb9257c574e3c",
+    "chuo.html": "d409be8d26f87d4765fad7a654436c35c13df1f756e3a7dcd1ad5b337bd97988",
+    "chuo-local.html": "09d4224060963d123f1315d4ac2164aaca0ba0af3c5e51a6a6a773bd398009b4",
+    "keihin.html": "62e7ee01bccc5049a729218f9ab01564ab79e3ba20a0589c92fb5771af7fb6e5",
+    "sobu.html": "71a93569c4fcdbcfba3c761b2e494a9959253c815bfa92c358f10e104dc5b57d",
+    "yamanote/index.html": "40c7e7a7ae9dc33c7e42d1ac7dcc4fec5c025e06551b1407f4352ff481bf5da6",
+    "railway/index.html": "edbf837a199051e4c884cbf8567bbe5bbad4c64258555eb2bb5afd3c132e6622",
+    "depot-3d.html": "a06fb30bbe8aeed955757272d2ef97a96917f3f6b1e303d13ee932d9b24dc848",
+    "index.html": "e6160ac423e08ca55ae3ea5636386a224753fbc6c11d2c6229ee5e1b93f5a266",
+    "game-room/embedded-room.html": "33f9070027c9d3a878d5b37b5a5e62936e4ab333d1ddb045801ba2c7a598f0bc",
+    "development/STUDY_CURRENT_PLAN.md": "6147ed22aac58e9e7b7aa8e42c3550eb34dbed5cd14a2fef222ca7aeabd05f0e",
+    "development/performance/home-lazy-room-validation.json": "9aa4647a23db88a1168efac1c3c66970ef005a7e0c020c8502746465e29c7380"
+  }
+}

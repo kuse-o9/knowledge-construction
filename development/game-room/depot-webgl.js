@@ -269,10 +269,22 @@
     updateWalkUI();
     document.querySelectorAll('.trainlink').forEach(a=>a.classList.toggle('selected',a.dataset.game===game));
   }
+  function floorGeometry(floor) {
+    let mesh=bufferCache.get(floor.floor);
+    if(mesh)bufferCache.delete(floor.floor);else mesh=makeFloor(floor);
+    bufferCache.set(floor.floor,mesh);
+    const protectedMeshes=new Set([mesh,geometry,liftScene?.targetGeometry]);
+    for(const [id,old] of bufferCache) {
+      if(bufferCache.size<=3)break;
+      if(protectedMeshes.has(old))continue;
+      gl.deleteBuffer(old.buffer);bufferCache.delete(id);
+    }
+    canvas.dataset.geometryCacheSize=String(bufferCache.size);
+    return mesh;
+  }
   function display(floor) {
     current=floor; elevation=(floor.floor-1)*14;
-    if(!bufferCache.has(floor.floor)) bufferCache.set(floor.floor,makeFloor(floor));
-    geometry=bufferCache.get(floor.floor);
+    geometry=floorGeometry(floor);
     stopWalking();player.x=floor.floor===23?2.7:-17.3;player.y=0;player.z=24.8;player.angle=Math.PI;
     $('floor').value=floor.floor;$('floor-number').textContent=floor.floor+'F';$('scene-title').textContent=floor.operator;
     $('train-count').textContent=floor.trains.length?floor.trains.length+'編成 待機中':'車両は準備中・基地見学';
@@ -292,8 +304,7 @@
     const target=floors.find(f=>f.floor===Number(number));if(!target||target===current)return;
     const oldCamera={yaw,pitch};moving=true;$('reset').disabled=true;stopWalking();highlight(null);$('floor').disabled=true;$('up').disabled=true;$('down').disabled=true;
     const from=current.floor,start=performance.now(),duration=matchMedia('(prefers-reduced-motion: reduce)').matches?0:Math.min(6500,1800+Math.abs(target.floor-from)*180);
-    if(!bufferCache.has(target.floor))bufferCache.set(target.floor,makeFloor(target));
-    liftScene={fromElevation:elevation,toElevation:(target.floor-1)*14,targetGeometry:bufferCache.get(target.floor),door:1,phase:'closing'};
+    liftScene={fromElevation:elevation,toElevation:(target.floor-1)*14,targetGeometry:floorGeometry(target),door:1,phase:'closing'};
     player.x=-23;player.y=0;player.z=26.8;player.angle=Math.PI;yaw=0;pitch=.6;updateWalkUI();
     $('lift').hidden=false;
     await new Promise(resolve=>{
