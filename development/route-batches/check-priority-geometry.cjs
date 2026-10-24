@@ -32,7 +32,7 @@ for(const f of ['games/azusa.json.gz','games/kaiji.json.gz','games/shared.js','g
  });report.runs.push({id,kind:'station-models',...models,pass:true});
  if(modelsOnly){await page.close();continue;}
  const targets=await page.evaluate(stationsOnly=>{
- if(stationsOnly)return ['大久保','東中野','甲斐大和','日野春','富士見','青柳','村井','南松本'].map(name=>BaylineGame.route.physicalStops.find(s=>s.name===name)).filter(Boolean).map(s=>({kind:'station-'+s.code,distance:s.distance-60,name:s.name}));
+ if(stationsOnly)return ['大久保','東中野','国立','東小金井','相模湖','四方津','酒折','下諏訪','甲斐大和','日野春','富士見','青柳','村井','南松本'].map(name=>BaylineGame.route.physicalStops.find(s=>s.name===name)).filter(Boolean).map(s=>({kind:'station-'+s.code,distance:s.distance-60,name:s.name}));
  const g=BaylineGame,geo=g.geometry,structures=g.route.structures,tunnel=structures.filter(s=>s.kind==='tunnel').sort((a,b)=>(b.end-b.start)-(a.end-a.start))[0],bridge=structures.filter(s=>s.kind==='bridge-or-viaduct'&&s.maxRailAboveTerrain>3).sort((a,b)=>(b.end-b.start)-(a.end-a.start))[0];
  if(!tunnel||!bridge)throw Error('Missing classified diagnostic locations');return [48200,61440,65590].map((d,i)=>({kind:'tunnel-fragment-'+i,distance:document.querySelector('#direction').value==='reverse'?geo.length-d:d})).concat([{kind:'tunnel',distance:(tunnel.start+tunnel.end)/2},{kind:'tunnel-window',distance:(tunnel.start+tunnel.end)/2+245},{kind:'bridge',distance:(bridge.start+bridge.end)/2},{kind:'tunnel-return',distance:(tunnel.start+tunnel.end)/2+125},{kind:'bridge-return',distance:(bridge.start+bridge.end)/2+125}]);},stationsOnly);
  for(const target of targets){

@@ -74,6 +74,7 @@ old="platform+'番線、ドアが閉まります。ご注意ください。'"
 if old not in audio:raise ValueError('Departure wording adapter changed')
 (OUT/'rail-audio.js').write_text(audio.replace(old,"(platform!=null?platform+'番線、':'')+'ドアが閉まります。ご注意ください。'"))
 shell=re.sub(r'<script\b[^>]*>.*?</script>','',html,flags=re.S)
+shell=shell.replace('</head>','<style>.cab-app:has(#view-chase[aria-pressed="true"]) .wiper,.cab-app:has(#view-map[aria-pressed="true"]) .wiper{visibility:hidden}</style></head>')
 shell=re.sub(r'href="(?:https://kuse-o9.github.io/knowledge-construction/)?index.html#game-room"','href="../../../../index.html#game-room"',shell)
 shell=re.sub(r'href="depot-3d.html"','href="../../../../depot-3d.html"',shell)
 shell=shell.replace('中央・総武線各駅停車','__NAME__').replace('全39駅・区間走破','全線・停車駅と通過駅').replace('各駅停車</option>','特急</option>')
@@ -127,6 +128,7 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
    stop.update(gamePlatformNumber=chosen if chosen and chosen.isdigit()else None,side=(side*(-1 if reverse else 1))if side is not None else 1,chosenPlatformSideReviewed=side is not None,platformSideVerified=side is not None and reported is not None,platformSideSource=review['sourceUrl']if review else None,platformEdgeOffset=1.58,platformHeight=1.10,platformGeometryVerified=False,observedLayout=review.get('observedLayout')if review else None)
    layout=(review or{}).get('observedLayout')or{}
    stop['islandOuterTrack']=bool(layout.get('tracks')==3 and chosen and chosen.isdigit()and int(chosen)in layout.get('islandPlatformNumbers',[]))
+   if stop['islandOuterTrack']:stop['islandOuterTrackJoin']=0 if stop['side']>0 else 12
    if stop['name']in local_station_names:
     i=stop['index'];p=points[i];q=shifted[i];separation=math.hypot((q[0]-p[0])*111320*math.cos(math.radians(p[1])),(q[1]-p[1])*111320)
     # Adjacent local-line island, not an E353 platform. Offset is an explicit

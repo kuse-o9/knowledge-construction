@@ -42,7 +42,9 @@ report.inputHashes=Object.fromEntries(['azusa.html','kaiji.html','azusa.json.gz'
    await page.evaluate(()=>{window.__qaRenderEnabled=true;});await page.waitForFunction(()=>{const v=BaylineGame.viewer,p=RailCore.position(BaylineGame.geometry,BaylineGame.state.distance),h=v.scene.globe.getHeight(Cesium.Cartographic.fromDegrees(p.lon,p.lat));return Number.isFinite(h)&&v.scene.globe.tilesLoaded;},null,{timeout:90000});
    const scene=await page.evaluate(()=>{window.__qaRenderEnabled=false;const v=BaylineGame.viewer;v.resize();v.render();v.scene.context._gl.finish();return {webgl2:v.scene.context.webgl2,error:v.scene.context._gl.getError(),primitives:v.scene.primitives.length,ready:v.scene.primitives._primitives.filter(p=>p.ready).length};});
    if(!scene.webgl2||scene.error||scene.primitives<10)throw Error('Integrated 3D scene not rendered');
-   await page.screenshot({path:path.join(DEST,'games',id+'-integration.png')});report.runs.push({id,scene,softwareRendering:true,pass:true});
+   const cameraOverlayStates=[];
+   for(const view of['cab','map','chase']){await page.locator('#view-'+view).click();const visibility=await page.evaluate(()=>Array.from(document.querySelectorAll('.wiper'),e=>getComputedStyle(e).visibility));if(visibility.length!==2||visibility.some(v=>v!==(view==='cab'?'visible':'hidden')))throw Error('Cab wipers shown in wrong camera: '+view);cameraOverlayStates.push({view,wipers:visibility});}
+   await page.screenshot({path:path.join(DEST,'games',id+'-integration.png')});report.runs.push({id,scene,cameraOverlayStates,softwareRendering:true,pass:true});
    if(errors.length)throw Error(errors.join('; '));const renderError=await page.evaluate(()=>BaylineGame.sceneFailure);if(renderError)throw Error(renderError);if(await page.locator('.cesium-widget-errorPanel').count())throw Error('Cesium error panel present');await page.close();
   }
   report.pass=true;

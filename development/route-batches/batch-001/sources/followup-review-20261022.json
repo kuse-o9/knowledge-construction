@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-23",
+  "checked": "2026-10-24",
   "releaseReady": false,
   "vehicle": {
     "source": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
@@ -34,7 +34,13 @@
     "announcementStationDirectionCases": 39,
     "unknownExitSideNotAnnounced": true,
     "departureWordingCases": 2,
-    "reviewedTransferStations": 9
+    "reviewedTransferStations": 9,
+    "threeTrackStations": 10,
+    "solidTrackCases": 16,
+    "unchangedStationModels": 196,
+    "sampledUnchangedTrackChunks": 61,
+    "stationScenes": 22,
+    "cameraOverlayCases": 6
   },
   "remaining": [
     "Surveyed rail-height/bridge-clearance data not acquired; estimated-height labels retained",

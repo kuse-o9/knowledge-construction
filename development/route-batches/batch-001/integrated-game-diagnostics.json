@@ -36,6 +36,29 @@
         "primitives": 62,
         "ready": 61
       },
+      "cameraOverlayStates": [
+        {
+          "view": "cab",
+          "wipers": [
+            "visible",
+            "visible"
+          ]
+        },
+        {
+          "view": "map",
+          "wipers": [
+            "hidden",
+            "hidden"
+          ]
+        },
+        {
+          "view": "chase",
+          "wipers": [
+            "hidden",
+            "hidden"
+          ]
+        }
+      ],
       "softwareRendering": true,
       "pass": true
     },
@@ -71,6 +94,29 @@
         "primitives": 62,
         "ready": 61
       },
+      "cameraOverlayStates": [
+        {
+          "view": "cab",
+          "wipers": [
+            "visible",
+            "visible"
+          ]
+        },
+        {
+          "view": "map",
+          "wipers": [
+            "hidden",
+            "hidden"
+          ]
+        },
+        {
+          "view": "chase",
+          "wipers": [
+            "hidden",
+            "hidden"
+          ]
+        }
+      ],
       "softwareRendering": true,
       "pass": true
     }
@@ -78,17 +124,17 @@
   "errors": [],
   "networkErrors": [],
   "inputHashes": {
-    "games/azusa.html": "02ff5ae60fe79327fb2f9d7a652c685f6ef955116aae3ce590c171ed8a476a11",
-    "games/kaiji.html": "2ce906dd7f87ec0d33183f4a97a1212d15ee9741926cdf5d8e71d4d4d704e191",
-    "games/azusa.json.gz": "06cf82e52915900ffb369fdb3aa11a420f676d4bd05038a4d002fb7913646691",
-    "games/kaiji.json.gz": "991ae00cf06495440b2a6da2ff0ae8cbb32149aefe6275aa4280685b04271450",
+    "games/azusa.html": "5640214a24fee76fe6ef0443083f7b3621a75ac26071a9e84f9e7c269b2981bc",
+    "games/kaiji.html": "8c4fcd47dc10ec3f989431abaa96755b646af904f1f23ba5623326dd18720438",
+    "games/azusa.json.gz": "0833ea60710d47b705b0c04f9a9adf79d0deb909855a82b233a2698d2b2c3ec5",
+    "games/kaiji.json.gz": "a0ccc25bf747a7eecb090da1e01b698a14902558db862098e7903780cc8d2a0c",
     "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
     "games/e353.json.gz": "63e58b8bb59ef1933058ecb35c59dbb0766a999d2de7164d2c993ea72b497300",
     "games/rail.js": "ff8d923322736e42958e3c4063f5ae522535937b41e81fcb6a2c6c7d046ce5cf",
     "games/shared.js": "80cc8dda31edb5e9c0f77877eaa26085c26657d012d75c3054709871113d79fc",
     "games/rail-audio.js": "b1795fda595bf434036031c71bdb6f40236974c44b56c074f72c4f2b63437768",
     "games/loader.js": "3cb4bb5e98dea5c2e228155e912d94ea70868e2b32903c0a70a5c33372b6d66b",
-    "games/model-builder.js": "8aa5de57da685ae1d09c828a38439d0221b30952befb6eae92f83c57c6e8c273",
+    "games/model-builder.js": "8cefd6c6936acb7fdb9f92e30f5c9c9bd6b2fef38fe35f49dc199f91759caee2",
     "games/scene-start.js": "d6114259b14e792e395da9265e8961166e8b9279f6d8327c39a9d9cd54499930",
     "games/announcements-reviewed.js": "0382c191c547118411e53f490c5678cdfd58005f124632c3f7d69157803ee6bf"
   },

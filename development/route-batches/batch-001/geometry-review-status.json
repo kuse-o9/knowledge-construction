@@ -25,9 +25,13 @@
     "Finish official schematic review at all 64 physical stations (62 main/rapid + 2 local-only); override aerial inference",
     "Move local-only islands to estimated adjacent local rails; render opposite-direction main platforms too",
     "Add estimated third tracks / island faces at four newly checked three-track stations",
-    "Replace the diagnostic 100 km/h cap with a disclosed 130 km/h published-maximum game cap; actual section restrictions stay unverified"
+    "Replace the diagnostic 100 km/h cap with a disclosed 130 km/h published-maximum game cap; actual section restrictions stay unverified",
+    "Review six more operator island pairs and extend three-track station rendering to ten stations (16 route-direction cases)",
+    "Join outward loops to the own running track and inward loops to the opposite track; retain smooth endpoint tangents",
+    "Draw solid side/cap rail profiles, continuously varying ballast and overhead wire along extra station tracks",
+    "Hide decorative cab wipers in chase/map views; retain both in cab view"
   ],
-  "validationStatus": "Final packets passed 39/39 unit tests, four accelerated numerical runs, four real browser control cases and two startup software scenes, 212 station meshes with 128 passengers each and cache <=32, 420 consist positions / four software consist scenes, 16 tunnel/bridge scenes and 11 corrected-station scenes. GL/JS errors: zero. No physical-GPU or full-route real-time claim; no public railway release.",
+  "validationStatus": "Final same packets: 39/39 unit tests; four accelerated runs; four browser controls + two software startup scenes; six camera/wiper visibility states; 212 station models; 420 consist locations + four software scenes; 16 tunnel/bridge and 22 selected-station scenes; eight local-platform clearance cases. Sixteen smooth loop/ownership cases and sixteen solid rail cases passed. Exact preservation:196 unchanged station models/passengers and61 sampled track chunks. All10 diagnostic input bindings match. No physical GPU/full-route real-time or release claim.",
   "remaining": [
     "Resolve rail elevation, portal positions, bridge clearance and directional geometry against stronger positional evidence; current geometry remains estimated",
     "Implement and visually review the remaining complete station-specific multi-track layouts and dimensions; map-side inventory is complete",
@@ -61,35 +65,44 @@
     "unitTestsPassed": 39,
     "unitTestsFailed": 0,
     "stationMeshCacheBound": 32,
-    "correctedStationSceneCases": 11,
+    "correctedStationSceneCases": 22,
     "localPlatformClearanceCases": 8,
     "speedSamples": 18769,
-    "threeTrackStationsWithNewEstimatedTrack": 4
+    "threeTrackStationsWithNewEstimatedTrack": 10,
+    "solidStationTrackCases": 16,
+    "smoothLoopCases": 16,
+    "unchangedStationModelCases": 196,
+    "unchangedTrackChunkCases": 61,
+    "cameraOverlayCases": 6
   },
   "evidence": {
-    "geometry-review-diagnostics.json": "9f90f4567b2d08d2897bacdafe7f1d80842aebeb9d8c3071f268ac63d30bd09a",
-    "integrated-game-diagnostics.json": "80f059fee69ef9bb785ce4dd39b7377f16c50dac57fa7587108b2fc2c28194a2",
-    "integrated-running-diagnostics.json": "89921a16b7bf57bed9c0e3103fbb11f5c7b80e51d72f5cbc336dc5b2cbb1bf8c",
-    "train-scene-diagnostics.json": "ad9e6833c0d5c399443f3010b1440ecdad713d8c3c91b21cab3f3e7118c5a6a1",
-    "station-model-diagnostics.json": "51170e656d0f995a27426774a912981a6dd7221ef1e37de22c50459212f52d4a",
-    "station-scene-diagnostics.json": "9926d369cacd7cb6218bac4fd264daba75136b1f5fb1529e9c53f1cbd2d89891",
-    "local-platform-diagnostics.json": "b901507dd43e0dd448e2cb94261b0d128f566672809d48a894427a4448cda9e1",
-    "priority-speed-diagnostics.json": "75e8a6447b72d57e206ba5d630b0dbc17f02a239058f780ca7f23dca1eac813c",
+    "geometry-review-diagnostics.json": "d57067a156d0238344580f5bb1ecf47a5484b1285d9ccd57b0e08c37f1a0bbe8",
+    "integrated-game-diagnostics.json": "5407630dc90e52e1e12daaea71a70ecee22ceac069f543aef6e8d71fefdb9eca",
+    "integrated-running-diagnostics.json": "791be485f42c41cd8b62be3b0241dc73a825ddbb4df29f35dd9b905adcb2e1f5",
+    "train-scene-diagnostics.json": "8e7cf13e9656c13917a9bcba59cfd9a5cfbde394a77987c33f06dc3d55bf0416",
+    "station-model-diagnostics.json": "d11724a7cba9bac222a3fc6bfb8e3f5179ea8b82721d7ca369ca4b59bc239325",
+    "station-scene-diagnostics.json": "1c8d86e4acdf3db9a6910db2c79a238c5b10986b5f39b7ca253be96253d0acb2",
+    "local-platform-diagnostics.json": "eea575ad807637977ddca4eab78909c5bde9e567a08f2bbd12d959d10f02cc8e",
+    "priority-speed-diagnostics.json": "2ee381576402bec67f07d45460d93de1f348e3f8d0962e174c054737467a8d48",
     "games/announcements-reviewed.js": "0382c191c547118411e53f490c5678cdfd58005f124632c3f7d69157803ee6bf",
-    "games/model-builder.js": "8aa5de57da685ae1d09c828a38439d0221b30952befb6eae92f83c57c6e8c273",
-    "sources/followup-review-20261022.json": "c69dd703c0c11c895bc81c1249691206428b9f6c70b660d31b5c523a8266d5e9",
+    "games/model-builder.js": "8cefd6c6936acb7fdb9f92e30f5c9c9bd6b2fef38fe35f49dc199f91759caee2",
+    "sources/followup-review-20261022.json": "430994f65e225b0973ae27e8b5a1ead6bd47e9f593c13469c7a45ae15f029dc3",
     "sources/tunnel-fragment-review.json": "04e5b0a68a9ca22b29bcf9a20022265b5a8dbe1cd978420a4788cc8106d6c517",
-    "sources/priority-platform-review.json": "319dd0e6a253ee8bc31fd7216edfa8c7fb4d4b785ed50319442d0bdf2d0f82eb",
+    "sources/priority-platform-review.json": "d7c0b337141f26b963605879baee8af8b788b0694c71c99db4469e3d9fbbec12",
     "sources/priority-station-aerial-review.json": "84ef29c058e5f0a407e7e133bef237341dcd7a486db3007b09c5c9b2f10e3694",
     "sources/priority-speed-review.json": "07eea96eedfeddb3eb9fffc9d1bd7c678c0e5034864f0890791e510ffd2eac41",
     "validation-suite-summary.json": "21c3dc0fb6200daec349a5f3f14da6bfa3eb5307e00f0122c8b233547146c11e",
-    "validation-suite-results.txt": "e827123671a01b82409c1d4592729b70b0d8a7686fc037fb7b49b8ecf499b0e7"
+    "validation-suite-results.txt": "b2a0ff0473b961dd77f6860d6b855b509bd78aa72309ed1296d33b4c982f0a28",
+    "station-rail-profile-diagnostics.json": "32037701d77f2e5286682c33b579bf3d571a456a59c34ceda7493ed6acbbdf0b",
+    "station-loop-diagnostics.json": "c8006cfd8666c6360bf910136ec394abf7487969d871cc0e4241ca0f32ab3cc1",
+    "sources/kai-yamato-osm-geometry-reference.json": "f2369037b58f4c6a7f67339657b3923b3e4e3dbf7f96549769ce9462ea474c03"
   },
   "currentRepresentativeScreenshots": {
-    "games/azusa-bridge.png": "402420dd1cfb76ee38e83b23e1bd318b378abe23012445edf7c9d7dc3863ef4b",
-    "games/kaiji-tunnel.png": "36267d19cfd01caf55a019ddbf9c17468d550b6e65ddfad713bee9ced64eb1fd",
-    "games/azusa-station-003604.png": "a868f3c20b0a81b98e39d36ddc541594f91fbe6212db463fe1787e8859bc88fa",
-    "games/azusa-station-003108.png": "193657602ecdf05df9cd585fa6a228c6b2a2f6af815f1cfe2ab56eb3805e6fc7"
+    "games/azusa-integration.png": "10754ee300da7c49ad75c76a25ed7b8d0aeb7fe6a38118ec77ae15e8be35a0a1",
+    "games/kaiji-integration.png": "eb9bc9e0d27bbccafad0d6c0769f7741886a5cb70e21cbeb7a490672559e522f"
   },
-  "screenshotScope": "Only the hashes listed here bind representative screenshots to this review; other repository screenshots may be historical. Full 16 + 11 scene results bind the runtime input hashes."
+  "screenshotScope": "These final UI captures include the camera-overlay CSS fix. Other screenshots may be historical or predate that cosmetic fix. Geometry reports bind the unchanged underlying runtime/packet/model inputs; full station rendering completed22scenes.",
+  "referenceResearch": {
+    "kaiYamatoOSM": "Community map pilot acquired20rail way segments, no platform polygon/edge ways in the sample. Not active in game; map maxspeed tags are unverified. Not operator/survey proof."
+  }
 }

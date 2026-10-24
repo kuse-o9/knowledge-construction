@@ -440,7 +440,12 @@
       "observedLayout": {
         "sidePlatforms": 1,
         "islandPlatforms": 1,
-        "tracks": 3
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPairReviewDate": "2026-10-24"
       },
       "scope": "Official schematic confirms numbered platform side and passenger platform form. Dimensions, track placement and train-specific operating assignment are not verified."
     },
@@ -643,7 +648,12 @@
       "observedLayout": {
         "islandPlatforms": 1,
         "sidePlatforms": 1,
-        "tracks": 3
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          1,
+          2
+        ],
+        "islandPairReviewDate": "2026-10-24"
       },
       "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified."
     },
@@ -835,7 +845,12 @@
       "observedLayout": {
         "sidePlatforms": 1,
         "islandPlatforms": 1,
-        "tracks": 3
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPairReviewDate": "2026-10-24"
       },
       "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified."
     },
@@ -915,7 +930,12 @@
       "observedLayout": {
         "sidePlatforms": 1,
         "islandPlatforms": 1,
-        "tracks": 3
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          1,
+          2
+        ],
+        "islandPairReviewDate": "2026-10-24"
       },
       "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified."
     },
@@ -969,7 +989,12 @@
       "observedLayout": {
         "sidePlatforms": 1,
         "islandPlatforms": 1,
-        "tracks": 3
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPairReviewDate": "2026-10-24"
       },
       "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified."
     },
@@ -1023,7 +1048,12 @@
       "observedLayout": {
         "sidePlatforms": 1,
         "islandPlatforms": 1,
-        "tracks": 3
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPairReviewDate": "2026-10-24"
       },
       "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified."
     },

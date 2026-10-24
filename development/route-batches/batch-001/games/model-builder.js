@@ -4,6 +4,10 @@
  */
 (function(root){'use strict';
 let data,common,stock,geos,cache=new Map();
+function stationOuterTrackOffset(meta,start,end,d){
+ const join=meta.islandOuterTrackJoin??(meta.side>0?0:12),t=Math.max(0,Math.min(1,Math.min((d-start)/100,(end-d)/100)));
+ return join+(7.56-join)*t*t*(3-2*t);
+}
 function initialize(d,c,s){
  data=d;common=c;stock=s;cache.clear();geos={};const tracks=[],stations=[],groundHeights={};
  for(const [direction,route]of Object.entries(data.routes)){
@@ -28,10 +32,11 @@ function build(meta){
   group.i.push(at,at+1,at+2,at,at+2,at+3);
  }
  function box(f,x,y,z,dx,dy,dz,color){const ps=[[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]].map(([a,b,c])=>xyz(f,x+a*dx/2,y+b*dy/2,z+c*dz/2));for(const face of [[0,1,3,2],[4,6,7,5],[0,4,5,1],[2,3,7,6],[0,2,6,4],[1,5,7,3]])quad(color,...face.map(i=>ps[i]));}
- function strip(a,b,y,width,z,height,color){
-  const u=frame(a),v=frame(b),p=[xyz(u,0,y-width/2,z),xyz(u,0,y+width/2,z),xyz(v,0,y+width/2,z),xyz(v,0,y-width/2,z)],q=[xyz(u,0,y-width/2,z+height),xyz(u,0,y+width/2,z+height),xyz(v,0,y+width/2,z+height),xyz(v,0,y-width/2,z+height)];
+ function ribbon(a,b,ya,yb,width,z,height,color){
+  const u=frame(a),v=frame(b),p=[xyz(u,0,ya-width/2,z),xyz(u,0,ya+width/2,z),xyz(v,0,yb+width/2,z),xyz(v,0,yb-width/2,z)],q=[xyz(u,0,ya-width/2,z+height),xyz(u,0,ya+width/2,z+height),xyz(v,0,yb+width/2,z+height),xyz(v,0,yb-width/2,z+height)];
   quad(color,q[0],q[3],q[2],q[1]);quad(color,p[0],p[3],q[3],q[0]);quad(color,p[1],q[1],q[2],p[2]);quad(color,p[0],q[0],q[1],p[1]);quad(color,p[3],p[2],q[2],q[3]);
  }
+ function strip(a,b,y,width,z,height,color){ribbon(a,b,y,y,width,z,height,color);}
  if(meta.kind==='track'){
   for(let d=meta.start;d<meta.end;d+=4){const end=Math.min(meta.end,d+4);strip(d,end,0,3.15,-.30,.12,'#85847b');for(const side of [-1,1]){const y=side*.5335;strip(d,end,y,.13,-.04,.025,'#727a79');strip(d,end,y,.028,-.015,.09,'#43484b');strip(d,end,y,.067,.075,.045,'#b8bec0');}strip(d,end,0,.022,5.45,.022,'#8b9395');}
   for(const span of geo.route.structures||[]){if(span.kind!=='bridge-or-viaduct')continue;
@@ -52,8 +57,8 @@ function build(meta){
   if(meta.islandOuterTrack){
    // The operator map establishes a third passenger track. Widths, turnout
    // positions and transitions are game estimates, never surveyed geometry.
-   const a=Math.max(1,start-100),b=Math.min(geo.length-1,end+100),centre=d=>{const t=Math.max(0,Math.min(1,Math.min((d-a)/100,(b-d)/100)));return 12+(7.56-12)*t*t*(3-2*t);};
-   for(let d=a;d<b;d+=4){const e=Math.min(b,d+4),u=frame(d),v=frame(e);for(const sign of[-1,1])for(const[width,z,height,color]of[[.13,-.04,.025,'#727a79'],[.028,-.015,.09,'#43484b'],[.067,.075,.045,'#b8bec0']]){const y=sign*.5335,ps=[xyz(u,0,centre(d)+y-width/2,z+height),xyz(u,0,centre(d)+y+width/2,z+height),xyz(v,0,centre(e)+y+width/2,z+height),xyz(v,0,centre(e)+y-width/2,z+height)];quad(color,ps[0],ps[3],ps[2],ps[1]);}strip(d,e,centre((d+e)/2),3.15,-.30,.12,'#85847b');}
+   const a=Math.max(1,start-100),b=Math.min(geo.length-1,end+100),centre=d=>stationOuterTrackOffset(meta,a,b,d);
+   for(let d=a;d<b;d+=4){const e=Math.min(b,d+4);for(const sign of[-1,1])for(const[width,z,height,color]of[[.13,-.04,.025,'#727a79'],[.028,-.015,.09,'#43484b'],[.067,.075,.045,'#b8bec0']]){const y=sign*.5335;ribbon(d,e,centre(d)+y,centre(e)+y,width,z,height,color);}ribbon(d,e,centre(d),centre(e),3.15,-.30,.12,'#85847b');ribbon(d,e,centre(d),centre(e),.022,5.45,.022,'#8b9395');}
    for(let d=a;d<b;d+=.7)box(frame(d),0,centre(d),-.075,.22,2.45,.11,'#b7b5a8');
    for(let d=start;d<end;d+=5){const e=Math.min(end,d+5);strip(d,e,5.78,.30,1.10,.025,'#e0c257');strip(d,e,5.94,.08,.08,.95,'#d8d8ce');}
   }
@@ -72,5 +77,5 @@ function build(meta){
  }
  cache.set(meta.id,model);while(cache.size>32)cache.delete(cache.keys().next().value);return model;
 }
-root.BaylineBatchModels={initialize,build,get cacheSize(){return cache.size;}};
+root.BaylineBatchModels={initialize,build,stationOuterTrackOffset,get cacheSize(){return cache.size;}};
 })(window);
