@@ -1,0 +1,2689 @@
+{
+  "method": "Official station map side review carried forward from prior visual inspection. Positive means left when travelling toward Matsumoto. A map verifies platform side, not this train assignment or dimensions.",
+  "releaseReady": false,
+  "stations": [
+    {
+      "name": "新宿",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/866.html",
+      "mapDate": "2026-08",
+      "sideTowardMatsumoto": {
+        "7": 1,
+        "9": 1,
+        "10": -1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "1d0f86be5d0688d8f32aa4bed2461f58ec005b7af5005a7ec0ece314177b2c28",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0866_1f.png",
+          "sha256": "2bae900140873f4eec5ef4f221343418f1bd2eb3cf361de942817dfb7e4c1059"
+        },
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0866_2f.png",
+          "sha256": "c2a4941bfb742efa53790b4d32b6f94002853943758a717fc7b63df3edaae083"
+        },
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0866_b1f.png",
+          "sha256": "2e881afe6fc884b1a79d19587d3619756ffd4f21b94c894246b6d2df8e63ff45"
+        },
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0866_all.png",
+          "sha256": "473646759a89158a96f1ac3b2f111ef53c7be4873d8d0b427ddb23dcb09220e5"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "9",
+          "10"
+        ],
+        "reverse": [
+          "7"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "sources": [
+          "https://timetables.jreast.co.jp/2610/train/050/054701.html",
+          "https://timetables.jreast.co.jp/2610/train/060/063811.html",
+          "https://timetables.jreast.co.jp/2610/train/110/111441.html",
+          "https://timetables.jreast.co.jp/2610/train/085/087651.html"
+        ]
+      }
+    },
+    {
+      "name": "立川",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/958.html",
+      "mapDate": "2025-05",
+      "sideTowardMatsumoto": {
+        "3": 1,
+        "6": -1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "18580bd2ab147ed7c76ec15c06951ea298c1b11422eb9e5630d8fd4790c76205",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0958_1f-2f.png",
+          "sha256": "0eb7d36ff1bfcf3f66c7179a6bffb8249aacd0cd5078e8b6bb9571bf83cd1fea"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "6"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "sources": [
+          "https://timetables.jreast.co.jp/2610/train/050/054701.html",
+          "https://timetables.jreast.co.jp/2610/train/060/063811.html",
+          "https://timetables.jreast.co.jp/2610/train/110/111441.html",
+          "https://timetables.jreast.co.jp/2610/train/085/087651.html"
+        ]
+      }
+    },
+    {
+      "name": "八王子",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1227.html",
+      "mapDate": "2026-03",
+      "sideTowardMatsumoto": {
+        "2": -1,
+        "4": -1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "7edb683dd81d4e80fe54577456c2304cbe0433247cf45422dfbbcc4f9a3ea365",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1227_1f-2f.png",
+          "sha256": "438ce4ffba0edc12aba3cba81613d81d0a085e087b96ee11a018a99ba1665db6"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "4"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "sources": [
+          "https://timetables.jreast.co.jp/2610/train/050/054701.html",
+          "https://timetables.jreast.co.jp/2610/train/060/063811.html",
+          "https://timetables.jreast.co.jp/2610/train/110/111441.html",
+          "https://timetables.jreast.co.jp/2610/train/085/087651.html"
+        ]
+      }
+    },
+    {
+      "name": "甲府",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/671.html",
+      "mapDate": "2023-02",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "8005678bd9c10c8e31094bcfe0b2cd78ecf8fea5e1e587c8b382de06afa8f138",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0671_1f-2f.png",
+          "sha256": "316a4b086da3cf0f70132657b1efb38df9501696fb3418e4a6ebc798cdb73b3f"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "sources": [
+          "https://timetables.jreast.co.jp/2610/train/050/054701.html",
+          "https://timetables.jreast.co.jp/2610/train/060/063811.html",
+          "https://timetables.jreast.co.jp/2610/train/110/111441.html",
+          "https://timetables.jreast.co.jp/2610/train/085/087651.html"
+        ]
+      },
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "layoutReview": {
+        "checked": "2026-10-24",
+        "method": "Re-inspected retained official map; side1 plus island2/3. Dimensions/turnouts estimated, not surveyed."
+      }
+    },
+    {
+      "name": "竜王",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1689.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "3fd032dce6bced739752f1aa49b1e5726b9f0f2587886600269d2c014a6fae86",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1689_1f-2f.png",
+          "sha256": "3136c8df48e92d22f0c805cf2b54abb33683487b311415353b584bca6ac31fab"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Official map through-line directions1down/3up; selected Kaiji timetable2 overrides separately. Track dimensions and turnouts are game estimates.",
+        "sources": [
+          "https://www.jreast.co.jp/estation/stations/1689.html"
+        ]
+      },
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "name": "松本",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1444.html",
+      "mapDate": "2026-04",
+      "sideTowardMatsumoto": {
+        "2": 1,
+        "3": -1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "ecd865ee113fc31ef01aea589857cb0d0353d266acb8ac5b38e4268d82391639",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1444_1f.png",
+          "sha256": "54e7757e02fc84fda0c7fa276f477ef3d72771ccb9c13373daaedc459f61ace7"
+        },
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1444_2f-3f.png",
+          "sha256": "f8a4672a8d25b08138f3c79514c7d13101727eedcb6aefd531f07375f7e6adb0"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "sources": [
+          "https://timetables.jreast.co.jp/2610/train/050/054701.html",
+          "https://timetables.jreast.co.jp/2610/train/060/063811.html"
+        ]
+      }
+    },
+    {
+      "name": "小淵沢",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/707.html",
+      "mapDate": "2023-02",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "c83eda6e7530fc24c750a6a9361dd3e77fb05561a72884192b0881b169023e6c",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0707_1f.png",
+          "sha256": "bd52825effe1ad98e1a1c07a081626ec25179ebe6be6d049b5c8f777ffbedb89"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "sources": [
+          "https://timetables.jreast.co.jp/2610/train/050/054701.html",
+          "https://timetables.jreast.co.jp/2610/train/060/063811.html"
+        ]
+      }
+    },
+    {
+      "name": "茅野",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/988.html",
+      "mapDate": "2023-09",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "3"
+      },
+      "pageSha256": "caa72409f4c20b69d56df3841dff3749f391ab51851ef8fd992442e57874a3e8",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0988_1f-2f.png",
+          "sha256": "b8f091c7c9f972946ba2e550d3a3cb15de81059fee84f8c25eda9ec1796bc561"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator destination labels, not a selected train assignment",
+        "imageSha256": "b8f091c7c9f972946ba2e550d3a3cb15de81059fee84f8c25eda9ec1796bc561"
+      },
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "name": "上諏訪",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/492.html",
+      "mapDate": "2023-09",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1,
+        "3": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "pageSha256": "013a94a103b1f3c07326ce3549ff0818f8dbb9308ff4963074163c947eba06f3",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0492_1f.png",
+          "sha256": "5100712a4ae6e4a7ec87dc07e341fccb4e567d23f1caa96c641d94b079b4d781"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator destination labels, not a selected train assignment",
+        "imageSha256": "5100712a4ae6e4a7ec87dc07e341fccb4e567d23f1caa96c641d94b079b4d781"
+      },
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "name": "岡谷",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/358.html",
+      "mapDate": "2023-09",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1,
+        "3": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "pageSha256": "d831dd4259f1832cb21d71e846be7167e28ac84a5283d983d690c9f9679ee4c3",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0358_1f-2f.png",
+          "sha256": "43ce66936ada75a0a2c053ed5eb9d3e08a57a45a341a84cec87980899bb5420a"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator destination labels, not a selected train assignment",
+        "imageSha256": "43ce66936ada75a0a2c053ed5eb9d3e08a57a45a341a84cec87980899bb5420a"
+      },
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "bayPlatform0Excluded": true
+      }
+    },
+    {
+      "name": "塩尻",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/774.html",
+      "mapDate": "2023-06",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "pageSha256": "a3363b6677d4199f7039210deae51c61724801f72b9036d30086b93bdf57f80f",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0774_1f-2f.png",
+          "sha256": "b91db1840ea6907232f4f8d78219659c0a47986e15e178402b2dfb4cfe47cfe5"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator destination labels, not a selected train assignment",
+        "imageSha256": "b91db1840ea6907232f4f8d78219659c0a47986e15e178402b2dfb4cfe47cfe5"
+      },
+      "observedLayout": {
+        "islandPlatforms": 3,
+        "tracks": 6,
+        "islandPlatformPairs": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "name": "韮崎",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1189.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "reverse": "2"
+      },
+      "pageSha256": "222d575f80ee132a676c339dd844a0364bb664d2eb8262a5ce94a1f24fe2436d",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1189_1f-2f.png",
+          "sha256": "561dd134fa5e2f2a8a33dbdb566e115e2dbacac8a19f1e823bfaa9155702bca1"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator destination labels, not a selected train assignment",
+        "imageSha256": "561dd134fa5e2f2a8a33dbdb566e115e2dbacac8a19f1e823bfaa9155702bca1"
+      },
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      }
+    },
+    {
+      "name": "大月",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/331.html",
+      "mapDate": "2026-04",
+      "sideTowardMatsumoto": {
+        "3": 1,
+        "5": 1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "649099972862a791a1d3dcf5c555719973ad488208feafcfdb8a30fe5f09b144",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0331_1f.png",
+          "sha256": "a593c20562d15dae71e62cc42c4ce15ad9ea08d9ff33e62b02ece716745190c0"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "5"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "sources": [
+          "https://timetables.jreast.co.jp/2610/train/110/111441.html",
+          "https://timetables.jreast.co.jp/2610/train/085/087651.html"
+        ]
+      }
+    },
+    {
+      "name": "塩山",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/293.html",
+      "mapDate": "2023-04",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "d479c26029a5334290d40f198c1dc057f223835cce16391f325e59ffc3efdaa2",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0293_1f-2f.png",
+          "sha256": "1e07d423095de29ee3a79a2ac19fc944668e5218436502e9e87d8a63e1ec013f"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "sources": [
+          "https://timetables.jreast.co.jp/2610/train/110/111441.html",
+          "https://timetables.jreast.co.jp/2610/train/085/087651.html"
+        ]
+      },
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "layoutReview": {
+        "checked": "2026-10-24",
+        "method": "Re-inspected retained official map; side1 plus island2/3. Dimensions/turnouts estimated, not surveyed."
+      }
+    },
+    {
+      "name": "山梨市",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1609.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1,
+        "3": -1
+      },
+      "gamePlatformChoice": null,
+      "pageSha256": "f76ebd089c5fe176a167df3dd3f2c8b32bd5d6a523ef915b6a1eb8a6b07b89b2",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1609_1f.png",
+          "sha256": "01bec7ff1102e0f70f2b17c951953bdeb48a0090a8fa20a79f71717f3551b996"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "sources": [
+          "https://timetables.jreast.co.jp/2610/train/110/111441.html",
+          "https://timetables.jreast.co.jp/2610/train/085/087651.html"
+        ]
+      },
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "layoutReview": {
+        "checked": "2026-10-24",
+        "method": "Re-inspected retained official map; side1 plus island2/3. Dimensions/turnouts estimated, not surveyed."
+      }
+    },
+    {
+      "name": "石和温泉",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/110.html",
+      "mapDate": "2022-10",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "pageSha256": "97d8d90ad06f6b02a1113a64ddb28287b520b0f9486370036dbf24b01797a602",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0110_1f.png",
+          "sha256": "cb800cb85ef77bdc9e51f98a3e21add93dc9dc8171ccfa49fc5f3ecc4d0003b4"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator destination labels, not a selected train assignment",
+        "imageSha256": "cb800cb85ef77bdc9e51f98a3e21add93dc9dc8171ccfa49fc5f3ecc4d0003b4"
+      },
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      }
+    },
+    {
+      "name": "阿佐ヶ谷",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/45.html",
+      "mapDate": "2024-10",
+      "sideTowardMatsumoto": {
+        "3": -1,
+        "4": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "3",
+        "reverse": "4"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0045_1f-2f.png",
+          "sha256": "1592bf7b2d9afd0e5502fac4850d9398e1571b764ed2cb32153626974e9b3416"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4,
+        "rapidPlatformNumbers": [
+          "3",
+          "4"
+        ]
+      },
+      "scope": "Official schematic confirms rapid-platform side and four-track/two-island form. Dimensions, track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "4"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator destination labels, not a selected train assignment",
+        "imageSha256": "1592bf7b2d9afd0e5502fac4850d9398e1571b764ed2cb32153626974e9b3416"
+      }
+    },
+    {
+      "name": "高円寺",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/663.html",
+      "mapDate": "2024-10",
+      "sideTowardMatsumoto": {
+        "3": -1,
+        "4": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "3",
+        "reverse": "4"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0663_1f-2f.png",
+          "sha256": "c050ff57d718f77a33ae2eedfbc7b60ba6d4d1bf0b710aca6aeed9f7f2b6303b"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4,
+        "rapidPlatformNumbers": [
+          "3",
+          "4"
+        ]
+      },
+      "scope": "Official schematic confirms rapid-platform side and four-track/two-island form. Dimensions, track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "4"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator destination labels, not a selected train assignment",
+        "imageSha256": "c050ff57d718f77a33ae2eedfbc7b60ba6d4d1bf0b710aca6aeed9f7f2b6303b"
+      }
+    },
+    {
+      "name": "荻窪",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/362.html",
+      "mapDate": "2026-05",
+      "sideTowardMatsumoto": {
+        "3": -1,
+        "4": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "3",
+        "reverse": "4"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0362_b1-2f.png",
+          "sha256": "5ae28e09afba692ad4d2a6368f6d5eb0967d42c5d7d74baca1c4bd6cb8ad5920"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4,
+        "rapidPlatformNumbers": [
+          "3",
+          "4"
+        ]
+      },
+      "scope": "Official schematic confirms rapid-platform side and four-track/two-island form. Dimensions, track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "4"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator destination labels, not a selected train assignment",
+        "imageSha256": "5ae28e09afba692ad4d2a6368f6d5eb0967d42c5d7d74baca1c4bd6cb8ad5920"
+      }
+    },
+    {
+      "name": "国立",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/622.html",
+      "mapDate": "2024-02",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "3"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0622_1f-2f.png",
+          "sha256": "d947feeeadb1d199087bea4996d49a7f37e0a1574de8658acb7231c9b49fe76f"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPairReviewDate": "2026-10-24"
+      },
+      "scope": "Official schematic confirms numbered platform side and passenger platform form. Dimensions, track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "d947feeeadb1d199087bea4996d49a7f37e0a1574de8658acb7231c9b49fe76f"
+      }
+    },
+    {
+      "name": "西国分寺",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1156.html",
+      "mapDate": "2022-12",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1156_b1-1f.png",
+          "sha256": "e231275bf2c05ef67d5318d3622203b445a80ecd4917f9129b35a8304a1e7cae"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracksOnChuoLine": 2,
+        "crossingMusashinoLineOnOtherLevel": true
+      },
+      "scope": "Official schematic confirms numbered platform side and passenger platform form. Dimensions, track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "e231275bf2c05ef67d5318d3622203b445a80ecd4917f9129b35a8304a1e7cae"
+      }
+    },
+    {
+      "name": "武蔵境",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1528.html",
+      "mapDate": "2026-08",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1528_1f-2f.png",
+          "sha256": "519fc13c19a14033f9deb267878593c20051dc70e33cc3f8bec7391e1cb9a19e"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracksOnChuoLine": 2
+      },
+      "scope": "Official schematic confirms numbered platform side and passenger platform form. Dimensions, track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "519fc13c19a14033f9deb267878593c20051dc70e33cc3f8bec7391e1cb9a19e"
+      }
+    },
+    {
+      "name": "中野",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1104.html",
+      "mapDate": "2024-12",
+      "sideTowardMatsumoto": {
+        "6": 1,
+        "8": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "6",
+        "reverse": "8"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1104_1f-2f.png",
+          "sha256": "642cf51c151d03f1ea5b64d8e3ace411782c242f5b663c783be60fa39cb8b276"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 4,
+        "numberedPlatforms": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          8
+        ],
+        "scope": "Numbered passenger platform faces only; does not establish total non-platform tracks"
+      },
+      "scope": "Official schematic confirms numbered platform side and passenger platform form. Dimensions, track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "6"
+        ],
+        "reverse": [
+          "8"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "642cf51c151d03f1ea5b64d8e3ace411782c242f5b663c783be60fa39cb8b276"
+      }
+    },
+    {
+      "name": "三鷹",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1463.html",
+      "mapDate": "2026-03",
+      "sideTowardMatsumoto": {
+        "3": -1,
+        "4": 1,
+        "5": -1,
+        "6": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "3",
+        "reverse": "6"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1463_1f-3f.png",
+          "sha256": "4de1c0bf03e00cc56210630f4f13cd2bf67f021bee79913bccb49b404e464eb1"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 3,
+        "numberedPlatforms": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "scope": "Official schematic confirms numbered platform side and passenger platform form. Dimensions, track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "3",
+          "4"
+        ],
+        "reverse": [
+          "5",
+          "6"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "4de1c0bf03e00cc56210630f4f13cd2bf67f021bee79913bccb49b404e464eb1"
+      }
+    },
+    {
+      "name": "西荻窪",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1152.html",
+      "mapDate": "2024-10",
+      "sideTowardMatsumoto": {
+        "3": -1,
+        "4": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "3",
+        "reverse": "4"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1152_1f-3f.png",
+          "sha256": "65c3ef5108ce61eb56fa739294aefcfb6ed4b80c2be433ee20840c9fdb384d67"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "4"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "65c3ef5108ce61eb56fa739294aefcfb6ed4b80c2be433ee20840c9fdb384d67"
+      }
+    },
+    {
+      "name": "吉祥寺",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/596.html",
+      "mapDate": "2025-08",
+      "sideTowardMatsumoto": {
+        "3": -1,
+        "4": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "3",
+        "reverse": "4"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0596_2f-3f.png",
+          "sha256": "0b3e03b0bc5ff45dfa2470838a559eedec092d3fadcc67d638566ca4fbd10551"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracksOnJRLine": 4
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "4"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "0b3e03b0bc5ff45dfa2470838a559eedec092d3fadcc67d638566ca4fbd10551"
+      }
+    },
+    {
+      "name": "東小金井",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1280.html",
+      "mapDate": "2024-04",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "3",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1280_1f-2f.png",
+          "sha256": "f397e73ab792154347bd3e2174e8c9a94f0cf40dca30af944d9fbc6c7fc60a7b"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "sidePlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          1,
+          2
+        ],
+        "islandPairReviewDate": "2026-10-24"
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "f397e73ab792154347bd3e2174e8c9a94f0cf40dca30af944d9fbc6c7fc60a7b"
+      }
+    },
+    {
+      "name": "武蔵小金井",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1526.html",
+      "mapDate": "2024-04",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1,
+        "3": -1,
+        "4": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "4"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1526_1f-2f.png",
+          "sha256": "6307cf4d7b3fef76d88362e9c77eae319cbdedd32612771d46ed321e236d465d"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "tracks": 4
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3",
+          "4"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "6307cf4d7b3fef76d88362e9c77eae319cbdedd32612771d46ed321e236d465d"
+      }
+    },
+    {
+      "name": "国分寺",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/682.html",
+      "mapDate": "2024-04",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1,
+        "3": -1,
+        "4": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "4"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0682_1f-2f.png",
+          "sha256": "5607fae1f7c1d5539859c5a822ab4d19dbbc6e1774d22ec3cf5fca47ec57ad3f"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatformsOnJRLine": 2,
+        "tracksOnJRLine": 4
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1",
+          "2"
+        ],
+        "reverse": [
+          "3",
+          "4"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "5607fae1f7c1d5539859c5a822ab4d19dbbc6e1774d22ec3cf5fca47ec57ad3f"
+      }
+    },
+    {
+      "name": "日野",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1328.html",
+      "mapDate": "2026-03",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1328_1f-2f.png",
+          "sha256": "1b5f2debebf65be1a263db0882613a516676d2f3d4d1562c741352539a367ed6"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "1b5f2debebf65be1a263db0882613a516676d2f3d4d1562c741352539a367ed6"
+      }
+    },
+    {
+      "name": "豊田",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1069.html",
+      "mapDate": "2023-10",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1,
+        "3": -1,
+        "4": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "4"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1069_1f-2f.png",
+          "sha256": "f23994e556bf93bb10b124c6b5f5539a005f240511bfa1954f1637b9ce6e8065"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "numberedPlatformFaces": 4
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1",
+          "2"
+        ],
+        "reverse": [
+          "3",
+          "4"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "f23994e556bf93bb10b124c6b5f5539a005f240511bfa1954f1637b9ce6e8065"
+      }
+    },
+    {
+      "name": "西八王子",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1168.html",
+      "mapDate": "2024-09",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1168_1f-2f.png",
+          "sha256": "afe536bd197d2570301c320137ae8c15b700c53124f8d1aeda4b8793bcc05cc4"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "afe536bd197d2570301c320137ae8c15b700c53124f8d1aeda4b8793bcc05cc4"
+      }
+    },
+    {
+      "name": "高尾",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/931.html",
+      "mapDate": "2025-11",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1,
+        "4": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "4",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0931_1f-2f.png",
+          "sha256": "b3b2ace8f0de4360942e5691847a69bcf232c44e4616fc516fd75de34217b048"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 2,
+        "numberedPlatformFaces": 4
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "3",
+          "4"
+        ],
+        "reverse": [
+          "1",
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "b3b2ace8f0de4360942e5691847a69bcf232c44e4616fc516fd75de34217b048"
+      }
+    },
+    {
+      "name": "相模湖",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/730.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "3"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0730_1f.png",
+          "sha256": "1f8ed32a1eb3418437bfa64327d7b829acb870222bbd4f0e8a1a252949a589c2"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPairReviewDate": "2026-10-24"
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "1f8ed32a1eb3418437bfa64327d7b829acb870222bbd4f0e8a1a252949a589c2"
+      }
+    },
+    {
+      "name": "藤野",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1366.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1366_1f.png",
+          "sha256": "cb46b7896fa0c749aef74c6cfb965780a0e972a55aa43cbd9213ed213677ab6c"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "cb46b7896fa0c749aef74c6cfb965780a0e972a55aa43cbd9213ed213677ab6c"
+      }
+    },
+    {
+      "name": "上野原",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/205.html",
+      "mapDate": "2025-10",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0205_1f.png",
+          "sha256": "bdf6ab77112a7190f47a5b1e1136e913b9af6e11389a3458783cec36a0977c9b"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "bdf6ab77112a7190f47a5b1e1136e913b9af6e11389a3458783cec36a0977c9b"
+      }
+    },
+    {
+      "name": "四方津",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/775.html",
+      "mapDate": "2022-06",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "3",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0775_1f.png",
+          "sha256": "3175def71aaa4ddab5382fe8799e5a3b54dcfc76f0c940c353aeec01e390cb76"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          1,
+          2
+        ],
+        "islandPairReviewDate": "2026-10-24"
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "3175def71aaa4ddab5382fe8799e5a3b54dcfc76f0c940c353aeec01e390cb76"
+      }
+    },
+    {
+      "name": "猿橋",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/757.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0757_1f-2f.png",
+          "sha256": "f7d0eaaf11a655c5901e20a478c13486cfd6c0ac1d9f7ffe6c13a03996bb8c2e"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "f7d0eaaf11a655c5901e20a478c13486cfd6c0ac1d9f7ffe6c13a03996bb8c2e"
+      }
+    },
+    {
+      "name": "酒折",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/726.html",
+      "mapDate": "2023-02",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "3"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0726_1f.png",
+          "sha256": "eb7a0842fa124cbfe9b508c37c2d91a3fddf8fc370f9baa477f5bec32d1caa15"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPairReviewDate": "2026-10-24"
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2",
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "eb7a0842fa124cbfe9b508c37c2d91a3fddf8fc370f9baa477f5bec32d1caa15"
+      }
+    },
+    {
+      "name": "塩崎",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/772.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0772_1f.png",
+          "sha256": "edaa26687018122fcb11f2d9cc3e24b39a85adf50b231ab6d1c471c7f54c3064"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "edaa26687018122fcb11f2d9cc3e24b39a85adf50b231ab6d1c471c7f54c3064"
+      }
+    },
+    {
+      "name": "下諏訪",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/823.html",
+      "mapDate": "2023-10",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1,
+        "3": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0823_1f.png",
+          "sha256": "24158b0ff2ae571abb8a3f4e1b6f1b20c4a5fbae0052fa871e79260cac959f12"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPairReviewDate": "2026-10-24"
+      },
+      "scope": "Official schematic confirms platform side and passenger platform form. Dimensions, precise track placement and train-specific operating assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "24158b0ff2ae571abb8a3f4e1b6f1b20c4a5fbae0052fa871e79260cac959f12"
+      }
+    },
+    {
+      "name": "広丘",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1343.html",
+      "mapDate": "2023-06",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1343_1f-2f.png",
+          "sha256": "89f807a42b33c5d5cf7baf50710a296274c64c551e7765eb485ead37f9d9fc5b"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Official schematic confirms platform side and form; precise dimensions, track placement and service assignment are not verified.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "89f807a42b33c5d5cf7baf50710a296274c64c551e7765eb485ead37f9d9fc5b"
+      }
+    },
+    {
+      "name": "村井",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1547.html",
+      "mapDate": "2024-10",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1547_1f.png",
+          "sha256": "4a1dabb7b11bc73605881a7e206436025132c2eefb6af884864dece567c1aed7"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "platformFaces": 2,
+        "tracks": 2,
+        "note": "Both platform faces lie on the north side of their respective tracks; staggered lengths in operator schematic."
+      },
+      "scope": "Visually inspected operator schematic. Platform side/form only; no measured dimensions or selected-service assignment.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "4a1dabb7b11bc73605881a7e206436025132c2eefb6af884864dece567c1aed7"
+      }
+    },
+    {
+      "name": "平田",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1721.html",
+      "mapDate": "2023-06",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1721_1f-2f.png",
+          "sha256": "00542464798555aa429a3da954456101d56108c0db91d0a2b092b06a88c2b6a9"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic. Platform side/form only; no measured dimensions or selected-service assignment.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "00542464798555aa429a3da954456101d56108c0db91d0a2b092b06a88c2b6a9"
+      }
+    },
+    {
+      "name": "南松本",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1502.html",
+      "mapDate": "2023-06",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1502_1f.png",
+          "sha256": "ecc17b109dbd0dae213676f61ef3b500cda8e9ba33f44973f2c843f416db2d77"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2,
+        "freightYardExcluded": true
+      },
+      "scope": "Visually inspected operator schematic. Platform side/form only; no measured dimensions or selected-service assignment.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "ecc17b109dbd0dae213676f61ef3b500cda8e9ba33f44973f2c843f416db2d77"
+      }
+    },
+    {
+      "name": "長坂",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1091.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1091_1f.png",
+          "sha256": "44e155f23ab05e3a36b0c4285d37efa4c50c95335f1a820c33f2cbefdf992825"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "44e155f23ab05e3a36b0c4285d37efa4c50c95335f1a820c33f2cbefdf992825"
+      }
+    },
+    {
+      "name": "甲斐大和",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/414.html",
+      "mapDate": "2023-09",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "3"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0414_b1-1f.png",
+          "sha256": "566a7444d31a1a2297f6f9cc2171ab69d3b64cf470b95e6297d7ef3369d68984"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ]
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "566a7444d31a1a2297f6f9cc2171ab69d3b64cf470b95e6297d7ef3369d68984"
+      }
+    },
+    {
+      "name": "穴山",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/69.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "down": -1,
+        "up": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "down",
+        "reverse": "up"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0069_1f.png",
+          "sha256": "b8b43fe7aac61b6ad0b12edbb894bc00429d8bced5d91cb34e8612791dd85526"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": false,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "down"
+        ],
+        "reverse": [
+          "up"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "b8b43fe7aac61b6ad0b12edbb894bc00429d8bced5d91cb34e8612791dd85526"
+      }
+    },
+    {
+      "name": "梁川",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1586.html",
+      "mapDate": "2022-06",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1586_1f.png",
+          "sha256": "8f682dd9ec6291738fc59311350fdb88bb193f78ab40e29d7456f81b66a65d0f"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "8f682dd9ec6291738fc59311350fdb88bb193f78ab40e29d7456f81b66a65d0f"
+      }
+    },
+    {
+      "name": "鳥沢",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1076.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1076_1f.png",
+          "sha256": "ae565545234e6d11a1b76221fdf57a9cf969c7e8c5d290c2bee5ccacc02619aa"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "ae565545234e6d11a1b76221fdf57a9cf969c7e8c5d290c2bee5ccacc02619aa"
+      }
+    },
+    {
+      "name": "初狩",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1234.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "2",
+        "reverse": "1"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1234_1f.png",
+          "sha256": "f5aa8495871582b573d75d2d6f2604bd77317c49730fd526b450357ad372d870"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2,
+        "disusedYardExcluded": true
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "2"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "f5aa8495871582b573d75d2d6f2604bd77317c49730fd526b450357ad372d870"
+      }
+    },
+    {
+      "name": "笹子",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/745.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0745_1f.png",
+          "sha256": "7c83ee94a1041604c2905a6ea10c581f1f5eeb3c7378ab369b8bea9f814444db"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "7c83ee94a1041604c2905a6ea10c581f1f5eeb3c7378ab369b8bea9f814444db"
+      }
+    },
+    {
+      "name": "勝沼ぶどう郷",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/452.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "2"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0452_1f.png",
+          "sha256": "bb7938ddd37cbc3056f9cb51f65c55a73c84f9a43c8a7ab550cff2ed01d24aae"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "islandPlatforms": 1,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "bb7938ddd37cbc3056f9cb51f65c55a73c84f9a43c8a7ab550cff2ed01d24aae"
+      }
+    },
+    {
+      "name": "東山梨",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1306.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "down": 1,
+        "up": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "down",
+        "reverse": "up"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1306_1f.png",
+          "sha256": "a52f2c99b3c746ed764d5a0bb4eccfae54d047e9aa68fece5f06d5578b18d909"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": false,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "down"
+        ],
+        "reverse": [
+          "up"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "a52f2c99b3c746ed764d5a0bb4eccfae54d047e9aa68fece5f06d5578b18d909"
+      }
+    },
+    {
+      "name": "春日居町",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/437.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "down": 1,
+        "up": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "down",
+        "reverse": "up"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0437_1f.png",
+          "sha256": "a84d1a64fcc39f2997c5bcc8bd047235a1f9331494241f4c4eb32ead33ee06a4"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": false,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "down"
+        ],
+        "reverse": [
+          "up"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "a84d1a64fcc39f2997c5bcc8bd047235a1f9331494241f4c4eb32ead33ee06a4"
+      }
+    },
+    {
+      "name": "新府",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/879.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "down": 1,
+        "up": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "down",
+        "reverse": "up"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0879_1f.png",
+          "sha256": "f445b06305012dc9411eaf4711a9afceabe19634352496dca2268753f4f29731"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": false,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "down"
+        ],
+        "reverse": [
+          "up"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Explicit down/up internal side keys from existing operator map review; no printed platform numbers"
+      }
+    },
+    {
+      "name": "信濃境",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/794.html",
+      "mapDate": "2023-09",
+      "sideTowardMatsumoto": {
+        "down": 1,
+        "up": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "down",
+        "reverse": "up"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0794_1f.png",
+          "sha256": "4d9b67b4cd1d0622aea57940ba946d1f46762d8735efcdcc4ad1d56a2aa1e9a8"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": false,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "down"
+        ],
+        "reverse": [
+          "up"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "4d9b67b4cd1d0622aea57940ba946d1f46762d8735efcdcc4ad1d56a2aa1e9a8"
+      }
+    },
+    {
+      "name": "すずらんの里",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/901.html",
+      "mapDate": "2022-02",
+      "sideTowardMatsumoto": {
+        "down": 1,
+        "up": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "down",
+        "reverse": "up"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0901_1f.png",
+          "sha256": "1c348298d9bea88a81b59fead78d5a2c9a78865af38187cea12d9b222c224349"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": false,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "down"
+        ],
+        "reverse": [
+          "up"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Explicit down/up internal side keys from existing operator map review; no printed platform numbers"
+      }
+    },
+    {
+      "name": "みどり湖",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1473.html",
+      "mapDate": "2023-09",
+      "sideTowardMatsumoto": {
+        "down": 1,
+        "up": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "down",
+        "reverse": "up"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1473_1f.png",
+          "sha256": "7440124ad7db7103a6f751ad3c43947f037c98763927cc994c7191899e178188"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": false,
+      "observedLayout": {
+        "sidePlatforms": 2,
+        "tracks": 2
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "down"
+        ],
+        "reverse": [
+          "up"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "7440124ad7db7103a6f751ad3c43947f037c98763927cc994c7191899e178188"
+      }
+    },
+    {
+      "name": "日野春",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1329.html",
+      "mapDate": "2021-12",
+      "sideTowardMatsumoto": {
+        "1": -1,
+        "2": 1,
+        "3": -1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "3"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1329_1f.png",
+          "sha256": "6d2a1769cdcf758dba8c47d68a6dc017df39ad0c07a5a3d9100c02dd7b62cecb"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          1,
+          2
+        ]
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "6d2a1769cdcf758dba8c47d68a6dc017df39ad0c07a5a3d9100c02dd7b62cecb"
+      }
+    },
+    {
+      "name": "富士見",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1367.html",
+      "mapDate": "2023-09",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "3"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1367_1f.png",
+          "sha256": "b0e2ac075ecdef646118a1b335d12727e273b1bd05e8156400f9bdf95b1a9d0e"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ]
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "b0e2ac075ecdef646118a1b335d12727e273b1bd05e8156400f9bdf95b1a9d0e"
+      }
+    },
+    {
+      "name": "青柳",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/26.html",
+      "mapDate": "2023-09",
+      "sideTowardMatsumoto": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "gamePlatformChoice": {
+        "forward": "1",
+        "reverse": "3"
+      },
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0026_1f.png",
+          "sha256": "98c5b4b8484d2666a8cfa9c2127eddc14c76a98d8926ad51d72d5ea700297e7a"
+        }
+      ],
+      "assignmentVerifiedByMapAlone": false,
+      "passingOnly": true,
+      "numberingVerified": true,
+      "observedLayout": {
+        "sidePlatforms": 1,
+        "islandPlatforms": 1,
+        "tracks": 3,
+        "islandPlatformNumbers": [
+          2,
+          3
+        ]
+      },
+      "scope": "Visually inspected operator schematic, authoritative over aerial-photo interpretation. Direction labels establish a game through-track choice, not a service-specific assignment. Blank number boxes remain unnamed. Dimensions and surveyed track placement are not established.",
+      "directionPlatforms": {
+        "forward": [
+          "1",
+          "2"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "directionReview": {
+        "checked": "2026-10-24",
+        "method": "Operator map destination labels; allowed game running direction, NOT selected limited-express assignment",
+        "imageSha256": "98c5b4b8484d2666a8cfa9c2127eddc14c76a98d8926ad51d72d5ea700297e7a"
+      }
+    }
+  ],
+  "pending": [
+    "6 stopping stations lack actual selected-service platform assignment",
+    "All platform lengths, stop markers and precise track centres remain estimated",
+    "Complete station-specific multi-track meshes still require implementation and visual review; two local-line platform placements are estimated"
+  ],
+  "adjacentLocalStationMaps": [
+    {
+      "name": "大久保",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/316.html",
+      "mapDate": "2026-06",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/0316_1f-2f.png",
+          "sha256": "e66ca5dab01be806a32a63b7c2c1c4c1d5fd6e062ba87ce47bbbdf6da0761123"
+        }
+      ],
+      "platformLine": "Chuo-Sobu local",
+      "islandPlatforms": 1,
+      "numberedPlatforms": [
+        1,
+        2
+      ],
+      "rapidTrainPlatformVerified": false,
+      "scope": "Local platforms only. Game now places an estimated adjacent local island and two local rails south of the rapid pair; exact surveyed placement is not established."
+    },
+    {
+      "name": "東中野",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1295.html",
+      "mapDate": "2022-10",
+      "mapImages": [
+        {
+          "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1295_1f-2f.png",
+          "sha256": "5fd989ec17bc4aaed428bb4cd73835b5e81e8afc43b89b6d0558212a4368a857"
+        }
+      ],
+      "platformLine": "Chuo-Sobu local",
+      "islandPlatforms": 1,
+      "numberedPlatforms": [
+        1,
+        2
+      ],
+      "rapidTrainPlatformVerified": false,
+      "scope": "Local platforms only. Game now places an estimated adjacent local island and two local rails south of the rapid pair; exact surveyed placement is not established."
+    }
+  ],
+  "mapReviewCount": 64,
+  "mapReviewPendingStations": [],
+  "aerialReviewSource": "priority-station-aerial-review.json",
+  "directionReviewCount": 62,
+  "directionAssignmentNote": "Destination labels determine directional game platform candidates. A chosen candidate never confirms a selected train platform or exit side. Unreviewed stations retain an explicitly unverified game fallback."
+}

@@ -1,0 +1,85 @@
+{
+  "method": "Software WebGL2 integration of a provisional nine-car E353 consist with buffered source alignments. No physical GPU, rail-grade verification, platform validation or completed game is implied.",
+  "releaseReady": false,
+  "physicalGPU": false,
+  "realTime": false,
+  "runs": [
+    {
+      "id": "azusa",
+      "direction": "forward",
+      "checkedLocations": 127,
+      "cars": 9,
+      "primitives": 30,
+      "ready": 30,
+      "webgl2": true,
+      "glError": 0,
+      "canvasSize": [
+        1200,
+        700
+      ],
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "image": "vehicles/e353-consist-forward.png",
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "direction": "reverse",
+      "checkedLocations": 127,
+      "cars": 9,
+      "primitives": 30,
+      "ready": 30,
+      "webgl2": true,
+      "glError": 0,
+      "canvasSize": [
+        1200,
+        700
+      ],
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "image": "vehicles/e353-consist-reverse.png",
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "forward",
+      "checkedLocations": 83,
+      "cars": 9,
+      "primitives": 30,
+      "ready": 30,
+      "webgl2": true,
+      "glError": 0,
+      "canvasSize": [
+        1200,
+        700
+      ],
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "reverse",
+      "checkedLocations": 83,
+      "cars": 9,
+      "primitives": 30,
+      "ready": 30,
+      "webgl2": true,
+      "glError": 0,
+      "canvasSize": [
+        1200,
+        700
+      ],
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "inputHashes": {
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "engine/train-scene.js": "5e9a514b2fdae23c17824fa5e248f8eebeb7343480f795351b37a6f8f7d6a14e",
+    "vehicles/e353-draft.json.gz": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
+    "alignments/azusa.json.gz": "9321396f8dae616fe06b7fb78d64d140db3c22ae5804eef3bba14c1ca27d8f26",
+    "alignments/kaiji.json.gz": "5f48e88991b500e08c685bd0995e2c10fbf246577a6fe979cdcb3a34803af601",
+    "games/azusa.json.gz": "8ead998d1336e26d0a3f787752bddcbff941a8cea63d4b86db733b6d8f06fec2",
+    "games/kaiji.json.gz": "f560e2a430be9ddfcdaa7a143a12bfde15e49ba270eea33519cf1efa42329883"
+  },
+  "pass": true
+}

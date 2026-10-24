@@ -1,0 +1,170 @@
+{
+  "checked": "2026-10-24",
+  "stations": [
+    {
+      "name": "竜王",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1689.html",
+      "mapSha256": "3136c8df48e92d22f0c805cf2b54abb33683487b311415353b584bca6ac31fab",
+      "checked": "2026-10-24",
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "nativePlatformSides": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "directionCandidates": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "applied": "Station-specific three passenger tracks and side1/island2-3 layout; service timetable assignment overrides through-line candidate.",
+      "notVerified": [
+        "surveyed widths and lengths",
+        "real turnout coordinates or interlocking diagram",
+        "siding/freight-yard topology outside passenger-platform scope"
+      ]
+    },
+    {
+      "name": "甲府",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/671.html",
+      "mapSha256": "316a4b086da3cf0f70132657b1efb38df9501696fb3418e4a6ebc798cdb73b3f",
+      "checked": "2026-10-24",
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "nativePlatformSides": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "directionCandidates": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "2"
+        ]
+      },
+      "applied": "Station-specific three passenger tracks and side1/island2-3 layout; service timetable assignment overrides through-line candidate.",
+      "notVerified": [
+        "surveyed widths and lengths",
+        "real turnout coordinates or interlocking diagram",
+        "siding/freight-yard topology outside passenger-platform scope"
+      ]
+    },
+    {
+      "name": "塩山",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/293.html",
+      "mapSha256": "1e07d423095de29ee3a79a2ac19fc944668e5218436502e9e87d8a63e1ec013f",
+      "checked": "2026-10-24",
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "nativePlatformSides": {
+        "1": 1,
+        "2": -1,
+        "3": 1
+      },
+      "directionCandidates": {
+        "forward": [
+          "1"
+        ],
+        "reverse": [
+          "3"
+        ]
+      },
+      "applied": "Station-specific three passenger tracks and side1/island2-3 layout; service timetable assignment overrides through-line candidate.",
+      "notVerified": [
+        "surveyed widths and lengths",
+        "real turnout coordinates or interlocking diagram",
+        "siding/freight-yard topology outside passenger-platform scope"
+      ]
+    },
+    {
+      "name": "山梨市",
+      "sourceUrl": "https://www.jreast.co.jp/estation/stations/1609.html",
+      "mapSha256": "01bec7ff1102e0f70f2b17c951953bdeb48a0090a8fa20a79f71717f3551b996",
+      "checked": "2026-10-24",
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "nativePlatformSides": {
+        "1": -1,
+        "2": 1,
+        "3": -1
+      },
+      "directionCandidates": {
+        "forward": [
+          "3"
+        ],
+        "reverse": [
+          "1"
+        ]
+      },
+      "applied": "Station-specific three passenger tracks and side1/island2-3 layout; service timetable assignment overrides through-line candidate.",
+      "notVerified": [
+        "surveyed widths and lengths",
+        "real turnout coordinates or interlocking diagram",
+        "siding/freight-yard topology outside passenger-platform scope"
+      ]
+    }
+  ],
+  "ryuoSharedTrack": "Kaiji47 arrival2 and Kaiji2 departure2 share one physical track centre; game reservation excludes opposing movements until rear clears. Not real signalling certification."
+}

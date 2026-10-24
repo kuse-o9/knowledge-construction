@@ -1,0 +1,33 @@
+{
+  "profiles": [
+    {
+      "id": "azusa-forward",
+      "path": "services/azusa-forward.json",
+      "sha256": "39f817293b9b5dd39b657b0a0c730bd910168a629f82167379dd58e2b75b7c48",
+      "stops": 10,
+      "passingStations": 54
+    },
+    {
+      "id": "azusa-reverse",
+      "path": "services/azusa-reverse.json",
+      "sha256": "d9c3427df462d1a8df66c938e0a68101354c0f8e93de56a5cf571e809232a327",
+      "stops": 11,
+      "passingStations": 53
+    },
+    {
+      "id": "kaiji-forward",
+      "path": "services/kaiji-forward.json",
+      "sha256": "90bbfff7b56c6d005141a34f3fab7d74deae961c285d245be2121e7f1d63d911",
+      "stops": 9,
+      "passingStations": 33
+    },
+    {
+      "id": "kaiji-reverse",
+      "path": "services/kaiji-reverse.json",
+      "sha256": "2fff19789b545190f5b68e4a4152a10a53a43508f384685a8912c86ebb157258",
+      "stops": 9,
+      "passingStations": 33
+    }
+  ],
+  "releaseReady": false
+}

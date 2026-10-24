@@ -1,0 +1,35 @@
+{
+  "checked": "2026-10-24",
+  "gameMaximumKmh": 130,
+  "gamePolicy": "published-maximum-game-cap",
+  "curveRestrictions": false,
+  "changesOnlyAtPhysicalStationBoundaries": true,
+  "currentOperatingSectionLimitsVerified": false,
+  "vehicleSource": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
+  "historicalRouteMaximumSource": "https://www.jreast.co.jp/youran/pdf/2019-2020/jre_youran_group_p27-32.pdf",
+  "historicalAsOf": "2019-03-31",
+  "scope": "JR East publishes E353 maximum 130 km/h; the historical yearbook also gives Azusa Shinjuku–Matsumoto maximum 130. Neither proves that every current section permits 130. Do not present the game cap as the actual restriction sheet.",
+  "rapidServiceReference": {
+    "source": "https://www.jreast.co.jp/hachioji/info/20121221/20121221_info02.pdf",
+    "effective": "2013-03-16",
+    "scope": "Historical Shinjuku–Hachioji special-rapid maximum raised 95 to 100 km/h. This document does not establish a 2026 E353 section profile; no E353 limit is inferred from it."
+  },
+  "currentSourceReview": {
+    "result": "No current E353 station-to-station restriction sheet found in the reviewed primary public sources. Retain explicit unverified state; do not substitute rapid-service or historical figures.",
+    "reviewedSources": [
+      {
+        "url": "https://www.jreast.co.jp/press/2025/20251212_ho02.pdf",
+        "scope": "2026-03 timetable revision; selected Azusa capacity changes, not a section-speed table"
+      },
+      {
+        "url": "https://www.jreast.co.jp/hachioji/info/20121221/20121221_info02.pdf",
+        "scope": "2013 special-rapid95→100; not an E3532026 restriction sheet"
+      },
+      {
+        "url": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
+        "scope": "E353 published maximum130; not permission for130 on every section"
+      }
+    ],
+    "modelPolicyUnchanged": true
+  }
+}

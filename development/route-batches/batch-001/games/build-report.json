@@ -1,0 +1,39 @@
+{
+  "base": "chuo-local-bundle-0.bin + chuo-local-bundle-1.bin",
+  "baseSha256": "a4af7bb30c5c4f4f4a9bb94684281f17faa35bd9bef3945b06ed13e6100ff50a",
+  "retainedFeatures": [
+    "Published layout and controls",
+    "Manual and automatic driving",
+    "Starting station and both directions",
+    "Stop/pass inventory",
+    "Free/timetable modes and early departure",
+    "Cab/chase/map cameras",
+    "Keyboard and touch controls",
+    "Door/boarding lifecycle",
+    "Audio/volume/horn and text announcements",
+    "Local save/restore",
+    "Settings, help, mobile layout, renderer fallback",
+    "Traffic/signals and original neighbour adapter"
+  ],
+  "developmentOnly": true,
+  "games": [
+    {
+      "id": "azusa",
+      "entry": "games/azusa.html",
+      "packet": "games/azusa.json.gz",
+      "sha256": "8ead998d1336e26d0a3f787752bddcbff941a8cea63d4b86db733b6d8f06fec2",
+      "directions": 2,
+      "physicalStations": 64,
+      "releaseReady": false
+    },
+    {
+      "id": "kaiji",
+      "entry": "games/kaiji.html",
+      "packet": "games/kaiji.json.gz",
+      "sha256": "f560e2a430be9ddfcdaa7a143a12bfde15e49ba270eea33519cf1efa42329883",
+      "directions": 2,
+      "physicalStations": 42,
+      "releaseReady": false
+    }
+  ]
+}

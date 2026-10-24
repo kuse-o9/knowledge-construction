@@ -1,0 +1,50 @@
+{
+  "method": "Fast CPU simulation using source-derived paths; 100 km/h DIAGNOSTIC cap, all candidate stations. This is not the actual Azusa/Kaiji stopping or operating-speed profile.",
+  "physicalGPU": false,
+  "realTime": false,
+  "playable": false,
+  "runs": [
+    {
+      "id": "azusa",
+      "direction": "forward",
+      "pass": true,
+      "stations": 64,
+      "simulatedSeconds": 10768.000000021642,
+      "steps": 107680,
+      "metres": 220142.6918362323
+    },
+    {
+      "id": "azusa",
+      "direction": "reverse",
+      "pass": true,
+      "stations": 64,
+      "simulatedSeconds": 10768.000000021642,
+      "steps": 107680,
+      "metres": 220142.691836232
+    },
+    {
+      "id": "kaiji",
+      "direction": "forward",
+      "pass": true,
+      "stations": 42,
+      "simulatedSeconds": 6376.300000005665,
+      "steps": 63763,
+      "metres": 125645.568561201
+    },
+    {
+      "id": "kaiji",
+      "direction": "reverse",
+      "pass": true,
+      "stations": 42,
+      "simulatedSeconds": 6376.300000005665,
+      "steps": 63763,
+      "metres": 125645.56856120084
+    }
+  ],
+  "fleetCeilingFixtures": [
+    130,
+    285,
+    320
+  ],
+  "pass": true
+}

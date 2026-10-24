@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "authorizationDate": "2026-10-21",
+  "authorizationSource": "User instruction in this conversation",
+  "instruction": "仕上げることができて、公開準備がおわったら、どんどん公開していって。",
+  "releaseMode": "incremental",
+  "waitForAll100": false,
+  "requestApprovalForEachReadyRoute": false,
+  "preserveQualityBaseline": true,
+  "requireAllMandatoryQualityGates": true,
+  "requireBothDirectionsAndAllPhysicalStations": true,
+  "requireExactTestedArtifactHashes": true,
+  "requireSuccessfulDeploymentAndPublicReadback": true,
+  "reportEachPublishedRouteAndUrl": true,
+  "backgroundDevelopmentTaskCreated": false
+}

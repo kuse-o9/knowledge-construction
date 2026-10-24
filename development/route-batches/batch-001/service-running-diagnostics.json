@@ -1,0 +1,66 @@
+{
+  "method": "Accelerated CPU simulation of four source-bound weekday stopping patterns. Diagnostic 100 km/h section limits are not researched operating profiles.",
+  "realTime": false,
+  "physicalGPU": false,
+  "releaseReady": false,
+  "runs": [
+    {
+      "id": "azusa",
+      "direction": "forward",
+      "service": "あずさ13号",
+      "stoppingStations": 10,
+      "passingStations": 54,
+      "allPhysicalStationCandidates": 64,
+      "simulatedSeconds": 8338.200000012803,
+      "steps": 83382,
+      "earlyDeparturePass": true,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "direction": "reverse",
+      "service": "あずさ54号",
+      "stoppingStations": 11,
+      "passingStations": 53,
+      "allPhysicalStationCandidates": 64,
+      "simulatedSeconds": 8383.200000012966,
+      "steps": 83832,
+      "earlyDeparturePass": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "forward",
+      "service": "かいじ47号",
+      "stoppingStations": 9,
+      "passingStations": 33,
+      "allPhysicalStationCandidates": 42,
+      "simulatedSeconds": 4891.400000000263,
+      "steps": 48914,
+      "earlyDeparturePass": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "reverse",
+      "service": "かいじ2号",
+      "stoppingStations": 9,
+      "passingStations": 33,
+      "allPhysicalStationCandidates": 42,
+      "simulatedSeconds": 4891.400000000263,
+      "steps": 48914,
+      "earlyDeparturePass": true,
+      "pass": true
+    }
+  ],
+  "inputHashes": {
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "alignments/azusa.json.gz": "9321396f8dae616fe06b7fb78d64d140db3c22ae5804eef3bba14c1ca27d8f26",
+    "services/azusa-forward.json": "39f817293b9b5dd39b657b0a0c730bd910168a629f82167379dd58e2b75b7c48",
+    "services/azusa-reverse.json": "d9c3427df462d1a8df66c938e0a68101354c0f8e93de56a5cf571e809232a327",
+    "alignments/kaiji.json.gz": "5f48e88991b500e08c685bd0995e2c10fbf246577a6fe979cdcb3a34803af601",
+    "services/kaiji-forward.json": "90bbfff7b56c6d005141a34f3fab7d74deae961c285d245be2121e7f1d63d911",
+    "services/kaiji-reverse.json": "2fff19789b545190f5b68e4a4152a10a53a43508f384685a8912c86ebb157258"
+  },
+  "pass": true
+}

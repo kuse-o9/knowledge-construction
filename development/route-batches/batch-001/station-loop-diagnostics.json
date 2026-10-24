@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "cases": 19,
+  "stations": [
+    "日野春",
+    "上諏訪",
+    "下諏訪",
+    "岡谷",
+    "茅野",
+    "青柳",
+    "富士見",
+    "酒折",
+    "甲斐大和",
+    "四方津",
+    "相模湖",
+    "国立",
+    "東小金井"
+  ],
+  "endpointOwnership": true,
+  "smoothTransitions": true,
+  "positionsEstimated": true,
+  "inputHashes": {
+    "games/model-builder.js": "becf0a4eba73598afa90a79c95381d7eb49bab4c4d29a74b3851390744a3b027",
+    "games/azusa.json.gz": "8ead998d1336e26d0a3f787752bddcbff941a8cea63d4b86db733b6d8f06fec2",
+    "games/kaiji.json.gz": "f560e2a430be9ddfcdaa7a143a12bfde15e49ba270eea33519cf1efa42329883"
+  }
+}

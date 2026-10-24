@@ -1,0 +1,27 @@
+{
+  "stage": "vehicle-model-draft",
+  "releaseReady": false,
+  "source": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
+  "meshes": {
+    "train": {
+      "groups": 14,
+      "vertices": 5064,
+      "triangles": 2520
+    },
+    "trainHead": {
+      "groups": 18,
+      "vertices": 5428,
+      "triangles": 2702
+    },
+    "trainTail": {
+      "groups": 18,
+      "vertices": 5476,
+      "triangles": 2726
+    }
+  },
+  "pending": [
+    "Verify 2026 service consist and production changes against the 2015 pre-series source",
+    "Door centres are scaled modelling coordinates, not surveyed exact positions",
+    "Detailed bogie, roof equipment and nose validation remains pending"
+  ]
+}

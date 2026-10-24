@@ -1,0 +1,151 @@
+{
+  "id": "kaiji-forward",
+  "route": "kaiji",
+  "direction": "forward",
+  "name": "かいじ47号",
+  "trainNumber": "5147M",
+  "stage": "service-pattern-bound",
+  "releaseReady": false,
+  "source": "https://timetables.jreast.co.jp/2610/train/110/111441.html",
+  "retrieved": "2026-10-21",
+  "timetableMonth": "2026-10",
+  "operatingDays": "Weekdays only; date exceptions must be rechecked before offering a real-date timetable",
+  "scope": {
+    "start": "新宿",
+    "end": "竜王",
+    "clippedFromLongerService": true,
+    "note": "Kaiji 47/2 operate to/from Tokyo; this game profile initially covers the Shinjuku–Ryuo portion only."
+  },
+  "referencePathSha256": "e66613ba860458e1784631e92f2c5d565376dfebb0fb47f76e4669b02adab956",
+  "stops": [
+    {
+      "name": "新宿",
+      "sourceCode": "003693",
+      "sourceGroupCode": "003700",
+      "referenceDistance": 0.0,
+      "arrival": 66480,
+      "departure": 66600,
+      "reportedPlatform": "10"
+    },
+    {
+      "name": "立川",
+      "sourceCode": "003634",
+      "sourceGroupCode": "003634",
+      "referenceDistance": 27130.728,
+      "arrival": 68280,
+      "departure": 68340,
+      "reportedPlatform": "6"
+    },
+    {
+      "name": "八王子",
+      "sourceCode": "003947",
+      "sourceGroupCode": "003947",
+      "referenceDistance": 37068.833,
+      "arrival": 68820,
+      "departure": 68880,
+      "reportedPlatform": "4"
+    },
+    {
+      "name": "大月",
+      "sourceCode": "004166",
+      "sourceGroupCode": "004166",
+      "referenceDistance": 76426.221,
+      "arrival": 70380,
+      "departure": 70440,
+      "reportedPlatform": "3"
+    },
+    {
+      "name": "塩山",
+      "sourceCode": "003572",
+      "sourceGroupCode": "003572",
+      "referenceDistance": 103822.315,
+      "arrival": 71640,
+      "departure": 71640,
+      "reportedPlatform": "1"
+    },
+    {
+      "name": "山梨市",
+      "sourceCode": "003734",
+      "sourceGroupCode": "003734",
+      "referenceDistance": 109224.68,
+      "arrival": 71940,
+      "departure": 72000,
+      "reportedPlatform": "3"
+    },
+    {
+      "name": "石和温泉",
+      "sourceCode": "003935",
+      "sourceGroupCode": "003935",
+      "referenceDistance": 114878.127,
+      "arrival": 72240,
+      "departure": 72300,
+      "reportedPlatform": null
+    },
+    {
+      "name": "甲府",
+      "sourceCode": "003867",
+      "sourceGroupCode": "003867",
+      "referenceDistance": 121133.483,
+      "arrival": 72660,
+      "departure": 72720,
+      "reportedPlatform": "1"
+    },
+    {
+      "name": "竜王",
+      "sourceCode": "003852",
+      "sourceGroupCode": "003852",
+      "referenceDistance": 125645.569,
+      "arrival": 72960,
+      "departure": null,
+      "reportedPlatform": "2"
+    }
+  ],
+  "passingStationSourceCodes": [
+    "003604",
+    "003563",
+    "003568",
+    "003573",
+    "003574",
+    "003575",
+    "003579",
+    "003584",
+    "003587",
+    "003590",
+    "003594",
+    "003600",
+    "003606",
+    "003614",
+    "003622",
+    "003779",
+    "003921",
+    "003942",
+    "004029",
+    "004148",
+    "004156",
+    "004140",
+    "004162",
+    "004213",
+    "004192",
+    "004170",
+    "004255",
+    "004224",
+    "004040",
+    "003816",
+    "003663",
+    "003808",
+    "003918"
+  ],
+  "vehicle": {
+    "type": "E353",
+    "maximumKmh": 130,
+    "source": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
+    "formationForThisTrain": "pending verification"
+  },
+  "pending": [
+    "Verify current per-running-track alignment and service-specific stop markers",
+    "Create platforms matching reported track numbers; unspecified numbers remain unknown",
+    "Supply independently verified station-boundary operating speeds",
+    "Verify train formation, vehicle dimensions, acceleration and braking",
+    "Integrate bilingual announcements and complete route rendering checks"
+  ]
+}

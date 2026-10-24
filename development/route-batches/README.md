@@ -1,6 +1,6 @@
 # 次回の未制作100路線：制作設計
 
-2026-10-20。今回は新しい路線を作らず、既存路線の改修と次回の制作手順を準備する。対象100件の指定と制作開始は、ユーザーから次回の指示があった時点で行う。全国候補表530項目の「列車種別」「系統」「物理的な路線」を同じ100件として重複集計しない。
+2026-10-21：ユーザーから100件まとめて制作する指示を受け、batch-001を開始。対象はbatch-001/manifest.jsonに固定し、入力データ・模型・運転・検査を段階的に実装する。未完成のものを公開ゲームに追加しない。全国候補表530項目の「列車種別」「系統」「物理的な路線」を同じ100件として重複集計しない。
 
 ## 画面のイメージ
 
@@ -45,7 +45,23 @@
 
 ブラウザのソフトウェアWebGL検査と、実機GPU/実際の音を聞く検査は別の欄で記録する。100路線の名前やダミーの模型だけを配置して完成とはしない。
 
-`preview-batch.py --count 100` は候補表から未着手の通常鉄道候補を表示する計画専用コマンドで、制作・公開・状態変更は行わない。候補の順序は仮であり、次回に確定する。
+`preview-batch.py --count 100` は候補確認用の読取専用コマンド。実際の今回の100件は `batch-001/manifest.json` を使い、名前だけの追加を完成と数えない。
+
+## 現在の制作パイプライン
+
+`batch-001/WORKLOG.md` に実施結果と残作業を記録する。102の共有系統の地形・元線分・駅候補を検査した入力は `terrain-inputs/` と `networks/`。接続が離れた区間は離れたまま保存し、元の線分を消したり架空の線を足したりしない。地表面高度をトンネル内のレール高さとして使わない。
+
+優先2系統の `alignments/` は元線路による前後350mの余裕を持ち、`services/` は選択した2026年10月平日の列車別停車パターンを持つ。`engine/train-scene.js` は車両ごとの長さ・台車・扉・前後向きを受け取る開発用描画部品。E353の寸法と編成は暫定であり、完成車両とは数えない。
+
+入力検査は `python -m unittest discover -s development/route-batches -p test_batch_inputs.py -v`。停車・通過と早発の数値検査は `node development/route-batches/check-priority-services.cjs`。編成のソフトウェアWebGL検査は `check-train-scene.cjs`（PlaywrightとChromiumが必要）。検査記録は使用した入力/部品のハッシュを参照する。検査用100km/hを実際の路線速度に転用しない。`release-gate.py` は未完成のゲームの公開を拒否する。
+
+## 順次公開の承認と手順
+
+2026-10-21のユーザー指示：仕上げと公開準備が終わった路線から順次公開する。100件全体の完了や、その都度の再承認は不要。品質条件は維持する。
+
+`prepare-publication.py --write` は、必須12条件・両方向の全駅・素材の版・検査報告が一致する路線だけの公開カタログとアップロード計画を作る。既存公開分は保持し、未完成の改訂で削除しない。新ゲームの素材は `rail-games/` に置き、既存ゲームのファイルを上書きしない。公開できる路線が0件の場合、空の公開一覧やゲーム入口を作らない。`publication-plan.json` の `uploads` にない試作・調査データを公開版へ混ぜない。
+
+公開用HTML・素材・入口を検査した後、一覧の全素材を同じGitHubコミットに保存し、Pagesの配信完了と公開URLからのハッシュ照合を確認して公開済みと記録する。ローカルの準備完了・GitHubへの保存・公開配信完了を区別する。公開のたびにユーザーへ路線名とURLを報告する。このスクリプトだけではデプロイも、会話終了後の開発継続も実行しない。
 
 ## 2026-10-20の追加指示（⑲・㉖）
 
@@ -56,3 +72,30 @@
 2026-10-20追記：ユーザーの指示で、物理GPU・耳で聴く音質・スマホ実端末の操作感・全区間の実時間走行は「ユーザー判断による確認終了」として予定上は閉じる。実施した検査と省略した検査の技術記録は変更せず、実施済み・合格という意味に置き換えない。
 
 時刻表は目安として表示し、定刻までの戸閉・発車待ちは撤廃。乗降の完了後、音声を使う場合は発車案内の終了で自動戸閉し、手動・自動とも早発を許可する。音声オフでも定刻待ちは行わない。
+
+### Geometry review checkpoint
+
+The two integrated development games now use a separately estimated rail elevation
+profile (`build-priority-elevation.py`). GSI map classifications locate candidate
+structures but do not supply surveyed rail heights or portal endpoints. The game
+profile's 34 per mille centreline constraint is a modelling constraint, not a
+claimed real operating gradient. Kaiji reuses Azusa's overlapping elevation.
+
+`vehicles/e353-source-review.json` records manufacturer 2015 pre-series table and
+drawing facts. Direction-specific basic-set cars, passenger doors and pantographs
+replace the generic nine-car formation. This does not verify all 2026 production
+or service-specific details. The 16 operator map reviews distinguish a platform's
+side from the selected train's actual assignment. Passing-station layouts and
+all dimensions remain subject to individual review.
+
+`check-priority-geometry.cjs` catches Cesium's internal `scene.renderError` as well
+as page/WebGL errors, and exercises repeated tunnel/surface transitions. Regional
+photographic imagery is an overlay on a global colour base: a regional base
+layer in Cesium 1.117 can reach an undefined clipped rectangle during edge
+stretching after underground camera travel. No engine exception is suppressed. A clipping collection is replaced only when its nearby window changes: Cesium 1.117 updates its GPU polygon texture when vertex counts change, so mutating an equal-sized set would retain stale cuts.
+
+See `batch-001/geometry-review-status.json` for the outstanding checks. These
+changes do not mark any route completed, playable in the public catalog, or
+release-ready. Software rendering is not a physical GPU/phone/audio test.
+
+Validation on the current development packets: 38 unit tests passed, 212 station meshes checked, 420 consist placements checked, four directional control cases plus two station scenes passed, and ten tunnel/bridge diagnostic views passed. Bridge snapshots require settled terrain; Cesium render errors and visible error panels fail the regression. These are software/direct-positioning checks, not surveyed structure approval or real-time full-route testing.

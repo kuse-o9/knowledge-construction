@@ -1,0 +1,35 @@
+{
+  "alignments": [
+    {
+      "id": "azusa",
+      "path": "alignments/azusa.json.gz",
+      "sha256": "9321396f8dae616fe06b7fb78d64d140db3c22ae5804eef3bba14c1ca27d8f26",
+      "points": 3194,
+      "physicalStations": 64,
+      "buffer": {
+        "before": "四ツ谷→新宿",
+        "after": "松本→田沢",
+        "trimmedBeforeMetres": 349.999988667551,
+        "trimmedAfterMetres": 350.0001128447766,
+        "inventedConnectors": 0
+      },
+      "railElevationVerified": false
+    },
+    {
+      "id": "kaiji",
+      "path": "alignments/kaiji.json.gz",
+      "sha256": "5f48e88991b500e08c685bd0995e2c10fbf246577a6fe979cdcb3a34803af601",
+      "points": 1653,
+      "physicalStations": 42,
+      "buffer": {
+        "before": "四ツ谷→新宿",
+        "after": "竜王→塩崎",
+        "trimmedBeforeMetres": 349.999988667551,
+        "trimmedAfterMetres": 349.99997000661097,
+        "inventedConnectors": 0
+      },
+      "railElevationVerified": false
+    }
+  ],
+  "releaseReady": false
+}

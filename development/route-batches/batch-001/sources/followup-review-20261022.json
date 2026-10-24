@@ -1,0 +1,99 @@
+{
+  "checked": "2026-10-24",
+  "releaseReady": false,
+  "vehicle": {
+    "source": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
+    "maximumKmh": 130,
+    "note": "Published E353 maximum. The game cap is now 130 km/h; this does not verify individual operating section restrictions."
+  },
+  "productionChanges": {
+    "source": "https://www.jreast.co.jp/nagano/pdf/171026.pdf",
+    "pages": [
+      2,
+      3
+    ],
+    "facts": [
+      "Production stock has active damping on all cars",
+      "Inter-car dampers removed on production stock",
+      "Luggage areas in cars 1,3,5,7,9,10,12"
+    ],
+    "scope": "Official 2017 production differences; selected 2026 formations still unconfirmed"
+  },
+  "transfers": {
+    "甲府": "https://timetables.jreast.co.jp/timetable/list0671.html",
+    "小淵沢": "https://timetables.jreast.co.jp/timetable/list0707.html",
+    "岡谷": "https://timetables.jreast.co.jp/timetable/list0358.html",
+    "松本": "https://timetables.jreast.co.jp/timetable/list1444.html",
+    "新宿": "https://timetables.jreast.co.jp/timetable/list0866.html",
+    "立川": "https://timetables.jreast.co.jp/timetable/list0958.html",
+    "八王子": "https://timetables.jreast.co.jp/timetable/list1227.html",
+    "大月": "https://timetables.jreast.co.jp/timetable/list0331.html",
+    "塩尻": "https://timetables.jreast.co.jp/timetable/list0774.html"
+  },
+  "newChecks": {
+    "announcementStationDirectionCases": 39,
+    "unknownExitSideNotAnnounced": true,
+    "departureWordingCases": 2,
+    "reviewedTransferStations": 9,
+    "threeTrackStations": 10,
+    "solidTrackCases": 16,
+    "unchangedStationModels": 196,
+    "sampledUnchangedTrackChunks": 61,
+    "stationScenes": 22,
+    "cameraOverlayCases": 6
+  },
+  "remaining": [
+    "Surveyed rail-height/bridge-clearance data not acquired; estimated-height labels retained",
+    "All 64 station schematics inspected; precise platform dimensions, complete station-specific track meshes and six train-specific platform assignments remain incomplete",
+    "Six service-specific platform assignments absent from the selected official train pages",
+    "Actual current station-boundary restrictions are not proven. Game uses a disclosed published-maximum cap of 130 km/h with no curve limits.",
+    "Western neighbouring traffic geometry/model work incomplete",
+    "Non-JR transfer completeness and 2026 roof/bogie/cab checks incomplete"
+  ],
+  "tunnelLengthReference": {
+    "source": "https://www.jreast.co.jp/hachioji/info/20130724/20130724_info02.pdf",
+    "scope": "Historical operator list of six long rail tunnels, distinguishes up/down lengths. Not contemporary surveyed portal coordinates."
+  },
+  "bridgeReference": {
+    "source": "https://www.jstage.jst.go.jp/article/coj1963/7/6/7_22/_pdf/-char/ja",
+    "title": "中央本線鳥沢・猿橋間新桂川橋梁の設計施工について",
+    "published": 1969,
+    "lengthMetres": 513,
+    "mainSpansMetres": [
+      70,
+      130,
+      70
+    ],
+    "otherSpansMetres": [
+      40,
+      40,
+      40,
+      40,
+      40,
+      40
+    ],
+    "maximumPierHeightMetres": 41,
+    "scope": "Design report; pier height is not equivalent to track-ground clearance or current surveyed elevation."
+  },
+  "operatingMaximumReference": {
+    "source": "https://www.jreast.co.jp/youran/pdf/2019-2020/jre_youran_group_p27-32.pdf",
+    "page": 31,
+    "asOf": "2019-03-31",
+    "maximumKmh": 130,
+    "scope": "Azusa Shinjuku-Matsumoto maximum; not each station-boundary limit or a current 2026 restriction sheet."
+  },
+  "stationMapContinuation": {
+    "checked": "2026-10-23",
+    "mapsReviewed": 64,
+    "rapidPlatformSideRecords": 62,
+    "newPassingStationSideRecords": 46,
+    "localLineOnlyStationMaps": [
+      "大久保",
+      "東中野"
+    ],
+    "mapReviewStillPending": 0,
+    "dimensionsOrFullTrackMeshVerified": false,
+    "source": "sources/priority-platform-review.json",
+    "localLinePlacement": "Estimated adjacent local islands + two local rails now implemented at Okubo and Higashi-Nakano; 128 passengers retained per generated station model."
+  }
+}

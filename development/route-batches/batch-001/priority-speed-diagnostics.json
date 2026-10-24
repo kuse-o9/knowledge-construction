@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "samples": 18769,
+  "gameMaximumKmh": 130,
+  "actualSectionLimitsVerified": false,
+  "curveLimits": false,
+  "inputHashes": {
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "games/azusa.json.gz": "8ead998d1336e26d0a3f787752bddcbff941a8cea63d4b86db733b6d8f06fec2",
+    "games/kaiji.json.gz": "f560e2a430be9ddfcdaa7a143a12bfde15e49ba270eea33519cf1efa42329883"
+  }
+}

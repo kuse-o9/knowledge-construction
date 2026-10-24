@@ -1,0 +1,12 @@
+{
+  "stage": "development-core",
+  "releaseReady": false,
+  "base": "development/signalled-routes/chuo-local/rail-core.js",
+  "baseSha256": "da4b8500a350332a61d9cd8fa06d5844c480bbdbc2b643cc9f4319cbb8c59ac5",
+  "change": "Per-route vehicle maximum replaces the fixed 120 km/h storage/motion ceiling. Station/line limits remain independent.",
+  "pending": [
+    "Stock-specific acceleration and braking verification",
+    "Validated route-specific operating profiles",
+    "Integration with the batch route scene and controls"
+  ]
+}

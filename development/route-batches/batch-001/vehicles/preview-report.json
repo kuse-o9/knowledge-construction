@@ -1,0 +1,19 @@
+{
+  "method": "Software WebGL2 stock-only preview; not a playable game or physical GPU test",
+  "images": [
+    {
+      "file": "e353-front.png",
+      "webgl2": true,
+      "glError": 0,
+      "ready": 28
+    },
+    {
+      "file": "e353-side.png",
+      "webgl2": true,
+      "glError": 0,
+      "ready": 28
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

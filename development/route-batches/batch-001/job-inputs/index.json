@@ -1,0 +1,706 @@
+{
+  "jobs": [
+    {
+      "jobId": "b001-001",
+      "path": "job-inputs/b001-001.json.gz",
+      "sha256": "584195e16425e4154e362bdf04ab489389f78c19e97f62af2032ce5d5c942344",
+      "stationCandidates": 123,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-002",
+      "path": "job-inputs/b001-002.json.gz",
+      "sha256": "a69529c22f9f18eef55936910271ee6393adc1a2808bb1d6f82c9c8377b46d18",
+      "stationCandidates": 75,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-003",
+      "path": "job-inputs/b001-003.json.gz",
+      "sha256": "15753764b074493026d08858f3df6c240c71b4234e1e60caf28e64992df14987",
+      "stationCandidates": 194,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-004",
+      "path": "job-inputs/b001-004.json.gz",
+      "sha256": "3d9d90309a78a147b5b3c2932c7f885a4d3fb567d1f90b2d82a5eddde3d73293",
+      "stationCandidates": 18,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-005",
+      "path": "job-inputs/b001-005.json.gz",
+      "sha256": "3e182f0e8c6c03c2f3e3a583407c488eaa003da45f7d8d67b3f4e91779b76ab8",
+      "stationCandidates": 68,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-006",
+      "path": "job-inputs/b001-006.json.gz",
+      "sha256": "312e240ba33acf660e1542465a1185b691ad5b29e5cc1b0e74d454b46ea4c1f3",
+      "stationCandidates": 4,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-007",
+      "path": "job-inputs/b001-007.json.gz",
+      "sha256": "9228450c9e3395470ef07dec8fc26dedcb0ede5a3ed7c572174940f4f9f36d4e",
+      "stationCandidates": 23,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-008",
+      "path": "job-inputs/b001-008.json.gz",
+      "sha256": "4310bb21c765cfd399beb14185fad6983fd55186d8752f220f75286f4aa187e4",
+      "stationCandidates": 123,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-009",
+      "path": "job-inputs/b001-009.json.gz",
+      "sha256": "81dd835e1eb6a59fe374c3b3377380081b06fd8e7c650fa17bdcf327653267c2",
+      "stationCandidates": 105,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-010",
+      "path": "job-inputs/b001-010.json.gz",
+      "sha256": "778f7495cf0298e7734774f1019daa3017bafd90ba94a18f484087ad2b478623",
+      "stationCandidates": 10,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-011",
+      "path": "job-inputs/b001-011.json.gz",
+      "sha256": "581f1660d13945e1809072c1cdfad688e17e223654e2a7d092ebbe29141b3b4f",
+      "stationCandidates": 20,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-012",
+      "path": "job-inputs/b001-012.json.gz",
+      "sha256": "1db9b49f592c5e700e540fd9da3e4cef04fd9202e686d16b3ee0e2d46cb18785",
+      "stationCandidates": 20,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-013",
+      "path": "job-inputs/b001-013.json.gz",
+      "sha256": "de28a53bfb4abad66cb00f7e420ef530d2c8ade4c6027281818c6d18fd50cd06",
+      "stationCandidates": 12,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-014",
+      "path": "job-inputs/b001-014.json.gz",
+      "sha256": "a625bfb2088cab1b54dc1dede3bcdff9eb1efb7a6bd40cc1e840e51bf9c54a6b",
+      "stationCandidates": 5,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-015",
+      "path": "job-inputs/b001-015.json.gz",
+      "sha256": "80efe009f90fe29534b1e30923ad3999db0499a06eec265e3d0e2da647322730",
+      "stationCandidates": 84,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-016",
+      "path": "job-inputs/b001-016.json.gz",
+      "sha256": "97bf69158ee4e0210a6fcbb1bb08561fdc9ddd594041bd1945bb4cefcd4408a8",
+      "stationCandidates": 47,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-017",
+      "path": "job-inputs/b001-017.json.gz",
+      "sha256": "4fda6d966276b3f479be9d01f11ad2e5060e79e0615bc1bb13f8e4488f7172e9",
+      "stationCandidates": 49,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-018",
+      "path": "job-inputs/b001-018.json.gz",
+      "sha256": "8e43589c9ca65e179bd13ba7aba49eacb7c57ed96603376f32239e05bfe1e9d5",
+      "stationCandidates": 15,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-019",
+      "path": "job-inputs/b001-019.json.gz",
+      "sha256": "8da2006b18b6768ad18d54a34a224f7b48d6ddc60e91e4ddd05deb59d52c5775",
+      "stationCandidates": 14,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-020",
+      "path": "job-inputs/b001-020.json.gz",
+      "sha256": "be33fbf4569a8c7b255e1e4abf00fe7dc47d8664228646fee98ce30edb712558",
+      "stationCandidates": 7,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-021",
+      "path": "job-inputs/b001-021.json.gz",
+      "sha256": "fc6605c3b87307afdbcd2f1e596bf810eb54063239165fbcf7f1622cc922ee32",
+      "stationCandidates": 31,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-022",
+      "path": "job-inputs/b001-022.json.gz",
+      "sha256": "70f449f6ce4f65387e51e59e63cc4e17f3dcdb12d09babcd1df4daf4579190bf",
+      "stationCandidates": 24,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-023",
+      "path": "job-inputs/b001-023.json.gz",
+      "sha256": "e1275711002b55d6c5ac18f554f540bd862c60070784e5ffbe6be5626a71cfe3",
+      "stationCandidates": 35,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-024",
+      "path": "job-inputs/b001-024.json.gz",
+      "sha256": "8b8464ed1a1d281c1b9c0979f9a7e536cee98afb9b06803ba3c5bc2fd6a6e027",
+      "stationCandidates": 4,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-025",
+      "path": "job-inputs/b001-025.json.gz",
+      "sha256": "1e5ccb43296c5b65874681ac0ff76afb42805db93ca86018b7d144f569738811",
+      "stationCandidates": 20,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-026",
+      "path": "job-inputs/b001-026.json.gz",
+      "sha256": "4b16448b1be4d9ee771189455a741ac310dfbf253c15e564f20d0a8c620c920e",
+      "stationCandidates": 30,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-027",
+      "path": "job-inputs/b001-027.json.gz",
+      "sha256": "e0006da81775cadd59b2ed0ad1f28d0c73723f138d231216b392aa8f3f50b9ae",
+      "stationCandidates": 14,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-028",
+      "path": "job-inputs/b001-028.json.gz",
+      "sha256": "e76656ea637707e42937b85642f41f4ff4594ab8e99685370be8eb3d59dab6dc",
+      "stationCandidates": 27,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-029",
+      "path": "job-inputs/b001-029.json.gz",
+      "sha256": "a33a044b6622530ce04a00f91d02ea55ec57b4a32183402a52e4c510d067122e",
+      "stationCandidates": 19,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-030",
+      "path": "job-inputs/b001-030.json.gz",
+      "sha256": "b691566fd1b8bd5ed86a8ff59a585ce9c80e2d627bf8c914299dc57a629ea14e",
+      "stationCandidates": 179,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-031",
+      "path": "job-inputs/b001-031.json.gz",
+      "sha256": "ecf0e0585ae67ce1fc753e82513e2fde1f78fd2050a75160c3814a8e134552af",
+      "stationCandidates": 11,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-032",
+      "path": "job-inputs/b001-032.json.gz",
+      "sha256": "8ce1af63623eeaef335ff5b6bf3c55d38637e11aa1b601ffc814facf205337e0",
+      "stationCandidates": 23,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-033",
+      "path": "job-inputs/b001-033.json.gz",
+      "sha256": "7b89570347f896008bd316fb30493fe2fff90c4b758f321ac1e45b5fa23246d7",
+      "stationCandidates": 18,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-034",
+      "path": "job-inputs/b001-034.json.gz",
+      "sha256": "8971b6b5c993b7172e4ab2f3c21223b9e59f94cbfc70733bbf8c143a9d4b5d61",
+      "stationCandidates": 7,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-035",
+      "path": "job-inputs/b001-035.json.gz",
+      "sha256": "85ed48a59dd387b59b3098e2bbb6c7366bc315107b8707e502d7011e5a01502f",
+      "stationCandidates": 75,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-036",
+      "path": "job-inputs/b001-036.json.gz",
+      "sha256": "5bcad064ba112442ecd4c0aca415cb74b724008b845a7a3c00798677c5161277",
+      "stationCandidates": 48,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-037",
+      "path": "job-inputs/b001-037.json.gz",
+      "sha256": "dbeb90812e1bf8c11c568b55dc9fae999a9c5744683ae9bf5e1ceeb5b18b381a",
+      "stationCandidates": 9,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-038",
+      "path": "job-inputs/b001-038.json.gz",
+      "sha256": "b05ef2595f052134f28977d05429d607a221cad26d2cf683602dba2624d95fbd",
+      "stationCandidates": 46,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-039",
+      "path": "job-inputs/b001-039.json.gz",
+      "sha256": "dedebf30d601a2db3b52a54fda67212a77e06277671b673a8ffd06f4f6fe5e3a",
+      "stationCandidates": 6,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-040",
+      "path": "job-inputs/b001-040.json.gz",
+      "sha256": "601a30b9b6e0afc631bdfef4400ca9b4e197c441b80c45e4ffaf671432043b2b",
+      "stationCandidates": 19,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-041",
+      "path": "job-inputs/b001-041.json.gz",
+      "sha256": "e52cb67f988fcd1e2d595a8a5d2d6a20f60c07fcd6098351f29e72f16bdf5ebe",
+      "stationCandidates": 155,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-042",
+      "path": "job-inputs/b001-042.json.gz",
+      "sha256": "084abe526345f7efb43e2b0754e5c98b2530584ce962c8beb0c4a4d23509855c",
+      "stationCandidates": 81,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-043",
+      "path": "job-inputs/b001-043.json.gz",
+      "sha256": "f786b2bfdf7430b45869d4a1500b85c58a187b883859ca434a3f32d727a3b529",
+      "stationCandidates": 27,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-044",
+      "path": "job-inputs/b001-044.json.gz",
+      "sha256": "0a99d535906461d19ed4a047c69f54fa1efebb2d9115b2b8fd9717c917fcc4d7",
+      "stationCandidates": 30,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-045",
+      "path": "job-inputs/b001-045.json.gz",
+      "sha256": "fc7f900dd360948f0760a7a8d68e7a28a3921e4a646be305547050c812c8640a",
+      "stationCandidates": 27,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-046",
+      "path": "job-inputs/b001-046.json.gz",
+      "sha256": "22295f41044423d3611f769287e58c1efce29babf894f05dd2d6eb5527a0e154",
+      "stationCandidates": 5,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-047",
+      "path": "job-inputs/b001-047.json.gz",
+      "sha256": "c1501a44c12a153b7b1757b0df6093892f054c569c18178a0f741c5c4713efbf",
+      "stationCandidates": 14,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-048",
+      "path": "job-inputs/b001-048.json.gz",
+      "sha256": "b9b0e90f5341c34a878e06d3615830b6bb76085eb581a60fc1c6d29a2b57f5bf",
+      "stationCandidates": 8,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-049",
+      "path": "job-inputs/b001-049.json.gz",
+      "sha256": "7c592da052c48cebf4035d7e38e731f4b8f9fb11de361fd4b07e0171ad8efae0",
+      "stationCandidates": 7,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-050",
+      "path": "job-inputs/b001-050.json.gz",
+      "sha256": "cc986e091815fdae306045904b41aa42ab77abd02e4b2c6d0c0ed79440730df0",
+      "stationCandidates": 16,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-051",
+      "path": "job-inputs/b001-051.json.gz",
+      "sha256": "5cac94f65f2cd686993d3a65cabfec5b9b7d55d02cd49b9137bc844ee6aa6b19",
+      "stationCandidates": 45,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-052",
+      "path": "job-inputs/b001-052.json.gz",
+      "sha256": "45ce2dc847109364bffd1f52bcb247e069d410afb7d9d9cd57bac7f8b3358aea",
+      "stationCandidates": 6,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-053",
+      "path": "job-inputs/b001-053.json.gz",
+      "sha256": "2cbbcacc790a6559e478b427e46a94c47fcdb51acabc46cd47f9d6cd6771a52b",
+      "stationCandidates": 55,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-054",
+      "path": "job-inputs/b001-054.json.gz",
+      "sha256": "a9a4e7609f2f104d45fa80401c71f3c8193c656e6ca1ca0c803a6288c078a817",
+      "stationCandidates": 15,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-055",
+      "path": "job-inputs/b001-055.json.gz",
+      "sha256": "65a4c4c992c03214540eee264005aa72a03ef8192eddb65c1c7c78b8bc692308",
+      "stationCandidates": 31,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-056",
+      "path": "job-inputs/b001-056.json.gz",
+      "sha256": "da1b365159a51f6534e60618d69dd116630fa43433027e2fb956a8b13108e0a2",
+      "stationCandidates": 31,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-057",
+      "path": "job-inputs/b001-057.json.gz",
+      "sha256": "fc0b6951cfd8bc8d9f5aedff94abf130a2d9cb8e154803b94785541191149ab7",
+      "stationCandidates": 33,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-058",
+      "path": "job-inputs/b001-058.json.gz",
+      "sha256": "5008f390ead18c0dc8c9ebe4f0f5ed9d6013e4da1040251fe57ca604dc57ad0d",
+      "stationCandidates": 8,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-059",
+      "path": "job-inputs/b001-059.json.gz",
+      "sha256": "574706376df68b13e1145621cf253e2c32a6185a84366fdbb98a34f5762884ea",
+      "stationCandidates": 10,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-060",
+      "path": "job-inputs/b001-060.json.gz",
+      "sha256": "e3a8192de6923ce8ccd37c41e253705d7b4e04e9300d6c6fc433d5221a484516",
+      "stationCandidates": 60,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-061",
+      "path": "job-inputs/b001-061.json.gz",
+      "sha256": "8f2d3828dd74178f1bd22263b7098dece1a09d68e6f2b3c6d3ce4e99bbc2ff66",
+      "stationCandidates": 43,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-062",
+      "path": "job-inputs/b001-062.json.gz",
+      "sha256": "4be82aa43a7d613dff328905bb638ec3aa78bb9b018499c51a3c173ab5cad68c",
+      "stationCandidates": 16,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-063",
+      "path": "job-inputs/b001-063.json.gz",
+      "sha256": "4e8097b19bcdb480c56066ed5a567cd803d48ba903198fb68ea687e29038bc8d",
+      "stationCandidates": 36,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-064",
+      "path": "job-inputs/b001-064.json.gz",
+      "sha256": "0ae670ea5d008eaaaa8fdf03a456012dfd799f63e64ee04694664de3f309e8e5",
+      "stationCandidates": 20,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-065",
+      "path": "job-inputs/b001-065.json.gz",
+      "sha256": "9527a2e5b596650b2461cdfc6f9ed68a948250f06fe39fe59edb7201d5de3532",
+      "stationCandidates": 105,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-066",
+      "path": "job-inputs/b001-066.json.gz",
+      "sha256": "1d16b7f9e70d8f82f8f15957192b67432baabd1235b04729f717d32ac9ed7853",
+      "stationCandidates": 11,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-067",
+      "path": "job-inputs/b001-067.json.gz",
+      "sha256": "82822b16feb72a1a956739f702ee5739f2347dca2c4173a0f822e4776753f2ac",
+      "stationCandidates": 18,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-068",
+      "path": "job-inputs/b001-068.json.gz",
+      "sha256": "f0622b563e97f78cc9da57b9bda813f13e2c01138222b8294f50a0ae62e3594c",
+      "stationCandidates": 32,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-069",
+      "path": "job-inputs/b001-069.json.gz",
+      "sha256": "7e706acd04ea3b6bb61620090261fac23613b5dc5007f8e7a15936613a2ced8f",
+      "stationCandidates": 14,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-070",
+      "path": "job-inputs/b001-070.json.gz",
+      "sha256": "681e5169ea23989903f243038e5abbebb4aeb3aaab1c85ca967d154340536a84",
+      "stationCandidates": 15,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-071",
+      "path": "job-inputs/b001-071.json.gz",
+      "sha256": "ae2626528b3843b2f78948304a00c1177de9afa8bb02f0745c6651ba159ba3d5",
+      "stationCandidates": 24,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-072",
+      "path": "job-inputs/b001-072.json.gz",
+      "sha256": "a9c99f3daca30586348ac3b38bf8daa7f871d635da332cc778f81ed21438d24b",
+      "stationCandidates": 15,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-073",
+      "path": "job-inputs/b001-073.json.gz",
+      "sha256": "b5c9b125dedff10ffda44e98d34be3d9b134a7dd9d789cec07805cf9afba3199",
+      "stationCandidates": 27,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-074",
+      "path": "job-inputs/b001-074.json.gz",
+      "sha256": "96a1e1cedc5faa0c5d4b1724e8ad39eac5287c1920681cd1d9433a025b7d8b3f",
+      "stationCandidates": 24,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-075",
+      "path": "job-inputs/b001-075.json.gz",
+      "sha256": "dd2a8bf00362a684f325ed0c7e3d766569239d3aade8713d590f621d638df49c",
+      "stationCandidates": 11,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-076",
+      "path": "job-inputs/b001-076.json.gz",
+      "sha256": "7d8b59bf0a0f6c23181334c06582866a604670648115b4028ca30f9156237b86",
+      "stationCandidates": 20,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-077",
+      "path": "job-inputs/b001-077.json.gz",
+      "sha256": "6afb013ac88b52dd6b69bdfcc323b37c782ed5d2ed28e6790a066d952de15260",
+      "stationCandidates": 39,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-078",
+      "path": "job-inputs/b001-078.json.gz",
+      "sha256": "2331d49d52a4255dc4025e583673265be411012bef0706b1799afce7019dc59b",
+      "stationCandidates": 94,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-079",
+      "path": "job-inputs/b001-079.json.gz",
+      "sha256": "1549cc5a3687f45202f3a51dec40cf3f9330335041699cd5d7d08f1891dec210",
+      "stationCandidates": 10,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-080",
+      "path": "job-inputs/b001-080.json.gz",
+      "sha256": "38d60a936c2d85903bd79f55e1f17e39c9e8b6ad5e1579ee89a5eed735744e27",
+      "stationCandidates": 40,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-081",
+      "path": "job-inputs/b001-081.json.gz",
+      "sha256": "50e6e4bb662616c6f9f0bdd1fdff9118aef228e90dae3e813eeb5de6e8926103",
+      "stationCandidates": 46,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-082",
+      "path": "job-inputs/b001-082.json.gz",
+      "sha256": "49e56cd2695de73f09e6abe1ab6966bebb2528b168a4cb1307aa91ad9b5c3b23",
+      "stationCandidates": 8,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-083",
+      "path": "job-inputs/b001-083.json.gz",
+      "sha256": "96c524cf6fcf29e598c585ed356cd7ac5a1b993774a328b5b33a13064128b0f0",
+      "stationCandidates": 19,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-084",
+      "path": "job-inputs/b001-084.json.gz",
+      "sha256": "2512ffb840f6e04e1b5b7af006b7cb60c121b9cd8d18a85902ca9d20d3c06741",
+      "stationCandidates": 41,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-085",
+      "path": "job-inputs/b001-085.json.gz",
+      "sha256": "f544820c3da5480b13ee18c1aa29eba7e3798d168dc68740c233562b28425879",
+      "stationCandidates": 14,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-086",
+      "path": "job-inputs/b001-086.json.gz",
+      "sha256": "79d6507c75e247e4e6e0dad7507696eed94caaf3a1951486f373217e64cc3523",
+      "stationCandidates": 24,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-087",
+      "path": "job-inputs/b001-087.json.gz",
+      "sha256": "221ab62ed9ba2831546419a5c1ddc6293ea3b3b021df7ccdb1557ccf18ba93b0",
+      "stationCandidates": 22,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-088",
+      "path": "job-inputs/b001-088.json.gz",
+      "sha256": "aa892e9bcc00cfa7b1cf5208940f96c8890f3e6ad9f9b35392b63da96130c171",
+      "stationCandidates": 20,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-089",
+      "path": "job-inputs/b001-089.json.gz",
+      "sha256": "94ec1c37c9fb92afa889249531a5a9863d81ebdc9e26d6235f8d6e30f042523f",
+      "stationCandidates": 8,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-090",
+      "path": "job-inputs/b001-090.json.gz",
+      "sha256": "4be11ce17e551cce05381814960d51bf6dd0a16d17914514bd260541b9d9448c",
+      "stationCandidates": 14,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-091",
+      "path": "job-inputs/b001-091.json.gz",
+      "sha256": "fafa339116359035ae480549f7cccd7f1bca54cd1e810d421492548ced76bcfe",
+      "stationCandidates": 131,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-092",
+      "path": "job-inputs/b001-092.json.gz",
+      "sha256": "64d5c553513ed1d36f215ac4026686946e5f391022cab6dfe8a6f0aa118c908d",
+      "stationCandidates": 161,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-093",
+      "path": "job-inputs/b001-093.json.gz",
+      "sha256": "1365ddb4873bec345021d6c4a14dd68ecad677a74f688a2b7b94240a20c82980",
+      "stationCandidates": 21,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-094",
+      "path": "job-inputs/b001-094.json.gz",
+      "sha256": "e39761faa8768a63339dd51083ec4ea1bc466c0dbfea69fb4762800a43d12e25",
+      "stationCandidates": 19,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-095",
+      "path": "job-inputs/b001-095.json.gz",
+      "sha256": "49b754f939af1796eacf3186610adac6d9d4b2521c8f14ac740b47b3ac791451",
+      "stationCandidates": 4,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-096",
+      "path": "job-inputs/b001-096.json.gz",
+      "sha256": "4614b2698fbda5bd91ce8cdbfdaac4f367dc66e231eab8009e758ce01bf7f912",
+      "stationCandidates": 30,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-097",
+      "path": "job-inputs/b001-097.json.gz",
+      "sha256": "e36db01f36292da70fbcb9f2f1530bb3b0ae72f687ee681b32815e6a7efeeee4",
+      "stationCandidates": 9,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-098",
+      "path": "job-inputs/b001-098.json.gz",
+      "sha256": "6beb363b2e7cf06c1be73aacd2957ecd03b63428430632bf63ab6dfb793eb461",
+      "stationCandidates": 24,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-099",
+      "path": "job-inputs/b001-099.json.gz",
+      "sha256": "244e66f1f591bb225fa6c7ed352db8bf6287160a5f4075a970b8069c1ae39965",
+      "stationCandidates": 14,
+      "status": "source-inputs-materialized"
+    },
+    {
+      "jobId": "b001-100",
+      "path": "job-inputs/b001-100.json.gz",
+      "sha256": "28f2899883872cef98739468c58b68d59ef32b376299049b262b8c1ef3e12162",
+      "stationCandidates": 34,
+      "status": "source-inputs-materialized"
+    }
+  ],
+  "allJobsMaterialized": true,
+  "playableGames": 0
+}

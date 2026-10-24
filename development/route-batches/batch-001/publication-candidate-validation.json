@@ -1,0 +1,94 @@
+{
+  "pass": true,
+  "method": "Relocated entries, current production publication helper and packet integrity; catalogue responses mocked. 3D deliberately unavailable in this packaging check.",
+  "physicalGPU": false,
+  "softwareRendering": false,
+  "inputHashes": {
+    "rail-games/priority/batch-001/engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "rail-games/priority/batch-001/engine/train-scene.js": "5e9a514b2fdae23c17824fa5e248f8eebeb7343480f795351b37a6f8f7d6a14e",
+    "rail-games/priority/batch-001/games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc",
+    "rail-games/priority/batch-001/games/azusa.html": "00676c90a8c2b36b787c74265ec2fcf2266d91b3ddb2476cbc48078b6553f68b",
+    "rail-games/priority/batch-001/games/azusa.json.gz": "8ead998d1336e26d0a3f787752bddcbff941a8cea63d4b86db733b6d8f06fec2",
+    "rail-games/priority/batch-001/games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
+    "rail-games/priority/batch-001/games/e353.json.gz": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
+    "rail-games/priority/batch-001/games/kaiji.html": "13fdb3af51743e49c40273d2c1e8c5cfa313021f25e339a4e3f31fe92949aeca",
+    "rail-games/priority/batch-001/games/kaiji.json.gz": "f560e2a430be9ddfcdaa7a143a12bfde15e49ba270eea33519cf1efa42329883",
+    "rail-games/priority/batch-001/games/loader.js": "ba4f738ba874a75c678d12c0b0c4d8c5f64891aad291727597fec8394e3900c3",
+    "rail-games/priority/batch-001/games/model-builder.js": "becf0a4eba73598afa90a79c95381d7eb49bab4c4d29a74b3851390744a3b027",
+    "rail-games/priority/batch-001/games/rail-audio.js": "b1795fda595bf434036031c71bdb6f40236974c44b56c074f72c4f2b63437768",
+    "rail-games/priority/batch-001/games/rail.js": "01b4c360bde44d69b92d6b9ef4b5889811aa8b5c1eb4da6a1d56d2c0fdcca4a1",
+    "rail-games/priority/batch-001/games/scene-start.js": "d6114259b14e792e395da9265e8961166e8b9279f6d8327c39a9d9cd54499930",
+    "rail-games/priority/batch-001/games/shared.js": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
+    "config.js": "3177c7389debb76fe95df3d25d00c90dbdf891f874c6032f4cfad54aac0cb4aa",
+    "game-publication.js": "9709b7ffb24b3d18121b5b1e2aef7f7e4aa1070b7052b61ee65e167852495e3a",
+    "game-publication.css": "cedbaa2c3828801f17cdbcb5941354af5e7496e1d98382e135b198a64e3e4da2",
+    "game-unavailable.html": "9937b60aff44fc201b5ee1d7b1938f944d9b8382411c147467b63144888f6f4c",
+    "game-unavailable.js": "34f895404c63fc3fb23bd0df36aad181b82e94083b008c851b5020d1ad4ffb13",
+    "shared/neighbour-corridors.bin": "80173a80d44952f6d208a5b473877a0cce1c9f4af2cd3fdc379025b67663ffa7",
+    "index.html": "68178d87debdcc068ec75370c6b8b7fa2120a73f745d905991231cd847fac9dc",
+    "chuo.html": "cceda104bba2ed082a69cbd8257c216090658a10cad6cd91c25ac7ff78f82224",
+    "depot-3d.html": "e13cb959d1dccc79c6e1ad52886ce6ac134d10abb212cab55c334fd2c250d928"
+  },
+  "runs": [
+    {
+      "id": "azusa",
+      "mode": "visible",
+      "packets": 3,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "mode": "hidden",
+      "packets": 0,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "mode": "absent",
+      "packets": 0,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "mode": "offline",
+      "packets": 0,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "mode": "corrupt",
+      "packets": 1,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "mode": "visible",
+      "packets": 3,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "mode": "hidden",
+      "packets": 0,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "mode": "absent",
+      "packets": 0,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "mode": "offline",
+      "packets": 0,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "mode": "corrupt",
+      "packets": 1,
+      "pass": true
+    }
+  ]
+}
