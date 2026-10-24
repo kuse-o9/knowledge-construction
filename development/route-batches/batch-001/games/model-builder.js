@@ -8,6 +8,12 @@ function stationOuterTrackOffset(meta,start,end,d){
  const join=meta.islandOuterTrackJoin??(meta.side>0?0:12),t=Math.max(0,Math.min(1,Math.min((d-start)/100,(end-d)/100)));
  return join+(7.56-join)*t*t*(3-2*t);
 }
+function terminalBlend(delta){const t=Math.max(0,Math.min(1,(800-Math.abs(delta))/500));return t*t*(3-2*t);}
+function terminalBase(delta){const t=Math.max(0,Math.min(1,(900-Math.abs(delta))/550));return 1.85+4.15*t*t*(3-2*t);}
+function terminalTrackOffset(meta,native,d){
+ const l=meta.terminalLayout,delta=d-meta.platformCenterDistance,w=terminalBlend(delta),own=(l.nativeDirection*terminalBase(delta))*(1-w)+l.nativeTrackOffset*w;
+ return (native-own)*l.nativeDirection/meta.side;
+}
 function initialize(d,c,s){
  data=d;common=c;stock=s;cache.clear();geos={};const tracks=[],stations=[],groundHeights={};
  for(const [direction,route]of Object.entries(data.routes)){
@@ -46,6 +52,25 @@ function build(meta){
   }
   for(let d=Math.ceil(meta.start/.7)*.7;d<meta.end;d+=.7)box(frame(d),0,0,-.075,.22,2.45,.11,'#b7b5a8');
   for(let d=Math.ceil(meta.start/40)*40;d<meta.end;d+=40){const f=frame(d);box(f,0,3.15,2.65,.15,.16,5.5,'#919b9d');box(f,0,1.5,5.40,.12,3.5,.13,'#8b9395');box(f,0,.18,5.43,.16,.42,.13,'#e0ddc9');box(f,0,3.15,-.02,.55,.6,.42,'#adb5b4');}
+ }else if(meta.terminalLayout){
+  // Operator topology: side platform1, island2/3. Widths, branch spans and
+  // transition lengths are explicit game estimates. Preserve both platforms.
+  const l=meta.terminalLayout,c=meta.platformCenterDistance,start=Math.max(1,c-132.5),end=Math.min(geo.length-1,c+132.5),at=(native,d)=>terminalTrackOffset(meta,native,d);
+  const a=Math.max(1,c-800),b=Math.min(geo.length-1,c+800);
+  function rail(nativeAt){
+   for(let d=a;d<b;d+=4){const e=Math.min(b,d+4),y=at(nativeAt(d),d),q=at(nativeAt(e),e);for(const sign of[-1,1])for(const[width,z,height,color]of[[.13,-.04,.025,'#727a79'],[.028,-.015,.09,'#43484b'],[.067,.075,.045,'#b8bec0']])ribbon(d,e,y+sign*.5335,q+sign*.5335,width,z,height,color);ribbon(d,e,y,q,3.15,-.30,.12,'#85847b');ribbon(d,e,y,q,.022,5.45,.022,'#8b9395');}
+   for(let d=a;d<b;d+=.7)box(frame(d),0,at(nativeAt(d),d),-.075,.22,2.45,.11,'#b7b5a8');
+  }
+  for(const sign of[-1,1]){
+   if(l.nativeTrackOffset!==sign*7.56)rail(d=>sign*(terminalBase(d-c)+(7.56-terminalBase(d-c))*terminalBlend(d-c)));
+   if(l.nativeTrackOffset!==0||sign!==l.nativeDirection)rail(d=>sign*terminalBase(d-c)*(1-terminalBlend(d-c)));
+  }
+  for(const platform of l.platforms){
+   for(let d=start;d<end;d+=5){const e=Math.min(end,d+5),y=at(platform.centre,d),q=at(platform.centre,e);ribbon(d,e,y,q,platform.width,.05,1.05,'#a6a89e');for(const edge of platform.numbers.length===2?[-1,1]:[-Math.sign(platform.centre)])ribbon(d,e,at(platform.centre+edge*2,d),at(platform.centre+edge*2,e),.30,1.10,.025,'#e0c257');}
+   for(let d=start+20;d<end-15;d+=18){const f=frame(d),y=at(platform.centre,d);box(f,0,y,3,.16,.2,3.9,'#aab7b3');box(f,0,y,4.9,18,4.8,.15,'#cdd5d0');box(f,0,y,4.73,7,.12,.09,'#eee7cc');box(f,0,y+.6,1.5,2.8,.52,.13,'#728d82');}
+  }
+  const centre=frame(c);box(centre,0,at((l.platforms[0].centre+l.platforms[1].centre)/2,c),6.1,5,23,.3,'#cdd5d0');
+  for(const platform of l.platforms){const y=at(platform.centre,c);box(centre,0,y,3.3,3,1.7,4.4,'#aab7b3');}
  }else{
   const start=Math.max(1,meta.distance-250),end=Math.min(geo.length-1,meta.distance+15);
   for(let d=start;d<end;d+=5){const e=Math.min(end,d+5);strip(d,e,3.78,4.4,.05,1.05,'#a6a89e');strip(d,e,1.78,.30,1.10,.025,'#e0c257');strip(d,e,1.62,.08,.08,.95,'#d8d8ce');}
@@ -77,5 +102,5 @@ function build(meta){
  }
  cache.set(meta.id,model);while(cache.size>32)cache.delete(cache.keys().next().value);return model;
 }
-root.BaylineBatchModels={initialize,build,stationOuterTrackOffset,get cacheSize(){return cache.size;}};
+root.BaylineBatchModels={initialize,build,stationOuterTrackOffset,terminalTrackOffset,get cacheSize(){return cache.size;}};
 })(window);

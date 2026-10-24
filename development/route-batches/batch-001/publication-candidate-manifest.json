@@ -24,13 +24,13 @@
     },
     {
       "path": "rail-games/priority/batch-001/games/azusa.html",
-      "sha256": "25ad3e3ffcf49ca879fba5ddef95df70db90f4b91f8530ac88fbd756e78cb0a5",
+      "sha256": "00676c90a8c2b36b787c74265ec2fcf2266d91b3ddb2476cbc48078b6553f68b",
       "bytes": 56796
     },
     {
       "path": "rail-games/priority/batch-001/games/azusa.json.gz",
-      "sha256": "d47a41c4722f6f7730ac33c0940f2f3065dab95bbd83b04f7b84f3df21563a83",
-      "bytes": 253891
+      "sha256": "8ead998d1336e26d0a3f787752bddcbff941a8cea63d4b86db733b6d8f06fec2",
+      "bytes": 254456
     },
     {
       "path": "rail-games/priority/batch-001/games/common.json.gz",
@@ -44,13 +44,13 @@
     },
     {
       "path": "rail-games/priority/batch-001/games/kaiji.html",
-      "sha256": "6fd8b778c0ad8989e662343ad9103a726c9feb96cb59ed59e4e7eae91df8577f",
+      "sha256": "13fdb3af51743e49c40273d2c1e8c5cfa313021f25e339a4e3f31fe92949aeca",
       "bytes": 56794
     },
     {
       "path": "rail-games/priority/batch-001/games/kaiji.json.gz",
-      "sha256": "3d4701fc5980126da002f4477563f45adc05aa9645d1e438c9177cce8a9f1230",
-      "bytes": 138754
+      "sha256": "f560e2a430be9ddfcdaa7a143a12bfde15e49ba270eea33519cf1efa42329883",
+      "bytes": 139242
     },
     {
       "path": "rail-games/priority/batch-001/games/loader.js",
@@ -59,8 +59,8 @@
     },
     {
       "path": "rail-games/priority/batch-001/games/model-builder.js",
-      "sha256": "8cefd6c6936acb7fdb9f92e30f5c9c9bd6b2fef38fe35f49dc199f91759caee2",
-      "bytes": 9765
+      "sha256": "becf0a4eba73598afa90a79c95381d7eb49bab4c4d29a74b3851390744a3b027",
+      "bytes": 12266
     },
     {
       "path": "rail-games/priority/batch-001/games/rail-audio.js",
@@ -69,8 +69,8 @@
     },
     {
       "path": "rail-games/priority/batch-001/games/rail.js",
-      "sha256": "ff8d923322736e42958e3c4063f5ae522535937b41e81fcb6a2c6c7d046ce5cf",
-      "bytes": 62372
+      "sha256": "01b4c360bde44d69b92d6b9ef4b5889811aa8b5c1eb4da6a1d56d2c0fdcca4a1",
+      "bytes": 62483
     },
     {
       "path": "rail-games/priority/batch-001/games/scene-start.js",
@@ -79,8 +79,8 @@
     },
     {
       "path": "rail-games/priority/batch-001/games/shared.js",
-      "sha256": "80cc8dda31edb5e9c0f77877eaa26085c26657d012d75c3054709871113d79fc",
-      "bytes": 32686
+      "sha256": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
+      "bytes": 36927
     }
   ],
   "productionDependencies": [
@@ -137,14 +137,11 @@
       "ready": false,
       "problems": [
         "quality:currentOperatorScope:pending",
-        "quality:allStationsAndStops:pending",
         "quality:correctTrackAndPlatformGeometry:pending",
         "quality:elevationTunnelAndBridge:pending",
         "quality:vehicleSpecificModel:pending",
         "quality:speedAndSignals:pending",
         "quality:neighbourTraffic:pending",
-        "quality:bilingualAnnouncements:pending",
-        "quality:softwareRendering:pending",
         "quality:releaseHashes:pending",
         "No release artifacts",
         "No tested game entry point among release artifacts",
@@ -157,14 +154,11 @@
       "ready": false,
       "problems": [
         "quality:currentOperatorScope:pending",
-        "quality:allStationsAndStops:pending",
         "quality:correctTrackAndPlatformGeometry:pending",
         "quality:elevationTunnelAndBridge:pending",
         "quality:vehicleSpecificModel:pending",
         "quality:speedAndSignals:pending",
         "quality:neighbourTraffic:pending",
-        "quality:bilingualAnnouncements:pending",
-        "quality:softwareRendering:pending",
         "quality:releaseHashes:pending",
         "No release artifacts",
         "No tested game entry point among release artifacts",

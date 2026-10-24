@@ -91,8 +91,8 @@
       "scene": {
         "webgl2": true,
         "error": 0,
-        "primitives": 63,
-        "ready": 62
+        "primitives": 62,
+        "ready": 61
       },
       "cameraOverlayStates": [
         {
@@ -124,17 +124,17 @@
   "errors": [],
   "networkErrors": [],
   "inputHashes": {
-    "games/azusa.html": "72d40d7851502339567917947026a8ebb8e2620005cf2dceb27af14530e95c3b",
-    "games/kaiji.html": "5aca9eba779dc530d691cf8e81266833dd435332c51fa11c108251891eb4e4ff",
-    "games/azusa.json.gz": "d47a41c4722f6f7730ac33c0940f2f3065dab95bbd83b04f7b84f3df21563a83",
-    "games/kaiji.json.gz": "3d4701fc5980126da002f4477563f45adc05aa9645d1e438c9177cce8a9f1230",
+    "games/azusa.html": "8e9ecd099cdf4d393ebb6261a19a7db606ec3deb1e924fe28d1ce68b306bc62d",
+    "games/kaiji.html": "6de2a3739e5df777b5ebc2fb9c36c1e52628a669ed552b4a8c678ea765370fd3",
+    "games/azusa.json.gz": "8ead998d1336e26d0a3f787752bddcbff941a8cea63d4b86db733b6d8f06fec2",
+    "games/kaiji.json.gz": "f560e2a430be9ddfcdaa7a143a12bfde15e49ba270eea33519cf1efa42329883",
     "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
     "games/e353.json.gz": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
-    "games/rail.js": "ff8d923322736e42958e3c4063f5ae522535937b41e81fcb6a2c6c7d046ce5cf",
-    "games/shared.js": "80cc8dda31edb5e9c0f77877eaa26085c26657d012d75c3054709871113d79fc",
+    "games/rail.js": "01b4c360bde44d69b92d6b9ef4b5889811aa8b5c1eb4da6a1d56d2c0fdcca4a1",
+    "games/shared.js": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
     "games/rail-audio.js": "b1795fda595bf434036031c71bdb6f40236974c44b56c074f72c4f2b63437768",
     "games/loader.js": "3cb4bb5e98dea5c2e228155e912d94ea70868e2b32903c0a70a5c33372b6d66b",
-    "games/model-builder.js": "8cefd6c6936acb7fdb9f92e30f5c9c9bd6b2fef38fe35f49dc199f91759caee2",
+    "games/model-builder.js": "becf0a4eba73598afa90a79c95381d7eb49bab4c4d29a74b3851390744a3b027",
     "games/scene-start.js": "d6114259b14e792e395da9265e8961166e8b9279f6d8327c39a9d9cd54499930",
     "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc"
   },

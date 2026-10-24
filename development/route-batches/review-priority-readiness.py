@@ -8,7 +8,8 @@ REPORTS=['geometry-review-diagnostics.json','integrated-game-diagnostics.json',
          'integrated-running-diagnostics.json','train-scene-diagnostics.json',
          'station-model-diagnostics.json','station-scene-diagnostics.json',
          'local-platform-diagnostics.json','priority-speed-diagnostics.json',
-         'station-rail-profile-diagnostics.json','station-loop-diagnostics.json']
+         'station-rail-profile-diagnostics.json','station-loop-diagnostics.json',
+         'terminal-interlocking-diagnostics.json']
 
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -33,8 +34,13 @@ def review(candidate):
     for file,sha in checked['inputHashes'].items():
         if digest(candidate/file)!=sha:raise ValueError('Stale publication candidate '+file)
     units=json.loads((DEST/'validation-suite-summary.json').read_text())
-    if units['testsRun']<45 or units['passed']!=units['testsRun']or units['failures']or units['errors']or units['skipped']:
+    if units['testsRun']<48 or units['passed']!=units['testsRun']or units['failures']or units['errors']or units['skipped']:
         raise ValueError('Unit suite incomplete')
+    terminal=json.loads((DEST/'terminal-interlocking-diagnostics.json').read_text())
+    if terminal['assertions']<25 or not terminal['oppositeDirectionExclusion']or not terminal['rearClearance']:
+        raise ValueError('Shared terminal validation incomplete')
+    for name in ['sources/station-topology-review-20261024.json','sources/priority-speed-review.json']:
+        evidence[name]=digest(DEST/name)
     manifest_path=DEST/'manifest.json'
     manifest=json.loads(manifest_path.read_text())
     spec=importlib.util.spec_from_file_location('release_gate',HERE/'release-gate.py')

@@ -8,6 +8,7 @@ import copy,gzip,hashlib,json,re,math,bisect,importlib.util
 
 ROOT=Path(__file__).resolve().parents[2];HERE=Path(__file__).parent;DEST=HERE/'batch-001';OUT=DEST/'games';OUT.mkdir(exist_ok=True)
 spec=importlib.util.spec_from_file_location('platform_selection',HERE/'platform-selection.py');platform_selection=importlib.util.module_from_spec(spec);spec.loader.exec_module(platform_selection)
+spec=importlib.util.spec_from_file_location('terminal_alignment',HERE/'terminal-alignment.py');terminal_alignment=importlib.util.module_from_spec(spec);spec.loader.exec_module(terminal_alignment)
 base_bytes=b''.join((ROOT/f'chuo-local-bundle-{i}.bin').read_bytes()for i in [0,1]);html=json.loads(gzip.decompress(base_bytes))['html'];scripts=list(re.finditer(r'<script([^>]*)>(.*?)</script>',html,re.S))
 def extract(marker):return json.JSONDecoder().raw_decode(html.split(marker,1)[1])[0]
 base_data=extract('window.RAIL_DATA=');base_models=extract('window.RAIL_PREBUILT_MODELS=');city=extract('window.RAIL_CITY_MODELS=')
@@ -30,6 +31,7 @@ replace('async function hydrateModel(meta){','async function hydrateModel(meta){
 replace("let stationEntities=[]","let batchConsist=null,batchTraffic=new Map(),sceneLoading=false,sceneFailure='';let stationEntities=[]")
 replace("D.train.cars*20","D.train.totalLength")
 replace("function updateTrainVisibility(){","function updateTrainVisibility(){if(batchConsist)batchConsist.setFront(state.distance,view!=='cab');")
+replace('if(state.running&&!state.complete&&!document.hidden)T.step(traffic,routeGeometries,dt,p);','window.BaylineTerminals.update(traffic,routeGeometries,p);if(state.running&&!state.complete&&!document.hidden)T.step(traffic,routeGeometries,dt,p);')
 begin=runtime.index('function buildRailway(){');end=runtime.index('\nfunction updateCamera',begin)
 runtime=runtime[:begin]+'''function buildRailway(){if(!viewer)return;railwayGeneration++;platformOpening=state.doors?1:0;batchConsist?.destroy();for(const item of batchTraffic.values())item.destroy();batchTraffic.clear();batchConsist=window.BaylineTrainScene.mount(viewer,Ces,C,geo,window.BATCH_STOCK,formationFor(direction));updateStationWindow(true);updateTrackModels(true);updateMovingModels(true);cityLastPosition=null;updateCity(true);}'''+runtime[end:]
 replace('lifted(f,3.0)','lifted(f,D.train.cabHeight)')
@@ -40,6 +42,8 @@ replace('alignTerrainResolution(provider,level=13)','alignTerrainResolution(prov
 replace("viewer.imageryLayers.addImageryProvider(new Ces.UrlTemplateImageryProvider(","viewer.imageryLayers.addImageryProvider(await Ces.SingleTileImageryProvider.fromUrl('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGOQDkoFAAFeANMvysHcAAAAAElFTkSuQmCC'));viewer.imageryLayers.addImageryProvider(new Ces.UrlTemplateImageryProvider(")
 
 replace('stationPrimitives.push(...loadPassengers(meta))','stationPrimitives.push(...loadPassengers(model))')
+# Both directional models retain passengers; draw the shared physical platforms once.
+replace('stationPrimitives.push(...loadModel(stationModel,Ces.Matrix4.fromTranslation(new Ces.Cartesian3(...model.origin))));','if(!model.terminalLayout||meta.direction===direction)stationPrimitives.push(...loadModel(stationModel,Ces.Matrix4.fromTranslation(new Ces.Cartesian3(...model.origin))));')
 replace('s.direction===direction&&Math.hypot',"(s.direction===direction||s.platformLine!=='chuo-sobu-local')&&Math.hypot")
 replace("o.textContent=stop.code+' '+stop.name","o.textContent=(stop.publicCode?stop.publicCode+' ':'')+stop.name")
 replace("code.textContent=stop.code","code.textContent=stop.publicCode||(i<0?'通過':'停車')")
@@ -69,7 +73,7 @@ replace("previousDoors=state.doors;routeUI();setMode(state.mode);", "window.Bayl
 runtime=runtime.replace('#f2cc39','#8066ad')
 (OUT/'rail.js').write_text(runtime)
 shared=scripts[8][2].replace("(location.pathname.includes('/yamanote/')?'../':'')+'shared/neighbour-corridors.bin?v=profiles1'","'../../../../shared/neighbour-corridors.bin?v=profiles1'")
-shared=shared[:shared.index('/* Terrain openings')]+(HERE/'tunnel-runtime.js').read_text()+shared[shared.index('/* Existing Tachikawa branch'):];(OUT/'shared.js').write_text(shared)
+shared=shared[:shared.index('/* Terrain openings')]+(HERE/'tunnel-runtime.js').read_text()+shared[shared.index('/* Existing Tachikawa branch'):];shared=shared.replace(" if(g.BaylineJunctions&&!g.BaylineJunctions.allowed(traffic,geo,index,exclude||'player'))return 'RED';"," if(g.BaylineTerminals&&!g.BaylineTerminals.allowed(traffic,geo,index,exclude||'player'))return 'RED';\n if(g.BaylineJunctions&&!g.BaylineJunctions.allowed(traffic,geo,index,exclude||'player'))return 'RED';");shared=shared.replace(' const current=S.blockAt(blocks,Math.min(L,Math.max(0,d)));'," const terminalStop=g.BaylineTerminals?.stopDistance(geo,traffic,train)??Infinity;if(terminalStop<stop){stop=terminalStop;if(!next||terminalStop<next.distance)next={index:-1,distance:terminalStop,aspect:'RED'};}\n const current=S.blockAt(blocks,Math.min(L,Math.max(0,d)));");shared=shared.replace('if(!blocked){train.distance=start;',"if(!blocked&&!g.BaylineTerminals.spawnBlocked(snapshot,geos,train,candidate,player)){train.distance=start;");shared+='\n'+(HERE/'terminal-runtime.js').read_text();(OUT/'shared.js').write_text(shared)
 audio=scripts[4][2]
 old="platform+'番線、ドアが閉まります。ご注意ください。'"
 if old not in audio:raise ValueError('Departure wording adapter changed')
@@ -118,9 +122,15 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
   def point_at(d):
    d=max(0,min(original[-1],d));i=min(len(points)-2,max(0,bisect.bisect_right(original,d)-1));t=(d-original[i])/(original[i+1]-original[i]);return [points[i][j]*(1-t)+points[i+1][j]*t for j in [0,1]]
   reviewed_indices=[len(points)-1-r['index']if reverse else r['index']for r in alignment['physicalStops']if r['name']in platform_review]
+  layout_choices=[]
+  for station in alignment['physicalStops']:
+   if station['name']not in terminal_alignment.LAYOUTS:continue
+   index=len(points)-1-station['index']if reverse else station['index'];reported=next((s.get('reportedPlatform')for s in service['stops']if s['name']==station['name']),None);platform,_=platform_selection.select(platform_review[station['name']],direction,reported);layout_choices.append((station['name'],index,platform))
   shifted=[]
   for i,p in enumerate(points):
-   a,b=point_at(original[i]-40),point_at(original[i]+40);x=(b[0]-a[0])*111320*math.cos(math.radians(p[1]));y=(b[1]-a[1])*111320;l=math.hypot(x,y) or 1;nearest=min(abs(original[i]-original[j])for j in reviewed_indices);t=max(0,min(1,(900-nearest)/550));separation=1.85+4.15*t*t*(3-2*t);shifted.append([p[0]-y/l*separation/(111320*math.cos(math.radians(p[1]))),p[1]+x/l*separation/111320])
+   a,b=point_at(original[i]-40),point_at(original[i]+40);x=(b[0]-a[0])*111320*math.cos(math.radians(p[1]));y=(b[1]-a[1])*111320;l=math.hypot(x,y) or 1;nearest=min(abs(original[i]-original[j])for j in reviewed_indices);t=max(0,min(1,(900-nearest)/550));separation=1.85+4.15*t*t*(3-2*t)
+   for station,index,platform in layout_choices:separation=terminal_alignment.separation(separation,original[i]-original[index],direction,platform,station)
+   shifted.append([p[0]-y/l*separation/(111320*math.cos(math.radians(p[1]))),p[1]+x/l*separation/111320])
   cumulative=[0]
   for a,b in zip(shifted,shifted[1:]):cumulative.append(cumulative[-1]+math.hypot((b[0]-a[0])*111320*math.cos(math.radians((a[1]+b[1])/2)),(b[1]-a[1])*111320))
   physical=[]
@@ -138,12 +148,14 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
    stop.update(platformChoiceKind=choice_kind,gamePlatformKey=chosen,directionalPlatformChoiceReviewed=choice_kind in ['service-timetable','operator-direction-game-choice'])
    layout=(review or{}).get('observedLayout')or{}
    stop['islandOuterTrack']=bool(layout.get('tracks')==3 and chosen and chosen.isdigit()and int(chosen)in layout.get('islandPlatformNumbers',[]))
+   if stop['name']in terminal_alignment.LAYOUTS:stop['terminalLayout']=terminal_alignment.metadata(stop,direction);stop['islandOuterTrack']=False
    if stop['islandOuterTrack']:stop['islandOuterTrackJoin']=0 if stop['side']>0 else 12
    if stop['name']in local_station_names:
     i=stop['index'];p=points[i];q=shifted[i];separation=math.hypot((q[0]-p[0])*111320*math.cos(math.radians(p[1])),(q[1]-p[1])*111320)
     # Adjacent local-line island, not an E353 platform. Offset is an explicit
     # aerial-based game estimate; no surveyed alignment or platform assignment.
     stop.update(side=-1 if reverse else 1,platformLine='chuo-sobu-local',platformLateralOrigin=16+(separation if reverse else -separation)-3.78,platformPlacementEstimated=True,platformSideVerified=False,gamePlatformNumber=None)
+  terminal=next(s for s in physical if s['name']=='竜王');route['sharedTerminals']=[{'id':'ryuo-platform2','entry':max(0,terminal['platformCenterDistance']-800),'exit':min(route['length'],terminal['platformCenterDistance']+800),'platform':'2','dimensionsEstimated':True}]if key=='kaiji'else[]
   data['routes'][direction]=route;data['serviceSources'].append(service['source'])
  announcements={}
  for direction,r in data['routes'].items():

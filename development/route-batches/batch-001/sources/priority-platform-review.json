@@ -130,7 +130,8 @@
       "mapDate": "2023-02",
       "sideTowardMatsumoto": {
         "1": 1,
-        "2": -1
+        "2": -1,
+        "3": 1
       },
       "gamePlatformChoice": null,
       "pageSha256": "8005678bd9c10c8e31094bcfe0b2cd78ecf8fea5e1e587c8b382de06afa8f138",
@@ -158,6 +159,26 @@
           "https://timetables.jreast.co.jp/2610/train/110/111441.html",
           "https://timetables.jreast.co.jp/2610/train/085/087651.html"
         ]
+      },
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "layoutReview": {
+        "checked": "2026-10-24",
+        "method": "Re-inspected retained official map; side1 plus island2/3. Dimensions/turnouts estimated, not surveyed."
       }
     },
     {
@@ -165,7 +186,9 @@
       "sourceUrl": "https://www.jreast.co.jp/estation/stations/1689.html",
       "mapDate": "2021-12",
       "sideTowardMatsumoto": {
-        "2": -1
+        "1": 1,
+        "2": -1,
+        "3": 1
       },
       "gamePlatformChoice": null,
       "pageSha256": "3fd032dce6bced739752f1aa49b1e5726b9f0f2587886600269d2c014a6fae86",
@@ -178,18 +201,33 @@
       "assignmentVerifiedByMapAlone": false,
       "directionPlatforms": {
         "forward": [
-          "2"
+          "1"
         ],
         "reverse": [
-          "2"
+          "3"
         ]
       },
       "directionReview": {
         "checked": "2026-10-24",
-        "method": "Existing selected-service operator timetable platforms, combined across the two games; per-service platform still overrides",
+        "method": "Official map through-line directions1down/3up; selected Kaiji timetable2 overrides separately. Track dimensions and turnouts are game estimates.",
         "sources": [
-          "https://timetables.jreast.co.jp/2610/train/110/111441.html",
-          "https://timetables.jreast.co.jp/2610/train/085/087651.html"
+          "https://www.jreast.co.jp/estation/stations/1689.html"
+        ]
+      },
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
         ]
       }
     },
@@ -527,6 +565,7 @@
       "mapDate": "2023-04",
       "sideTowardMatsumoto": {
         "1": 1,
+        "2": -1,
         "3": 1
       },
       "gamePlatformChoice": null,
@@ -553,6 +592,26 @@
           "https://timetables.jreast.co.jp/2610/train/110/111441.html",
           "https://timetables.jreast.co.jp/2610/train/085/087651.html"
         ]
+      },
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "layoutReview": {
+        "checked": "2026-10-24",
+        "method": "Re-inspected retained official map; side1 plus island2/3. Dimensions/turnouts estimated, not surveyed."
       }
     },
     {
@@ -561,6 +620,7 @@
       "mapDate": "2021-12",
       "sideTowardMatsumoto": {
         "1": -1,
+        "2": 1,
         "3": -1
       },
       "gamePlatformChoice": null,
@@ -587,6 +647,26 @@
           "https://timetables.jreast.co.jp/2610/train/110/111441.html",
           "https://timetables.jreast.co.jp/2610/train/085/087651.html"
         ]
+      },
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "layoutReview": {
+        "checked": "2026-10-24",
+        "method": "Re-inspected retained official map; side1 plus island2/3. Dimensions/turnouts estimated, not surveyed."
       }
     },
     {

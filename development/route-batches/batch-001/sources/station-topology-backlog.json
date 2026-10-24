@@ -22,8 +22,24 @@
     {
       "name": "甲府",
       "sourceUrl": "https://www.jreast.co.jp/estation/stations/671.html",
-      "observedLayout": {},
-      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "task": "Passenger track/platform model and both-direction scenes passed. Surveyed dimensions, exact turnout and non-passenger siding topology remain unverified.",
+      "implementationStatus": "estimated-passenger-topology-software-validated"
     },
     {
       "name": "竜王",
@@ -33,6 +49,10 @@
         "sidePlatformNumbers": [
           1
         ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
         "islandPlatformPairs": [
           [
             2,
@@ -40,7 +60,7 @@
           ]
         ]
       },
-      "task": "Implement shared platform2 alignment, approach turnout and direction-aware movement interlocking before treating the terminal layout as complete.",
+      "task": "Passenger track/platform model and both-direction scenes passed. Surveyed dimensions, exact turnout and non-passenger siding topology remain unverified.",
       "selectedServiceNote": "Both retained forward arrival (Kaiji47) and reverse departure (Kaiji2) report platform2. Current independently offset directions do not implement the shared terminal track or conflicting movement lock.",
       "sourceObservation": {
         "checked": "2026-10-24",
@@ -56,8 +76,9 @@
           "reverse": "3"
         },
         "selectedKaijiTimetableOverride": "2 in both directions",
-        "currentRuntimeIssue": "Current fallback derived from Kaiji assignments chooses2 for passing Azusa too. Update through-running choices separately, align Kaiji2 on one shared physical track and interlock opposing approaches. Not implemented; current packets unchanged."
-      }
+        "currentRuntimeIssue": "Corrected and software-validated: Azusa through1/3 separated from selected Kaiji2; one physical centre and opposing game reservations, red/green aspects and NPC wrap protection."
+      },
+      "implementationStatus": "estimated-passenger-topology-software-validated"
     },
     {
       "name": "松本",
@@ -103,14 +124,46 @@
     {
       "name": "塩山",
       "sourceUrl": "https://www.jreast.co.jp/estation/stations/293.html",
-      "observedLayout": {},
-      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "task": "Passenger track/platform model and both-direction scenes passed. Surveyed dimensions, exact turnout and non-passenger siding topology remain unverified.",
+      "implementationStatus": "estimated-passenger-topology-software-validated"
     },
     {
       "name": "山梨市",
       "sourceUrl": "https://www.jreast.co.jp/estation/stations/1609.html",
-      "observedLayout": {},
-      "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformNumbers": [
+          2,
+          3
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "task": "Passenger track/platform model and both-direction scenes passed. Surveyed dimensions, exact turnout and non-passenger siding topology remain unverified.",
+      "implementationStatus": "estimated-passenger-topology-software-validated"
     },
     {
       "name": "阿佐ヶ谷",
@@ -240,5 +293,10 @@
       "task": "Complete station-specific track/platform adjacency mesh and placement; direction/side review already complete."
     }
   ],
-  "count": 22
+  "count": 22,
+  "implementationCounts": {
+    "implementedEstimatedPassengerLayouts": 4,
+    "remainingComplexOrUncountedLayouts": 18,
+    "surveyedLayouts": 0
+  }
 }

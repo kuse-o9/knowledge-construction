@@ -42,9 +42,12 @@ test_ready_subset_publishes_without_waiting_for_pending_job (test_publication.Pu
 test_removing_quality_gates_does_not_bypass_publication_checks (test_publication.Publication.test_removing_quality_gates_does_not_bypass_publication_checks) ... ok
 test_rerun_is_idempotent_and_pending_upgrade_keeps_existing_release (test_publication.Publication.test_rerun_is_idempotent_and_pending_upgrade_keeps_existing_release) ... ok
 test_tampered_game_cannot_enter_public_catalogue (test_publication.Publication.test_tampered_game_cannot_enter_public_catalogue) ... ok
+test_platform_side_and_train_clearance_at_all_four_layouts (test_terminal_alignment.TerminalAlignment.test_platform_side_and_train_clearance_at_all_four_layouts) ... ok
+test_shared_middle_track_and_separate_through_lines (test_terminal_alignment.TerminalAlignment.test_shared_middle_track_and_separate_through_lines) ... ok
+test_turnouts_are_continuous_and_have_zero_endpoint_slope (test_terminal_alignment.TerminalAlignment.test_turnouts_are_continuous_and_have_zero_endpoint_slope) ... ok
 test_wheel_and_air_spring_faces_point_outward (test_vehicle_mesh.VehicleMesh.test_wheel_and_air_spring_faces_point_outward) ... ok
 
 ----------------------------------------------------------------------
-Ran 45 tests in 5.530s
+Ran 48 tests in 6.062s
 
 OK

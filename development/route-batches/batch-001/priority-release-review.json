@@ -7,8 +7,8 @@
   "packagingAndPublicationGuardPass": true,
   "candidateCases": 10,
   "units": {
-    "testsRun": 45,
-    "passed": 45,
+    "testsRun": 48,
+    "passed": 48,
     "failures": 0,
     "errors": 0,
     "skipped": 0
@@ -46,7 +46,7 @@
         "No tested game entry point among release artifacts",
         "No validation report"
       ],
-      "packetSha256": "d47a41c4722f6f7730ac33c0940f2f3065dab95bbd83b04f7b84f3df21563a83"
+      "packetSha256": "8ead998d1336e26d0a3f787752bddcbff941a8cea63d4b86db733b6d8f06fec2"
     },
     {
       "jobId": "b001-002",
@@ -80,21 +80,24 @@
         "No tested game entry point among release artifacts",
         "No validation report"
       ],
-      "packetSha256": "3d4701fc5980126da002f4477563f45adc05aa9645d1e438c9177cce8a9f1230"
+      "packetSha256": "f560e2a430be9ddfcdaa7a143a12bfde15e49ba270eea33519cf1efa42329883"
     }
   ],
   "evidence": {
-    "geometry-review-diagnostics.json": "6a586e093682515195d93077ef22408232760161427efd1db01d4ed1097a7ad3",
-    "integrated-game-diagnostics.json": "2f8a52ef0e15de3ed100197ae299ca133c74643bbb863684c72075851fc0e41a",
-    "integrated-running-diagnostics.json": "43e3751f727e6bc79c222394ffcdb73e271024bac9a852c3a5a655437f7be6d0",
-    "train-scene-diagnostics.json": "20399bc7cf7cf8aaebbcce34dc2a7ca389a943cb2f95515a9f27ebf449f5b724",
-    "station-model-diagnostics.json": "be77cf879960f2aaf52d3db8e6928b0a869d226b6e7325bdef9d7378d003cf01",
-    "station-scene-diagnostics.json": "e9aabb7c17c33b3fecb9f8b7a8370c656b2c56bc32c6d2ff2512d65c56958fd7",
-    "local-platform-diagnostics.json": "17b6d9988eb55020717b0c053feab8b28783a4cecb7a59448311004bae1efe66",
-    "priority-speed-diagnostics.json": "cbc6b14e0dea185ec9e097447e0c4f04f224d4b97150092ff98ab92544fb2ce5",
-    "station-rail-profile-diagnostics.json": "f5c706a8861a0a322bc50ad9f1025d5c044f3da6f40c0bc951789901142e18b4",
-    "station-loop-diagnostics.json": "5f85ad65d024468a2e10924cc73d56c25c994d9f461805fde0c53a0bd4328e3c",
-    "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc"
+    "geometry-review-diagnostics.json": "7cab00a4b62e06e3aa1ec3acc44c1055744c1fa60bc201b07bdfda658a813cfb",
+    "integrated-game-diagnostics.json": "229c274948ab999c5a09d8cd0a97dfb673ea62a302c1922d75670fd1aceed187",
+    "integrated-running-diagnostics.json": "6c57f823cab330ac3f33b91a4b1a117565cc72a48a1043264287ad4ddb308245",
+    "train-scene-diagnostics.json": "be6a8dae4c8b3f76a4e09676e8701a48560098401c4deae230f71303d5d8d6a0",
+    "station-model-diagnostics.json": "5e8f24cae7cc650406891a0bb37c530f41ebf60f0c0633e93fdc552b868c1aa4",
+    "station-scene-diagnostics.json": "3d88597fef7f54eb392073a8df37a27428ab8e109a375ba7d917e853724a41ac",
+    "local-platform-diagnostics.json": "4b17190a2664056936d644ae192b67112db63aee04d98284d144295f1548c603",
+    "priority-speed-diagnostics.json": "7f0d36c9b89dc66a36caa22518002da6c8db2698b350a1ab43dfdba4c878197c",
+    "station-rail-profile-diagnostics.json": "a96054f7cab12e64c2020abe3bbbfe8ae9eabb5c7d46981be68ab8fe248feb5f",
+    "station-loop-diagnostics.json": "849c60295e5211690d87f1db77212395e4e886527ec9b01182661241416c64eb",
+    "terminal-interlocking-diagnostics.json": "6c1f193b7efaabc14894c4e1734eff26e465e4df6001b8589d24d1ea7966d647",
+    "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc",
+    "sources/station-topology-review-20261024.json": "07809067a75249bb5c1c0498795e99ac2ab582a99878a7e5150d7705547f20c5",
+    "sources/priority-speed-review.json": "5cd5196a0a32586f37b17ae5a126d72cf069c28390356634eeeb919c214562ed"
   },
   "limits": "Software and direct-positioning checks; no physical GPU, listening, phone or full-route real-time test claim. Source and reconstruction limitations remain in geometry-review-status.json."
 }
