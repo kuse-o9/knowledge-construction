@@ -28,9 +28,36 @@
     {
       "name": "竜王",
       "sourceUrl": "https://www.jreast.co.jp/estation/stations/1689.html",
-      "observedLayout": {},
+      "observedLayout": {
+        "tracks": 3,
+        "sidePlatformNumbers": [
+          1
+        ],
+        "islandPlatformPairs": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
       "task": "Implement shared platform2 alignment, approach turnout and direction-aware movement interlocking before treating the terminal layout as complete.",
-      "selectedServiceNote": "Both retained forward arrival (Kaiji47) and reverse departure (Kaiji2) report platform2. Current independently offset directions do not implement the shared terminal track or conflicting movement lock."
+      "selectedServiceNote": "Both retained forward arrival (Kaiji47) and reverse departure (Kaiji2) report platform2. Current independently offset directions do not implement the shared terminal track or conflicting movement lock.",
+      "sourceObservation": {
+        "checked": "2026-10-24",
+        "mapDate": "2021-12",
+        "mapSha256": "3136c8df48e92d22f0c805cf2b54abb33683487b311415353b584bca6ac31fab",
+        "mapDirections": {
+          "1": "上諏訪・松本方面",
+          "2": "甲府・新宿方面",
+          "3": "甲府・新宿方面"
+        },
+        "throughRunningGameCandidates": {
+          "forward": "1",
+          "reverse": "3"
+        },
+        "selectedKaijiTimetableOverride": "2 in both directions",
+        "currentRuntimeIssue": "Current fallback derived from Kaiji assignments chooses2 for passing Azusa too. Update through-running choices separately, align Kaiji2 on one shared physical track and interlock opposing approaches. Not implemented; current packets unchanged."
+      }
     },
     {
       "name": "松本",
