@@ -1,0 +1,56 @@
+{
+  "method": "Accelerated CPU tests of the integrated development packets; published-maximum game cap (not actual section restrictions), not real-time or physical-device testing.",
+  "releaseReady": false,
+  "runs": [
+    {
+      "id": "azusa",
+      "direction": "forward",
+      "stoppingStations": 10,
+      "passingStations": 54,
+      "simulatedSeconds": 7296.700000009014,
+      "steps": 72967,
+      "earlyDeparture": true,
+      "restore": true,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "direction": "reverse",
+      "stoppingStations": 11,
+      "passingStations": 53,
+      "simulatedSeconds": 7349.300000009205,
+      "steps": 73493,
+      "earlyDeparture": true,
+      "restore": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "forward",
+      "stoppingStations": 9,
+      "passingStations": 33,
+      "simulatedSeconds": 4442.899999998632,
+      "steps": 44429,
+      "earlyDeparture": true,
+      "restore": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "reverse",
+      "stoppingStations": 9,
+      "passingStations": 33,
+      "simulatedSeconds": 4443.0999999986325,
+      "steps": 44431,
+      "earlyDeparture": true,
+      "restore": true,
+      "pass": true
+    }
+  ],
+  "inputHashes": {
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "games/azusa.json.gz": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
+    "games/kaiji.json.gz": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f"
+  },
+  "pass": true
+}

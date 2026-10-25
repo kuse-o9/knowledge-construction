@@ -1,0 +1,44 @@
+{
+  "test_priority_speed.cjs": {
+    "pass": true,
+    "samples": 18768,
+    "gameMaximumKmh": 130,
+    "actualSectionLimitsVerified": false,
+    "curveLimits": false
+  },
+  "test_station_loops.cjs": {
+    "pass": true,
+    "cases": 19,
+    "stations": [
+      "日野春",
+      "上諏訪",
+      "下諏訪",
+      "岡谷",
+      "茅野",
+      "青柳",
+      "富士見",
+      "酒折",
+      "甲斐大和",
+      "四方津",
+      "相模湖",
+      "国立",
+      "東小金井"
+    ],
+    "endpointOwnership": true,
+    "smoothTransitions": true,
+    "positionsEstimated": true
+  },
+  "test_reviewed_announcements.cjs": {
+    "pass": true,
+    "stationDirectionCases": 39,
+    "nonJRTransferChecks": 5,
+    "originalAudioNotCopied": true
+  },
+  "inputHashes": {
+    "games/azusa.json.gz": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
+    "games/kaiji.json.gz": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f",
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "games/model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
+    "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc"
+  }
+}

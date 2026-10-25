@@ -1,0 +1,142 @@
+{
+  "method": "Actual browser interaction with local development builds; software ANGLE WebGL. No physical device or completed-route claim.",
+  "releaseReady": false,
+  "physicalGPU": false,
+  "realTimeFullRoute": false,
+  "runs": [
+    {
+      "id": "azusa",
+      "direction": "forward",
+      "physicalCount": 64,
+      "manualPowerBrakeDoors": true,
+      "earlyDeparture": true,
+      "saveRestore": true,
+      "startStationSelection": true,
+      "automaticDeparture": true,
+      "mapView": true,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "direction": "reverse",
+      "physicalCount": 64,
+      "manualPowerBrakeDoors": true,
+      "earlyDeparture": true,
+      "saveRestore": true,
+      "startStationSelection": true,
+      "automaticDeparture": true,
+      "mapView": true,
+      "pass": true
+    },
+    {
+      "id": "azusa",
+      "scene": {
+        "webgl2": true,
+        "error": 0,
+        "primitives": 62,
+        "ready": 61
+      },
+      "cameraOverlayStates": [
+        {
+          "view": "cab",
+          "wipers": [
+            "visible",
+            "visible"
+          ]
+        },
+        {
+          "view": "map",
+          "wipers": [
+            "hidden",
+            "hidden"
+          ]
+        },
+        {
+          "view": "chase",
+          "wipers": [
+            "hidden",
+            "hidden"
+          ]
+        }
+      ],
+      "softwareRendering": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "forward",
+      "physicalCount": 42,
+      "manualPowerBrakeDoors": true,
+      "earlyDeparture": true,
+      "saveRestore": true,
+      "startStationSelection": true,
+      "automaticDeparture": true,
+      "mapView": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "direction": "reverse",
+      "physicalCount": 42,
+      "manualPowerBrakeDoors": true,
+      "earlyDeparture": true,
+      "saveRestore": true,
+      "startStationSelection": true,
+      "automaticDeparture": true,
+      "mapView": true,
+      "pass": true
+    },
+    {
+      "id": "kaiji",
+      "scene": {
+        "webgl2": true,
+        "error": 0,
+        "primitives": 62,
+        "ready": 61
+      },
+      "cameraOverlayStates": [
+        {
+          "view": "cab",
+          "wipers": [
+            "visible",
+            "visible"
+          ]
+        },
+        {
+          "view": "map",
+          "wipers": [
+            "hidden",
+            "hidden"
+          ]
+        },
+        {
+          "view": "chase",
+          "wipers": [
+            "hidden",
+            "hidden"
+          ]
+        }
+      ],
+      "softwareRendering": true,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "networkErrors": [],
+  "inputHashes": {
+    "games/azusa.html": "b5409e2792a004d8b72dd9776f96b81cff1053c2244b6bbf27206d6b19e9b711",
+    "games/kaiji.html": "03097a31883918048b542a2807015cb55f92310b03189a4c626eb108025d1400",
+    "games/azusa.json.gz": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
+    "games/kaiji.json.gz": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f",
+    "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
+    "games/e353.json.gz": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
+    "games/rail.js": "01b4c360bde44d69b92d6b9ef4b5889811aa8b5c1eb4da6a1d56d2c0fdcca4a1",
+    "games/shared.js": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
+    "games/rail-audio.js": "b1795fda595bf434036031c71bdb6f40236974c44b56c074f72c4f2b63437768",
+    "games/loader.js": "ba4f738ba874a75c678d12c0b0c4d8c5f64891aad291727597fec8394e3900c3",
+    "games/model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
+    "games/scene-start.js": "41ba1ed258e822f6d3736ad7600f10b6761c39700635cbfee5593484000ad7e7",
+    "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc"
+  },
+  "pass": true
+}

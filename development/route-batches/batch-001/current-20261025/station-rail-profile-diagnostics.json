@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "method": "Actual Cesium mesh math, exact unchanged station groups/passengers and solid third-track rail faces; no physical GPU or survey claim.",
+  "physicalGPU": false,
+  "inputHashes": {
+    "games/model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
+    "games/azusa.json.gz": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
+    "games/kaiji.json.gz": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f",
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "../tunnel-runtime.js": "b75f3ebc2f1b3787847afb909376210cd61e06abdd3cd3c431fbbdf016eb0dc2",
+    "../fixtures/model-builder-20261023.js": "8aa5de57da685ae1d09c828a38439d0221b30952befb6eae92f83c57c6e8c273",
+    "../../../development/route-batches/batch-001/sources/priority-platform-review.json": "df2d43545d8ce36f22e61a5e571118634c4acc7a7b401874e3947b7745923a1a"
+  },
+  "runs": [
+    {
+      "id": "azusa",
+      "unchangedStations": 71,
+      "unchangedTrackChunks": 39,
+      "solidThirdTrackStations": 13,
+      "terminalStations": 44,
+      "cacheSize": 32
+    },
+    {
+      "id": "kaiji",
+      "unchangedStations": 40,
+      "unchangedTrackChunks": 22,
+      "solidThirdTrackStations": 6,
+      "terminalStations": 38,
+      "cacheSize": 32
+    }
+  ]
+}

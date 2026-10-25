@@ -1,0 +1,85 @@
+{
+  "pass": true,
+  "physicalGPU": false,
+  "method": "Actual station mesh and passenger clearance, Cesium Cartesian math; no surveyed placement claim.",
+  "inputHashes": {
+    "games/model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
+    "games/azusa.json.gz": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
+    "games/kaiji.json.gz": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f",
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b"
+  },
+  "runs": [
+    {
+      "id": "azusa",
+      "name": "大久保",
+      "direction": "forward",
+      "minPassengerDistanceFromRapidRail": 13.214208261312523,
+      "passengers": 128,
+      "adjacentRails": true,
+      "placementEstimated": true
+    },
+    {
+      "id": "azusa",
+      "name": "東中野",
+      "direction": "forward",
+      "minPassengerDistanceFromRapidRail": 13.21420826217771,
+      "passengers": 128,
+      "adjacentRails": true,
+      "placementEstimated": true
+    },
+    {
+      "id": "azusa",
+      "name": "東中野",
+      "direction": "reverse",
+      "minPassengerDistanceFromRapidRail": 16.904534893875276,
+      "passengers": 128,
+      "adjacentRails": true,
+      "placementEstimated": true
+    },
+    {
+      "id": "azusa",
+      "name": "大久保",
+      "direction": "reverse",
+      "minPassengerDistanceFromRapidRail": 16.9045348947914,
+      "passengers": 128,
+      "adjacentRails": true,
+      "placementEstimated": true
+    },
+    {
+      "id": "kaiji",
+      "name": "大久保",
+      "direction": "forward",
+      "minPassengerDistanceFromRapidRail": 13.214208261352908,
+      "passengers": 128,
+      "adjacentRails": true,
+      "placementEstimated": true
+    },
+    {
+      "id": "kaiji",
+      "name": "東中野",
+      "direction": "forward",
+      "minPassengerDistanceFromRapidRail": 13.21420826217771,
+      "passengers": 128,
+      "adjacentRails": true,
+      "placementEstimated": true
+    },
+    {
+      "id": "kaiji",
+      "name": "東中野",
+      "direction": "reverse",
+      "minPassengerDistanceFromRapidRail": 16.904534893875276,
+      "passengers": 128,
+      "adjacentRails": true,
+      "placementEstimated": true
+    },
+    {
+      "id": "kaiji",
+      "name": "大久保",
+      "direction": "reverse",
+      "minPassengerDistanceFromRapidRail": 16.9045348947914,
+      "passengers": 128,
+      "adjacentRails": true,
+      "placementEstimated": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "assertions": 25,
+  "oppositeDirectionExclusion": true,
+  "rearClearance": true,
+  "npcCountPreserved": 37,
+  "realRailwaySafetyClaim": false,
+  "inputHashes": {
+    "games/kaiji.json.gz": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f",
+    "games/shared.js": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "../terminal-runtime.js": "b66fcee00e8689472b042c244cf7cb294e53758fbba6ab9db3d5e8e4f7a93a53"
+  }
+}
