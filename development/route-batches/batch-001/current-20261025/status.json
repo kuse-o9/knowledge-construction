@@ -1,0 +1,79 @@
+{
+  "checked": "2026-10-25",
+  "published": false,
+  "allRequestedWorkComplete": false,
+  "currentPackets": {
+    "azusa": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
+    "kaiji": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f"
+  },
+  "validation": {
+    "pythonUnitTests": {
+      "passed": 48,
+      "scope": "Existing development suite; not a survey or physical-device certification"
+    },
+    "stationScenes": {
+      "passed": 82,
+      "errors": [],
+      "directions": [
+        "forward",
+        "reverse"
+      ],
+      "softwareRenderer": "SwiftShader"
+    },
+    "trainScenes": 4,
+    "trainAnalyticPositions": 420,
+    "localPlatformClearances": 8,
+    "profileCustomStationCases": 82,
+    "unchangedStationComparisons": 111,
+    "unchangedTrackChunkComparisons": 61,
+    "solidRailLoopCases": 19,
+    "bridgeAndTunnelScenes": {
+      "forward": 16,
+      "reverse": 16
+    },
+    "visibilityAndIntegrityCases": 10,
+    "manualAutoEarlyDepartureSaveRestoreCases": 4,
+    "currentHelperSoftwareGPUStartupCases": 2,
+    "currentBoundReports": [
+      "station-rail-profile-diagnostics.json",
+      "train-scene-diagnostics.json",
+      "integrated-running-diagnostics.json",
+      "station-scene-diagnostics.json",
+      "geometry-review-reverse-diagnostics.json",
+      "local-platform-diagnostics.json",
+      "terminal-interlocking-diagnostics.json",
+      "geometry-review-diagnostics.json",
+      "integrated-game-diagnostics.json"
+    ]
+  },
+  "qualityGatesNotBypassed": true,
+  "sourceLimitations": [
+    "Per-track elevation, portal and bridge placement include estimates; rendering checks do not establish surveyed positional correctness",
+    "Section tiers100/110/120/130 implement the user-approved game policy; they are not a verified current E353 restriction sheet",
+    "Dimensions and detailed track transitions use documented estimates despite operator schematic topology review",
+    "Some actual service-specific platform assignments are unknown; unverified exit-side announcements are omitted"
+  ],
+  "unmadeNeighbourLinesExcluded": true,
+  "existingFeaturesPreserved": [
+    "source mesh detail",
+    "128 passengers per station model",
+    "bounded cache32",
+    "37 neighbouring trains in tested snapshot",
+    "resolution and render settings",
+    "user saves"
+  ],
+  "userAdministrativeClosureOfPhysicalChecks": "Kept separate from actual software-only evidence",
+  "editorPublishedCommit": "571a7f98b1f5d112916ed9de15c92ce27bcd7f47",
+  "AI": {
+    "handlerDeployed": true,
+    "deployedSourceSha256": "140101f83f40f368e5ddf54e8ba43d960769fe629b611b199bf2c6cadd801724",
+    "providerCallPerformed": false,
+    "blockers": [
+      "OPENAI_API_KEY and STUDIO_AI_MODEL are not registered in production",
+      "Legacy JWT gateway remains enabled while current signing keys use ES256; compatible gateway/auth configuration still required"
+    ]
+  },
+  "normalViewerCreationUnchangedFromPreviousProduction": true,
+  "currentHelperSha256": "2b15bc1c864fe4a14821cf4a7c00e7d8f2c64891d11451151fdb0ec3fe06f6ac",
+  "allStoredInputHashesMatch": true
+}

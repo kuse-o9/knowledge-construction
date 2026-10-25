@@ -135,7 +135,7 @@
     "games/rail-audio.js": "b1795fda595bf434036031c71bdb6f40236974c44b56c074f72c4f2b63437768",
     "games/loader.js": "ba4f738ba874a75c678d12c0b0c4d8c5f64891aad291727597fec8394e3900c3",
     "games/model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
-    "games/scene-start.js": "41ba1ed258e822f6d3736ad7600f10b6761c39700635cbfee5593484000ad7e7",
+    "games/scene-start.js": "2b15bc1c864fe4a14821cf4a7c00e7d8f2c64891d11451151fdb0ec3fe06f6ac",
     "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc"
   },
   "pass": true
