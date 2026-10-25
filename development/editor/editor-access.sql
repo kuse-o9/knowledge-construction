@@ -1,3 +1,4 @@
+-- RETIRED FEATURE: AI correction was removed at user request on2026-10-26. Historical migration only; do not reintroduce AI access UI or inference.
 begin;
 create table if not exists study_private.editor_grants(user_id uuid primary key references auth.users(id) on delete cascade,approved boolean not null default false,extra_daily integer not null default 0 check(extra_daily between 0 and 10000));
 create table if not exists study_private.editor_requests(id uuid primary key default gen_random_uuid(),user_id uuid not null references auth.users(id) on delete cascade,reason text not null check(length(reason) between 1 and 500),status text not null default 'pending' check(status in('pending','approved','rejected')),created_at timestamptz not null default now());

@@ -1,8 +1,6 @@
 {
   "checked": "2026-10-26",
   "public": true,
-  "AIHandlerImplemented": true,
-  "AIProviderConnected": false,
   "implemented": [
     "video overlay track",
     "clip opacity,position,scale,rotation",
@@ -10,21 +8,17 @@
     "SRT import/export",
     "redo",
     "duplicate",
-    "explicit consent for representative-frame AI correction",
     "rectangle crop with nonempty bounds",
     "linear start/end animation of position,scale,rotation,opacity"
   ],
-  "unitChecksPassed": 24,
+  "unitChecksPassed": 15,
   "browserChecksPassed": true,
   "remaining": [
-    "Authenticated no-provider configuration check and separately approved paid AI-provider test",
     "Resolve feature matrix remainder",
     "Azusa/Kaiji source fidelity gates and publication",
     "End-user device WebGL2 failure reproduction"
   ],
   "browserCheckCount": 13,
-  "AIHandlerDeployed": true,
-  "AIProviderBlocker": "Authenticated configuration check and separately authorized provider test remain; key validity, model account access and credit are not verified.",
   "featureMatrix": "resolve-feature-matrix.md",
   "evidence": {
     "browser": {
@@ -35,7 +29,7 @@
         "actual fade pixel",
         "duplicate undo redo",
         "SRT actual import",
-        "AI consent before frame transmission",
+        "AI correction UI and submission removed",
         "mobile layout",
         "actual overlay and subtitle WebM export",
         "full GPU error outside clipped bar, diagnosis and reopen",
@@ -73,25 +67,39 @@
         "animated project roundtrip"
       ]
     },
-    "connectionButton": {
+    "disabledEndpoint": {
       "pass": true,
-      "errors": [],
       "checks": [
-        "configured status check sends no frames or correction request",
-        "missing configuration does not claim AI availability",
-        "invalid login is clearly reported",
-        "logged-out check sends no request"
-      ]
-    }
+        {
+          "action": "status",
+          "status": 410,
+          "disabled": true,
+          "pass": true
+        },
+        {
+          "action": "correct",
+          "status": 410,
+          "disabled": true,
+          "pass": true
+        }
+      ],
+      "externalInferenceRequested": false
+    },
+    "removedFeatureChecks": [
+      "AI UI absent",
+      "manual color pixel output preserved",
+      "saved manual settings retained",
+      "retired admin route has no approval controls or AI calls"
+    ]
   },
   "inputHashes": {
-    "editor/index.html": "3830479402134fcc0f3b397b19c6d2577f4613d1578382bdb789b22e56eeb549",
-    "editor/studio.js": "f66ae38cc24c9d9775820b759127b1319446e3c106019e1f22fbffc8f8ce2a62",
+    "editor/index.html": "58a3c38287e79849c526e22c1db29a60cd1e709836cc7ea8c5f65f4174baf164",
+    "editor/studio.js": "d2e37ba536b1b2ba64f032d3c5c5e5d87a9fd521286faff705e49e8bc238f5e8",
     "editor/studio-features.js": "4e5c42e548366fa0c270bb27dcd45ee9639ec3286306bb850fba4a418dff4d35",
-    "editor/studio.css": "ddaf96bf0e40f7d1ba57c96e7846ae265929311dc9f550921619dbc67d51d05e",
+    "editor/studio.css": "15cdfebfd23a6c9dbffef7b6cfd227dc357dc6be681433b49c3125d53494b90a",
     "shared/rail-scene-start.js": "2b15bc1c864fe4a14821cf4a7c00e7d8f2c64891d11451151fdb0ec3fe06f6ac",
     "shared/rail-recovery.js": "fa8050bbf7e32dbe90dafb5715c0c03b648decfdc44ccc619d396dfaa6be6061",
-    "supabase/functions/studio-ai/index.ts": "b0c48881772adecab9147324e9f7a9bc9ea277f05de1a524ba5745071ce627e9"
+    "supabase/functions/studio-ai/index.ts": "23f6286e99f0a3bca1b50454851badbd60a98826c76bd4fe2a0664ae38702acb"
   },
   "editorPublishedBaseCommit": "e22defb415c9738954756149dec6e2789f0b4064",
   "latestAdditions": [
@@ -107,33 +115,15 @@
     "highpass100HzAttenuationDb": -11.4589866688
   },
   "GPUFailureControls": "Retry is inside modal; reopen button is outside clipping ancestors",
-  "AISecretsRegistered": true,
-  "AISelectedModel": "gpt-6-luna",
-  "AIProviderCallPerformed": false,
-  "AIHandlerUnitChecksPassed": 15,
-  "AIHandlerDeployedSourceVerified": true,
-  "AIJwtGatewayLegacyVerification": false,
-  "AIJwtGatewayUserApproval": "Explicit action-time consent on2026-10-26",
-  "AIUnauthenticatedAndInvalidBearerChecks": {
-    "pass": true,
-    "providerCalls": 0,
-    "checks": [
-      {
-        "case": "anonymous",
-        "status": 401,
-        "response": {
-          "error": "ログインしてください。"
-        },
-        "pass": true
-      },
-      {
-        "case": "invalid-bearer",
-        "status": 401,
-        "response": {
-          "error": "ログインし直してください。"
-        },
-        "pass": true
-      }
-    ]
+  "aiCorrection": {
+    "status": "removed-at-user-request",
+    "removed": "2026-10-26",
+    "providerCallsEnabled": false,
+    "endpointStatus": 410,
+    "requestBodyOrSecretsRead": false,
+    "uiAndApprovalRemoved": true,
+    "savedProjectsAndManualColorPreserved": true,
+    "previousUserReportedInference": true,
+    "historicalBillingVerified": false
   }
 }

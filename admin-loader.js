@@ -10,7 +10,7 @@ else {
    // Both markup and module come only from the authorized server response.
    root.innerHTML=data.html;
    if(data.owner){const section=document.createElement('section');section.className='card';const h=document.createElement('h2');h.textContent='メンテナンス';const link=document.createElement('a');link.className='button';link.href='admin-security.html';link.textContent='メンテナンス設定';section.append(h,link);root.prepend(section);}
-   const games=document.createElement('section');games.className='card';const heading=document.createElement('h2');heading.textContent='ゲーム';const link=document.createElement('a');link.className='button';link.href='admin-games.html';link.textContent='ゲーム';const description=document.createElement('p');description.textContent='公開・非公開、お知らせを管理します。オーナーへの申請は不要です。';games.append(heading,description,link);root.prepend(games);const ai=document.createElement('a');ai.className='button secondary';ai.href='admin-ai.html';ai.textContent='AI補正の利用承認';games.append(ai);
+   const games=document.createElement('section');games.className='card';const heading=document.createElement('h2');heading.textContent='ゲーム';const link=document.createElement('a');link.className='button';link.href='admin-games.html';link.textContent='ゲーム';const description=document.createElement('p');description.textContent='公開・非公開、お知らせを管理します。オーナーへの申請は不要です。';games.append(heading,description,link);root.prepend(games);
    const url=URL.createObjectURL(new Blob([data.script],{type:'text/javascript'}));
    try {const module=await import(url);if(ticket===generation) await module.default(root,data,message);} finally {URL.revokeObjectURL(url);}
   }
