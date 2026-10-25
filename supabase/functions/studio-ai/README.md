@@ -9,3 +9,7 @@ This performs model-guided exposure/contrast/saturation correction. It does not 
 Selected model: `gpt-6-luna`. For this short structured correction request, set reasoning effort to `none` explicitly, retain the600-token output cap and45-second timeout. Other model identifiers do not receive this model-specific parameter. Official documentation: https://developers.openai.com/api/docs/models/gpt-6-luna
 
 The authenticated `action:status` route checks only whether required configuration values are present. It returns the non-secret model name and `providerTested:false`; it never invokes OpenAI or consumes correction quota. This is not a validation of API credit, model permissions, or key validity.
+
+2026-10-26: With explicit user action-time consent, the studio-ai legacy-secret JWT gateway was switched OFF and its persisted state rechecked. Keep auth.getUser inside the function. Redeploy studio-ai with `supabase functions deploy studio-ai --no-verify-jwt` to retain this approved gateway configuration; do not apply that flag to unrelated functions. Anonymous and invalid-bearer status calls both return401 from the handler. No OpenAI inference was called.
+
+The editor has a manual configuration-check button sending only `{action:"status"}`. It neither transmits image frames nor consumes correction quota, and explicitly does not claim key validity, credit availability, or a successful AI-provider call.
