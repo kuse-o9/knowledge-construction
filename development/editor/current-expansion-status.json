@@ -1,0 +1,54 @@
+{
+  "checked": "2026-10-25",
+  "public": false,
+  "AIHandlerImplemented": true,
+  "AIProviderConnected": false,
+  "implemented": [
+    "video overlay track",
+    "clip opacity,position,scale,rotation",
+    "fade in/out",
+    "SRT import/export",
+    "redo",
+    "duplicate",
+    "explicit consent for representative-frame AI correction"
+  ],
+  "unitChecksPassed": 20,
+  "browserChecksPassed": true,
+  "remaining": [
+    "actual AI provider credentials and deployment",
+    "browser validation",
+    "Resolve feature matrix remainder",
+    "Azusa/Kaiji final validation and publication",
+    "3D startup diagnosis and full error display"
+  ],
+  "browserCheckCount": 9,
+  "AIHandlerDeployed": true,
+  "AIProviderBlocker": "Production has no custom secrets: OPENAI_API_KEY and STUDIO_AI_MODEL are absent.",
+  "featureMatrix": "resolve-feature-matrix.md",
+  "evidence": {
+    "browser": {
+      "pass": true,
+      "errors": [],
+      "checks": [
+        "overlay track and actual opacity pixel",
+        "actual fade pixel",
+        "duplicate undo redo",
+        "SRT actual import",
+        "AI consent before frame transmission",
+        "mobile layout",
+        "actual overlay and subtitle WebM export",
+        "full GPU error outside clipped bar, diagnosis and reopen",
+        "runtime context loss saves exactly once"
+      ]
+    }
+  },
+  "inputHashes": {
+    "editor/index.html": "47768588f2652023069b9ee1f57e08f98e3810e2881daa4e5ee316d830418310",
+    "editor/studio.js": "751e70a9d03573dfb78917d68c5deec947b3b3f986f7679132af59febbc19e9e",
+    "editor/studio-features.js": "cfa0b9c0b721505c0dd419238b14869910b51cddbe5a8c3ce3243b896e2836a2",
+    "editor/studio.css": "ddaf96bf0e40f7d1ba57c96e7846ae265929311dc9f550921619dbc67d51d05e",
+    "shared/rail-scene-start.js": "d6477d5e90b16bc048944c9d24e0166cdb1a4435b61124b919dc6f041919a2e9",
+    "shared/rail-recovery.js": "fa8050bbf7e32dbe90dafb5715c0c03b648decfdc44ccc619d396dfaa6be6061",
+    "supabase/functions/studio-ai/index.ts": "140101f83f40f368e5ddf54e8ba43d960769fe629b611b199bf2c6cadd801724"
+  }
+}
