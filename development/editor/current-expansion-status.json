@@ -79,7 +79,7 @@
     "editor/studio.js": "5776ab017ec1fae7b4e7c54f88a9444c7b8ab6ce7db8d6923d1bd93f114bd15a",
     "editor/studio-features.js": "4e5c42e548366fa0c270bb27dcd45ee9639ec3286306bb850fba4a418dff4d35",
     "editor/studio.css": "ddaf96bf0e40f7d1ba57c96e7846ae265929311dc9f550921619dbc67d51d05e",
-    "shared/rail-scene-start.js": "d6477d5e90b16bc048944c9d24e0166cdb1a4435b61124b919dc6f041919a2e9",
+    "shared/rail-scene-start.js": "2b15bc1c864fe4a14821cf4a7c00e7d8f2c64891d11451151fdb0ec3fe06f6ac",
     "shared/rail-recovery.js": "fa8050bbf7e32dbe90dafb5715c0c03b648decfdc44ccc619d396dfaa6be6061",
     "supabase/functions/studio-ai/index.ts": "140101f83f40f368e5ddf54e8ba43d960769fe629b611b199bf2c6cadd801724"
   },
@@ -95,5 +95,6 @@
     "mp4": "1920x1080 VP9/Opus MP4 container; no H264/AAC guarantee",
     "webm4k": "3840x2160 VP8/Opus",
     "highpass100HzAttenuationDb": -11.4589866688
-  }
+  },
+  "GPUFailureControls": "Retry is inside modal; reopen button is outside clipping ancestors"
 }

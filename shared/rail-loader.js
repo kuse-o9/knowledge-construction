@@ -7,6 +7,6 @@
  const bundle=JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());let html=bundle.html;
  const marker='<script>/* BAYLINE shared signal model',a=html.indexOf(marker);if(a<0)throw Error('共通処理の版を確認できませんでした。');const b=html.indexOf('</script>',a);html=html.slice(0,a)+'<script src="shared/rail-scene-shared.js"></script>'+html.slice(b+9);
  const last=html.lastIndexOf('<script>'),end=html.indexOf('</script>',last);if(last<0||!html.slice(last,end).includes('function modelGeometry'))throw Error('運転処理の版を確認できませんでした。');
- html=html.slice(0,last)+'<script src="shared/rail-scene-start.js?v=gpu4"></script><script src="shared/rail-mesh-cache.js"></script><script src="shared/rail-recovery.js"></script><script src="'+options.driver+'?v=gpu4"></script>'+html.slice(end+9);
+ html=html.slice(0,last)+'<script src="shared/rail-scene-start.js?v=gpu5"></script><script src="shared/rail-mesh-cache.js"></script><script src="shared/rail-recovery.js"></script><script src="'+options.driver+'?v=gpu5"></script>'+html.slice(end+9);
  document.open();document.write(html);document.close();
  }catch(error){status.textContent=(error.message||'読み込めませんでした。')+' 下のボタンから再試行できます。';retry.hidden=false;}})();
