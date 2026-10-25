@@ -17,9 +17,10 @@
   "unitChecksPassed": 24,
   "browserChecksPassed": true,
   "remaining": [
-    "AI provider credentials, model configuration and authenticated production call",
+    "Legacy JWT gateway compatibility change awaiting action-time confirmation",
+    "Authenticated no-provider configuration check and separately approved paid AI-provider test",
     "Resolve feature matrix remainder",
-    "Azusa/Kaiji final validation and publication",
+    "Azusa/Kaiji source fidelity gates and publication",
     "End-user device WebGL2 failure reproduction"
   ],
   "browserCheckCount": 9,
