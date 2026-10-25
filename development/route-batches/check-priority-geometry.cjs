@@ -1,7 +1,7 @@
 /* Actual scene regression: underground -> surface -> underground, no hidden Cesium errors. */
 'use strict';
 const fs=require('fs'),path=require('path'),crypto=require('crypto'),{chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright');
-const ROOT=path.resolve(__dirname,'../..'),DEST=path.join(__dirname,'batch-001'),BASE='https://kuse-o9.github.io/knowledge-construction/';
+const ROOT=path.resolve(__dirname,'../..'),DEST=path.resolve(__dirname,'../../rail-games/priority/batch-001'),BASE='https://kuse-o9.github.io/knowledge-construction/';
 let diagnosticPage;
 const modelsOnly=process.env.BAYLINE_MODELS_ONLY==='1';
 const stationsOnly=process.env.BAYLINE_STATIONS_ONLY==='1';
@@ -12,12 +12,13 @@ for(const f of ['games/azusa.json.gz','games/kaiji.json.gz','games/shared.js','g
  const browser=await chromium.launch({executablePath:process.env.BAYLINE_CHROMIUM,headless:true,env:{...process.env,LIBGL_ALWAYS_SOFTWARE:'true',EGL_PLATFORM:'surfaceless'},proxy:process.env.HTTPS_PROXY?{server:process.env.HTTPS_PROXY}:undefined,args:['--no-sandbox','--ignore-gpu-blocklist','--use-gl=angle','--use-angle='+(process.env.BAYLINE_ANGLE||'gl-egl'),'--enable-unsafe-swiftshader','--disable-dev-shm-usage','--disable-gpu-compositing']});
  try{
  const context=await browser.newContext({ignoreHTTPSErrors:true,viewport:{width:1280,height:850}});
+ await context.route('**/rest/v1/rpc/study_game_catalog',r=>r.fulfill({contentType:'application/json',body:JSON.stringify(['azusa','kaiji'].map(id=>({id,path:'rail-games/priority/batch-001/games/'+id+'.html',published:true,revision:1,note:''})))}));
  await context.route(BASE+'**',r=>{const rel=decodeURIComponent(new URL(r.request().url()).pathname.slice('/knowledge-construction/'.length)),file=path.resolve(ROOT,rel);if(!file.startsWith(ROOT+path.sep)||!fs.existsSync(file))return r.fulfill({status:404});return r.fulfill({contentType:{'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.json':'application/json','.png':'image/png'}[path.extname(file)]||'application/octet-stream',body:fs.readFileSync(file)});});
  for(const id of ['azusa','kaiji']){
  const page=await context.newPage();diagnosticPage=page;
  await page.addInitScript(modelsOnly=>{let starter;Object.defineProperty(window,'BaylineSceneStart',{configurable:true,get:()=>starter,set:value=>{starter=value;const original=value.create;value.create=(...args)=>{const v=original(...args);v.useDefaultRenderLoop=false;Object.defineProperty(v,"useDefaultRenderLoop",{get:()=>false,set:()=>{}});return v;};}});window.__qaRenderEnabled=!modelsOnly;setInterval(()=>{const v=window.BaylineGame?.viewer;if(v&&window.__qaRenderEnabled&&!v.isDestroyed()){v.resize();v.render();}},1000);},modelsOnly);
  page.on('pageerror',e=>report.errors.push(e.stack));page.on('dialog',d=>d.accept());
- await page.goto(BASE+'development/route-batches/batch-001/games/'+id+'.html',{waitUntil:'domcontentloaded'});
+ await page.goto(BASE+'rail-games/priority/batch-001/games/'+id+'.html',{waitUntil:'domcontentloaded'});
  await page.waitForFunction(()=>window.BaylineGame?.sceneReady||window.BaylineGame?.sceneFailure,null,{timeout:120000});
  await page.evaluate(()=>{if(!BaylineGame.sceneReady)throw Error(BaylineGame.sceneFailure);window.__qaRenderEnabled=false;window.__renderErrors=[];BaylineGame.viewer.scene.renderError.addEventListener((s,e)=>__renderErrors.push(e.stack||String(e)));});
  const models=await page.evaluate(()=>{
@@ -32,7 +33,7 @@ for(const f of ['games/azusa.json.gz','games/kaiji.json.gz','games/shared.js','g
  if(BaylineBatchModels.cacheSize>32||maxGrade>.035)throw Error('Station cache or grade regression');return {stations,vertices,maxGradePerMille:maxGrade*1000,cacheSize:BaylineBatchModels.cacheSize,platformEdgeOffset:1.58,platformGeometryVerified:false};
  });report.runs.push({id,kind:'station-models',...models,pass:true});
  if(modelsOnly){await page.close();continue;}
- for(const travel of stationsOnly?['forward','reverse']:['forward']){
+ for(const travel of stationsOnly?['forward','reverse']:[process.env.BAYLINE_GEOMETRY_DIRECTION||'forward']){
  await page.locator('#view-map').click();await page.locator('#settings-button').click();await page.locator('#direction').selectOption(travel);await page.locator('#settings-close').click();
  if(await page.evaluate(()=>document.querySelector('#direction').value)!==travel)throw Error('Diagnostic direction did not change');
  const targets=await page.evaluate(({stationsOnly,focus})=>{
@@ -54,5 +55,5 @@ for(const f of ['games/azusa.json.gz','games/kaiji.json.gz','games/shared.js','g
  await page.close();
  }
  if(report.errors.length)throw Error(report.errors.join('\n'));report.pass=true;
- }catch(e){report.pass=false;report.fatal=e.stack;try{report.debug=await diagnosticPage?.evaluate(()=>{const v=window.BaylineGame?.viewer,cp=v?.scene.globe.clippingPolygons;return {renderErrors:window.__renderErrors,webgl2:v?.scene.context.webgl2,polygons:cp?.length,enabled:cp?.enabled,texture:!!cp?.clippingTexture,canvas:[v?.canvas.width,v?.canvas.height],status:document.getElementById('scene-status')?.textContent};});console.log('FAILURE_STATE',report.debug);}catch{}throw e;}finally{fs.writeFileSync(path.join(DEST,modelsOnly?'station-model-diagnostics.json':stationsOnly?'station-scene-diagnostics.json':'geometry-review-diagnostics.json'),JSON.stringify(report,null,2)+'\n');await browser.close();}
+ }catch(e){report.pass=false;report.fatal=e.stack;try{report.debug=await diagnosticPage?.evaluate(()=>{const v=window.BaylineGame?.viewer,cp=v?.scene.globe.clippingPolygons;return {renderErrors:window.__renderErrors,webgl2:v?.scene.context.webgl2,polygons:cp?.length,enabled:cp?.enabled,texture:!!cp?.clippingTexture,canvas:[v?.canvas.width,v?.canvas.height],status:document.getElementById('scene-status')?.textContent};});console.log('FAILURE_STATE',report.debug);}catch{}throw e;}finally{fs.writeFileSync(path.join(DEST,modelsOnly?'station-model-diagnostics.json':stationsOnly?'station-scene-diagnostics.json':process.env.BAYLINE_GEOMETRY_DIRECTION==='reverse'?'geometry-review-reverse-diagnostics.json':'geometry-review-diagnostics.json'),JSON.stringify(report,null,2)+'\n');await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('fs'),path=require('path'),vm=require('vm'),z=require('zlib'),assert=require('assert/strict'),crypto=require('crypto');
-const base=path.join(__dirname,'batch-001'),read=f=>fs.readFileSync(path.join(base,f)),ctx=vm.createContext({});
+const base=path.resolve(__dirname,'../../rail-games/priority/batch-001'),read=f=>fs.readFileSync(path.join(base,f)),ctx=vm.createContext({});
 ctx.window=ctx;for(const file of['engine/rail-core.js','games/shared.js'])vm.runInContext(read(file).toString(),ctx);
 const data=JSON.parse(z.gunzipSync(read('games/kaiji.json.gz'))).data,geos=Object.fromEntries(Object.entries(data.routes).map(([k,r])=>[k,ctx.RailCore.geometry(r)]));ctx.BaylineSignalRuntime.bind(geos);
 const zone=d=>geos[d].route.sharedTerminals[0],inside=(t)=>{const z=zone(t.direction);return t.distance>=z.entry&&t.distance-(t.length||220)<=z.exit;};

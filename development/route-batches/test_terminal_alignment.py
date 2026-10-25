@@ -3,7 +3,7 @@ import gzip, importlib.util, json, math, unittest
 HERE=Path(__file__).parent
 spec=importlib.util.spec_from_file_location('terminal_alignment',HERE/'terminal-alignment.py')
 terminal=importlib.util.module_from_spec(spec);spec.loader.exec_module(terminal)
-def packet(key):return json.loads(gzip.decompress((HERE/f'batch-001/games/{key}.json.gz').read_bytes()))['data']
+def packet(key):return json.loads(gzip.decompress((HERE/f'../../rail-games/priority/batch-001/games/{key}.json.gz').read_bytes()))['data']
 class TerminalAlignment(unittest.TestCase):
  def test_platform_side_and_train_clearance_at_all_four_layouts(self):
   cases=0
@@ -17,7 +17,7 @@ class TerminalAlignment(unittest.TestCase):
      self.assertEqual(math.copysign(1,delta),s['side']*l['nativeDirection'],(key,s['name'],l['platform']))
      self.assertGreaterEqual(abs(delta)-platform['width']/2,data['train']['width']/2+.10)
      cases+=1
-  self.assertEqual(cases,16)
+  self.assertEqual(cases,82)
  def test_shared_middle_track_and_separate_through_lines(self):
   kaiji=packet('kaiji');azusa=packet('azusa');centres=[]
   for direction,route in kaiji['routes'].items():

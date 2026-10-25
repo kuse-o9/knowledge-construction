@@ -1,7 +1,7 @@
 /* Geometry inspection using the same Cesium math and actual station meshes. No physical GPU claim. */
 'use strict';
 const fs=require('fs'),path=require('path'),z=require('zlib'),crypto=require('crypto'),{chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright');
-const base=path.join(__dirname,'batch-001'),read=f=>fs.readFileSync(path.join(base,f)),unpack=f=>JSON.parse(z.gunzipSync(read(f)));
+const base=path.resolve(__dirname,'../../rail-games/priority/batch-001'),read=f=>fs.readFileSync(path.join(base,f)),unpack=f=>JSON.parse(z.gunzipSync(read(f)));
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.BAYLINE_CHROMIUM,headless:true,proxy:process.env.HTTPS_PROXY?{server:process.env.HTTPS_PROXY}:undefined,args:['--no-sandbox']});
  const report={pass:false,physicalGPU:false,method:'Actual station mesh and passenger clearance, Cesium Cartesian math; no surveyed placement claim.',inputHashes:Object.fromEntries(['games/model-builder.js','games/azusa.json.gz','games/kaiji.json.gz','engine/rail-core.js'].map(f=>[f,crypto.createHash('sha256').update(read(f)).digest('hex')])),runs:[]};

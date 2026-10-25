@@ -1,7 +1,7 @@
 'use strict';
 /* The actual generated game packets, rather than a separate diagnostic route. */
 const fs=require('fs'),path=require('path'),zlib=require('zlib'),vm=require('vm'),assert=require('assert/strict'),crypto=require('crypto');
-const DEST=path.join(__dirname,'batch-001'),report={method:'Accelerated CPU tests of the integrated development packets; published-maximum game cap (not actual section restrictions), not real-time or physical-device testing.',releaseReady:false,runs:[],inputHashes:{}};
+const DEST=path.resolve(__dirname,'../../rail-games/priority/batch-001'),report={method:'Accelerated CPU tests of the integrated development packets; published-maximum game cap (not actual section restrictions), not real-time or physical-device testing.',releaseReady:false,runs:[],inputHashes:{}};
 const core=fs.readFileSync(path.join(DEST,'engine/rail-core.js'),'utf8');report.inputHashes['engine/rail-core.js']=crypto.createHash('sha256').update(core).digest('hex');
 for(const id of ['azusa','kaiji']){
  const file='games/'+id+'.json.gz',bytes=fs.readFileSync(path.join(DEST,file)),packet=JSON.parse(zlib.gunzipSync(bytes));report.inputHashes[file]=crypto.createHash('sha256').update(bytes).digest('hex');
