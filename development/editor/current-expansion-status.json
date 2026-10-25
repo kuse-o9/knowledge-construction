@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-25",
+  "checked": "2026-10-26",
   "public": true,
   "AIHandlerImplemented": true,
   "AIProviderConnected": false,
@@ -14,7 +14,7 @@
     "rectangle crop with nonempty bounds",
     "linear start/end animation of position,scale,rotation,opacity"
   ],
-  "unitChecksPassed": 20,
+  "unitChecksPassed": 24,
   "browserChecksPassed": true,
   "remaining": [
     "AI provider credentials, model configuration and authenticated production call",
@@ -24,7 +24,7 @@
   ],
   "browserCheckCount": 9,
   "AIHandlerDeployed": true,
-  "AIProviderBlocker": "Production has no custom secrets: OPENAI_API_KEY and STUDIO_AI_MODEL are absent.",
+  "AIProviderBlocker": "Legacy JWT gateway remains ON and is incompatible with current ES256 user tokens. Gateway migration requires action-time browser confirmation; actual paid provider test remains unapproved.",
   "featureMatrix": "resolve-feature-matrix.md",
   "evidence": {
     "browser": {
@@ -81,7 +81,7 @@
     "editor/studio.css": "ddaf96bf0e40f7d1ba57c96e7846ae265929311dc9f550921619dbc67d51d05e",
     "shared/rail-scene-start.js": "2b15bc1c864fe4a14821cf4a7c00e7d8f2c64891d11451151fdb0ec3fe06f6ac",
     "shared/rail-recovery.js": "fa8050bbf7e32dbe90dafb5715c0c03b648decfdc44ccc619d396dfaa6be6061",
-    "supabase/functions/studio-ai/index.ts": "140101f83f40f368e5ddf54e8ba43d960769fe629b611b199bf2c6cadd801724"
+    "supabase/functions/studio-ai/index.ts": "b0c48881772adecab9147324e9f7a9bc9ea277f05de1a524ba5745071ce627e9"
   },
   "editorPublishedBaseCommit": "e22defb415c9738954756149dec6e2789f0b4064",
   "latestAdditions": [
@@ -96,5 +96,10 @@
     "webm4k": "3840x2160 VP8/Opus",
     "highpass100HzAttenuationDb": -11.4589866688
   },
-  "GPUFailureControls": "Retry is inside modal; reopen button is outside clipping ancestors"
+  "GPUFailureControls": "Retry is inside modal; reopen button is outside clipping ancestors",
+  "AISecretsRegistered": true,
+  "AISelectedModel": "gpt-6-luna",
+  "AIProviderCallPerformed": false,
+  "AIHandlerUnitChecksPassed": 15,
+  "AIHandlerDeployedSourceVerified": true
 }
