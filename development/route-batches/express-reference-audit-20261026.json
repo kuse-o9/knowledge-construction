@@ -1,0 +1,441 @@
+{
+  "checked": "2026-10-26",
+  "fullCompletion": false,
+  "sourceChecks": [
+    {
+      "url": "https://www.jreast.co.jp/train/express/azusa_kaiji.html",
+      "verifiedFact": "E353 maximum130km/h; not a station-to-station restriction sheet"
+    },
+    {
+      "url": "https://www.jreast.co.jp/estation/stations/img/floormap/1689_1f-2f.png",
+      "verifiedFact": "Ryuo passenger platforms: side1 and island2/3. Geometric dimensions and service-specific track assignment are outside this schematic verification."
+    },
+    {
+      "url": "https://www.jreast.co.jp/nagano/pdf/171026.pdf",
+      "verifiedFact": "2017 production notice: active damping on all cars; inter-car damper absent. Current builder already specifies production all-car damping."
+    }
+  ],
+  "runtimeChecks": [
+    {
+      "id": "azusa",
+      "direction": "forward",
+      "physicalStations": 64,
+      "stationSpecificLayouts": 22,
+      "structureIntervals": 187,
+      "bridgeIntervals": 145,
+      "tunnelIntervals": 37,
+      "softwareConsistencyPassed": true,
+      "surveyedGeometryVerified": false,
+      "operatingSectionSpeedsVerified": false
+    },
+    {
+      "id": "azusa",
+      "direction": "reverse",
+      "physicalStations": 64,
+      "stationSpecificLayouts": 22,
+      "structureIntervals": 187,
+      "bridgeIntervals": 145,
+      "tunnelIntervals": 37,
+      "softwareConsistencyPassed": true,
+      "surveyedGeometryVerified": false,
+      "operatingSectionSpeedsVerified": false
+    },
+    {
+      "id": "kaiji",
+      "direction": "forward",
+      "physicalStations": 42,
+      "stationSpecificLayouts": 19,
+      "structureIntervals": 111,
+      "bridgeIntervals": 76,
+      "tunnelIntervals": 30,
+      "softwareConsistencyPassed": true,
+      "surveyedGeometryVerified": false,
+      "operatingSectionSpeedsVerified": false
+    },
+    {
+      "id": "kaiji",
+      "direction": "reverse",
+      "physicalStations": 42,
+      "stationSpecificLayouts": 19,
+      "structureIntervals": 111,
+      "bridgeIntervals": 76,
+      "tunnelIntervals": 30,
+      "softwareConsistencyPassed": true,
+      "surveyedGeometryVerified": false,
+      "operatingSectionSpeedsVerified": false
+    }
+  ],
+  "stationSpecificLayouts": {
+    "新宿": {
+      "source": "https://www.jreast.co.jp/estation/stations/866.html",
+      "platformGroups": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4"
+        ],
+        [
+          "5",
+          "6"
+        ],
+        [
+          "7",
+          "8"
+        ],
+        [
+          "9",
+          "10"
+        ],
+        [
+          "11",
+          "12"
+        ],
+        [
+          "13",
+          "14"
+        ],
+        [
+          "15",
+          "16"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "中野": {
+      "source": "https://www.jreast.co.jp/estation/stations/1104.html",
+      "platformGroups": [
+        [
+          "8",
+          "7"
+        ],
+        [
+          "6",
+          "5"
+        ],
+        [
+          "tozai-unlabelled",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "高円寺": {
+      "source": "https://www.jreast.co.jp/estation/stations/663.html",
+      "platformGroups": [
+        [
+          "4",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "阿佐ヶ谷": {
+      "source": "https://www.jreast.co.jp/estation/stations/45.html",
+      "platformGroups": [
+        [
+          "4",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "荻窪": {
+      "source": "https://www.jreast.co.jp/estation/stations/362.html",
+      "platformGroups": [
+        [
+          "4",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "西荻窪": {
+      "source": "https://www.jreast.co.jp/estation/stations/1152.html",
+      "platformGroups": [
+        [
+          "4",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "吉祥寺": {
+      "source": "https://www.jreast.co.jp/estation/stations/596.html",
+      "platformGroups": [
+        [
+          "4",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "三鷹": {
+      "source": "https://www.jreast.co.jp/estation/stations/1463.html",
+      "platformGroups": [
+        [
+          "6",
+          "5"
+        ],
+        [
+          "4",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "武蔵小金井": {
+      "source": "https://www.jreast.co.jp/estation/stations/1526.html",
+      "platformGroups": [
+        [
+          "4",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "国分寺": {
+      "source": "https://www.jreast.co.jp/estation/stations/682.html",
+      "platformGroups": [
+        [
+          "4",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "立川": {
+      "source": "https://www.jreast.co.jp/estation/stations/958.html",
+      "platformGroups": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4"
+        ],
+        [
+          "5",
+          "6"
+        ],
+        [
+          "7",
+          "8"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "豊田": {
+      "source": "https://www.jreast.co.jp/estation/stations/1069.html",
+      "platformGroups": [
+        [
+          "4",
+          "3"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "八王子": {
+      "source": "https://www.jreast.co.jp/estation/stations/1227.html",
+      "platformGroups": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4"
+        ],
+        [
+          "5",
+          "6"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "高尾": {
+      "source": "https://www.jreast.co.jp/estation/stations/931.html",
+      "platformGroups": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "大月": {
+      "source": "https://www.jreast.co.jp/estation/stations/331.html",
+      "platformGroups": [
+        [
+          "5",
+          "4"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "塩山": {
+      "source": "https://www.jreast.co.jp/estation/stations/293.html",
+      "platformGroups": [
+        [
+          "1"
+        ],
+        [
+          "2",
+          "3"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "山梨市": {
+      "source": "https://www.jreast.co.jp/estation/stations/1609.html",
+      "platformGroups": [
+        [
+          "1"
+        ],
+        [
+          "2",
+          "3"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "甲府": {
+      "source": "https://www.jreast.co.jp/estation/stations/671.html",
+      "platformGroups": [
+        [
+          "1"
+        ],
+        [
+          "2",
+          "3"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "竜王": {
+      "source": "https://www.jreast.co.jp/estation/stations/1689.html",
+      "platformGroups": [
+        [
+          "1"
+        ],
+        [
+          "2",
+          "3"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "小淵沢": {
+      "source": "https://www.jreast.co.jp/estation/stations/707.html",
+      "platformGroups": [
+        [
+          "5",
+          "4"
+        ],
+        [
+          "2",
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "塩尻": {
+      "source": "https://www.jreast.co.jp/estation/stations/774.html",
+      "platformGroups": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "3",
+          "4"
+        ],
+        [
+          "5",
+          "6"
+        ]
+      ],
+      "dimensionsEstimated": true
+    },
+    "松本": {
+      "source": "https://www.jreast.co.jp/estation/stations/1444.html",
+      "platformGroups": [
+        [
+          "2",
+          "3"
+        ],
+        [
+          "4",
+          "5"
+        ],
+        [
+          "6",
+          "alpico-unlabelled"
+        ],
+        [
+          "1"
+        ]
+      ],
+      "dimensionsEstimated": true
+    }
+  },
+  "staleBacklogCorrection": "Historical statement that18complex station models remain unmade is not current:22distinct stations now have terminalLayout models. This does not certify measured dimensions, siding geometry or train-specific platform assignment.",
+  "remaining": [
+    "Full real-world bridge/portal positions and rail heights require stronger evidence than estimated route/terrain fit.",
+    "Exact turnout/siding geometry, measured station dimensions and unverified service-platform assignments.",
+    "Current E353 operating-section restriction sheet; station speed tiers remain game settings.",
+    "Production vehicle small-detail dimensions and cab fidelity.",
+    "Actual GPU rendering and listening remain unverified; internal Chrome settings access blocked in this cloud browser."
+  ],
+  "currentPublishedRuntimeUnchanged": true
+}

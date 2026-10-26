@@ -81,6 +81,9 @@
       "GPU rendering and actual listening not certified"
     ],
     "publicationSettingChanged": false,
-    "note": "Current-version software checks pass. This is not completion of pending research or physical-device validation."
-  }
+    "note": "Current-version software checks pass. This is not completion of pending research or physical-device validation.",
+    "stationLayoutModelsPresent": 22,
+    "referenceRecheckCompleted": true
+  },
+  "referenceAudit": "express-reference-audit-20261026.json"
 }
