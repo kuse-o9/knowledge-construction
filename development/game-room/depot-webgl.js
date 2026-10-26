@@ -361,7 +361,7 @@
     const reason=String(error?.message||error||contextFailure);
     const disabled=/GL_(?:VENDOR|RENDERER)\s*=\s*Disabled/i.test(reason);
     $('depot-error-detail').textContent=reason;
-    $('depot-error-guide').textContent=disabled?'ブラウザーがGPUを無効と報告しています。サイトの再読み込みでは有効にできません。Chromeは chrome://settings/system、Edgeは edge://settings/system でグラフィック アクセラレーションを確認し、ブラウザーを再起動してください。すでにオンなら chrome://gpu または edge://gpu の WebGL2 と Problems Detected を確認してください。組織の制限がある場合は管理者に確認してください。':'GPU接続が一時的に失われた可能性があります。「3Dを再読み込み」で再接続できます。ほかの3Dタブを閉じると改善する場合があります。';
+    $('depot-error-guide').textContent=disabled?'ブラウザーがGPUを無効と報告しています。サイトの再読み込みでは有効にできません。Chromeは chrome://settings/system、Edgeは edge://settings/system でグラフィック アクセラレーションを確認し、設定画面に「再起動」が表示されたら押してください。表示がない場合もブラウザーを終了して起動し直してください。すでにオンでも改善しない場合は chrome://gpu または edge://gpu の WebGL2 と Problems Detected を確認してください。組織の制限がある場合は管理者に確認してください。':'GPU接続が一時的に失われた可能性があります。「3Dを再読み込み」で再接続できます。改善しない場合は Chromeの chrome://settings/system（Edgeは edge://settings/system）でグラフィック アクセラレーションを確認し、ブラウザーを再起動してください。ほかの3Dタブを閉じると改善する場合もあります。';
     $('loading').hidden=true;$('depot-retry3d').hidden=false;
     for(const id of ['walk-up','walk-down','walk-left','walk-right','board'])$(id).disabled=true;
     if(current)display(current);

@@ -44,10 +44,10 @@
   }
   throw Object.assign(new Error('3D描画用のGPU接続を開始できませんでした。保存した運転は残っています。'),{code:'WEBGL_START',cause});
  }
- function diagnosticGuide(reason){return /GL_(?:VENDOR|RENDERER)\s*=\s*Disabled/i.test(String(reason))?'\nこの接続はブラウザーから無効と報告されています。サイトの再読み込みでは有効にできません。\nChrome: chrome://settings/system ／ Edge: edge://settings/system\n「グラフィック アクセラレーションが使用可能な場合は使用する」をオンにして、ブラウザーを再起動してください。\nすでにオンなら、Chromeは chrome://gpu、Edgeは edge://gpu の WebGL2 と Problems Detected を確認してください。学校や組織の制限が表示される場合は、管理者に確認してください。設定を変えられない場合も、保存した運転は地図モードで続けられます。':'';}
+ function diagnosticGuide(reason){return /GL_(?:VENDOR|RENDERER)\s*=\s*Disabled/i.test(String(reason))?'\nこの接続はブラウザーから無効と報告されています。サイトの再読み込みでは有効にできません。\nChrome: chrome://settings/system ／ Edge: edge://settings/system\nグラフィック アクセラレーションをオンにし、設定画面の「再起動」が表示されたら押してください。表示がない場合もブラウザーを一度終了して起動し直し、このゲームを再度開いてください。\nすでにオンなら、Chromeは chrome://gpu、Edgeは edge://gpu の WebGL2 と Problems Detected を確認してください。学校や組織の制限が表示される場合は、管理者に確認してください。設定を変えられない場合も、保存した運転は地図モードで続けられます。':'';}
  function failure(error,pauseAndSave,retry){
   pauseAndSave(false);const status=document.getElementById('scene-status');let message;
-  if(error?.code==='WEBGL_START'||/webgl|context|gpu/i.test(String(error?.message||error)))message='3D用のGPU接続（WebGL2）に失敗しました。運転を保存しました。「3Dを再読み込み」で接続し直せます。繰り返す場合は、ほかの3Dタブを閉じ、ブラウザーのグラフィックアクセラレーションを確認してください。';
+  if(error?.code==='WEBGL_START'||/webgl|context|gpu/i.test(String(error?.message||error)))message='3D用のGPU接続（WebGL2）に失敗しました。運転を保存しました。「3Dを再読み込み」で接続し直せます。読み込めない場合は、Chromeで chrome://settings/system（Edgeは edge://settings/system）を開き、グラフィック アクセラレーションを確認してブラウザーを再起動してください。ほかの3Dタブを閉じると改善する場合もあります。';
   else if(/地形|terrain|fetch|network|timeout/i.test(String(error?.message||error)))message='地形データの取得に失敗しました。通信を確認して再試行してください。';
   else message='3Dの準備を完了できませんでした：'+String(error?.message||'不明なエラー').slice(0,160);
   if(status){status.textContent=message;status.setAttribute('role','alert');Object.assign(status.style,{whiteSpace:'normal',overflow:'visible',textOverflow:'clip',overflowWrap:'anywhere',height:'auto',maxHeight:'none',webkitLineClamp:'unset'});}
