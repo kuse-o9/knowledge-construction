@@ -2,11 +2,12 @@
 (function(g){'use strict';
  const live=new Map();
  function release(target){
-  const previous=live.get(target),canvases=Array.from(target?.querySelectorAll('canvas')||[]);live.delete(target);
+  const previous=live.get(target);live.delete(target);
+  // Only a successfully created viewer owns a context. Probing every leftover
+  // canvas here can allocate new contexts during an already failing startup.
+  let gl;try{gl=previous?.scene?.canvas?.getContext('webgl2')||previous?.scene?.canvas?.getContext('webgl');}catch{}
   try{if(previous&&!previous.isDestroyed())previous.destroy();}catch{}
-  for(const canvas of canvases){
-   try{const gl=canvas.getContext('webgl2')||canvas.getContext('webgl');gl?.getExtension('WEBGL_lose_context')?.loseContext();}catch{}
-  }
+  try{gl?.getExtension('WEBGL_lose_context')?.loseContext();}catch{}
   target?.replaceChildren();
  }
  function create(Ces,container,options={}){
@@ -27,7 +28,7 @@
   throw Object.assign(new Error('3D描画用のGPU接続を開始できませんでした。保存した運転は残っています。'),{code:'WEBGL_START',cause});
  }
  function diagnosticGuide(reason){return /GL_(?:VENDOR|RENDERER)\s*=\s*Disabled/i.test(String(reason))?'\nこの接続はブラウザーから無効と報告されています。サイトの再読み込みでは有効にできません。\nChrome: chrome://settings/system ／ Edge: edge://settings/system\n「グラフィック アクセラレーションが使用可能な場合は使用する」をオンにして、ブラウザーを再起動してください。\nすでにオンなら、Chromeは chrome://gpu、Edgeは edge://gpu の WebGL2 と Problems Detected を確認してください。学校や組織の制限が表示される場合は、管理者に確認してください。設定を変えられない場合も、保存した運転は地図モードで続けられます。':'';}
- function failure(error,pauseAndSave){
+ function failure(error,pauseAndSave,retry){
   pauseAndSave(false);const status=document.getElementById('scene-status');let message;
   if(error?.code==='WEBGL_START'||/webgl|context|gpu/i.test(String(error?.message||error)))message='3D用のGPU接続（WebGL2）に失敗しました。運転を保存しました。「3Dを再読み込み」で接続し直せます。繰り返す場合は、ほかの3Dタブを閉じ、ブラウザーのグラフィックアクセラレーションを確認してください。';
   else if(/地形|terrain|fetch|network|timeout/i.test(String(error?.message||error)))message='地形データの取得に失敗しました。通信を確認して再試行してください。';
@@ -38,7 +39,7 @@
   document.getElementById('rail-gpu-error-text').textContent=message;document.getElementById('rail-gpu-error-detail').textContent=String(error?.cause?.message||error?.message||'').slice(0,1600)+diagnosticGuide(error?.cause?.message||error?.message);
   if(!dialog.open&&typeof dialog.showModal==='function')dialog.showModal();
   let full=document.getElementById('rail-gpu-full-message');if(!full){full=document.createElement('button');full.id='rail-gpu-full-message';full.type='button';full.textContent='エラー全文・接続の確認';full.onclick=()=>{if(!dialog.open)dialog.showModal();};Object.assign(full.style,{position:'fixed',top:'48px',right:'16px',zIndex:'2147483000',maxWidth:'calc(100vw - 32px)',whiteSpace:'normal'});document.body.append(full);}
-  let button=document.getElementById('rail-retry3d');if(!button){button=document.createElement('button');button.id='rail-retry3d';button.type='button';button.className='secondary';button.textContent='3Dを再読み込み';dialog.append(button);}button.onclick=()=>{pauseAndSave(true);for(const target of [...live.keys()])release(target);location.reload();};
+  let button=document.getElementById('rail-retry3d');if(!button){button=document.createElement('button');button.id='rail-retry3d';button.type='button';button.className='secondary';button.textContent='3Dを再読み込み';dialog.append(button);}button.onclick=()=>{pauseAndSave(true);for(const target of [...live.keys()])release(target);if(typeof retry==='function'){dialog.close();full.hidden=true;button.disabled=true;Promise.resolve().then(retry).catch(next=>failure(next,pauseAndSave,retry)).finally(()=>{button.disabled=false;});}else location.reload();};full.hidden=false;
   console.error('BAYLINE 3D initialization:',error?.code||'SCENE_START',String(error?.message||error));
  }
  addEventListener('pagehide',()=>{for(const target of [...live.keys()])release(target);});

@@ -1,0 +1,24 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),path=require('path');
+const root=path.resolve(__dirname,'../..');
+(async()=>{
+ const helper=fs.readFileSync(root+'/shared/rail-scene-start.js','utf8');
+ assert.equal(helper,fs.readFileSync(root+'/rail-games/priority/batch-001/games/scene-start.js','utf8'));
+ let accidental=0,destroyed=0,replaced=0,attempts=0;const target={dataset:{},querySelectorAll(){return [{getContext(){accidental++;}}];},replaceChildren(){replaced++;}};
+ const ctx={document:{getElementById(){return target;}},addEventListener(){}};ctx.window=ctx;vm.runInNewContext(helper,ctx);
+ const api=ctx.BaylineSceneStart;
+ assert.throws(()=>api.create({Viewer:function(){attempts++;throw Error('WebGL context unavailable');}},target),/GPU/);
+ assert.equal(attempts,3);assert.equal(accidental,0);assert.equal(replaced,3);
+ let lost=0;const viewer={scene:{canvas:{getContext(){return {getExtension(){return {loseContext(){lost++;}};}};}}},isDestroyed(){return false;},destroy(){destroyed++;}};
+ api.create({Viewer:function(){return viewer;}},target);api.release(target);api.release(target);assert.equal(destroyed,1);assert.equal(lost,1);
+ const source=fs.readFileSync(root+'/rail-games/priority/batch-001/games/rail.js','utf8');
+ const terrain=source.slice(source.indexOf('async function loadTerrain()'),source.indexOf('function sceneFailed('));
+ let calls=0,waits=[];const terrainCtx={Ces:{CesiumTerrainProvider:{async fromUrl(){calls++;if(calls<3)throw Error('temporary');return 'full-detail-terrain';}},Credit:function(){}},D:{terrain:{url:'terrain',credit:'credit'}},networkDeadline:p=>p,$:()=>({}),setTimeout(fn,ms){waits.push(ms);fn();}};
+ vm.runInNewContext(terrain,terrainCtx);assert.equal(await terrainCtx.loadTerrain(),'full-detail-terrain');assert.equal(calls,3);assert.deepEqual(waits,[750,1500]);
+ calls=0;terrainCtx.Ces.CesiumTerrainProvider.fromUrl=async()=>{calls++;throw Error('offline');};await assert.rejects(terrainCtx.loadTerrain(),/offline/);assert.equal(calls,3);
+ const failure=source.slice(source.indexOf('function sceneFailed('),source.indexOf('function discardScene()'));
+ const events=[];const state={running:true,distance:12345};let retry;
+ const f={sceneFailure:'',sceneReady:true,state,audioController:{cancel(){events.push('audio');}},save(){events.push('save');},viewer:{useDefaultRenderLoop:true},discardScene(){events.push('discard');},window:{BaylineSceneStart:{release(){events.push('release');},failure(e,p,r){events.push('dialog');retry=r;}}},$:()=>({}),setView(v){assert.equal(f.viewer,null);events.push(v);},initialize3D:async()=>{events.push('retry');}};
+ vm.runInNewContext(failure,f);f.sceneFailed(Error('render failed'));assert.equal(state.running,false);assert.equal(state.distance,12345);assert(events.indexOf('save')<events.indexOf('release'));assert(events.indexOf('release')<events.indexOf('map'));await retry();assert(events.includes('retry'));
+ console.log(JSON.stringify({pass:true,failedCanvasDoesNotAllocateContexts:true,ownedViewerReleasedOnce:true,terrainRecoversOnThirdAttempt:true,offlineRetriesBounded:true,saveBeforeCleanup:true,inPageRetry:true,noPhysicalGpuClaim:true}));
+})().catch(e=>{console.error(e);process.exitCode=1;});
