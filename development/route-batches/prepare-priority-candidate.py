@@ -6,12 +6,13 @@ code. Production authority comes from the existing server publication catalogue.
 """
 from pathlib import Path
 from html.parser import HTMLParser
-import argparse, hashlib, importlib.util, json, shutil
+import argparse, gzip, hashlib, importlib.util, json, re, shutil
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 DEST = HERE / 'batch-001'
 PUBLIC = 'rail-games/priority/batch-001'
+CURRENT = ROOT / PUBLIC
 FILES = ['common.json.gz', 'e353.json.gz', 'rail.js', 'shared.js',
          'rail-audio.js', 'loader.js', 'model-builder.js',
          'scene-start.js', 'announcements-reviewed.js']
@@ -30,8 +31,8 @@ class Links(HTMLParser):
         if tag == 'link' and attrs.get('href'):
             self.links.append(attrs['href'])
 
-def stage(output, production):
-    output, production = Path(output).resolve(), Path(production).resolve()
+def stage(output, production, source=CURRENT):
+    output, production, source = Path(output).resolve(), Path(production).resolve(), Path(source).resolve()
     # Candidate output must not overwrite a checkout or production's files.
     if output == ROOT or output.is_relative_to(ROOT) or output == production or output.is_relative_to(production):
         raise ValueError('Use a separate scratch directory for release candidates')
@@ -42,26 +43,28 @@ def stage(output, production):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
         assets.append({'path': relative, 'sha256': sha(path), 'bytes': len(data)})
-    for filename in FILES:
-        data = ((HERE / 'priority-packet-loader.js') if filename == 'loader.js' else (DEST / 'games' / filename)).read_bytes()
-        if filename == 'loader.js':
-            marker = "if(!['azusa','kaiji'].includes(id))throw Error('Unknown route');"
-            text = data.decode()
-            if text.count(marker) != 1:
-                raise ValueError('Review loader before adding production guard')
-            text = text.replace(marker, marker + "\n if(!window.GamePublication||!(await GamePublication.guard(id)))return;\n GamePublication.registerPause(()=>window.dispatchEvent(new Event('pagehide')));")
-            data = text.encode()
-        write(PUBLIC + '/games/' + filename, data)
-    for filename in ['rail-core.js', 'train-scene.js']:
-        write(PUBLIC + '/engine/' + filename, (DEST / 'engine' / filename).read_bytes())
+    # Use the current tested candidate, never older development snapshots.
     for key in ['azusa', 'kaiji']:
-        write(PUBLIC + '/games/' + key + '.json.gz', (DEST / 'games' / (key + '.json.gz')).read_bytes())
-        text = (DEST / 'games' / (key + '.html')).read_text()
-        marker = '<script src="loader.js"></script>'
-        if text.count(marker) != 1:
-            raise ValueError('Review entry scripts before staging')
-        text = text.replace(marker, '<script src="../../../../config.js"></script><script src="../../../../game-publication.js"></script>' + marker)
-        write(PUBLIC + '/games/' + key + '.html', text.encode())
+        entry = (source/'games'/(key+'.html')).read_text()
+        match = re.search(r'data-packet-sha="([a-f0-9]{64})"', entry)
+        packet_path = source/'games'/(key+'.json.gz')
+        if not match or sha(packet_path) != match[1]:
+            raise ValueError('Candidate entry/packet mismatch: '+key)
+        packet = json.loads(gzip.decompress(packet_path.read_bytes()))
+        for filename, field in [('common.json.gz','commonSha256'),('e353.json.gz','stockSha256')]:
+            if sha(source/'games'/filename) != packet[field]:
+                raise ValueError('Candidate shared packet mismatch: '+filename)
+    loader = (source/'games/loader.js').read_text()
+    if loader.count('await GamePublication.guard(id)') != 1:
+        raise ValueError('Candidate must contain exactly one publication guard')
+    for filename in FILES:
+        write(PUBLIC+'/games/'+filename, (source/'games'/filename).read_bytes())
+    for filename in ['rail-core.js', 'train-scene.js']:
+        write(PUBLIC+'/engine/'+filename, (source/'engine'/filename).read_bytes())
+    for key in ['azusa', 'kaiji']:
+        for suffix in ['.json.gz','.html']:
+            filename=key+suffix
+            write(PUBLIC+'/games/'+filename, (source/'games'/filename).read_bytes())
     # Existing production dependencies are kept separate from new release assets.
     dependencies = []
     for filename in ['config.js', 'game-publication.js', 'game-publication.css',
@@ -98,7 +101,8 @@ def stage(output, production):
               'catalogueGuard': 'Existing server catalogue; absent or hidden rows stop packet loading',
               'assets': sorted(assets, key=lambda r: r['path']),
               'productionDependencies': dependencies, 'jobs': jobs,
-              'note': 'Packaging does not resolve geometry, rolling stock, current operating limits or neighbouring-line implementation.'}
+              'source': str(source), 'sourceIntegrityVerified': True,
+              'note': 'Exact current candidate only. Packaging does not resolve geometry, rolling stock, current operating limits or neighbouring-line implementation.'}
     (output / 'candidate-manifest.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     return report
 

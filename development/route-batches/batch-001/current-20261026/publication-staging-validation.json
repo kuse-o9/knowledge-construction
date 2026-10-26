@@ -1,0 +1,99 @@
+{
+  "checked": "2026-10-26",
+  "pass": true,
+  "changes": "Publication staging uses exact current tested candidate instead of older development snapshot; validates route/common/stock hashes and single publication guard before copying.",
+  "tests": {
+    "pythonTestsPassed": 52,
+    "exactCurrentFiles": 15,
+    "mixedVersionRejected": true
+  },
+  "published": false,
+  "releaseReady": false,
+  "sourceReverification": {
+    "url": "https://timetables.jreast.co.jp/2610/train/050/054701.html",
+    "result": "Web retrieval returned404; current source could not be reverified. No service assignments inferred."
+  },
+  "pending": [
+    "Stronger bridge/tunnel/elevation positioning evidence",
+    "Service platform assignments at Chino, Kami-Suwa, Okaya, Shiojiri, Nirasaki and Isawa-Onsen",
+    "Production stock details, current scope and western traffic evidence",
+    "Refresh browser scene/packaging checks for changed loader and current assets; register release only after gates pass"
+  ],
+  "assets": [
+    {
+      "path": "rail-games/priority/batch-001/engine/rail-core.js",
+      "sha256": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+      "bytes": 12580
+    },
+    {
+      "path": "rail-games/priority/batch-001/engine/train-scene.js",
+      "sha256": "5e9a514b2fdae23c17824fa5e248f8eebeb7343480f795351b37a6f8f7d6a14e",
+      "bytes": 5317
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/announcements-reviewed.js",
+      "sha256": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc",
+      "bytes": 3779
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/azusa.html",
+      "sha256": "b5409e2792a004d8b72dd9776f96b81cff1053c2244b6bbf27206d6b19e9b711",
+      "bytes": 57143
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/azusa.json.gz",
+      "sha256": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
+      "bytes": 257384
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/common.json.gz",
+      "sha256": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
+      "bytes": 232950
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/e353.json.gz",
+      "sha256": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
+      "bytes": 359944
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/kaiji.html",
+      "sha256": "03097a31883918048b542a2807015cb55f92310b03189a4c626eb108025d1400",
+      "bytes": 57141
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/kaiji.json.gz",
+      "sha256": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f",
+      "bytes": 142083
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/loader.js",
+      "sha256": "2a1c4d661a96fcf20742551270f4a5d1096dd667bece1d1d21325f5d84c197e1",
+      "bytes": 3400
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/model-builder.js",
+      "sha256": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
+      "bytes": 12385
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/rail-audio.js",
+      "sha256": "b1795fda595bf434036031c71bdb6f40236974c44b56c074f72c4f2b63437768",
+      "bytes": 13686
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/rail.js",
+      "sha256": "01b4c360bde44d69b92d6b9ef4b5889811aa8b5c1eb4da6a1d56d2c0fdcca4a1",
+      "bytes": 62483
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/scene-start.js",
+      "sha256": "2b15bc1c864fe4a14821cf4a7c00e7d8f2c64891d11451151fdb0ec3fe06f6ac",
+      "bytes": 5852
+    },
+    {
+      "path": "rail-games/priority/batch-001/games/shared.js",
+      "sha256": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
+      "bytes": 36927
+    }
+  ]
+}
