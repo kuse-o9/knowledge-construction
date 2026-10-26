@@ -1,0 +1,41 @@
+{
+  "mode": "iterative-playable-release",
+  "authorization": "2026-10-26 user asks for playable publication followed by iterative feedback; do not block on surveyed fidelity",
+  "physicalFidelityCertified": false,
+  "actualDeviceGpuIssueResolved": false,
+  "preservedPendingResearch": [
+    "surveyed rail heights and portal positions",
+    "service-specific unverified platforms",
+    "production-series fine dimensions",
+    "current actual section restrictions",
+    "unmade western neighbour lines"
+  ],
+  "runtimeScope": [
+    "manual/automatic",
+    "both directions and passing stations",
+    "save/restore",
+    "door and boarding",
+    "original meshes and128passengers",
+    "game speed tiers",
+    "bilingual original announcements",
+    "37NPC weekday snapshot"
+  ],
+  "published": false,
+  "assetHashes": {
+    "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
+    "games/e353.json.gz": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
+    "games/rail.js": "01b4c360bde44d69b92d6b9ef4b5889811aa8b5c1eb4da6a1d56d2c0fdcca4a1",
+    "games/shared.js": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
+    "games/rail-audio.js": "b1795fda595bf434036031c71bdb6f40236974c44b56c074f72c4f2b63437768",
+    "games/loader.js": "2a1c4d661a96fcf20742551270f4a5d1096dd667bece1d1d21325f5d84c197e1",
+    "games/model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
+    "games/scene-start.js": "2b15bc1c864fe4a14821cf4a7c00e7d8f2c64891d11451151fdb0ec3fe06f6ac",
+    "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc",
+    "games/azusa.json.gz": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
+    "games/azusa.html": "b5409e2792a004d8b72dd9776f96b81cff1053c2244b6bbf27206d6b19e9b711",
+    "games/kaiji.json.gz": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f",
+    "games/kaiji.html": "03097a31883918048b542a2807015cb55f92310b03189a4c626eb108025d1400",
+    "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
+    "engine/train-scene.js": "5e9a514b2fdae23c17824fa5e248f8eebeb7343480f795351b37a6f8f7d6a14e"
+  }
+}

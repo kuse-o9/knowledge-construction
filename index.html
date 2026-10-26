@@ -865,7 +865,7 @@ route();
 <script>
 (()=>{'use strict';const button=document.getElementById('game-room-launch'),overlay=document.getElementById('study-game-room-overlay'),frame=document.getElementById('study-game-room-frame');let oldOverflow='';
 function closeRoom(){if(overlay.hidden)return;overlay.hidden=true;document.body.style.overflow=oldOverflow;frame.removeAttribute('src');frame.removeAttribute('srcdoc');if(location.hash==='#game-room')history.replaceState(null,'',location.pathname+location.search+'#home');button.focus();}
-button.addEventListener('click',e=>{e.preventDefault();if(!overlay.hidden)return;oldOverflow=document.body.style.overflow;frame.removeAttribute('srcdoc');frame.src=new URL('game-room/embedded-room.html?v=lazy1',location.href).href;overlay.hidden=false;document.body.style.overflow='hidden';frame.focus();});
+button.addEventListener('click',e=>{e.preventDefault();if(!overlay.hidden)return;oldOverflow=document.body.style.overflow;frame.removeAttribute('srcdoc');frame.src=new URL('game-room/embedded-room.html?v=express1',location.href).href;overlay.hidden=false;document.body.style.overflow='hidden';frame.focus();});
 window.addEventListener('message',e=>{if(e.source===frame.contentWindow&&e.origin===location.origin&&e.data?.type==='study-game-room-close')closeRoom();});
 window.addEventListener('keydown',e=>{if(e.key==='Escape')closeRoom();});
 function syncRoomRoute(){if(location.hash==='#game-room')button.click();else closeRoom();}
