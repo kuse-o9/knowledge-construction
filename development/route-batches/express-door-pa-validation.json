@@ -1,0 +1,35 @@
+{
+  "pass": true,
+  "checked": "2026-10-26",
+  "implemented": [
+    "single plug-sliding door leaf and open body apertures; only platform-side doors open",
+    "dynamic Japanese/English announcements from current route and selected start",
+    "distinct original Azusa/Kaiji pre-announcement chimes; deterministic motifs available for future train IDs",
+    "chime completes before speech; arrival lead estimated from script length; fast-forward held at1x during audio",
+    "train waits for visual door closure; running sound ducked during PA",
+    "actionable browser-disabled WebGL2 guidance; no claim of enabling the GPU from the website"
+  ],
+  "sourceWorkflow": {
+    "first": "https://denden-lab.com/",
+    "list": "https://denden-lab.com/announcement-list/",
+    "fallback": "YouTube search",
+    "kaijiReference": "https://www.youtube.com/watch?v=ioKdX7jHf78",
+    "kaijiReferenceScope": "Creator metadata describes Kaiji43, Tokyo–Hachioji. Game adapts to its retained Kaiji47/2 and actual endpoints; recording not copied.",
+    "azusaReference": "User-supplied bilingual sample, adapted to existing9-car service and Matsumoto endpoint",
+    "doorReference": "Two user-supplied E353 photographs; meshes are original, dimensions estimated"
+  },
+  "tests": {
+    "dynamicStarts": 35,
+    "cesiumMatrixCases": 4,
+    "closedOffside": true,
+    "openApertureSamples": 39,
+    "integrityChains": 2,
+    "audioOrderAndCancellation": true,
+    "routeDataUnchanged": true
+  },
+  "limitations": [
+    "No physical GPU rendering or listening certification",
+    "GL_RENDERER Disabled cannot be overridden by site code",
+    "Unmade Shinkansen routes have not been implemented in this change"
+  ]
+}

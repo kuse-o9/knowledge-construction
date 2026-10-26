@@ -23,20 +23,20 @@
   "published": true,
   "assetHashes": {
     "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
-    "games/e353.json.gz": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
-    "games/rail.js": "01b4c360bde44d69b92d6b9ef4b5889811aa8b5c1eb4da6a1d56d2c0fdcca4a1",
+    "games/e353.json.gz": "bbeaa6365962dbd9e18c30b721af0b52df7ce650335e4d62df40b19d1d3b5720",
+    "games/rail.js": "7a8f58f0336c5bf51b111fb983217b32550616f93fd9dc45a805d8cdf12426d5",
     "games/shared.js": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
-    "games/rail-audio.js": "b1795fda595bf434036031c71bdb6f40236974c44b56c074f72c4f2b63437768",
-    "games/loader.js": "2a1c4d661a96fcf20742551270f4a5d1096dd667bece1d1d21325f5d84c197e1",
+    "games/rail-audio.js": "c04992b473bc38ed71fa2f2adcb0b6c09388c5e41b3789eac6471f636c54ecec",
+    "games/loader.js": "0d78553566c4649557995bff556c2de529f5eec3b111b82c7681e635f04af01f",
     "games/model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
-    "games/scene-start.js": "2b15bc1c864fe4a14821cf4a7c00e7d8f2c64891d11451151fdb0ec3fe06f6ac",
+    "games/scene-start.js": "76fd865919e2f28f9f61168a78bffa8fbbeb59673c0d57f9c45fd596ba258051",
     "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc",
-    "games/azusa.json.gz": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
-    "games/azusa.html": "3d4eb93814505287707ac5922207c1072c1e98849192d6f84554403d3044508e",
-    "games/kaiji.json.gz": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f",
-    "games/kaiji.html": "81a023615ff21ff6ebc75d86209e02f1e04a473ea358975947032ee212905378",
+    "games/azusa.json.gz": "9d09d9494872ff71b3734783b33ff17a459bf1fe7412b26cf1aeddbeba5868f3",
+    "games/azusa.html": "fc4b2fa33d1edf2340dc8b1865b4ed255d6d5f2252ccb2b29b94b6d5812495e2",
+    "games/kaiji.json.gz": "fafe10b2b219b1944972be22c95b3c5d225020bff326f9dc84016baad9dc7181",
+    "games/kaiji.html": "6ad19dced351db99c079616f27951fc2363c2e01a643a4155e1a0ed5dbcafee0",
     "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
-    "engine/train-scene.js": "5e9a514b2fdae23c17824fa5e248f8eebeb7343480f795351b37a6f8f7d6a14e"
+    "engine/train-scene.js": "ee54793fe40f07284739e93c461029d97450acc0e64f1069e97f6dd9db5179d1"
   },
   "catalogueStates": {
     "azusa": {
@@ -61,5 +61,6 @@
     "cloudMapControlsVerified": true
   },
   "initialPublicCommit": "1f3a37810d8695cd7b16b083f7a75100451d0bc8",
-  "note": "Published under user iterative-release instruction. Historical reproduction gates remain pending and are not re-labelled as verified."
+  "note": "Published under user iterative-release instruction. Historical reproduction gates remain pending and are not re-labelled as verified.",
+  "latestUpdate": "Single plug-sliding doors and dynamic bilingual PA with original pre-announcement music"
 }

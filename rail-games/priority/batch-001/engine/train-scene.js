@@ -33,8 +33,8 @@ function mount(viewer,C,Core,geo,stock,formation){
    const primitive=viewer.scene.primitives.add(new C.Primitive({geometryInstances:instances,modelMatrix:M.IDENTITY,appearance:new C.PerInstanceColorAppearance({flat:false,closed:true,translucent}),asynchronous:false}));parts.push(primitive);primitives.push(primitive);
   }return parts;
  }
- const instances=cars.map(car=>({body:model(stock[car.model]),bogies:(car.bogieModels||['bogie','bogie']).map(key=>{if(!stock[key])throw Error('Missing stock-specific bogie '+key);return model(stock[key]);}),pantograph:car.pantograph?model(stock[car.pantographModel]||stock.pantograph):[]}));
- function setFront(frontDistance,visible=true){
+ const instances=cars.map(car=>({body:model(stock[car.model]),bogies:(car.bogieModels||['bogie','bogie']).map(key=>{if(!stock[key])throw Error('Missing stock-specific bogie '+key);return model(stock[key]);}),pantograph:car.pantograph?model(stock[car.pantographModel]||stock.pantograph):[],doors:stock.expressDoorPanel?car.doorCentres.flatMap(x=>[-1,1].map(side=>({x,side,parts:model(stock.expressDoorPanel)}))):[]}));
+ function setFront(frontDistance,visible=true,doorState=null){
   if(!Number.isFinite(frontDistance)||frontDistance-accumulated<.5||frontDistance>geo.length-.5)throw Error('Insufficient source-track buffer for this formation');
   const poses=[];
   cars.forEach((car,i)=>{
@@ -49,6 +49,7 @@ function mount(viewer,C,Core,geo,stock,formation){
    for(const part of [...instance.body,...instance.pantograph]){part.modelMatrix=transform;part.show=visible;}
    const bogies=[-car.bogieHalfSpan,car.bogieHalfSpan].map(offset=>frame(distance+offset));
    bogies.forEach((f,n)=>{for(const part of instance.bogies[n]){part.modelMatrix=matrix(f,!!car.reverse);part.show=visible;}});
+   for(const door of instance.doors){const open=doorState&&door.side*(car.reverse?-1:1)===doorState.side?doorState.opening:0,motion=root.BaylineExpressService.doorMotion(open),translation=M.fromTranslation(new V(door.x-Math.sign(door.x||1)*motion.slide,door.side*(1.477+motion.pop),0)),doorMatrix=M.multiply(transform,translation,new M());for(const part of door.parts){part.modelMatrix=doorMatrix;part.show=visible;}}
    poses.push({distance,body,bogies,doors:car.doorCentres.map(x=>distance+(car.reverse?-x:x)),reverse:!!car.reverse});
   });return poses;
  }
