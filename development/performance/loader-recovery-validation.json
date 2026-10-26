@@ -1,0 +1,64 @@
+{
+  "pass": true,
+  "tests": 11,
+  "results": [
+    {
+      "mode": "ok",
+      "calls": 2
+    },
+    {
+      "mode": "recover",
+      "calls": 3
+    },
+    {
+      "mode": "http",
+      "calls": 2
+    },
+    {
+      "mode": "timeout",
+      "calls": 2
+    },
+    {
+      "mode": "corrupt",
+      "calls": 4
+    },
+    {
+      "mode": "unsupported",
+      "calls": 0
+    },
+    {
+      "mode": "hidden",
+      "calls": 0
+    },
+    {
+      "mode": "ok",
+      "entry": "chuo.html",
+      "calls": 2
+    },
+    {
+      "mode": "ok",
+      "entry": "chuo-local.html",
+      "calls": 2
+    },
+    {
+      "mode": "ok",
+      "entry": "keihin.html",
+      "calls": 2
+    },
+    {
+      "mode": "ok",
+      "entry": "sobu.html",
+      "calls": 2
+    }
+  ],
+  "scope": "Actual shared loader, real four published mesh packets; VM DOM/network fixtures. No GPU initialization claim.",
+  "checked": "2026-10-26",
+  "preserved": [
+    "original compressed mesh packets",
+    "driver and scene quality",
+    "passenger counts",
+    "save keys",
+    "publication guard"
+  ],
+  "limits": "Node VM tests, not physical GPU validation. Disabled WebGL2 still requires browser/system recovery."
+}

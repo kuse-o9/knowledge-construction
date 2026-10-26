@@ -1,0 +1,16 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),z=require('zlib'),assert=require('assert/strict'),crypto=require('crypto'),path=require('path');
+const root=path.resolve(__dirname,'../..'),source=fs.readFileSync(root+'/shared/rail-loader.js','utf8');
+async function run(mode,entry){
+ let options,parts;
+ if(entry){const html=fs.readFileSync(root+'/'+entry,'utf8');options=JSON.parse(html.match(/data-route='([^']+)'/)[1]);parts=options.parts.map(p=>fs.readFileSync(root+'/'+p));}
+ else{const bytes=z.gzipSync(JSON.stringify({html:'<body><script>/* BAYLINE shared signal model */</script><script>function modelGeometry(){}</script></body>'}));parts=[bytes.subarray(0,15),bytes.subarray(15)];options={id:'test',parts:['a','b'],sha256:crypto.createHash('sha256').update(bytes).digest('hex'),driver:'driver.js'};}
+ let writes=[],calls=[],timers=new Set(),denied=false;const status={textContent:'',setAttribute(){}},retry={hidden:true},document={currentScript:{dataset:{route:JSON.stringify(options)}},getElementById:id=>id==='loading'?status:retry,open(){},write(html){writes.push(html);},close(){}};
+ const ctx={document,window:{GamePublication:{async guard(){return !denied;}}},crypto:crypto.webcrypto,Response,Blob,DecompressionStream:mode==='unsupported'?undefined:DecompressionStream,AbortController,Uint8Array,setTimeout(fn){timers.add(fn);if(mode==='timeout')queueMicrotask(fn);return fn;},clearTimeout(fn){timers.delete(fn);},async fetch(url,opts){calls.push({url,cache:opts.cache});if(mode==='timeout')return new Promise((_,reject)=>opts.signal.addEventListener('abort',()=>reject(Error('abort'))));if(mode==='http')return new Response('',{status:503});if(mode==='recover'&&calls.length===1)throw Error('temporary');const i=options.parts.findIndex(p=>url.startsWith(p+'?'));return new Response(mode==='corrupt'?Buffer.from('bad'):parts[i]);}};
+ ctx.GamePublication=ctx.window.GamePublication;if(mode==='hidden')denied=true;await vm.runInNewContext(source,ctx);assert.equal(timers.size,0);
+ if(['ok','recover'].includes(mode)){assert.equal(writes.length,1,status.textContent+' '+entry+' '+mode);assert(writes[0].includes('shared/rail-scene-start.js?v=gpu5'));assert(writes[0].includes(options.driver+'?v=gpu5'));if(mode==='recover')assert.equal(calls.length,3);}
+ else if(mode==='hidden'){assert.equal(calls.length,0);assert.equal(writes.length,0);}
+ else{assert.equal(writes.length,0);assert.equal(retry.hidden,false);assert.equal(retry.disabled,false);assert(status.textContent.includes({http:'503',timeout:'45秒',corrupt:'版が一致',unsupported:'展開機能'}[mode]));if(mode!=='unsupported'){const count=calls.length;denied=true;await retry.onclick();assert.equal(calls.length,count);}}
+ return {mode,entry,calls:calls.length};
+}
+(async()=>{const results=[];for(const mode of ['ok','recover','http','timeout','corrupt','unsupported','hidden'])results.push(await run(mode));for(const entry of ['chuo.html','chuo-local.html','keihin.html','sobu.html'])results.push(await run('ok',entry));console.log(JSON.stringify({pass:true,tests:results.length,results,scope:'Actual shared loader, real four published mesh packets; VM DOM/network fixtures. No GPU initialization claim.'},null,2));})().catch(e=>{console.error(e);process.exitCode=1;});
