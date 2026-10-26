@@ -20,7 +20,7 @@
     "bilingual original announcements",
     "37NPC weekday snapshot"
   ],
-  "published": false,
+  "published": true,
   "assetHashes": {
     "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
     "games/e353.json.gz": "a5f3b49e4c6cda58010caf7b44150406d116ecabf668fe9e573cfc21e6a181e2",
@@ -32,10 +32,34 @@
     "games/scene-start.js": "2b15bc1c864fe4a14821cf4a7c00e7d8f2c64891d11451151fdb0ec3fe06f6ac",
     "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc",
     "games/azusa.json.gz": "03a207e60ca187b0032e0df7d4d8faf1f38cc6edfb4a71dc8379ad8d9082e075",
-    "games/azusa.html": "b5409e2792a004d8b72dd9776f96b81cff1053c2244b6bbf27206d6b19e9b711",
+    "games/azusa.html": "3d4eb93814505287707ac5922207c1072c1e98849192d6f84554403d3044508e",
     "games/kaiji.json.gz": "660b97ac5acbd6a090d84f81fb82bfd0ad110617a69ea5f0cffa57397c0c766f",
-    "games/kaiji.html": "03097a31883918048b542a2807015cb55f92310b03189a4c626eb108025d1400",
+    "games/kaiji.html": "81a023615ff21ff6ebc75d86209e02f1e04a473ea358975947032ee212905378",
     "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
     "engine/train-scene.js": "5e9a514b2fdae23c17824fa5e248f8eebeb7343480f795351b37a6f8f7d6a14e"
-  }
+  },
+  "catalogueStates": {
+    "azusa": {
+      "published": true,
+      "revision": 7
+    },
+    "kaiji": {
+      "published": true,
+      "revision": 2
+    }
+  },
+  "tests": {
+    "pythonPassed": 52,
+    "integratedRouteDirectionsPassed": 4,
+    "speedSampleComparisons": 18768,
+    "terminalAssertionsPassed": 25,
+    "announcementStationDirectionCasesPassed": 39,
+    "loaderScenariosPassed": 6,
+    "publicArtifactReadbackPassed": 18,
+    "cloudBrowserDataLoadBothRoutes": true,
+    "cloudWebGL2Initialization": false,
+    "cloudMapControlsVerified": true
+  },
+  "initialPublicCommit": "1f3a37810d8695cd7b16b083f7a75100451d0bc8",
+  "note": "Published under user iterative-release instruction. Historical reproduction gates remain pending and are not re-labelled as verified."
 }
