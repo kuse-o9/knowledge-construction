@@ -20,32 +20,34 @@
     "bilingual original announcements",
     "37NPC weekday snapshot"
   ],
-  "published": true,
+  "published": false,
   "assetHashes": {
     "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
     "games/e353.json.gz": "bbeaa6365962dbd9e18c30b721af0b52df7ce650335e4d62df40b19d1d3b5720",
-    "games/rail.js": "7a8f58f0336c5bf51b111fb983217b32550616f93fd9dc45a805d8cdf12426d5",
+    "games/rail.js": "06202067fbe6b2d645cbd38bbaac4f5cfbcafb784c97e91e1a478d44e7372b99",
     "games/shared.js": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
     "games/rail-audio.js": "c04992b473bc38ed71fa2f2adcb0b6c09388c5e41b3789eac6471f636c54ecec",
-    "games/loader.js": "0d78553566c4649557995bff556c2de529f5eec3b111b82c7681e635f04af01f",
+    "games/loader.js": "5035309cc154abc24a755e776db371fd8a162314cd148360677dbc1a888d197a",
     "games/model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
-    "games/scene-start.js": "76fd865919e2f28f9f61168a78bffa8fbbeb59673c0d57f9c45fd596ba258051",
+    "games/scene-start.js": "ac122de248a314a88c77e4ef15a4e3997e01c0f21345ee430e3708c2f821eaa4",
     "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc",
     "games/azusa.json.gz": "9d09d9494872ff71b3734783b33ff17a459bf1fe7412b26cf1aeddbeba5868f3",
-    "games/azusa.html": "fc4b2fa33d1edf2340dc8b1865b4ed255d6d5f2252ccb2b29b94b6d5812495e2",
+    "games/azusa.html": "ce74c1284e4244ec39cc8015f1dbcd3686e89e970bf1532ec87d2b3d6d92c2d1",
     "games/kaiji.json.gz": "fafe10b2b219b1944972be22c95b3c5d225020bff326f9dc84016baad9dc7181",
-    "games/kaiji.html": "6ad19dced351db99c079616f27951fc2363c2e01a643a4155e1a0ed5dbcafee0",
+    "games/kaiji.html": "1dc99a1ff3833a6315bbc04af4cc8eb24188166a4a1ccfca67da522290e28f8d",
     "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
     "engine/train-scene.js": "ee54793fe40f07284739e93c461029d97450acc0e64f1069e97f6dd9db5179d1"
   },
   "catalogueStates": {
     "azusa": {
-      "published": true,
-      "revision": 7
+      "published": false,
+      "revision": 14,
+      "note": "SDを読み込めない事案が度々起こっています。　申し訳ございません。　"
     },
     "kaiji": {
-      "published": true,
-      "revision": 2
+      "published": false,
+      "revision": 4,
+      "note": "SDを読み込めない事案が度々起こっています。　申し訳ございません。"
     }
   },
   "tests": {
@@ -62,5 +64,23 @@
   },
   "initialPublicCommit": "1f3a37810d8695cd7b16b083f7a75100451d0bc8",
   "note": "Published under user iterative-release instruction. Historical reproduction gates remain pending and are not re-labelled as verified.",
-  "latestUpdate": "Single plug-sliding doors and dynamic bilingual PA with original pre-announcement music"
+  "latestUpdate": "Current runtime regression and integrity review; publication snapshot corrected without changing live visibility",
+  "latestReview": {
+    "date": "2026-10-26",
+    "currentVersionSoftwareRegression": "passed",
+    "fullCompletion": false,
+    "integratedRouteDirections": 4,
+    "actualDeviceGpuIssueResolved": false,
+    "gpuSettingsInspection": "Blocked by cloud browser URL security policy; no bypass attempted",
+    "remaining": [
+      "surveyed rail heights and portal positions",
+      "service-specific unverified platforms",
+      "production-series fine dimensions",
+      "current actual section restrictions",
+      "unmade western neighbour lines",
+      "GPU rendering and actual listening not certified"
+    ],
+    "publicationSettingChanged": false,
+    "note": "Current-version software checks pass. This is not completion of pending research or physical-device validation."
+  }
 }
