@@ -24,17 +24,17 @@
   "assetHashes": {
     "games/common.json.gz": "5bd51b983703a5362a18b9223b5171695260e1ab5907bad3a34779a656e2d1c3",
     "games/e353.json.gz": "bbeaa6365962dbd9e18c30b721af0b52df7ce650335e4d62df40b19d1d3b5720",
-    "games/rail.js": "06202067fbe6b2d645cbd38bbaac4f5cfbcafb784c97e91e1a478d44e7372b99",
+    "games/rail.js": "0beb014a272e4a8ac4e9c3cbc27531a31412f5ca8f5e76e614568b7fe0024a8f",
     "games/shared.js": "b8de8a06cbbceb0c31a3adcbd9f17b4bfdbceaef4fe5ec0f8c133268c25f5f80",
     "games/rail-audio.js": "c04992b473bc38ed71fa2f2adcb0b6c09388c5e41b3789eac6471f636c54ecec",
-    "games/loader.js": "5035309cc154abc24a755e776db371fd8a162314cd148360677dbc1a888d197a",
+    "games/loader.js": "3baa2e74554ec89b83cec7d9057f3dc68edf9d9b50dfd67f05366a85e05ee493",
     "games/model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
-    "games/scene-start.js": "ac122de248a314a88c77e4ef15a4e3997e01c0f21345ee430e3708c2f821eaa4",
+    "games/scene-start.js": "293160b46159d23c2e9fb341a3413001c916e8b51c52b0ded243c61e4a9c1630",
     "games/announcements-reviewed.js": "2393e49eca05c3183aa7bb75bcc627f98fb3866ab8608469822b88ae2ccb62bc",
     "games/azusa.json.gz": "9d09d9494872ff71b3734783b33ff17a459bf1fe7412b26cf1aeddbeba5868f3",
-    "games/azusa.html": "ce74c1284e4244ec39cc8015f1dbcd3686e89e970bf1532ec87d2b3d6d92c2d1",
+    "games/azusa.html": "cc72c0bcb32630b5eb20ff0de4a4c12735ca8a329649f5af89ca08749fe0f784",
     "games/kaiji.json.gz": "fafe10b2b219b1944972be22c95b3c5d225020bff326f9dc84016baad9dc7181",
-    "games/kaiji.html": "1dc99a1ff3833a6315bbc04af4cc8eb24188166a4a1ccfca67da522290e28f8d",
+    "games/kaiji.html": "4545db50f5d21391772195fe9985c7b401eadcfcf0217ffdba0d42a7aab8da71",
     "engine/rail-core.js": "f077a3d6442ff60dba832cb9a3afc565be896b68b055eb8b4e4729b2fc266f0b",
     "engine/train-scene.js": "ee54793fe40f07284739e93c461029d97450acc0e64f1069e97f6dd9db5179d1"
   },
@@ -64,7 +64,7 @@
   },
   "initialPublicCommit": "1f3a37810d8695cd7b16b083f7a75100451d0bc8",
   "note": "Published under user iterative-release instruction. Historical reproduction gates remain pending and are not re-labelled as verified.",
-  "latestUpdate": "Current runtime regression and integrity review; publication snapshot corrected without changing live visibility",
+  "latestUpdate": "Runtime polish and resilient 3D loading:160km/h gauge, cleared departure latches, context-loss handling, stale-callback guards, lazy library retry, hash-verified packet cache",
   "latestReview": {
     "date": "2026-10-26",
     "currentVersionSoftwareRegression": "passed",
@@ -83,7 +83,9 @@
     "publicationSettingChanged": false,
     "note": "Current-version software checks pass. This is not completion of pending research or physical-device validation.",
     "stationLayoutModelsPresent": 22,
-    "referenceRecheckCompleted": true
+    "referenceRecheckCompleted": true,
+    "runtimePolishTestsPassed": true,
+    "browserGpuEnabled": false
   },
   "referenceAudit": "express-reference-audit-20261026.json"
 }

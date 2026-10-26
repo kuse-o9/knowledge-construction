@@ -1,6 +1,22 @@
 /* Recover failed GPU contexts without reducing scene detail or resolution. */
 (function(g){'use strict';
  const live=new Map();
+ let libraryPending=null;
+ function ensureCesium(){
+  if(typeof g.Cesium?.Viewer==='function')return Promise.resolve(g.Cesium);
+  if(libraryPending)return libraryPending;
+  libraryPending=(async()=>{let error;for(let attempt=0;attempt<2;attempt++){
+   if(typeof g.Cesium?.Viewer==='function')return g.Cesium;
+   try{return await new Promise((resolve,reject)=>{
+    const script=document.createElement('script');let settled=false;
+    const finish=(problem)=>{if(settled)return;settled=true;clearTimeout(timer);script.onload=null;script.onerror=null;if(problem){script.remove();reject(problem);}else resolve(g.Cesium);};
+    const timer=setTimeout(()=>finish(Object.assign(Error('3D描画ライブラリーの取得がタイムアウトしました。通信を確認して再試行してください。'),{code:'LIBRARY_LOAD'})),20000);
+    script.src='https://cesium.com/downloads/cesiumjs/releases/1.117/Build/Cesium/Cesium.js';script.async=true;
+    script.onload=()=>finish(typeof g.Cesium?.Viewer==='function'?null:Object.assign(Error('3D描画ライブラリーを開始できません。'),{code:'LIBRARY_LOAD'}));
+    script.onerror=()=>finish(Object.assign(Error('3D描画ライブラリーを取得できません。通信を確認して再試行してください。'),{code:'LIBRARY_LOAD'}));document.head.append(script);
+   });}catch(next){error=next;}
+  }throw error;})().finally(()=>{libraryPending=null;});return libraryPending;
+ }
  function release(target){
   const previous=live.get(target);live.delete(target);
   // Only a successfully created viewer owns a context. Probing every leftover
@@ -14,16 +30,17 @@
   const target=typeof container==='string'?document.getElementById(container):container;
   if(!target)throw Error('3Dの表示先が見つかりません。');
   if(live.has(target))release(target);
-  const attempts=['default','high-performance','low-power'];let cause;
+  const attempts=['default','high-performance','low-power'];let cause,creationReason='';
   for(let i=0;i<attempts.length;i++){
    const preference=attempts[i];
+   const capture=event=>{creationReason=String(event.statusMessage||'');};target.addEventListener?.('webglcontextcreationerror',capture,true);
    try{
     const viewer=new Ces.Viewer(container,{...options,contextOptions:{...options.contextOptions,webgl:{...options.contextOptions?.webgl,powerPreference:preference,failIfMajorPerformanceCaveat:false}}});
     live.set(target,viewer);target.dataset.rendererAttempt=String(i+1);target.dataset.rendererPreference=preference;
     return viewer;
    }catch(error){
-    release(target);if(!/webgl|context|gpu/i.test(String(error?.message||error)))throw error;cause=error;
-   }
+    release(target);if(!/webgl|context|gpu/i.test(String(error?.message||error)))throw error;cause=creationReason?new Error(String(error?.message||error)+'\n'+creationReason):error;if(/GL_(?:VENDOR|RENDERER)\s*=\s*Disabled/i.test(creationReason))break;
+   }finally{target.removeEventListener?.('webglcontextcreationerror',capture,true);}
   }
   throw Object.assign(new Error('3D描画用のGPU接続を開始できませんでした。保存した運転は残っています。'),{code:'WEBGL_START',cause});
  }
@@ -44,5 +61,5 @@
  }
  addEventListener('pagehide',()=>{for(const target of [...live.keys()])release(target);});
  addEventListener('pageshow',event=>{if(event.persisted)location.reload();});
- g.BaylineSceneStart={create,failure,release,diagnosticGuide};
+ g.BaylineSceneStart={create,failure,release,diagnosticGuide,ensureCesium};
 })(window);

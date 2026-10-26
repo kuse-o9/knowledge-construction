@@ -1,0 +1,30 @@
+{
+  "checked": "2026-10-26",
+  "runtimeChanges": [
+    "160km/h dial scale matches needle;130 no longer clamps at120",
+    "clear departure hold/ready/external door control before saving on scene failure",
+    "invalidate station/track callback generations when disposing scene",
+    "handle context-lost events once; old scene errors cannot destroy replacement viewer",
+    "Cesium1.117 lazy load retries twice and can retry after timeout without reloading the study app",
+    "retain last6 hash-bound packet responses; cache fallback is SHA256 and gzip/JSON rechecked",
+    "publication guard remains before any cached/network game packet loading",
+    "preserve model detail,resolution,passengers,saves and all previous controls"
+  ],
+  "validation": {
+    "fourRouteDirectionRuns": true,
+    "dynamicAnnouncementStarts": 35,
+    "actualAudioControllerOrderAndCancel": true,
+    "cesiumDoorMatrices": 4,
+    "geometryIntegrityTests": 2,
+    "libraryNetworkCacheFixtures": 11,
+    "commonPublishedRouteLoaderCases": 11,
+    "speedDialAt130": true,
+    "contextLostAndStaleRenderCallbacks": true
+  },
+  "limitations": [
+    "No physical GPU or hearing certification",
+    "Browser reportsGL_RENDERERDisabled; website does not enable it or bypass browser policy",
+    "Precise surveyed positions and actual operating restrictions remain unverified; existing game approximations retained"
+  ],
+  "publication": "Source deploy separate from live catalogue; dashboard reauthentication needed to change catalogue"
+}
