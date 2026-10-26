@@ -5,7 +5,7 @@ const assert=require('node:assert/strict');
 const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'../..');
 const floors=JSON.parse(fs.readFileSync(path.join(__dirname,'operator-floors.json'))).floors;
-async function boot(gpu=true,reducedMotion=true){
+async function boot(gpu=true,reducedMotion=true,reason=""){
   const nodes=new Map(),events={},draws=[],uploads=[];let count=0,now=0;const frames=[];
   function node(id=''){
     return {id,hidden:false,disabled:false,value:'',textContent:'',dataset:{},style:{setProperty(){}},children:[],classList:{toggle(){}},
@@ -23,7 +23,7 @@ async function boot(gpu=true,reducedMotion=true){
   const document={currentScript:{src:'http://localhost/development/game-room/depot-webgl.js'},
     getElementById(id){if(!nodes.has(id))nodes.set(id,node(id));return nodes.get(id)},
     createElement:()=>node(),querySelectorAll:()=>nodes.get('routes')?.children||[]};
-  document.getElementById('depot').getContext=()=>gpu?gl:null;
+  document.getElementById('depot').getContext=()=>{if(!gpu&&reason)document.getElementById('depot').events.webglcontextcreationerror({statusMessage:reason});return gpu?gl:null;};
   const location={href:'http://localhost/depot-3d.html'};
   const context=vm.createContext({document,location,URL,Float32Array,Set,Map,Math,Promise,console:{error(){}},
     devicePixelRatio:1,performance:{now:()=>now},matchMedia:()=>({matches:reducedMotion}),
@@ -32,7 +32,7 @@ async function boot(gpu=true,reducedMotion=true){
     fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,url.pathname)))})});
   await vm.runInContext(fs.readFileSync(path.join(__dirname,'depot-webgl.js'),'utf8'),context);
   const flush=async(n=4)=>{for(let i=0;i<n;i++){now+=50;const batch=frames.splice(0);for(const fn of batch)fn(now);await new Promise(r=>setImmediate(r));}};await flush();
-  return {nodes,draws,uploads,location,flush,events};
+  return {nodes,draws,uploads,location,flush,events,setGPU(value){gpu=value;}};
 }
 test('JR five routes, finite 3D mesh upload, and all 23 independent floors',async()=>{
   const b=await boot(),n=id=>b.nodes.get(id);
@@ -68,9 +68,21 @@ test('walk up ramp, stop at train and platform walls, board only nearby, reset o
   await walk('w',85);assert.equal(c.dataset.nearby,'railway/index.html');
   n('board').onclick();assert.equal(b.location.href,'http://localhost/railway/index.html');
 });
-test('no WebGL keeps six route links available',async()=>{
-  const b=await boot(false);assert.equal(b.nodes.get('routes').children.length,6);
-  assert.match(b.nodes.get('loading').textContent,/3D表示を開始できません/);
+test('GPU-disabled keeps correct floor, full diagnostics and all 23 floor selections usable',async()=>{
+ const reason='GL_RENDERER = Disabled, '+ 'complete browser reason '.repeat(30),b=await boot(false,true,reason),n=id=>b.nodes.get(id);
+ assert.equal(n('floor').disabled,false);assert.equal(n('floor').value,18);assert.equal(n('routes').children.length,5);
+ assert.equal(n('depot-error-detail').textContent.includes(reason),true);assert.match(n('depot-error-guide').textContent,/chrome:\/\/settings\/system/);
+ assert.equal(n('depot-diagnostics').hidden,false);assert.equal(n('walk-up').disabled,true);assert.equal(b.draws.length,0);
+ for(const floor of floors){n('floor').value=floor.floor;n('floor').onchange();await b.flush();assert.equal(n('scene-title').textContent,floor.operator);assert.equal(n('floor').disabled,false);}
+ assert.equal(n('routes').children.length,1);assert.match(n('routes').children[0].href,/railway/);
+ b.setGPU(true);n('depot-retry3d').onclick();await b.flush();assert.equal(n('floor').value,23);assert.equal(n('depot-diagnostics').hidden,true);assert.equal(n('walk-up').disabled,false);assert(b.draws.length>0);
+ assert.equal(b.location.href,'http://localhost/depot-3d.html','retry does not navigate or reload');
+});
+test('context loss blocks walking and restores same floor with fresh GPU resources',async()=>{
+ const b=await boot(),n=id=>b.nodes.get(id);let prevented=false;n('depot').events.webglcontextlost({preventDefault(){prevented=true;}});await b.flush();
+ assert(prevented);assert.equal(n('walk-up').disabled,true);assert.equal(n('floor').disabled,false);
+ n('floor').value=23;n('floor').onchange();await b.flush();assert.equal(n('floor').value,23);
+ n('depot').events.webglcontextrestored();await b.flush();assert.equal(n('depot-diagnostics').hidden,true);assert.equal(n('walk-up').disabled,false);assert.equal(n('floor').value,23);
 });
 
 test('elevator carries the avatar through real intermediate heights with physical doors and stationary floor levels',async()=>{

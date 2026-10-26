@@ -14,7 +14,7 @@
     'sobu.html': ['sobuRapid', 20, '#366da3'],
     'railway/index.html': ['yurikamome', -12, '#56a8c4']
   };
-  let gl, program, floors, model, current, geometry, dragging, moving = false, lost = false;
+  let gl, program, floors, model, current, geometry, dragging, moving = false, lost = false, gpuReady = false;
   let yaw = 0, pitch = 0, distance = 4.5, frame = 0, hovered = null;
   const player={x:-17.3,y:0,z:24.8,angle:Math.PI,walk:0}, keys=new Set();
   let lastTick=0, avatarBuffer, avatarCount=0,liftBuffer,liftScene=null,avatarKey=null,liftKey=null,liftMesh=null,locations;
@@ -43,12 +43,12 @@
   }
   function board(game) {
     const t=nearbyTrain();
-    if(t&&(!game||LINE[t.path][0]===game))location.href=new URL(t.path,BASE).href;
+    if(gpuReady&&!lost&&t&&(!game||LINE[t.path][0]===game))location.href=new URL(t.path,BASE).href;
     else $('hover-note').textContent='スロープからホームに上がり、電車の横で E ／「この電車に乗る」';
   }
   function updateWalkUI() {
     const t=nearbyTrain(),button=$('board');
-    button.disabled=!t||moving;button.textContent=t?t.name+'に乗る（E）':'ホームの電車に近づこう';
+    button.disabled=!gpuReady||lost||!t||moving;button.textContent=t?t.name+'に乗る（E）':'ホームの電車に近づこう';
     $('hover-note').textContent=t?t.name+'：E または車両クリックで出発':'WASD・矢印で移動 → 手前のスロープからホームへ';
     canvas.dataset.player=JSON.stringify({x:player.x,y:player.y,z:player.z});
     canvas.dataset.nearby=t?.path||'';
@@ -81,11 +81,12 @@
   const loadingError = message => { $('loading').hidden=false; $('loading').textContent=message; };
   function shader(type, source) {
     const s=gl.createShader(type); gl.shaderSource(s,source); gl.compileShader(s);
-    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)) throw Error(gl.getShaderInfoLog(s));
+    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){const message=gl.getShaderInfoLog(s);gl.deleteShader(s);throw Error(message);}
     return s;
   }
+  function attachShader(type,source){const item=shader(type,source);gl.attachShader(program,item);gl.deleteShader(item);}
   let contextFailure='';
-  canvas.addEventListener('webglcontextcreationerror',e=>{contextFailure=String(e.statusMessage||'').slice(0,180);});
+  canvas.addEventListener('webglcontextcreationerror',e=>{contextFailure=String(e.statusMessage||'');});
   function initGL() {
     const options={antialias:true,alpha:false,powerPreference:'default',failIfMajorPerformanceCaveat:false};
     gl=canvas.getContext('webgl2',options);
@@ -96,16 +97,16 @@
     const vertex=modern?'#version 300 es\n#define attribute in\n#define varying out\n':'';
     const fragment=modern?'#version 300 es\n#define varying in\n#define gl_FragColor depotColor\nprecision mediump float;out vec4 depotColor;\n':'';
     program=gl.createProgram();
-    gl.attachShader(program,shader(gl.VERTEX_SHADER,vertex+`
+    attachShader(gl.VERTEX_SHADER,vertex+`
       attribute vec3 position; attribute vec3 color;
       uniform mat4 view; uniform mat4 projection; uniform float elevation;
       varying vec3 shade; varying float depth;
       void main(){vec4 p=view*vec4(position+vec3(0.,elevation,0.),1.);
-      gl_Position=projection*p; shade=color; depth=-p.z;}`));
-    gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fragment+`
+      gl_Position=projection*p; shade=color; depth=-p.z;}`);
+    attachShader(gl.FRAGMENT_SHADER,fragment+`
       precision mediump float; varying vec3 shade; varying float depth;
       void main(){float fog=smoothstep(75.,180.,depth)*.55;
-      gl_FragColor=vec4(mix(shade,vec3(.20,.28,.24),fog),1.);}`));
+      gl_FragColor=vec4(mix(shade,vec3(.20,.28,.24),fog),1.);}`);
     gl.linkProgram(program);
     if(!gl.getProgramParameter(program,gl.LINK_STATUS)) throw Error(gl.getProgramInfoLog(program));
     locations={};for(const name of ['view','projection','elevation'])locations[name]=gl.getUniformLocation(program,name);for(const name of ['position','color'])locations[name]=gl.getAttribLocation(program,name);
@@ -243,7 +244,7 @@
     }
     gl.drawArrays(gl.TRIANGLES,0,count);
   }
-  function schedule(){if(!frame&&!lost) frame=requestAnimationFrame(draw);}
+  function schedule(){if(gpuReady&&!frame&&!lost) frame=requestAnimationFrame(draw);}
   // Nearest ray/triangle intersection includes walls and platforms, so hidden
   // trains cannot be clicked through solid geometry.
   function pick(clientX,clientY) {
@@ -284,7 +285,7 @@
   }
   function display(floor) {
     current=floor; elevation=(floor.floor-1)*14;
-    geometry=floorGeometry(floor);
+    if(gpuReady&&!lost)geometry=floorGeometry(floor);
     stopWalking();player.x=floor.floor===23?2.7:-17.3;player.y=0;player.z=24.8;player.angle=Math.PI;
     $('floor').value=floor.floor;$('floor-number').textContent=floor.floor+'F';$('scene-title').textContent=floor.operator;
     $('train-count').textContent=floor.trains.length?floor.trains.length+'編成 待機中':'車両は準備中・基地見学';
@@ -297,11 +298,12 @@
     if(!floor.trains.length) {const p=document.createElement('p');p.className='hint';p.textContent='運転ゲームは現在準備中です。';$('routes').append(p);}
     $('sections').textContent=(floor.sections||[]).join(' ／ ');
     $('down').disabled=floor.floor===1;$('up').disabled=floor.floor===floors.length;
-    highlight(null);schedule();
+    $('floor').disabled=false;highlight(null);schedule();
   }
   async function travel(number) {
     if(moving||!current) return;
     const target=floors.find(f=>f.floor===Number(number));if(!target||target===current)return;
+    if(!gpuReady||lost){display(target);return;}
     const oldCamera={yaw,pitch};moving=true;$('reset').disabled=true;stopWalking();highlight(null);$('floor').disabled=true;$('up').disabled=true;$('down').disabled=true;
     const from=current.floor,start=performance.now(),duration=matchMedia('(prefers-reduced-motion: reduce)').matches?0:Math.min(6500,1800+Math.abs(target.floor-from)*180);
     liftScene={fromElevation:elevation,toElevation:(target.floor-1)*14,targetGeometry:floorGeometry(target),door:1,phase:'closing'};
@@ -319,7 +321,7 @@
     display(target);$('lift').hidden=true;$('floor').disabled=false;$('reset').disabled=false;moving=false;updateWalkUI();
   }
   canvas.addEventListener('pointerdown',e=>{
-    if(e.button!==0||moving)return;canvas.focus();dragging={x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,moved:false};canvas.setPointerCapture(e.pointerId);
+    if(e.button!==0||moving||!gpuReady||lost)return;canvas.focus();dragging={x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,moved:false};canvas.setPointerCapture(e.pointerId);
   });
   canvas.addEventListener('pointermove',e=>{
     if(dragging){if(Math.hypot(e.clientX-dragging.startX,e.clientY-dragging.startY)>5)dragging.moved=true;
@@ -334,7 +336,7 @@
   });
   for(const type of ['pointercancel','lostpointercapture'])canvas.addEventListener(type,()=>{dragging=null;});
   canvas.addEventListener('pointerleave',()=>{if(!dragging)highlight(null);});
-  canvas.addEventListener('wheel',e=>{if(moving)return;e.preventDefault();distance=Math.max(2.5,Math.min(7,distance+e.deltaY*.005));schedule();},{passive:false});
+  canvas.addEventListener('wheel',e=>{if(moving||!gpuReady||lost)return;e.preventDefault();distance=Math.max(2.5,Math.min(7,distance+e.deltaY*.005));schedule();},{passive:false});
   canvas.addEventListener('keydown',e=>{
     const key=e.key.toLowerCase();
     if(key==='e'){e.preventDefault();if(!e.repeat&&!moving)board();return;}
@@ -345,16 +347,45 @@
   addEventListener('blur',stopWalking);canvas.addEventListener('blur',stopWalking);
   $('board').onclick=()=>board();
   for(const [id,key] of [['walk-up','w'],['walk-left','a'],['walk-down','s'],['walk-right','d']]){
-    const button=$(id);button.addEventListener('pointerdown',e=>{e.preventDefault();if(moving)return;button.setPointerCapture(e.pointerId);const idle=!keys.size;keys.add(key);if(idle)requestAnimationFrame(tick);});
+    const button=$(id);button.addEventListener('pointerdown',e=>{e.preventDefault();if(moving||!gpuReady||lost)return;button.setPointerCapture(e.pointerId);const idle=!keys.size;keys.add(key);if(idle)requestAnimationFrame(tick);});
     for(const type of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(type,()=>keys.delete(key));
   }
   $('reset').onclick=()=>{stopWalking();yaw=0;pitch=0;distance=4.5;player.x=current.floor===23?2.7:-17.3;player.y=0;player.z=24.8;highlight(null);schedule();canvas.focus();};
   $('floor').onchange=()=>travel($('floor').value);
   $('up').onclick=()=>travel(current.floor+1);$('down').onclick=()=>travel(current.floor-1);
   addEventListener('resize',schedule);new ResizeObserver(schedule).observe(canvas);
-  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();lost=true;stopWalking();loadingError('3D表示が一時停止しました。復旧を待つか、路線ボタンから出発できます。');});
+  function showGPUFailure(error) {
+    gpuReady=false;lost=true;stopWalking();frame=0;
+    $('depot-diagnostics').hidden=false;
+    $('depot-error-message').textContent='3Dに接続できません。フロア選択と公開中の路線への移動は使えます。3D機能はそのまま残っています。';
+    const reason=String(error?.message||error||contextFailure);
+    const disabled=/GL_(?:VENDOR|RENDERER)\s*=\s*Disabled/i.test(reason);
+    $('depot-error-detail').textContent=reason;
+    $('depot-error-guide').textContent=disabled?'ブラウザーがGPUを無効と報告しています。サイトの再読み込みでは有効にできません。Chromeは chrome://settings/system、Edgeは edge://settings/system でグラフィック アクセラレーションを確認し、ブラウザーを再起動してください。すでにオンなら chrome://gpu または edge://gpu の WebGL2 と Problems Detected を確認してください。組織の制限がある場合は管理者に確認してください。':'GPU接続が一時的に失われた可能性があります。「3Dを再読み込み」で再接続できます。ほかの3Dタブを閉じると改善する場合があります。';
+    $('loading').hidden=true;$('depot-retry3d').hidden=false;
+    for(const id of ['walk-up','walk-down','walk-left','walk-right','board'])$(id).disabled=true;
+    if(current)display(current);
+  }
+  function retry3D() {
+    const button=$('depot-retry3d');button.disabled=true;
+    try {
+      // Reuse the canvas and selected floor. Never reload the whole Study Note.
+      // A genuinely lost context is restored by the browser before reinitializing.
+      if(gl?.isContextLost?.()) {gl.getExtension('WEBGL_lose_context')?.restoreContext();return;}
+      for(const mesh of bufferCache.values())try{gl?.deleteBuffer(mesh.buffer);}catch{}
+      if(avatarBuffer)gl?.deleteBuffer(avatarBuffer);if(liftBuffer)gl?.deleteBuffer(liftBuffer);if(program)gl?.deleteProgram(program);
+      bufferCache.clear();avatarBuffer=null;liftBuffer=null;avatarKey=null;liftKey=null;liftMesh=null;geometry=null;program=null;contextFailure='';
+      initGL();gpuReady=true;lost=false;display(current);
+      $('depot-diagnostics').hidden=true;$('loading').hidden=true;button.hidden=true;
+      for(const id of ['walk-up','walk-down','walk-left','walk-right'])$(id).disabled=false;
+    }catch(error){showGPUFailure(error);console.error('DEPOT_3D_START',error);}
+    finally{button.disabled=false;}
+  }
+  $('depot-retry3d').onclick=retry3D;
+  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();showGPUFailure(new Error('GPU接続が一時的に失われました。ブラウザーによる復旧を待つか、3Dを再読み込みしてください。'));});
   canvas.addEventListener('webglcontextrestored',()=>{
-    try{lost=false;bufferCache.clear();avatarBuffer=null;liftBuffer=null;initGL();display(current);$('loading').hidden=true;}catch(e){loadingError('3D表示を復旧できませんでした。路線ボタンから出発できます。');}
+    // Old GPU object handles are invalid after restoration.
+    bufferCache.clear();avatarBuffer=null;liftBuffer=null;program=null;gl=null;retry3D();
   });
   try {
     const read=async path=>{const r=await fetch(new URL(path,BASE));if(!r.ok)throw Error(path);return r.json();};
@@ -362,11 +393,6 @@
     for(const f of floors){const option=document.createElement('option');option.value=f.floor;option.textContent=f.floor+'F　'+f.operator;$('floor').append(option);}
     // Keep accessible route links usable even if GPU initialization fails.
     current=floors.find(f=>f.floor===18);
-    try{initGL();display(current);$('loading').hidden=true;$('floor').disabled=false;}
-    catch(e){
-      $('routes').replaceChildren();for(const f of floors)for(const t of f.trains){const a=document.createElement('a');a.className='trainlink';a.href=new URL(t.path,BASE).href;a.textContent=t.name;$('routes').append(a);}
-      loadingError('車両基地の3D表示を開始できません：'+String(e?.message||e).slice(0,220)+'。ほかの3Dタブを閉じて再読み込みできます。');
-      $('depot-retry3d').hidden=false;$('depot-retry3d').onclick=()=>location.reload();console.error('DEPOT_3D_START',e);
-    }
+    retry3D();
   }catch(e){loadingError('車両基地を読み込めませんでした。全フロアの路線一覧から出発できます。');console.error(e);}
 })();
