@@ -5,11 +5,13 @@
     "HTTP503",
     "corrupt bytes rejected before model initialization",
     "missing DecompressionStream",
-    "stalled fetch aborted after timeout"
+    "stalled fetch aborted after timeout",
+    "single automatic retry recovers transient network failure"
   ],
   "method": "Actual loader executed in Node VM with mocked network/DOM; real gzip and SHA-256",
-  "pythonTestsPassed": 50,
   "productionDeployed": false,
   "sceneReportsNeedRefreshForChangedLoader": true,
-  "gpuDeviceFailureResolved": false
+  "gpuDeviceFailureResolved": false,
+  "automaticRetries": 1,
+  "pythonTestsPassedBeforeRetryChange": 50
 }

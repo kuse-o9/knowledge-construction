@@ -2,10 +2,10 @@
 'use strict';
 (async()=>{
  const id=location.pathname.split('/').pop().replace('.html','');if(!['azusa','kaiji'].includes(id))throw Error('Unknown route');
- async function packet(name,expected){
+ async function packetOnce(name,expected,fresh){
   const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),30000);
   try{
-   const response=await fetch(name+(expected?'?v='+expected:''),{signal:controller.signal,cache:'no-cache'});
+   const response=await fetch(name+(expected?'?v='+expected:''),{signal:controller.signal,cache:fresh?'reload':'no-cache'});
    if(!response.ok)throw Error('データを読み込めません（HTTP '+response.status+'）: '+name);
    const bytes=await response.arrayBuffer();
    if(bytes.byteLength>8*1024*1024)throw Error('パケットが上限を超えています');
@@ -13,6 +13,9 @@
    if(typeof DecompressionStream!=='function')throw Error('このブラウザーでは圧縮データを展開できません。最新のChrome・Edge・Safariで開き直してください。');
    return await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();
   }catch(error){if(controller.signal.aborted)throw Error('データの通信が30秒以内に完了しませんでした。通信を確認して再試行してください。');throw error;}finally{clearTimeout(timer);}
+ }
+ async function packet(name,expected){
+  for(let attempt=0;attempt<2;attempt++){try{return await packetOnce(name,expected,attempt>0);}catch(error){if(attempt===1||typeof DecompressionStream!=='function')throw error;}}
  }
  try{
   const route=await packet(id+'.json.gz',document.body.dataset.packetSha);
