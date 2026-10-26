@@ -1,0 +1,46 @@
+{
+  "checked": "2026-10-26",
+  "published": false,
+  "releaseReady": false,
+  "changes": [
+    "Rebuild retains22 candidate passenger layouts and route-specific running platforms",
+    "Rebuild retains station speed tiers100/110/120/130 including Kaiji terminal setting",
+    "Elevation compiler retains32.8 per-mille fit before lateral shifts; historical reference evidence remains immutable",
+    "Separate generated profiles and current model template from older validated snapshots",
+    "New isolated output option and regression compares full route numeric fields, station metadata, train and model template"
+  ],
+  "tests": {
+    "pythonSuite": {
+      "passed": 50,
+      "failed": 0
+    },
+    "speedSampleComparisons": 18768,
+    "rebuildRouteDirections": 4
+  },
+  "runtimeArtifactsChanged": false,
+  "userGpuError": {
+    "reported": "GL_VENDOR = Disabled, GL_RENDERER = Disabled; BindToCurrentSequence failed",
+    "standaloneWebGL2Failed": true,
+    "resolved": false,
+    "notReproducedOnPhysicalUserDevice": true
+  },
+  "remainingReleaseBlockers": [
+    "Stronger positional verification for estimated rail elevations, portals and bridges",
+    "Actual service platform assignments still partly unknown",
+    "Production-stock details and operating-section speed evidence remain incomplete",
+    "Western neighbour traffic scope remains incomplete",
+    "Mandatory gate reports and release registration not complete"
+  ],
+  "limitations": "Software checks and source rebuild equivalence are not actual-device GPU certification or a survey.",
+  "inputHashes": {
+    "build-priority-games.py": "0cc8b10bb939c9564d0640dc0128d7333bc77273eb20b36975e5bcca17997a6f",
+    "build-priority-elevation.py": "d94f9aee443c7a5de178599b1cb8baa7fe13ec4d110eadba0a66ed238d36c964",
+    "terminal-alignment.py": "fcad4377021fd679d72f73fd000d12ec7e6690878d043989e30da3413fad75f9",
+    "priority-model-builder.js": "da3c439cfd9ac71ecefaf94640c996822a9fed8b65fa01b9d634aea9afd19fac",
+    "test_rebuild_priority.py": "6173c46e47e038982afe8129a826ecb1129a0d669fd97d76a591952d4c7add34",
+    "batch-001/sources/station-layout-models.json": "25d80fc48b3f04cba2ee54f8b5693c6ab10052dc67e40440ba078891639ee823",
+    "batch-001/sources/game-speed-tiers.json": "8e1cb23d5e39f12dbbfb4602e8eab69800479ab6dcc9b5a67ae59547016dbb00",
+    "batch-001/generated-rail-profiles/azusa-rail-profile.json.gz": "2ecb8dc6987be83d050cc6c2978a556f0bef44d84b1efa3beffe14ef4aa469a9",
+    "batch-001/generated-rail-profiles/kaiji-rail-profile.json.gz": "94793f9e6a94a9c9be29c0b25f75277f6bf66d276e96b3bbe14b295d5b417c4e"
+  }
+}

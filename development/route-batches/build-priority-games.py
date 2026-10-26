@@ -4,9 +4,9 @@ These integration builds are development games. Source-specific geometry, stock,
 structures and announcements remain subject to the existing release gates.
 """
 from pathlib import Path
-import copy,gzip,hashlib,json,re,math,bisect,importlib.util
+import copy,gzip,hashlib,json,re,math,bisect,importlib.util,argparse
 
-ROOT=Path(__file__).resolve().parents[2];HERE=Path(__file__).parent;DEST=HERE/'batch-001';OUT=DEST/'games';OUT.mkdir(exist_ok=True)
+ROOT=Path(__file__).resolve().parents[2];HERE=Path(__file__).parent;DEST=HERE/'batch-001';parser=argparse.ArgumentParser();parser.add_argument('--output-dir',type=Path,default=DEST/'games');OUT=parser.parse_args().output_dir;OUT.mkdir(parents=True,exist_ok=True)
 spec=importlib.util.spec_from_file_location('platform_selection',HERE/'platform-selection.py');platform_selection=importlib.util.module_from_spec(spec);spec.loader.exec_module(platform_selection)
 spec=importlib.util.spec_from_file_location('terminal_alignment',HERE/'terminal-alignment.py');terminal_alignment=importlib.util.module_from_spec(spec);spec.loader.exec_module(terminal_alignment)
 base_bytes=b''.join((ROOT/f'chuo-local-bundle-{i}.bin').read_bytes()for i in [0,1]);html=json.loads(gzip.decompress(base_bytes))['html'];scripts=list(re.finditer(r'<script([^>]*)>(.*?)</script>',html,re.S))
@@ -72,6 +72,7 @@ replace("const planned=state.schedule?.stops[i];","const planned=i>=0?state.sche
 replace("previousDoors=state.doors;routeUI();setMode(state.mode);", "window.BaylineGame={get data(){return D;},get route(){return route;},get state(){return state;},get geometry(){return geo;},get viewer(){return viewer;},get sceneReady(){return sceneReady;},get sceneLoading(){return sceneLoading;},get sceneFailure(){return sceneFailure;}};previousDoors=state.doors;routeUI();setMode(state.mode);")
 runtime=runtime.replace('#f2cc39','#8066ad')
 (OUT/'rail.js').write_text(runtime)
+(OUT/'model-builder.js').write_bytes((HERE/'priority-model-builder.js').read_bytes())
 shared=scripts[8][2].replace("(location.pathname.includes('/yamanote/')?'../':'')+'shared/neighbour-corridors.bin?v=profiles1'","'../../../../shared/neighbour-corridors.bin?v=profiles1'")
 shared=shared[:shared.index('/* Terrain openings')]+(HERE/'tunnel-runtime.js').read_text()+shared[shared.index('/* Existing Tachikawa branch'):];shared=shared.replace(" if(g.BaylineJunctions&&!g.BaylineJunctions.allowed(traffic,geo,index,exclude||'player'))return 'RED';"," if(g.BaylineTerminals&&!g.BaylineTerminals.allowed(traffic,geo,index,exclude||'player'))return 'RED';\n if(g.BaylineJunctions&&!g.BaylineJunctions.allowed(traffic,geo,index,exclude||'player'))return 'RED';");shared=shared.replace(' const current=S.blockAt(blocks,Math.min(L,Math.max(0,d)));'," const terminalStop=g.BaylineTerminals?.stopDistance(geo,traffic,train)??Infinity;if(terminalStop<stop){stop=terminalStop;if(!next||terminalStop<next.distance)next={index:-1,distance:terminalStop,aspect:'RED'};}\n const current=S.blockAt(blocks,Math.min(L,Math.max(0,d)));");shared=shared.replace('if(!blocked){train.distance=start;',"if(!blocked&&!g.BaylineTerminals.spawnBlocked(snapshot,geos,train,candidate,player)){train.distance=start;");shared+='\n'+(HERE/'terminal-runtime.js').read_text();(OUT/'shared.js').write_text(shared)
 audio=scripts[4][2]
@@ -97,10 +98,11 @@ def help_section(page,heading,content):
  return page
 platform_review={r['name']:r for r in json.loads((DEST/'sources/priority-platform-review.json').read_text())['stations']}
 local_station_names={'大久保','東中野'}
+speed_tiers=json.loads((DEST/'sources/game-speed-tiers.json').read_text())['routesByService']
 reports=[]
 chuo_html=json.loads(gzip.decompress(b''.join((ROOT/f'chuo-bundle-{i}.bin').read_bytes()for i in [0,1])))['html'];chuo_data=json.JSONDecoder().raw_decode(chuo_html.split('window.RAIL_DATA=',1)[1])[0];public_codes={s['name']:s['code']for r in chuo_data['routes'].values()for s in r['stops']}
 for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特急かいじ','竜王')]:
- alignment=json.loads(gzip.decompress((DEST/'alignments'/(key+'.json.gz')).read_bytes()));profile=json.loads(gzip.decompress((DEST/'alignments'/(key+'-rail-profile.json.gz')).read_bytes()));data={**base_data,'id':key+'-development','name':title,'englishName':key.capitalize(),'routes':{},'sourceNote':'開発中。国土数値情報の線形を加工。駅の配線・ホーム寸法・地上構造物・レール高度・車両寸法・他社列車は確認中。正式版ではありません。','serviceSources':[],'releaseReady':False}
+ alignment=json.loads(gzip.decompress((DEST/'alignments'/(key+'.json.gz')).read_bytes()));profile=json.loads(gzip.decompress((DEST/'generated-rail-profiles'/(key+'-rail-profile.json.gz')).read_bytes()));data={**base_data,'id':key+'-development','name':title,'englishName':key.capitalize(),'routes':{},'sourceNote':'開発中。国土数値情報の線形を加工。駅の配線・ホーム寸法・地上構造物・レール高度・車両寸法・他社列車は確認中。正式版ではありません。','serviceSources':[],'releaseReady':False}
  data['license']='PDL1.0 (processed MLIT N02) / ODbL-1.0 (retained city data)'
  formations={}
  for travel in ['forward','reverse']:
@@ -137,7 +139,7 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
   for s in (list(reversed(alignment['physicalStops']))if reverse else alignment['physicalStops']):
    i=len(points)-1-s['index']if reverse else s['index'];physical.append({**s,'index':i,'distance':cumulative[i]+110,'platformCenterDistance':cumulative[i],'lon':shifted[i][0],'lat':shifted[i][1],'english':english.get(s['name'],''),'publicCode':public_codes.get(s['name'],''),'platformGeometryVerified':False})
   by_code={s['code']:s for s in physical};stops=[{**by_code[s['sourceCode']],**{k:s[k]for k in ['arrival','departure','reportedPlatform']}}for s in service['stops']]
-  route={'label':service['name']+' ／ '+stops[0]['name']+' → '+stops[-1]['name'],'points':shifted,'groundHeights':heights,'trackOffsets':list(reversed(profile['trackOffsets']))if reverse else profile['trackOffsets'],'surveyedRailHeights':False,'railHeightMethod':profile['method'],'stops':stops,'physicalStops':physical,'length':cumulative[-1],'loop':False,'vehicleMaximum':130,'stationSpeeds':[{'code':s['code'],'distance':s['distance'],'limit':130}for s in physical],'gameMaximum':130,'operatingSpeedVerified':False,'speedPolicy':'published-maximum-game-cap','speedSource':'https://www.jreast.co.jp/train/express/azusa_kaiji.html','prototypeLimitsNote':'130 km/h game cap based on the published E353 maximum. Actual station-to-station operating restrictions are not reproduced. Curve geometry imposes no limit.'}
+  route={'label':service['name']+' ／ '+stops[0]['name']+' → '+stops[-1]['name'],'points':shifted,'groundHeights':heights,'trackOffsets':list(reversed(profile['trackOffsets']))if reverse else profile['trackOffsets'],'surveyedRailHeights':False,'railHeightMethod':profile['method'],'stops':stops,'physicalStops':physical,'length':cumulative[-1],'loop':False,'vehicleMaximum':130,'stationSpeeds':[{'code':s['code'],'distance':s['distance'],'limit':next(row['limit'] for row in speed_tiers[key][direction] if row['code']==s['code'])}for s in physical],'gameMaximum':130,'operatingSpeedVerified':False,'speedPolicy':'user-approved-station-tiers','speedSource':'https://www.jreast.co.jp/train/express/azusa_kaiji.html','prototypeLimitsNote':'User-approved station-boundary game tiers100/110/120/130 km/h, capped at the published E353 maximum. Actual station-to-station operating restrictions are not reproduced. Curve geometry imposes no limit.'}
   def mapped(d):
    d=max(0,min(original[-1],d));i=min(len(original)-2,max(0,bisect.bisect_right(original,d)-1));t=(d-original[i])/(original[i+1]-original[i]);return cumulative[i]*(1-t)+cumulative[i+1]*t
   route['structures']=[{**r,'start':mapped(original[-1]-r['end']if reverse else r['start']),'end':mapped(original[-1]-r['start']if reverse else r['end']),'startHeight':r['endHeight']if reverse else r['startHeight'],'endHeight':r['startHeight']if reverse else r['endHeight']}for r in profile['structures']]
@@ -148,7 +150,7 @@ for key,title,destination in [('azusa','特急あずさ','松本'),('kaiji','特
    stop.update(platformChoiceKind=choice_kind,gamePlatformKey=chosen,directionalPlatformChoiceReviewed=choice_kind in ['service-timetable','operator-direction-game-choice'])
    layout=(review or{}).get('observedLayout')or{}
    stop['islandOuterTrack']=bool(layout.get('tracks')==3 and chosen and chosen.isdigit()and int(chosen)in layout.get('islandPlatformNumbers',[]))
-   if stop['name']in terminal_alignment.LAYOUTS:stop['terminalLayout']=terminal_alignment.metadata(stop,direction);stop['islandOuterTrack']=False
+   if stop['name']in terminal_alignment.LAYOUTS:stop['terminalLayout']=terminal_alignment.metadata(stop,direction,key);stop['islandOuterTrack']=False
    if stop['islandOuterTrack']:stop['islandOuterTrackJoin']=0 if stop['side']>0 else 12
    if stop['name']in local_station_names:
     i=stop['index'];p=points[i];q=shifted[i];separation=math.hypot((q[0]-p[0])*111320*math.cos(math.radians(p[1])),(q[1]-p[1])*111320)

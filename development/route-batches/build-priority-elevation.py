@@ -1,11 +1,12 @@
 """Estimated game rail elevation; never a survey or released operating profile."""
 from pathlib import Path
-import gzip,json,hashlib,math
+import gzip,json,hashlib,math,argparse
 import numpy as np
 from scipy.optimize import linprog
 from scipy.sparse import lil_matrix
 from scipy.ndimage import gaussian_filter1d
 HERE=Path(__file__).parent; DEST=HERE/'batch-001'
+parser=argparse.ArgumentParser();parser.add_argument('--output-dir',type=Path,default=DEST/'generated-rail-profiles');OUTPUT=parser.parse_args().output_dir;OUTPUT.mkdir(parents=True,exist_ok=True)
 fragment_path=DEST/'sources/tunnel-fragment-review.json'
 fragment_review=json.loads(fragment_path.read_text())
 def load(p):return json.loads(gzip.decompress(p.read_bytes()))
@@ -35,7 +36,7 @@ for key in ['azusa','kaiji']:
  if master is None:
   n=len(x);A=lil_matrix((2*(n-1)+2*n,2*n));b=np.zeros(A.shape[0]);row=0
   for i in range(n-1):
-   for sign in [1,-1]:A[row,i]=-sign;A[row,i+1]=sign;b[row]=.034*(x[i+1]-x[i]);row+=1
+   for sign in [1,-1]:A[row,i]=-sign;A[row,i+1]=sign;b[row]=.0328*(x[i+1]-x[i]);row+=1
   for i in range(n):
    A[row,i]=1;A[row,n+i]=-1;b[row]=target[i];row+=1
    A[row,i]=-1;A[row,n+i]=-1;b[row]=-target[i];row+=1
@@ -47,6 +48,6 @@ for key in ['azusa','kaiji']:
   sample=np.linspace(r['start'],r['end'],max(2,int((r['end']-r['start'])/5)))
   delta=np.interp(sample,x,rail-ground)
   r.update(startHeight=float(np.interp(r['start'],x,rail)),endHeight=float(np.interp(r['end'],x,rail)),maxTerrainAboveRail=float(max(0,-min(delta))),maxRailAboveTerrain=float(max(0,max(delta))))
- profile={'id':key,'railHeights':rail.tolist(),'trackOffsets':(rail-ground).tolist(),'structures':structures,'surveyedRailHeights':False,'releaseReady':False,'method':'GSI-classified span endpoint interpolation; L1 terrain fit constrained to 34 per mille and smoothed over 35 m. Kaiji shares Azusa prefix. Game estimate only.','limitations':['Ground samples and tile-clipped structures are not surveyed rail elevations or portals.','Stations, bridge clearances and portal heights require individual review.'],'inputHashes':{str(source.relative_to(DEST)):hashlib.sha256(source.read_bytes()).hexdigest(),str(auditpath.relative_to(DEST)):hashlib.sha256(auditpath.read_bytes()).hexdigest()},'diagnostics':{'maxGradePerMille':float(max(abs(np.diff(rail)/np.diff(x)))*1000),'originalGroundMaxGradePerMille':float(max(abs(np.diff(ground)/np.diff(x)))*1000)}}
+ profile={'id':key,'railHeights':rail.tolist(),'trackOffsets':(rail-ground).tolist(),'structures':structures,'surveyedRailHeights':False,'releaseReady':False,'method':'GSI-classified span endpoint interpolation; L1 terrain fit constrained to 32.8 per mille before lateral station offsets (under34 after offsets) and smoothed over 35 m. Kaiji shares Azusa prefix. Game estimate only.','limitations':['Ground samples and tile-clipped structures are not surveyed rail elevations or portals.','Stations, bridge clearances and portal heights require individual review.'],'inputHashes':{str(source.relative_to(DEST)):hashlib.sha256(source.read_bytes()).hexdigest(),str(auditpath.relative_to(DEST)):hashlib.sha256(auditpath.read_bytes()).hexdigest()},'diagnostics':{'maxGradePerMille':float(max(abs(np.diff(rail)/np.diff(x)))*1000),'originalGroundMaxGradePerMille':float(max(abs(np.diff(ground)/np.diff(x)))*1000)}}
  profile['inputHashes'][str(fragment_path.relative_to(DEST))]=hashlib.sha256(fragment_path.read_bytes()).hexdigest()
- out=DEST/'alignments'/f'{key}-rail-profile.json.gz';out.write_bytes(gzip.compress(json.dumps(profile,ensure_ascii=False,separators=(',',':')).encode(),mtime=0));print(key,profile['diagnostics'])
+ out=OUTPUT/f'{key}-rail-profile.json.gz';out.write_bytes(gzip.compress(json.dumps(profile,ensure_ascii=False,separators=(',',':')).encode(),mtime=0));print(key,profile['diagnostics'])

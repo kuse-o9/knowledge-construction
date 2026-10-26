@@ -1,13 +1,13 @@
 """Source-based track identities with explicitly estimated transition dimensions."""
 import math
 
-RYUO_TRACKS = {'1': 7.56, '2': 0., '3': -7.56}
-LAYOUTS = {
-    '竜王': {'tracks': RYUO_TRACKS, 'platforms': [(['1'],11.34),(['2','3'],-3.78)]},
-    '甲府': {'tracks': RYUO_TRACKS, 'platforms': [(['1'],11.34),(['2','3'],-3.78)]},
-    '塩山': {'tracks': RYUO_TRACKS, 'platforms': [(['1'],11.34),(['2','3'],-3.78)]},
-    '山梨市': {'tracks': {'1':-7.56,'2':0.,'3':7.56}, 'platforms': [(['1'],-11.34),(['2','3'],3.78)]},
-}
+import json
+from pathlib import Path
+_MODELS = json.loads((Path(__file__).parent/'batch-001/sources/station-layout-models.json').read_text())['stations']
+LAYOUTS = {name: {'tracks': row['trackOffsets'],
+                 'platforms': [(p['numbers'], p['centre']) for p in row['platforms']],
+                 'runningPlatforms': row['runningPlatforms']}
+           for name, row in _MODELS.items()}
 
 def blend(distance):
     t = max(0., min(1., (800. - abs(distance)) / 500.))
@@ -20,7 +20,7 @@ def separation(base, station_delta, direction, platform, station='竜王'):
     weight = blend(station_delta)
     return base + (target - base) * weight
 
-def metadata(stop, direction):
+def metadata(stop, direction, route_id="azusa"):
     platform = stop['gamePlatformKey']
     layout = LAYOUTS[stop['name']]
     return {'id': stop['name'], 'platform': platform,
@@ -30,4 +30,5 @@ def metadata(stop, direction):
             'platforms': [{'numbers':numbers,'centre':centre,'width':4.4}
                           for numbers,centre in layout['platforms']],
             'flatHalfLength': 300, 'transitionHalfLength': 800,
-            'dimensionsEstimated': True, 'topologySource': stop['platformSideSource']}
+            'dimensionsEstimated': True, 'topologySource': stop['platformSideSource'],
+            'runningPlatforms': _MODELS[stop['name']]['runningPlatformsByRoute'][route_id]}
