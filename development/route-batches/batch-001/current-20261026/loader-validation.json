@@ -1,0 +1,15 @@
+{
+  "pass": true,
+  "cases": [
+    "success plus script load failure",
+    "HTTP503",
+    "corrupt bytes rejected before model initialization",
+    "missing DecompressionStream",
+    "stalled fetch aborted after timeout"
+  ],
+  "method": "Actual loader executed in Node VM with mocked network/DOM; real gzip and SHA-256",
+  "pythonTestsPassed": 50,
+  "productionDeployed": false,
+  "sceneReportsNeedRefreshForChangedLoader": true,
+  "gpuDeviceFailureResolved": false
+}

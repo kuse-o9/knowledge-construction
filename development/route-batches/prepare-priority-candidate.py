@@ -43,7 +43,7 @@ def stage(output, production):
         path.write_bytes(data)
         assets.append({'path': relative, 'sha256': sha(path), 'bytes': len(data)})
     for filename in FILES:
-        data = (DEST / 'games' / filename).read_bytes()
+        data = ((HERE / 'priority-packet-loader.js') if filename == 'loader.js' else (DEST / 'games' / filename)).read_bytes()
         if filename == 'loader.js':
             marker = "if(!['azusa','kaiji'].includes(id))throw Error('Unknown route');"
             text = data.decode()
