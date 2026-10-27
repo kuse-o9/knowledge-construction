@@ -118,6 +118,14 @@
         {
           "name": "総武線快速（検証版）",
           "path": "sobu.html"
+        },
+        {
+          "name": "特急あずさ",
+          "path": "rail-games/priority/batch-001/games/azusa.html"
+        },
+        {
+          "name": "特急かいじ",
+          "path": "rail-games/priority/batch-001/games/kaiji.html"
         }
       ]
     },
