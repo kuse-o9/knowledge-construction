@@ -231,7 +231,7 @@ function ranges(geo){
  }return out;
 }
 function near(geo,d,margin=0){return rangesCached(geo).some(r=>d>=r.start-margin&&d<=r.end+margin);}
-// Avoid enormous walls from outlying terrain samples.
+// Cut terrain locally; an outlying terrain sample must not create a skyscraper wall.
 function retainingRise(geo,d){return Math.min(12,Math.max(1,1-offset(geo,d)));}
 const cache=new WeakMap();function rangesCached(geo){if(!cache.has(geo))cache.set(geo,ranges(geo));return cache.get(geo);}
 function side(C,frame,width){return C.Cartesian3.add(frame.center,C.Cartesian3.multiplyByScalar(frame.left,width,new C.Cartesian3()),new C.Cartesian3());}
@@ -256,18 +256,29 @@ function setup(viewer,C,geos,frame){
  // One owned collection at a time; replace only at a window boundary.
  const collection=new C.ClippingPolygonCollection({enabled:false});viewer.scene.globe.clippingPolygons=collection;
  viewer.scene.screenSpaceCameraController.enableCollisionDetection=false;
- active={viewer,C,segments,frame,collection,entities:[],supported:true,last:null};
+ active={viewer,C,segments,geos,frame,collection,entities:[],supported:true,last:null};
  return {supported:true,segments:segments.length,polygons:0};
 }
 function render(player){
  const a=active;if(!a?.supported)return;
- const own=a.segments.find(r=>r.key===player.direction&&player.distance>=r.start-700&&player.distance<=r.end+700);
- const cell=own?player.direction+':'+Math.floor(player.distance/120):'outside';if(cell===a.last)return;a.last=cell;
+ const own=a.segments.find(r=>r.key===player.direction&&player.distance>=r.start-700&&player.distance<=r.end+700),line=a.geos[player.direction];
+ const cell=(own?'tunnel:':'surface:')+player.direction+':'+Math.floor(player.distance/120);if(cell===a.last)return;a.last=cell;
  for(const e of a.entities)a.viewer.entities.remove(e);a.entities=[];
  // Cesium 1.117 detects vertex-count changes, not arbitrary position edits.
  // A fresh collection prevents stale clipping textures when counts are equal.
  a.viewer.scene.globe.clippingPolygons=undefined;a.collection=null;
- if(!own){a.viewer.scene.requestRender();return;}
+ if(!own){
+  if(!line){a.viewer.scene.requestRender();return;}
+  // Remove only a moving, track-width terrain strip; the rest of the landscape stays intact.
+  const C=a.C,from=Math.max(0,Math.floor((player.distance-700)/120)*120),to=Math.min(line.length,player.distance+820),polygons=[];
+  for(let start=from;start<to;start+=120){const end=Math.min(line.length,start+120),left=[],right=[];
+   for(let d=start;d<end;d+=8){const f=a.frame(line,d);left.push(side(C,f,12));right.push(side(C,f,-12));}
+   const f=a.frame(line,end);left.push(side(C,f,12));right.push(side(C,f,-12));
+   polygons.push(new C.ClippingPolygon({positions:simplifyBoundary(left).concat(simplifyBoundary(right).reverse())}));
+   for(let d=start;d<end;d+=30){const f0=a.frame(line,d),f1=a.frame(line,Math.min(end,d+30));const floor=[side(C,f0,-12),side(C,f1,-12),side(C,f1,12),side(C,f0,12)].map((v,i)=>C.Cartesian3.add(v,C.Cartesian3.multiplyByScalar(i===0||i===3?f0.up:f1.up,-.3,new C.Cartesian3()),new C.Cartesian3()));a.entities.push(a.viewer.entities.add({name:'track-cut-floor',polygon:{hierarchy:floor,perPositionHeight:true,material:C.Color.fromCssColorString('#697277')}}));}
+  }
+  a.collection=new C.ClippingPolygonCollection({polygons,enabled:polygons.length>0});a.viewer.scene.globe.clippingPolygons=a.collection;a.viewer.scene.requestRender();return;
+ }
  const polygons=[];let sourceVertices=0,maskVertices=0;
  for(const r of a.segments)for(let start=r.start;start<r.end;start+=160){
   const end=Math.min(r.end,start+160),mid=a.frame(r.geo,(start+end)/2);
