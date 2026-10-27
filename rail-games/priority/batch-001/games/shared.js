@@ -231,6 +231,8 @@ function ranges(geo){
  }return out;
 }
 function near(geo,d,margin=0){return rangesCached(geo).some(r=>d>=r.start-margin&&d<=r.end+margin);}
+// Avoid enormous walls from outlying terrain samples.
+function retainingRise(geo,d){return Math.min(12,Math.max(1,1-offset(geo,d)));}
 const cache=new WeakMap();function rangesCached(geo){if(!cache.has(geo))cache.set(geo,ranges(geo));return cache.get(geo);}
 function side(C,frame,width){return C.Cartesian3.add(frame.center,C.Cartesian3.multiplyByScalar(frame.left,width,new C.Cartesian3()),new C.Cartesian3());}
 
@@ -291,7 +293,7 @@ function render(player){
    add({name:'tunnel-floor',polygon:{hierarchy:floor,perPositionHeight:true,material:C.Color.fromCssColorString('#697277')}});
    for(const sign of [-1,1]){
     const positions=[side(C,f0,sign*9.6),side(C,f1,sign*9.6)];
-    add({name:'tunnel-retaining-wall',wall:{positions,minimumHeights:[p.height-1,q.height-1],maximumHeights:[p.height+(buried?8.5:Math.max(1,1-offset(r.geo,d))),q.height+(buried?8.5:Math.max(1,1-offset(r.geo,end)))],material:C.Color.fromCssColorString('#667079')}});
+    add({name:'tunnel-retaining-wall',wall:{positions,minimumHeights:[p.height-1,q.height-1],maximumHeights:[p.height+(buried?8.5:retainingRise(r.geo,d)),q.height+(buried?8.5:retainingRise(r.geo,end))],material:C.Color.fromCssColorString('#667079')}});
    }
    if(buried){
     const roof=[side(C,f0,-10),side(C,f1,-10),side(C,f1,10),side(C,f0,10)].map((v,i)=>{
@@ -313,7 +315,7 @@ function model(m){
 }
 function canRender(geo,d){return active?.supported!==false||!near(geo,d,200);}
 function dispose(){if(!active)return;for(const e of active.entities)active.viewer.entities.remove(e);if(active.collection&&active.viewer.scene.globe.clippingPolygons===active.collection)active.viewer.scene.globe.clippingPolygons=undefined;active=null;}
-g.BaylineTunnels={offset,ranges,near,setup,render,model,dispose,canRender,simplifyBoundary,get maskStats(){return active?.maskStats;}};
+g.BaylineTunnels={offset,ranges,near,setup,render,model,dispose,canRender,simplifyBoundary,retainingRise,get maskStats(){return active?.maskStats;}};
 })(typeof globalThis==='object'?globalThis:window);
 
 /* Existing Tachikawa branch: game interlocking, not a surveyed signal diagram.
