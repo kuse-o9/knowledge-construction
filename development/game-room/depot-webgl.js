@@ -12,7 +12,9 @@
     'chuo.html': ['chuo', 4, '#ef842d'],
     'chuo-local.html': ['sobu', 12, '#e4c23a'],
     'sobu.html': ['sobuRapid', 20, '#366da3'],
-    'railway/index.html': ['yurikamome', -12, '#56a8c4']
+    'railway/index.html': ['yurikamome', -12, '#56a8c4'],
+    'rail-games/priority/batch-001/games/azusa.html': ['azusa', -12, '#8066ad'],
+    'rail-games/priority/batch-001/games/kaiji.html': ['kaiji', -12, '#8066ad']
   };
   let gl, program, floors, model, current, geometry, dragging, moving = false, lost = false, gpuReady = false;
   let yaw = 0, pitch = 0, distance = 4.5, frame = 0, hovered = null;
@@ -389,7 +391,7 @@
   });
   try {
     const read=async path=>{const r=await fetch(new URL(path,BASE));if(!r.ok)throw Error(path);return r.json();};
-    [floors,model]=await Promise.all([read('development/game-room/operator-floors.json').then(d=>d.floors),read('development/game-room/depot-model.json')]);
+    let express;[floors,model,express]=await Promise.all([read('development/game-room/operator-floors.json?v=express1').then(d=>d.floors),read('development/game-room/depot-model.json'),read('development/game-room/depot-express-faces.json?v=express1')]);model.faces.push(...express.faces);
     for(const f of floors){const option=document.createElement('option');option.value=f.floor;option.textContent=f.floor+'F　'+f.operator;$('floor').append(option);}
     // Keep accessible route links usable even if GPU initialization fails.
     current=floors.find(f=>f.floor===18);
