@@ -1,5 +1,20 @@
 {
   "timezone": "Asia/Tokyo",
-  "restrictedWindows": [["08:30", "12:00"], ["20:30", "21:45"]],
-  "pending": []
+  "restrictedWindows": [
+    [
+      "08:30",
+      "12:00"
+    ],
+    [
+      "20:30",
+      "21:45"
+    ]
+  ],
+  "pending": [
+    {
+      "received_at_jst": "2026-10-29 08:30",
+      "request": "地形が線路に触れている箇所をすべて修正する。",
+      "status": "awaiting_user_go_ahead"
+    }
+  ]
 }
