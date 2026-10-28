@@ -1,0 +1,5 @@
+--- study-api/index.ts (version 16)
++++ study-api/index.ts (version 17)
+@@
+-  const {data,error}=await server.rpc('study_feedback',{p_actor:actor,p_action:action,p_input:input});
++  const {data,error}=await server.rpc('study_feedback',{p_actor:actor,p_action:action,p_input:{...input,_session:requestSession}});
