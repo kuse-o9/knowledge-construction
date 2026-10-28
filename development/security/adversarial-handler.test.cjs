@@ -11,6 +11,7 @@ let maintenance=false,verified=false,checks=0,authCalls=0;const seen=[];
 const server={auth:{getUser:async value=>{authCalls++;return value===token?{data:{user:{id:actor,email:'audit@example.invalid',user_metadata:{admin:true,owner:true,role:'service_role'}}}}:{error:{message:'Invalid test token'}}}},rpc:async(name,args)=>{
  seen.push({name,args});
  if(name==='study_security_service')return {data:{allowed:!maintenance,adminVerified:verified,owner:false,admin:true}};
+ if(name==='study_security_guard_signal')return {data:{blocked:true,recorded:true}};
  if(name==='study_dispatch')return {data:args.p_action==='rate_gate'?{allowed:true}:args.p_action==='admin_bootstrap'?{owner:false}:[]};
  if(name==='study_personal')return args.p_action==='gate'?{data:{allowed:true}}:{data:{id:args.p_input.id,owner_id:actor}};
  if(name==='study_feedback')return args.p_action==='gate'?{data:{allowed:true}}:{error:{code:'42501'}};
@@ -26,13 +27,13 @@ async function reject(r,status,label){const response=await handler(r);assert.equ
  await reject(request(undefined,{},'GET'),405,'wrong method');
  await reject(request('x'.repeat(65537)),413,'body limit actual bytes');
  await reject(request({action:'public_decks'},{'Content-Length':'65537'}),413,'declared body limit');
- for(const id of ["' OR '1'='1","../../auth/users",'<script>alert(1)</script>',victim+'?select=*','0;drop table auth.users','１０００００００-0000-4000-8000-000000000001']){
-  await reject(request({action:'personal_deck',input:{id}}),422,'invalid ID payload');
+ for(const [id,status] of [["' OR '1'='1",403],["../../auth/users",403],['<script>alert(1)</script>',403],[victim+'?select=*',422],['0;drop table auth.users',403],['１０００００００-0000-4000-8000-000000000001',422]]){
+  await reject(request({action:'personal_deck',input:{id}}),status,'invalid ID payload');
  }
  for(const input of [{admin:true,owner:true,role:'service_role'},{actor:victim,p_actor:victim,user_id:victim},{__proto__:{admin:true}}]){
   await reject(request({action:'users',input}),403,'role/actor spoof');
  }
- seen.length=0;let response=await handler(request({action:'personal_deck',input:{id:victim,actor:victim,p_actor:victim,owner_id:victim}}));assert.equal(response.status,200);assert.equal(seen.find(x=>x.name==='study_personal'&&x.args.p_action==='get').args.p_actor,actor);checks++;
+ seen.length=0;let response=await handler(request({action:'personal_deck',input:{id:victim,actor:victim,p_actor:victim,owner_id:victim}}));assert.equal(response.status,403);assert(!seen.some(x=>x.name==='study_personal'&&x.args.p_action==='get'));assert.equal(seen.find(x=>x.name==='study_security_guard_signal').args.p_actor,actor);checks++;
  // The DB decides ownership; the client cannot choose which account invokes it.
  maintenance=true;
  for(const action of ['public_decks','personal_decks','feedback_stats','users','admin_verify'])await reject(request({action,input:{admin:true,owner:true}}),503,'maintenance bypass attempt');
