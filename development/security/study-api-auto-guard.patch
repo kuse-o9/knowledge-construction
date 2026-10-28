@@ -1,0 +1,27 @@
+--- study-api/index.ts (version 17)
++++ study-api/index.ts (version 18)
+@@ before const IMAGE
++// Inspect routing/identity fields only: study answers and feedback text may legitimately contain code.
++function securityAttackSignal(action: unknown, input: any, actor: string | null): string | null {
++ for (const key of ['actor','p_actor','user_id','owner_id']) {
++  if (typeof input[key]==='string' && UUID.test(input[key]) && input[key]!==actor) return 'identity_spoof';
++ }
++ if(input.role==='service_role' || input.owner===true) return 'identity_spoof';
++ for(const value of [action,...['id','deck_id','question_id','target','new_id','confirmTarget'].map(k=>input[k])]){
++  if(typeof value!=='string')continue;
++  if(value.includes('../') || value.includes('..'+String.fromCharCode(92)) || /%2e%2e(?:%2f|%5c)/i.test(value))return 'path_traversal';
++  if(/(?:'\s*(?:or|and)\b|\bunion\s+select\b|;\s*(?:select|drop|delete|update)\b|<\s*(?:script|svg|img)\b)/i.test(value))return 'id_injection';
++ }
++ return null;
++}
++
+@@ before if(action==='admin_verify'||action==='admin_password_set')
++   const attackSignal=securityAttackSignal(action,input,actor);
++   if(attackSignal){
++    if(actor && requestSession){
++     const {error:guardError}=await server.rpc('study_security_guard_signal',{p_actor:actor,p_session:requestSession,p_signal:attackSignal});
++     if(guardError)throw new Fault(503,'不正な要求を拒否しました。接続設定を確認してください。');
++    }
++    throw new Fault(403,'不正な操作を拒否しました。');
++   }
++
