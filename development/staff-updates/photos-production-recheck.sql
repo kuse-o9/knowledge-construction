@@ -1,0 +1,46 @@
+begin;
+do $test$
+declare o uuid; a uuid; os uuid:=gen_random_uuid(); ads uuid:=gen_random_uuid(); rev bigint; pid uuid:=gen_random_uuid(); ap uuid:=gen_random_uuid(); path text; r jsonb; denied boolean; label text;
+begin
+ select owner_id into o from study_private.settings where singleton;
+ select user_id into a from study_private.admin_members where user_id<>o limit 1;
+ insert into auth.sessions(id,user_id,created_at,updated_at)values(os,o,now(),now()),(ads,a,now(),now());
+ select revision into rev from study_private.admin_password_settings where singleton;
+ insert into study_private.admin_verified_sessions(session_id,actor,password_revision,expires_at)values(os,o,rev,now()+interval '5 minutes'),(ads,a,rev,now()+interval '5 minutes');
+ label:=study_private.staff_alias(a);
+ if label !~ '^管理者[A-Z]+$' or study_private.staff_alias(a)<>label then raise exception 'Alias unstable';end if;
+ path:=pid::text||'/'||gen_random_uuid()::text||'.webp';
+ perform set_config('request.jwt.claims',jsonb_build_object('sub',o,'session_id',os,'role','authenticated')::text,true);
+ set local role authenticated;
+ r:=public.study_staff_updates();if r->>'myLabel'<>'オーナー' then raise exception 'Owner label changed';end if;
+ insert into storage.objects(bucket_id,name,owner_id,metadata)values('study-staff-photos',path,o::text,'{"size":120,"mimetype":"image/webp"}');
+ perform public.study_staff_updates('post',1,pid,'写真の監査用投稿',jsonb_build_array(path));
+ r:=public.study_staff_updates();
+ if not exists(select 1 from jsonb_array_elements(r->'items') x where x->>'id'=pid::text and x->>'authorLabel'='オーナー' and x->'images'=jsonb_build_array(path)) then raise exception 'Photo or owner label lost';end if;
+ if not public.study_staff_photo_access(path,false) then raise exception 'Linked photo unreadable';end if;
+ denied:=false;begin perform public.study_staff_updates('post',1,gen_random_uuid(),'無効な写真',jsonb_build_array(path));exception when invalid_parameter_value then denied:=true;end;
+ if not denied then raise exception 'Another post photo reused';end if;
+ denied:=false;begin perform public.study_staff_updates('post',1,gen_random_uuid(),'多すぎる写真','["a","b","c","d"]');exception when invalid_parameter_value then denied:=true;end;
+ if not denied then raise exception 'Photo count cap missing';end if;
+ perform public.study_staff_updates('delete',1,pid);
+ if public.study_staff_photo_access(path,false) then raise exception 'Deleted photo still newly readable';end if;
+ -- The fixture object is removed by ROLLBACK; never delete storage metadata directly.
+ reset role;
+ update study_private.maintenance_settings set enabled=false where singleton;
+ update study_private.maintenance_plans set cancelled=true where not cancelled;
+ perform set_config('request.jwt.claims',jsonb_build_object('sub',a,'session_id',ads,'role','authenticated')::text,true);
+ set local role authenticated;
+ r:=public.study_staff_updates();if r->>'myLabel'<>label then raise exception 'Admin label incorrect';end if;
+ perform public.study_staff_updates('post',1,ap,'管理者の表示名検査','[]');
+ reset role;
+ perform set_config('request.jwt.claims','{}',true);
+ set local role anon;
+ denied:=false;begin insert into storage.objects(bucket_id,name,owner_id,metadata)values('study-staff-photos',path,o::text,'{"size":120,"mimetype":"image/webp"}');exception when insufficient_privilege then denied:=true;end;
+ if not denied then raise exception 'Anonymous uploaded';end if;
+ if public.study_staff_photo_access(path,true) then raise exception 'Anonymous photo write granted';end if;
+ reset role;
+ if exists(select 1 from storage.buckets where id='study-staff-photos' and (public or file_size_limit<>262144 or allowed_mime_types<>array['image/webp'])) then raise exception 'Bucket restrictions wrong';end if;
+ if has_table_privilege('authenticated','study_private.staff_aliases','select') then raise exception 'Identity map exposed';end if;
+end $test$;
+select 'PASS: stable administrator letters; owner label; verified photo metadata insert/list and post unlink; invalid path and count rejected; anonymous upload rejected; private bucket and alias table protected. All fixtures rolled back; actual image-byte HTTP upload not tested here.' result;
+rollback;
