@@ -1,0 +1,14 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const context=vm.createContext({});vm.runInContext(fs.readFileSync(__dirname+'/rail-tunnel-runtime.js','utf8'),context);
+const T=context.BaylineTunnels,p=(x,y,z)=>({x,y,z}),index=T.clearanceIndex({forward:{cumulative:[0,100]}},(_,d)=>({center:p(d,0,0),up:p(0,0,1)}));
+const area=polygons=>polygons.reduce((sum,poly)=>sum+Math.abs(poly.reduce((s,a,i)=>{const b=poly[(i+1)%poly.length];return s+a.x*b.y-b.x*a.y;},0))/2,0);
+const crossing=[p(10,-3,1),p(12,-3,1),p(12,3,1),p(10,3,1)],result=index.clipPolygon(crossing);
+assert(Math.abs(area(result)-4.8)<1e-7);assert(result.every(poly=>poly.every(v=>Math.abs(v.y)>=1.8-1e-7)));assert.equal(area([crossing]),12,'Input was mutated');
+const outside=[p(10,10,1),p(12,10,1),p(12,12,1),p(10,12,1)];assert.equal(area(index.clipPolygon(outside)),4);
+const lowFloor=crossing.map(v=>p(v.x,v.y,.05));assert(Math.abs(area(index.clipPolygon(lowFloor))-4.8)<1e-7,'Platform base covers the rail');
+const below=crossing.map(v=>p(v.x,v.y,-1));assert.equal(area(index.clipPolygon(below)),12);
+const roof=crossing.map(v=>p(v.x,v.y,8));assert.equal(area(index.clipPolygon(roof)),12);
+const boundary=[p(10,1.8,0),p(12,1.8,0),p(12,1.8,6),p(10,1.8,6)];assert.equal(index.clipPolygon(boundary).length,1,'Coplanar boundary duplicated');
+const enclosed=[p(10,-1,1),p(12,-1,1),p(12,1,1),p(10,1,1)];assert.equal(index.clipPolygon(enclosed).length,0);
+console.log('PASS: only train-space intersection is trimmed; outside area, roof, base, input and boundary retained');
