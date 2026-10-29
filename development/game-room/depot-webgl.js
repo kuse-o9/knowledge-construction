@@ -7,21 +7,26 @@
   const $ = id => document.getElementById(id), canvas = $('depot');
   const BASE = new URL('../../', document.currentScript?.src || new URL('development/game-room/depot-webgl.js', location.href));
   const LINE = {
-    'yamanote/index.html': ['yamanote', -20, '#91ba37'],
-    'keihin.html': ['keihin', -4, '#4ba9ca'],
-    'chuo.html': ['chuo', 4, '#ef842d'],
-    'chuo-local.html': ['sobu', 12, '#e4c23a'],
-    'sobu.html': ['sobuRapid', 20, '#366da3'],
+    'yamanote/index.html': ['yamanote', -22, '#91ba37'],
+    'keihin.html': ['keihin', -8, '#4ba9ca'],
+    'chuo.html': ['chuo', -1, '#ef842d'],
+    'chuo-local.html': ['sobu', 6, '#e4c23a'],
+    'sobu.html': ['sobuRapid', 13, '#366da3'],
     'railway/index.html': ['yurikamome', -12, '#56a8c4'],
-    'rail-games/priority/batch-001/games/azusa.html': ['azusa', -12, '#8066ad'],
-    'rail-games/priority/batch-001/games/kaiji.html': ['kaiji', -12, '#8066ad']
+    'rail-games/priority/batch-001/games/azusa.html': ['azusa', -15, '#8066ad'],
+    'rail-games/priority/batch-001/games/kaiji.html': ['kaiji', 20, '#8066ad']
   };
+  const TRACKS=[-22,-15,-8,-1,6,13,20];
+  const SOURCE_X={yamanote:-20,yurikamome:-12,keihin:-4,chuo:4,sobu:12,sobuRapid:20,azusa:-12,kaiji:-12};
+  const EXPRESS_Z={azusa:18.965,kaiji:-4.035};
+  const trackX=(path,floor=current)=>floor.floor===23?0:LINE[path][1];
+  function launch(path){const href=new URL(path,BASE).href;if(new URL(location.href).searchParams.get('embed')==='1')top.location.href=href;else location.href=href;}
   let gl, program, floors, model, current, geometry, dragging, moving = false, lost = false, gpuReady = false;
   let yaw = 0, pitch = 0, distance = 4.5, frame = 0, hovered = null;
-  const player={x:-17.3,y:0,z:24.8,angle:Math.PI,walk:0}, keys=new Set();
+  const player={x:-19.3,y:0,z:24.8,angle:Math.PI,walk:0}, keys=new Set();
   let lastTick=0, avatarBuffer, avatarCount=0,liftBuffer,liftScene=null,avatarKey=null,liftKey=null,liftMesh=null,locations;
   const FOV=48*Math.PI/180;
-  const tracks=()=>current?.floor===23?[0]:[-20,-12,-4,4,12,20];
+  const tracks=()=>current?.floor===23?[0]:TRACKS;
   function surface(x,z) {
     for(const track of tracks()) if(Math.abs(x-(track+2.7))<=.8) {
       if(z>=-33.5&&z<=21.5)return .94;
@@ -39,13 +44,13 @@
   function nearbyTrain() {
     if(!current||player.y<.9)return null;
     return current.trains.find(t=>{
-      const x=current.floor===23?0:LINE[t.path][1],b=geometry.obstacles.find(b=>b.game===LINE[t.path][0]);
+      const x=trackX(t.path),b=geometry.obstacles.find(b=>b.game===LINE[t.path][0]);
       return Math.abs(player.x-(x+2.7))<=.81 && b && player.z>b.minZ-1 && player.z<b.maxZ+1;
     });
   }
   function board(game) {
     const t=nearbyTrain();
-    if(gpuReady&&!lost&&t&&(!game||LINE[t.path][0]===game))location.href=new URL(t.path,BASE).href;
+    if(gpuReady&&!lost&&t&&(!game||LINE[t.path][0]===game))launch(t.path);
     else $('hover-note').textContent='スロープからホームに上がり、電車の横で E ／「この電車に乗る」';
   }
   function updateWalkUI() {
@@ -140,7 +145,7 @@
       for(const x of [-17,0,17]) box(faces,x,11.17,z,10,.08,.16,'#f3efc4');
     }
     const agt=floor.floor===23;
-    const tracks=agt?[0]:[-20,-12,-4,4,12,20];
+    const tracks=agt?[0]:TRACKS;
     for(const x of tracks) {
       if(agt) {
         // Dedicated concrete AGT guideway, without railway sleepers.
@@ -162,7 +167,9 @@
     const ids=new Set(floor.trains.map(t=>LINE[t.path]?.[0]));
     for(const f of model.faces) if(f.game && ids.has(f.game)) {
       // Reuse the original train geometry, windows, bogies and roof equipment.
-      faces.push({...f,v:f.v.map(v=>[v[0]+(agt?12:0),v[1],v[2]])});
+      const path=floor.trains.find(t=>LINE[t.path]?.[0]===f.game).path;
+      const dx=trackX(path,floor)-SOURCE_X[f.game],dz=EXPRESS_Z[f.game]||0;
+      faces.push({...f,v:f.v.map(v=>[v[0]+dx,v[1],v[2]+dz])});
     }
     const obstacles=[];
     for(const game of ids){const vertices=faces.filter(f=>f.game===game).flatMap(f=>f.v);
@@ -220,7 +227,7 @@
     const c=Math.cos(player.angle),s=Math.sin(player.angle);
     for(const face of faces){face.v=face.v.map(([x,y,z])=>[player.x+x*c+z*s,player.y+y,player.z-x*s+z*c]);const [x,y,z]=face.n;face.n=[x*c+z*s,y,-x*s+z*c];}
     const avatar=upload(faces,avatarBuffer);avatarBuffer=avatar.buffer;avatarCount=avatar.count;avatarKey=key;}renderMesh(avatarBuffer,avatarCount);
-    canvas.dataset.floor=String(current.floor);canvas.dataset.elevation=String(elevation);
+    canvas.dataset.trackAssignments=JSON.stringify(current.trains.map(t=>({path:t.path,x:trackX(t.path)})));canvas.dataset.floor=String(current.floor);canvas.dataset.elevation=String(elevation);
     canvas.dataset.renderer='webgl';canvas.dataset.glError=String(gl.getError());
   }
   function renderLift(){
@@ -288,7 +295,7 @@
   function display(floor) {
     current=floor; elevation=(floor.floor-1)*14;
     if(gpuReady&&!lost)geometry=floorGeometry(floor);
-    stopWalking();player.x=floor.floor===23?2.7:-17.3;player.y=0;player.z=24.8;player.angle=Math.PI;
+    stopWalking();player.x=floor.floor===23?2.7:-19.3;player.y=0;player.z=24.8;player.angle=Math.PI;
     $('floor').value=floor.floor;$('floor-number').textContent=floor.floor+'F';$('scene-title').textContent=floor.operator;
     $('train-count').textContent=floor.trains.length?floor.trains.length+'編成 待機中':'車両は準備中・基地見学';
     $('route-count').textContent=floor.trains.length+'路線';$('routes').replaceChildren();
@@ -352,7 +359,7 @@
     const button=$(id);button.addEventListener('pointerdown',e=>{e.preventDefault();if(moving||!gpuReady||lost)return;button.setPointerCapture(e.pointerId);const idle=!keys.size;keys.add(key);if(idle)requestAnimationFrame(tick);});
     for(const type of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(type,()=>keys.delete(key));
   }
-  $('reset').onclick=()=>{stopWalking();yaw=0;pitch=0;distance=4.5;player.x=current.floor===23?2.7:-17.3;player.y=0;player.z=24.8;highlight(null);schedule();canvas.focus();};
+  $('reset').onclick=()=>{stopWalking();yaw=0;pitch=0;distance=4.5;player.x=current.floor===23?2.7:-19.3;player.y=0;player.z=24.8;highlight(null);schedule();canvas.focus();};
   $('floor').onchange=()=>travel($('floor').value);
   $('up').onclick=()=>travel(current.floor+1);$('down').onclick=()=>travel(current.floor-1);
   addEventListener('resize',schedule);new ResizeObserver(schedule).observe(canvas);
