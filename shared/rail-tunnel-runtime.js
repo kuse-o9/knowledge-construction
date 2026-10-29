@@ -48,6 +48,27 @@ function floorCuts(geo,start,end){
  for(let i=lo;i<c.length&&c[i]<end;i++)out.push(c[i]);
  return out.sort((a,b)=>a-b).filter((d,i,a)=>i===0||d-a[i-1]>1e-6);
 }
+// Exact segment clearance in world metres. Nearby parallel bores must not put
+// their inner retaining wall across another running track (or a tight curve).
+function segmentGap2(a,b,c,d){
+ const sub=(p,q)=>[p.x-q.x,p.y-q.y,p.z-q.z],dot=(p,q)=>p.reduce((s,v,i)=>s+v*q[i],0);
+ const u=sub(b,a),v=sub(d,c),w=sub(a,c),A=dot(u,u),B=dot(u,v),D=dot(u,w),E=dot(v,v),F=dot(v,w);
+ let s=0,t=0;const clamp=n=>Math.max(0,Math.min(1,n));
+ if(A<1e-12)t=E<1e-12?0:clamp(F/E);
+ else if(E<1e-12)s=clamp(-D/A);
+ else{const den=A*E-B*B;s=den>1e-12?clamp((B*F-D*E)/den):0;t=(B*s+F)/E;if(t<0){t=0;s=clamp(-D/A);}else if(t>1){t=1;s=clamp((B-D)/A);}}
+ return w.reduce((sum,n,i)=>sum+(n+s*u[i]-t*v[i])**2,0);
+}
+function clearanceIndex(geos,frame){
+ const cells=new Map(),size=32,range=(a,b,r=0)=>['x','y','z'].map(k=>[Math.floor((Math.min(a[k],b[k])-r)/size),Math.floor((Math.max(a[k],b[k])+r)/size)]);
+ function visit(bounds,fn){for(let x=bounds[0][0];x<=bounds[0][1];x++)for(let y=bounds[1][0];y<=bounds[1][1];y++)for(let z=bounds[2][0];z<=bounds[2][1];z++)if(fn(x+','+y+','+z))return true;return false;}
+ let count=0;
+ for(const geo of Object.values(geos))for(let i=1;i<geo.cumulative.length;i++){
+  const start=geo.cumulative[i-1],end=geo.cumulative[i],n=Math.max(1,Math.ceil((end-start)/32));let a=frame(geo,start).center;
+  for(let j=1;j<=n;j++){const b=frame(geo,start+(end-start)*j/n).center,segment={a,b,id:count++};visit(range(a,b),key=>{if(!cells.has(key))cells.set(key,[]);cells.get(key).push(segment);});a=b;}
+ }
+ return {segments:count,blocked(a,b,radius=6.5){const seen=new Set();return visit(range(a,b,radius),key=>{for(const s of cells.get(key)||[]){if(seen.has(s.id))continue;seen.add(s.id);if(segmentGap2(a,b,s.a,s.b)<radius*radius)return true;}return false;});}};
+}
 function setup(viewer,C,geos,frame){
  if(active)dispose();
  const segments=Object.entries(geos).flatMap(([key,geo])=>rangesCached(geo).map(r=>({...r,key,geo})));
@@ -56,7 +77,7 @@ function setup(viewer,C,geos,frame){
  // One owned collection at a time; replace only at a window boundary.
  const collection=new C.ClippingPolygonCollection({enabled:false});viewer.scene.globe.clippingPolygons=collection;
  viewer.scene.screenSpaceCameraController.enableCollisionDetection=false;
- active={viewer,C,segments,geos,frame,collection,entities:new Map(),supported:true,last:null};
+ active={viewer,C,segments,geos,frame,collection,clearance:clearanceIndex(geos,frame),entities:new Map(),supported:true,last:null};
  return {supported:true,segments:segments.length,polygons:0};
 }
 function render(player){
@@ -110,6 +131,9 @@ function render(player){
    retain('tunnel-floor:'+r.key+':'+cuts[i],{name:'tunnel-floor',polygon:{hierarchy:floor,perPositionHeight:true,material:C.Color.fromCssColorString('#697277')}});}
    for(const sign of [-1,1]){
     const positions=[side(C,f0,sign*9.6),side(C,f1,sign*9.6)];
+    // Overlapping terrain cuts form one opening. Keep the outside walls and
+    // both tracks, but omit an internal panel that invades either rail envelope.
+    if(a.clearance.blocked(positions[0],positions[1]))continue;
     retain('tunnel-wall:'+r.key+':'+d+':'+sign,{name:'tunnel-retaining-wall',wall:{positions,minimumHeights:[p.height-1,q.height-1],maximumHeights:[p.height+(buried?8.5:retainingRise(r.geo,d)),q.height+(buried?8.5:retainingRise(r.geo,end))],material:C.Color.fromCssColorString('#667079')}});
    }
    if(buried){
@@ -132,5 +156,5 @@ function model(m){
 }
 function canRender(geo,d){return active?.supported!==false||!near(geo,d,200);}
 function dispose(){if(!active)return;for(const e of active.entities.values())active.viewer.entities.remove(e);if(active.collection&&active.viewer.scene.globe.clippingPolygons===active.collection)active.viewer.scene.globe.clippingPolygons=undefined;active=null;}
-g.BaylineTunnels={offset,ranges,near,setup,render,model,dispose,canRender,simplifyBoundary,retainingRise,floorCuts,get maskStats(){return active?.maskStats;}};
+g.BaylineTunnels={offset,ranges,near,setup,render,model,dispose,canRender,simplifyBoundary,retainingRise,floorCuts,segmentGap2,clearanceIndex,get maskStats(){return active?.maskStats;}};
 })(typeof globalThis==='object'?globalThis:window);
