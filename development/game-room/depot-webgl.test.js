@@ -5,7 +5,7 @@ const assert=require('node:assert/strict');
 const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'../..');
 const floors=JSON.parse(fs.readFileSync(path.join(__dirname,'operator-floors.json'))).floors;
-async function boot(gpu=true,reducedMotion=true,reason=""){
+async function boot(gpu=true,reducedMotion=true,reason="",embedded=false){
   const nodes=new Map(),events={},draws=[],uploads=[];let count=0,now=0;const frames=[];
   function node(id=''){
     return {id,hidden:false,disabled:false,value:'',textContent:'',dataset:{},style:{setProperty(){}},children:[],classList:{toggle(){}},
@@ -24,15 +24,15 @@ async function boot(gpu=true,reducedMotion=true,reason=""){
     getElementById(id){if(!nodes.has(id))nodes.set(id,node(id));return nodes.get(id)},
     createElement:()=>node(),querySelectorAll:()=>nodes.get('routes')?.children||[]};
   document.getElementById('depot').getContext=()=>{if(!gpu&&reason)document.getElementById('depot').events.webglcontextcreationerror({statusMessage:reason});return gpu?gl:null;};
-  const location={href:'http://localhost/depot-3d.html'};
-  const context=vm.createContext({document,location,URL,Float32Array,Set,Map,Math,Promise,console:{error(){}},
+  const location={href:'http://localhost/depot-3d.html'+(embedded?'?embed=1':'')},top={location:{href:'http://localhost/index.html#game-room'}};
+  const context=vm.createContext({document,location,top,URL,Float32Array,Set,Map,Math,Promise,console:{error(){}},
     devicePixelRatio:1,performance:{now:()=>now},matchMedia:()=>({matches:reducedMotion}),
     requestAnimationFrame:fn=>{frames.push(fn);return ++count},
     ResizeObserver:class{observe(){}},addEventListener:(name,fn)=>events[name]=fn,
     fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,url.pathname)))})});
   await vm.runInContext(fs.readFileSync(path.join(__dirname,'depot-webgl.js'),'utf8'),context);
   const flush=async(n=4)=>{for(let i=0;i<n;i++){now+=50;const batch=frames.splice(0);for(const fn of batch)fn(now);await new Promise(r=>setImmediate(r));}};await flush();
-  return {nodes,draws,uploads,location,flush,events,setGPU(value){gpu=value;}};
+  return {nodes,draws,uploads,location,top,flush,events,setGPU(value){gpu=value;}};
 }
 test('JR five routes, finite 3D mesh upload, and all 23 independent floors',async()=>{
   const b=await boot(),n=id=>b.nodes.get(id);
@@ -98,4 +98,10 @@ test('both express cars can be selected from their separate positions',async()=>
  n('board').onclick();assert.match(b.location.href,/azusa\.html$/);
  n('reset').onclick();await b.flush();await walk('d',263);await walk('w',100);assert.equal(c.dataset.nearby,'rail-games/priority/batch-001/games/kaiji.html');
  n('board').onclick();assert.match(b.location.href,/kaiji\.html$/);
+});
+
+test('embedded company depot starts the game in the top Study Note window',async()=>{
+ const b=await boot(true,true,'',true),c=b.nodes.get('depot');
+ c.events.keydown({key:'w',preventDefault(){}});await b.flush(100);b.events.keyup({key:'w'});await b.flush();
+ b.nodes.get('board').onclick();assert.equal(b.top.location.href,'http://localhost/yamanote/index.html');assert.match(b.location.href,/depot-3d.html\?embed=1$/);
 });
