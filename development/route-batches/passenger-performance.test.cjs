@@ -1,0 +1,22 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'../..'),Ces=require(process.env.CESIUM_MODULE||path.resolve(root,'../work/cesium-runtime/node_modules/cesium'));
+const source=fs.readFileSync(root+'/rail-games/priority/batch-001/games/rail.js','utf8'),fresh=source.slice(source.indexOf('function updateMovingModels('),source.indexOf('function buildRailway('));
+// Reconstruct the previous unthrottled update for a numerical equivalence baseline.
+const cache="if(!force&&item.lastT===t&&item.lastBoarded===boarded&&item.lastCurrent===current)continue;item.lastT=t;item.lastBoarded=boarded;item.lastCurrent=current;";
+const old=fresh.replace(/const npcStops=new Map\(\);(?:if\(boardingPeople.length\))?for\(const train of traffic\?\.trains\|\|\[\]\)\{const stop=stoppedTrafficAtStation\(train\);if\(stop\)\{const key=stop.station.direction\+'\|'\+stop.station.code;if\(!npcStops.has\(key\)\)npcStops.set\(key,stop\);\}\}/,'').replace("npc=npcStops.get(item.meta.direction+'|'+item.meta.code)","npc=traffic?.trains.map(stoppedTrafficAtStation).find(x=>x&&x.station.direction===item.meta.direction&&x.station.code===item.meta.code)").replace(cache,'').replace("if(!item.homeMatrix)item.homeMatrix=Ces.Matrix4.fromTranslationQuaternionRotationScale(new Ces.Cartesian3(...item.person.position),new Ces.Quaternion(...item.person.rotation),new Ces.Cartesian3(item.person.scale,item.person.scale,item.person.scale),new Ces.Matrix4());for(const part of item.parts)part.modelMatrix=item.homeMatrix;", "for(const part of item.parts)part.modelMatrix=Ces.Matrix4.fromTranslationQuaternionRotationScale(new Ces.Cartesian3(...item.person.position),new Ces.Quaternion(...item.person.rotation),new Ces.Cartesian3(item.person.scale,item.person.scale,item.person.scale),new Ces.Matrix4());");
+assert.notEqual(old,fresh);
+function run(code,mode){
+ let matrices=0,lookups=0,progress=0;class M extends Ces.Matrix4{static fromTranslationQuaternionRotationScale(...args){matrices++;return Ces.Matrix4.fromTranslationQuaternionRotationScale(...args);}}
+ const state={doors:mode==='player',visited:[],distance:0},boarding={state:mode==='player'?state:null,index:0};
+ const people=Array.from({length:180},(_,i)=>({rank:i%45,meta:{direction:'forward',code:i%2?'S2':'S1',distance:1000,side:1},person:{position:[100+i,200,300],rotation:[0,0,0,1],scale:.94,distance:i*.25},parts:Array.from({length:10},()=>({show:true}))}));
+ const context={Ces:{...Ces,Matrix4:M},boardingPeople:people,state,boarding,direction:'forward',route:{stops:[{code:'S1'}]},traffic:{trains:mode==='npc'?[{id:1},{id:2}]:[]},C:{clamp:(v,a,b)=>Math.max(a,Math.min(b,v))},D:{train:{cars:9}},routeGeometries:{forward:{}},doorInstances:[],trainInstances:[],updateTrainVisibility(){},boardingProgress:rank=>Math.max(0,Math.min(1,progress-rank*.02)),stoppedTrafficAtStation:t=>(lookups++,{station:{direction:'forward',code:t.id===1?'S1':'S2'},elapsed:progress*8}),formationFor:()=>Array.from({length:9},(_,i)=>({centreBehindFront:10+i*20,doorCentres:[-7,7]})),surfaceFrame:()=>({left:new Ces.Cartesian3(0,1,0)}),cartAt:d=>new Ces.Cartesian3(d,0,1)};
+ vm.createContext(context);vm.runInContext(code,context);
+ const snapshots=[];for(let i=0;i<60;i++){progress=mode==='idle'?0:i/20;context.updateMovingModels();snapshots.push(people.map(p=>p.parts.map(part=>({show:part.show,matrix:Array.from({length:16},(_,j)=>part.modelMatrix[j])}))));}
+ // Reopening/resetting the station must restore the static position and visibility.
+ state.doors=false;boarding.state=null;context.traffic.trains=[];context.updateMovingModels(true);
+ snapshots.push(people.map(p=>p.parts.map(part=>({show:part.show,matrix:Array.from({length:16},(_,j)=>part.modelMatrix[j])}))));
+ return{matrices,lookups,snapshots};
+}
+const report=[];for(const mode of ['idle','player','npc']){const before=run(old,mode),after=run(fresh,mode);assert.deepEqual(after.snapshots,before.snapshots,mode+' visual matrices or visibility changed');assert(after.matrices<before.matrices);report.push({mode,passengers:180,parts:1800,frames:60,matricesBefore:before.matrices,matricesAfter:after.matrices,npcLookupsBefore:before.lookups,npcLookupsAfter:after.lookups});}
+console.log(JSON.stringify({pass:true,identicalMatricesAndVisibility:true,report,scope:'CPU operations with actual Cesium matrices; no physical FPS claim'}));
