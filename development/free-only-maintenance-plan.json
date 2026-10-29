@@ -1,0 +1,48 @@
+{
+  "updated_jst": "2026-10-29",
+  "scope": "既存ゲーム・勉強アプリ・動画編集の点検で見つかった問題の修正と再確認。新規路線や新しい大型機能の制作一覧とは分ける。",
+  "budget": "追加の有料サービス、従量課金AI、有料プランへの変更、機材レンタルは実施しない。",
+  "paid_only_removed_from_active_backlog": [
+    "Supabase Pro以上を必要とする漏えい済みパスワード照合の有効化",
+    "有料の管理バックアップ・PITR契約",
+    "外部の有料AI補正・採点・相談APIを必須とする実装",
+    "有料の監視・WAF契約やクラウドGPUのレンタル"
+  ],
+  "historical_audit_records": "過去の実施結果は記録として維持する。有料項目を実施待ちとして再提案しない。無料の代替が同等の機能・保護を持つとは断定しない。",
+  "free_repairs": [
+    {
+      "item": "全路線の地形切り取りと補助床の干渉修正",
+      "status": "published_and_cpu_verified",
+      "evidence": "shared/terrain-corridor.test.cjs: 14路線・27方向・10365地点"
+    },
+    {
+      "item": "デッキの復旧用コピー・オーナー専用復元・権限確認",
+      "status": "published_and_verified",
+      "evidence": "本番DBのロールバック検査とオーナーブラウザー検査"
+    },
+    {
+      "item": "動画プロジェクト検証・失敗した書き出しの後片付け",
+      "status": "published_and_verified",
+      "evidence": "project-input.test.mjs, export-cleanup.test.cjs"
+    },
+    {
+      "item": "古い復旧用コピーも選べるページ送り",
+      "status": "published_and_regression_verified",
+      "evidence": "recovery-ui.test.cjs: 101件のページ移動"
+    },
+    {
+      "item": "素材の種類・長さの取り違えと読み込み待ちの修正",
+      "status": "published_and_regression_verified",
+      "evidence": "media-import.test.cjs: 7ケース"
+    },
+    {
+      "item": "通常の動画編集操作・実ファイル入出力の再確認",
+      "status": "blocked_by_browser_filechooser",
+      "evidence": "オーナーログイン・公開編集画面まで確認。素材選択の自動操作が応答せず、復旧後はブラウザーのセッションが消失。ファイル入出力は未確認のままとする。"
+    }
+  ],
+  "verification_limits_not_disguised_as_repairs": [
+    "このクラウド環境で利用できない物理GPU・実際の耳での音質・スマホ実端末",
+    "公開資料だけで確定できない実物の細部寸法・全地点の測量値"
+  ]
+}
