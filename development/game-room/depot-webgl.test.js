@@ -36,7 +36,7 @@ async function boot(gpu=true,reducedMotion=true,reason=""){
 }
 test('JR five routes, finite 3D mesh upload, and all 23 independent floors',async()=>{
   const b=await boot(),n=id=>b.nodes.get(id);
-  assert.equal(n('train-count').textContent,'5編成 待機中');assert.equal(n('routes').children.length,5);
+  assert.equal(n('train-count').textContent,'7編成 待機中');assert.equal(n('routes').children.length,7);
   assert.equal(n('floor').children.length,23);assert.ok(b.draws.length);assert.ok(b.uploads[0]>10000);
   for(const floor of floors){
     n('floor').value=floor.floor;n('floor').onchange();await b.flush();
@@ -59,10 +59,10 @@ test('walk up ramp, stop at train and platform walls, board only nearby, reset o
   c.events.keydown({key:'e',preventDefault(){}});assert.match(b.location.href,/depot-3d/);
   await walk('w',22);assert.ok(pos().y>.9,'ramp reaches platform height');
   await walk('w',60);assert.equal(c.dataset.nearby,'yamanote/index.html');assert.equal(n('board').disabled,false);
-  await walk('a',20);assert.ok(pos().x>-18.11,'cannot walk through platform side or train');
+  await walk('a',20);assert.ok(pos().x>-20.11,'cannot walk through platform side or train');
   c.events.keydown({key:'e',preventDefault(){}});assert.equal(b.location.href,'http://localhost/yamanote/index.html');
   n('reset').onclick();await b.flush();assert.equal(pos().y,0);assert.equal(pos().z,24.8);
-  await walk('d',7);await walk('w',45);await walk('a',20);assert.ok(pos().x>-16.51,'platform wall stops sideways entry');
+  await walk('d',7);await walk('w',45);await walk('a',20);assert.ok(pos().x>-18.51,'platform wall stops sideways entry');
   n('floor').value=23;n('floor').onchange();await b.flush(8);
   assert.equal(pos().x,2.7);assert.equal(pos().y,0);assert.equal(n('board').disabled,true);
   await walk('w',85);assert.equal(c.dataset.nearby,'railway/index.html');
@@ -70,7 +70,7 @@ test('walk up ramp, stop at train and platform walls, board only nearby, reset o
 });
 test('GPU-disabled keeps correct floor, full diagnostics and all 23 floor selections usable',async()=>{
  const reason='GL_RENDERER = Disabled, '+ 'complete browser reason '.repeat(30),b=await boot(false,true,reason),n=id=>b.nodes.get(id);
- assert.equal(n('floor').disabled,false);assert.equal(n('floor').value,18);assert.equal(n('routes').children.length,5);
+ assert.equal(n('floor').disabled,false);assert.equal(n('floor').value,18);assert.equal(n('routes').children.length,7);
  assert.equal(n('depot-error-detail').textContent.includes(reason),true);assert.match(n('depot-error-guide').textContent,/chrome:\/\/settings\/system/);
  assert.equal(n('depot-diagnostics').hidden,false);assert.equal(n('walk-up').disabled,true);assert.equal(b.draws.length,0);
  for(const floor of floors){n('floor').value=floor.floor;n('floor').onchange();await b.flush();assert.equal(n('scene-title').textContent,floor.operator);assert.equal(n('floor').disabled,false);}
@@ -89,4 +89,13 @@ test('elevator carries the avatar through real intermediate heights with physica
  const b=await boot(true,false),c=b.nodes.get('depot'),floor=b.nodes.get('floor');floor.value=1;floor.onchange();await b.flush(20);
  assert.equal(c.dataset.floor,'18');assert.ok(Number(c.dataset.elevation)>0&&Number(c.dataset.elevation)<238);assert.equal(c.dataset.liftPhase,'travelling');assert.equal(JSON.parse(c.dataset.player).x,-23);
  await b.flush(120);assert.equal(c.dataset.floor,'1');assert.equal(c.dataset.elevation,'0');assert.equal(c.dataset.liftPhase,'open');assert.equal(floor.disabled,false);
+});
+test('both express cars can be selected from their separate positions',async()=>{
+ const b=await boot(),c=b.nodes.get('depot'),n=id=>b.nodes.get(id);
+ const walk=async(key,frames)=>{c.events.keydown({key,preventDefault(){}});await b.flush(frames);b.events.keyup({key});await b.flush();};
+ const tracks=JSON.parse(c.dataset.trackAssignments);assert.equal(new Set(tracks.map(t=>t.x)).size,7);
+ await walk('d',44);await walk('w',100);assert.equal(c.dataset.nearby,'rail-games/priority/batch-001/games/azusa.html');
+ n('board').onclick();assert.match(b.location.href,/azusa\.html$/);
+ n('reset').onclick();await b.flush();await walk('d',263);await walk('w',100);assert.equal(c.dataset.nearby,'rail-games/priority/batch-001/games/kaiji.html');
+ n('board').onclick();assert.match(b.location.href,/kaiji\.html$/);
 });
