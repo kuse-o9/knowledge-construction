@@ -32,7 +32,7 @@
   const [common,stock]=await Promise.all([packet('common.json.gz',route.commonSha256),packet('e353.json.gz',route.stockSha256)]);
   window.RAIL_DATA=route.data;window.RAIL_ANNOUNCEMENTS=route.announcements;window.RAIL_RECORDINGS={};window.BaylineReviewedAnnouncements.apply(route.data,route.announcements);window.BATCH_STOCK=stock;window.RAIL_CITY_MODELS=common.city;
   window.BaylineBatchModels.initialize(route.data,common,stock);
-  const script=document.createElement('script');script.src='rail.js?v=manual3';script.onerror=()=>showFailure(Error('運転画面を読み込めませんでした。'));document.body.append(script);
+  const script=document.createElement('script');script.src='rail.js?v=perf4';script.onerror=()=>showFailure(Error('運転画面を読み込めませんでした。'));document.body.append(script);
  }catch(error){showFailure(error);}
  function showFailure(error){
   const status=document.getElementById('scene-status');status.textContent=String(error.message||error);status.setAttribute('role','alert');Object.assign(status.style,{whiteSpace:'normal',overflowWrap:'anywhere',height:'auto',maxHeight:'none'});document.getElementById('start').disabled=true;document.body.dataset.loadError=status.textContent;
