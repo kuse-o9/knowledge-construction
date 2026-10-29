@@ -7,6 +7,8 @@ begin
  insert into auth.sessions(id,user_id,created_at,updated_at)values(os,o,now(),now()),(ads,a,now(),now());
  select revision into rev from study_private.admin_password_settings where singleton;
  insert into study_private.admin_verified_sessions(session_id,actor,password_revision,expires_at)values(os,o,rev,now()+interval '5 minutes'),(ads,a,rev,now()+interval '5 minutes');
+ update study_private.maintenance_settings set enabled=false where singleton;
+ update study_private.maintenance_plans set cancelled=true where not cancelled;
  label:=study_private.staff_alias(a);
  if label !~ '^管理者[A-Z]+$' or study_private.staff_alias(a)<>label then raise exception 'Alias unstable';end if;
  path:=pid::text||'/'||gen_random_uuid()::text||'.webp';
@@ -18,12 +20,26 @@ begin
  r:=public.study_staff_updates();
  if not exists(select 1 from jsonb_array_elements(r->'items') x where x->>'id'=pid::text and x->>'authorLabel'='オーナー' and x->'images'=jsonb_build_array(path)) then raise exception 'Photo or owner label lost';end if;
  if not public.study_staff_photo_access(path,false) then raise exception 'Linked photo unreadable';end if;
+ reset role;
+ perform set_config('request.jwt.claims','{}',true);
+ set local role anon;
+ if (select count(*) from storage.objects where bucket_id='study-staff-photos' and name=path)<>1 then raise exception 'Published photo read policy failed';end if;
+ reset role;
+ perform set_config('request.jwt.claims',jsonb_build_object('sub',o,'session_id',os,'role','authenticated')::text,true);
+ set local role authenticated;
  denied:=false;begin perform public.study_staff_updates('post',1,gen_random_uuid(),'無効な写真',jsonb_build_array(path));exception when invalid_parameter_value then denied:=true;end;
  if not denied then raise exception 'Another post photo reused';end if;
  denied:=false;begin perform public.study_staff_updates('post',1,gen_random_uuid(),'多すぎる写真','["a","b","c","d"]');exception when invalid_parameter_value then denied:=true;end;
  if not denied then raise exception 'Photo count cap missing';end if;
  perform public.study_staff_updates('delete',1,pid);
  if public.study_staff_photo_access(path,false) then raise exception 'Deleted photo still newly readable';end if;
+ reset role;
+ perform set_config('request.jwt.claims','{}',true);
+ set local role anon;
+ if exists(select 1 from storage.objects where bucket_id='study-staff-photos' and name=path) then raise exception 'Orphan photo exposed to reader';end if;
+ reset role;
+ perform set_config('request.jwt.claims',jsonb_build_object('sub',o,'session_id',os,'role','authenticated')::text,true);
+ set local role authenticated;
  -- The fixture object is removed by ROLLBACK; never delete storage metadata directly.
  reset role;
  update study_private.maintenance_settings set enabled=false where singleton;
