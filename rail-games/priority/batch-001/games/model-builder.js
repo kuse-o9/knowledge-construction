@@ -3,7 +3,7 @@
  * elevations must pass the release gates before these become a public game.
  */
 (function(root){'use strict';
-let data,common,stock,geos,cache=new Map();
+let data,common,stock,geos,clearance,cache=new Map();
 function stationOuterTrackOffset(meta,start,end,d){
  const join=meta.islandOuterTrackJoin??(meta.side>0?0:12),t=Math.max(0,Math.min(1,Math.min((d-start)/100,(end-d)/100)));
  return join+(7.56-join)*t*t*(3-2*t);
@@ -15,7 +15,7 @@ function terminalTrackOffset(meta,native,d){
  return (native-own)*l.nativeDirection/meta.side;
 }
 function initialize(d,c,s){
- data=d;common=c;stock=s;cache.clear();geos={};const tracks=[],stations=[],groundHeights={};
+ data=d;common=c;stock=s;clearance=null;cache.clear();geos={};const tracks=[],stations=[],groundHeights={};
  for(const [direction,route]of Object.entries(data.routes)){
   const geo=RailCore.geometry(route);RailCore.applyElevation(geo,route.groundHeights);geos[direction]=geo;groundHeights[direction]=route.groundHeights;
   for(let start=0;start<geo.length;start+=400){const end=Math.min(geo.length,start+400),p=RailCore.position(geo,(start+end)/2);tracks.push({id:direction+':track:'+start,direction,start,end,lon:p.lon,lat:p.lat,generated:true,kind:'track'});}
@@ -32,10 +32,19 @@ function build(meta){
  const f=frame(meta.kind==='track'?(meta.start+meta.end)/2:meta.platformCenterDistance),origin=f.center,groups=new Map();let radius=1;
  function xyz(f,x,y,z){if(meta.kind==='station')y=(y+(meta.platformLateralOrigin||0))*meta.side;const out=V.clone(f.center);V.add(out,V.multiplyByScalar(f.forward,x,new V()),out);V.add(out,V.multiplyByScalar(f.left,y,new V()),out);V.add(out,V.multiplyByScalar(f.up,z,new V()),out);return out;}
  function quad(color,a,b,c,d){
-  const normal=V.cross(V.subtract(b,a,new V()),V.subtract(c,a,new V()),new V());if(V.magnitudeSquared(normal)<1e-12)return;V.normalize(normal,normal);
-  if(!groups.has(color))groups.set(color,{p:[],n:[],i:[]});const group=groups.get(color),at=group.p.length/3;
-  for(const p of [a,b,c,d]){const v=V.subtract(p,origin,new V());radius=Math.max(radius,V.magnitude(v));group.p.push(v.x,v.y,v.z);group.n.push(Math.round(normal.x*127),Math.round(normal.y*127),Math.round(normal.z*127));}
-  group.i.push(at,at+1,at+2,at,at+2,at+3);
+  let polygons=[[a,b,c,d]];
+  if(['#a6a89e','#e0c257','#d8d8ce','#bcc5c4'].includes(color)){
+   if(!clearance)clearance=BaylineTunnels.clearance||BaylineTunnels.clearanceIndex(geos,(g,d)=>{const at=n=>{const p=RailCore.position(g,n);return V.fromDegrees(p.lon,p.lat,p.height);},center=at(d),forward=V.normalize(V.subtract(at(d+.3),at(d-.3),new V()),new V()),radial=C.Ellipsoid.WGS84.geodeticSurfaceNormal(center,new V()),left=V.normalize(V.cross(radial,forward,new V()),new V()),up=V.normalize(V.cross(forward,left,new V()),new V());return {center,up};});
+   if(typeof clearance.clipPolygon==='function')polygons=clearance.clipPolygon(polygons[0]);
+  }
+  for(const polygon of polygons){
+   let normal;
+   for(let i=1;i<polygon.length-1;i++){const candidate=V.cross(V.subtract(polygon[i],polygon[0],new V()),V.subtract(polygon[i+1],polygon[0],new V()),new V());if(V.magnitudeSquared(candidate)>1e-12){normal=V.normalize(candidate,candidate);break;}}
+   if(!normal)continue;
+   if(!groups.has(color))groups.set(color,{p:[],n:[],i:[]});const group=groups.get(color),at=group.p.length/3;
+   for(const p of polygon){const v=V.subtract(p,origin,new V());radius=Math.max(radius,V.magnitude(v));group.p.push(v.x,v.y,v.z);group.n.push(Math.round(normal.x*127),Math.round(normal.y*127),Math.round(normal.z*127));}
+   for(let i=1;i<polygon.length-1;i++)group.i.push(at,at+i,at+i+1);
+  }
  }
  function box(f,x,y,z,dx,dy,dz,color){const ps=[[-1,-1,-1],[-1,-1,1],[-1,1,-1],[-1,1,1],[1,-1,-1],[1,-1,1],[1,1,-1],[1,1,1]].map(([a,b,c])=>xyz(f,x+a*dx/2,y+b*dy/2,z+c*dz/2));for(const face of [[0,1,3,2],[4,6,7,5],[0,4,5,1],[2,3,7,6],[0,2,6,4],[1,5,7,3]])quad(color,...face.map(i=>ps[i]));}
  function ribbon(a,b,ya,yb,width,z,height,color){
@@ -104,5 +113,5 @@ function build(meta){
  }
  cache.set(meta.id,model);while(cache.size>32)cache.delete(cache.keys().next().value);return model;
 }
-root.BaylineBatchModels={initialize,build,stationOuterTrackOffset,terminalTrackOffset,get cacheSize(){return cache.size;}};
+root.BaylineBatchModels={initialize,build,releaseClearance(){clearance=null;},stationOuterTrackOffset,terminalTrackOffset,get cacheSize(){return cache.size;}};
 })(window);
