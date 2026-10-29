@@ -23,7 +23,7 @@
  const bundle=JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());bytes=null;let html=bundle.html;
  const readingMarker="let spoken=text;if(language.startsWith('ja'))for(const [name,reading]of Object.entries(readings)";
  if(html.includes(readingMarker))html=html.replace(readingMarker,"let spoken=text;if(language.startsWith('ja'))spoken=spoken.replace(/([0-9０-９一二三四五六七八九十百]+)号車/g,'$1ごうしゃ');if(language.startsWith('ja'))for(const [name,reading]of Object.entries(readings)");
- const marker='<script>/* BAYLINE shared signal model',a=html.indexOf(marker);if(a<0)throw Error('共通処理の版を確認できませんでした。');const b=html.indexOf('</script>',a);html=html.slice(0,a)+'<script src="shared/rail-scene-shared.js"></script>'+html.slice(b+9);
+ const marker='<script>/* BAYLINE shared signal model',a=html.indexOf(marker);if(a<0)throw Error('共通処理の版を確認できませんでした。');const b=html.indexOf('</script>',a);html=html.slice(0,a)+'<script src="shared/rail-scene-shared.js?v=terrain4"></script>'+html.slice(b+9);
  const last=html.lastIndexOf('<script>'),end=html.indexOf('</script>',last);if(last<0||!html.slice(last,end).includes('function modelGeometry'))throw Error('運転処理の版を確認できませんでした。');
  html=html.slice(0,last)+'<script src="shared/rail-scene-start.js?v=gpu10"></script><script src="shared/rail-mesh-cache.js"></script><script src="shared/rail-recovery.js"></script><script src="'+options.driver+'?v=gpu6"></script>'+html.slice(end+9);
  document.open();document.write(html);document.close();
