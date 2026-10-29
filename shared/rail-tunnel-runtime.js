@@ -64,10 +64,32 @@ function clearanceIndex(geos,frame){
  function visit(bounds,fn){for(let x=bounds[0][0];x<=bounds[0][1];x++)for(let y=bounds[1][0];y<=bounds[1][1];y++)for(let z=bounds[2][0];z<=bounds[2][1];z++)if(fn(x+','+y+','+z))return true;return false;}
  let count=0;
  for(const geo of Object.values(geos))for(let i=1;i<geo.cumulative.length;i++){
-  const start=geo.cumulative[i-1],end=geo.cumulative[i],n=Math.max(1,Math.ceil((end-start)/32));let a=frame(geo,start).center;
-  for(let j=1;j<=n;j++){const b=frame(geo,start+(end-start)*j/n).center,segment={a,b,id:count++};visit(range(a,b),key=>{if(!cells.has(key))cells.set(key,[]);cells.get(key).push(segment);});a=b;}
+  const start=geo.cumulative[i-1],end=geo.cumulative[i],n=Math.max(1,Math.ceil((end-start)/32));let af=frame(geo,start),a=af.center;
+  for(let j=1;j<=n;j++){const bf=frame(geo,start+(end-start)*j/n),b=bf.center,segment={a,b,id:count++,up:af.up||bf.up};visit(range(a,b),key=>{if(!cells.has(key))cells.set(key,[]);cells.get(key).push(segment);});a=b;af=bf;}
  }
- return {segments:count,blocked(a,b,radius=6.5){const seen=new Set();return visit(range(a,b,radius),key=>{for(const s of cells.get(key)||[]){if(seen.has(s.id))continue;seen.add(s.id);if(segmentGap2(a,b,s.a,s.b)<radius*radius)return true;}return false;});}};
+ function candidates(a,b,radius){const seen=new Set(),out=[];visit(range(a,b,radius),key=>{for(const s of cells.get(key)||[])if(!seen.has(s.id)){seen.add(s.id);out.push(s);}});return out;}
+ return {segments:count,blocked(a,b,radius=6.5){const seen=new Set();return visit(range(a,b,radius),key=>{for(const s of cells.get(key)||[]){if(seen.has(s.id))continue;seen.add(s.id);if(segmentGap2(a,b,s.a,s.b)<radius*radius)return true;}return false;});},
+ clipPolygon(points){
+  const low={},high={};for(const k of ['x','y','z']){low[k]=Math.min(...points.map(p=>p[k]));high[k]=Math.max(...points.map(p=>p[k]));}
+  let polygons=[points];
+  for(const segment of candidates(low,high,5)){
+   if(!segment.up)continue;
+   if(!segment.box){const sub=(a,b)=>({x:a.x-b.x,y:a.y-b.y,z:a.z-b.z}),norm=p=>{const n=Math.hypot(p.x,p.y,p.z);return n>1e-9?{x:p.x/n,y:p.y/n,z:p.z/n}:null;},cross=(a,b)=>({x:a.y*b.z-a.z*b.y,y:a.z*b.x-a.x*b.z,z:a.x*b.y-a.y*b.x}),forward=norm(sub(segment.b,segment.a));if(!forward)continue;const left=norm(cross(segment.up,forward));if(!left)continue;segment.box={center:{x:(segment.a.x+segment.b.x)/2,y:(segment.a.y+segment.b.y)/2,z:(segment.a.z+segment.b.z)/2},axes:[forward,left,cross(forward,left)],half:Math.hypot(segment.a.x-segment.b.x,segment.a.y-segment.b.y,segment.a.z-segment.b.z)/2+1.2};}
+   const box=segment.box,planes=[[0,-box.half,box.half],[1,-1.8,1.8],[2,-.35,4.4]],outside=[];
+   const project=(p,axis)=>{const a=box.axes[axis];return (p.x-box.center.x)*a.x+(p.y-box.center.y)*a.y+(p.z-box.center.z)*a.z;};
+   for(const polygon of polygons){
+    if(planes.some(([axis,min,max])=>polygon.every(p=>project(p,axis)<=min+1e-7)||polygon.every(p=>project(p,axis)>=max-1e-7))){outside.push(polygon);continue;}
+    let inside=polygon;
+    for(const [axis,min,max]of planes)for(const [sign,limit]of [[-1,-min],[1,max]]){
+     if(inside.length<3)break;const yes=[],no=[];
+     for(let i=0;i<inside.length;i++){const a=inside[i],b=inside[(i+1)%inside.length],da=sign*project(a,axis)-limit,db=sign*project(b,axis)-limit;if(da<=0)yes.push(a);if(da>=0)no.push(a);if((da<0&&db>0)||(da>0&&db<0)){const t=da/(da-db),q={x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,z:a.z+(b.z-a.z)*t};yes.push(q);no.push(q);}}
+     if(no.length>=3)outside.push(no);inside=yes;
+    }
+   }
+   polygons=outside;if(!polygons.length)break;
+  }
+  return polygons;
+ }};
 }
 function setup(viewer,C,geos,frame){
  if(active)dispose();
@@ -156,5 +178,5 @@ function model(m){
 }
 function canRender(geo,d){return active?.supported!==false||!near(geo,d,200);}
 function dispose(){if(!active)return;for(const e of active.entities.values())active.viewer.entities.remove(e);if(active.collection&&active.viewer.scene.globe.clippingPolygons===active.collection)active.viewer.scene.globe.clippingPolygons=undefined;active=null;}
-g.BaylineTunnels={offset,ranges,near,setup,render,model,dispose,canRender,simplifyBoundary,retainingRise,floorCuts,segmentGap2,clearanceIndex,get maskStats(){return active?.maskStats;}};
+g.BaylineTunnels={offset,ranges,near,setup,render,model,dispose,canRender,simplifyBoundary,retainingRise,floorCuts,segmentGap2,clearanceIndex,get clearance(){return active?.clearance;},get maskStats(){return active?.maskStats;}};
 })(typeof globalThis==='object'?globalThis:window);
