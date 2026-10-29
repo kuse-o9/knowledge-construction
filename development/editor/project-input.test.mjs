@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {parseProject} from '../../editor/studio-features.js';
+const project={version:1,name:'作品',size:'1920,1080',assets:[{id:'asset',name:'動画.mp4',kind:'video',duration:10}],clips:[{id:'clip',asset:'asset',track:'video',start:0,duration:10,trim:0,speed:1,volume:1,brightness:100,contrast:100,saturation:100}]};
+assert.deepEqual(parseProject(JSON.stringify(project)),project);
+const reject=change=>{const d=structuredClone(project);change(d);assert.throws(()=>parseProject(JSON.stringify(d)));};
+reject(d=>d.assets=[null]);reject(d=>d.assets[0].duration='10');reject(d=>d.assets[0].kind='SCRIPT');reject(d=>d.assets.push({...d.assets[0]}));
+reject(d=>d.clips[0].asset='missing');reject(d=>d.clips.push({...d.clips[0]}));reject(d=>d.clips[0].duration=11);reject(d=>d.clips[0].start=Infinity);reject(d=>d.clips[0].track='audio');reject(d=>{d.clips[0].cropLeft=95;d.clips[0].cropRight=10;});
+const image=structuredClone(project);image.assets[0].kind='image';image.clips[0].duration=20;assert.equal(parseProject(JSON.stringify(image)).clips[0].duration,20);
+const text={version:1,name:'字幕',size:'1080,1920',assets:[],clips:[{id:'subtitle',track:'text',start:0,duration:3,size:64,color:'#ffffff',text:'<img src=x onerror=alert(1)>'}]};assert.deepEqual(parseProject(JSON.stringify(text)),text);
+assert.throws(()=>parseProject('null'));assert.throws(()=>parseProject('{'));
+console.log(JSON.stringify({pass:true,checks:15,invalidProjectRejectedBeforeCurrentMediaIsDisconnected:true}));
