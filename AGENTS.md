@@ -16,3 +16,6 @@ Before acting on each new user instruction, determine its received time in Japan
 The user reported on2026-10-26 that3D loaded successfully after restarting Chrome from chrome://settings/system. In GPU/WebGL startup failures, recommend checking graphics acceleration there and restarting the browser; distinguish this user-reported recovery from an independently verified physicalGPU test. Do not promise that restarting fixes every cause. Keep Edge instructions specific to edge://settings/system.
 
 Never put credentials or private personal information into this public repository's deferred queue; store only non-sensitive project task summaries there.
+
+## Free-only maintenance scope (2026-10-29)
+The user excludes paid-only tasks from the active backlog. Do not purchase, upgrade, rent cloud GPUs, or reintroduce metered external AI. Supabase paid leaked-password protection and paid managed backup/PITR are excluded, not awaiting approval. Keep historical audit records accurate. Use development/free-only-maintenance-plan.json for the current maintenance scope; do not label an unavailable physical-device check as a passed test.
