@@ -28,7 +28,8 @@ function build(meta){
  if(cache.has(meta.id)){const value=cache.get(meta.id);cache.delete(meta.id);cache.set(meta.id,value);return value;}
  const C=Cesium,V=C.Cartesian3,geo=geos[meta.direction];
  function point(d){const p=RailCore.position(geo,d);return V.fromDegrees(p.lon,p.lat,p.height);}
- function frame(d){const center=point(d),forward=V.normalize(V.subtract(point(d+.3),point(d-.3),new V()),new V()),normal=C.Ellipsoid.WGS84.geodeticSurfaceNormal(center,new V()),left=V.normalize(V.cross(normal,forward,new V()),new V()),up=V.normalize(V.cross(forward,left,new V()),new V());return {center,forward,left,up};}
+ const frames=new Map();
+ function frame(d){if(frames.has(d))return frames.get(d);const center=point(d),forward=V.normalize(V.subtract(point(d+.3),point(d-.3),new V()),new V()),normal=C.Ellipsoid.WGS84.geodeticSurfaceNormal(center,new V()),left=V.normalize(V.cross(normal,forward,new V()),new V()),up=V.normalize(V.cross(forward,left,new V()),new V());const result={center,forward,left,up};frames.set(d,result);return result;}
  const f=frame(meta.kind==='track'?(meta.start+meta.end)/2:meta.platformCenterDistance),origin=f.center,groups=new Map();let radius=1;
  function xyz(f,x,y,z){if(meta.kind==='station')y=(y+(meta.platformLateralOrigin||0))*meta.side;const out=V.clone(f.center);V.add(out,V.multiplyByScalar(f.forward,x,new V()),out);V.add(out,V.multiplyByScalar(f.left,y,new V()),out);V.add(out,V.multiplyByScalar(f.up,z,new V()),out);return out;}
  function quad(color,a,b,c,d){
