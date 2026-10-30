@@ -109,6 +109,7 @@ footer{font-size:14px;color:#627188;margin-top:24px}
     <a class="btn" href="memory.html">暗記ノート</a>
     <a class="btn" href="account.html">アカウント</a>
     <a class="btn" href="staff-updates.html">管理者のつぶやき</a>
+    <a class="btn" href="board.html">勉強の掲示板</a>
     <a class="btn" href="admin.html">管理者ページ</a>
   <a href="feedback.html">フィードバック</a></nav>
 </header>
@@ -532,7 +533,12 @@ function valid(data) {
 }
 
 // 手書きノートを描画する
+let notePaint = 0;
+function scheduleNoteRender() {
+  if (!notePaint) notePaint = requestAnimationFrame(() => { notePaint = 0; render(); });
+}
 function render() {
+  if (notePaint) { cancelAnimationFrame(notePaint); notePaint = 0; }
   ctx.clearRect(0, 0, 1000, 750);
 
   for (const s of [...strokes, ...(active ? [active] : [])]) {
@@ -742,7 +748,7 @@ canvas.addEventListener('pointerdown', event => {
 canvas.addEventListener('pointermove', event => {
   if (active?.pointer === event.pointerId) {
     active.points.push(position(event));
-    render();
+    scheduleNoteRender();
   }
 });
 
