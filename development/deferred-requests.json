@@ -17,6 +17,11 @@
       "status": "completed_after_repeated_request",
       "authorized_at_jst": "2026-10-31 08:13",
       "result": "機能を維持してノート描画・あずさ／かいじ模型生成を軽量化し、勉強用の掲示板を実装・公開。"
+    },
+    {
+      "received_at_jst": "2026-10-31 08:30",
+      "request": "勉強用掲示板に通報機能を追加し、暴言・誹謗中傷などを禁止する注意書きを整える。",
+      "status": "awaiting_user_go_ahead"
     }
   ]
 }
