@@ -10,5 +10,11 @@
       "21:45"
     ]
   ],
-  "pending": []
+  "pending": [
+    {
+      "received_at_jst": "2026-10-30 20:54",
+      "request": "機能を減らさずに軽量化し、その後、勉強アプリの未完了予定を1件完了する。",
+      "status": "awaiting_user_go_ahead"
+    }
+  ]
 }
