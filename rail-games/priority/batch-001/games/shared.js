@@ -300,6 +300,32 @@ function clearanceIndex(geos,frame){
   return polygons;
  }};
 }
+// Retain the 4096x4096 signed-distance allocation instead of replacing it
+// at every moving window. Cesium1.117 refreshes only on vertex-count change.
+// An exact duplicate polygon changes that count without changing the mask union.
+function installMasks(a,polygons){
+ const c=a.collection,previous=c.totalPositions;
+ c.removeAll();for(const polygon of polygons)c.add(polygon);
+ const count=polygons.reduce((n,p)=>n+p.length,0);
+ if(polygons.length&&count===previous)c.add(polygons[0]);
+ c.enabled=polygons.length>0;
+}
+// The old loops visited every tunnel in both directions at each window change.
+// Index exactly the same midpoints once, preserving original order and cutoffs.
+function chunkIndex(segments,frame,step,C){
+ const cells=new Map(),size=256;let order=0;
+ for(const r of segments)for(let start=r.start;start<r.end;start+=step){
+  const end=Math.min(r.end,start+step),center=frame(r.geo,(start+end)/2).center;
+  const key=[center.x,center.y,center.z].map(n=>Math.floor(n/size)).join(',');
+  if(!cells.has(key))cells.set(key,[]);cells.get(key).push({r,start,end,center,order:order++});
+ }
+ return {near(center,radius){
+  const ranges=['x','y','z'].map(k=>[Math.floor((center[k]-radius)/size),Math.floor((center[k]+radius)/size)]),out=[];
+  for(let x=ranges[0][0];x<=ranges[0][1];x++)for(let y=ranges[1][0];y<=ranges[1][1];y++)for(let z=ranges[2][0];z<=ranges[2][1];z++)
+   for(const chunk of cells.get(x+','+y+','+z)||[])if(C.Cartesian3.distance(chunk.center,center)<=radius)out.push(chunk);
+  return out.sort((a,b)=>a.order-b.order);
+ }};
+}
 function setup(viewer,C,geos,frame){
  if(active)dispose();
  const segments=Object.entries(geos).flatMap(([key,geo])=>rangesCached(geo).map(r=>({...r,key,geo})));
@@ -308,7 +334,7 @@ function setup(viewer,C,geos,frame){
  // One owned collection at a time; replace only at a window boundary.
  const collection=new C.ClippingPolygonCollection({enabled:false});viewer.scene.globe.clippingPolygons=collection;
  viewer.scene.screenSpaceCameraController.enableCollisionDetection=false;
- active={viewer,C,segments,geos,frame,collection,clearance:clearanceIndex(geos,frame),entities:new Map(),supported:true,last:null};
+ active={viewer,C,segments,geos,frame,collection,maskChunks:chunkIndex(segments,frame,160,C),tunnelChunks:chunkIndex(segments,frame,12,C),clearance:clearanceIndex(geos,frame),entities:new Map(),supported:true,last:null};
  return {supported:true,segments:segments.length,polygons:0};
 }
 function render(player){
@@ -318,9 +344,7 @@ function render(player){
  const wanted=new Set();
  const retain=(key,spec)=>{wanted.add(key);if(!a.entities.has(key))a.entities.set(key,a.viewer.entities.add(spec));};
  const prune=()=>{for(const [key,e] of a.entities)if(!wanted.has(key)){a.viewer.entities.remove(e);a.entities.delete(key);}};
- // Cesium 1.117 detects vertex-count changes, not arbitrary position edits.
- // A fresh collection prevents stale clipping textures when counts are equal.
- a.viewer.scene.globe.clippingPolygons=undefined;a.collection=null;
+ // The collection and its GPU textures stay owned until dispose().
  const surfacePolygons=[];
  {
   if(!line){prune();a.viewer.scene.requestRender();return;}
@@ -332,14 +356,12 @@ function render(player){
    polygons.push(new C.ClippingPolygon({positions:simplifyBoundary(left).concat(simplifyBoundary(right).reverse())}));
    const cuts=floorCuts(line,start,end);for(let i=0;i<cuts.length-1;i++){const d=cuts[i],next=cuts[i+1];if(near(line,(d+next)/2))continue;const f0=a.frame(line,d),f1=a.frame(line,next);const floor=[side(C,f0,-12),side(C,f1,-12),side(C,f1,12),side(C,f0,12)].map((v,i)=>C.Cartesian3.add(v,C.Cartesian3.multiplyByScalar(i===0||i===3?f0.up:f1.up,-Math.max(.3,offset(line,i===0||i===3?d:next)),new C.Cartesian3()),new C.Cartesian3()));retain('surface:'+player.direction+':'+d,{name:'track-cut-floor',polygon:{hierarchy:floor,perPositionHeight:true,material:C.Color.fromCssColorString('#697277')}});}
   }
-  if(!own){a.collection=new C.ClippingPolygonCollection({polygons,enabled:polygons.length>0});a.viewer.scene.globe.clippingPolygons=a.collection;prune();a.viewer.scene.requestRender();return;}
+  if(!own){installMasks(a,polygons);prune();a.viewer.scene.requestRender();return;}
  }
  // Keep the surface corridor cut at tunnel approaches too: terrain relief can
  // intersect the track before the sampled subterranean interval begins.
  const polygons=surfacePolygons;let sourceVertices=0,maskVertices=0;
- for(const r of a.segments)for(let start=r.start;start<r.end;start+=160){
-  const end=Math.min(r.end,start+160),mid=a.frame(r.geo,(start+end)/2);
-  if(a.C.Cartesian3.distance(mid.center,a.frame(own.geo,player.distance).center)>1000)continue;
+ for(const {r,start,end} of a.maskChunks.near(a.frame(own.geo,player.distance).center,1000)){
   const left=[],right=[];
   for(let d=start;d<end;d+=8){const f=a.frame(r.geo,d);left.push(side(a.C,f,10));right.push(side(a.C,f,-10));}
   const f=a.frame(r.geo,end);left.push(side(a.C,f,10));right.push(side(a.C,f,-10));
@@ -347,13 +369,11 @@ function render(player){
   polygons.push(new a.C.ClippingPolygon({positions}));
  }
  a.maskStats={sourceVertices,maskVertices,toleranceMetres:.001};
- a.collection=new a.C.ClippingPolygonCollection({polygons,enabled:polygons.length>0});a.viewer.scene.globe.clippingPolygons=a.collection;
+ installMasks(a,polygons);
  const {C,viewer,frame}=a;
- for(const r of a.segments){
-  // Both tunnel bores remain visible; work is bounded to the player's nearby window.
-  const ownPosition=frame(own.geo,Math.max(own.start,Math.min(own.end,player.distance))).center;
-  for(let d=r.start;d<r.end;d+=12){const end=Math.min(r.end,d+12),f=frame(r.geo,(d+end)/2);
-   if(C.Cartesian3.distance(f.center,ownPosition)>650)continue;
+ const ownPosition=frame(own.geo,Math.max(own.start,Math.min(own.end,player.distance))).center;
+ for(const {r,start:d,end} of a.tunnelChunks.near(ownPosition,650)){
+   const f=frame(r.geo,(d+end)/2);
    const f0=frame(r.geo,d),f1=frame(r.geo,end),p=g.RailCore.position(r.geo,d),q=g.RailCore.position(r.geo,end);
    const buried=offset(r.geo,(d+end)/2)<-8&&(!r.geo.route.structures?.length||(r.geo.route.structures||[]).some(s=>['tunnel','underground','snow-shed'].includes(s.kind)&&d>=s.start&&d<=s.end));
    // Fill the whole terrain opening below the retained ballast and rails.
@@ -374,7 +394,6 @@ function render(player){
     retain('tunnel-roof:'+r.key+':'+d,{name:'tunnel-roof',polygon:{hierarchy:roof,perPositionHeight:true,material:C.Color.fromCssColorString('#4c565e')}});
     if(Math.floor(d/12)%4===0)retain('tunnel-light:'+r.key+':'+d,{name:'tunnel-light',position:C.Cartesian3.add(f.center,C.Cartesian3.multiplyByScalar(f.up,7.9,new C.Cartesian3()),new C.Cartesian3()),ellipsoid:{radii:new C.Cartesian3(.25,.25,.12),material:C.Color.fromCssColorString('#fff3c4')}});
    }
-  }
  }
  prune();viewer.scene.requestRender();
 }

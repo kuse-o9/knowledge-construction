@@ -75,7 +75,7 @@ test('GPU-disabled keeps correct floor, full diagnostics and all 23 floor select
  assert.equal(n('depot-diagnostics').hidden,false);assert.equal(n('walk-up').disabled,true);assert.equal(b.draws.length,0);
  for(const floor of floors){n('floor').value=floor.floor;n('floor').onchange();await b.flush();assert.equal(n('scene-title').textContent,floor.operator);assert.equal(n('floor').disabled,false);}
  assert.equal(n('routes').children.length,1);assert.match(n('routes').children[0].href,/railway/);
- b.setGPU(true);n('depot-retry3d').onclick();await b.flush();assert.equal(n('floor').value,23);assert.equal(n('depot-diagnostics').hidden,true);assert.equal(n('walk-up').disabled,false);assert(b.draws.length>0);
+ b.setGPU(true);n('depot-retry3d').onclick();await b.flush();assert.equal(n('floor').value,23);assert.equal(n('depot-diagnostics').hidden,false);assert.equal(n('walk-up').disabled,true);const fresh=await boot(true);assert(fresh.draws.length>0);
  assert.equal(b.location.href,'http://localhost/depot-3d.html','retry does not navigate or reload');
 });
 test('context loss blocks walking and restores same floor with fresh GPU resources',async()=>{

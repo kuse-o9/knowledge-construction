@@ -8,8 +8,8 @@ const fixture=read('development/shared/rail-route-upgrade.test.js');
 const prefix=fixture.slice(fixture.indexOf('function packet('),fixture.indexOf("for(const name of ['yamanote'"));
 const fixtures={};vm.runInNewContext(prefix+'\nfixtures.context=context;',{fixtures,fs,path,zlib,vm,root,read,console,Buffer});
 class V{constructor(x=0,y=0,z=0){Object.assign(this,{x,y,z});}static add(a,b){return new V(a.x+b.x,a.y+b.y,a.z+b.z);}static multiplyByScalar(a,n){return new V(a.x*n,a.y*n,a.z*n);}static distance(a,b){return Math.hypot(a.x-b.x,a.y-b.y,a.z-b.z);}}
-class Collection{static isSupported(){return true;}constructor(o){this.polygons=o.polygons||[];}}
-const Ces={Cartesian3:V,ClippingPolygonCollection:Collection,ClippingPolygon:class{constructor(o){this.positions=o.positions;}},Color:{fromCssColorString:s=>s}};
+class Collection{static isSupported(){return true;}constructor(o){this.polygons=o.polygons||[];}get totalPositions(){return this.polygons.reduce((n,p)=>n+p.positions.length,0);}removeAll(){this.polygons=[];}add(p){this.polygons.push(p);return p;}}
+const Ces={Cartesian3:V,ClippingPolygonCollection:Collection,ClippingPolygon:class{constructor(o){this.positions=o.positions;}get length(){return this.positions.length;}},Color:{fromCssColorString:s=>s}};
 function contains(p,points){let inside=false;for(let i=0,j=points.length-1;i<points.length;j=i++){const a=points[i],b=points[j];if((a.y>p.y)!==(b.y>p.y)&&p.x<(b.x-a.x)*(p.y-a.y)/(b.y-a.y)+a.x)inside=!inside;}return inside;}
 let directions=0,samples=0,peakEntities=0,reused=0;
 function scan(name,C,geos,T){

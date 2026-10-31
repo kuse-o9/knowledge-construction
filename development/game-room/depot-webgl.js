@@ -368,7 +368,7 @@
     $('depot-diagnostics').hidden=false;
     $('depot-error-message').textContent='3Dに接続できません。フロア選択と公開中の路線への移動は使えます。3D機能はそのまま残っています。';
     const reason=String(error?.message||error||contextFailure);
-    const disabled=/GL_(?:VENDOR|RENDERER)\s*=\s*Disabled/i.test(reason);
+    const disabled=/GL_(?:VENDOR|RENDERER)\s*=\s*Disabled|Web page caused context loss and was blocked|disabled by enterprise policy/i.test(reason);
     $('depot-error-detail').textContent=reason;
     $('depot-error-guide').textContent=disabled?'ブラウザーがGPUを無効と報告しています。サイトの再読み込みでは有効にできません。Chromeは chrome://settings/system、Edgeは edge://settings/system でグラフィック アクセラレーションを確認し、設定画面に「再起動」が表示されたら押してください。表示がない場合もブラウザーを終了して起動し直してください。すでにオンでも改善しない場合は chrome://gpu または edge://gpu の WebGL2 と Problems Detected を確認してください。組織の制限がある場合は管理者に確認してください。':'GPU接続が一時的に失われた可能性があります。「3Dを再読み込み」で再接続できます。改善しない場合は Chromeの chrome://settings/system（Edgeは edge://settings/system）でグラフィック アクセラレーションを確認し、ブラウザーを再起動してください。ほかの3Dタブを閉じると改善する場合もあります。';
     $('loading').hidden=true;$('depot-retry3d').hidden=false;
@@ -376,7 +376,7 @@
     if(current)display(current);
   }
   function retry3D() {
-    const button=$('depot-retry3d');button.disabled=true;
+    const button=$('depot-retry3d');if(/Web page caused context loss and was blocked|GL_(?:VENDOR|RENDERER)\s*=\s*Disabled|disabled by enterprise policy/i.test(contextFailure)){showGPUFailure(Error(contextFailure));return;}button.disabled=true;
     try {
       // Reuse the canvas and selected floor. Never reload the whole Study Note.
       // A genuinely lost context is restored by the browser before reinitializing.
