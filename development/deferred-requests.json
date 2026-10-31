@@ -24,6 +24,11 @@
       "status": "completed_after_user_go_ahead",
       "authorized_at_jst": "2026-10-31 12:39",
       "result": "掲示板の通報・確認済み管理者の対応一覧と、暴言・誹謗中傷などの禁止事項を実装・公開。"
+    },
+    {
+      "received_at_jst": "2026-10-31 21:32",
+      "request": "勉強アプリの次の未完了予定を進める。複数項目の一括実施可。追加費用なし、途中報告は不要。",
+      "status": "awaiting_user_go_ahead"
     }
   ]
 }
