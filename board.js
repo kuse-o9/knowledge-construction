@@ -2,10 +2,10 @@
 (()=>{
  const $=id=>document.getElementById(id),S=window.Study;
  let actor=null,epoch=0,busy=false,page=1,query='',thread=null,admin=false,mode=false,draft=null,reportPage=1,reportTarget=null;
- const say=t=>$('board-status').textContent=t;
+ const say=t=>{$('board-status').textContent=t;if($('board-report-dialog').open)$('report-message').textContent=t;};
  const node=(tag,text,cls)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;};
  const date=v=>new Date(v).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo',year:'numeric',month:'short',day:'numeric',weekday:'short',hour:'2-digit',minute:'2-digit'});
- function clear(){reportPage=1;reportTarget=null;$('board-reports').hidden=true;$('reports-list').replaceChildren();$('report-reason').value='';$('report-target').textContent='';$('report-filter').value='open';if($('board-report-dialog').open)$('board-report-dialog').close();epoch++;busy=false;admin=false;thread=null;draft=null;page=1;query='';mode=false;$('board-area').hidden=true;$('board-login').hidden=false;$('board-list').replaceChildren();$('board-messages').replaceChildren();$('board-body').value='';$('board-title').value='';$('board-search').value='';$('board-reply-body').value='';$('board-moderation').checked=false;}
+ function clear(){reportPage=1;reportTarget=null;$('board-reports').hidden=true;$('reports-list').replaceChildren();$('report-reason').value='';$('report-message').textContent='';$('report-target').textContent='';$('report-filter').value='open';if($('board-report-dialog').open)$('board-report-dialog').close();epoch++;busy=false;admin=false;thread=null;draft=null;page=1;query='';mode=false;$('board-area').hidden=true;$('board-login').hidden=false;$('board-list').replaceChildren();$('board-messages').replaceChildren();$('board-body').value='';$('board-title').value='';$('board-search').value='';$('board-reply-body').value='';$('board-moderation').checked=false;}
  function controls(){for(const e of document.querySelectorAll('#board-area button, #board-report-dialog button'))e.disabled=busy;$('board-prev').disabled=busy||page<=1;$('reports-prev').disabled=busy||reportPage<=1;}
  async function rpc(action,input={}){const r=await S.client.rpc('study_board',{p_action:action,...input});if(r.error)throw r.error;return r.data;}
  async function run(work){if(busy||!actor)return;const ticket=epoch;busy=true;controls();try{await work(ticket);}catch(e){if(ticket===epoch){if(e.code==='42501'||e.code==='PT401'){clear();say('ログインと利用権限を確認してください。');}else say(e.code==='PT429'?'投稿・アクセスが集中しています。少し待って再試行してください。':e.code==='40001'?'投稿が更新されています。開き直してください。':e.message||'通信を確認してください。');}}finally{if(ticket===epoch){busy=false;controls();}}}
@@ -39,7 +39,7 @@
  $('board-moderation').onchange=()=>{if(busy)return;mode=admin&&$('board-moderation').checked;page=1;void run(t=>list(t));};
 
  async function reportRpc(action,input={}){const r=await S.client.rpc('study_board_report',{p_action:action,...input});if(r.error)throw r.error;return r.data;}
- function reportButton(post){const b=node('button','通報する');b.type='button';b.onclick=()=>{if(busy)return;reportTarget=post.id;$('report-target').textContent=post.title||'この返信を通報します。';$('report-reason').value='';$('report-category').value='暴言・誹謗中傷';$('board-report-dialog').showModal();};return b;}
+ function reportButton(post){const b=node('button','通報する');b.type='button';b.onclick=()=>{if(busy)return;reportTarget=post.id;$('report-message').textContent='';$('report-target').textContent=post.title||'この返信を通報します。';$('report-reason').value='';$('report-category').value='暴言・誹謗中傷';$('board-report-dialog').showModal();};return b;}
  async function loadReports(t){
   const result=await reportRpc('list',{p_page:reportPage,p_status:$('report-filter').value});if(t!==epoch)return;
   $('reports-list').replaceChildren();
