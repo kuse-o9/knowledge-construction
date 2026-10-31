@@ -21,7 +21,9 @@
     {
       "received_at_jst": "2026-10-31 08:30",
       "request": "勉強用掲示板に通報機能を追加し、暴言・誹謗中傷などを禁止する注意書きを整える。",
-      "status": "awaiting_user_go_ahead"
+      "status": "completed_after_user_go_ahead",
+      "authorized_at_jst": "2026-10-31 12:39",
+      "result": "掲示板の通報・確認済み管理者の対応一覧と、暴言・誹謗中傷などの禁止事項を実装・公開。"
     }
   ]
 }
