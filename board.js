@@ -45,7 +45,7 @@
   $('reports-list').replaceChildren();
   for(const r of result.reports.slice(0,20)){
    const card=node('article',undefined,'card');card.append(node('h3',r.category),node('p',date(r.created_at)+' ・ '+(r.status==='done'?'対応済み':'未対応'),'board-meta'),node('p','対象：'+r.title),node('p',r.preview,'board-post-body report-preview'),node('p','通報理由：'+r.reason,'board-post-body'));
-   const actions=node('div',undefined,'board-actions'),open=node('button','対象の投稿を確認');open.type='button';open.onclick=()=>void run(t=>openThread(r.root_id,t));actions.append(open);
+   const actions=node('div',undefined,'board-actions'),open=node('button','対象の投稿を確認');open.type='button';open.onclick=()=>{if(r.channel==='chat'){location.href='chat.html?message='+encodeURIComponent(r.post_id);return;}void run(t=>openThread(r.root_id,t));};actions.append(open);
    if(r.post_hidden||r.thread_hidden)card.append(node('p','対象の投稿または質問は非表示です。','board-label'));
    if(r.status==='open'){const done=node('button','対応済みにする');done.type='button';done.onclick=()=>{if(!confirm('対応済みにしますか？投稿の公開状態は変わりません。'))return;void run(async t=>{await reportRpc('resolve',{p_id:r.id,p_revision:r.revision});if(t!==epoch)return;await loadReports(t);say('通報を対応済みにしました。');});};actions.append(done);}
    card.append(actions);$('reports-list').append(card);
