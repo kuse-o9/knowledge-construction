@@ -28,7 +28,8 @@
     {
       "received_at_jst": "2026-10-31 21:32",
       "request": "勉強アプリの次の未完了予定を進める。複数項目の一括実施可。追加費用なし、途中報告は不要。",
-      "status": "awaiting_user_go_ahead"
+      "status": "awaiting_user_go_ahead",
+      "repeated_at_jst": "2026-10-31 21:39"
     }
   ]
 }
