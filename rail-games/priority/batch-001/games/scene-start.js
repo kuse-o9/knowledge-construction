@@ -37,7 +37,7 @@
    const preference=attempts[i];
    const capture=event=>{creationReason=String(event.statusMessage||'');};target.addEventListener?.('webglcontextcreationerror',capture,true);
    try{
-    const viewer=new Ces.Viewer(container,{...options,contextOptions:{...options.contextOptions,webgl:{...options.contextOptions?.webgl,powerPreference:preference,failIfMajorPerformanceCaveat:false}}});
+    const viewer=new Ces.Viewer(container,{scene3DOnly:true,...options,contextOptions:{...options.contextOptions,webgl:{...options.contextOptions?.webgl,powerPreference:preference,failIfMajorPerformanceCaveat:false}}});
     probeResult=null;live.set(target,viewer);target.dataset.rendererAttempt=String(i+1);target.dataset.rendererPreference=preference;
     return viewer;
    }catch(error){
