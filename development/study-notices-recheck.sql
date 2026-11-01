@@ -1,3 +1,5 @@
+-- 隔離DBの認証fixture専用。現行の本番チェックはメンテナンスを変更しない。
+-- 一部の文だけを本番へ貼らないこと。テストは notices-sql.test.cjs を使用する。
 begin;
 do $$declare u uuid:=gen_random_uuid();a uuid:=gen_random_uuid();us uuid:=gen_random_uuid();adms uuid:=gen_random_uuid();o uuid;os uuid:=gen_random_uuid();n uuid;r jsonb;v integer;denied boolean;begin
  insert into auth.users(id,email_confirmed_at)values(u,now()),(a,now());
@@ -35,6 +37,7 @@ do $$declare u uuid:=gen_random_uuid();a uuid:=gen_random_uuid();us uuid:=gen_ra
  perform set_config('request.jwt.claims',jsonb_build_object('sub',o,'session_id',os,'role','authenticated')::text,true);
  set local role authenticated;
  r:=public.study_notices('history','customer',n);if jsonb_array_length(r->'items')<>3 then raise exception 'Audit history incomplete';end if;
+ denied:=false;begin perform public.study_notices('approve','customer',n,p_revision=>null);exception when invalid_parameter_value then denied:=true;end;if not denied then raise exception 'Null revision allowed';end if;
  denied:=false;begin perform public.study_notices('approve','customer',n,p_revision=>v-1);exception when serialization_failure then denied:=true;end;if not denied then raise exception 'Stale approval allowed';end if;
  r:=public.study_notices('reject','customer',n,p_revision=>v);v:=(r->>'revision')::integer;
  r:=public.study_notices('unpublish','customer',n,p_revision=>v);

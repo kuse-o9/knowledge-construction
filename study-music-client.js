@@ -1,0 +1,7 @@
+'use strict';
+(function(g){
+ function sniff(bytes){const text=(a,n)=>String.fromCharCode(...bytes.slice(a,a+n));if(text(0,4)==='RIFF'&&text(8,4)==='WAVE')return{ext:'wav',mime:'audio/wav'};if(text(0,4)==='OggS')return{ext:'ogg',mime:'audio/ogg'};if(text(0,3)==='ID3'||bytes.length>1&&bytes[0]===255&&(bytes[1]&224)===224)return{ext:'mp3',mime:'audio/mpeg'};throw Error('MP3・WAV・Ogg音声を選んでください。');}
+ async function inspect(file){if(!file||file.size<12||file.size>5242880)throw Error('音声は５MB以内にしてください。');const type=sniff(new Uint8Array(await file.slice(0,16).arrayBuffer()));return{...type,seconds:await duration(file)};}
+ function duration(source){return new Promise((resolve,reject)=>{const a=new Audio(),local=typeof source!=='string',url=local?URL.createObjectURL(source):source;let ended=false;const finish=(error)=>{if(ended)return;ended=true;clearTimeout(timer);const seconds=Math.ceil(a.duration);a.pause();a.removeAttribute('src');a.load();if(local)URL.revokeObjectURL(url);if(error)reject(error);else if(!Number.isFinite(seconds)||seconds<1||seconds>600)reject(Error('音声は10分以内にしてください。'));else resolve(seconds);};const timer=setTimeout(()=>finish(Error('音声の長さを確認できませんでした。')),15000);a.preload='metadata';a.onloadedmetadata=()=>finish();a.onerror=()=>finish(Error('この音声をブラウザーで読み込めませんでした。'));a.src=url;});}
+ const api={sniff,inspect,duration};if(typeof module==='object'&&module.exports)module.exports=api;else g.StudyMusicClient=api;
+})(globalThis);

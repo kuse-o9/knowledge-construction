@@ -47,6 +47,7 @@ begin
  if not pg_try_advisory_xact_lock(185724,1) then raise sqlstate 'PT429' using message='更新が集中しています。少し待ってください。';end if;
  if (select count(*) from study_private.study_notice_history)>=2000 or pg_database_size(current_database())>419430400 then raise exception '記録を保護するため新しい更新を停止しています。' using errcode='54000';end if;
  if p_id is not null then
+  if p_revision is null or p_revision<1 then raise exception '最新の内容を開き直してください。'using errcode='22023';end if;
   select * into n from study_private.study_notices where id=p_id for update;
   if not found or n.revision<>p_revision then raise exception '内容が更新されています。開き直してください。' using errcode='40001';end if;
   if n.kind='admin' and not is_owner then raise exception '管理者向け通知はオーナーだけが変更できます。' using errcode='42501';end if;
