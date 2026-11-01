@@ -6,7 +6,7 @@ const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'../..');
 const floors=JSON.parse(fs.readFileSync(path.join(__dirname,'operator-floors.json'))).floors;
 async function boot(gpu=true,reducedMotion=true,reason="",embedded=false){
-  const nodes=new Map(),events={},draws=[],uploads=[];let count=0,now=0;const frames=[];
+  const nodes=new Map(),events={},draws=[],uploads=[];let count=0,now=0;const frames=[];const releases={buffers:0,programs:0,contexts:0};
   function node(id=''){
     return {id,hidden:false,disabled:false,value:'',textContent:'',dataset:{},style:{setProperty(){}},children:[],classList:{toggle(){}},
       clientWidth:1000,clientHeight:680,width:0,height:0,
@@ -16,7 +16,7 @@ async function boot(gpu=true,reducedMotion=true,reason="",embedded=false){
       focus(){},setPointerCapture(){},hasPointerCapture(){return false},releasePointerCapture(){}};
   }
   const gl=new Proxy({getShaderParameter:()=>true,getProgramParameter:()=>true,getError:()=>0,
-    getAttribLocation:()=>0,createBuffer:()=>({}),createShader:()=>({}),createProgram:()=>({}),
+    deleteBuffer:()=>releases.buffers++,deleteProgram:()=>releases.programs++,getExtension:()=>({loseContext:()=>releases.contexts++}),getAttribLocation:()=>0,createBuffer:()=>({}),createShader:()=>({}),createProgram:()=>({}),
     bufferData:(type,data)=>{assert.ok([...data].every(Number.isFinite));uploads.push(data.length)},
     drawArrays:(...args)=>draws.push(args)
   },{get:(t,k)=>k in t?t[k]:/^[A-Z_]+$/.test(k)?1:()=>{}});
@@ -32,7 +32,7 @@ async function boot(gpu=true,reducedMotion=true,reason="",embedded=false){
     fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,url.pathname)))})});
   await vm.runInContext(fs.readFileSync(path.join(__dirname,'depot-webgl.js'),'utf8'),context);
   const flush=async(n=4)=>{for(let i=0;i<n;i++){now+=50;const batch=frames.splice(0);for(const fn of batch)fn(now);await new Promise(r=>setImmediate(r));}};await flush();
-  return {nodes,draws,uploads,location,top,flush,events,setGPU(value){gpu=value;}};
+  return {nodes,draws,uploads,location,top,flush,events,releases,setGPU(value){gpu=value;}};
 }
 test('JR five routes, finite 3D mesh upload, and all 23 independent floors',async()=>{
   const b=await boot(),n=id=>b.nodes.get(id);
@@ -104,4 +104,12 @@ test('embedded company depot starts the game in the top Study Note window',async
  const b=await boot(true,true,'',true),c=b.nodes.get('depot');
  c.events.keydown({key:'w',preventDefault(){}});await b.flush(100);b.events.keyup({key:'w'});await b.flush();
  b.nodes.get('board').onclick();assert.equal(b.top.location.href,'http://localhost/yamanote/index.html');assert.match(b.location.href,/depot-3d.html\?embed=1$/);
+});
+
+test('leaving depot frees GPU buffers and context once and ignores late restoration',async()=>{
+ const b=await boot();assert.ok(b.draws.length);b.events.pagehide();
+ assert.ok(b.releases.buffers>0);assert.equal(b.releases.programs,1);assert.equal(b.releases.contexts,1);
+ const before={...b.releases},draws=b.draws.length;b.events.pagehide();
+ b.nodes.get('depot').events.webglcontextrestored();await b.flush();
+ assert.deepEqual(b.releases,before);assert.equal(b.draws.length,draws);
 });

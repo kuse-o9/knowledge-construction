@@ -21,7 +21,7 @@
   const EXPRESS_Z={azusa:18.965,kaiji:-4.035};
   const trackX=(path,floor=current)=>floor.floor===23?0:LINE[path][1];
   function launch(path){const href=new URL(path,BASE).href;if(new URL(location.href).searchParams.get('embed')==='1')top.location.href=href;else location.href=href;}
-  let gl, program, floors, model, current, geometry, dragging, moving = false, lost = false, gpuReady = false;
+  let gl, program, floors, model, current, geometry, dragging, moving = false, lost = false, gpuReady = false, disposed = false;
   let yaw = 0, pitch = 0, distance = 4.5, frame = 0, hovered = null;
   const player={x:-19.3,y:0,z:24.8,angle:Math.PI,walk:0}, keys=new Set();
   let lastTick=0, avatarBuffer, avatarCount=0,liftBuffer,liftScene=null,avatarKey=null,liftKey=null,liftMesh=null,locations;
@@ -253,7 +253,7 @@
     }
     gl.drawArrays(gl.TRIANGLES,0,count);
   }
-  function schedule(){if(gpuReady&&!frame&&!lost) frame=requestAnimationFrame(draw);}
+  function schedule(){if(!disposed&&gpuReady&&!frame&&!lost) frame=requestAnimationFrame(draw);}
   // Nearest ray/triangle intersection includes walls and platforms, so hidden
   // trains cannot be clicked through solid geometry.
   function pick(clientX,clientY) {
@@ -362,7 +362,19 @@
   $('reset').onclick=()=>{stopWalking();yaw=0;pitch=0;distance=4.5;player.x=current.floor===23?2.7:-19.3;player.y=0;player.z=24.8;highlight(null);schedule();canvas.focus();};
   $('floor').onchange=()=>travel($('floor').value);
   $('up').onclick=()=>travel(current.floor+1);$('down').onclick=()=>travel(current.floor-1);
-  addEventListener('resize',schedule);new ResizeObserver(schedule).observe(canvas);
+  addEventListener('resize',schedule);const resizeObserver=new ResizeObserver(schedule);resizeObserver.observe(canvas);
+  function releaseGPU(){
+    if(disposed)return;disposed=true;gpuReady=false;lost=true;stopWalking();
+    if(frame&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(frame);frame=0;
+    resizeObserver.disconnect?.();
+    for(const mesh of bufferCache.values())try{gl?.deleteBuffer(mesh.buffer);}catch{}
+    for(const buffer of [avatarBuffer,liftBuffer])if(buffer)try{gl?.deleteBuffer(buffer);}catch{}
+    if(program)try{gl?.deleteProgram(program);}catch{}
+    bufferCache.clear();geometry=null;avatarBuffer=null;liftBuffer=null;program=null;liftScene=null;
+    try{gl?.getExtension('WEBGL_lose_context')?.loseContext();}catch{}gl=null;
+  }
+  addEventListener('pagehide',releaseGPU);
+  addEventListener('pageshow',event=>{if(event.persisted&&disposed)location.reload();});
   function showGPUFailure(error) {
     gpuReady=false;lost=true;stopWalking();frame=0;
     $('depot-diagnostics').hidden=false;
@@ -376,7 +388,7 @@
     if(current)display(current);
   }
   function retry3D() {
-    const button=$('depot-retry3d');if(/Web page caused context loss and was blocked|GL_(?:VENDOR|RENDERER)\s*=\s*Disabled|disabled by enterprise policy/i.test(contextFailure)){showGPUFailure(Error(contextFailure));return;}button.disabled=true;
+    if(disposed)return;const button=$('depot-retry3d');if(/Web page caused context loss and was blocked|GL_(?:VENDOR|RENDERER)\s*=\s*Disabled|disabled by enterprise policy/i.test(contextFailure)){showGPUFailure(Error(contextFailure));return;}button.disabled=true;
     try {
       // Reuse the canvas and selected floor. Never reload the whole Study Note.
       // A genuinely lost context is restored by the browser before reinitializing.
@@ -391,14 +403,15 @@
     finally{button.disabled=false;}
   }
   $('depot-retry3d').onclick=retry3D;
-  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();showGPUFailure(new Error('GPU接続が一時的に失われました。ブラウザーによる復旧を待つか、3Dを再読み込みしてください。'));});
+  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();if(disposed)return;showGPUFailure(new Error('GPU接続が一時的に失われました。ブラウザーによる復旧を待つか、3Dを再読み込みしてください。'));});
   canvas.addEventListener('webglcontextrestored',()=>{
+    if(disposed)return;
     // Old GPU object handles are invalid after restoration.
     bufferCache.clear();avatarBuffer=null;liftBuffer=null;program=null;gl=null;retry3D();
   });
   try {
     const read=async path=>{const r=await fetch(new URL(path,BASE));if(!r.ok)throw Error(path);return r.json();};
-    let express;[floors,model,express]=await Promise.all([read('development/game-room/operator-floors.json?v=express1').then(d=>d.floors),read('development/game-room/depot-model.json'),read('development/game-room/depot-express-faces.json?v=express1')]);model.faces.push(...express.faces);
+    let express;[floors,model,express]=await Promise.all([read('development/game-room/operator-floors.json?v=express1').then(d=>d.floors),read('development/game-room/depot-model.json'),read('development/game-room/depot-express-faces.json?v=express1')]);if(disposed)return;model.faces.push(...express.faces);
     for(const f of floors){const option=document.createElement('option');option.value=f.floor;option.textContent=f.floor+'F　'+f.operator;$('floor').append(option);}
     // Keep accessible route links usable even if GPU initialization fails.
     current=floors.find(f=>f.floor===18);
