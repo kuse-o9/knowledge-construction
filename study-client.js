@@ -13,9 +13,12 @@
   const headers={apikey:cfg.publishableKey};
   if(data.session?.access_token) headers.Authorization='Bearer '+data.session.access_token;
   if(!(body instanceof FormData)) headers['Content-Type']='application/json';
-  let res;
-  try {res=await fetch(cfg.supabaseUrl.replace(/\/$/,'')+'/functions/v1/study-api'+suffix,{method:'POST',headers,body:body instanceof FormData?body:JSON.stringify(body),cache:'no-store'});} catch {fail('サーバーに接続できません。Edge Functionの公開と設定を確認してください。');}
-  let json;try {json=await res.json();} catch {fail('サーバーの応答を読めませんでした。');}
+  let res,json;const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),45000);
+  const timeout=()=>fail('45秒以内に応答を確認できませんでした。保存・送信が完了している場合もあるため、一覧や残高を確認してから再試行してください。');
+  try {
+   try {res=await fetch(cfg.supabaseUrl.replace(/\/$/,'')+'/functions/v1/study-api'+suffix,{method:'POST',headers,body:body instanceof FormData?body:JSON.stringify(body),cache:'no-store',signal:controller.signal});} catch {if(controller.signal.aborted)timeout();fail('サーバーに接続できません。Edge Functionの公開と設定を確認してください。');}
+   try {json=await res.json();} catch {if(controller.signal.aborted)timeout();fail('サーバーの応答を読めませんでした。');}
+  }finally{clearTimeout(timer);}
   if(!res.ok || json.error){const e=new Error(json.error || 'サーバー設定を確認してください。');e.status=res.status;throw e;}
   return json.data;
  }

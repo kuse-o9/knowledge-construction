@@ -16,7 +16,7 @@ else {
    const notices=document.createElement('section');notices.className='card';const nt=document.createElement('h2');nt.textContent='管理者用・利用者用の通知';const nl=document.createElement('a');nl.href='admin-notices.html';nl.className='button';nl.textContent='通知を書く・オーナー承認';notices.append(nt,nl);root.prepend(notices);
    const games=document.createElement('section');games.className='card';const heading=document.createElement('h2');heading.textContent='ゲーム';const link=document.createElement('a');link.className='button';link.href='admin-games.html';link.textContent='ゲーム';const description=document.createElement('p');description.textContent='公開・非公開、お知らせを管理します。オーナーへの申請は不要です。';games.append(heading,description,link);root.prepend(games);
    const url=URL.createObjectURL(new Blob([data.script],{type:'text/javascript'}));
-   try {const module=await import(url);if(ticket===generation) await module.default(root,data,message);} finally {URL.revokeObjectURL(url);}
+   try {const module=await import(url);if(ticket===generation){await module.default(root,data,message);window.StudyDeckInput?.attach(root);}} finally {URL.revokeObjectURL(url);}
   }
  } catch(e){root.replaceChildren();message.textContent=e.message;message.classList.add('error');}
 }
