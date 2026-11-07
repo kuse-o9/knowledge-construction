@@ -94,9 +94,9 @@ footer{font-size:14px;color:#627188;margin-top:24px}
   .cover{height:110px}
 }
 </style>
-<link rel="stylesheet" href="study-access.css"><script src="study-access.js"></script><link rel="stylesheet" href="study-tools.css?v=1"></head>
+<link rel="stylesheet" href="study-access.css"><script src="study-access.js"></script><link rel="stylesheet" href="study-tools.css?v=1"><link rel="stylesheet" href="study-design.css?v=20261107"><script defer src="study-navigation.js?v=20261107"></script></head>
 
-<body>
+<body class="sn-app sn-home">
 <header>
   <a class="brand" href="#home"><span>Study</span> Note</a>
   <nav class="nav" aria-label="メインメニュー">
@@ -115,16 +115,22 @@ footer{font-size:14px;color:#627188;margin-top:24px}
   <a href="feedback.html">フィードバック</a></nav>
 </header>
 
-<section class="timer" aria-label="学習タイマー"><strong>学習タイマー</strong><span>ストップウォッチ・カウントダウン・ポモドーロ</span><a class="btn" href="timer.html" target="_blank" rel="noopener">タイマーを別タブで開く ↗</a></section>
-
 <main>
-<section class="intro"><div class="eyebrow">ホーム</div><h1>今日の勉強を始めよう。</h1><p>使いたい部屋を選んで入ろう。問題は、それぞれの学習画面で表示します。</p></section>
-<div class="decks">
-<section class="card"><h2>デッキの部屋</h2><p>デッキを選んで、ノートやフラッシュカードで学習。復習・５分モードもここから。</p><a class="btn primary" href="decks.html">デッキの部屋に入る</a><p><a href="my-decks.html">自分のデッキを作る・編集する</a></p></section>
-<section class="card"><h2>練習デッキの部屋</h2><p>最初から入っている練習問題と暗記シート。これまでのノートも引き続き使えます。</p><a class="btn" href="practice.html">練習デッキを選ぶ</a></section>
-<section class="card"><h2>暗記ノートの部屋</h2><p>自分のノートを使って覚えよう。</p><a class="btn" href="memory.html">暗記ノートを開く</a></section>
+<section class="sn-welcome" aria-labelledby="welcome-title"><div><div class="eyebrow">MY STUDY SPACE</div><h1 id="welcome-title">今日も、自分のペースで。</h1><p>まずは１問から。学びたいことを選んで始めよう。</p></div><svg class="sn-welcome-art" viewBox="0 0 180 140" aria-hidden="true"><circle cx="94" cy="70" r="59" fill="#dce9fc"/><rect x="36" y="31" width="74" height="94" rx="10" fill="#7c9cda" transform="rotate(-12 36 31)"/><rect x="66" y="16" width="75" height="99" rx="10" fill="#fff" stroke="#bad0ef"/><path d="M81 40h44M81 55h44M81 70h29" stroke="#88a7d5" stroke-width="5" stroke-linecap="round"/><path d="m121 91 9 9 22-25" fill="none" stroke="#509e86" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="22" r="5" fill="#e6bb69"/><circle cx="156" cy="36" r="4" fill="#a2bde9"/></svg></section>
+<div class="sn-section-title"><h2>学習をはじめる</h2><p>問題は、選んだ部屋の中で表示します。</p></div>
+<div class="sn-learning-grid">
+<section class="sn-learning-card sn-featured"><span class="sn-tile-icon" aria-hidden="true">▤</span><h3>デッキで学ぶ</h3><p>教科や単元から問題を選んで、書く・覚える・復習する。</p><a class="btn primary" href="decks.html">デッキを選ぶ <span aria-hidden="true">→</span></a><a class="sn-sub-link" href="my-decks.html">自分のデッキを作る・編集する</a></section>
+<section class="sn-learning-card sn-note-card"><span class="sn-tile-icon" aria-hidden="true">✎</span><h3>暗記ノート</h3><p>自分のノートを開いて、覚えたいところを繰り返そう。</p><a class="btn" href="memory.html">ノートを開く <span aria-hidden="true">→</span></a></section>
+<section class="sn-learning-card sn-practice-card"><span class="sn-tile-icon" aria-hidden="true">◇</span><h3>練習デッキ</h3><p>最初から入っている問題で練習。これまでのノートも使えます。</p><a class="btn" href="practice.html">練習する <span aria-hidden="true">→</span></a></section>
 </div>
-<section class="card" style="margin-top:20px"><h2>毎日の学習</h2><p>自分のペースで、取り組んだことを振り返ろう。</p><a class="btn" href="journal.html">学習カレンダー・成長グラフ</a> <a class="btn" href="teams.html">友達と協力ミッション</a> <a class="btn" href="notices.html">お知らせ</a></section>
+<div class="sn-section-title"><h2>学習をつづける道具</h2><p>記録も、休憩も、あなたのペースで。</p></div>
+<div class="sn-quick-grid">
+<a class="sn-quick-link" href="journal.html"><span class="sn-quick-symbol" aria-hidden="true">▦</span><span>学習カレンダー<small>記録・成長グラフ</small></span></a>
+<a class="sn-quick-link" href="teams.html"><span class="sn-quick-symbol" aria-hidden="true">♧</span><span>協力ミッション<small>友達と一緒に取り組む</small></span></a>
+<a class="sn-quick-link" href="timer.html" target="_blank" rel="noopener"><span class="sn-quick-symbol" aria-hidden="true">◷</span><span>学習タイマー ↗<small>別タブで集中をサポート</small></span></a>
+<a class="sn-quick-link" href="notices.html"><span class="sn-quick-symbol" aria-hidden="true">♧</span><span>お知らせ<small>Study Noteからのご案内</small></span></a>
+</div>
+<footer class="sn-home-footer"><span>ひとつずつ、できることを増やそう。</span><a href="feedback.html">ご意見・困ったことを送る →</a></footer>
 </main>
 <script src="home-study-route.js?v=1"></script>
 <div id="study-game-room-overlay" hidden style="position:fixed;inset:0;z-index:10000;background:#f5f3ed"><iframe id="study-game-room-frame" title="ゲームの部屋" style="display:block;width:100%;height:100%;border:0"></iframe></div>
