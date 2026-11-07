@@ -94,7 +94,7 @@ footer{font-size:14px;color:#627188;margin-top:24px}
   .cover{height:110px}
 }
 </style>
-<link rel="stylesheet" href="study-access.css"><script src="study-access.js"></script><link rel="stylesheet" href="study-tools.css?v=1"><link rel="stylesheet" href="study-design.css?v=20261107b"><script defer src="study-navigation.js?v=20261107b"></script></head>
+<link rel="stylesheet" href="study-access.css"><script src="study-access.js"></script><link rel="stylesheet" href="study-tools.css?v=1"><link rel="stylesheet" href="study-design.css?v=20261107c"><script defer src="study-navigation.js?v=20261107c"></script></head>
 
 <body class="sn-app sn-home">
 <header>
@@ -137,7 +137,7 @@ footer{font-size:14px;color:#627188;margin-top:24px}
 <script>
 (()=>{'use strict';const button=document.getElementById('game-room-launch'),overlay=document.getElementById('study-game-room-overlay'),frame=document.getElementById('study-game-room-frame');let oldOverflow='';
 function closeRoom(){if(overlay.hidden)return;overlay.hidden=true;document.body.style.overflow=oldOverflow;frame.removeAttribute('src');frame.removeAttribute('srcdoc');if(location.hash==='#game-room')history.replaceState(null,'',location.pathname+location.search+'#home');button.focus();}
-button.addEventListener('click',e=>{e.preventDefault();if(!overlay.hidden)return;oldOverflow=document.body.style.overflow;frame.removeAttribute('srcdoc');frame.src=new URL('game-room/embedded-room.html?v=company2',location.href).href;overlay.hidden=false;document.body.style.overflow='hidden';frame.focus();});
+button.addEventListener('click',e=>{e.preventDefault();if(!overlay.hidden)return;oldOverflow=document.body.style.overflow;frame.removeAttribute('srcdoc');frame.src=new URL('game-room/embedded-room.html?v=readable1',location.href).href;overlay.hidden=false;document.body.style.overflow='hidden';frame.focus();});
 window.addEventListener('message',e=>{if(e.source===frame.contentWindow&&e.origin===location.origin&&e.data?.type==='study-game-room-close')closeRoom();});
 window.addEventListener('keydown',e=>{if(e.key==='Escape')closeRoom();});
 function syncRoomRoute(){if(location.hash==='#game-room')button.click();else closeRoom();}

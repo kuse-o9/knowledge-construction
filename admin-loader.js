@@ -8,17 +8,17 @@ else {
  try {
   const data=await Study.api('admin_bootstrap');
   if(ticket===generation){
-   // Both markup and module come only from the authorized server response.
-   root.innerHTML=data.html;const historyPanel=root.querySelector('#history-panel');if(historyPanel)historyPanel.hidden=true;
-   if(data.owner){const section=document.createElement('section');section.className='card';const h=document.createElement('h2');h.textContent='メンテナンス';const link=document.createElement('a');link.className='button';link.href='admin-security.html';link.textContent='メンテナンス設定';section.append(h,link);section.dataset.adminTool='maintenance';root.prepend(section);}
-   const updates=document.createElement('section');updates.className='card';const updatesTitle=document.createElement('h2');updatesTitle.textContent='管理者のつぶやき';const updatesLink=document.createElement('a');updatesLink.href='admin-updates.html';updatesLink.className='button';updatesLink.textContent='つぶやきを書く →';const updatesDescription=document.createElement('p');updatesDescription.textContent='利用者の掲示板とは別の場所に、管理者・オーナーが投稿できます。';updates.append(updatesTitle,updatesDescription,updatesLink);updates.dataset.adminTool='updates';root.prepend(updates);
-   const board=document.createElement('section');board.className='card';const boardTitle=document.createElement('h2');boardTitle.textContent='勉強用の掲示板';const boardLink=document.createElement('a');boardLink.href='board.html';boardLink.className='button';boardLink.textContent='掲示板を確認・管理する';board.append(boardTitle,boardLink);board.dataset.adminTool='board';root.prepend(board);
-   const chat=document.createElement('section');chat.className='card';const chatTitle=document.createElement('h2');chatTitle.textContent='勉強チャット';const chatLink=document.createElement('a');chatLink.href='chat.html';chatLink.className='button';chatLink.textContent='チャットを確認する';chat.append(chatTitle,chatLink);chat.dataset.adminTool='chat';root.prepend(chat);
-   const notices=document.createElement('section');notices.className='card';const nt=document.createElement('h2');nt.textContent='管理者用・利用者用の通知';const nl=document.createElement('a');nl.href='admin-notices.html';nl.className='button';nl.textContent='通知を書く・オーナー承認';notices.append(nt,nl);notices.dataset.adminTool='notices';root.prepend(notices);
-   const music=document.createElement('section');music.className='card';const mh=document.createElement('h2');mh.textContent='共有BGM';const ml=document.createElement('a');ml.href='admin-music.html';ml.className='button';ml.textContent='曲を追加・保管する';music.append(mh,ml);music.dataset.adminTool='music';root.prepend(music);
-   const games=document.createElement('section');games.className='card';const heading=document.createElement('h2');heading.textContent='ゲーム';const link=document.createElement('a');link.className='button';link.href='admin-games.html';link.textContent='ゲーム';const description=document.createElement('p');description.textContent='公開・非公開、お知らせを管理します。オーナーへの申請は不要です。';games.append(heading,description,link);games.dataset.adminTool='games';root.prepend(games);
-   const url=URL.createObjectURL(new Blob([window.StudyAdminHistory?.withIds(data.script)||data.script],{type:'text/javascript'}));
-   try {const module=await import(url);if(ticket===generation){await module.default(root,data,message);if(ticket===generation){window.StudyDeckInput?.attach(root);window.StudyAdminHistory?.attach(root);window.StudyAdminLayout?.organize(root);}}} finally {URL.revokeObjectURL(url);}
+   const sections=window.StudyAdminSections;if(!sections)throw Error('管理画面の読み込みを確認してください。');
+   const view=sections.selected();
+   if(view==='dashboard'){sections.dashboard(root,data);message.textContent='使いたい機能を選んでください。';}
+   else{
+    // HTML/module are still delivered only after the server's existing admin/password checks.
+    // The owner-only route is an additional UI check, never a substitute for server authorization.
+    if(view==='owner'&&!data.owner)throw Error('この画面はオーナー専用です。');
+    const script=sections.prepareScript(data.script,view);sections.mount(root,data,view);
+    const url=URL.createObjectURL(new Blob([window.StudyAdminHistory?.withIds(script)||script],{type:'text/javascript'}));
+    try{const module=await import(url);if(ticket===generation){await module.default(root,data,message);if(ticket===generation){if(view==='decks')window.StudyDeckInput?.attach(root);if(view==='history'){window.StudyAdminHistory?.attach(root);const panel=root.querySelector('#history-panel');if(panel?.hidden)panel.previousElementSibling?.click();}}}}finally{URL.revokeObjectURL(url);}
+   }
   }
- } catch(e){root.replaceChildren();message.textContent=e.message;message.classList.add('error');}
+ }catch(e){if(ticket===generation){root.replaceChildren();message.textContent=e.message;message.classList.add('error');}}
 }
